@@ -93,6 +93,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
             </div>
         </div>
     </div>
+    
 
     <div class="container-fluid no-ready-to-call-bl">
         <div class="container">
