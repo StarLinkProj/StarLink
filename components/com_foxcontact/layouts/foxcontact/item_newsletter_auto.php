@@ -1,0 +1,1 @@
+<?php defined('_JEXEC') or die(file_get_contents('index.html'));

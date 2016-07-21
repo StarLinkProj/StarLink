@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<extension type="library" version="3.2" method="upgrade">
+
+	<name>Fox Contact</name>
+	<creationDate>Feb 2016</creationDate>
+	<author>Demis Palma</author>
+	<authorEmail>demis@fox.ra.it</authorEmail>
+	<authorUrl>http://www.fox.ra.it/</authorUrl>
+	<copyright>Copyright (c) 2010 - 2015 Demis Palma. All rights reserved.</copyright>
+	<license>GNU/GPL v3</license>
+	<version>3.6.0</version>
+	<libraryname>foxcontact</libraryname>
+
+	<files>
+		<folder>action</folder>
+		<folder>design</folder>
+		<folder>diagnostic</folder>
+		<folder>document</folder>
+		<folder>emogrifier</folder>
+		<folder>environment</folder>
+		<folder>field</folder>
+		<folder>form</folder>
+		<folder>html</folder>
+		<folder>joomla</folder>
+		<folder>message</folder>
+		<folder>struct</folder>
+		<filename>constants.php</filename>
+		<filename>index.html</filename>
+	</files>
+
+</extension>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<config addfieldpath="/administrator/components/com_foxcontact/models/fields">
+
+	<fieldset name="submitter_email" label="COM_FOXCONTACT_USER_ACTION" description="COM_FOXCONTACT_OPTIONS_EMAIL_SENDER_DSC">
+		<field type="rawhtml" label="COM_FOXCONTACT_OPTIONS_EMAIL_SENDER_WARNING"/>
+		<field name="submitter_email_from" type="ftext" size="26" label="COM_FOXCONTACT_EMAIL_ADDRESS" wizard_placeholder="system.email"/>
+		<field name="submitter_email_name" type="ftext" size="26" label="COM_FOXCONTACT_NAME" wizard_placeholder="system.email_name"/>
+	</fieldset>
+
+	<fieldset name="troubleshoot" label="COM_FOXCONTACT_TROUBLESHOOT_LBL" description="COM_FOXCONTACT_TROUBLESHOOT_DSC">
+		<field name="use_dns" type="list" label="COM_FOXCONTACT_ADVANCED_EMAIL_VERIFICATION_LBL" description="COM_FOXCONTACT_EMAIL_DOMAIN_VERIFICATION_DSC">
+			<option value="dns_check">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field name="resources_loading" type="list" label="COM_FOXCONTACT_RESOURCES_LOADING_LBL" description="COM_FOXCONTACT_RESOURCES_LOADING_DSC" default="1">
+			<option value="Performance">COM_FOXCONTACT_OPTIMIZE_PERFORMANCES</option>
+			<option value="Compatibility">COM_FOXCONTACT_OPTIMIZE_COMPATIBILITY</option>
+		</field>
+	</fieldset>
+
+	<fieldset name="permissions" label="JCONFIG_PERMISSIONS_LABEL" description="JCONFIG_PERMISSIONS_DESC">
+		<field name="rules" type="rules" label="JCONFIG_PERMISSIONS_LABEL" filter="rules" component="com_foxcontact" section="component">
+			<action name="core.admin" title="JACTION_ADMIN" description="JACTION_ADMIN_COMPONENT_DESC"/>
+			<action name="core.manage" title="JACTION_MANAGE" description="JACTION_MANAGE_COMPONENT_DESC"/>
+		</field>
+	</fieldset>
+
+</config>

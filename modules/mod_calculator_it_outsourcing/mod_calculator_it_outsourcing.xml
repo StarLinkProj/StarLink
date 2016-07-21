@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="3.5"
+	client="site">
+	<name>Калькулятор IT аутсорсинг</name>
+	<author>Victor Lahman</author>
+	<creationDate>March 2015</creationDate>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>vitold55@ukr.net</authorEmail>
+	<authorUrl>freelancer.dn.ua</authorUrl>
+	<version>3.0.0</version>
+	<description>Калькулятор StarLink</description>
+	<files>
+		<filename module="mod_calculator_it_outsourcing">mod_calculator_it_outsourcing.php</filename>
+		<filename>index.html</filename>
+		<folder>tmpl</folder>
+		<folder>language</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB.mod_calculator_it_outsourcing.ini</language>
+		<language tag="en-GB">language/en-GB.mod_calculator_it_outsourcing.sys.ini</language>
+		<language tag="ru-RU">language/ru-RU.mod_calculator_it_outsourcing.ini</language>
+		<language tag="ru-RU">language/ru-RU.mod_calculator_it_outsourcing.sys.ini</language>
+	</languages>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="pc_price" type="text" default="" label="Цена за ПК, евро" description="" size="100" />
+                <field name="server_price" type="text" default="" label="Цена за сервер, евро" description="" size="100" />
+                <field name="virtual_server_price" type="text" default="" label="Цена за виртуалку, евро" description="" size="100" />
+                <field name="personal_device_price" type="text" default="" label="Цена за перс. устр., евро" description="" size="100" />
+                <field name="additional_leave" type="text" default="" label="Плановый выезд, евро" description="" size="100" />
+                <field name="kurs_euro" type="text" default="" label="Курс евро" description="" size="100" />
+				<field name="inflation_percent" type="text" default="" label="Процент инфляции" description="" size="100" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,38 @@
+/* Loaded by the class FoxView, used in all the backend views */
+.floatleft
+{
+	float: left;
+	margin: 0 16px;
+}
+
+html[dir="rtl"] .floatleft
+{
+	float: right;
+}
+
+/* Enquiries view */
+
+/* unexported row */
+.exported
+{
+	color: #707070;
+}
+
+#adminForm .exported a
+{
+	color: #60b0f0;
+}
+
+.sender>:first-child
+{
+	font-size: 1.1em;
+}
+/* !Enquiries view */
+
+/* fixes a vertical gap between multiselect and other fields */
+.js-stools .chzn-container-multi
+{
+	vertical-align: middle;
+	margin-bottom: 8px;
+}
+

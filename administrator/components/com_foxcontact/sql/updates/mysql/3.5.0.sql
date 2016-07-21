@@ -1,0 +1,2 @@
+-- This file intentionally does nothing, but it acts as a placeholder
+-- Due to a Joomla bug, using an empty SQL update folder leads to an SQL error during the installation

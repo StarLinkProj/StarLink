@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<extension type="plugin" version="3.2" method="upgrade" group="content">
+
+	<name>plg_content_foxcontact</name>
+	<creationDate>Feb 2016</creationDate>
+	<author>Demis Palma</author>
+	<authorEmail>demis@fox.ra.it</authorEmail>
+	<authorUrl>http://www.fox.ra.it/</authorUrl>
+	<copyright>Copyright (c) 2010 - 2015 Demis Palma. All rights reserved.</copyright>
+	<license>GNU/GPL v3</license>
+	<version>3.6.0</version>
+	<description>PLG_FOXCONTACT_DESCRIPTION</description>
+
+	<files>
+		<folder>language</folder>
+		<folder>sql</folder>
+		<filename plugin="foxcontact">foxcontact.php</filename>
+		<!-- <filename>foxcontact.xml</filename> -->
+		<filename>index.html</filename>
+		<!-- <filename>install.php</filename> -->
+	</files>
+
+	<scriptfile>install.php</scriptfile>
+
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+
+</extension>
