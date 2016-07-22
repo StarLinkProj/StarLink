@@ -702,6 +702,23 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 	margin: 0 0 40px;
 }
 
+.calcItOutsource h3{
+	margin: 50px 150px 20px;
+	text-align: center;
+	font-size: 42px;
+	line-height: 50px;
+	color: #1b1b1b;
+	font-family: 'HelveticaNeue-Ligth', sans-serif;
+	font-weight: normal;
+}
+.calcItOutsource .calcItOutsourceTopParagraph{
+	margin: 0 120px 50px;
+	font-size: 16px;
+	line-height: 25px;
+	color: #373A3C;
+	text-align: center;
+}
+
 .footer{
 	background: #33383F;
 	color: #fff;
@@ -849,5 +866,8 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 	}
 	.servicesPageTopBl h3{
 		font-size: 60px;
+	}
+	.calcItOutsource{
+		display: none;
 	}
 }
