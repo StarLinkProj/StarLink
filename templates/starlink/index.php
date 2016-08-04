@@ -117,6 +117,9 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
         </div>
     <?php endif; ?>
 
+    <?php
+//  Map of office location
+    ?>
     <?php if ($_SERVER['REQUEST_URI'] == '/' || preg_match('/contacts/', $_SERVER['REQUEST_URI']) || preg_match('/services\/it-outsourcing/', $_SERVER['REQUEST_URI'])) : ?>
         <div class="container-fluid">
             <div id="map"></div>
@@ -136,7 +139,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
                 }
             </script>
             <script async defer
-                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpYNHKQLUxAJaT8jwcXYVXKGCN--0URuE&callback=initMap">
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcF4_JMyp4KWtLS_HwnKlAOw7Q9OCNleA&callback=initMap">
             </script>
         </div>
     <?php endif; ?>
@@ -146,7 +149,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
     <footer class="container-fluid footer">
         <div class="container">
             <div class="row">
-                <div class="col-md-3 col-sm-3 col-xs-12 copyright">Starlink <sup>тм</sup> - &copy; 2007-<?php echo date("Y"); ?></div>
+                <div class="col-md-3 col-sm-3 col-xs-12 copyright">&copy; Starlink Ukraine 2007-<?php echo date("Y"); ?></div>
                 <div class="col-md-6 col-sm-4 col-xs-0">
                     <jdoc:include type="modules" name="footerMenu" />
                 </div>

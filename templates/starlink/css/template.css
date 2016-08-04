@@ -722,7 +722,7 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 .footer{
 	background: #33383F;
 	color: #fff;
-	font-weight: bold;
+	font-weight: normal;
 	padding: 50px 0 165px;
 }
 #footerMenu li.item-101{
