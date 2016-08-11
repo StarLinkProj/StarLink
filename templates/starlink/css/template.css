@@ -313,7 +313,7 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 }
 .navbar-default .navbar-nav > li > a{
 	border-bottom: 5px solid transparent;
-	padding: 40px 0 35px;
+	padding: 30px 0 10px;
 	margin: 0 10px;
 	font-size: 14px;
 	color: #1b1b1b;
@@ -324,7 +324,7 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 }
 .navbar-default .navbar-nav > li.deeper{
 	padding-right: 10px;
-	background: url('../images/main/menuBottomArrow.png') no-repeat right 47px;
+	background: url('../images/main/menuBottomArrow.png') no-repeat right 35px;
 	border-right: 10px solid transparent;
 }
 .navbar-default .navbar-nav > li.deeper a:hover,
@@ -339,24 +339,7 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 	color: #1b1b1b;
 	cursor: pointer;
 }
-#mainmenu li.deeper:hover>ul.nav-child{
-	position: absolute;
-	box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
-	border-radius: 6px;
-	left: 0;
-	top: 75px;
-	background: #fff;
-	display: block;
-	z-index: 999999;
-	padding: 0;
-}
-#mainmenu li.deeper:hover>ul.nav-child:after{
-	content: '';
-	position: absolute;
-	left: 25px; top: -18px;
-	border: 10px solid transparent;
-	border-bottom: 8px solid #fff;
-}
+
 #mainmenu>li>ul.nav-child>li{
 	display: block;
 	float: left;
@@ -373,13 +356,6 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 #mainmenu>li>ul.nav-child>li>a:hover{
 	color: #ED1C24;
 	background: #ECEEEF;
-}
-#mainmenu>li>ul.nav-child>li:first-child>a{
-	border-radius: 6px 6px 0 0;
-}
-#mainmenu>li>ul.nav-child>li:last-child>a{
-	border-bottom: none;
-	border-radius: 0 0 6px 6px;
 }
 
 
@@ -780,7 +756,48 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+	#mainmenu li.deeper:hover>ul.nav-child{
+		position: absolute;
+		box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+		border-radius: 6px;
+		left: 0;
+		top: 75px;
+		background: #fff;
+		display: block;
+		z-index: 999999;
+		padding: 0;
+	}
+	#mainmenu li.deeper:hover>ul.nav-child:after{
+		content: '';
+		position: absolute;
+		left: 25px; top: -18px;
+		border: 10px solid transparent;
+		border-bottom: 8px solid #fff;
+	}
+	#mainmenu>li>ul.nav-child>li:first-child>a{
+		border-radius: 6px 6px 0 0;
+	}
+	#mainmenu>li>ul.nav-child>li:last-child>a{
+		border-bottom: none;
+		border-radius: 0 0 6px 6px;
+	}
+	.navbar-default .navbar-nav > li > a {
+		padding: 44px 0 35px;
+	}
+	.navbar-default .navbar-nav > li.deeper {
+		background: url('../images/main/menuBottomArrow.png') no-repeat right 51px;
+	}
 
+	.topPhone {
+		font-size: 23px;
+		padding: 40px 0 32px 40px;
+	}
+	.navbar-default .navbar-nav > li > a{
+		font-size: 13px;
+	}
+	#mainmenu>li>ul.nav-child>li>a {
+		font-size: 13px;
+	}
 }
 
 /* Medium devices (desktops, 992px and up) */
@@ -833,8 +850,24 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+	.topPhone {
+		font-size: 26px;
+		padding: 31px 0 32px 45px;
+	}
+	.navbar-default .navbar-nav > li > a{
+		font-size: 14px;
+	}
 	.blogFluidBl .blog .category-desc{
 		margin: 0 225px 40px;
+	}
+	.navbar-default .navbar-nav > li > a {
+		padding: 40px 0 35px;
+	}
+	.navbar-default .navbar-nav > li.deeper {
+		background: url('../images/main/menuBottomArrow.png') no-repeat right 47px;
+	}
+	#mainmenu>li>ul.nav-child>li>a {
+		font-size: 14px;
 	}
 }
 
@@ -868,6 +901,22 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 		font-size: 60px;
 	}
 	.calcItOutsource{
+		display: none;
+	}
+
+	.navbar-default {
+		margin-bottom: 20px;
+	}
+	#mainmenu li {
+		display: block;
+	}
+	#mainmenu .nav-child {
+		display: block;
+	}
+	#mainmenu>li>ul.nav-child>li {
+		float: none;
+	}
+	.mainSliderBlock{
 		display: none;
 	}
 }

@@ -25,15 +25,15 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 
     <header class="container">
         <div class="row">
-            <div class="logo col-lg-3 col-md-3 col-sm-3 col-xs-12">
+            <div class="logo col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <a title="StarLink" href="http://starlink.pp.ua/">
                     <img src="/images/main/logo.png" alt="logo"  class="logo-img">
                 </a>
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <jdoc:include type="modules" name="topPhone" />
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-sm-10 col-xs-12  col-md-offset-0 col-sm-offset-2">
                 <nav class="navbar navbar-default">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainCollapse" aria-expanded="false">
@@ -85,7 +85,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 
     <jdoc:include type="modules" name="itOutsourcingCalculator" style="xhtml" />
 
-    <div class="container-fluid">
+    <div class="container-fluid mainSliderBlock">
         <jdoc:include type="modules" name="mainSlider" />
     </div>
 

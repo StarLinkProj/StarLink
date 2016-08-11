@@ -21,39 +21,77 @@ jQuery(document).ready(function() {
 
     // Add slider for PC
     jQuery("#slider-pc-count").slider({
-        orientation: "vertical",
-        //range: "min",
-        min: 0,
-        max: 60,
+        orientation: "horizontal",
+        min: 1,
+        max: 30,
         value: 25,
         slideme: function( event1, ui2 ) {
             jQuery("#pcCount").val(ui2.value);
+
+            // Change range color
+            var val = (ui2.value - 1) / (30 - 1);
+            jQuery(this).css('background-image',
+                '-webkit-gradient(linear, left top, right top, '
+                + 'color-stop(' + val + ', #EDC054), '
+                + 'color-stop(' + val + ', #CACFD3)'
+                + ')'
+            );
+
+            jQuery("#slider-pc-count-digits").find('.slider-count-digit-active').removeClass('slider-count-digit-active');
+            jQuery("#slider-pc-count-digits").find("[data-pcdigit='" + ui2.value + "']").addClass('slider-count-digit-active');
         }
     });
+    jQuery("#slider-pc-count-digits").find("[data-pcdigit='" + 25 + "']").addClass('slider-count-digit-active');
     jQuery("#pcCount").val(jQuery("#slider-pc-count").slider("value"));
 
     // Add slider for SERVER
     jQuery("#slider-server-count").slider({
-        orientation: "vertical",
-        min: 0,
+        orientation: "horizontal",
+        min: 1,
         max: 15,
-        value: 2,
+        value: 10,
         slideme: function( event, ui ) {
             jQuery("#serverCount").val(ui.value);
+
+            // Change range color
+            var val = (ui.value - 1) / (15 - 1);
+            jQuery(this).css('background-image',
+                '-webkit-gradient(linear, left top, right top, '
+                + 'color-stop(' + val + ', #78379D), '
+                + 'color-stop(' + val + ', #D8D8D8)'
+                + ')'
+            );
+
+            jQuery("#slider-server-count-digits").find('.slider-count-digit-active').removeClass('slider-count-digit-active');
+            jQuery("#slider-server-count-digits").find("[data-serverdigit='" + ui.value + "']").addClass('slider-count-digit-active');
         }
     });
+    jQuery("#slider-server-count-digits").find("[data-serverdigit='" + 10 + "']").addClass('slider-count-digit-active');
     jQuery("#serverCount").val(jQuery("#slider-server-count").slider("value"));
 
     // Add slider for VIRTUAL SERVER
     jQuery("#slider-virtual-count").slider({
-        orientation: "vertical",
-        min: 0,
-        max: 15,
-        value: 1,
+        orientation: "horizontal",
+        min: 1,
+        max: 7,
+        value: 5,
         slideme: function( event, ui ) {
             jQuery("#virtualCount").val(ui.value);
+
+            // Change range color
+            var val = (ui.value - 1) / (7 - 1);
+            jQuery(this).css('background-image',
+                '-webkit-gradient(linear, left top, right top, '
+                + 'color-stop(' + val + ', #40BE65), '
+                + 'color-stop(' + val + ', #D8D8D8)'
+                + ')'
+            );
+
+            jQuery("#slider-virtual-count-digits").find('.slider-count-digit-active').removeClass('slider-count-digit-active');
+            jQuery("#slider-virtual-count-digits").find("[data-virtualdigit='" + ui.value + "']").addClass('slider-count-digit-active');
         }
     });
+    jQuery("#slider-virtual-count-digits").find("[data-virtualdigit='" + 5 + "']").addClass('slider-count-digit-active');
     jQuery("#virtualCount").val(jQuery("#slider-virtual-count").slider("value"));
 
 
@@ -207,5 +245,13 @@ jQuery(document).ready(function() {
     jQuery(".minus, .plus").click(function() {
         calculateResult();
     })
+
+
+    jQuery("input[name=level]").change(function() {
+        jQuery(".tb-calc-bottom tr").css('background', '#fff');
+        if (jQuery(this).is(':checked')) {
+            jQuery(this).parent().parent().css('background', '#F2F8FC');
+        }
+    });
 
 });
