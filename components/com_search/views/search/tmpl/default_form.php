@@ -14,6 +14,13 @@ JHtml::_('bootstrap.tooltip');
 $lang = JFactory::getLanguage();
 $upper_limit = $lang->getUpperLimitSearchWord();
 ?>
+
+<div class="searchintro<?php echo $this->params->get('pageclass_sfx'); ?>">
+	<?php if (!empty($this->searchword)):?>
+		<p><?php echo JText::plural('COM_SEARCH_SEARCH_KEYWORD_N_RESULTS', '<span class="badge badge-info">' . $this->total . '</span>');?></p>
+	<?php endif;?>
+</div>
+
 <form id="searchForm" action="<?php echo JRoute::_('index.php?option=com_search');?>" method="post">
 
 	<div class="btn-toolbar">
@@ -27,11 +34,7 @@ $upper_limit = $lang->getUpperLimitSearchWord();
 		<div class="clearfix"></div>
 	</div>
 
-	<div class="searchintro<?php echo $this->params->get('pageclass_sfx'); ?>">
-		<?php if (!empty($this->searchword)):?>
-		<p><?php echo JText::plural('COM_SEARCH_SEARCH_KEYWORD_N_RESULTS', '<span class="badge badge-info">' . $this->total . '</span>');?></p>
-		<?php endif;?>
-	</div>
+
 
 	<?php if ($this->params->get('search_phrases', 1)) : ?>
 		<fieldset class="phrases">

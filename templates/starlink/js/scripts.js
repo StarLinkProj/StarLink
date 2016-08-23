@@ -93,5 +93,41 @@ jQuery(document).ready(function($) {
             'slow');
     });
 
-    
+
+    // Search button changes
+    jQuery('.searchButton').click(function() {
+        jQuery('.topPhoneDiv').fadeOut(100);
+        jQuery('.mainMenuDiv').fadeOut(100);
+        setTimeout(function() {
+            jQuery('.searchLineDiv').fadeIn(200);
+            jQuery('#mod-search-searchword').focus();
+        }, 250);
+    });
+    jQuery('#mod-search-searchword').focusout(function() {
+        jQuery('.searchLineDiv').fadeOut(100);
+        setTimeout(function() {
+            jQuery('.topPhoneDiv').fadeIn(100);
+            jQuery('.mainMenuDiv').fadeIn(100);
+        }, 150);
+    });
+
+    // Pre-footer height
+    jQuery('.pre-footer').css('height', jQuery('.footer').innerHeight());
+
+    // Add required attribute for input fields Fox with class='foxContactAddRequired'
+    jQuery('.foxContactAddRequired input[type="text"]').attr('required', true);
+    jQuery('.foxContactAddTypeEmail input[type="text"]').attr('type', 'email');
+
+    // Change modal text before submit form IT-outsourcing
+    jQuery('form[name="fox-form-m115"]').submit(function(e) {
+        var form = this;
+        e.preventDefault();
+
+        jQuery('#fox-container-m115').prepend('<div class="modalFormCongratulation" xmlns="http://www.w3.org/1999/html"><h2>Ваша заявка успешно отправлена</h2><p>Спасибо за ваше обращение! Наши специалисты ответят на Ваш запрос в ближайшее время.</p></div>');
+
+        setTimeout(function() {
+            form.submit();
+        }, 3000);
+    });
+
 });

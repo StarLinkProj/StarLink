@@ -181,8 +181,8 @@ span.un-upper {
             linear,
             left top,
             right top,
-            color-stop(0.64, #78379D),
-            color-stop(0.64, #D8D8D8)
+            color-stop(0.67, #78379D),
+            color-stop(0.67, #D8D8D8)
     );
     border-radius: 28px;
     position: relative;
@@ -206,7 +206,7 @@ span.un-upper {
 }
 
 #slider-server-count-digits .slider-server-count-digit {
-    width: 6.35%;
+    width: 5.91%;
     display: inline-block;
     text-align: center;
     font-size: 11px;
@@ -216,12 +216,12 @@ span.un-upper {
 
 #slider-server-count-digits .slider-server-count-digit:first-child {
     text-align: left;
-    width: 3.5%;
+    width: 3.2%;
 }
 
 #slider-server-count-digits .slider-server-count-digit:last-child {
     text-align: right;
-    width: 4%;
+    width: 3.6%;
 }
 
 #slider-virtual-count {
@@ -231,8 +231,8 @@ span.un-upper {
             linear,
             left top,
             right top,
-            color-stop(0.64, #40BE65),
-            color-stop(0.64, #D8D8D8)
+            color-stop(0.68, #40BE65),
+            color-stop(0.68, #D8D8D8)
     );
     border-radius: 28px;
     position: relative;
@@ -250,7 +250,7 @@ span.un-upper {
 }
 
 #slider-virtual-count-digits .slider-virtual-count-digit {
-    width: 14.2%;
+    width: 12.4%;
     display: inline-block;
     text-align: center;
     font-size: 11px;
@@ -260,12 +260,12 @@ span.un-upper {
 
 #slider-virtual-count-digits .slider-virtual-count-digit:first-child {
     text-align: left;
-    width: 8.5%;
+    width: 6.2%;
 }
 
 #slider-virtual-count-digits .slider-virtual-count-digit:last-child {
     text-align: right;
-    width: 8.5%;
+    width: 6%;
 }
 
 .pc_count_div {
@@ -497,11 +497,11 @@ td.calcTdRangeNameText {
 }
 
 .virtualServerNameText {
-    text-align: center;
+    text-align: left !important;
     color: #818A91;
     line-height: 20px;
     font-weight: 600;
-    padding: 5px;
+    padding: 5px 90px;
 }
 
 .pt20 {
@@ -593,10 +593,10 @@ td.calcTdRangeNameText {
         width: 3.003%;
     }
     #slider-server-count-digits .slider-server-count-digit {
-        width: 6.21%;
+        width: 5.76%;
     }
     #slider-virtual-count-digits .slider-virtual-count-digit {
-        width: 13.85%;
+        width: 10.65%;
     }
     .minus {
         margin: 2px 0 2px 35px;

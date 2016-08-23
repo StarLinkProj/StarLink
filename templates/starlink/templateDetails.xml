@@ -33,6 +33,7 @@
 	<positions>
 		<position>topPhone</position>
 		<position>mainMenu</position>
+		<position>search</position>
 		<position>mainSlider</position>
 		<position>partners</position>
 		<position>reviews</position>
@@ -50,6 +51,7 @@
 		<position>itOutsourcingCalculator</position>
 		<position>footerMenu</position>
 		<position>footerSocNetworks</position>
+		<position>modalContactForm</position>
 	</positions>
 	
 </extension>

@@ -4,10 +4,14 @@
 html {
 	/* scrollbar fix (prevent ugly left pull for lower content sites) */
 	overflow-y: scroll;
+	min-height: 100%;
+	height: 100%;
 }
 
 body {
 	font-family: 'Roboto', sans-serif;
+	min-height: 100%;
+	position: relative;
 }
 
 a:hover, a:focus{
@@ -23,6 +27,18 @@ a:hover, a:focus{
 	font-weight: bold;
 	padding: 31px 0 32px 45px;
 	background: url('../images/main/topPhone.png') no-repeat left center;
+}
+.topPhoneMobile{
+	background: #33383F;
+}
+.topPhoneMobile .topPhone{
+	font-size: 26px;
+	font-weight: bold;
+	padding: 7px 0 7px 45px;
+	background: url('../images/main/topPhone.png') no-repeat left center;
+	width: 275px;
+	margin: 0 auto;
+	color: #fff;
 }
 
 .partners-container{
@@ -141,7 +157,8 @@ div#fox-container-m95 h2{
 	color: #3C3D41;
 	margin-bottom: 0;
 }
-div#fox-container-m95 .freeQuestionnaire button.btn, div#fox-container-m100 .sendLetterButton button.btn{
+div#fox-container-m95 .freeQuestionnaire button.btn, div#fox-container-m100 .sendLetterButton button.btn,
+div#fox-container-m115 .sendLetterButton button.btn{
 	text-align: center;
 	width: 100%;
 	padding: 20px;
@@ -152,13 +169,16 @@ div#fox-container-m95 .freeQuestionnaire button.btn, div#fox-container-m100 .sen
 	margin: 0;
 	border: 1px solid #3FA2F7;
 }
-div#fox-container-m95 .freeQuestionnaire button.btn:hover, div#fox-container-m100 .sendLetterButton button.btn:hover{
+div#fox-container-m95 .freeQuestionnaire button.btn:hover, div#fox-container-m100 .sendLetterButton button.btn:hover,
+div#fox-container-m115 .sendLetterButton button.btn:hover{
 	background: #fff;
 }
-div#fox-container-m95 .freeQuestionnaire button.btn:hover span, div#fox-container-m100 .sendLetterButton button.btn:hover span{
+div#fox-container-m95 .freeQuestionnaire button.btn:hover span, div#fox-container-m100 .sendLetterButton button.btn:hover span,
+div#fox-container-m115 .sendLetterButton button.btn:hover span{
 	color: #3FA2F7;
 }
-div#fox-container-m95 .freeQuestionnaire button.btn span, div#fox-container-m100 .sendLetterButton button.btn span{
+div#fox-container-m95 .freeQuestionnaire button.btn span, div#fox-container-m100 .sendLetterButton button.btn span,
+div#fox-container-m115 .sendLetterButton button.btn span{
 	color: #fff;
 	font-weight: bold;
 	font-size: 16px;
@@ -338,6 +358,24 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 	background: none;
 	color: #1b1b1b;
 	cursor: pointer;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+	 background-color: transparent;
+}
+.navbar-default .navbar-toggle {
+	 border-color: transparent;
+}
+.navbar-toggle .icon-bar {
+	display: block;
+	width: 28px;
+	height: 3px;
+	border-radius: 2px;
+}
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #ED1C24;
+}
+.navbar-default .collapsed .icon-bar {
+	background-color: #33383F;
 }
 
 #mainmenu>li>ul.nav-child>li{
@@ -695,11 +733,115 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 	text-align: center;
 }
 
+.searchButton {
+	display: none;
+}
+#searchForm{
+	display: none;
+}
+#mod-search-searchword{
+	color: #333;
+	font-size: 26px;
+	font-weight: bold;
+	padding: 5px 5px 5px 40px;
+	background: url('../images/main/search_icon.png') no-repeat center left;
+	border: none;
+	outline: none;
+	width: 100%;
+}
+#mod-search-searchword::-webkit-input-placeholder {color:#333;}
+#mod-search-searchword::-moz-placeholder          {color:#333;}/* Firefox 19+ */
+#mod-search-searchword:-moz-placeholder           {color:#333;}/* Firefox 18- */
+#mod-search-searchword:-ms-input-placeholder      {color:#333;}
+.search{
+	margin: 30px 0;
+}
+.searchLineDiv{
+	display: none;
+}
+
+/*** Modal contact form ***/
+#modalContactFormBlock form{
+	padding: 10px 30px;
+}
+.modalContactFormH2{
+	font-weight: 300;
+	font-size: 32px;
+	line-height: 40px;
+	color: #000;
+}
+div#fox-container-m115 .control-label, div#fox-container-m115 .control-label label{
+	display: none !important;
+}
+#modalContactFormBlock form .controls{
+	width: 100%;
+}
+#modalContactFormBlock form .controls input[type="text"], #modalContactFormBlock form .controls input[type="email"] {
+	padding: 12px 15px;
+	font-size: 14px;
+	height: auto;
+	line-height: 14px;
+	margin-bottom: 20px;
+	width: 100%;
+	border-radius: 4px;
+	color: #555555;
+	background-color: #ffffff;
+}
+#modalContactFormBlock div#fox-container-m115 .fox-form-stacked .fox-item-submit .controls {
+	width: 100%;
+}
+button.modalFormCloseBtn{
+	background: url('../images/calculator/close-icon.png') no-repeat;
+	position: absolute;
+	width: 31px;
+	height: 30px;
+	display: block;
+	right: 20px;
+	top: 20px;
+	opacity: 1;
+	outline: none;
+	z-index: 10000;
+}
+.modalFormCongratulation{
+	position: absolute;
+	background: #fff;
+	z-index: 1000;
+	width: 550px;
+	height: 270px;
+	left: 30px;
+	top: 30px;
+}
+.modalFormCongratulation h2{
+	margin: 40px auto 0;
+	width: 320px;
+	text-align: center;
+	font-weight: 300;
+	font-size: 32px;
+	color: #000000;
+	line-height: 40px;
+}
+.modalFormCongratulation p{
+	font-size: 14px;
+	color: #1B1B1B;
+	letter-spacing: 0;
+	line-height: 20px;
+	text-align: center;
+	width: 410px;
+	display: block;
+	margin: 20px auto;
+}
+
+
 .footer{
 	background: #33383F;
 	color: #fff;
 	font-weight: bold;
 	padding: 50px 0 165px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: auto;
+	width: 100%;
 }
 #footerMenu li.item-101{
 	display: none;
@@ -782,26 +924,30 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 		border-radius: 0 0 6px 6px;
 	}
 	.navbar-default .navbar-nav > li > a {
-		padding: 44px 0 35px;
+		padding: 44px 0 31px;
 	}
 	.navbar-default .navbar-nav > li.deeper {
 		background: url('../images/main/menuBottomArrow.png') no-repeat right 51px;
 	}
-
-	.topPhone {
-		font-size: 23px;
-		padding: 40px 0 32px 40px;
-	}
 	.navbar-default .navbar-nav > li > a{
 		font-size: 13px;
+		margin: 0 7px;
 	}
 	#mainmenu>li>ul.nav-child>li>a {
 		font-size: 13px;
+	}
+	.topPhone {
+		font-size: 23px;
+		margin-top: 8px;
+		padding: 31px 0 28px 45px;
 	}
 }
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+	.topPhone{
+		width: auto;
+	}
 	.aboutMainCenterText h4{
 		margin: 0 110px 40px;
 	}
@@ -846,6 +992,11 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 		margin-left: 160px;
 		margin-top: 33px;
 	}
+	.searchButton{
+		margin: 34px 0 24px 5px;
+		display: inline-block;
+		padding: 9px 2px 9px 7px;
+	}
 }
 
 /* Large devices (large desktops, 1200px and up) */
@@ -853,6 +1004,7 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 	.topPhone {
 		font-size: 26px;
 		padding: 31px 0 32px 45px;
+		margin-top: 0;
 	}
 	.navbar-default .navbar-nav > li > a{
 		font-size: 14px;
@@ -869,20 +1021,21 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 	#mainmenu>li>ul.nav-child>li>a {
 		font-size: 14px;
 	}
+	.searchButton {
+		margin: 30px 0 30px 5px;
+		display: inline-block;
+	}
 }
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1600px) {
 	.navbar{
-		margin-left: 65px;
+		margin-left: 50px;
 	}
 }
 
 /* for higher resolutions (android and retina) */
 @media screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (max--moz-device-pixel-ratio: 1.5) {
-	#footerMenu{
-		display: none;
-	}
 	.copyright{
 		text-align: center;
 		margin-bottom: 20px;
@@ -905,7 +1058,7 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 	}
 
 	.navbar-default {
-		margin-bottom: 20px;
+		min-height: 0;
 	}
 	#mainmenu li {
 		display: block;
@@ -918,5 +1071,36 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 	}
 	.mainSliderBlock{
 		display: none;
+	}
+	.navbar-header{
+		width: 50px;
+		float: right;
+		margin-top: -75px;
+	}
+	.services h3 {
+		width: 80%;
+	}
+	div#fox-container-m100 .fox-form-stacked #fox-m100-submit-box .controls {
+		width: 100%;
+	}
+	div#fox-container-m95 .freeQuestionnaire button.btn span, div#fox-container-m100 .sendLetterButton button.btn span {
+		font-size: 14px;
+	}
+	div#fox-container-m95 h2 {
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+}
+
+@media (max-width: 1024px) {
+	.footer{
+		padding: 50px 0 50px;
+	}
+	.footer .container .row > div{
+		text-align: center;
+		margin: 15px 0;
+	}
+	.footerSocNetworks {
+		 text-align: center;
 	}
 }

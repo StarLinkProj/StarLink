@@ -13,7 +13,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
     <link rel="stylesheet" href="/templates/starlink/css/calculator.css" type="text/css">
     <jdoc:include type="head" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <script src="/templates/starlink/js/libs/bootstrap.min.js" type="text/javascript"></script>
+<!--    <script src="/templates/starlink/js/libs/bootstrap.min.js" type="text/javascript"></script>-->
     <script src="/templates/starlink/js/libs/jquery-ui.js" type="text/javascript"></script>
     <script src="/templates/starlink/js/scripts.js" type="text/javascript"></script>
     <?php if (preg_match('/services\/it-outsourcing/', $_SERVER['REQUEST_URI'])) : ?>
@@ -25,15 +25,31 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 
     <header class="container">
         <div class="row">
-            <div class="logo col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <?php
+                require_once 'vendor/MobileDetect.php';
+                $mobileDetectObj = new Mobile_Detect();
+            ?>
+
+            <?php if ($mobileDetectObj->isMobile() || $mobileDetectObj->isTablet()) : ?>
+                <div class="container-fluid">
+                    <div class="topPhoneMobile">
+                        <jdoc:include type="modules" name="topPhone" />
+                    </div>
+            <?php endif; ?>
+
+            <div class="logo col-lg-3 col-md-3 col-sm-12 col-xs-12">
                 <a title="StarLink" href="http://starlink.pp.ua/">
                     <img src="/images/main/logo.png" alt="logo"  class="logo-img">
                 </a>
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <jdoc:include type="modules" name="topPhone" />
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-10 col-xs-12  col-md-offset-0 col-sm-offset-2">
+
+            <?php if (!$mobileDetectObj->isMobile() && !$mobileDetectObj->isTablet()) : ?>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 topPhoneDiv">
+                    <jdoc:include type="modules" name="topPhone" />
+                </div>
+            <?php endif; ?>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mainMenuDiv">
                 <nav class="navbar navbar-default">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainCollapse" aria-expanded="false">
@@ -45,8 +61,12 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
                     </div>
                     <div class="collapse navbar-collapse" id="mainCollapse">
                         <jdoc:include type="modules" name="mainMenu" />
+                        <a href="javascript:void(0)" class="searchButton"><img src="/images/main/search_icon.png"></a>
                     </div>
                 </nav>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-0 col-xs-0 searchLineDiv">
+                <jdoc:include type="modules" name="search" />
             </div>
         </div>
     </header>
@@ -143,19 +163,29 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 
     <jdoc:include type="modules" name="reviews" style="xhtml" />
 
+    <div class="pre-footer"></div>
     <footer class="container-fluid footer">
         <div class="container">
             <div class="row">
-                <div class="col-md-3 col-sm-3 col-xs-12 copyright">Starlink <sup>тм</sup> - &copy; 2007-<?php echo date("Y"); ?></div>
-                <div class="col-md-6 col-sm-4 col-xs-0">
+                <div class="col-md-3 col-sm-12 col-xs-12 copyright">Starlink <sup>тм</sup> - &copy; 2007-<?php echo date("Y"); ?></div>
+                <div class="col-md-6 col-sm-12 col-xs-12">
                     <jdoc:include type="modules" name="footerMenu" />
                 </div>
-                <div class="col-md-3 col-sm-5 col-xs-12">
+                <div class="col-md-3 col-sm-12 col-xs-12">
                     <jdoc:include type="modules" name="footerSocNetworks" />
                 </div>
             </div>
         </div>
     </footer>
+
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modalContactFormBlock">
+        <div class="modal-dialog modal-custom-form" role="document">
+            <div class="modal-content">
+                <button type="button" class="modalFormCloseBtn close" data-dismiss="modal"></button>
+                <jdoc:include type="modules" name="modalContactForm" />
+            </div>
+        </div>
+    </div>
 
 </body>
 

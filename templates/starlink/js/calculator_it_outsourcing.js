@@ -47,14 +47,14 @@ jQuery(document).ready(function() {
     // Add slider for SERVER
     jQuery("#slider-server-count").slider({
         orientation: "horizontal",
-        min: 1,
+        min: 0,
         max: 15,
         value: 10,
         slideme: function( event, ui ) {
             jQuery("#serverCount").val(ui.value);
 
             // Change range color
-            var val = (ui.value - 1) / (15 - 1);
+            var val = (ui.value) / (16 - 1);
             jQuery(this).css('background-image',
                 '-webkit-gradient(linear, left top, right top, '
                 + 'color-stop(' + val + ', #78379D), '
@@ -72,14 +72,14 @@ jQuery(document).ready(function() {
     // Add slider for VIRTUAL SERVER
     jQuery("#slider-virtual-count").slider({
         orientation: "horizontal",
-        min: 1,
+        min: 0,
         max: 7,
         value: 5,
         slideme: function( event, ui ) {
             jQuery("#virtualCount").val(ui.value);
 
             // Change range color
-            var val = (ui.value - 1) / (7 - 1);
+            var val = (ui.value) / (8 - 1);
             jQuery(this).css('background-image',
                 '-webkit-gradient(linear, left top, right top, '
                 + 'color-stop(' + val + ', #40BE65), '
@@ -101,7 +101,7 @@ jQuery(document).ready(function() {
     var virtualPrice = jQuery("#virtual_server_price").val();
     var personalDevicePrice = jQuery("#personal_device_price").val();
     var additionalLeavePrice = jQuery("#additional_leave").val();
-    var kursEuro = jQuery("#kurs_euro").val();
+    var kursEuro = parseFloat(jQuery("#kurs_euro").val());
     var inflationPercent = jQuery("#inflation_percent").val();
 
     var pcPriceArr = pcPrice.split("; ").map(Number);
@@ -116,6 +116,7 @@ jQuery(document).ready(function() {
         var pcCount = parseInt(jQuery("#pcCount").val());
         var serverCount = parseInt(jQuery("#serverCount").val());
         var virtualCount = parseInt(jQuery("#virtualCount").val());
+        var nTotalServ = serverCount + virtualCount;
 
         var leavesCount1 = parseInt(jQuery("#leavesCount1").val());
         var leavesCount2 = parseInt(jQuery("#leavesCount2").val());
@@ -123,8 +124,9 @@ jQuery(document).ready(function() {
 
         var serviceLevel = parseInt(jQuery("input[name=level]:checked").val());
 
+        var discount = Math.max( pcCount < 20 ? 0 : pcCount < 40 ? 0.1 : pcCount < 60 ? 0.2 : 0.25, nTotalServ < 6 ? 0 : nTotalServ < 12 ? 0.1 : 0.15 );
+
         if(serviceLevel == 0) {
-            //console.log("leavesCount1");
             result = pcCount*pcPriceArr[0] + serverCount*serverPriceArr[0] + virtualCount*virtualPriceArr[0] + leavesCount1*additionalLeavePriceArr[0];
         }
 
@@ -136,7 +138,7 @@ jQuery(document).ready(function() {
             result = pcCount*pcPriceArr[2] + serverCount*serverPriceArr[2] + virtualCount*virtualPriceArr[2] + leavesCount3*additionalLeavePriceArr[2];
         }
 
-        result = Math.ceil(result*inflationPercent*kursEuro);
+        result = Math.round(result * inflationPercent * kursEuro * (1 - discount));
 
         jQuery("#calcResult").val(result);
     }
@@ -240,11 +242,11 @@ jQuery(document).ready(function() {
     // Change "Service level"
     jQuery("input[name='level']:radio").change(function() {
         calculateResult();
-    })
+    });
 
     jQuery(".minus, .plus").click(function() {
         calculateResult();
-    })
+    });
 
 
     jQuery("input[name=level]").change(function() {
@@ -253,5 +255,6 @@ jQuery(document).ready(function() {
             jQuery(this).parent().parent().css('background', '#F2F8FC');
         }
     });
+
 
 });

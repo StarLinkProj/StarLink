@@ -3,4 +3,5 @@ web.config
 web.config.txt
 .htaccess
 .idea
-
+logs/
+tmp/
