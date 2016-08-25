@@ -4,6 +4,11 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 
 ?><!doctype html>
 
+<?php
+    require_once 'vendor/MobileDetect.php';
+    $mobileDetectObj = new Mobile_Detect();
+?>
+
 <html lang="<?php echo $this->language; ?>">
 
 <head>
@@ -13,7 +18,9 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
     <link rel="stylesheet" href="/templates/starlink/css/calculator.css" type="text/css">
     <jdoc:include type="head" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-<!--    <script src="/templates/starlink/js/libs/bootstrap.min.js" type="text/javascript"></script>-->
+    <?php if ($mobileDetectObj->isMobile() || $mobileDetectObj->isTablet()) : ?>
+        <script src="/templates/starlink/js/libs/bootstrap.min.js" type="text/javascript"></script>
+    <?php endif; ?>
     <script src="/templates/starlink/js/libs/jquery-ui.js" type="text/javascript"></script>
     <script src="/templates/starlink/js/scripts.js" type="text/javascript"></script>
     <?php if (preg_match('/services\/it-outsourcing/', $_SERVER['REQUEST_URI'])) : ?>
@@ -25,10 +32,6 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 
     <header class="container">
         <div class="row">
-            <?php
-                require_once 'vendor/MobileDetect.php';
-                $mobileDetectObj = new Mobile_Detect();
-            ?>
 
             <?php if ($mobileDetectObj->isMobile() || $mobileDetectObj->isTablet()) : ?>
                 <div class="container-fluid">
