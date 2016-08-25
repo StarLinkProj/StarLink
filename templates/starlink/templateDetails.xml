@@ -52,6 +52,7 @@
 		<position>footerMenu</position>
 		<position>footerSocNetworks</position>
 		<position>modalContactForm</position>
+		<position>customModule</position>
 	</positions>
 	
 </extension>

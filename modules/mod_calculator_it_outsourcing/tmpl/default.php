@@ -12,7 +12,7 @@
 				<td colspan="4" class="pt20">
 					<div id="slider-pc-count"></div>
 					<div id="slider-pc-count-digits">
-						<?php for ($pcCountDigit = 1; $pcCountDigit <= 30; $pcCountDigit++) : ?>
+						<?php for ($pcCountDigit = 0; $pcCountDigit <= 29; $pcCountDigit++) : ?>
 							<span class="slider-pc-count-digit" data-pcDigit="<?=$pcCountDigit?>"><?=$pcCountDigit?></span>
 						<?php endfor; ?>
 					</div>

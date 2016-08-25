@@ -37,7 +37,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
                     </div>
             <?php endif; ?>
 
-            <div class="logo col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <div class="logo col-lg-3 col-md-3 col-sm-9 col-xs-9">
                 <a title="StarLink" href="http://starlink.pp.ua/">
                     <img src="/images/main/logo.png" alt="logo"  class="logo-img">
                 </a>
@@ -85,7 +85,8 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 
     <jdoc:include type="modules" name="itOutsourcingWeProposeYou" style="xhtml" />
 
-    <?php if ($_SERVER['REQUEST_URI'] != '/' && !preg_match('/news/', $_SERVER['REQUEST_URI'])) : ?>
+    <?php $itemId = JRequest::getInt('Itemid'); ?>
+    <?php if ($_SERVER['REQUEST_URI'] != '/' && !preg_match('/news/', $_SERVER['REQUEST_URI']) && !in_array($itemId, [120, 121, 122, 123, 124])) : ?>
         <div class="container contentBl">
             <jdoc:include type="component" />
         </div>
@@ -160,6 +161,8 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
             </script>
         </div>
     <?php endif; ?>
+
+    <jdoc:include type="modules" name="customModule" />
 
     <jdoc:include type="modules" name="reviews" style="xhtml" />
 

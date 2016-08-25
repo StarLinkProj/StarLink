@@ -126,8 +126,8 @@ span.un-upper {
             linear,
             left top,
             right top,
-            color-stop(0.82, #EDC054),
-            color-stop(0.82, #CACFD3)
+            color-stop(0.86, #EDC054),
+            color-stop(0.86, #CACFD3)
     );
     border-radius: 28px;
     position: relative;

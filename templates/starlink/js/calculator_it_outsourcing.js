@@ -22,14 +22,14 @@ jQuery(document).ready(function() {
     // Add slider for PC
     jQuery("#slider-pc-count").slider({
         orientation: "horizontal",
-        min: 1,
-        max: 30,
+        min: 0,
+        max: 29,
         value: 25,
         slideme: function( event1, ui2 ) {
             jQuery("#pcCount").val(ui2.value);
 
             // Change range color
-            var val = (ui2.value - 1) / (30 - 1);
+            var val = (ui2.value) / (30 - 1);
             jQuery(this).css('background-image',
                 '-webkit-gradient(linear, left top, right top, '
                 + 'color-stop(' + val + ', #EDC054), '
