@@ -8,7 +8,7 @@
 
 		<table width="100%" class="tb-calc" cellpadding="0" cellspacing="0" align="center">
 			<tr>
-				<td width="15%" class="calcTdRangeNameText">КОЛИЧЕСТВО КОМПЮТЕРОВ</td>
+				<td width="15%" class="calcTdRangeNameText">КОЛИЧЕСТВО КОМПЬЮТЕРОВ</td>
 				<td colspan="4" class="pt20">
 					<div id="slider-pc-count"></div>
 					<div id="slider-pc-count-digits">
