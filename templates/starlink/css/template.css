@@ -1600,8 +1600,9 @@ button.modalFormCloseBtn{
 		font-size: 42px;
 		line-height: 56px;
 	}
-	.servicesBl4H2{
+	.servicesBl4H2 {
 		margin: 50px 5%;
+	}
 }
 
 @media (max-width: 1024px) {
