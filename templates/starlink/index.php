@@ -89,7 +89,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
     <jdoc:include type="modules" name="itOutsourcingWeProposeYou" style="xhtml" />
 
     <?php $itemId = JRequest::getInt('Itemid'); ?>
-    <?php if ($_SERVER['REQUEST_URI'] != '/' && !preg_match('/news/', $_SERVER['REQUEST_URI']) && !in_array($itemId, [118, 120, 121, 122, 123, 124])) : ?>
+    <?php if ($_SERVER['REQUEST_URI'] != '/' && !preg_match('/news/', $_SERVER['REQUEST_URI']) && !in_array($itemId, [105, 107, 108, 109, 110, 118, 120, 121, 122, 123, 124])) : ?>
         <div class="container contentBl">
             <jdoc:include type="component" />
         </div>
@@ -140,6 +140,8 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 
     <jdoc:include type="modules" name="partners" style="xhtml" />
 
+    <jdoc:include type="modules" name="customModule" />
+
     <div class="container-fluid services-bl">
         <div class="container">
             <div class="row">
@@ -189,8 +191,6 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
             </script>
         </div>
     <?php endif; ?>
-
-    <jdoc:include type="modules" name="customModule" />
 
     <jdoc:include type="modules" name="reviews" style="xhtml" />
 

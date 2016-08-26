@@ -57,8 +57,13 @@ class SearchModelSearch extends JModelLegacy
 		$app    = JFactory::getApplication();
 		$config = JFactory::getConfig();
 
+		$customLimit = 4;
+		if (preg_match('/\&Itemid\=118/', $_SERVER['REQUEST_URI'] )) {
+			$customLimit = 20;
+		}
+
 		// Get the pagination request variables
-		$this->setState('limit', $app->getUserStateFromRequest('com_search.limit', 'limit', $config->get('list_limit'), 'uint'));
+		$this->setState('limit', $app->getUserStateFromRequest('com_search.limit', 'limit', $customLimit, 'uint'));
 		$this->setState('limitstart', $app->input->get('limitstart', 0, 'uint'));
 
 		// Get parameters.

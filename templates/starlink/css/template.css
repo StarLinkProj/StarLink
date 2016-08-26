@@ -1131,6 +1131,94 @@ button.modalFormCloseBtn{
 	background: #2C99ED;
 }
 
+/*********** Services **********/
+.servicesTopBlH2{
+	line-height: 80px;
+	color: #fff;
+	font-size: 72px;
+	font-weight: 300;
+	margin: 0;
+	text-align: center;
+}
+.servicesBl2{
+	padding-bottom: 50px;
+}
+.servicesBl2H2{
+	margin: 50px 0;
+	text-align: center;
+	font-family: 'HelveticaNeue-Ligth', sans-serif;
+	font-size: 42px;
+	line-height: 50px;
+	color: #1b1b1b;
+}
+.servicesBl2 p{
+	font-family: 'HelveticaNeue-Regular', sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+	margin-bottom: 20px;
+}
+.servicesBl4{
+	padding-bottom: 50px;
+}
+.servicesBl4 .servicesBl4InnersingleBl{
+	margin-bottom: 50px;
+}
+.servicesBl4H2{
+	margin: 50px 15%;
+	text-align: center;
+	font-family: 'HelveticaNeue-Ligth', sans-serif;
+	font-size: 42px;
+	line-height: 50px;
+	color: #1b1b1b;
+}
+.servicesBl4 h4 {
+	margin: 20px 0;
+	font-weight: normal;
+}
+.servicesBl4 h4 a {
+	color: #3FA2F7;
+	font-size: 18px;
+	line-height: 20px;
+}
+.servicesBl4 p {
+	line-height: 20px;
+	color: #9b9b9b;
+	margin: 0;
+}
+.servicesBl1H2{
+	line-height: 80px;
+	color: #fff;
+	font-size: 72px;
+	font-weight: 300;
+	margin: 0 0 20px;
+	text-align: center;
+}
+
+.servicesBgBl1Margin {
+	padding: 50px 0;
+}
+.servicesIntegrationBgBl1 {
+	background: url('../images/main/it-integration-bl1Bg.jpg') no-repeat center center;
+	background-size: cover;
+	padding: 41px 0 40px;
+}
+.servicesDataCenterBgBl1 {
+	background: url('../images/main/data-center-bl1Bg.jpg') no-repeat center center;
+	background-size: cover;
+	padding: 41px 0 40px;
+}
+.servicesSecurityBgBl1 {
+	background: url('../images/main/security-bl1Bg.jpg') no-repeat center center;
+	background-size: cover;
+	padding: 41px 0 40px;
+}
+.servicesWebProjectsBgBl1{
+	background: url('../images/main/web-solutions-bl1Bg.jpg') no-repeat center center;
+	background-size: cover;
+	padding: 41px 0 40px;
+}
+
+
 .footer{
 	background: #33383F;
 	color: #fff;
@@ -1502,6 +1590,19 @@ button.modalFormCloseBtn{
 		width: 70%;
 		margin: 0 15%;
 	}
+	.servicesBl4H2, .itOutsourcingWeProposeYou h3, .servicesBl2H2 {
+		font-size: 32px;
+		line-height: 40px;
+	}
+	.solutionBgBl1Margin .solutionBl1H2{
+		font-size: 50px;
+	}
+	.servicesBl1H2{
+		font-size: 42px;
+		line-height: 56px;
+	}
+	.servicesBl4H2{
+		margin: 50px 5%;
 }
 
 @media (max-width: 1024px) {

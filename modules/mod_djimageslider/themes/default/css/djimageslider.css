@@ -64,6 +64,7 @@ ul.djslider-in > li {
 	background: #fff;
 	color: #3c506b;
 	text-decoration: none;
+	text-shadow: 0 0 10px #303030;
 }
 
 /* Navigation buttons / indicators */
@@ -150,6 +151,7 @@ ul.djslider-in > li {
 		color: #fff;
 		padding: 15px 15px 5px;
 		text-align: center;
+		text-shadow: 0 0 10px #303030;
 	}
 	.slide-desc-text-default .slide-title {
 		font-size: 45px;
@@ -201,6 +203,7 @@ ul.djslider-in > li {
 		color: #fff;
 		padding: 15px 15px 5px;
 		text-align: center;
+		text-shadow: 0 0 10px #303030;
 	}
 	.slide-desc-text-default .slide-title {
 		font-size: 45px;
@@ -262,6 +265,7 @@ ul.djslider-in > li {
 		color: #fff;
 		padding: 15px 15px 5px;
 		text-align: center;
+		text-shadow: 0 0 10px #303030;
 	}
 	.slide-desc-text-default .slide-title {
 		font-size: 55px;
@@ -304,6 +308,7 @@ ul.djslider-in > li {
 		color: #fff;
 		padding: 15px 15px 5px;
 		text-align: center;
+		text-shadow: 0 0 10px #303030;
 	}
 	.slide-desc-text-default .slide-title {
 		font-size: 72px;
