@@ -14,13 +14,13 @@
 					</h2>
 				</div>
 
-				<div class="blogCatAndDate"><?php echo $item->category_title; ?> | <?php echo date("d.m.Y", strtotime($item->created)); ?></div>
+				<div class="newsCatAndDate"><?php echo $item->category_title; ?> | <?php echo date("d.m.Y", strtotime($item->created)); ?></div>
 
 				<?php echo $item->introtext; ?>
 
-				<div class="blogCategoryItemFooter row">
-					<div class="blogHits col-md-6 col-sm-6 col-xs-7"><?php echo $item->hits; ?></div>
-					<div class="blogReadMore col-md-6 col-sm-6 col-xs-5">
+				<div class="newsCategoryItemFooter row">
+					<div class="newsHits col-md-6 col-sm-6 col-xs-7"><?php echo $item->hits; ?></div>
+					<div class="newsReadMore col-md-6 col-sm-6 col-xs-5">
 						<p class="readmore">
 							<a class="btn" href="<?=$item->link?>" itemprop="url"></a>
 						</p>

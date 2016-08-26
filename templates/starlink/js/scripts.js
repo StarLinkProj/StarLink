@@ -49,16 +49,16 @@ jQuery(document).ready(function($) {
     });
 
     // Show more news on Blog page
-    var singleNews = jQuery(".blogFluidBl .blog .row .items-row");
+    var singleNews = jQuery(".newsFluidBl .blog .row .items-row");
     var newsCount = singleNews.size();
     singleNews.hide();
     var loadNewsOneTimeCount = 6;
-    jQuery('.blogFluidBl .blog .row .items-row:lt(' + loadNewsOneTimeCount + ')').show();
-    jQuery('.blogShowMoreNews').click(function () {
+    jQuery('.newsFluidBl .blog .row .items-row:lt(' + loadNewsOneTimeCount + ')').show();
+    jQuery('.newsShowMoreNews').click(function () {
         loadNewsOneTimeCount = (loadNewsOneTimeCount + loadNewsOneTimeCount <= newsCount) ? loadNewsOneTimeCount + loadNewsOneTimeCount : newsCount;
-        jQuery('.blogFluidBl .blog .row .items-row:lt(' + loadNewsOneTimeCount + ')').delay(200).slideDown(800);
+        jQuery('.newsFluidBl .blog .row .items-row:lt(' + loadNewsOneTimeCount + ')').delay(200).slideDown(800);
         if(loadNewsOneTimeCount == newsCount){
-            jQuery('.blogShowMoreNews').delay(800).slideUp(100);
+            jQuery('.newsShowMoreNews').delay(800).slideUp(100);
         }
     });
 

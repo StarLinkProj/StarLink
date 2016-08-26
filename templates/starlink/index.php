@@ -89,16 +89,41 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
     <jdoc:include type="modules" name="itOutsourcingWeProposeYou" style="xhtml" />
 
     <?php $itemId = JRequest::getInt('Itemid'); ?>
-    <?php if ($_SERVER['REQUEST_URI'] != '/' && !preg_match('/news/', $_SERVER['REQUEST_URI']) && !in_array($itemId, [120, 121, 122, 123, 124])) : ?>
+    <?php if ($_SERVER['REQUEST_URI'] != '/' && !preg_match('/news/', $_SERVER['REQUEST_URI']) && !in_array($itemId, [118, 120, 121, 122, 123, 124])) : ?>
         <div class="container contentBl">
             <jdoc:include type="component" />
+        </div>
+    <?php endif; ?>
+
+    <!-- Styles for page Blog -->
+    <?php if ($itemId == 118) : ?>
+        <?php if (preg_match('/blog/', $_SERVER['REQUEST_URI']) || preg_match('/\&Itemid\=118/', $_SERVER['REQUEST_URI'] )) : ?>
+            <div class="container-fluid contentBlBlogHeader">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 cols-sm-12 col-xs-12">
+                            <h1 class="blogHeader">Блог</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
+
+        <div class="container contentBlBlog">
+            <div class="row">
+                <div class="col-lg-9 col-md-9 cols-sm-12 col-xs-12">
+                    <jdoc:include type="component" />
+                </div>
+                <div class="col-lg-3 col-md-3 cols-sm-0 col-xs-0 rightSideMenuBl">
+                    <jdoc:include type="modules" name="rightSideMenuBl" />
+                </div>
         </div>
     <?php endif; ?>
 
     <jdoc:include type="modules" name="lastNews" style="xhtml" />
 
     <?php if (preg_match('/news/', $_SERVER['REQUEST_URI'])) : ?>
-        <div class="container-fluid blogFluidBl">
+        <div class="container-fluid newsFluidBl">
             <div class="container">
                 <jdoc:include type="component" />
             </div>

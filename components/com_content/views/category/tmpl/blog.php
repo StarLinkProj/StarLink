@@ -119,9 +119,9 @@ JHtml::_('behavior.caption');
 	<?php endif; ?>
 
 	<?php if (preg_match('/news/', $_SERVER['REQUEST_URI'])) : ?>
-		<div class="row blogShowMoreNewsRow">
-			<div class="col-md-12 col-sm-12 col-xs-12 blogShowMoreNewsCol">
-				<a href="javascript:void(0)" class="blogShowMoreNews">Загрузить еще<span class="loadMoreNewsIcon">&nbsp;</span></a>
+		<div class="row newsShowMoreNewsRow">
+			<div class="col-md-12 col-sm-12 col-xs-12 newsShowMoreNewsCol">
+				<a href="javascript:void(0)" class="newsShowMoreNews">Загрузить еще<span class="loadMoreNewsIcon">&nbsp;</span></a>
 			</div>
 		</div>
 	<?php endif; ?>

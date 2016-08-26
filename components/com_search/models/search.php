@@ -122,6 +122,7 @@ class SearchModelSearch extends JModelLegacy
 		{
 			$this->setState('ordering', $ordering);
 		}
+		$this->setState('catid', 11);
 	}
 
 	/**
@@ -143,6 +144,7 @@ class SearchModelSearch extends JModelLegacy
 				$this->getState('keyword'),
 				$this->getState('match'),
 				$this->getState('ordering'),
+				$this->getState('catid'),
 				$areas['active'])
 			);
 

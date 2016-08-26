@@ -448,21 +448,21 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 	margin-bottom: 50px;
 }
 
-.blogFluidBl{
+.newsFluidBl{
 	background: #F5F6F7;
 	border-top: 1px solid #E1E7EB;
 }
-.blogFluidBl .blog h2{
+.newsFluidBl .blog h2{
 	margin: 45px 0 20px;
 	text-align: center;
 }
-.blogFluidBl .blog h2 .subheading-category{
+.newsFluidBl .blog h2 .subheading-category{
 	font-size: 72px;
 	font-weight: 300;
 	line-height: 80px;
 	color: #1b1b1b;
 }
-.blogFluidBl .blog .category-desc{
+.newsFluidBl .blog .category-desc{
 	color: #9B9B9B;
 	font-size: 21px;
 	line-height: 30px;
@@ -490,7 +490,7 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 	line-height: 20px;
 	font-weight: bold;
 }
-.blog .items-row .span12 .blogCatAndDate{
+.blog .items-row .span12 .newsCatAndDate{
 	margin: 0 30px 10px;
 	color: #9B9B9B;
 	line-height: 20px;
@@ -498,32 +498,32 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 .blog .items-row .span12 .item>p{
 	margin: 0 30px 10px;
 }
-.blog .items-row .span12 .blogCategoryItemFooter{
+.blog .items-row .span12 .newsCategoryItemFooter{
 	border-top: 1px solid #EAEAEA;
 	padding: 20px 5px 20px 30px;
 	margin: 0;
 }
-.blogHits{
+.newsHits{
 	padding-left: 30px;
 	background: url('../images/main/eye.png') no-repeat left center;
 	color: #9B9B9B;
 }
-.blogReadMore p.readmore{
+.newsReadMore p.readmore{
 	margin: 0;
 	text-align: right;
 }
-.blogReadMore p.readmore a.btn{
+.newsReadMore p.readmore a.btn{
 	font-size: 0;
 	padding: 10px 11px;
 	background: url('../images/main/readmoreIcon.png') no-repeat left center;
 }
-.blogShowMoreNewsRow{
+.newsShowMoreNewsRow{
 	margin: 20px auto 50px;
 }
-.blogShowMoreNewsRow .blogShowMoreNewsCol{
+.newsShowMoreNewsRow .newsShowMoreNewsCol{
 	text-align: center;
 }
-.blogShowMoreNews{
+.newsShowMoreNews{
 	color: #3FA2F7;
 	font-size: 16px;
 	line-height: 20px;
@@ -532,11 +532,11 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 	border-radius: 30px;
 	padding: 20px 105px 20px 95px;
 }
-.blogShowMoreNews:hover, .blogShowMoreNews:focus{
+.newsShowMoreNews:hover, .newsShowMoreNews:focus{
 	color: #3FA2F7;
 	background: rgba(63, 162, 247, 0.03);
 }
-.blogShowMoreNews .loadMoreNewsIcon{
+.newsShowMoreNews .loadMoreNewsIcon{
 	margin: 0 0 0 20px;
 	padding: 13px 11px;
 	background: url('../images/main/showMoreNewsIcon.png') no-repeat left center;
@@ -1008,6 +1008,129 @@ button.modalFormCloseBtn{
 	margin-bottom: 20px;
 }
 
+/*************** Blog page styles ****************/
+.contentBlBlogHeader{
+	border-top: 1px solid #E1E7EB;
+	border-bottom: 1px solid #E1E7EB;
+}
+.blogHeader{
+	text-align: center;
+	font-weight: 300;
+	font-size: 32px;
+	color: #000000;
+	line-height: 40px;
+	margin: 11px 0;
+}
+.contentBlBlog .page-header{
+	margin: 20px 0 10px;
+	border-bottom: none;
+	padding-bottom: 0;
+}
+.contentBlBlog .page-header h2 a{
+	font-weight: bold;
+	font-size: 20px;
+	color: #3FA2F7;
+	line-height: 28px;
+}
+.contentBlBlog .blogCatAndDate{
+	margin-bottom: 10px;
+	font-size: 14px;
+	color: #9B9B9B;
+	line-height: 20px;
+}
+.contentBlBlog .blogReadMore{
+	margin: 20px 0 10px;
+}
+.contentBlBlog .blogReadMore .blogReadmore{
+	font-size: 14px;
+	color: #3FA2F7;
+	line-height: 20px;
+}
+.contentBlBlog .items-leading>div{
+	border-bottom: 1px solid #E1E7EB;
+}
+.pagination p.counter{
+	display: none;
+}
+.pagination ul{
+	margin: 0;
+	padding: 0;
+}
+.pagination ul li{
+	float: left;
+	list-style: none;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+.pagination ul li span, .pagination ul li a{
+	font-size: 18px;
+	display: block;
+	color: #3FA2F7;
+	letter-spacing: 0;
+	line-height: 20px;
+	padding: 9px 0;
+	width: 40px;
+	height: 40px;
+	border: 1px solid #E1E7EB;
+}
+.pagination ul li span.pagenav{
+	color: #fff;
+	background: #3FA2F7;
+	border: 1px solid #3FA2F7;
+}
+.pagination ul li.pagination-start span.pagenav, .pagination ul li.pagination-prev span.pagenav,
+.pagination ul li.pagination-next span.pagenav, .pagination ul li.pagination-end span.pagenav{
+	color: #b3b3b3;
+	background: #fff;
+	border: 1px solid #E1E7EB;
+}
+.sideAdvBlock{
+	margin: 20px 0;
+	background: #FFFFFF;
+	box-shadow: 0 5px 10px 0 rgba(0,0,0,0.05);
+	border-radius: 6px;
+}
+.sideAdvBlock .sideAdvText{
+	padding: 10px 12px;
+}
+.sideAdvBlock .sideAdvText h4{
+	margin: 11px 0;
+	font-size: 14px;
+	color: #1B1B1B;
+	letter-spacing: 2px;
+	line-height: 24px;
+}
+.sideAdvBlock .sideAdvText p{
+	margin-bottom: 10px;
+	font-size: 14px;
+	color: #1B1B1B;
+	letter-spacing: 0px;
+	line-height: 20px;
+}
+
+#inner_TC140 h5{
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 500 !important;
+	margin: 30px 0 10px;
+	letter-spacing: 0;
+}
+.cloudTagsSingleTag{
+	font-size: 12px;
+	color: #2C99ED;
+	line-height: 20px;
+	padding: 4px 16px 6px 14px;
+	display: inline-block;
+	border: 1px solid #2C99ED;
+	border-radius: 5px;
+	margin: 0 10px 10px 0;
+}
+.cloudTagsSingleTag:hover{
+	color: #fff;
+	background: #2C99ED;
+}
+
 .footer{
 	background: #33383F;
 	color: #fff;
@@ -1117,6 +1240,37 @@ button.modalFormCloseBtn{
 		margin-top: 8px;
 		padding: 31px 0 28px 45px;
 	}
+	.rightSideMenuBl{
+		display: none;
+	}
+	.blogBottomAdvBl{
+		background: #3FA2F7;
+		box-shadow: 0 5px 10px 0 rgba(0,0,0,0.05);
+		border-radius: 4px;
+		margin-bottom: 30px;
+		padding: 20px 0;
+	}
+	.blogBottomAdvBl h5{
+		font-weight: bold;
+		font-size: 20px;
+		color: #FFFFFF;
+		line-height: 20px;
+		margin: 10px 20px;
+		text-align: center;
+	}
+	.blogBottomAdvBl p{
+		font-size: 14px;
+		color: #FFFFFF;
+		line-height: 20px;
+		margin: 10px 0;
+		text-align: center;
+	}
+	.blogBottomAdvBl .btnStarlinkBlueWhiteBorder{
+		display: block;
+		border: 1px solid #fff;
+		width: 70%;
+		margin: 0 15%;
+	}
 }
 
 /* Medium devices (desktops, 992px and up) */
@@ -1133,7 +1287,7 @@ button.modalFormCloseBtn{
 	.iconBlocks{
 		padding-bottom: 60px;
 	}
-	.blogFluidBl .blog .category-desc{
+	.newsFluidBl .blog .category-desc{
 		margin: 0 200px 40px;
 	}
 	.servicesPageTopBl p{
@@ -1173,6 +1327,35 @@ button.modalFormCloseBtn{
 		display: inline-block;
 		padding: 9px 2px 9px 7px;
 	}
+	.rightSideMenuBl{
+		display: block;
+	}
+	.blogBottomAdvBl{
+		background: #3FA2F7;
+		box-shadow: 0 5px 10px 0 rgba(0,0,0,0.05);
+		border-radius: 4px;
+		margin-bottom: 30px;
+		padding: 20px 0;
+	}
+	.blogBottomAdvBl h5{
+		font-weight: bold;
+		font-size: 20px;
+		color: #FFFFFF;
+		line-height: 20px;
+		margin: 10px 20px 10px 55px;
+	}
+	.blogBottomAdvBl p{
+		font-size: 14px;
+		color: #FFFFFF;
+		line-height: 20px;
+		margin: 10px 0 10px 0;
+	}
+	.blogBottomAdvBl .btnStarlinkBlueWhiteBorder{
+		display: block;
+		border: 1px solid #fff;
+		width: 84%;
+		margin: 0;
+	}
 }
 
 /* Large devices (large desktops, 1200px and up) */
@@ -1185,7 +1368,7 @@ button.modalFormCloseBtn{
 	.navbar-default .navbar-nav > li > a{
 		font-size: 14px;
 	}
-	.blogFluidBl .blog .category-desc{
+	.newsFluidBl .blog .category-desc{
 		margin: 0 225px 40px;
 	}
 	.navbar-default .navbar-nav > li > a {
@@ -1215,7 +1398,7 @@ button.modalFormCloseBtn{
 }
 
 /* for higher resolutions (android and retina) */
-@media screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (max--moz-device-pixel-ratio: 1.5) {
+@media screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min--moz-device-pixel-ratio: 1.5) {
 	.copyright{
 		text-align: center;
 		margin-bottom: 20px;
@@ -1227,7 +1410,7 @@ button.modalFormCloseBtn{
 	.services-bl>div.container{
 		padding: 0 15px;
 	}
-	.blogShowMoreNews{
+	.newsShowMoreNews{
 		padding: 20px 35px 20px 25px;
 	}
 	.servicesPageTopBl h3{
@@ -1283,6 +1466,41 @@ button.modalFormCloseBtn{
 	}
 	.solutionBl1H2{
 		font-size: 32px;
+	}
+	.rightSideMenuBl{
+		display: none;
+	}
+	.contentBlBlog .page-header h2 a{
+		font-size: 15px;
+		line-height: 20px;
+	}
+	.blogBottomAdvBl{
+		background: #3FA2F7;
+		box-shadow: 0 5px 10px 0 rgba(0,0,0,0.05);
+		border-radius: 4px;
+		margin-bottom: 30px;
+		padding: 20px 0;
+	}
+	.blogBottomAdvBl h5{
+		font-weight: bold;
+		font-size: 20px;
+		color: #FFFFFF;
+		line-height: 20px;
+		margin: 10px 20px;
+		text-align: center;
+	}
+	.blogBottomAdvBl p{
+		font-size: 14px;
+		color: #FFFFFF;
+		line-height: 20px;
+		margin: 10px 0;
+		text-align: center;
+	}
+	.blogBottomAdvBl .btnStarlinkBlueWhiteBorder{
+		display: block;
+		border: 1px solid #fff;
+		width: 70%;
+		margin: 0 15%;
 	}
 }
 

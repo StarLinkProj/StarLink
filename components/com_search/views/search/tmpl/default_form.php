@@ -16,7 +16,7 @@ $upper_limit = $lang->getUpperLimitSearchWord();
 ?>
 
 <div class="searchintro<?php echo $this->params->get('pageclass_sfx'); ?>">
-	<?php if (!empty($this->searchword)):?>
+	<?php if (!empty($this->searchword) && $this->total == 0):?>
 		<p><?php echo JText::plural('COM_SEARCH_SEARCH_KEYWORD_N_RESULTS', '<span class="badge badge-info">' . $this->total . '</span>');?></p>
 	<?php endif;?>
 </div>
