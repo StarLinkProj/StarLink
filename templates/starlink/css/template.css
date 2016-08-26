@@ -267,7 +267,6 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 }
 
 .contentBl{
-	margin-top: 30px;
 	margin-bottom: 30px;
 }
 .contactsBl>.row{
@@ -441,7 +440,7 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 	margin-bottom: 20px;
 }
 .aboutArticle{
-	margin: 20px 0;
+	margin: 35px 0;
 }
 .bottomArrowBl{
 	text-align: center;

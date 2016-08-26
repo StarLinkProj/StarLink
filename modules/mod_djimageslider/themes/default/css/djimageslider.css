@@ -64,7 +64,7 @@ ul.djslider-in > li {
 	background: #fff;
 	color: #3c506b;
 	text-decoration: none;
-	text-shadow: 0 0 10px #303030;
+	text-shadow: 0 0 0 #303030;
 }
 
 /* Navigation buttons / indicators */

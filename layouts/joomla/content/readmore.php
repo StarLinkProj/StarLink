@@ -11,10 +11,16 @@ defined('JPATH_BASE') or die;
 
 $params = $displayData['params'];
 $item = $displayData['item'];
+
+if (preg_match('/news/', $_SERVER['REQUEST_URI'])) {
+	$classReadmoreBtn = 'btn';
+} else {
+	$classReadmoreBtn = 'blogReadmore';
+}
 ?>
 
 <p class="readmore">
-	<a class="blogReadmore" href="<?php echo $displayData['link']; ?>" itemprop="url">
+	<a class="<?=$classReadmoreBtn?>" href="<?php echo $displayData['link']; ?>" itemprop="url">
 		<span class="icon-chevron-right"></span>
 		<?php if (!$params->get('access-view')) :
 			echo JText::_('COM_CONTENT_REGISTER_TO_READ_MORE');
