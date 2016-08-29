@@ -150,8 +150,31 @@ jQuery(document).ready(function($) {
     });
 
     // Menu for screen width <767 (mobile)
-    jQuery("#mainmenu > .deeper > a").click(function(e) {
-        e.preventDefault();
-        jQuery(this).parent().find('ul.nav-child').toggle();
+    if (jQuery(window).width() <= 767) {
+        jQuery("#mainmenu > .deeper > a").click(function (e) {
+            e.preventDefault();
+            jQuery(this).parent().find('ul.nav-child').toggle();
+        });
+    }
+
+    // Scroll to top page on scrollTopButton click
+    jQuery(".scrollTopBtn").click(function() {
+        jQuery('html,body').animate({
+                scrollTop: jQuery("html").offset().top - 30},
+            'slow');
+    });
+
+    jQuery(window).scroll(function(){
+        var headerAndTopBlHeight = jQuery("header").innerHeight() + jQuery(".servicesBgBl1Margin").innerHeight() + 20;
+
+        if(jQuery(window).scrollTop() > headerAndTopBlHeight){
+            jQuery('.scrollFixedConsultingBl').css('position', 'fixed');
+            jQuery('body').css('margin-top', '200px');
+            jQuery('.scrollBl').slideDown();
+        } else {
+            jQuery('.scrollFixedConsultingBl').css('position', 'relative');
+            jQuery('body').css('margin-top', '0');
+            jQuery('.scrollBl').hide();
+        }
     });
 });

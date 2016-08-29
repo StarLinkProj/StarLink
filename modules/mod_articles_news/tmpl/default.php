@@ -16,7 +16,7 @@ defined('_JEXEC') or die;
 
 	<?php if (preg_match('/services/', $_SERVER['REQUEST_URI'])) : ?>
 		<div class="showAllNews">
-			<a href="/news">Смотеть остальные новости</a>
+			<a href="/about/news">Смотеть остальные новости</a>
 		</div>
 	<?php endif; ?>
 </div>

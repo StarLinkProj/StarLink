@@ -562,7 +562,7 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 	margin-bottom: 50px;
 }
 .servicesPageInnerServicesBl{
-	margin-top: 20px;
+	margin-top: 50px;
 }
 .servicesPageInnerServicesBl .consulting{
 	text-align: center;
@@ -713,6 +713,9 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 }
 .itOutsourcingSingleTextBl{
 	margin: 0 0 40px;
+}
+.itOutsourcingSingleTextBl:first-child{
+	margin: 50px 0 40px;
 }
 
 .calcItOutsource h3{
@@ -1216,8 +1219,89 @@ button.modalFormCloseBtn{
 	background-size: cover;
 	padding: 41px 0 40px;
 }
+.secondaryConsultingMenuBl{
+	border-bottom: 1px solid #E1E7EB;
+	background: #fff;
+}
+.secondaryConsultingMenu a{
+	display: inline-block;
+	color: #3FA2F7;
+	text-transform: uppercase;
+	margin: 0 20px 0 0;
+	padding: 32px 0 27px;
+	border-bottom: 5px solid transparent;
+}
+.secondaryConsultingMenu a.active, .secondaryConsultingMenu a:hover {
+	color: #1B1B1B;
+	font-weight: bold;
+	border-bottom: 5px solid #ED1C24;
+}
+.secondaryConsultingMenu a:hover {
+	font-weight: normal;
+}
+.secondaryConsultingMenu a.active:hover{
+	font-weight: bold;
+}
+.scrollBlConsulting{
+	background: url('../images/main/servicesTopBlBg.jpg') no-repeat center center;
+	background-size: cover;
+}
+.scrollBlIntegrationBg{
+	background: url('../images/main/it-integration-bl1Bg.jpg') no-repeat center center;
+	background-size: cover;
+}
+.scrollBlDataCenterBg{
+	background: url('../images/main/data-center-bl1Bg.jpg') no-repeat center center;
+	background-size: cover;
+}
+.scrollBlSecurityBg{
+	background: url('../images/main/security-bl1Bg.jpg') no-repeat center center;
+	background-size: cover;
+}
+.scrollBlWebProjectsBg{
+	background: url('../images/main/web-solutions-bl1Bg.jpg') no-repeat center center;
+	background-size: cover;
+}
+.scrollBlConsulting .container{
+	position: relative;
+}
+.scrollBlConsulting h4{
+	font-weight: 300;
+	color: #fff;
+	font-size: 42px;
+	line-height: 80px;
+	padding: 10px 0;
+	text-align: center;
+}
+.scrollTopBtn{
+	position: absolute;
+	top: 38px;
+	left: 15px;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: 1px solid #fff;
+	cursor: pointer;
+	color: #fff;
+	font-size: 32px;
+	line-height: 32px;
+}
+.scrollTopBtn .scrollTopArrowSpan{
+	display: inline-block;
+	margin: 0 0 0 10px;
+}
+.scrollBl{
+	display: none;
+}
+.scrollFixedConsultingBl{
+	position: relative;
+	top: 0;
+	width: 100%;
+	z-index: 100;
+}
 
 
+/********** Footer *********/
 .footer{
 	background: #33383F;
 	color: #fff;
@@ -1499,6 +1583,7 @@ button.modalFormCloseBtn{
 	.btnStarlinkBlue{
 		margin: 0 25%;
 		width: 50%;
+		display: block;
 	}
 }
 
@@ -1668,6 +1753,19 @@ button.modalFormCloseBtn{
 	}
 	.servicesBl4H2 {
 		margin: 50px 5%;
+	}
+	.scrollTopBtn{
+		display: none;
+	}
+	.secondaryConsultingMenu a{
+		display: block;
+		margin: 0 20px 0 0;
+		padding: 12px 0 7px;
+		border-bottom: 2px solid transparent;
+	}
+	.secondaryConsultingMenu a.active, .secondaryConsultingMenu a:hover{
+		font-weight: normal;
+		border-bottom: 2px solid #ED1C24;
 	}
 }
 
