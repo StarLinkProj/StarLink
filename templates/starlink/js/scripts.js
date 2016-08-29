@@ -167,14 +167,16 @@ jQuery(document).ready(function($) {
     jQuery(window).scroll(function(){
         var headerAndTopBlHeight = jQuery("header").innerHeight() + jQuery(".servicesBgBl1Margin").innerHeight() + 20;
 
-        if(jQuery(window).scrollTop() > headerAndTopBlHeight){
-            jQuery('.scrollFixedConsultingBl').css('position', 'fixed');
-            jQuery('body').css('margin-top', '200px');
-            jQuery('.scrollBl').slideDown();
-        } else {
-            jQuery('.scrollFixedConsultingBl').css('position', 'relative');
-            jQuery('body').css('margin-top', '0');
-            jQuery('.scrollBl').hide();
+        if (jQuery(".secondaryConsultingMenuBl").length > 0) {
+            if(jQuery(window).scrollTop() > headerAndTopBlHeight){
+                jQuery('.scrollFixedConsultingBl').css('position', 'fixed');
+                jQuery('body').css('margin-top', '200px');
+                jQuery('.scrollBl').slideDown();
+            } else {
+                jQuery('.scrollFixedConsultingBl').css('position', 'relative');
+                jQuery('body').css('margin-top', '0');
+                jQuery('.scrollBl').hide();
+            }
         }
     });
 });
