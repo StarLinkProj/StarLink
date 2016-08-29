@@ -47,7 +47,10 @@
 		</table>
 		<table width="100%" class="tb-calc-bottom" cellpadding="0" cellspacing="0" align="center">
 			<tr>
-				<td width="20%"></td>
+				<td width="20%" class="calcTdRangeNameText">
+					<img src="/images/itOutsourcingCalcIcons/calcServiceLevel.png" class="calcIconImg">
+					УРОВЕНЬ ОБСЛУЖИВАНИЯ
+				</td>
 				<td width="20%" class="calcTdRangeNameText">
 					<img src="/images/itOutsourcingCalcIcons/calcClockIcon.png" class="calcIconImg">
 					ВРЕМЯ РЕАКЦИИ
@@ -69,6 +72,7 @@
 				<td>
 					<input type="radio" name="level" id="level1" value="0" class="r_button">
 					<label for="level1"></label>
+					<span class="slaLevel">SLA 1</span>
 				</td>
 				<td>
 					1 час
@@ -89,6 +93,7 @@
 				<td>
 					<input type="radio" name="level" id="level2" value="1" class="r_button">
 					<label for="level2"></label>
+					<span class="slaLevel">SLA 2</span>
 				</td>
 				<td>
 					2 часа
@@ -109,6 +114,7 @@
 				<td>
 					<input type="radio" name="level" id="level3" value="2" class="r_button">
 					<label for="level3"></label>
+					<span class="slaLevel">SLA 3</span>
 				</td>
 				<td>
 					4 часа

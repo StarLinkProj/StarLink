@@ -337,6 +337,62 @@ ul.djslider-in > li {
 }
 
 /* for higher resolutions (android and retina) */
-@media screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (max--moz-device-pixel-ratio: 1.5) {
-
+@media (max-width: 767px) {
+	.slide-desc-bg-default {
+		position:absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 800px;
+		margin: 0 auto;
+		height: 100%;
+	}
+	.slide-desc-text-default {
+		position: relative;
+		color: #fff;
+		padding: 15px 15px 5px;
+		text-align: center;
+		text-shadow: 0 0 10px #303030;
+	}
+	.slide-desc-text-default .slide-title {
+		font-size: 30px;
+		color: #fff;
+		margin-bottom: 10px;
+		margin-top: -25px;
+		font-family: 'Roboto', sans-serif;
+		font-weight: 300;
+	}
+	.slide-desc-text-default .slide-title a {
+		color: #fff;
+	}
+	.slide-desc-text-default a.readmore {
+		display: block;
+		border: 1px solid #fff;
+		color: #fff;
+		font-weight: bold;
+		font-size: 16px;
+		padding: 5px 40px;
+		border-radius: 100px;
+		margin: 20px auto 10px;
+		width: 60%;
+	}
+	.slide-text p{
+		display: none;
+	}
+	.djslider-default .navigation-container-custom, .djslider-default .navigation-numbers {
+		position: absolute;
+		bottom: 25px;
+		left: 0;
+		right: 0;
+		margin: auto;
+		text-align: center;
+	}
+	.slide-desc{
+		padding: 0 50px !important;
+	}
+}
+@media (max-width: 570px) {
+	.mainSliderBlock{
+		display: none;
+	}
 }

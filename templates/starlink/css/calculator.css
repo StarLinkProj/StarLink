@@ -588,6 +588,13 @@ td.calcTdRangeNameText {
     margin: 0 auto 10px;
 }
 
+.slaLevel{
+    display: inline-block;
+    margin-top: -30px;
+    margin-left: -20px;
+    vertical-align: middle;
+}
+
 @media (min-width: 992px) and (max-width: 1200px) {
     #slider-pc-count-digits .slider-pc-count-digit {
         width: 3.003%;

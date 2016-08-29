@@ -130,4 +130,28 @@ jQuery(document).ready(function($) {
         }, 3000);
     });
 
+    // Menu for screen width (768-991)
+    function tabletMenuChange() {
+        if (jQuery(window).width() >= 752 && jQuery(window).width() <= 975) {
+            if (jQuery('.tabletMainMenu').length == 0) {
+                jQuery("<div class='container-fluid tabletMainMenu'></div>").insertAfter("header");
+                jQuery(".mainMenuDiv").addClass("tabletMainMenuDiv").detach().appendTo('.tabletMainMenu');
+            }
+        } else {
+            if (jQuery('.tabletMainMenu').length == 1) {
+                jQuery(".mainMenuDiv").removeClass("tabletMainMenuDiv").detach().insertAfter('.topPhoneDiv');
+                jQuery('.tabletMainMenu').detach();
+            }
+        }
+    }
+    tabletMenuChange();
+    $( window ).resize(function() {
+        tabletMenuChange()
+    });
+
+    // Menu for screen width <767 (mobile)
+    jQuery("#mainmenu > .deeper > a").click(function(e) {
+        e.preventDefault();
+        jQuery(this).parent().find('ul.nav-child').toggle();
+    });
 });
