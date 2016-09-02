@@ -26,6 +26,9 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
     <?php if (preg_match('/services\/it-outsourcing/', $_SERVER['REQUEST_URI'])) : ?>
         <script src="/templates/starlink/js/calculator_it_outsourcing.js" type="text/javascript"></script>
     <?php endif; ?>
+    <script type="text/javascript">
+        var myDomain = "http://<?php echo $_SERVER['HTTP_HOST'] ?>/"; 
+    </script>
 </head>
   
 <body>
@@ -38,6 +41,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
                     <div class="topPhoneMobile">
                         <jdoc:include type="modules" name="topPhone" />
                     </div>
+                </div>
             <?php endif; ?>
 
             <div class="logo col-lg-3 col-md-3 col-sm-6 col-xs-9">

@@ -62,7 +62,7 @@ $wcag = $params->get('wcag', 1) ? ' tabindex="0"' : ''; ?>
 						<?php } ?>
 						<?php if($params->get('slider_source') && ($params->get('show_title') || ($params->get('show_desc') && !empty($slide->description) || ($params->get('show_readmore') && $slide->link)))) { ?>
 						<!-- Slide description area: START -->
-						<div class="slide-desc container" style="padding: 0 180px; margin: auto; top: 20%; left: 0; right: 0;">
+						<div class="slide-desc container" style="padding: 0 90px; margin: auto; top: 20%; left: 0; right: 0;">
 						  <div class="slide-desc-in">	
 							<div class="slide-desc-bg slide-desc-bg-<?php echo $theme ?>"></div>
 							<div class="slide-desc-text slide-desc-text-<?php echo $theme ?>">
