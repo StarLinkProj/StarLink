@@ -155,6 +155,7 @@ ul.djslider-in > li {
 	}
 	.slide-desc-text-default .slide-title {
 		font-size: 45px;
+		line-height: 58px;
 		color: #fff;
 		margin-bottom: 10px;
 		font-family: 'Roboto', sans-serif;
@@ -207,6 +208,7 @@ ul.djslider-in > li {
 	}
 	.slide-desc-text-default .slide-title {
 		font-size: 45px;
+		line-height: 58px;
 		color: #fff;
 		margin-bottom: 10px;
 		font-family: 'Roboto', sans-serif;
@@ -312,6 +314,7 @@ ul.djslider-in > li {
 	}
 	.slide-desc-text-default .slide-title {
 		font-size: 72px;
+		line-height: 92px;
 		color: #fff;
 		margin-bottom: 10px;
 		font-family: 'Roboto', sans-serif;

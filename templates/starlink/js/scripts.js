@@ -179,4 +179,31 @@ jQuery(document).ready(function($) {
             }
         }
     });
+
+
+    // Header for desktop with width < 767px
+    function headerDesktopChange() {
+        var phoneText = '';
+        if (jQuery(window).width() <= 767) {
+            if (jQuery('header .row .container-fluid .topPhoneMobile').length == 0) {
+                phoneText = jQuery('.topPhoneDiv .custom');
+                jQuery('.topPhoneDiv').detach();
+                jQuery('header .row').prepend('<div class="container-fluid"><div class="topPhoneMobile"></div></div>');
+                jQuery('.topPhoneMobile').append(phoneText);
+                jQuery('head').append('<script src="' + myDomain + '/templates/starlink/js/libs/bootstrap.min.js" type="text/javascript"></script>');
+            }
+        } else {
+            if (jQuery('header .row .container-fluid .topPhoneMobile').length > 0) {
+                phoneText = jQuery('.topPhoneMobile .custom');
+                jQuery('header .row .container-fluid').detach();
+                jQuery('<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 topPhoneDiv"></div>').insertAfter(jQuery('header .row .logo'));
+                jQuery('.topPhoneDiv').append(phoneText);
+                jQuery('<script src="' + myDomain + '/templates/starlink/js/libs/bootstrap.min.js" type="text/javascript"></script>').detach('');
+            }
+        }
+    }
+    headerDesktopChange();
+    $( window ).resize(function() {
+        headerDesktopChange()
+    });
 });
