@@ -1,5 +1,5 @@
 <?php 
-
+define("AM_DEBUG","1");   // AM_DEBUG <> 0 makes compiled .css file keeping line breaks for better debugging in Chrome dev tools
 // compile less - comment the following three lines out, 
 // if your development is done or you don not what to user less
 require "lessc.inc.php";
@@ -24,8 +24,8 @@ header($ExpStr);
 function compress($buffer) {
 	// remove comments
 	$buffer = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $buffer);
-	// remove tabs, spaces, new lines, etc.        
-	$buffer = str_replace(array("\r\n","\r","\n","\t",'  ','    ','    '),'',$buffer);
+	// remove tabs, spaces, new lines, etc. 
+	if (AM_DEBUG) $buffer = str_replace(array("\r\n","\r","\n","\t",'  ','    ','    '),'',$buffer);
 	// remove unnecessary spaces        
 	$buffer = str_replace('{ ', '{', $buffer);
 	$buffer = str_replace(' }', '}', $buffer);
