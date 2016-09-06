@@ -417,13 +417,13 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 }
 .aboutMainCenterText{
 	padding-top: 100px;
-}
-.aboutMainCenterText h4{
 	color: #fff;
 	font-weight: normal;
+	font-family: 'HelveticaNeue-Bold', sans-serif;
+}
+.aboutMainCenterText h4{
 	font-size: 21px;
 	line-height: 30px;
-	font-family: 'HelveticaNeue-Bold', sans-serif;
 	margin: 0 30px 40px;
 }
 .aboutMainCenterText h4:last-child{
@@ -849,6 +849,20 @@ button.modalFormCloseBtn{
 }
 
 /******* Vacations styles *******/
+
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+	vertical-align:top;
+}
 .vacationsBlock{
 	background: #F5F6F7;
 	border-top: 1px solid #E1E7EB;
