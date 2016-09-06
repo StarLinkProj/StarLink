@@ -206,4 +206,11 @@ jQuery(document).ready(function($) {
     $( window ).resize(function() {
         headerDesktopChange()
     });
+
+    // Wrap every 3 news to block
+    var newsBlock = jQuery('.blog>.row');
+    while( newsBlock.children('div:not(.singleRow)' ).length){
+        newsBlock.children('div:not(.singleRow):lt(3)').wrapAll('<div class="singleRow">');
+    }
+    jQuery('.blog>.row .singleRow').append('<div class="clear"></div>');
 });

@@ -19,6 +19,10 @@ a:hover, a:focus{
 	cursor: pointer;
 }
 
+.clear{
+	clear: both;
+}
+
 .logo-img{
 	padding: 15px 0;
 }
@@ -101,7 +105,6 @@ a:hover, a:focus{
 	text-align: center;
 	font-weight: normal;
 }
-.services h2, 
 .services h4, 
 .services p
 {
@@ -415,14 +418,9 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 .aboutMainCenterText{
 	padding-top: 100px;
 }
-.aboutMainCenterText h2,
-.aboutMainCenterText h3,
-.aboutMainCenterText h5,
 .aboutMainCenterText h4{
 	color: #fff;
 	font-weight: normal;
-}
-.aboutMainCenterText h4{
 	font-size: 21px;
 	line-height: 30px;
 	font-family: 'HelveticaNeue-Bold', sans-serif;
@@ -1349,8 +1347,9 @@ button.modalFormCloseBtn{
 }
 .copyright{
 	padding: 4px 15px;
+}
+.copyright sup{
 	font-weight: normal;
-	font-size: 0.9em;
 }
 .footerSocNetworks{
 	text-align: right;
@@ -1570,18 +1569,6 @@ button.modalFormCloseBtn{
 	}
 }
 
-@media (max-width: 1024px) {
-	.footer{
-		padding: 50px 0 50px;
-	}
-	.footer .container .row > div{
-		text-align: center;
-		margin: 15px 0;
-	}
-	.footerSocNetworks {
-		 text-align: center;
-	}
-}
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
 	.topPhone {
@@ -1615,7 +1602,7 @@ button.modalFormCloseBtn{
 	}
 }
 
-/* Large devices (large desktops, 1600px and up) */
+/* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1600px) {
 	.navbar{
 		margin-left: 50px;
@@ -1797,3 +1784,15 @@ button.modalFormCloseBtn{
 	}
 }
 
+@media (max-width: 1024px) {
+	.footer{
+		padding: 50px 0 50px;
+	}
+	.footer .container .row > div{
+		text-align: center;
+		margin: 15px 0;
+	}
+	.footerSocNetworks {
+		 text-align: center;
+	}
+}
