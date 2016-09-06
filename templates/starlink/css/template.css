@@ -415,9 +415,14 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 .aboutMainCenterText{
 	padding-top: 100px;
 }
+.aboutMainCenterText h2,
+.aboutMainCenterText h3,
+.aboutMainCenterText h5,
 .aboutMainCenterText h4{
 	color: #fff;
 	font-weight: normal;
+}
+.aboutMainCenterText h4{
 	font-size: 21px;
 	line-height: 30px;
 	font-family: 'HelveticaNeue-Bold', sans-serif;
