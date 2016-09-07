@@ -20,7 +20,7 @@
 			</tr>
 			<tr>
 				<td class="calcTdRangeNameText pt15">КОЛИЧЕСТВО ФИЗИЧЕСКИХ СЕРВЕРОВ</td>
-				<td colspan="2" class="pt25" width="88%">
+				<td colspan="2" class="pt25 servers-range-td">
 					<div id="slider-server-count"></div>
 					<div id="slider-server-count-digits">
 						<?php for ($serverCountDigit = 0; $serverCountDigit <= 15; $serverCountDigit++) : ?>

@@ -30,12 +30,10 @@ jQuery(document).ready(function() {
 
             // Change range color
             var val = (ui2.value) / (30 - 1);
-            jQuery(this).css('background-image',
-                '-webkit-gradient(linear, left top, right top, '
-                + 'color-stop(' + val + ', #EDC054), '
-                + 'color-stop(' + val + ', #CACFD3)'
-                + ')'
-            );
+            var percentVal = val * 100 + '%';
+            jQuery(this).css('background-image', '-webkit-gradient(linear, left top, right top, color-stop(' + val + ', #EDC054), color-stop(' + val + ', #CACFD3))');
+            jQuery(this).css('background-image', '-moz-linear-gradient(left, rgba(237,191,84,1) 0%, rgba(237,191,84,1) ' + percentVal + ', rgba(202,207,211,1) ' + percentVal + ', rgba(202,207,211,1) ' + percentVal + ', rgba(202,207,211,1) 100%');
+            jQuery(this).css('background-image', '-ms-linear-gradient(45deg, rgba(237,191,84,1) 0%, rgba(237,191,84,1) ' + percentVal + ', rgba(202,207,211,1) ' + percentVal + ', rgba(202,207,211,1) ' + percentVal + ', rgba(202,207,211,1) 100%)');
 
             jQuery("#slider-pc-count-digits").find('.slider-count-digit-active').removeClass('slider-count-digit-active');
             jQuery("#slider-pc-count-digits").find("[data-pcdigit='" + ui2.value + "']").addClass('slider-count-digit-active');
@@ -55,12 +53,10 @@ jQuery(document).ready(function() {
 
             // Change range color
             var val = (ui.value) / (16 - 1);
-            jQuery(this).css('background-image',
-                '-webkit-gradient(linear, left top, right top, '
-                + 'color-stop(' + val + ', #78379D), '
-                + 'color-stop(' + val + ', #D8D8D8)'
-                + ')'
-            );
+            var percentVal = val * 100 + '%';
+            jQuery(this).css('background-image', '-webkit-gradient(linear, left top, right top, color-stop(' + val + ', #78379D), color-stop(' + val + ', #D8D8D8))');
+            jQuery(this).css('background-image', '-moz-linear-gradient(left, rgba(120,55,157,1) 0%, rgba(120,55,157,1) ' + percentVal + ', rgba(120,55,157,1) ' + percentVal + ', rgba(202,207,211,1) ' + percentVal + ', rgba(202,207,211,1) 100%)');
+            jQuery(this).css('background-image', '-ms-linear-gradient(left, rgba(120,55,157,1) 0%, rgba(120,55,157,1) ' + percentVal + ', rgba(120,55,157,1) ' + percentVal + ', rgba(202,207,211,1) ' + percentVal + ', rgba(202,207,211,1) 100%)');
 
             jQuery("#slider-server-count-digits").find('.slider-count-digit-active').removeClass('slider-count-digit-active');
             jQuery("#slider-server-count-digits").find("[data-serverdigit='" + ui.value + "']").addClass('slider-count-digit-active');
@@ -80,12 +76,10 @@ jQuery(document).ready(function() {
 
             // Change range color
             var val = (ui.value) / (8 - 1);
-            jQuery(this).css('background-image',
-                '-webkit-gradient(linear, left top, right top, '
-                + 'color-stop(' + val + ', #40BE65), '
-                + 'color-stop(' + val + ', #D8D8D8)'
-                + ')'
-            );
+            var percentVal = val * 100 + '%';
+            jQuery(this).css('background-image', '-webkit-gradient(linear, left top, right top, color-stop(' + val + ', #40BE65), color-stop(' + val + ', #D8D8D8))');
+            jQuery(this).css('background-image', '-moz-linear-gradient(left, rgba(64,190,102,1) 0%, rgba(64,190,102,1) ' + percentVal + ', rgba(64,190,102,1) ' + percentVal + ', rgba(216,216,216,1) ' + percentVal + ', rgba(202,207,211,1) 100%)');
+            jQuery(this).css('background-image', '-ms-linear-gradient(left, rgba(64,190,102,1) 0%, rgba(64,190,102,1) ' + percentVal + ', rgba(64,190,102,1) ' + percentVal + ', rgba(216,216,216,1) ' + percentVal + ', rgba(202,207,211,1) 100%)');
 
             jQuery("#slider-virtual-count-digits").find('.slider-count-digit-active').removeClass('slider-count-digit-active');
             jQuery("#slider-virtual-count-digits").find("[data-virtualdigit='" + ui.value + "']").addClass('slider-count-digit-active');
