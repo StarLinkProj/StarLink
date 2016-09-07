@@ -51,12 +51,20 @@ RewriteRule .* index.php [F]
 # www redirect (or vice versa), place that code here. Ensure those
 # redirects use the correct RewriteRule syntax and the [R=301,L] flags.
 
-#RewriteCond %{http_host} ^(.*)$ [NC]
+RewriteCond %{HTTP_HOST} ^www\.starlink\.ua [NC]
+RewriteCond %{REQUEST_URI} !^/google.*\.html [NC]
+RewriteRule ^(.*)$ http://starlink.ua/$1 [L,R=301]
 
-#RewriteCond %{REQUEST_URI} ^/about [NC,OR]
 RewriteCond %{REQUEST_URI} ^/strategiya-razvitiya-it-uslug  [NC,OR]
-RewriteCond %{REQUEST_URI} ^/audit-infrastruktury [NC]
-RewriteRule . http://starlink.pp.ua/index.php [NC,R=301,L]
+RewriteCond %{REQUEST_URI} ^/audit-infrastruktury [NC,OR]
+RewriteCond %{REQUEST_URI} ^/obshchij-it-audit-predpriyatiya [NC,OR]
+RewriteCond %{REQUEST_URI} ^/services/data-center [NC,OR]
+RewriteCond %{REQUEST_URI} ^/services/security [NC,OR]
+RewriteCond %{REQUEST_URI} ^/services/web-projects [NC,OR]
+RewriteCond %{REQUEST_URI} ^/services/it-integration [NC,OR]
+RewriteCond %{REQUEST_URI} ^/data-center [NC,OR]
+RewriteCond %{REQUEST_URI} ^/web-projects [NC]
+RewriteRule . http://starlink.ua/index.php [L,R=301]
 
 
 ## End - Custom redirects
