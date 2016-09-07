@@ -25,7 +25,7 @@ function compress($buffer) {
 	// remove comments
 	$buffer = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $buffer);
 	// remove tabs, spaces, new lines, etc. 
-	if (AM_DEBUG) $buffer = str_replace(array("\r\n","\r","\n","\t",'  ','    ','    '),'',$buffer);
+	if (!AM_DEBUG) $buffer = str_replace(array("\r\n","\r","\n","\t",'  ','    ','    '),'',$buffer);
 	// remove unnecessary spaces        
 	$buffer = str_replace('{ ', '{', $buffer);
 	$buffer = str_replace(' }', '}', $buffer);

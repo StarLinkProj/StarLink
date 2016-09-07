@@ -46,7 +46,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 
             <div class="logo col-lg-3 col-md-3 col-sm-6 col-xs-9">
                 <a title="StarLink" href="<?php echo JURI::base(); ?>">
-                    <img src="/images/main/logo.png" alt="logo"  class="logo-img">
+                    <img src="/images/main/logo.png" alt="logo" class="logo-img" width="193">
                 </a>
             </div>
 
