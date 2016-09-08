@@ -180,7 +180,8 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
                     var mapDiv = document.getElementById('map');
                     var map = new google.maps.Map(mapDiv, {
                         center: {lat: 50.3937181, lng: 30.6131583},
-                        zoom: 16
+                        zoom: 16,
+						scrollwheel: false
                     });
 
                     var marker = new google.maps.Marker({
@@ -191,7 +192,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
                 }
             </script>
             <script async defer
-                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpYNHKQLUxAJaT8jwcXYVXKGCN--0URuE&callback=initMap">
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcF4_JMyp4KWtLS_HwnKlAOw7Q9OCNleA&callback=initMap">  
             </script>
         </div>
     <?php endif; ?>
