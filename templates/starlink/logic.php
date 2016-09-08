@@ -17,3 +17,6 @@ $doc->addScript($tpath.'/js/logic.js');
 
 // template css
 $doc->addStyleSheet($tpath.'/css/template.css.php');
+
+// am: add scss
+$doc->addStyleSheet($tpath.'/css/style.php/style.scss');

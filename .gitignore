@@ -6,3 +6,4 @@ web.config.txt
 logs/
 tmp/
 0_phplist_images_archive
+templates/starlink/css/scss/scss_cache
