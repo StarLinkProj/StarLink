@@ -943,6 +943,9 @@ button.modalFormCloseBtn{
 	font-family: 'HelveticaNeue-Roman', sans-serif;
 	margin: 0;
 }
+.solutionBl1H4:last-child{
+	margin-bottom: 20px;
+}
 
 .moduletable-solutionBl2, .moduletable-solutionBl2Type{
 	padding: 50px 0 30px;
