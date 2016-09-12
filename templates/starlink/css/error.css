@@ -1,25 +1,28 @@
 /* ERROR CSS
 *********************************************/
-body {
-    background:#fff; 
-    color:#000; 
-    font-family:Arial,Helvetica,Sans Serif; 
-    font-size:78%; 
-    margin:0; 
-    padding:0; 
-    text-align:center;
+
+html, body {
+  height: 100%;
 }
 
-#error { 
-    margin:0; 
-    padding:0; 
-    padding-top:40px; 
-    padding-bottom:60px; 
-    width:814px; 
+.containerError {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin-bottom: -16em;
 }
-h1 {
-    margin:0 0 20px 0;
+
+footer, .push {
+  height: 16em;
 }
+
+footer {
+  padding: 1em 0;
+  background-color: rgb(51, 56, 63);
+  color: white;
+}
+
 .search label {
     display:none
 }
+
