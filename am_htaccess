@@ -55,16 +55,18 @@ RewriteCond %{HTTP_HOST} ^www\.starlink\.ua [NC]
 RewriteCond %{REQUEST_URI} !^/google.*\.html [NC]
 RewriteRule ^(.*)$ http://starlink.ua/$1 [L,R=301]
 
-RewriteCond %{REQUEST_URI} ^/strategiya-razvitiya-it-uslug  [NC,OR]
-RewriteCond %{REQUEST_URI} ^/audit-infrastruktury [NC,OR]
-RewriteCond %{REQUEST_URI} ^/obshchij-it-audit-predpriyatiya [NC,OR]
-RewriteCond %{REQUEST_URI} ^/services/data-center [NC,OR]
-RewriteCond %{REQUEST_URI} ^/services/security [NC,OR]
-RewriteCond %{REQUEST_URI} ^/services/web-projects [NC,OR]
-RewriteCond %{REQUEST_URI} ^/services/it-integration [NC,OR]
-RewriteCond %{REQUEST_URI} ^/data-center [NC,OR]
-RewriteCond %{REQUEST_URI} ^/web-projects [NC]
-RewriteRule . http://starlink.ua/index.php [L,R=301]
+# показывать изображения, залинкованные из рассылок phplist, отправленных до 01.09.2016
+RewriteCond %{REQUEST_URI} ^.*\.(jpg|png|gif)$   [NC]
+RewriteRule ^design/starlink/images/(new/)?(.*)$ 0_phplist_images_archive/$2 [NC,L]
+
+# еще не законченные страницы переадресовывать на страницу контактов
+#RewriteRule ^audit-infrastruktury            contacts [R=302,L]
+#RewriteRule ^strategiya-razvitiya-it-uslug   contacts [R=302,L]
+#RewriteRule ^obshchij-it-audit-predpriyatiya contacts [R=302,L]
+#RewriteRule ^services/data-center            contacts [R=302,L]
+#RewriteRule ^services/web-projects           contacts [R=302,L]
+#RewriteRule ^services/it-integration         contacts [R=302,L]
+RewriteRule ^services/security               solutions/dataprotection-kerio-control [R=302,L]
 
 
 ## End - Custom redirects
@@ -75,7 +77,7 @@ RewriteRule . http://starlink.ua/index.php [L,R=301]
 # Update Your Joomla! Directory (just / for root).
 ##
 
-# RewriteBase /
+RewriteBase /
 
 ## Begin - Joomla! core SEF Section.
 #
