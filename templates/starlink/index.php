@@ -126,7 +126,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
     <?php endif; ?>
 
     <jdoc:include type="modules" name="lastNews" style="xhtml" />
-
+	<!-- -->
     <?php if (preg_match('/news/', $_SERVER['REQUEST_URI'])) : ?>
         <div class="container-fluid newsFluidBl">
             <div class="container">

@@ -436,6 +436,7 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 	text-align: center;
 }
 .aboutMainCenterText h2{
+	margin-bottom: 16px;
 	font-weight: 300;
 	font-size: 42px;
 }
@@ -458,7 +459,6 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 .iconBlocks>div .aboutIcon{
 	color: #fff;
 	margin: 20px 0;
-	font-family: 'HelveticaNeue-Bold', sans-serif;
 	line-height: 20px;
 }
 .aboutPageArticleText h2{
@@ -869,7 +869,7 @@ button.modalFormCloseBtn{
 	margin: 20px auto;
 }
 
-/******* Vacations styles *******/
+/******* Vacancy styles *******/
 
 /* centered columns styles */
 .row-centered {
@@ -888,6 +888,17 @@ button.modalFormCloseBtn{
 	background: #F5F6F7;
 	border-top: 1px solid #E1E7EB;
 	padding-bottom: 20px;
+}
+.vacationsBlock * {
+	font-family: Roboto, sans-serif;
+	font-weight: 400;
+}
+.vacationsBlock h2 {
+	font-size: 55px;
+	line-height: 60px;
+}
+.vacationsBlock h4 {
+	width: 94%;
 }
 .vacationH2{
 	text-align: center;
@@ -915,6 +926,7 @@ button.modalFormCloseBtn{
 	padding: 42px 0;
 	text-align: center;
 	border-radius: 6px 6px 0 0;
+	height: 160px;
 }
 .vacationDeveloper{
 	background: #0072ca;
@@ -1744,13 +1756,19 @@ button.modalFormCloseBtn{
 /* 		margin-left: 5%;
 		margin-right: 5%; */
 	}
-	.vacationH2{
+	
+	.vacationH2, .vacationH4 {
+		font-family: Roboto, sans-serif;
+		font-weight: 300;
+	}
+	.vacationsBlock h2 {
 		font-size: 55px;
 		line-height: 60px;
 	}
-	.vacationH4 {
+	.vacationsBlock h4 {
 		width: 94%;
 	}
+	
 	.btnStarlinkBlue {
 		width: 100%;
 		margin: 0;
