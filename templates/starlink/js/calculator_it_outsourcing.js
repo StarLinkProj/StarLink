@@ -1,6 +1,11 @@
 jQuery.noConflict();
 jQuery(document).ready(function() {
-
+	// check if calculator element exists on the page
+	const CALC_ID = "#connect_form";
+	if ( ! jQuery(CALC_ID).length ) {
+		return;
+	}
+	
     // input Masks
 
     // Add or reduce count of "planed leaves"

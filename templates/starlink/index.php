@@ -23,19 +23,17 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
     <?php endif; ?>
     <script src="/templates/starlink/js/libs/jquery-ui.js" type="text/javascript"></script>
     <script src="/templates/starlink/js/scripts.js" type="text/javascript"></script>
-    <?php if (preg_match('/services\/it-outsourcing/', $_SERVER['REQUEST_URI'])) : ?>
+     <?php # if (preg_match('/services\/it-outsourcing/', $_SERVER['REQUEST_URI'])) : ?> 
         <script src="/templates/starlink/js/calculator_it_outsourcing.js" type="text/javascript"></script>
-    <?php endif; ?>
+     <?php # endif; ?> 
     <script type="text/javascript">
         var myDomain = "http://<?php echo $_SERVER['HTTP_HOST'] ?>/"; 
     </script>
 </head>
   
 <body>
-
     <header class="container">
         <div class="row">
-
             <?php if ($mobileDetectObj->isMobile() || $mobileDetectObj->isTablet()) : ?>
                 <div class="container-fluid">
                     <div class="topPhoneMobile">
@@ -44,19 +42,19 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
                 </div>
             <?php endif; ?>
 
-            <div class="logo col-lg-3 col-md-3 col-sm-6 col-xs-9">
+            <div class="logo col-md-3 col-sm-6 col-xs-9">
                 <a title="StarLink" href="<?php echo JURI::base(); ?>">
                     <img src="/images/main/logo.png" alt="logo" class="logo-img" width="193">
                 </a>
             </div>
 
             <?php if (!$mobileDetectObj->isMobile() && !$mobileDetectObj->isTablet()) : ?>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 topPhoneDiv">
+                <div class="col-md-3 col-sm-6 col-xs-12 topPhoneDiv">
                     <jdoc:include type="modules" name="topPhone" />
                 </div>
             <?php endif; ?>
 
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mainMenuDiv">
+            <div class="col-md-6 col-xs-12 mainMenuDiv">
                 <nav class="navbar navbar-default">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainCollapse" aria-expanded="false">
@@ -72,12 +70,13 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
                     </div>
                 </nav>
             </div>
-            <div class="col-lg-9 col-md-9 col-sm-0 col-xs-0 searchLineDiv">
+            <div class="col-md-9 col-sm-0 col-xs-0 searchLineDiv">
                 <jdoc:include type="modules" name="search" />
             </div>
         </div>
     </header>
 
+	<!-- Menu О Компании -->
     <?php if (preg_match('/about/', $_SERVER['REQUEST_URI'])) : ?>
         <div class="container-fluid aboutPageBl">
             <div class="container">
@@ -93,19 +92,21 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
     <jdoc:include type="modules" name="itOutsourcingWeProposeYou" style="xhtml" />
 
     <?php $itemId = JRequest::getInt('Itemid'); ?>
+	<!-- Not Menu IT-консалтинг, IT-интеграция, Дата-центр, Безопасность, Web-проекты, Блог, Вакансии, Совместная работа сотрудников на базе продуктов Kerio,
+		Безопасность и защита информации, Объединение распределенных офисов в единую сеть, 	IP-телефония и видеоконференции  -->
     <?php if ($_SERVER['REQUEST_URI'] != '/' && !preg_match('/news/', $_SERVER['REQUEST_URI']) && !in_array($itemId, [105, 107, 108, 109, 110, 118, 120, 121, 122, 123, 124])) : ?>
         <div class="container contentBl">
             <jdoc:include type="component" />
         </div>
     <?php endif; ?>
 
-    <!-- Styles for page Blog -->
+    <!-- Styles for Menu page Blog -->
     <?php if ($itemId == 118) : ?>
         <?php if (preg_match('/blog/', $_SERVER['REQUEST_URI']) || preg_match('/\&Itemid\=118/', $_SERVER['REQUEST_URI'] )) : ?>
             <div class="container-fluid contentBlBlogHeader">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-12 col-md-12 cols-sm-12 col-xs-12">
+                        <div class="col-xs-12">
                             <h1 class="blogHeader">Блог</h1>
                         </div>
                     </div>
@@ -115,10 +116,10 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 
         <div class="container contentBlBlog">
             <div class="row">
-                <div class="col-lg-9 col-md-9 cols-sm-12 col-xs-12">
+                <div class="col-md-9 col-xs-12">
                     <jdoc:include type="component" />
                 </div>
-                <div class="col-lg-3 col-md-3 cols-sm-0 col-xs-0 rightSideMenuBl">
+                <div class="col-md-3 cols-sm-0 col-xs-0 rightSideMenuBl">
                     <jdoc:include type="modules" name="rightSideMenuBl" />
                 </div>
         </div>
@@ -172,7 +173,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
         </div>
     <?php endif; ?>
 
-    <?php if ($_SERVER['REQUEST_URI'] == '/' || preg_match('/contacts/', $_SERVER['REQUEST_URI']) || preg_match('/services\/it-outsourcing/', $_SERVER['REQUEST_URI'])) : ?>
+    <?php if ($_SERVER['REQUEST_URI'] == '/' || preg_match('/contacts/', $_SERVER['REQUEST_URI']) || preg_match('/services\/outsourcing/', $_SERVER['REQUEST_URI'])) : ?>
         <div class="container-fluid">
             <div id="map"></div>
             <script>
@@ -192,7 +193,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
                 }
             </script>
             <script async defer
-                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcF4_JMyp4KWtLS_HwnKlAOw7Q9OCNleA&callback=initMap">  
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcF4_JMyp4KWtLS_HwnKlAOw7Q9OCNleA&callback=initMap">  
             </script>
         </div>
     <?php endif; ?>

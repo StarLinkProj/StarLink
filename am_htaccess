@@ -51,13 +51,14 @@ RewriteRule .* index.php [F]
 # www redirect (or vice versa), place that code here. Ensure those
 # redirects use the correct RewriteRule syntax and the [R=301,L] flags.
 
-RewriteCond %{HTTP_HOST} ^www\.starlink\.ua [NC]
-RewriteCond %{REQUEST_URI} !^/google.*\.html [NC]
-RewriteRule ^(.*)$ http://starlink.ua/$1 [L,R=301]
-
 # показывать изображения, залинкованные из рассылок phplist, отправленных до 01.09.2016
 RewriteCond %{REQUEST_URI} ^.*\.(jpg|png|gif)$   [NC]
 RewriteRule ^design/starlink/images/(new/)?(.*)$ 0_phplist_images_archive/$2 [NC,L]
+
+# redirect to canonical web-site address
+RewriteCond %{REQUEST_URI} !^/google.*\.html [NC]
+RewriteCond %{HTTP_HOST} ^www\.starlink\.(pp\.)?ua [NC]
+RewriteRule ^(.*)$ http://starlink.%1ua/$1?canonical [R=301,L]
 
 # еще не законченные страницы переадресовывать на страницу контактов
 #RewriteRule ^audit-infrastruktury            contacts [R=302,L]

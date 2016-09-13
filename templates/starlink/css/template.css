@@ -96,14 +96,12 @@ a:hover, a:focus{
 	padding-bottom: 40px;
 }
 .services h3{
+	margin: 30px 0 30px;
 	color: #fff;
 	opacity: 0.8;
-	font-size: 22px;
-	line-height: 34px;
-	width: 50%;
-	margin: 50px auto;
+	font-size: 42px;
+	font-weight: 300;
 	text-align: center;
-	font-weight: normal;
 }
 .services h4, 
 .services p
@@ -155,33 +153,40 @@ a:hover, a:focus{
 .not-ready-to-call h3 {
 	margin: 50px 0 28px;
 	text-align: center;
-	font-family: 'HelveticaNeue-Ligth', sans-serif;
+	/* font-family: 'HelveticaNeue-Ligth', sans-serif; */
+	font-weight: 300;
 	font-size: 42px;
 }
 .not-ready-to-call .leftBlNotReadyCall p, .not-ready-to-call .rightBlNotReadyCall p{
-	margin-bottom: 20px;
+	margin: 0 15px 20px;
+/* 	margin-bottom: 20px;
+	 */
+}
+
+.moduletable-orderSurvey {
+	padding:0 15px;
 }
 
 div#fox-container-m95{
-	margin: 20px 0 30px;
+	margin: 20px 15px 30px;
 	min-height: 265px;
 }
 div#fox-container-m95 h2{
 	font-weight: bold;
 	font-size: 18px;
 	color: #3C3D41;
-	margin-bottom: 0;
+	margin: 0 15px;;
 }
 div#fox-container-m95 .freeQuestionnaire button.btn, div#fox-container-m100 .sendLetterButton button.btn,
 div#fox-container-m115 .sendLetterButton button.btn{
 	text-align: center;
-	width: 100%;
+	width:100%;
+	margin: 0 auto;
 	padding: 20px;
 	background: #3FA2F7;
 	border-radius: 30px;
 	outline: none;
 	text-shadow: none;
-	margin: 0;
 	border: 1px solid #3FA2F7;
 }
 div#fox-container-m95 .freeQuestionnaire button.btn:hover, div#fox-container-m100 .sendLetterButton button.btn:hover,
@@ -200,7 +205,7 @@ div#fox-container-m115 .sendLetterButton button.btn span{
 }
 div#fox-container-m95 .freeQuestionnaireInput input[type="text"], div#fox-container-m100 .sendLetterInput input[type="text"],
 div#fox-container-m100 .sendLetterArea textarea{
-	padding: 12px 15px;
+	padding: 12px 10px;
 	font-size: 14px;
 	height: auto;
 	line-height: 14px;
@@ -211,7 +216,7 @@ div#fox-container-m100 .sendLetterArea textarea{
 	margin-bottom: 0;
 }
 div#fox-container-m95 .fox-form-stacked .controls, div#fox-container-m100 .fox-form-stacked .controls {
-	 float: none !important;
+	float: none !important;
 }
 div#fox-container-m95 .freeQuestionnaireInput .control-label label {
 	display: none;
@@ -240,11 +245,12 @@ div#fox-container-m100 .fox-form-stacked #fox-m100-submit-box .controls{
 	margin-bottom: 50px;
 }
 .reviews h3{
-	font-size: 16px;
-	line-height: 20px;
-	text-transform: uppercase;
-	font-weight: normal;
-	margin: 50px 0;
+	margin-top: 50px;
+	padding: 0 0 50px;
+	color: #1b1b1b;
+	font-weight: 300;
+	font-size: 42px;
+	line-height: 50px;
 	text-align: center;
 }
 .singleReview{
@@ -358,7 +364,7 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 }
 .navbar-default .navbar-nav > li.deeper{
 	padding-right: 10px;
-	background: url('../images/main/menuBottomArrow.png') no-repeat right 35px;
+	background: url('../images/main/menuBottomArrow.png') no-repeat right 20px;
 	border-right: 10px solid transparent;
 }
 .navbar-default .navbar-nav > li.deeper a:hover,
@@ -712,12 +718,14 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 	background: url('../images/main/itOutsourcingCallInfoBl.png') no-repeat center center;
 	background-size: cover;
 }
-.itOutsourcingCallInfoBl p{
-	margin: 66px 20px;
-	text-align: center;
-	font-size: 32px;
-	line-height: 34px;
-	color: #fff;
+
+.itOutsourcingCallInfoBl h3 {
+    margin: 25px auto 25px;
+    color: #fff;
+    font-size: 32px;
+    line-height: 32px;
+    text-align: center;
+    font-weight: 300;
 }
 
 .itOutsourcingSingleTextBl p{
@@ -1440,7 +1448,7 @@ button.modalFormCloseBtn{
 	}
 	.topPhone {
 		font-size: 23px;
-		margin-top: 8px;
+		/*margin-top: 8px;*/
 		padding: 31px 0 28px 45px;
 	}
 	.rightSideMenuBl{
@@ -1498,10 +1506,10 @@ button.modalFormCloseBtn{
 		padding: 0;
 	}
 	.navbar-default .navbar-nav > li > a {
-		padding: 44px 0 31px;
+		padding: 40px 0 31px;
 	}
 	.navbar-default .navbar-nav > li.deeper {
-		background: url('../images/main/menuBottomArrow.png') no-repeat right 51px;
+		background: url('../images/main/menuBottomArrow.png') no-repeat right 46px;
 	}
 	.topPhone{
 		width: auto;
@@ -1711,17 +1719,17 @@ button.modalFormCloseBtn{
 		margin-top: -75px;
 	}
 	.services h3 {
-		width: 80%;
+		/* width: 80%; */
 	}
 	div#fox-container-m100 .fox-form-stacked #fox-m100-submit-box .controls {
-		width: 100%;
+/* 		width: 100%; */
 	}
 	div#fox-container-m95 .freeQuestionnaire button.btn span, div#fox-container-m100 .sendLetterButton button.btn span {
 		font-size: 14px;
 	}
 	div#fox-container-m95 h2 {
-		margin-left: 5%;
-		margin-right: 5%;
+/* 		margin-left: 5%;
+		margin-right: 5%; */
 	}
 	.vacationH2{
 		font-size: 55px;
