@@ -86,6 +86,42 @@ a:hover, a:focus{
 	line-height: 25px;
 }
 
+.slide-text, .slide-title {
+	color: #fff;
+	text-align: center;
+}
+
+.slide-title a, .slide-title p {
+	font-size: 64px;
+	font-weight: 300;
+}
+
+
+.slide-text p {
+	font-weight: 300;
+	font-size: 16px;
+}
+
+@media (min-width: 768px) {
+	#slider88 .slide-desc-text-default a.readmore {
+		font-weight: 300;
+		font-size: 16px;
+	}
+}
+@media (min-width: 992px) {
+	#slider88 .slide-desc-text-default a.readmore {
+		font-weight: 300;
+		font-size: 16px;
+	}
+}
+@media (min-width: 1200px) {
+	#slider88 .slide-desc-text-default a.readmore {
+		font-weight: 300;
+		font-size: 16px;
+	}
+}
+
+
 #map{
 	width: 100%;
 	height: 400px;
