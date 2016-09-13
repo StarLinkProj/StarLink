@@ -28,7 +28,7 @@ else
 <div class="search<?php echo $moduleclass_sfx ?>">
 	<form action="<?php echo JRoute::_('index.php');?>" method="post" class="form-inline">
 		<?php
-			$output .= '<input name="searchword" id="mod-search-searchword" maxlength="' . $maxlength . '"  class="inputbox search-query" type="search"' . $width;
+			$output = '<input name="searchword" id="mod-search-searchword" maxlength="' . $maxlength . '"  class="inputbox search-query" type="search"' . $width;
 			$output .= ' placeholder="' . $text . '" />';
 
 			if ($button) :

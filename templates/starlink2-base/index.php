@@ -77,7 +77,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
     </header>
 
 	<!-- Menu О Компании -->
-    <?php if (preg_match("/about/", $_SERVER['REQUEST_URI'])) : ?>
+    <?php if (preg_match('/about/', $_SERVER['REQUEST_URI'])) : ?>
         <div class="container-fluid aboutPageBl">
             <div class="container">
                 <jdoc:include type="modules" name="aboutPageBl" />

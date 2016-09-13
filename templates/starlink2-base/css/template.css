@@ -222,9 +222,8 @@ div#fox-container-m95 .freeQuestionnaireInput .control-label label {
 	display: none;
 }
 div#fox-container-m100 .fox-form-stacked #fox-m100-submit-box .controls{
-	width: 100%;
+	width: 70%;
 }
-
 
 .profitable-it-outsourcing{
 	padding-bottom: 115px;
@@ -330,18 +329,11 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 }
 
 .sendLetterBl h3, .contactsBl h3{
+	margin-bottom: 20px;
 	font-size: 32px;
 	font-weight: 300;
 	line-height: 40px;
 }
-
-.sendLetterBl h3 {
-	margin-bottom: 0;
-}
-.contactsBl h3 {
-	margin-bottom: 20px;
-}
-
 
 #mainmenu li.item-101{
 	display: none;
@@ -432,21 +424,16 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 .aboutMainCenterText{
 	padding-top: 100px;
 	color: #fff;
-	font-weight: 300;
-	text-align: center;
-}
-.aboutMainCenterText h2{
-	font-weight: 300;
-	font-size: 42px;
+	font-weight: normal;
+	font-family: 'HelveticaNeue-Bold', sans-serif;
 }
 .aboutMainCenterText h4{
 	font-size: 21px;
 	line-height: 30px;
-	font-weight: 300;
 	margin: 0 30px 40px;
 }
 .aboutMainCenterText h4:last-child{
-	margin: 10px 0 30px;
+	font-family: 'HelveticaNeue-Roman', sans-serif;
 }
 .iconBlocks{
 	padding-bottom: 60px;

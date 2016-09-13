@@ -1,0 +1,28 @@
+/* ERROR CSS
+*********************************************/
+
+html, body {
+  height: 100%;
+}
+
+.containerError {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin-bottom: -16em;
+}
+
+footer, .push {
+  height: 16em;
+}
+
+footer {
+  padding: 1em 0;
+  background-color: rgb(51, 56, 63);
+  color: white;
+}
+
+.search label {
+    display:none
+}
+
