@@ -23,8 +23,17 @@ a:hover, a:focus{
 	clear: both;
 }
 
-.logo-img{
-	padding: 15px 0;
+#logo-img {
+	padding: 10px 0;
+	box-sizing: content-box;
+	display:block;
+    height:57px;
+    width:193px;
+	background-image: url(/images/main/logo-lowres.png);
+	background-origin: content-box;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-size: 193px 57px;
 }
 .topPhone{
 	font-size: 26px;
@@ -1456,6 +1465,9 @@ button.modalFormCloseBtn{
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+	#logo-img {
+		padding: 15px 0;
+	}
 	#mainmenu li.deeper:hover>ul.nav-child{
 		position: absolute;
 		box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
@@ -1543,8 +1555,9 @@ button.modalFormCloseBtn{
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-	.logo-img{
-		padding: 20px 0 10px;
+	#logo-img {
+		padding: 18px 0 0;
+		background: url(/images/main/logo-lowres.png) no-repeat left 18px;
 	}
 	#mainmenu li.deeper:hover>ul.nav-child{
 		position: absolute;
@@ -1764,7 +1777,7 @@ button.modalFormCloseBtn{
 	.navbar-header{
 		width: 50px;
 		float: right;
-		margin-top: -75px;
+		margin-top: -65px;
 	}
 	.services h3 {
 		/* width: 80%; */
@@ -1863,3 +1876,17 @@ button.modalFormCloseBtn{
 	}
 }
 
+
+@media only screen and (min--moz-device-pixel-ratio: 1.5),
+    (-o-min-device-pixel-ratio: 3/2),
+    (-webkit-min-device-pixel-ratio: 1.5),
+    (min-device-pixel-ratio: 1.5) {
+
+  #logo-img {
+    background-image: url(/images/main/logo-hires.png);
+	background-origin: content-box;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-size: 193px 57px;
+  }
+}
