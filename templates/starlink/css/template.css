@@ -30,7 +30,7 @@ a:hover, a:focus{
 	font-size: 26px;
 	font-weight: bold;
 	padding: 31px 0 32px 45px;
-	background: url('../images/main/topPhone.png') no-repeat left center;
+	background: url('../images/main/topPhone.png') no-repeat left 37px;
 }
 .topPhoneMobile{
 	background: #33383F;
@@ -102,19 +102,8 @@ a:hover, a:focus{
 	font-size: 16px;
 }
 
+/* to override default DJ slider styles */
 @media (min-width: 768px) {
-	#slider88 .slide-desc-text-default a.readmore {
-		font-weight: 300;
-		font-size: 16px;
-	}
-}
-@media (min-width: 992px) {
-	#slider88 .slide-desc-text-default a.readmore {
-		font-weight: 300;
-		font-size: 16px;
-	}
-}
-@media (min-width: 1200px) {
 	#slider88 .slide-desc-text-default a.readmore {
 		font-weight: 300;
 		font-size: 16px;
@@ -388,6 +377,9 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 #mainmenu .nav-child{
 	display: none;
 }
+#mainmenu>li>a {
+	padding: 
+} 
 .navbar{
 	border: none;
 	margin-bottom: 0;
@@ -1407,12 +1399,15 @@ button.modalFormCloseBtn{
 	background: #33383F;
 	color: #fff;
 	font-weight: bold;
-	padding: 50px 0 165px;
+	padding: 50px 0 50px;
 	position: absolute;
 	left: 0;
 	bottom: 0;
 	height: auto;
 	width: 100%;
+}
+.footer p {
+	margin-bottom: 0;
 }
 #footerMenu li.item-101{
 	display: none;
@@ -1422,7 +1417,7 @@ button.modalFormCloseBtn{
 }
 #footerMenu>li>a{
 	display: inline-block;
-	padding: 4px 10px;
+	padding: 0px 10px;
 	color: #fff;
 	cursor: pointer;
 }
@@ -1431,19 +1426,8 @@ button.modalFormCloseBtn{
 	opacity: 0.8;
 	background: transparent;
 }
-.copyright{
-	padding: 4px 15px;
-}
-.copyright sup{
-	font-weight: normal;
-}
-.footerSocNetworks{
-	text-align: right;
-}
 .footerSocNetworks a{
 	margin: 0 10px;
-}
-.footerSocNetworks a{
 	border: 1px solid rgba(255, 255, 255, 0.3);
 	border-radius: 50%;
 	cursor: pointer;
@@ -1452,7 +1436,7 @@ button.modalFormCloseBtn{
 	background: rgba(255, 255, 255, 1);
 }
 .footerSocNetworks .facebookIcon{
-	padding: 7px 12px;
+	padding: 7px 13px 7px 12px;
 }
 .footerSocNetworks .twitterIcon{
 	padding: 7px 5px;
@@ -1460,7 +1444,10 @@ button.modalFormCloseBtn{
 .footerSocNetworks .googleIcon{
 	padding: 7px 7px;
 }
-
+.footer .container .row > div{
+	text-align: center;
+	margin: 15px 0;
+}
 /* MEDIA QUERIES
 *********************************************/
 
@@ -1551,6 +1538,7 @@ button.modalFormCloseBtn{
 		margin: 0 auto;
 		float: none;
 	}
+
 }
 
 /* Medium devices (desktops, 992px and up) */
@@ -1653,6 +1641,13 @@ button.modalFormCloseBtn{
 		width: 84%;
 		margin: 0;
 	}
+	.footer {
+		padding: 50px 0 165px;
+	}
+	.footer .container .row > div{
+		text-align: left;
+		margin: 0;
+	}
 }
 
 /* Large devices (large desktops, 1200px and up) */
@@ -1693,14 +1688,6 @@ button.modalFormCloseBtn{
 
 /* for higher resolutions (android and retina) */
 @media screen and (-webkit-min-device-pixel-ratio: 1.5) , screen and (min--moz-device-pixel-ratio: 1.5), (max-width: 767px) {
-	.copyright{
-		text-align: center;
-		margin-bottom: 20px;
-	}
-	.footerSocNetworks{
-		text-align: center;
-		margin-top: 20px;
-	}
 	.services-bl>div.container{
 		padding: 0 15px;
 	}
@@ -1872,15 +1859,3 @@ button.modalFormCloseBtn{
 	}
 }
 
-@media (max-width: 1024px) {
-	.footer{
-		padding: 50px 0 50px;
-	}
-	.footer .container .row > div{
-		text-align: center;
-		margin: 15px 0;
-	}
-	.footerSocNetworks {
-		 text-align: center;
-	}
-}

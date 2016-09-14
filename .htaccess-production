@@ -47,14 +47,15 @@ RewriteEngine On
   RewriteRule ^(.*)$ http://starlink.%1ua/$1?canonical [R=301,L]
   
   # еще не законченные страницы переадресовывать на страницу контактов
-  RewriteRule ^audit-infrastruktury            contacts [R=302,L]
-  RewriteRule ^strategiya-razvitiya-it-uslug   contacts [R=302,L]
-  RewriteRule ^obshchij-it-audit-predpriyatiya contacts [R=302,L]
-  RewriteRule ^services/data-center            contacts [R=302,L]
-  RewriteRule ^services/web-projects           contacts [R=302,L]
-  RewriteRule ^services/it-integration         contacts [R=302,L]
-  RewriteRule ^services/security                solutions/dataprotection-kerio-control [R=302,L]
-
+  RewriteRule ^menu-infrastructure-audit            contacts [R=302,L]
+  RewriteRule ^menu-it-service-strategy             contacts [R=302,L]
+  RewriteRule ^menu-server-audit                    contacts [R=302,L]
+  RewriteRule ^menu-software-audit                  contacts [R=302,L]
+  RewriteRule ^services/datacenter                  contacts [R=302,L]
+  RewriteRule ^services/webprojects                 contacts [R=302,L]
+  RewriteRule ^services/integration                 contacts [R=302,L]
+  RewriteRule ^services/security                    solutions/dataprotection-kerio-control [R=302,L]
+  
 ## End - Custom redirects
 
 # Uncomment the following line if your webserver's URL is not directly related to physical file paths. Update Your Joomla! Directory (just / for root).
