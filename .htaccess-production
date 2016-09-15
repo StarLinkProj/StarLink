@@ -51,10 +51,11 @@ RewriteEngine On
   RewriteRule ^menu-it-service-strategy             contacts [R=302,L]
   RewriteRule ^menu-server-audit                    contacts [R=302,L]
   RewriteRule ^menu-software-audit                  contacts [R=302,L]
-  RewriteRule ^services/datacenter                  contacts [R=302,L]
+  #RewriteRule ^services/datacenter                  contacts [R=302,L]
   RewriteRule ^services/webprojects                 contacts [R=302,L]
-  RewriteRule ^services/integration                 contacts [R=302,L]
+  #RewriteRule ^services/integration                 contacts [R=302,L]
   RewriteRule ^services/security                    solutions/dataprotection-kerio-control [R=302,L]
+  RewriteRule ^services/integration/sales			services/integration [R=302,L]
   
 ## End - Custom redirects
 
