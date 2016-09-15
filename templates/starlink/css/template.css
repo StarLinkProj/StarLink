@@ -744,9 +744,15 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 .itOutsourcingWeProposeYouCenterText{
 	margin-bottom: 50px;
 }
+.itOutsourcingWeProposeYouCenterText p{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	margin-bottom: 10px;
+	font-size: 16px;
+}
 .itOutsourcingWeProposeYouCenterText h4{
 	font-family: 'Roboto', sans-serif;
-	font-weight: normal;
+	font-weight: 300;
 	color: #373A3C;
 	font-size: 22px;
 	line-height: 25px;
@@ -1007,12 +1013,13 @@ button.modalFormCloseBtn{
 	margin-bottom: 20px;
 }
 .solutionBl1H4{
-	text-align: center;
+	margin: 0 auto;
+	max-width: 900px;
 	color: #fff;
 	font-size: 20px;
+	font-weight:300;	
+	text-align: center;
 	line-height: 25px;
-	font-weight:300;
-	margin: 0;
 }
 .solutionBl1H4:last-child{
 	margin-bottom: 20px;
@@ -1238,6 +1245,7 @@ button.modalFormCloseBtn{
 
 /*********** Services **********/
 .servicesTopBlH2{
+	font-family: 'Roboto', sans-serif;
 	line-height: 80px;
 	color: #fff;
 	font-size: 72px;
@@ -1251,18 +1259,22 @@ button.modalFormCloseBtn{
 .servicesBl2H2{
 	margin: 50px 0;
 	text-align: center;
-	font-family: 'HelveticaNeue-Ligth', sans-serif;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
 	font-size: 42px;
 	line-height: 50px;
 	color: #1b1b1b;
 }
-.servicesBl2 p{
+.servicesBl2 p, .servicesBl2 ul{
 	font-family: 'Roboto', sans-serif;
-	font-size: 14px;
+	font-weight: 300;
+	font-size: 16px;
 	line-height: 20px;
 	margin-bottom: 20px;
 }
 .servicesBl2 h3{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
 	margin-top: 0;
 }
 .servicesBl2 h4{
@@ -1283,19 +1295,43 @@ button.modalFormCloseBtn{
 	color: #1b1b1b;
 }
 .servicesBl4 h4 {
-	margin: 20px 0;
+	margin: -100px 0 0;
+	padding: 0 10px;
+	height: 100px;
+	font-family: 'Roboto', sans-serif;
+	font-size:20px;
 	font-weight: normal;
+	text-align: center;
 }
+
 .servicesBl4 h4 a {
-	color: #3FA2F7;
-	font-size: 18px;
+	color: #fff;
+/* 	color: #3FA2F7; */	
+	font-family: 'Roboto', sans-serif;
 	line-height: 20px;
 }
 .servicesBl4 p {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	font-size: 16px;
 	line-height: 20px;
 	color: #9b9b9b;
 	margin: 0;
 }
+
+.servicesBl4 img { 
+	height: 166px;
+	margin-bottom: 10px;
+	background-color: rgba(255,255,255,0) 
+}
+.servicesBl4 img[class] { 
+	width: 100% 
+} 
+.servicesBl4 img.object-fit_cover { 
+	object-fit: cover 
+}
+
+
 .servicesBl1H2{
 	line-height: 80px;
 	color: #fff;
