@@ -729,20 +729,26 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 .itOutsourcingWeProposeYou h3{
 	margin: 50px 0 20px;
 	text-align: center;
-	font-family: 'HelveticaNeue-Ligth', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-size: 42px;
 	line-height: 50px;
 	color: #1b1b1b;
-	font-weight: normal;
+	font-weight: 300;
+}
+.itOutsourcingWeProposeYou h4{
+	font-family: 'Roboto', sans-serif;
+	font-size: 22px;
+	text-align: center;
+	font-weight: 300;
 }
 .itOutsourcingWeProposeYouCenterText{
 	margin-bottom: 50px;
 }
 .itOutsourcingWeProposeYouCenterText h4{
-	font-family: 'HelveticaNeue-Roman', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-weight: normal;
 	color: #373A3C;
-	font-size: 16px;
+	font-size: 22px;
 	line-height: 25px;
 }
 .itOutsourcingWeProposeYouIconBlocks{
@@ -752,7 +758,7 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 	text-align: center;
 }
 .itOutsourcingWeProposeYouIconBlocks h5{
-	font-weight: normal;
+	font-weight: 300;
 	font-size: 18px;
 	line-height: 20px;
 	color: #2c2c2c;
@@ -1251,10 +1257,16 @@ button.modalFormCloseBtn{
 	color: #1b1b1b;
 }
 .servicesBl2 p{
-	font-family: 'HelveticaNeue-Regular', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-size: 14px;
 	line-height: 20px;
 	margin-bottom: 20px;
+}
+.servicesBl2 h3{
+	margin-top: 0;
+}
+.servicesBl2 h4{
+	margin-top: 0;
 }
 .servicesBl4{
 	padding-bottom: 50px;
@@ -1385,7 +1397,7 @@ button.modalFormCloseBtn{
 }
 .scrollTopBtn .scrollTopArrowSpan{
 	display: inline-block;
-	margin: 0 0 0 10px;
+	margin: 0 0 0 5px;
 }
 .scrollBl{
 	display: none;
