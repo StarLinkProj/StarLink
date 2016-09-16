@@ -15,7 +15,7 @@ $tpath = $this->baseurl.'/templates/'.$this->template;
   <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" /> <!-- mobile viewport optimized -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:300&subset=cyrillic" rel="stylesheet">
   <link rel="stylesheet" href="<?php echo $tpath; ?>/css/normalize.css">
-  <link rel="stylesheet" href="<?php echo $tpath; ?>/css/skeleton.css">
+  <link rel="stylesheet" href="<?php echo $tpath; ?>/css/am_skeleton.css">
   <link rel="stylesheet" href="<?php echo $tpath; ?>/css/error.css?v=1">
 </head>
 

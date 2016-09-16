@@ -261,12 +261,16 @@ div#fox-container-m100 .fox-form-stacked #fox-m100-submit-box .controls{
 	background-size: cover;
 }
 .profitable-it-outsourcing h3{
-	font-family: 'HelveticaNeue-Ligth', sans-serif;
+	font-family: Roboto, sans-serif;
+	font-weight: 300;
 	font-size: 42px;
 	margin: 125px 0 20px;
 	color: #1B1B1B;
 }
 .profitable-it-outsourcing p{
+	font-family: Roboto, sans-serif;
+	font-weight: 300;
+	font-size: 18px;
 	line-height: 20px;
 	color: #333;
 }
@@ -381,9 +385,9 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 #mainmenu .nav-child{
 	display: none;
 }
-#mainmenu>li>a {
+/*#mainmenu>li>a {
 	padding: 
-} 
+} */
 .navbar{
 	border: none;
 	margin-bottom: 0;
@@ -1469,7 +1473,7 @@ button.modalFormCloseBtn{
 }
 #footerMenu>li>a{
 	display: inline-block;
-	padding: 0px 10px;
+	padding: 0 10px;
 	color: #fff;
 	cursor: pointer;
 }
