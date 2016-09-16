@@ -16,7 +16,15 @@ $this->setGenerator(null);
 $doc->addScript($tpath.'/js/logic.js');
 
 // template css
-$doc->addStyleSheet($tpath.'/css/template.css.php');
+//
+// am: replacing this to plain css in order to help debug in Firefox development tools
+//$doc->addStyleSheet($tpath.'/css/template.css.php');    // original instruction
+$doc->addStyleSheet($tpath.'/css/imports.css');                     // new instructions
+$doc->addStyleSheet($tpath.'/css/normalize.css');                   // new instructions
+$doc->addStyleSheet($tpath.'/css/template.css');                    // new instructions
+$doc->addStyleSheet($tpath.'/../../media/system/css/system.css');   // new instructions
+$doc->addStyleSheet($tpath.'/../system/css/system.css');            // new instructions
+$doc->addStyleSheet($tpath.'/../system/css/general.css');           // new instructions
 
 // am: add scss
 //$doc->addStyleSheet($tpath.'/css/style.php/style.scss');
