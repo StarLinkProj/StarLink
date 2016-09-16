@@ -12,9 +12,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 <html lang="<?php echo $this->language; ?>">
 
 <head>
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/templates/starlink/css/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="/templates/starlink/css/helvetica.css" type="text/css">
     <link rel="stylesheet" href="/templates/starlink/css/calculator.css" type="text/css">
     <jdoc:include type="head" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />

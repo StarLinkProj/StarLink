@@ -21,6 +21,7 @@ $doc->addScript($tpath.'/js/logic.js');
 //$doc->addStyleSheet($tpath.'/css/template.css.php');    // original instruction
 $doc->addStyleSheet($tpath.'/css/imports.css');                     // new instructions
 $doc->addStyleSheet($tpath.'/css/normalize.css');                   // new instructions
+$doc->addStyleSheet($tpath.'/css/fonts.css');                   // new instructions
 $doc->addStyleSheet($tpath.'/css/template.css');                    // new instructions
 $doc->addStyleSheet($tpath.'/../../media/system/css/system.css');   // new instructions
 $doc->addStyleSheet($tpath.'/../system/css/system.css');            // new instructions
