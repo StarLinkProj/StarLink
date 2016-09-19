@@ -405,13 +405,12 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 	color: #1b1b1b;
 	font-weight: bold;
 }
+
 .navbar-default .navbar-nav > li.deeper{
 	position: relative;
-}
-.navbar-default .navbar-nav > li.deeper{
-	padding-right: 10px;
-	background: url('../images/main/menuBottomArrow.png') no-repeat right 20px;
-	border-right: 10px solid transparent;
+	padding-right: 7px;
+	background: url('../images/main/menuBottomArrow.png') no-repeat right 37px;
+	border-right: 7px solid transparent;
 }
 .navbar-default .navbar-nav > li.deeper a:hover,
 .navbar-default .navbar-nav > li.deeper.active a:hover,
