@@ -27,8 +27,8 @@ a:hover, a:focus{
 	padding: 10px 0;
 	box-sizing: content-box;
 	display:block;
-    height:57px;
-    width:193px;
+	height:57px;
+	width:193px;
 	background-image: url(/images/main/logo-lowres.png);
 	background-origin: content-box;
 	background-repeat: no-repeat;
