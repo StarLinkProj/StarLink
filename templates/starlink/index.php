@@ -202,11 +202,11 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
     <footer class="container-fluid footer">
         <div class="container">
             <div class="row">
-                <div class="col-md-3 col-sm-12 col-xs-12 copyright">&copy; 2016 &nbsp; Старлинк</div>
-                <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="col-md-3 col-xs-12 copyright">&copy; 2016 &nbsp; <a href="/">Старлинк</a></div>
+                <div class="col-md-6 col-xs-12">
                     <jdoc:include type="modules" name="footerMenu" />
                 </div>
-                <div class="col-md-3 col-sm-12 col-xs-12">
+                <div class="col-md-3 col-xs-12">
                     <jdoc:include type="modules" name="footerSocNetworks" />
                 </div>
             </div>
