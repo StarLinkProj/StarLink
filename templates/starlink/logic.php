@@ -28,4 +28,4 @@ $doc->addStyleSheet($tpath.'/../system/css/system.css');            // new instr
 $doc->addStyleSheet($tpath.'/../system/css/general.css');           // new instructions
 
 // am: add scss
-//$doc->addStyleSheet($tpath.'/css/style.php/style.scss');
+//$doc->addStyleSheet($tpath.'/css/am_style.php/am_style.scss');

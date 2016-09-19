@@ -6,10 +6,10 @@
  * Time: 17:52
  */
 
-$directory = "scss";
+$directory = "../scss";
 
 require "scss.inc.php";
 scss_server::serveFrom($directory);
 /*$scss = new scssc();
 $scss->setImportPaths("scss/");
-echo $scss->compile('@import "style.scss"');*/
+echo $scss->compile('@import "am_style.scss"');*/
