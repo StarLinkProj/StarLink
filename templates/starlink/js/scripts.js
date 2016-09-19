@@ -130,7 +130,8 @@ jQuery(document).ready(function($) {
         }, 3000);
     });
 
-    // Menu for screen width (768-991)
+
+    /*// Menu for screen width (768-991)
     function tabletMenuChange() {
         if (jQuery(window).width() >= 752 && jQuery(window).width() <= 975) {
             if (jQuery('.tabletMainMenu').length == 0) {
@@ -155,7 +156,8 @@ jQuery(document).ready(function($) {
             e.preventDefault();
             jQuery(this).parent().find('ul.nav-child').toggle();
         });
-    }
+    }*/
+
 
     // Scroll to top page on scrollTopButton click
     jQuery(".scrollTopBtn").click(function() {
@@ -181,7 +183,7 @@ jQuery(document).ready(function($) {
     });
 
 
-    // Header for desktop with width < 767px
+/*    // Header for desktop with width < 767px
     function headerDesktopChange() {
         var phoneText = '';
         if (jQuery(window).width() <= 767) {
@@ -205,7 +207,7 @@ jQuery(document).ready(function($) {
     headerDesktopChange();
     $( window ).resize(function() {
         headerDesktopChange()
-    });
+    });*/
 
     // Wrap every 3 news to block
     var newsBlock = jQuery('.blog>.row');
