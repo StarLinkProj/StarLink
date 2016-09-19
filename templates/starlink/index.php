@@ -32,13 +32,13 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 <body>
     <header class="container-fluid">
         <div class="row">
-            <?php #if ($mobileDetectObj->isMobile() || $mobileDetectObj->isTablet()) : ?>
-                <!--<div class="container-fluid">-->
+            <!-- < ? php #if ($mobileDetectObj->isMobile() || $mobileDetectObj->isTablet()) : ? > -->
+                <!-- <div class="container-fluid"> -->
                 <div class="visible-xs-block col-xs-12 topPhoneMobile">
                     <jdoc:include type="modules" name="topPhone" />
                 </div>
 <!--                </div>-->
-            <?php #endif; ?>
+<!--            < ? php #endif; ? >-->
             <div class="container">
                 <div class="logo col-md-3 col-sm-6 col-xs-9">
                     <a title="StarLink" href="<?php echo JURI::base(); ?>">
@@ -46,11 +46,11 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
                     </a>
                 </div>
 
-                <?php #if (!$mobileDetectObj->isMobile() && !$mobileDetectObj->isTablet()) : ?>
+<!--                < ? php #if (!$mobileDetectObj->isMobile() && !$mobileDetectObj->isTablet()) : ? >-->
                     <div class="hidden-xs col-md-3 col-sm-6 topPhoneDiv">
                         <jdoc:include type="modules" name="topPhone" />
                     </div>
-                <?php #endif; ?>
+<!--                < ? php #endif; ? >-->
 
                 <div class="col-md-6 col-xs-12 mainMenuDiv">
                     <nav class="navbar navbar-default">
