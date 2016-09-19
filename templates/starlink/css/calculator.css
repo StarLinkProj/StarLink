@@ -1,5 +1,9 @@
 /*---------------- CALCULATOR --------------*/
 
+.calcItOutsource{
+    display: none;
+}
+
 .tb-calc td {
     text-align: center;
     text-transform: uppercase;
@@ -602,6 +606,12 @@ td.calcTdRangeNameText {
     width: 200px;
 }
 
+@media (min-width: 992px) {
+    .calcItOutsource{
+        display: block;
+    }
+}
+
 @media (min-width: 992px) and (max-width: 1200px) {
     #slider-pc-count-digits .slider-pc-count-digit {
         width: 3.003%;
@@ -626,8 +636,9 @@ td.calcTdRangeNameText {
         width: 305px;
     }
 }
+/*
 @media (max-width: 991px) {
     .calcItOutsource{
         display: none;
     }
-}
+}*/
