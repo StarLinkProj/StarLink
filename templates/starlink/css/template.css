@@ -399,7 +399,7 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 }
 .navbar-default .navbar-nav > li > a{
 	border-bottom: 5px solid transparent;
-	padding: 30px 0 10px;
+	padding: 10px 0 20px;
 	margin: 0 10px;
 	font-size: 14px;
 	color: #1b1b1b;
@@ -409,7 +409,7 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 .navbar-default .navbar-nav > li.deeper{
 	position: relative;
 	padding-right: 7px;
-	background: url('../images/main/menuBottomArrow.png') no-repeat right 37px;
+	background: url('../images/main/menuBottomArrow.png') no-repeat right 17px;
 	border-right: 7px solid transparent;
 }
 .navbar-default .navbar-nav > li.deeper a:hover,
@@ -1506,6 +1506,9 @@ button.modalFormCloseBtn{
 	#logo-img {
 		padding: 15px 0;
 	}
+	#mainmenu {
+		padding-left: 100px;
+	}
 	#mainmenu li.deeper:hover>ul.nav-child{
 		position: absolute;
 		box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
@@ -1538,7 +1541,7 @@ button.modalFormCloseBtn{
 		background: url('../images/main/menuBottomArrow.png') no-repeat right 30px;
 	}
 	.navbar-default .navbar-nav > li > a{
-		font-size: 13px;
+		font-size: 14px;
 		margin: 0 7px;
 	}
 	#mainmenu>li>ul.nav-child>li>a {
@@ -1591,6 +1594,7 @@ button.modalFormCloseBtn{
 		float: none;
 	}
 
+
 }
 
 /* Medium devices (desktops, 992px and up) */
@@ -1598,6 +1602,9 @@ button.modalFormCloseBtn{
 	#logo-img {
 		padding: 18px 0 0;
 		background: url(/images/main/logo-lowres.png) no-repeat left 18px;
+	}
+	#mainmenu {
+		padding-left: 0;
 	}
 	#mainmenu li.deeper:hover>ul.nav-child{
 		position: absolute;
@@ -1611,6 +1618,7 @@ button.modalFormCloseBtn{
 		padding: 0;
 	}
 	.navbar-default .navbar-nav > li > a {
+		font-size: 13px;
 		padding: 40px 0 31px;
 	}
 	.navbar-default .navbar-nav > li.deeper {
