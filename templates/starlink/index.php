@@ -30,46 +30,47 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 </head>
   
 <body>
-    <header class="container">
+    <header class="container-fluid">
         <div class="row">
-            <?php if ($mobileDetectObj->isMobile() || $mobileDetectObj->isTablet()) : ?>
-                <div class="container-fluid">
-                    <div class="topPhoneMobile">
-                        <jdoc:include type="modules" name="topPhone" />
-                    </div>
-                </div>
-            <?php endif; ?>
-
-            <div class="logo col-md-3 col-sm-6 col-xs-9">
-                <a title="StarLink" href="<?php echo JURI::base(); ?>">
-					          <div id="logo-img"> </div>
-                </a>
-            </div>
-
-            <?php if (!$mobileDetectObj->isMobile() && !$mobileDetectObj->isTablet()) : ?>
-                <div class="col-md-3 col-sm-6 col-xs-12 topPhoneDiv">
+            <?php #if ($mobileDetectObj->isMobile() || $mobileDetectObj->isTablet()) : ?>
+                <!--<div class="container-fluid">-->
+                <div class="visible-xs-block col-xs-12 topPhoneMobile">
                     <jdoc:include type="modules" name="topPhone" />
                 </div>
-            <?php endif; ?>
+<!--                </div>-->
+            <?php #endif; ?>
+            <div class="container">
+                <div class="logo col-md-3 col-sm-6 col-xs-9">
+                    <a title="StarLink" href="<?php echo JURI::base(); ?>">
+					              <div id="logo-img"> </div>
+                    </a>
+                </div>
 
-            <div class="col-md-6 col-xs-12 mainMenuDiv">
-                <nav class="navbar navbar-default">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainCollapse" aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
+                <?php #if (!$mobileDetectObj->isMobile() && !$mobileDetectObj->isTablet()) : ?>
+                    <div class="hidden-xs col-md-3 col-sm-6 topPhoneDiv">
+                        <jdoc:include type="modules" name="topPhone" />
                     </div>
-                    <div class="collapse navbar-collapse" id="mainCollapse">
-                        <jdoc:include type="modules" name="mainMenu" />
-                        <a href="javascript:void(0)" class="searchButton"><img src="/images/main/search_icon.png"></a>
-                    </div>
-                </nav>
-            </div>
-            <div class="col-md-9 col-sm-0 col-xs-0 searchLineDiv">
-                <jdoc:include type="modules" name="search" />
+                <?php #endif; ?>
+
+                <div class="col-md-6 col-xs-12 mainMenuDiv">
+                    <nav class="navbar navbar-default">
+                        <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainCollapse" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="mainCollapse">
+                            <jdoc:include type="modules" name="mainMenu" />
+                            <a href="javascript:void(0)" class="searchButton"><img src="/images/main/search_icon.png"></a>
+                        </div>
+                    </nav>
+                </div>
+                <div class="hidden-xs hidden-sm col-md-9 searchLineDiv">
+                    <jdoc:include type="modules" name="search" />
+                </div>
             </div>
         </div>
     </header>
