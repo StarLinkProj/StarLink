@@ -149,14 +149,16 @@ jQuery(document).ready(function($) {
     $( window ).resize(function() {
         tabletMenuChange()
     });
+    */
 
-    // Menu for screen width <767 (mobile)
+    // Menu for screen width <767 (mobile):
+    // Expand level 1 menu items with submenus instead of following the level 1 menu link
     if (jQuery(window).width() <= 767) {
         jQuery("#mainmenu > .deeper > a").click(function (e) {
             e.preventDefault();
             jQuery(this).parent().find('ul.nav-child').toggle();
         });
-    }*/
+    }
 
 
     // Scroll to top page on scrollTopButton click
