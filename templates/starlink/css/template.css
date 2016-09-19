@@ -124,6 +124,9 @@ a:hover, a:focus{
 	background: #33383F;
 	padding-bottom: 40px;
 }
+.services-bl>div.container{
+	padding: 0 15px;
+}
 .services h3{
 	margin: 30px 0 30px;
 	color: #fff;
@@ -133,8 +136,7 @@ a:hover, a:focus{
 	text-align: center;
 }
 .services h4, 
-.services p
-{
+.services p {
 	color: #fff;
 	text-align: center;
 }
@@ -601,6 +603,9 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 	border-radius: 30px;
 	padding: 20px 105px 20px 95px;
 }
+.newsShowMoreNews{
+	padding: 20px 35px 20px 25px;
+}
 .newsShowMoreNews:hover, .newsShowMoreNews:focus{
 	color: #3FA2F7;
 	background: rgba(63, 162, 247, 0.03);
@@ -610,6 +615,8 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 	padding: 13px 11px;
 	background: url('../images/main/showMoreNewsIcon.png') no-repeat left center;
 }
+
+
 
 .servicesTopBlWithBg{
 	background: url('../images/main/servicesTopBlBg.jpg') no-repeat center center;
@@ -800,23 +807,6 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 }
 .itOutsourcingSingleTextBl:first-child{
 	margin: 50px 0 40px;
-}
-
-.calcItOutsource h3{
-	margin: 50px 150px 20px;
-	text-align: center;
-	font-size: 42px;
-	line-height: 50px;
-	color: #1b1b1b;
-	font-family: 'HelveticaNeue-Ligth', sans-serif;
-	font-weight: normal;
-}
-.calcItOutsource .calcItOutsourceTopParagraph{
-	margin: 0 120px 50px;
-	font-size: 16px;
-	line-height: 25px;
-	color: #373A3C;
-	text-align: center;
 }
 
 .searchButton {
@@ -1758,18 +1748,11 @@ button.modalFormCloseBtn{
 
 /* for higher resolutions (android and retina) */
 @media screen and (-webkit-min-device-pixel-ratio: 1.5) , screen and (min--moz-device-pixel-ratio: 1.5), (max-width: 767px) {
-	.services-bl>div.container{
-		padding: 0 15px;
-	}
-	.newsShowMoreNews{
-		padding: 20px 35px 20px 25px;
-	}
+
+
 	/*.servicesPageTopBl h3{
 		font-size: 60px;
 	}*/
-	.calcItOutsource{
-		display: none;
-	}
 
 	.navbar-default {
 		min-height: 0;
@@ -1937,9 +1920,9 @@ button.modalFormCloseBtn{
 
   #logo-img {
     background-image: url(/images/main/logo-hires.png);
-	background-origin: content-box;
-	background-repeat: no-repeat;
-	background-position: 0 0;
-	background-size: 193px 57px;
+		background-origin: content-box;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		background-size: 193px 57px;
   }
 }
