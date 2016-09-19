@@ -14,3 +14,4 @@ Disallow: /logs/
 Disallow: /modules/
 Disallow: /plugins/
 Disallow: /tmp/
+Host: starlink.ua
