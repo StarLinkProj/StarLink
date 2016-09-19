@@ -133,7 +133,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 
     <jdoc:include type="modules" name="itOutsourcingCallInfoBl" style="xhtml" />
 
-    <jdoc:include type="modules" name="itOutsourcingCalculator" style="xhtml" />
+
 
     <div class="container-fluid mainSliderBlock">
       <jdoc:include type="modules" name="mainSlider" />
@@ -168,6 +168,8 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
         </div>
       </div>
     <?php endif; ?>
+
+    <jdoc:include type="modules" name="itOutsourcingCalculator" style="xhtml" />
 
     <?php if ($_SERVER['REQUEST_URI'] == '/' || preg_match('/contacts/', $_SERVER['REQUEST_URI']) || preg_match('/services\/outsourcing/', $_SERVER['REQUEST_URI'])) : ?>
       <div class="container-fluid">
