@@ -1465,6 +1465,15 @@ button.modalFormCloseBtn{
 .footer p {
 	margin-bottom: 0;
 }
+.footer a, #footerMenu>li>a {
+	color: #fff;
+	cursor: pointer;
+}
+.footer a:hover, #footerMenu>li>a:hover {
+	color: #fff;
+	opacity: 0.8;
+	background: transparent;
+}
 #footerMenu li.item-101{
 	display: none;
 }
@@ -1474,13 +1483,6 @@ button.modalFormCloseBtn{
 #footerMenu>li>a{
 	display: inline-block;
 	padding: 0 10px;
-	color: #fff;
-	cursor: pointer;
-}
-#footerMenu>li>a:hover{
-	color: #fff;
-	opacity: 0.8;
-	background: transparent;
 }
 .footerSocNetworks a{
 	margin: 0 10px;
