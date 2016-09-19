@@ -615,22 +615,22 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 	background: url('../images/main/servicesTopBlBg.jpg') no-repeat center center;
 	background-size: cover;
 }
-.servicesPageTopBl h3{
+/*.servicesPageTopBl h3{
 	margin: 50px 0 20px;
 	font-size: 72px;
 	font-weight: 300;
 	color: #fff;
 	line-height: 80px;
 	text-align: center;
-}
-.servicesPageTopBl p{
+}*/
+/*.servicesPageTopBl p{
 	font-size: 16px;
 	line-height: 25px;
 	color: #fff;
 	font-family: 'HelveticaNeue-Roman', sans-serif;
 	text-align: center;
 	margin-bottom: 50px;
-}
+}*/
 .servicesPageInnerServicesBl{
 	margin-top: 50px;
 }
@@ -1643,9 +1643,9 @@ button.modalFormCloseBtn{
 	.newsFluidBl .blog .category-desc{
 		margin: 0 200px 40px;
 	}
-	.servicesPageTopBl p{
+	/*.servicesPageTopBl p{
 		margin: 0 275px 50px;
-	}
+	}*/
 	.itOutsourcingWeProposeYouCenterText h4{
 		margin: 0 100px;
 	}
@@ -1762,9 +1762,9 @@ button.modalFormCloseBtn{
 	.newsShowMoreNews{
 		padding: 20px 35px 20px 25px;
 	}
-	.servicesPageTopBl h3{
+	/*.servicesPageTopBl h3{
 		font-size: 60px;
-	}
+	}*/
 	.calcItOutsource{
 		display: none;
 	}
