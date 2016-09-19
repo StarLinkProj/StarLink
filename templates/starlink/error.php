@@ -24,7 +24,7 @@ $tpath = $this->baseurl.'/templates/'.$this->template;
 	<header class="row">
       <div class="four columns">
 	    <a href="<?php echo $this->baseurl; ?>/">
-	      <img class="u-max-full-width" src="/images/main/logo.png" alt="starlink logo" width="150">
+	      <img class="u-max-full-width" src="/images/main/logo-lowres.png" alt="starlink logo" width="150">
 	    </a>
 	  </div>
 	  <div class="eight columns">

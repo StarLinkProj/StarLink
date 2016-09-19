@@ -65,10 +65,10 @@ jQuery(document).ready(function($) {
     // Add hover style to parent el in main menu
     jQuery("#mainmenu>li>ul.nav-child>li>a").hover(
         function() {
-            jQuery(this).parent().parent().parent().children('a').css('color', '#ED1C24');
+          jQuery(this).parent().parent().parent().children('a').css('color', '#ED1C24');
         },
         function() {
-            jQuery(this).parent().parent().parent().children('a').css('color', '#1b1b1b');
+          jQuery(this).parent().parent().parent().children('a').css('color', '#1b1b1b');
         }
     );
 
@@ -92,7 +92,6 @@ jQuery(document).ready(function($) {
                 scrollTop: jQuery(".contentBl").offset().top - 30},
             'slow');
     });
-
 
     // Search button changes
     jQuery('.searchButton').click(function() {
@@ -126,30 +125,9 @@ jQuery(document).ready(function($) {
         jQuery('#fox-container-m115').prepend('<div class="modalFormCongratulation" xmlns="http://www.w3.org/1999/html"><h2>Ваша заявка успешно отправлена</h2><p>Спасибо за ваше обращение! Наши специалисты ответят на Ваш запрос в ближайшее время.</p></div>');
 
         setTimeout(function() {
-            form.submit();
+          form.submit();
         }, 3000);
     });
-
-
-    /*// Menu for screen width (768-991)
-    function tabletMenuChange() {
-        if (jQuery(window).width() >= 752 && jQuery(window).width() <= 975) {
-            if (jQuery('.tabletMainMenu').length == 0) {
-                jQuery("<div class='container-fluid tabletMainMenu'></div>").insertAfter("header");
-                jQuery(".mainMenuDiv").addClass("tabletMainMenuDiv").detach().appendTo('.tabletMainMenu');
-            }
-        } else {
-            if (jQuery('.tabletMainMenu').length == 1) {
-                jQuery(".mainMenuDiv").removeClass("tabletMainMenuDiv").detach().insertAfter('.topPhoneDiv');
-                jQuery('.tabletMainMenu').detach();
-            }
-        }
-    }
-    tabletMenuChange();
-    $( window ).resize(function() {
-        tabletMenuChange()
-    });
-    */
 
     // Menu for screen width <767 (mobile):
     // Expand level 1 menu items with submenus instead of following the level 1 menu link
@@ -160,7 +138,6 @@ jQuery(document).ready(function($) {
         });
     }
 
-
     // Scroll to top page on scrollTopButton click
     jQuery(".scrollTopBtn").click(function() {
         jQuery('html,body').animate({
@@ -170,51 +147,23 @@ jQuery(document).ready(function($) {
 
     jQuery(window).scroll(function(){
         var headerAndTopBlHeight = jQuery("header").innerHeight() + jQuery(".servicesBgBl1Margin").innerHeight() + 20;
-
         if (jQuery(".secondaryConsultingMenuBl").length > 0) {
             if(jQuery(window).scrollTop() > headerAndTopBlHeight){
-                jQuery('.scrollFixedConsultingBl').css('position', 'fixed');
-                jQuery('body').css('margin-top', '200px');
-                jQuery('.scrollBl').slideDown();
+              jQuery('.scrollFixedConsultingBl').css('position', 'fixed');
+              jQuery('body').css('margin-top', '200px');
+              jQuery('.scrollBl').slideDown();
             } else {
-                jQuery('.scrollFixedConsultingBl').css('position', 'relative');
-                jQuery('body').css('margin-top', '0');
-                jQuery('.scrollBl').hide();
+              jQuery('.scrollFixedConsultingBl').css('position', 'relative');
+              jQuery('body').css('margin-top', '0');
+              jQuery('.scrollBl').hide();
             }
         }
     });
 
-
-/*    // Header for desktop with width < 767px
-    function headerDesktopChange() {
-        var phoneText = '';
-        if (jQuery(window).width() <= 767) {
-            if (jQuery('header .row .container-fluid .topPhoneMobile').length == 0) {
-                phoneText = jQuery('.topPhoneDiv .custom');
-                jQuery('.topPhoneDiv').detach();
-                jQuery('header .row').prepend('<div class="container-fluid"><div class="topPhoneMobile"></div></div>');
-                jQuery('.topPhoneMobile').append(phoneText);
-                jQuery('head').append('<script src="' + myDomain + '/templates/starlink/js/libs/bootstrap.min.js" type="text/javascript"></script>');
-            }
-        } else {
-            if (jQuery('header .row .container-fluid .topPhoneMobile').length > 0) {
-                phoneText = jQuery('.topPhoneMobile .custom');
-                jQuery('header .row .container-fluid').detach();
-                jQuery('<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 topPhoneDiv"></div>').insertAfter(jQuery('header .row .logo'));
-                jQuery('.topPhoneDiv').append(phoneText);
-                jQuery('<script src="' + myDomain + '/templates/starlink/js/libs/bootstrap.min.js" type="text/javascript"></script>').detach('');
-            }
-        }
-    }
-    headerDesktopChange();
-    $( window ).resize(function() {
-        headerDesktopChange()
-    });*/
-
     // Wrap every 3 news to block
     var newsBlock = jQuery('.blog>.row');
     while( newsBlock.children('div:not(.singleRow)' ).length){
-        newsBlock.children('div:not(.singleRow):lt(3)').wrapAll('<div class="singleRow">');
+      newsBlock.children('div:not(.singleRow):lt(3)').wrapAll('<div class="singleRow">');
     }
     jQuery('.blog>.row .singleRow').append('<div class="clear"></div>');
 });

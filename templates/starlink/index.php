@@ -4,30 +4,26 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 
 ?><!doctype html>
 
+
 <?php
-    require_once 'vendor/MobileDetect.php';
-    $mobileDetectObj = new Mobile_Detect();
+    # TODO remove me
+    # require_once 'vendor/MobileDetect.php';
+    # $mobileDetectObj = new Mobile_Detect();
 ?>
 
 <html lang="<?php echo $this->language; ?>">
 
 <head>
-    <link rel="stylesheet" href="/templates/starlink/css/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="/templates/starlink/css/calculator.css" type="text/css">
+    <!-- TODO remove redundand & debug css/js in production:
+         TODO remove /media/jui/js/jquery-migrate,
+         TODO remove /media/jui/js/jquery-ui,
+         TODO remove /media/jui/js/bootstrap.min.js etc
+         TODO replace with minified files the rest -->
+    <!-- head -->
     <jdoc:include type="head" />
+    <!-- /head -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <meta name="yandex-verification" content="6f1873fd4202150a" />
-    <?php #if ($mobileDetectObj->isMobile() || $mobileDetectObj->isTablet()) : ?>
-        <script src="/templates/starlink/js/libs/bootstrap.min.js" type="text/javascript"></script>
-    <?php #endif; ?>
-    <script src="/templates/starlink/js/libs/jquery-ui.js" type="text/javascript"></script>
-    <script src="/templates/starlink/js/scripts.js" type="text/javascript"></script>
-     <?php # if (preg_match('/services\/it-outsourcing/', $_SERVER['REQUEST_URI'])) : ?> 
-        <script src="/templates/starlink/js/calculator_it_outsourcing.js" type="text/javascript"></script>
-     <?php # endif; ?> 
-    <script type="text/javascript">
-        var myDomain = "http://<?php echo $_SERVER['HTTP_HOST'] ?>/"; 
-    </script>
+    <script type="text/javascript">var myDomain = "http://<?php echo $_SERVER['HTTP_HOST'] ?>/";</script>
 </head>
   
 <body>
@@ -39,7 +35,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
         <div class="container">
           <div class="logo col-md-3 col-sm-6 col-xs-9">
             <a title="StarLink" href="<?php echo JURI::base(); ?>">
-		          <div id="logo-img">
+              <div id="logo-img">
               </div>
             </a>
           </div>
@@ -87,7 +83,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
     <jdoc:include type="modules" name="itOutsourcingWeProposeYou" style="xhtml" />
 
     <?php $itemId = JRequest::getInt('Itemid'); ?>
-	<!-- Not Menu IT-консалтинг, IT-интеграция, Дата-центр, Безопасность, Web-проекты, Блог, Вакансии, Совместная работа сотрудников на базе продуктов Kerio,
+	  <!-- Not Menu IT-консалтинг, IT-интеграция, Дата-центр, Безопасность, Web-проекты, Блог, Вакансии, Совместная работа сотрудников на базе продуктов Kerio,
 		Безопасность и защита информации, Объединение распределенных офисов в единую сеть, 	IP-телефония и видеоконференции  -->
     <?php if ($_SERVER['REQUEST_URI'] != '/' && !preg_match('/news/', $_SERVER['REQUEST_URI']) && !in_array($itemId, [105, 107, 108, 109, 110, 118, 120, 121, 122, 123, 124])) : ?>
       <div class="container contentBl">
