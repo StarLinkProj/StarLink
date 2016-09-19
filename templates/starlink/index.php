@@ -16,9 +16,9 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
     <link rel="stylesheet" href="/templates/starlink/css/calculator.css" type="text/css">
     <jdoc:include type="head" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <?php if ($mobileDetectObj->isMobile() || $mobileDetectObj->isTablet()) : ?>
+    <?php #if ($mobileDetectObj->isMobile() || $mobileDetectObj->isTablet()) : ?>
         <script src="/templates/starlink/js/libs/bootstrap.min.js" type="text/javascript"></script>
-    <?php endif; ?>
+    <?php #endif; ?>
     <script src="/templates/starlink/js/libs/jquery-ui.js" type="text/javascript"></script>
     <script src="/templates/starlink/js/scripts.js" type="text/javascript"></script>
      <?php # if (preg_match('/services\/it-outsourcing/', $_SERVER['REQUEST_URI'])) : ?> 
@@ -42,7 +42,7 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 
             <div class="logo col-md-3 col-sm-6 col-xs-9">
                 <a title="StarLink" href="<?php echo JURI::base(); ?>">
-					<div id="logo-img"> </div>
+					          <div id="logo-img"> </div>
                 </a>
             </div>
 
