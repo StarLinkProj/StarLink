@@ -39,7 +39,8 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
         <div class="container">
           <div class="logo col-md-3 col-sm-6 col-xs-9">
             <a title="StarLink" href="<?php echo JURI::base(); ?>">
-		          <div id="logo-img" />
+		          <div id="logo-img">
+              </div>
             </a>
           </div>
           <div class="hidden-xs col-md-3 col-sm-6 topPhoneDiv">
@@ -170,7 +171,8 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 
     <?php if ($_SERVER['REQUEST_URI'] == '/' || preg_match('/contacts/', $_SERVER['REQUEST_URI']) || preg_match('/services\/outsourcing/', $_SERVER['REQUEST_URI'])) : ?>
       <div class="container-fluid">
-        <div id="map" />
+        <div id="map">
+        </div>
         <script>
           function initMap() {
             var mapDiv = document.getElementById('map');
@@ -194,7 +196,8 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 
     <jdoc:include type="modules" name="reviews" style="xhtml" />
 
-    <div class="pre-footer" />
+    <div class="pre-footer">
+    </div>
     <footer class="container-fluid footer">
       <div class="container">
         <div class="row">
@@ -214,7 +217,8 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modalContactFormBlock">
       <div class="modal-dialog modal-custom-form" role="document">
         <div class="modal-content">
-          <button type="button" class="modalFormCloseBtn close" data-dismiss="modal" />
+          <button type="button" class="modalFormCloseBtn close" data-dismiss="modal">
+          </button>
           <jdoc:include type="modules" name="modalContactForm" />
         </div>
       </div>
