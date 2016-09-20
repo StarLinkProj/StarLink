@@ -10,6 +10,7 @@ html {
 
 body {
 	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
 	min-height: 100%;
 	position: relative;
 }
@@ -56,24 +57,30 @@ a:hover, a:focus{
 .partners-container{
 	margin-bottom: 35px;
 }
+.partners {
+	color: #373A3C;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	text-align: center;
+}
+.partners p{
+	font-size: 16px;
+	line-height: 25px;
+}
 .partners h3{
 	margin: 50px 0 20px;
-	text-align: center;
 	font-size: 42px;
-	font-family: 'HelveticaNeue-Ligth', sans-serif;
-	color: #1B1B1B;
+	font-weight: inherit;
 }
-.partners .partner-bl{
-	width: 100%;
+.partner-bl{
 	height: 120px;
-	text-align: center;
 	border: 1px solid #cacfd3;
 	border-radius: 4px;
 	padding: 0;
 	margin: 15px 0;
 	position: relative;
 }
-.partners .partner-bl img{
+.partners img{
 	margin: auto;
 	position:absolute;
 	top:0;
@@ -81,30 +88,7 @@ a:hover, a:focus{
 	left: 0;
 	right: 0;
 }
-.partners-p{
-	margin-bottom: 15px;
-	text-align: center;
-	font-family: 'HelveticaNeue-Roman', sans-serif;
-	color: #373A3C;
-	font-size: 16px;
-	line-height: 25px;
-}
 
-.slide-text, .slide-title {
-	color: #fff;
-	text-align: center;
-}
-
-.slide-title a, .slide-title p {
-	font-size: 64px;
-	font-weight: 300;
-}
-
-
-.slide-text p {
-	font-weight: 300;
-	font-size: 16px;
-}
 
 /* to override default DJ slider styles */
 @media (min-width: 768px) {
@@ -148,18 +132,17 @@ a:hover, a:focus{
 	padding: 25px 10px;
 	color: #fff;
 	cursor: pointer;
-	height: 108px;
 }
 .services-a .link-header{
 	display: block;
-	font-weight: bold;
+	font-weight: 900;
 	font-size: 14px;
 	margin-bottom: 6px;
 	text-transform: uppercase;
 }
 .services-a .link-text{
 	display: block;
-	font-size: 12px;
+	font-size: 14px;
 	line-height: 15px;
 	margin-right: 40px;
 }
@@ -184,14 +167,11 @@ a:hover, a:focus{
 .not-ready-to-call h3 {
 	margin: 50px 0 28px;
 	text-align: center;
-	/* font-family: 'HelveticaNeue-Ligth', sans-serif; */
 	font-weight: 300;
 	font-size: 42px;
 }
 .not-ready-to-call .leftBlNotReadyCall p, .not-ready-to-call .rightBlNotReadyCall p{
 	margin: 0 15px 20px;
-/* 	margin-bottom: 20px;
-	 */
 }
 
 .moduletable-orderSurvey {
@@ -1818,9 +1798,6 @@ button.modalFormCloseBtn{
 		border-bottom: none;
 	}
 
-	.mainSliderBlock{
-		display: none;
-	}
 	.navbar-header{
 		width: 50px;
 		float: right;
