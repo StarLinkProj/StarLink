@@ -1756,12 +1756,6 @@ button.modalFormCloseBtn{
 
 /* for higher resolutions (android and retina) */
 @media screen and (-webkit-min-device-pixel-ratio: 1.5) , screen and (min--moz-device-pixel-ratio: 1.5), (max-width: 767px) {
-
-
-	/*.servicesPageTopBl h3{
-		font-size: 60px;
-	}*/
-
 	.navbar-default {
 		min-height: 0;
 	}
