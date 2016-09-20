@@ -11,7 +11,7 @@
 	margin: 0 auto;
 	position: relative;
 	-webkit-transition: opacity 400ms ease;
-	transition: opacity 400ms ease;
+          transition: opacity 400ms ease;
 	opacity: 0;
 	max-height: 500px;
 }
@@ -41,35 +41,31 @@
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	max-height: 100%;
+  text-align: center;
 }
-ul.djslider-in > li {
-	text-align: center;
-}	
 .djslider-override img.dj-image {
 	border: 0 !important;
 	margin: 0 !important;
 	min-width: 100%;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+  left: 50%;
 }
-.djslider-override.img-vcenter img.dj-image {
-	position: relative;
-  	top: 50%;
-  	-webkit-transform: translate(-50%,-50%);
-  	-ms-transform: translate(-50%,-50%);
-  	transform: translate(-50%,-50%);
-	left: 50%;
-}
+
 /* Slide description area */
 .djslider-override .slide-desc {
 	position: absolute;
 	top: 50% !important;
   -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-	transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+	        transform: translateY(-50%);
 }
 .djslider-override .slide-desc-in {
 	position: relative;
 }
-
 .slide-desc-text-override a.readmore:hover{
 	background: #fff;
 	color: #3c506b;
@@ -178,8 +174,8 @@ ul.djslider-in > li {
 		display: block;
 		border: 1px solid #fff;
 		color: #fff;
-		font-weight: bold;
-		font-size: 16px;
+		font-weight: 300;
+		font-size: 14px;
 		padding: 5px 40px;
 		border-radius: 100px;
 		margin: 20px auto 10px;
@@ -231,7 +227,7 @@ ul.djslider-in > li {
 		display: block;
 		border: 1px solid #fff;
 		color: #fff;
-		font-weight: bold;
+		font-weight: 300;
 		font-size: 16px;
 		padding: 5px 40px;
 		border-radius: 100px;
@@ -293,7 +289,7 @@ ul.djslider-in > li {
 		display: block;
 		border: 1px solid #fff;
 		color: #fff;
-		font-weight: bold;
+		font-weight: 300;
 		font-size: 16px;
 		padding: 12px 85px;
 		border-radius: 100px;
@@ -304,7 +300,8 @@ ul.djslider-in > li {
 		font-size: 18px;
 	}
 }
-/* Large devices (large desktops, 1200px and up) */
+
+/* Large devices (large desktops, 1600px and up) */
 @media (min-width: 1600px) {
 	.slide-desc-bg-override {
 		position:absolute;
@@ -338,7 +335,7 @@ ul.djslider-in > li {
 		border: 1px solid #fff;
 		color: #fff;
 		font-weight: bold;
-		font-size: 16px;
+		font-size: 18px;
 		padding: 20px 85px;
 		border-radius: 100px;
 		margin: 30px auto 10px;
@@ -375,15 +372,18 @@ ul.djslider-in > li {
 		font-family: 'Roboto', sans-serif;
 		font-weight: 300;
 	}
-	.slide-desc-text-override .slide-title a {
+  .slide-desc-text-override .slide-title a {
 		color: #fff;
 	}
-	.slide-desc-text-override a.readmore {
-		display: block;
+  .slide-desc-text-override .slide-desc{
+    padding: 0 50px !important;
+  }
+  .slide-desc-text-override a.readmore {
+		display: none;
 		border: 1px solid #fff;
 		color: #fff;
-		font-weight: bold;
-		font-size: 16px;
+		font-weight: 300;
+		font-size: 14px;
 		padding: 5px 40px;
 		border-radius: 100px;
 		margin: 20px auto 10px;
@@ -400,10 +400,8 @@ ul.djslider-in > li {
 		margin: auto;
 		text-align: center;
 	}
-	.slide-desc{
-		padding: 0 50px !important;
-	}
 }
+
 @media (max-width: 570px) {
 	.mainSliderBlock{
 		/*! display: none; */

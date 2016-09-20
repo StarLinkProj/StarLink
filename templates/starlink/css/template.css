@@ -95,16 +95,6 @@ a:hover, a:focus{
 	right: 0;
 }
 
-
-/* to override default DJ slider styles */
-@media (min-width: 768px) {
-	#slider88 .slide-desc-text-default a.readmore {
-		font-weight: 300;
-		font-size: 16px;
-	}
-}
-
-
 #map{
 	width: 100%;
 	height: 400px;
@@ -372,7 +362,6 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 	margin-bottom: 20px;
 }
 
-
 #mainmenu li.item-101{
 	display: none;
 }
@@ -382,9 +371,7 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 #mainmenu .nav-child{
 	display: none;
 }
-/*#mainmenu>li>a {
-	padding: 
-} */
+
 .navbar{
 	border: none;
 	margin-bottom: 0;
@@ -455,7 +442,6 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 	color: #ED1C24;
 	background: #ECEEEF;
 }
-
 
 .aboutPageBl{
 	background: url('../images/main/aboutBg.jpg') no-repeat center center;
@@ -610,8 +596,6 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 	background: url('../images/main/showMoreNewsIcon.png') no-repeat left center;
 }
 
-
-
 .servicesTopBlWithBg{
 	background: url('../images/main/servicesTopBlBg.jpg') no-repeat center center;
 	background-size: cover;
@@ -620,22 +604,7 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 .servicesPageTopBl h2{
 	padding: 50px auto 50px;
 }
-/*.servicesPageTopBl h3{
-	margin: 50px 0 20px;
-	font-size: 72px;
-	font-weight: 300;
-	color: #fff;
-	line-height: 80px;
-	text-align: center;
-}*/
-/*.servicesPageTopBl p{
-	font-size: 16px;
-	line-height: 25px;
-	color: #fff;
-	font-family: 'HelveticaNeue-Roman', sans-serif;
-	text-align: center;
-	margin-bottom: 50px;
-}*/
+
 .servicesPageInnerServicesBl{
 	margin-top: 50px;
 }
