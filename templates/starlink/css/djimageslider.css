@@ -68,6 +68,10 @@
       -ms-transform: translateY(-50%);
 	        transform: translateY(-50%);
 }
+.djslider-override div.slide-desc.container {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
 .djslider-override .slide-desc-in {
 	position: relative;
 }
