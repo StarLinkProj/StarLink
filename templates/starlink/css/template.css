@@ -93,8 +93,10 @@ a:hover, a:focus{
 }
 
 #map{
-	width: 100%;
+	width: auto;
 	height: 400px;
+	margin-left: -15px;
+	margin-right: -15px;
 }
 
 .services-bl{
@@ -230,24 +232,33 @@ div#fox-container-m100 .fox-form-stacked #fox-m100-submit-box .controls{
 }
 
 
-.profitable-it-outsourcing{
+.profitable-it-outsourcing {
 	padding-bottom: 115px;
+	color: #1B1B1B;
 	background: url('../images/main/business.jpg') no-repeat center center;
 	background-size: cover;
+	font-family: Roboto, sans-serif;
+	font-weight: 300;
 }
-.profitable-it-outsourcing h3{
+.profitable-it-outsourcing h3 {
+	margin: 125px 0 20px;
 	font-family: Roboto, sans-serif;
 	font-weight: 300;
 	font-size: 42px;
-	margin: 125px 0 20px;
-	color: #1B1B1B;
+	line-height: 48px;
 }
-.profitable-it-outsourcing p{
+.profitable-it-outsourcing h4 {
+	margin: 30px 0 16px;
+	font-family: Roboto, sans-serif;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 26px;
+}
+.profitable-it-outsourcing p {
 	font-family: Roboto, sans-serif;
 	font-weight: 300;
 	font-size: 18px;
 	line-height: 20px;
-	color: #333;
 }
 
 .reviewsBl{
@@ -1331,7 +1342,7 @@ button.modalFormCloseBtn{
 	color: #3FA2F7;
 	text-transform: uppercase;
 	margin: 0 20px 0 0;
-	padding: 32px 0 27px;
+	padding: 5px 0 5px;
 	border-bottom: 5px solid transparent;
 }
 .secondaryConsultingMenu a.active, .secondaryConsultingMenu a:hover {
@@ -1365,17 +1376,6 @@ button.modalFormCloseBtn{
 	background: url('../images/main/web-solutions-bl1Bg.jpg') no-repeat center center;
 	background-size: cover;
 }
-.scrollBlConsulting .container{
-	position: relative;
-}
-.scrollBlConsulting h4{
-	font-weight: 300;
-	color: #fff;
-	font-size: 42px;
-	line-height: 80px;
-	padding: 10px 0;
-	text-align: center;
-}
 .scrollTopBtn{
 	position: absolute;
 	top: 38px;
@@ -1388,19 +1388,33 @@ button.modalFormCloseBtn{
 	color: #fff;
 	font-size: 32px;
 	line-height: 32px;
+	text-align: center;
 }
 .scrollTopBtn .scrollTopArrowSpan{
 	display: inline-block;
-	margin: 0 0 0 5px;
+	margin: 0 auto;
 }
 .scrollBl{
 	display: none;
+}
+.scrollBl .container{
+	position: relative;
+}
+.scrollBl h4{
+	font-weight: 300;
+	color: #fff;
+	font-size: 42px;
+	line-height: 80px;
+	padding: 10px 0;
+	text-align: center;
 }
 .scrollFixedConsultingBl{
 	position: relative;
 	top: 0;
 	width: 100%;
 	z-index: 100;
+	padding-left: 0;
+	padding-right: 0;
 }
 
 

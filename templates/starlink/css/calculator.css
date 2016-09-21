@@ -532,10 +532,10 @@ td.calcTdRangeNameText {
     border-radius: 30px;
     outline: none;
     text-shadow: none;
-    margin: 0 0 0 15%;
+    margin: 0;
     font-size: 21px;
     border: 1px solid #3FA2F7;
-    font-family: 'HelveticaNeue-Roman', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .calcItOutsourceBtn:hover {
