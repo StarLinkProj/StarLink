@@ -29,5 +29,3 @@ $doc->addStyleSheet($tpath.'/css/calculator.css');
 # $doc->addStyleSheet($tpath.'/../system/css/system.css');            // new instructions
 # $doc->addStyleSheet($tpath.'/../system/css/general.css');           // new instructions
 
-// am: add scss
-//$doc->addStyleSheet($tpath.'/css/am_style.php/am_style.scss');
