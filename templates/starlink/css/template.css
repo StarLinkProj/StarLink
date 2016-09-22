@@ -605,7 +605,7 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 }
 
 .servicesTopBlWithBg{
-	background: url('../images/main/servicesTopBlBg.jpg') no-repeat center center;
+	background: url('../images/main/solutions-header-01.jpg') no-repeat center center;
 	background-size: cover;
 }
 
@@ -964,9 +964,18 @@ button.modalFormCloseBtn{
 	letter-spacing: 1px;
 }
 
-/********* Solutions pages styles *********/
-.solutionBgBl1{
-	background: url('../images/main/servicesTopBlBg.jpg') no-repeat center center;
+/*   Solutions page styles
+     ---------------------
+*/
+.solution-header-background-01 {
+	background: url('../images/main/solutions-header-01.jpg') no-repeat center center;
+	background-size: cover;
+	padding: 41px 0 40px;
+}
+
+/* TODO delete this */
+.solutionBgBl1 {
+	background: url('http://placehold.it/2660x500/e17/fff.jpg') no-repeat center center;
 	background-size: cover;
 	padding: 41px 0 40px;
 }
@@ -1310,29 +1319,54 @@ button.modalFormCloseBtn{
 	text-align: center;
 }
 
-.servicesBgBl1Margin {
+/*.servicesBgBl1Margin {
 	padding: 50px 0;
-}
-.servicesIntegrationBgBl1 {
-	background: url('../images/main/it-integration-bl1Bg.jpg') no-repeat center center;
+}*/
+.services-integration-header-background-01 {
+	background: url('../images/main/services-integration-header-01.jpg') no-repeat center center;
 	background-size: cover;
 	padding: 41px 0 40px;
 }
-.servicesDataCenterBgBl1 {
-	background: url('../images/main/data-center-bl1Bg.jpg') no-repeat center center;
+/*.servicesIntegrationBgBl1 {
+  background: url('../images/main/services-integration-header-01.jpg') no-repeat center center;
+  background-size: cover;
+  padding: 41px 0 40px;
+}*/
+.services-consulting-header-background-01 {
+  background: url('../images/main/services-consulting-header-01.jpg') no-repeat center center;
+  background-size: cover;
+  padding: 41px 0 40px;
+}
+.services-datacenter-header-background-01 {
+	background: url('../images/main/services-datacenter-header-01.jpg') no-repeat center center;
 	background-size: cover;
 	padding: 41px 0 40px;
 }
-.servicesSecurityBgBl1 {
-	background: url('../images/main/security-bl1Bg.jpg') no-repeat center center;
+/*.servicesDataCenterBgBl1 {
+	background: url('https://placehold.it/1920x600/e17/fff.jpg') no-repeat center center;
+	background-size: cover;
+	padding: 41px 0 40px;
+}*/
+.services-security-header-background-01 {
+	background: url('../images/main/services-security-header-01.jpg') no-repeat center center;
 	background-size: cover;
 	padding: 41px 0 40px;
 }
-.servicesWebProjectsBgBl1{
-	background: url('../images/main/web-solutions-bl1Bg.jpg') no-repeat center center;
+/*.servicesSecurityBgBl1 {
+	background: url('../images/main/services-security-header-01.jpg') no-repeat center center;
+	background-size: cover;
+	padding: 41px 0 40px;
+}*/
+.services-webprojects-header-background-01 {
+	background: url('../images/main/services-webprojects-header-01.jpg') no-repeat center center;
 	background-size: cover;
 	padding: 41px 0 40px;
 }
+/*.servicesWebProjectsBgBl1{
+  background: url('../images/main/web-solutions-bl1Bg.jpg') no-repeat center center;
+  background-size: cover;
+  padding: 41px 0 40px;
+}*/
 .secondaryConsultingMenuBl{
 	border-bottom: 1px solid #E1E7EB;
 	background: #fff;
@@ -1356,24 +1390,25 @@ button.modalFormCloseBtn{
 .secondaryConsultingMenu a.active:hover{
 	font-weight: bold;
 }
+
 .scrollBlConsulting{
-	background: url('../images/main/servicesTopBlBg.jpg') no-repeat center center;
+	background: url('../images/main/services-consulting-header-01.jpg') no-repeat center center;
 	background-size: cover;
 }
 .scrollBlIntegrationBg{
-	background: url('../images/main/it-integration-bl1Bg.jpg') no-repeat center center;
+	background: url('../images/main/services-integration-header-01.jpg') no-repeat center center;
 	background-size: cover;
 }
 .scrollBlDataCenterBg{
-	background: url('../images/main/data-center-bl1Bg.jpg') no-repeat center center;
+	background: url('../images/main/services-datacenter-header-01.jpg') no-repeat center center;
 	background-size: cover;
 }
 .scrollBlSecurityBg{
-	background: url('../images/main/security-bl1Bg.jpg') no-repeat center center;
+	background: url('../images/main/services-security-header-01.jpg') no-repeat center center;
 	background-size: cover;
 }
 .scrollBlWebProjectsBg{
-	background: url('../images/main/web-solutions-bl1Bg.jpg') no-repeat center center;
+	background: url('../images/main/services-webprojects-header-01.jpg') no-repeat center center;
 	background-size: cover;
 }
 .scrollTopBtn{
@@ -1420,6 +1455,9 @@ button.modalFormCloseBtn{
 .custom-services-image-header {
   background-color: rgba(25,25,25,0.8);
 }
+
+/***     THIS IS GOOD - USE FOR ALL SERVICES    ***/
+/*      sticky main image and title container     */
 body>div.custom-services-image-header.sticky {
 	position: fixed;
   top: 0;
@@ -1428,11 +1466,12 @@ body>div.custom-services-image-header.sticky {
   height: 55px;
 	font-size: 42px;
 	line-height: 45px;
-	padding: 0px 0 0 0px;
+	padding: 0;
 	margin-top: 0;
 	text-align: left;
   z-index: 1100;
 	transition: all 0.8s ease;
+	overflow: hidden;
 }
 .sticky h2 {
   font-size: 42px;
@@ -1443,7 +1482,18 @@ body>div.custom-services-image-header.sticky {
 .sticky h4 {
   display: none;
 }
+.sticky .services-webprojects-header-background-01,
+.sticky .services-security-header-background-01,
+.sticky .services-datacenter-header-background-01,
+.sticky .services-consulting-header-background-01,
+.sticky .services-integration-header-background-01 {
+  margin-top:   0;
+  margin-bottom:0;
+  padding: 0;
+}
 
+/***     THIS IS GOOD - USE FOR ALL SERVICES    ***/
+/* secondary sticky menu bar below the main image */
 .scrollFixedConsultingBl.sticky {
   position: fixed;
   top: 55px;
