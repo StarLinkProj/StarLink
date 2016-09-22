@@ -2,10 +2,17 @@ configuration.php
 web.config
 web.config.txt
 .htaccess
-.idea
 logs/
 tmp/
 0_phplist_images_archive
 templates/starlink/scss/scss_cache
 node_modules/
 bower_components/
+
+# IntelliJ project files
+.idea
+*.iml
+.idea\workspace.xml
+.idea\dataSources.local.xml
+out
+gen
