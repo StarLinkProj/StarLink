@@ -1417,6 +1417,38 @@ button.modalFormCloseBtn{
 	padding-right: 0;
 }
 
+.custom-services-image-header {
+  background-color: rgba(25,25,25,0.8);
+}
+body>div.custom-services-image-header.sticky {
+	position: fixed;
+  top: 0;
+	width: 100%;
+	max-height: 55px; /* 251px */
+  height: 55px;
+	font-size: 42px;
+	line-height: 45px;
+	padding: 0px 0 0 0px;
+	margin-top: 0;
+	text-align: left;
+  z-index: 1100;
+	transition: all 0.8s ease;
+}
+.sticky h2 {
+  font-size: 42px;
+  line-height: 45px;
+  margin-top: 0;
+  margin-bottom:0;
+}
+.sticky h4 {
+  display: none;
+}
+
+.scrollFixedConsultingBl.sticky {
+  position: fixed;
+  top: 99px;
+  left: 0px;
+}
 
 /********** Footer *********/
 .footer{
