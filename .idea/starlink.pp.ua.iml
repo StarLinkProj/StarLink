@@ -17,6 +17,7 @@
       <excludeFolder url="file://$MODULE_DIR$/templates/beez3" />
       <excludeFolder url="file://$MODULE_DIR$/templates/protostar" />
       <excludeFolder url="file://$MODULE_DIR$/templates/starlink/!remove" />
+      <excludeFolder url="file://$MODULE_DIR$/templates/starlink/bower_components" />
       <excludeFolder url="file://$MODULE_DIR$/templates/starlink/node_modules" />
       <excludeFolder url="file://$MODULE_DIR$/templates/system" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />

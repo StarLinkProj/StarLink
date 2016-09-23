@@ -36,7 +36,7 @@ a:hover, a:focus{
 .topPhoneMobile{
 	background: #33383F;
 }
- .topPhone{
+.topPhone{
 	font-size: 26px;
 	font-weight: bold;
 	padding: 0px 0 3px 45px;
@@ -79,9 +79,8 @@ a:hover, a:focus{
 	width: 250px;
 }
 .partners .vertical-center {
-
-	display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 .partners img{
 	margin: auto;
@@ -173,6 +172,9 @@ a:hover, a:focus{
 	padding:0 15px;
 }
 
+/* Fox email sending plugin */
+/* TODO move all #fox-* into module override */
+
 div#fox-container-m95{
 	margin: 20px 15px 30px;
 	min-height: 265px;
@@ -231,7 +233,7 @@ div#fox-container-m100 .fox-form-stacked #fox-m100-submit-box .controls{
 	width: 100%;
 }
 
-
+/* TODO refactor this mess */
 .profitable-it-outsourcing {
 	padding-bottom: 115px;
 	color: #1B1B1B;

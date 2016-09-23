@@ -145,9 +145,11 @@ jQuery(document).ready(function($) {
             'slow');
     });
 
+    // TODO remove comments after checking
+    // TODO create one class which will be used as a marker of sticky menu element
     jQuery(window).scroll(function(){
         var headerAndTopBlHeight = jQuery("header").innerHeight() /*+ jQuery(".servicesBgBl1Margin").innerHeight()*/;
-        if (jQuery(".secondaryConsultingMenuBl").length > 0) {
+        if (jQuery(".secondaryConsultingMenuBl").length > 0) {    // TODO move this into 2nd .sticky addition instruction
             if(jQuery(window).scrollTop() > headerAndTopBlHeight) {
               /*jQuery('.scrollFixedConsultingBl').css('position', 'fixed');
               jQuery('body').css('margin-top', '200px');
