@@ -1,35 +1,35 @@
 # PHPstorm IDE local settings
 
-    .idea\workspace.xml
+.idea\workspace.xml
 
 
 # Cache, logs and tmp resources of various run-time programs
 # (Joomla, CSS transpilers, templating engines etc.)
 
-    logs/
-    tmp/
-    templates/starlink/scss/scss_cache
+logs/
+tmp/
+templates/starlink/scss/scss_cache
 
 
 # Resources of development and build systems (Node.js, Bower etc.)
 
-    node_modules/
-    bower_components/
+node_modules/
+bower_components/
 
 # Web-server settings and directives for indexing robots
 
-    web.config
-    web.config.txt
-    .htaccess
+web.config
+web.config.txt
+.htaccess
 
 
 # Application layer settings (CMS, database, user rights etc.)
 
-    configuration.php
+configuration.php
 
 
 # Other assets not related to the project but happened to live under its root
 
-    0_phplist_images_archive  #
+0_phplist_images_archive
 
 
