@@ -1279,7 +1279,7 @@ button.modalFormCloseBtn{
 	padding: 0 10px;
 	height: 100px;
 	font-family: 'Roboto', sans-serif;
-	font-size:20px;
+	font-size:22px;
 	font-weight: normal;
 	text-align: center;
 }
@@ -1289,6 +1289,7 @@ button.modalFormCloseBtn{
 /* 	color: #3FA2F7; */	
 	font-family: 'Roboto', sans-serif;
 	line-height: 20px;
+  text-shadow: 0 0 4px #00495b;
 }
 .servicesBl4 p {
 	font-family: 'Roboto', sans-serif;
