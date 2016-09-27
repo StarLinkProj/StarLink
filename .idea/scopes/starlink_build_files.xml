@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="starlink build files" pattern="file:templates/starlink/bower.json||file:templates/starlink/gulpfile.js||file:templates/starlink/package.json" />
+</component>

@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="starlink template" pattern="file:images//*||file:language/overrides//*||file:modules/mod_calculator_it_outsourcing//*||file:templates/starlink//*||file:/.2016*||file:.htaccess-production||file:favicon.ico||file:robots-production.txt" />
+</component>
