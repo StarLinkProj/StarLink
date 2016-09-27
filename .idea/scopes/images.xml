@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="images" pattern="file[starlink.pp.ua]:images//*.jpg||file[starlink.pp.ua]:images//*.png||file[starlink.pp.ua]:templates/starlink/images//*" />
+</component>
