@@ -774,10 +774,9 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
     font-weight: 300;
 }
 
-.itOutsourcingSingleTextBl p{
-/*	font-family: 'HelveticaNeue-Roman', sans-serif; */
-	font-size: 16px;
-	line-height: 25px;
+.itOutsourcingSingleTextBl p {
+	font-size: 18px;
+	line-height: 26px;
 	color: #333;
 }
 .itOutsourcingSingleTextBl{
@@ -1715,37 +1714,8 @@ body>div.custom-services-image-header.sticky {
 	.newsFluidBl .blog .category-desc{
 		margin: 0 200px 40px;
 	}
-	/*.servicesPageTopBl p{
-		margin: 0 275px 50px;
-	}*/
 	.itOutsourcingWeProposeYouCenterText h4{
 		margin: 0 100px;
-	}
-	.itOutsourcingSingleTextBl:nth-child(1) p {
-		margin: 50px 55px 10px 95px;
-	}
-	.itOutsourcingSingleTextBl:nth-child(1) img {
-		margin-left: 65px;
-	}
-	.itOutsourcingSingleTextBl:nth-child(2) p {
-		margin: 75px 95px 35px 45px;
-	}
-	.itOutsourcingSingleTextBl:nth-child(2) img {
-		margin-left: 160px;
-	}
-	.itOutsourcingSingleTextBl:nth-child(3) p {
-		margin: 75px 55px 35px 95px;
-	}
-	.itOutsourcingSingleTextBl:nth-child(3) img {
-		margin-left: 50px;
-		margin-top: 40px;
-	}
-	.itOutsourcingSingleTextBl:nth-child(4) p {
-		margin: 40px 95px 20px 45px;
-	}
-	.itOutsourcingSingleTextBl:nth-child(4) img {
-		margin-left: 160px;
-		margin-top: 33px;
 	}
 	.searchButton{
 		margin: 30px 0 30px 5px;
