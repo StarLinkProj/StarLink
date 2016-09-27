@@ -647,7 +647,8 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 	padding: 24px 0;
 	background: #40BE65;
 	border-radius: 4px;
-}.servicesPageInnerServicesBl .webprojects{
+}
+.servicesPageInnerServicesBl .webprojects{
 	 text-align: center;
 	 padding: 25px 0 26px;
 	 background: #EDC054;
@@ -1394,11 +1395,11 @@ button.modalFormCloseBtn{
 	font-weight: bold;
 }
 
-.scrollBlConsulting{
+.scrollBlConsultingBg {
 	background: url('../images/main/services-consulting-header-01.jpg') no-repeat center center;
 	background-size: cover;
 }
-.scrollBlIntegrationBg{
+.scrollBlIntegrationBg {
 	background: url('../images/main/services-integration-header-01.jpg') no-repeat center center;
 	background-size: cover;
 }
