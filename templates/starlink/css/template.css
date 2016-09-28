@@ -1,42 +1,83 @@
 /* FRONTEND CSS
 *********************************************/
 
+/* resets */
 html {
-	/* scrollbar fix (prevent ugly left pull for lower content sites) */
-	overflow-y: scroll;
-	min-height: 100%;
-	height: 100%;
-}
-body {
-	font-family: 'Roboto', sans-serif;
-	font-weight: 300;
-	min-height: 100%;
-	position: relative;
-}
-a:hover, a:focus{
-	text-decoration: none;
-	cursor: pointer;
-}
-.clear{
-	clear: both;
+  /* scrollbar fix (prevent ugly left pull for lower content sites) */
+  overflow-y : scroll;
+  min-height : 100%;
+  height     : 100%;
 }
 
+/* redefine fonts after Bootstrap */
+body, .tooltip, .popover {
+  font-family : Roboto, sans-serif;
+}
+
+body {
+  font-weight : 300;
+  min-height  : 100%;
+  position    : relative;
+}
+
+a:hover, a:focus {
+  text-decoration : none;
+  cursor          : pointer;
+}
+
+.clear {
+  clear : both;
+}
+
+
+/* Logo & phone */
+
 #logo-img {
-	padding: 10px 0;
-	box-sizing: content-box;
-	display:block;
-	height:57px;
-	width:193px;
-	background-image: url(/images/main/logo-lowres.png);
-	background-origin: content-box;
-	background-repeat: no-repeat;
-	background-position: 0 0;
-	background-size: 193px 57px;
+  display             : block;
+  padding             : 10px 0;
+  box-sizing          : content-box;
+  height              : 57px;
+  width               : 193px;
+  background-image    : url(/images/main/logo-lowres.png);
+  background-origin   : content-box;
+  background-repeat   : no-repeat;
+  background-position : 0 0;
+  background-size     : 193px 57px;
 }
-.topPhoneMobile{
+@media only screen and (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5) {
+
+  #logo-img {
+    background-image: url(/images/main/logo-hires.png);
+  }
+}
+.b-phone {
+/*  background-image    : url('../images/main/topPhone.png');
+  background-origin   : content-box;
+  background-position : -35px center;
+  background-repeat   : no-repeat;*/
+  margin              : 0 auto;
+  padding             : 0 15px 3px 45px;
+  color               : #fff;
+  background-color    : transparent;
+  background-color    : #33383F;
+  font-family         : Roboto, sans-serif;
+  font-size           : 26px;
+  font-weight         : 500;
+  text-align          : right;
+}
+.b-phone__link, .b-phone__link:hover {
+  color : inherit;
+}
+.b-phone__small {
+  font-size : 85%;
+}
+/*.b-phone--xsScreen {
+  background-color : #33383F;
+}*/
+/*.--topPhoneMobile{
 	background: #33383F;
-}
-.topPhone{
+}*/
+/*.--topPhone{
 	font-size: 26px;
 	font-weight: bold;
 	padding: 0px 0 3px 45px;
@@ -45,12 +86,10 @@ a:hover, a:focus{
 	width: 275px;
 	margin: 0 auto;
 	color: #fff;
-}
-
-.topPhone a{               /* am: company phone in for of skype, viber etc. link with the same color as text */
+}*/
+/*.--topPhone a{               !* am: company phone in for of skype, viber etc. link with the same color as text *!
 	color: inherit;
-}
-
+}*/
 .partners-container{
 	margin-bottom: 35px;
 }
@@ -493,12 +532,12 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 }
 .aboutPageArticleText h2{
 	margin: 0 0 30px;
-	font-family: 'HelveticaNeue-Ligth', sans-serif;
+	/*font-family: 'HelveticaNeue-Ligth', sans-serif;*/
 	font-size: 42px;
 	line-height: 50px;
 }
 .aboutPageArticleText p{
-	font-family: 'HelveticaNeue-Roman', sans-serif;
+	/*font-family: 'HelveticaNeue-Roman', sans-serif;*/
 	line-height: 20px;
 	color: #1b1b1b;
 	margin-bottom: 20px;
@@ -607,16 +646,6 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 	padding: 13px 11px;
 	background: url('../images/main/showMoreNewsIcon.png') no-repeat left center;
 }
-
-.servicesTopBlWithBg{
-	background: url('../images/main/solutions-header-01.jpg') no-repeat center center;
-	background-size: cover;
-}
-
-.servicesPageTopBl h2{
-	padding: 50px auto 50px;
-}
-
 .servicesPageInnerServicesBl{
 	margin-top: 50px;
 }
@@ -766,7 +795,6 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 	background: url('../images/main/itOutsourcingCallInfoBl.png') no-repeat center center;
 	background-size: cover;
 }
-
 .itOutsourcingCallInfoBl h3 {
     margin: 25px auto 25px;
     color: #fff;
@@ -775,7 +803,6 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
     text-align: center;
     font-weight: 300;
 }
-
 .itOutsourcingSingleTextBl p {
 	font-size: 18px;
 	line-height: 26px;
@@ -971,123 +998,23 @@ button.modalFormCloseBtn{
 /*   Solutions page styles
      ---------------------
 */
-/*.solution-header-background-01 {
-	background: url('../images/main/solutions-header-01.jpg') no-repeat center center;
-	background-size: cover;
-	padding: 41px 0 40px;
-}*/
 
-/* TODO delete this */
-.solutionBgBl1 {
-	background: url('http://placehold.it/2660x500/e17/fff.jpg') no-repeat center center;
-	background-size: cover;
-	padding: 41px 0 40px;
-}
-.solutionBl1H2{
-	line-height: 50px;
-	color: #fff;
-	font-size: 42px;
-	font-weight: 300;
-	margin: 20px 0;
-	text-align: center;
-}
-.solutionBl1H2:nth-child(2){
-	margin-bottom: 20px;
-}
-.solutionBl1H4{
-	margin: 0 auto;
-	max-width: 900px;
-	color: #fff;
-	font-size: 20px;
-	font-weight:300;	
-	text-align: center;
-	line-height: 25px;
-}
-.solutionBl1H4:last-child{
-	margin-bottom: 20px;
-}
-
-.moduletable-solutionBl2, .moduletable-solutionBl2Type{
-	padding: 50px 0 30px;
-}
-.solutionBl2H2, .solutionBlTextH2{
-	margin: 0 0 20px;
-	font-size: 23px;
-	color: #1B1B1B;
-	letter-spacing: -0.96px;
-	font-weight: 400;
-	line-height: 30px;
-}
-.moduletable-solutionBl2 p, .solutionBl3 p, .solutionBlText p, .moduletable-solutionBl2Type p{
-	font-family: 'HelveticaNeue-Roman', sans-serif;
-	font-size: 14px;
-	color: #333333;
-	letter-spacing: 0;
-	line-height: 20px;
-	margin-bottom: 18px;
-}
-.solutionBl2ImgBl img{
-	margin: 35px auto 20px;
-}
-
-.solutionBl3{
-	background: #F5F6F7;
-	padding: 50px 0 30px;
-}
-.solutionBl3ImgBl img{
-	margin: 15px auto 20px;
-}
-.solutionBl3H2{
-	font-size: 23px;
-	color: #1B1B1B;
-	letter-spacing: -0.96px;
-	line-height: 30px;
-	font-weight: 400;
-	margin: 0 0 20px;
-}
-.solutionBl4ImgBl img{
-	margin: -20px auto 20px;
-}
-
-.solutionBlDark{
-	background: #33383F;
-	padding: 50px 0 30px;
-}
-.solutionBlDarkH2{
-	font-size: 23px;
-	color: #fff;
-	letter-spacing: -0.96px;
-	line-height: 30px;
-	font-weight: 400;
-	margin: 0 0 20px;
-}
-.solutionBlDark p{
-	font-family: 'HelveticaNeue-Roman', sans-serif;
-	font-size: 14px;
-	color: #fff;
-	letter-spacing: 0;
-	line-height: 20px;
-	margin-bottom: 18px;
-}
-.solutionBlDarkImgBl img{
-	margin: 0 auto 20px;
-}
 .solutionBtn{
 	margin: 30px auto 20px;
 }
-.btnStarlinkBlue{
-	text-align: center;
-	width: 80%;
-	padding: 20px;
-	background: #3FA2F7;
-	border-radius: 30px;
-	outline: none;
-	text-shadow: none;
-	margin: 0 10%;
-	border: 1px solid #3FA2F7;
-	color: #fff;
-	font-weight: bold;
-	font-size: 16px;
+.btnStarlinkBlue {
+  margin        : 0 10%;
+  padding       : 20px;
+  width         : 80%;
+  border        : 1px solid #3FA2F7;
+  background    : #3FA2F7;
+  border-radius : 30px;
+  outline       : none;
+  text-align    : center;
+  text-shadow   : none;
+  color         : #fff;
+  font-weight   : bold;
+  font-size     : 16px;
 }
 .btnStarlinkBlue:hover, .btnStarlinkBlue:focus{
 	background: #fff;
@@ -1097,9 +1024,6 @@ button.modalFormCloseBtn{
 
 .solutionBgBl1Margin{
 	padding: 65px 0;
-}
-.solutionBgBl1Margin .solutionBl1H2{
-	margin-bottom: 20px;
 }
 
 /*************** Blog page styles ****************/
@@ -1240,6 +1164,14 @@ button.modalFormCloseBtn{
 .b-service--lightGrey {
   background: #F5F6F7;
 }
+.b-service--dark {
+  background: #33383F;
+  color: #fff;
+}
+.b-service--extraMargin {
+  margin-bottom: 40px;
+  padding: 50px 0 30px;
+}
 .b-service__header {
   margin-top    : 48px;
   margin-bottom : 20px;
@@ -1256,6 +1188,9 @@ button.modalFormCloseBtn{
   margin-bottom : 16px;
   font-size     : 30px;
   line-height   : 1;
+}
+.b-service__header--left {
+  text-align: left;
 }
 .b-service__header--overlay {
   margin-top    : -100px;
@@ -1323,7 +1258,6 @@ button.modalFormCloseBtn{
   background: url('../images/main/business.jpg') no-repeat center center;
   background-size: cover;
 }
-
 .b-heroImage {
   background-image    : url('https://placehold.it/2600x1200.png/e8117f/ffffff');  /* placeholder - must be overwrited */
   background-position : center;
@@ -1495,10 +1429,6 @@ button.modalFormCloseBtn{
     transition: all 0.25s ease-in-out;
 }
 
-/*.custom-services-image-header {
-  background-color: rgba(25,25,25,0.8);
-}*/
-
 /***     THIS IS GOOD - USE FOR ALL SERVICES    ***/
 /*      sticky main image and title container     */
 body>div.custom-services-image-header.sticky {
@@ -1604,6 +1534,8 @@ body>div.custom-services-image-header.sticky {
 	text-align: center;
 	margin: 15px 0;
 }
+
+
 /* MEDIA QUERIES
 *********************************************/
 
@@ -1613,8 +1545,9 @@ body>div.custom-services-image-header.sticky {
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
 	#logo-img {
-		padding: 15px 0;
-	}
+    padding-top    : 15px;
+    padding-bottom : 15px;
+  }
 	#mainmenu {
 		padding-left: 100px;
 	}
@@ -1656,13 +1589,25 @@ body>div.custom-services-image-header.sticky {
 	#mainmenu>li>ul.nav-child>li>a {
 		font-size: 13px;
 	}
-	.topPhone {
-		font-size: 23px;
-		padding: 28px 0 28px 45px;
-		background: url("../images/main/topPhone.png") no-repeat -35px center;
-		background-origin: content-box;
-		color: black;
-	}
+/*	.-----topPhone {  !*  >=768px  *!
+    font-size           : 23px;
+    padding             : 28px 0 28px 45px;
+    background-image    : url("../images/main/topPhone.png");
+    background-repeat   : no-repeat;
+    background-position : -35px center;
+    background-origin   : content-box;
+    color               : black;
+	}*/
+  .b-phone {  /*  >=768px  */
+    font-size           : 23px;
+    padding             : 28px 0 28px 45px;
+/*    background-image    : url("../images/main/topPhone.png");
+    background-repeat   : no-repeat;
+    background-position : -35px center;
+    background-origin   : content-box;*/
+    color               : black;
+    background-color:transparent;
+  }
 	.rightSideMenuBl{
 		display: none;
 	}
@@ -1710,11 +1655,22 @@ body>div.custom-services-image-header.sticky {
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-	#logo-img {
-		padding: 18px 0 0;
-		background: url(/images/main/logo-lowres.png) no-repeat left 18px;
-	}
-	#mainmenu {
+  .topPhone{  /* >= 992px */
+     font-size: 23px;
+     padding: 32px 0 28px 45px;
+     background: url("../images/main/topPhone.png") no-repeat -35px center;
+     background-origin: content-box;
+   }
+  .b-phone {  /* >= 992px */
+    padding: 32px 0 28px 45px;
+  }
+  #logo-img {
+    padding-top         : 18px;
+    padding-bottom      : 0;
+    background-position : left 18px;
+    background-origin   : padding-box;
+  }
+  #mainmenu {
 		padding-left: 0;
 	}
 	#mainmenu li.deeper:hover>ul.nav-child{
@@ -1735,12 +1691,7 @@ body>div.custom-services-image-header.sticky {
 	.navbar-default .navbar-nav > li.deeper {
 		background: url('../images/main/menuBottomArrow.png') no-repeat right 46px;
 	}
-	.topPhone{
-		font-size: 23px;
-		padding: 32px 0 28px 45px;
-		background: url("../images/main/topPhone.png") no-repeat -35px center;
-		background-origin: content-box;
-	}
+
 	.aboutMainCenterText h4{
 		margin: 0 110px 40px;
 	}
@@ -1801,11 +1752,16 @@ body>div.custom-services-image-header.sticky {
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-	.topPhone {
+/*	.topPhone {  !* >=1200px *!
 		font-size: 26px;
 		padding: 30px 0 20px 45px;
 		margin-top: 0;
-	}
+	}*/
+  .b-phone {  /* >=1200px */
+    font-size: 26px;
+    padding: 30px 0 20px 45px;
+    margin-top: 0;
+  }
 	.navbar-default .navbar-nav > li > a{
 		font-size: 14px;
 	}
@@ -1925,9 +1881,7 @@ body>div.custom-services-image-header.sticky {
 		width: 100%;
 		margin: 0;
 	}
-	.solutionBl1H2{
-		font-size: 32px;
-	}
+
 	.rightSideMenuBl{
 		display: none;
 	}
@@ -1963,25 +1917,16 @@ body>div.custom-services-image-header.sticky {
 		width: 70%;
 		margin: 0 15%;
 	}
-/*	.servicesBl4H2, */
+
   .itOutsourcingWeProposeYou h3 {
 		font-size: 32px;
 		line-height: 40px;
 	}
-/* .servicesBl2H2 {
-    font-size: 32px;
-    line-height: 40px;
-  }*/
-	.solutionBgBl1Margin .solutionBl1H2{
-		font-size: 50px;
-	}
+
 	.servicesBl1H2{
 		font-size: 42px;
 		line-height: 56px;
 	}
-/*	.servicesBl4H2 {
-		margin: 50px 5%;
-	}*/
 	.scrollTopBtn{
 		display: none;
 	}
@@ -1997,17 +1942,3 @@ body>div.custom-services-image-header.sticky {
 	}
 }
 
-
-@media only screen and (min--moz-device-pixel-ratio: 1.5),
-    (-o-min-device-pixel-ratio: 3/2),
-    (-webkit-min-device-pixel-ratio: 1.5),
-    (min-device-pixel-ratio: 1.5) {
-
-  #logo-img {
-    background-image: url(/images/main/logo-hires.png);
-		background-origin: content-box;
-		background-repeat: no-repeat;
-		background-position: 0 0;
-		background-size: 193px 57px;
-  }
-}

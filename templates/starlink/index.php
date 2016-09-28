@@ -4,7 +4,6 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 
 ?><!doctype html>
 
-
 <?php
     # TODO remove me
     # require_once 'vendor/MobileDetect.php';
@@ -14,58 +13,59 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 <html lang="<?php echo $this->language; ?>">
 
 <head>
-    <!-- TODO remove redundand & debug css/js in production:
-         TODO remove /media/jui/js/jquery-migrate,
-         TODO remove /media/jui/js/jquery-ui,
-         TODO remove /media/jui/js/bootstrap.min.js etc
-         TODO replace with minified files the rest -->
-    <!-- head -->
-    <jdoc:include type="head" />
-    <!-- /head -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <script type="text/javascript">var myDomain = "http://<?php echo $_SERVER['HTTP_HOST'] ?>/";</script>
+  <!-- TODO remove redundand & debug css/js in production:
+       TODO remove /media/jui/js/jquery-migrate,
+       TODO remove /media/jui/js/jquery-ui,
+       TODO remove /media/jui/js/bootstrap.min.js etc
+       TODO replace with minified files the rest -->
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,700,900&subset=cyrillic" rel="stylesheet">
+  <!-- head -->
+  <jdoc:include type="head" />
+  <!-- /head -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <script type="text/javascript">var myDomain = "http://<?php echo $_SERVER['HTTP_HOST'] ?>/";</script>
 </head>
   
 <body>
-    <header class="container-fluid">
-      <div class="row">
-        <div class="visible-xs-block col-xs-12 topPhoneMobile">
-          <jdoc:include type="modules" name="topPhone" />
-        </div>
-        <div class="container">
-          <div class="logo col-md-3 col-sm-6 col-xs-9">
-            <a title="StarLink" href="<?php echo JURI::base(); ?>">
-              <div id="logo-img">
-              </div>
+  <header class="container-fluid">
+    <div class="row">
+      <div class="b-phone col-xs-12 col-sm-6 col-sm-push-4 col-md-3 col-md-push-3">
+        <jdoc:include type="modules" name="topPhone" />   <!-- TODO  change phone number and logo for parameters of tempalte  -->
+      </div>
+      <div class="logo col-xs-9 col-sm-4 col-sm-pull-6 col-md-3 col-md-pull-3">
+        <a title="StarLink" href="<?php echo JURI::base(); ?>">
+          <div id="b-logo ---logo-img">
+            <img src="/images/main/logo-lowres.png" width="193" height="57">
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col-md-6 col-xs-12 mainMenuDiv">
+        <nav class="navbar navbar-default">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target="#mainCollapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="mainCollapse">
+            <jdoc:include type="modules" name="mainMenu" />
+            <a href="javascript:void(0)" class="searchButton">
+              <img src="/images/main/search_icon.png">
             </a>
           </div>
-          <div class="hidden-xs col-md-3 col-sm-6 topPhoneDiv">
-            <jdoc:include type="modules" name="topPhone" />
-          </div>
-          <div class="col-md-6 col-xs-12 mainMenuDiv">
-            <nav class="navbar navbar-default">
-              <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainCollapse" aria-expanded="false">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-              </div>
-              <div class="collapse navbar-collapse" id="mainCollapse">
-                <jdoc:include type="modules" name="mainMenu" />
-                <a href="javascript:void(0)" class="searchButton">
-                  <img src="/images/main/search_icon.png">
-                </a>
-              </div>
-            </nav>
-          </div>
-          <div class="hidden-xs hidden-sm col-md-9 searchLineDiv">
-            <jdoc:include type="modules" name="search" />
-          </div>
-        </div>
+        </nav>
       </div>
-    </header>
+      <div class="hidden-xs hidden-sm col-md-9 searchLineDiv">
+        <jdoc:include type="modules" name="search" />
+      </div>
+    </div>
+  </header>
 
 	<!-- Menu О Компании -->
     <?php if (preg_match("/about/", $_SERVER['REQUEST_URI'])) : ?>

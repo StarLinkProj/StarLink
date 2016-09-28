@@ -61,7 +61,7 @@ span.un-upper {
     box-shadow: none;
     text-align: center;
     margin-left: -1px;
-    font-family: 'HelveticaNeue-Medium', sans-serif;
+    font-family: 'Roboto Medium', 'HelveticaNeue-Medium', sans-serif;
     margin-top: 9px;
 }
 
@@ -624,7 +624,7 @@ td.calcTdRangeNameText {
     font-size: 42px;
     line-height: 50px;
     color: #1b1b1b;
-    font-family: 'HelveticaNeue-Ligth', sans-serif;
+    font-family: 'Roboto Light', 'HelveticaNeue-Ligth', sans-serif;
     font-weight: normal;
 }
 .calcItOutsource .calcItOutsourceTopParagraph{

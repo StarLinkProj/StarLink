@@ -22,7 +22,7 @@ $doc->addScript($tpath.'/js/calculator_it_outsourcing.js');
 //
 // am: replacing this to plain css in order to help debug in Firefox development tools
 $doc->addStyleSheet($tpath.'/css/bootstrap.min.css');
-$doc->addStyleSheet($tpath.'/css/fonts.css');                   // new instructions
+//$doc->addStyleSheet($tpath.'/css/fonts.css');                   // new instructions
 $doc->addStyleSheet($tpath.'/css/template.css');                    // new instructions
 $doc->addStyleSheet($tpath.'/css/calculator.css');
 # $doc->addStyleSheet($tpath.'/../../media/system/css/system.css');   // new instructions
