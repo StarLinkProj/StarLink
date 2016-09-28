@@ -234,6 +234,8 @@ div#fox-container-m100 .fox-form-stacked #fox-m100-submit-box .controls{
 }
 
 /* TODO refactor this mess */
+
+
 .profitable-it-outsourcing {
 	padding-bottom: 115px;
 	color: #1B1B1B;
@@ -969,11 +971,11 @@ button.modalFormCloseBtn{
 /*   Solutions page styles
      ---------------------
 */
-.solution-header-background-01 {
+/*.solution-header-background-01 {
 	background: url('../images/main/solutions-header-01.jpg') no-repeat center center;
 	background-size: cover;
 	padding: 41px 0 40px;
-}
+}*/
 
 /* TODO delete this */
 .solutionBgBl1 {
@@ -1235,13 +1237,19 @@ button.modalFormCloseBtn{
   text-align     : left;
   color          : inherit;
 }
+.b-service--lightGrey {
+  background: #F5F6F7;
+}
 .b-service__header {
-  margin-top    : 24px;
+  margin-top    : 48px;
   margin-bottom : 20px;
   font          : inherit;
   font-size     : 42px;
   line-height   : 1.05;
   text-align    : center;
+}
+.b-service__header--marginPlus {
+  /*margin-top: 48px;*/
 }
 .b-service__header--level2 {
   margin-top    : 4px;
@@ -1258,7 +1266,6 @@ button.modalFormCloseBtn{
   font-weight   : 400;
   color         : #fff;
   text-shadow   : 0 0 4px #00495b;
-  /*font-weight: normal;*/
 }
 .b-service__headerLink {
   color: inherit;
@@ -1280,157 +1287,128 @@ button.modalFormCloseBtn{
   margin-bottom : 16px;
   font: inherit;
 }
+.b-service__text--loud {
+  margin-bottom : 24px;
+  font-size     : 22px;
+  text-align    : center;
+  line-height   : 1.05;
+}
+.b-service__text--bolder {
+  font-weight   : 400;
+}
+.b-service__text--left {
+  text-align    : left;
+  max-width     : 600px;
+}
+.b-service__text--icon {
+  margin-bottom : 24px;
+  font-size     : 18px;
+  text-align    : center;
+  line-height   : 1.05;
+}
+.b-service__glyph {
+  color: #3FA2F7;
+  font-size: 80%;
+}
 .b-service__image {
   margin-top    : 8px;
   margin-bottom : 20px;
 }
-
-.servicesTopBlH2{
-	font-family: 'Roboto', sans-serif;
-	line-height: 80px;
-	color: #fff;
-	font-size: 72px;
-	font-weight: 300;
-	margin: 0;
-	text-align: center;
+.b-service__image--icon {
+  margin-top: 50px;
+  height: 60px;
 }
-/*.servicesBl2{
-	padding-bottom: 50px;
-}
-.servicesBl2H2{
-	margin: 50px 0;
-	text-align: center;
-	font-family: 'Roboto', sans-serif;
-	font-weight: 300;
-	font-size: 42px;
-	line-height: 50px;
-	color: #1b1b1b;
-}
-.servicesBl2 p, .servicesBl2 ul{
-	font-family: 'Roboto', sans-serif;
-	font-weight: 300;
-	font-size: 16px;
-	line-height: 20px;
-	margin-bottom: 20px;
-}
-.servicesBl2 h3{
-	font-family: 'Roboto', sans-serif;
-	font-weight: 400;
-	margin-top: 0;
-}
-.servicesBl2 h4{
-	margin-top: 0;
-}*/
-/*.servicesBl4{
-	padding-bottom: 50px;
-}*/
-/*.servicesBl4 .servicesBl4InnersingleBl{
-	margin-bottom: 50px;
-}*/
-/*.servicesBl4H2{
-	margin: 50px 15%;
-	text-align: center;
-	font-family: 'HelveticaNeue-Ligth', sans-serif;
-	font-size: 42px;
-	line-height: 50px;
-	color: #1b1b1b;
-}*/
-/*.servicesBl4 h4 {
-	margin: -100px 0 0;
-	padding: 0 10px;
-	height: 100px;
-	font-family: 'Roboto', sans-serif;
-	font-size:22px;
-	font-weight: normal;
-	text-align: center;
-}*/
-
-/*.servicesBl4 h4 a {
-	color: #fff;*/
-/* 	color: #3FA2F7; */	
-/*	font-family: 'Roboto', sans-serif;
-	line-height: 20px;
-  text-shadow: 0 0 4px #00495b;
-}*/
-/*.servicesBl4 p {
-	font-family: 'Roboto', sans-serif;
-	font-weight: 300;
-	font-size: 16px;
-	line-height: 20px;
-	color: #9b9b9b;
-	margin: 0;
-}*/
-
-/*.servicesBl4 img {
-	height: 166px;
-	margin-bottom: 10px;
-	background-color: rgba(255,255,255,0) 
-}
-.servicesBl4 img[class] { 
-	width: 100% 
-} */
-/*.servicesBl4 img.object-fit_cover {
-	object-fit: cover 
-}*/
-
-
-.servicesBl1H2{
-	line-height: 80px;
-	color: #fff;
-	font-size: 72px;
-	font-weight: 300;
-	margin: 0 0 20px;
-	text-align: center;
-}
-
-/*.servicesBgBl1Margin {
-	padding: 50px 0;
-}*/
-.services-integration-header-background-01 {
-	background: url('../images/main/services-integration-header-01.jpg') no-repeat center center;
-	background-size: cover;
-	padding: 41px 0 40px;
-}
-/*.servicesIntegrationBgBl1 {
-  background: url('../images/main/services-integration-header-01.jpg') no-repeat center center;
+.b-service--outsourceBackground {
+  padding-bottom: 115px;
+  background: url('../images/main/business.jpg') no-repeat center center;
   background-size: cover;
-  padding: 41px 0 40px;
-}*/
-.services-consulting-header-background-01 {
-  background: url('../images/main/services-consulting-header-01.jpg') no-repeat center center;
-  background-size: cover;
-  padding: 41px 0 40px;
 }
-.services-datacenter-header-background-01 {
-	background: url('../images/main/services-datacenter-header-01.jpg') no-repeat center center;
-	background-size: cover;
-	padding: 41px 0 40px;
+
+.b-heroImage {
+  background-image    : url('https://placehold.it/2600x1200.png/e8117f/ffffff');  /* placeholder - must be overwrited */
+  background-position : center;
+  background-repeat   : no-repeat;
+  background-size     : cover;
+  font-family         : "Roboto", sans-serif;
+  font-weight         : 300;
+  font-size           : 50px;
+  line-height         : 1.1;
+  text-align          : center;
+  color               : #fff;
+  text-shadow         : 0 0 16px #333;
 }
-/*.servicesDataCenterBgBl1 {
-	background: url('https://placehold.it/1920x600/e17/fff.jpg') no-repeat center center;
-	background-size: cover;
-	padding: 41px 0 40px;
-}*/
-.services-security-header-background-01 {
-	background: url('../images/main/services-security-header-01.jpg') no-repeat center center;
-	background-size: cover;
-	padding: 41px 0 40px;
+.b-heroImage--outsourcing {
+  background-image    : url('../images/main/itOutsourcingTopBlBg.jpg');
 }
-/*.servicesSecurityBgBl1 {
-	background: url('../images/main/services-security-header-01.jpg') no-repeat center center;
-	background-size: cover;
-	padding: 41px 0 40px;
-}*/
-.services-webprojects-header-background-01 {
-	background: url('../images/main/services-webprojects-header-01.jpg') no-repeat center center;
-	background-size: cover;
-	padding: 41px 0 40px;
+.b-heroImage--callUs {
+  background-image : url('../images/main/itOutsourcingCallInfoBl.png');
+  max-height       : 115px;
+  position         : relative;
 }
-/*.servicesWebProjectsBgBl1{
-  background: url('../images/main/web-solutions-bl1Bg.jpg') no-repeat center center;
-  background-size: cover;
-  padding: 41px 0 40px;
-}*/
+
+/* top block with image for all solutions */
+.b-heroImage--top {
+  background-image    : url('../images/main/solutions-header-01.jpg');
+  padding:  40px 0;
+}
+/* top blocks with image for services */
+.b-heroImage--integration {
+  background-image : url('../images/main/services-integration-header-01.jpg');
+  padding          : 40px 0;
+}
+.b-heroImage--consulting {
+  background-image : url('../images/main/services-consulting-header-01.jpg');
+  padding          : 40px 0;
+}
+.b-heroImage--datacenter {
+  background-image : url('../images/main/services-datacenter-header-01.jpg');
+  padding          : 40px 0;
+}
+.b-heroImage--security {
+  background-image : url('../images/main/services-security-header-01.jpg');
+  padding          : 40px 0;
+}
+.b-heroImage--webprojects {
+  background-image : url('../images/main/services-webprojects-header-01.jpg');
+  padding          : 40px 0;
+}
+.b-heroImage__header {
+  margin      : 20px 0;
+  font        : inherit;
+  font-size   : 42px;
+  line-height : 1.05;
+  text-align  : center;
+  color       : #fff;
+}
+.b-heroImage__header--level2 {
+  margin    : 0 auto 20px;
+  font-size : 20px;
+}
+
+.b-heroImage__title {
+  position  : absolute;
+  top       : 50%;
+  left      : 50%;
+  transform : translate(-50%, -50%);
+}
+.b-heroImage__bottomCaption {
+  margin-bottom: 50px;
+}
+.b-flexImage {
+  display         : flex;
+  flex-flow       : row nowrap;
+  justify-content : flex-start;
+  align-items     : center;
+  heigh:  520px;
+  width:100%;
+}
+.b-flexImage__titleBlock {
+  width     : 100%;
+  max-width : 500px;
+  margin    : auto;
+}
+
+
 .secondaryConsultingMenuBl{
 	border-bottom: 1px solid #E1E7EB;
 	background: #fff;
@@ -1517,9 +1495,9 @@ button.modalFormCloseBtn{
     transition: all 0.25s ease-in-out;
 }
 
-.custom-services-image-header {
+/*.custom-services-image-header {
   background-color: rgba(25,25,25,0.8);
-}
+}*/
 
 /***     THIS IS GOOD - USE FOR ALL SERVICES    ***/
 /*      sticky main image and title container     */
