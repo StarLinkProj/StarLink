@@ -1224,6 +1224,67 @@ button.modalFormCloseBtn{
 }
 
 /*********** Services **********/
+
+/* BEM style declarations */
+.b-service {
+  padding-bottom : 50px;
+  font-family    : "Roboto", sans-serif;
+  font-weight    : 300;
+  font-size      : 16px;
+  line-height    : 1.2;
+  text-align     : left;
+  color          : inherit;
+}
+.b-service__header {
+  margin-top    : 24px;
+  margin-bottom : 20px;
+  font          : inherit;
+  font-size     : 42px;
+  line-height   : 1.05;
+  text-align    : center;
+}
+.b-service__header--level2 {
+  margin-top    : 4px;
+  margin-bottom : 16px;
+  font-size     : 30px;
+  line-height   : 1;
+}
+.b-service__header--overlay {
+  margin-top    : -100px;
+  margin-bottom : 0;
+  padding       : 0 10px;
+  height        : 100px;
+  font-size     : 22px;
+  font-weight   : 400;
+  color         : #fff;
+  text-shadow   : 0 0 4px #00495b;
+  /*font-weight: normal;*/
+}
+.b-service__headerLink {
+  color: inherit;
+}
+.b-service__headerLink:hover {
+  color: inherit;
+  text-shadow   : 0 0 16px #008da8;
+}
+.b-service__headerImage {
+  display          : block;
+  height           : 166px;
+  width            : 100%;
+  margin-bottom    : 10px;
+  background-color : rgba(255, 255, 255, 0);
+  object-fit       : cover;
+}
+.b-service__text {
+  margin-top    : 0;
+  margin-bottom : 16px;
+  font: inherit;
+}
+.b-service__image {
+  margin-top    : 8px;
+  margin-bottom : 20px;
+}
+
 .servicesTopBlH2{
 	font-family: 'Roboto', sans-serif;
 	line-height: 80px;
@@ -1233,7 +1294,7 @@ button.modalFormCloseBtn{
 	margin: 0;
 	text-align: center;
 }
-.servicesBl2{
+/*.servicesBl2{
 	padding-bottom: 50px;
 }
 .servicesBl2H2{
@@ -1259,22 +1320,22 @@ button.modalFormCloseBtn{
 }
 .servicesBl2 h4{
 	margin-top: 0;
-}
-.servicesBl4{
+}*/
+/*.servicesBl4{
 	padding-bottom: 50px;
-}
-.servicesBl4 .servicesBl4InnersingleBl{
+}*/
+/*.servicesBl4 .servicesBl4InnersingleBl{
 	margin-bottom: 50px;
-}
-.servicesBl4H2{
+}*/
+/*.servicesBl4H2{
 	margin: 50px 15%;
 	text-align: center;
 	font-family: 'HelveticaNeue-Ligth', sans-serif;
 	font-size: 42px;
 	line-height: 50px;
 	color: #1b1b1b;
-}
-.servicesBl4 h4 {
+}*/
+/*.servicesBl4 h4 {
 	margin: -100px 0 0;
 	padding: 0 10px;
 	height: 100px;
@@ -1282,35 +1343,35 @@ button.modalFormCloseBtn{
 	font-size:22px;
 	font-weight: normal;
 	text-align: center;
-}
+}*/
 
-.servicesBl4 h4 a {
-	color: #fff;
+/*.servicesBl4 h4 a {
+	color: #fff;*/
 /* 	color: #3FA2F7; */	
-	font-family: 'Roboto', sans-serif;
+/*	font-family: 'Roboto', sans-serif;
 	line-height: 20px;
   text-shadow: 0 0 4px #00495b;
-}
-.servicesBl4 p {
+}*/
+/*.servicesBl4 p {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
 	font-size: 16px;
 	line-height: 20px;
 	color: #9b9b9b;
 	margin: 0;
-}
+}*/
 
-.servicesBl4 img { 
+/*.servicesBl4 img {
 	height: 166px;
 	margin-bottom: 10px;
 	background-color: rgba(255,255,255,0) 
 }
 .servicesBl4 img[class] { 
 	width: 100% 
-} 
-.servicesBl4 img.object-fit_cover { 
+} */
+/*.servicesBl4 img.object-fit_cover {
 	object-fit: cover 
-}
+}*/
 
 
 .servicesBl1H2{
@@ -1924,10 +1985,15 @@ body>div.custom-services-image-header.sticky {
 		width: 70%;
 		margin: 0 15%;
 	}
-	.servicesBl4H2, .itOutsourcingWeProposeYou h3, .servicesBl2H2 {
+/*	.servicesBl4H2, */
+  .itOutsourcingWeProposeYou h3 {
 		font-size: 32px;
 		line-height: 40px;
 	}
+/* .servicesBl2H2 {
+    font-size: 32px;
+    line-height: 40px;
+  }*/
 	.solutionBgBl1Margin .solutionBl1H2{
 		font-size: 50px;
 	}
@@ -1935,9 +2001,9 @@ body>div.custom-services-image-header.sticky {
 		font-size: 42px;
 		line-height: 56px;
 	}
-	.servicesBl4H2 {
+/*	.servicesBl4H2 {
 		margin: 50px 5%;
-	}
+	}*/
 	.scrollTopBtn{
 		display: none;
 	}
