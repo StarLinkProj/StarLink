@@ -62,6 +62,17 @@ jQuery(document).ready(function($) {
         }
     });
 
+    // Wrap every 3 news to block
+    var newsBlock = jQuery('.blog>.row');
+    while( newsBlock.children('div:not(.singleRow)' ).length){
+      newsBlock.children('div:not(.singleRow):lt(3)').wrapAll('<div class="singleRow">');
+    }
+    jQuery('.blog>.row .singleRow').append('<div class="clear"></div>');
+
+    // Change classes for last news block
+    jQuery(".newsflash-lastNews").removeClass('container-fluid').removeClass('lastNews').addClass('container').addClass('blog');
+
+
     // Add hover style to parent el in main menu
     jQuery("#mainmenu>li>ul.nav-child>li>a").hover(
         function() {
@@ -76,9 +87,6 @@ jQuery(document).ready(function($) {
     if (jQuery(".services-bl>.container>.row").children().length < 1) {
         jQuery(".services-bl").hide();
     }
-
-    // Change classes for last news block
-    jQuery(".newsflash-lastNews").removeClass('container-fluid').removeClass('lastNews').addClass('container').addClass('blog');
 
     // Change classes for IT outsourcing top block
     jQuery(".custom-itOutsourcingTopBlWithBg").removeClass('container-fluid').removeClass('itOutsourcingTopBlWithBg').addClass('container');
@@ -95,7 +103,6 @@ jQuery(document).ready(function($) {
 
     // Search button changes
     jQuery('.searchButton').click(function() {
-        jQuery('.topPhoneDiv').fadeOut(100);
         jQuery('.mainMenuDiv').fadeOut(100);
         setTimeout(function() {
             jQuery('.searchLineDiv').fadeIn(200);
@@ -105,7 +112,6 @@ jQuery(document).ready(function($) {
     jQuery('#mod-search-searchword').focusout(function() {
         jQuery('.searchLineDiv').fadeOut(100);
         setTimeout(function() {
-            jQuery('.topPhoneDiv').fadeIn(100);
             jQuery('.mainMenuDiv').fadeIn(100);
         }, 150);
     });
@@ -131,12 +137,12 @@ jQuery(document).ready(function($) {
 
     // Menu for screen width <767 (mobile):
     // Expand level 1 menu items with submenus instead of following the level 1 menu link
-    if (jQuery(window).width() <= 767) {
-        jQuery("#mainmenu > .deeper > a").click(function (e) {
-            e.preventDefault();
-            jQuery(this).parent().find('ul.nav-child').toggle();
-        });
-    }
+ ////  if (jQuery(window).width() <= 767) {
+ //      jQuery("#mainmenu > .deeper > a").click(function (e) {
+ //          e.preventDefault();
+ //          jQuery(this).parent().find('ul.nav-child').toggle();
+ //      });
+ //  }
 
     // Scroll to top page on scrollTopButton click
     jQuery(".scrollTopBtn").click(function() {
@@ -165,10 +171,4 @@ jQuery(document).ready(function($) {
  //     }
  // });
 
-    // Wrap every 3 news to block
-    var newsBlock = jQuery('.blog>.row');
-    while( newsBlock.children('div:not(.singleRow)' ).length){
-      newsBlock.children('div:not(.singleRow):lt(3)').wrapAll('<div class="singleRow">');
-    }
-    jQuery('.blog>.row .singleRow').append('<div class="clear"></div>');
 });
