@@ -1,0 +1,343 @@
+
+/* Logo & phone */
+
+.b-topRow {
+  position: relative;
+  background : rgb(51, 56, 63);
+  color      : #fff;
+  height     : 50px;
+}
+.b-logo {
+  position: absolute;
+  left: 0;
+  z-index:1;
+}
+.b-logo__image {
+  height: 44px;
+  width: auto;
+}
+.b-phone {
+  position    : absolute;
+  top         : 0;
+  height      : 45px;
+  right       : 85px;
+  padding-top : 11px;
+  box-sizing  : border-box;
+  z-index     : 2;
+  color       : #fff;
+  font-family : Roboto, sans-serif;
+  font-size   : 19px;
+  font-weight : 500;
+  text-align  : right;
+  line-height : 25px;
+}
+.b-phone__link, .b-phone__link:hover {
+  color : inherit;
+}
+.b-phone__small {
+  position: relative;
+  top: -0.075em;
+  font-size : 85%;
+}
+.b-phone__image {
+  position: relative;
+  top: -0.075em;
+}
+
+/* phone media query */
+@media (max-width : 480px) {
+  .b-phone {
+    background : rgba(51, 56, 63, 0.95);
+    left       : 53px;
+    right      : 85px;
+    transition : background 300ms ease-in-out;
+  }
+}
+/* phone media query */
+@media (max-width : 360px) {
+  .b-phone__link {
+    font-weight: 100;
+  }
+  .b-phone__image {
+    width: 18px;
+    height: 18px;
+  }
+}
+/* phone media query */
+@media (max-width : 300px) {
+  .b-phone__image {
+    display: none;
+  }
+}
+
+/* phone & logo media query */
+@media (min-width: 768px) {
+  .b-topRow {
+    background : transparent;
+    color      : black;
+    height     : auto;
+    width      : 720px;
+    margin     : 0 auto;
+  }
+  .b-phone {
+    position         : relative;
+    font-size        : 22px;
+    font-weight      : 600;
+    text-align       : left;
+    top              : 26px;
+    bottom           : 0;
+    left             : 0;
+    right            : 0;
+    margin           : 0;
+    padding          : 0;
+    color            : black;
+    background-color : transparent;
+  }
+  .b-logo {
+    position: relative;
+    margin: 15px 0 15px;
+  }
+}
+/* phone media query */
+@media (min-width: 992px)  {
+  .b-topRow {     width       : 970px;   }
+  .b-phone  {     text-align  : right;   }
+}
+/* phone media query */
+@media (min-width: 1200px) {
+  .b-topRow {     width       : 1170px;  }
+}
+/* phone media query */
+@media (min-width: 1600px) {
+  .b-topRow {     width       : 1560px;  }
+}
+
+/* Bootstrap menu: main Joomla menu */
+
+.navbar {
+  border        : none;
+  margin-top: 48px;
+  margin-bottom : 0;
+  margin-right: 49px;
+}
+.navbar-default {
+  background-color : transparent;
+}
+.navbar-default .navbar-toggle {
+  margin-top   : 3px;
+  margin-right : 0;
+  border-color : transparent;
+  /*  color : #fff;*/
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color : transparent;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  display       : block;
+  width         : 28px;
+  height        : 3px;
+  background-color : #ED1C24;
+  border-radius : 2px;
+}
+.navbar-default .collapsed .icon-bar {
+  background-color : #fff;
+}
+
+#mainmenu.nav > li {
+  display : inline-block;
+}
+#mainmenu.nav > li.item-101 {
+  display : none;
+}
+#mainmenu.nav > li.deeper {
+  position            : relative;
+  padding-right       : 7px;
+  background-image    : url('../images/main/menuBottomArrow.png');
+  background-repeat   : no-repeat;
+  background-position : right 17px;
+  border-right        : 7px solid transparent;
+}
+#mainmenu.nav > li > ul.nav-child {
+  display : none;
+}
+#mainmenu.nav > li > a {
+  border-bottom : 5px solid transparent;
+  padding       : 10px 0 20px;
+  margin        : 0 10px;
+  font-size     : 14px;
+  color         : #1b1b1b;
+  font-weight   : 500;
+}
+#mainmenu.nav > li.deeper a:hover,
+#mainmenu.nav > li.deeper.active a:hover,
+#mainmenu.nav > li.deeper a:hover {
+  color  : #ED1C24;
+  cursor : pointer;
+}
+#mainmenu.nav > li.active > a,
+#mainmenu.nav > li.active > a:hover,
+#mainmenu.nav > li > a:hover {
+  border-bottom : 5px solid #ED1C24;
+  background    : none;
+  color         : #1b1b1b;
+  cursor        : pointer;
+}
+#mainmenu.nav > li > ul.nav-child > li {
+  display : block;
+  float   : left;
+}
+#mainmenu.nav > li > ul.nav-child > li > a {
+  display       : block;
+  padding       : 15px 20px;
+  min-width     : 250px;
+  font-size     : 14px;
+  line-height   : 16px;
+  color         : #1b1b1b;
+  border-bottom : 1px solid #777;
+}
+#mainmenu.nav > li > ul.nav-child > li > a:hover {
+  color      : #ED1C24;
+  background : #ECEEEF;
+}
+
+/* for higher resolutions (android and retina) */
+
+@media screen and (-webkit-min-device-pixel-ratio : 1.5) ,
+       screen and (min--moz-device-pixel-ratio : 1.5),
+       (max-width : 767px) {  /* was 767 */
+  .navbar-default {
+    min-height : 0;
+  }
+  .navbar-nav {
+    margin : 0;
+  }
+  .navbar-collapse {
+    padding-right : 0;
+    padding-left  : 0;
+  }
+  .navbar-header {
+    margin-top : -48px;
+    margin-right: -57px;
+    width      : 50px;
+    float      : right;
+  }
+  #mainmenu.nav > li {
+    display       : block;
+    border-bottom : 1px solid #e7e7e7;
+  }
+  #mainmenu.nav > li.deeper {
+    padding-right : 0;
+    border-right  : none;
+    background : none;
+  }
+  #mainmenu.nav > li > a {
+    margin        : 0;
+    padding       : 11px 30% 11px;
+    border-bottom : none;
+    font-weight   : 400;
+  }
+  #mainmenu.nav > li.active > a,
+  #mainmenu.nav > li.active > a:hover,
+  #mainmenu.nav > li > a:hover {
+    border-bottom : none;
+    color         : #ED1C24;
+  }
+  #mainmenu.nav > li > ul.nav-child {
+    display : none;
+    padding : 0;
+    margin  : 0;
+  }
+  #mainmenu.nav > li > ul.nav-child > li {
+    float      : none;
+    border-top : 1px solid #e7e7e7;
+  }
+  #mainmenu.nav > li > ul.nav-child > li > a {
+    padding       : 12px 30% 10px 32%;
+    border-bottom : none;
+  }
+  #mainmenu.nav > li > ul.nav-child > li > a:hover {
+    color      : #1b1b1b;
+    background : transparent;
+  }
+}
+
+@media (min-width : 768px) { /* 768 */
+  .navbar {
+    margin: 0;
+  }
+  #mainCollapse {
+    line-height : 75px;  /* to help vertically align child "search" inline-block using line-height: normal;*/
+  }
+  #mainmenu.nav > li {
+    margin-right: 25px;
+  }
+  #mainmenu.nav > li.deeper {
+    background-position : right 9px;
+  }
+  #mainmenu.nav > li > a {
+    font-size : 15px;
+    margin    : 0 7px;
+    padding-top: 0;
+  }
+  #mainmenu.nav > li.deeper:hover > ul.nav-child {
+    position      : absolute;
+    box-shadow    : 0 5px 30px rgba(0, 0, 0, 0.5);
+    border-radius : 6px;
+    left          : 0;
+    top           : 60px;
+    background    : #fff;
+    display       : block;
+    z-index       : 999999;
+    padding       : 0;
+  }
+  #mainmenu.nav > li.deeper:hover > ul.nav-child:after {
+    content       : '';
+    position      : absolute;
+    left          : 25px; top : -18px;
+    border        : 10px solid transparent;
+    border-bottom : 8px solid #fff;
+  }
+  #mainmenu.nav > li > ul.nav-child > li > a {
+    font-size : 13px;
+  }
+  #mainmenu.nav > li > ul.nav-child > li:first-child > a {
+    border-radius : 6px 6px 0 0;
+  }
+  #mainmenu.nav > li > ul.nav-child > li:last-child > a {
+    border-bottom : none;
+    border-radius : 0 0 6px 6px;
+  }
+}
+
+@media (min-width : 992px) {
+  #mainmenu.nav > li {
+    margin-right: 0;
+  }
+  #mainmenu.nav > li.deeper {
+    background-position : right 39px;
+  }
+  #mainmenu.nav > li > a {
+    padding   : 31px 0 19px;
+    font-size : 13px;
+  }
+  #mainmenu.nav > li.deeper:hover > ul.nav-child {
+    top           : 75px;
+  }
+}
+
+@media (min-width : 1200px) {
+  #mainmenu.nav > li > a {
+    font-size : 14px;
+  }
+  #mainmenu.nav > li > ul.nav-child > li > a {
+    font-size : 14px;
+  }
+}
+
+@media (min-width : 1600px) {
+  #mainmenu {
+    margin-left : 100px;
+  }
+} 
+

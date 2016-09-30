@@ -26,23 +26,28 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
   <script type="text/javascript">var myDomain = "http://<?php echo $_SERVER['HTTP_HOST'] ?>/";</script>
 </head>
-  
+
 <body>
   <header class="container-fluid">
-    <div class="row">
-      <div class="b-phone col-xs-12 col-sm-6 col-sm-push-4 col-md-3 col-md-push-3">
-        <jdoc:include type="modules" name="topPhone" />   <!-- TODO  change phone number and logo for parameters of tempalte  -->
-      </div>
-      <div class="logo col-xs-9 col-sm-4 col-sm-pull-6 col-md-3 col-md-pull-3">
+    <div class="b-topRow row">
+      <div class="col-xs-12 col-sm-8 col-md-3 col-lg-4">
         <a title="StarLink" href="<?php echo JURI::base(); ?>">
-          <div id="b-logo ---logo-img">
-            <img src="/images/main/logo-lowres.png" width="193" height="57">
+          <div class="b-logo">
+            <img class="b-logo__image"
+                 src=   "/images/main/logo-star@1x.png"
+                 srcset="/images/main/logo@1x.png,
+                         /images/main/logo@2x.png 2x,
+                         /images/main/logo@3x.png 3x">
           </div>
         </a>
       </div>
-    </div>
-    <div class="container">
-      <div class="col-md-6 col-xs-12 mainMenuDiv">
+      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+        <div class="b-phone">
+          <!-- TODO  change phone number and logo for parameters of tempalte  -->
+          <jdoc:include type="modules" name="topPhone"/>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-0 col-lg-5 mainMenuDiv">
         <nav class="navbar navbar-default">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed"
@@ -54,14 +59,16 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
             </button>
           </div>
           <div class="collapse navbar-collapse" id="mainCollapse">
-            <jdoc:include type="modules" name="mainMenu" />
+            <!-- Main menu begin <ul class="nav menu navbar-nav" id="mainmenu">  -->
+              <jdoc:include type="modules" name="mainMenu" />
+            <!-- Main menu end -->
             <a href="javascript:void(0)" class="searchButton">
               <img src="/images/main/search_icon.png">
             </a>
           </div>
         </nav>
       </div>
-      <div class="hidden-xs hidden-sm col-md-9 searchLineDiv">
+      <div class="hidden-xs hidden-sm col-md-6 col-lg-5 searchLineDiv">
         <jdoc:include type="modules" name="search" />
       </div>
     </div>

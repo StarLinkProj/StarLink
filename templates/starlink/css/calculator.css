@@ -624,8 +624,8 @@ td.calcTdRangeNameText {
     font-size: 42px;
     line-height: 50px;
     color: #1b1b1b;
-    font-family: 'Roboto Light', 'HelveticaNeue-Ligth', sans-serif;
-    font-weight: normal;
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
 }
 .calcItOutsource .calcItOutsourceTopParagraph{
     margin: 0 120px 50px;
