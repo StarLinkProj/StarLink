@@ -1,0 +1,1 @@
+Place Bootstrap, Jquery and other .js files to override those bundled with Joomla, especially Bootstrap
