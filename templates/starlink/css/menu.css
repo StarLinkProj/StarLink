@@ -8,36 +8,54 @@
   height     : 50px;
 }
 .b-logo {
-  position: absolute;
-  left: 0;
-  z-index:1;
+  position         : absolute;
+  left             : 0;
+  height           : 50px;
+  padding          : 1px 0;
+  overflow         : hidden;
+  z-index          : 1;
+  background-color : #ddd;
 }
 .b-logo__image {
-  height: 48px;
+  height: 100%;
   width: auto;
 }
 .b-phone {
-  position    : absolute;
-  top         : 0;
-  height      : 45px;
-  right       : 85px;
-  padding-top : 11px;
-  box-sizing  : border-box;
-  z-index     : 2;
-  color       : #fff;
-  font-family : Roboto, sans-serif;
-  font-size   : 19px;
-  font-weight : 500;
-  text-align  : right;
-  line-height : 25px;
+  position       : absolute;
+  top            : 0;
+  height         : 49px;
+  right          : 85px;
+  padding-top    : 11px;
+  box-sizing     : border-box;
+  z-index        : 2;
+  color          : #fff;
+  font-family    : Roboto, sans-serif;
+  font-size      : 22px;
+  font-weight    : 500;
+  text-align     : right;
+  letter-spacing : -1px;
+  line-height    : 25px;
+  transition : background 300ms ease-in-out;
 }
 .b-phone__link, .b-phone__link:hover {
   color : inherit;
 }
-.b-phone__small {
+.b-phone__areaCode {
+  font-weight: lighter;
+  letter-spacing: -1px;
+}
+.b-phone__areaCode::before {
+  content:"(";
+}
+.b-phone__areaCode::after {
+  content:") ";
+}
+.b-phone__areaCode::before,
+.b-phone__areaCode::after {
   position: relative;
-  top: -0.075em;
+  top: -0.09em;
   font-size : 85%;
+  color: slategray;
 }
 .b-phone__image {
   position: relative;
@@ -48,9 +66,11 @@
 @media (max-width : 480px) {
   .b-phone {
     background : rgba(51, 56, 63, 0.95);
-    left       : 53px;
+    left       : 59px;   /* Logo graphics to remain visible on the left */
     right      : 85px;
-    transition : background 300ms ease-in-out;
+  }
+  .b-logo {
+    width: 59px;
   }
 }
 /* phone media query */
@@ -81,7 +101,7 @@
   }
   .b-phone {
     position         : relative;
-    font-size        : 22px;
+    font-size        : 24px;
     font-weight      : 600;
     text-align       : left;
     top              : 26px;
@@ -95,21 +115,42 @@
   }
   .b-logo {
     position: relative;
-    margin: 15px 0 15px;
+    margin: 0;
+    overflow: visible;
+    height: 70px;
+    background-color : transparent;
   }
 }
 /* phone media query */
 @media (min-width: 992px)  {
-  .b-topRow {     width       : 970px;   }
-  .b-phone  {     text-align  : right;   }
+  .b-topRow {   width       : 970px;   }
+  .b-phone  {   text-align  : right;   }
+  .b-topRow, .b-logo {
+    position: static;
+  }
+  .b-logo__image {
+    position: absolute;
+    top: 5px;
+    right: -40px;
+    height: 90px;
+    z-index: 1000;
+    transition: all 300ms ease-in-out;
+  }
 }
 /* phone media query */
 @media (min-width: 1200px) {
   .b-topRow {     width       : 1170px;  }
+  .b-logo__image {
+    left: 20px;
+  }
 }
 /* phone media query */
 @media (min-width: 1600px) {
-  .b-topRow {     width       : 1560px;  }
+  .b-topRow {
+    width : 1560px; }
+  .b-logo__image {
+    left: 200px;
+  }
 }
 
 /* Bootstrap menu: main Joomla menu */
