@@ -66,11 +66,11 @@
 @media (max-width : 480px) {
   .b-phone {
     background : rgba(51, 56, 63, 0.95);
-    left       : 59px;   /* Logo graphics to remain visible on the left */
+    left       : 56px;   /* Logo graphics to remain visible on the left */
     right      : 85px;
   }
   .b-logo {
-    width: 59px;
+    width: 56px;
   }
 }
 /* phone media query */
