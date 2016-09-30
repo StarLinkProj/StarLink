@@ -33,11 +33,12 @@ include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
       <div class="col-xs-12 col-sm-8 col-md-3 col-lg-4">
         <a title="StarLink" href="<?php echo JURI::base(); ?>">
           <div class="b-logo">
-            <img class="b-logo__image"
+<!--            <img class="b-logo__image"
                  src=   "/images/main/logo-star@1x.png"
                  srcset="/images/main/logo@1x.png,
                          /images/main/logo@2x.png 2x,
-                         /images/main/logo@3x.png 3x">
+                         /images/main/logo@3x.png 3x">-->
+            <img class="b-logo__image" src="/images/main/logo-vector.svg" width="193" height="57">
           </div>
         </a>
       </div>
