@@ -91,7 +91,6 @@
       <excludeFolder url="file://$MODULE_DIR$/templates/starlink/bower_components" />
       <excludeFolder url="file://$MODULE_DIR$/templates/starlink/node_modules" />
       <excludeFolder url="file://$MODULE_DIR$/templates/system" />
-      <excludeFolder url="file://$MODULE_DIR$/tmp" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
