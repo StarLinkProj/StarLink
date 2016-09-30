@@ -11,7 +11,7 @@
   position         : absolute;
   left             : 0;
   height           : 50px;
-  padding          : 1px 0;
+  padding          : 0 6px 1px 0;
   overflow         : hidden;
   z-index          : 1;
   background-color : #ddd;
@@ -130,7 +130,7 @@
   }
   .b-logo__image {
     position: absolute;
-    top: 5px;
+    top: 2px;
     right: -40px;
     height: 90px;
     z-index: 1000;
