@@ -182,12 +182,15 @@
           function initMap() {
             var mapDiv = document.getElementById('map');
             var map = new google.maps.Map(mapDiv, {
-                center: {lat: 50.3937181, lng: 30.6131583},
+                center: {
+                  lat: 50.4070134,
+                  lng: 30.6364289
+                },
                 zoom: 16,
                 scrollwheel: false
             });
             var marker = new google.maps.Marker({
-                position: {lat: 50.392080, lng: 30.6131391},
+                position: {lat: 50.4070134, lng: 30.6364289},
                 map: map,
                 title: 'StarLink'
             });
