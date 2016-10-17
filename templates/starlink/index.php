@@ -1,16 +1,15 @@
-<?php defined( '_JEXEC' ) or die; 
+<?php defined( '_JEXEC' ) or die; ?>
 
-include_once JPATH_THEMES.'/'.$this->template.'/logic.php';
-
-?><!doctype html>
+<!doctype html>
+<html lang="<?php echo $this->language; ?>">
 
 <?php
-    # TODO remove me
-    # require_once 'vendor/MobileDetect.php';
-    # $mobileDetectObj = new Mobile_Detect();
-?>
+  require_once JPATH_THEMES.'/'.$this->template.'/logic.php';
 
-<html lang="<?php echo $this->language; ?>">
+  # TODO remove me
+  # require_once 'vendor/MobileDetect.php';
+  # $mobileDetectObj = new Mobile_Detect();
+?>
 
 <head>
   <!-- TODO remove redundand & debug css/js in production:
