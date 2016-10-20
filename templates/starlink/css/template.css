@@ -413,6 +413,13 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 	margin-bottom: 50px;
 }
 
+.newsFluidBl .page-header h2{
+  text-align: center;
+}
+.newsFluidBl p {
+  font-size: 18px;
+}
+
 .newsFluidBl{
 	background: #F5F6F7;
 	border-top: 1px solid #E1E7EB;
