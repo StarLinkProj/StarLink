@@ -22,6 +22,7 @@ $this->setGenerator(null);
 $doc->addStyleSheet($tpath.'/css/bootstrap.min.css');
 //$doc->addStyleSheet($tpath.'/css/fonts.css');
 $doc->addStyleSheet($tpath.'/css/app.css');
+$doc->addStyleSheet($tpath.'/css/font-awesome.min.css');
 /* $doc->addStyleSheet($tpath.'/css/template.css');
    $doc->addStyleSheet($tpath.'/css/calculator.css');
    $doc->addStyleSheet($tpath.'/../../media/system/css/system.css');
