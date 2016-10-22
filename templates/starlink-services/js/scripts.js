@@ -80,7 +80,7 @@ jQuery(document).ready(function($) {
       }
       jQuery(this).parent().children('ul').toggle();
       jQuery(this).parent().toggleClass("expanded");
-    );
+    });
 
     // Add hover style to parent el in main menu
     jQuery("#mainmenu > li > ul").hover(
