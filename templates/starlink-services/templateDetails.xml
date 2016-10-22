@@ -35,29 +35,20 @@
 	</files>
 	
 	<positions>
-		<position>starlink-services-topPhone</position>
-		<position>starlink-services-mainMenu</position>
-		<position>starlink-services-search</position>
-		<position>starlink-services-mainSlider</position>
-		<position>starlink-services-partners</position>
-		<position>starlink-services-reviews</position>
-		<position>starlink-services-services</position>
-		<position>starlink-services-servicesTopBlWithBg</position>
-		<position>starlink-services-notReadyToCall</position>
-		<position>starlink-services-orderFreeQuestionnaire</position>
-		<position>starlink-services-profitableItOutsourcing</position>
-		<position>starlink-services-sendLetterToUs</position>
-		<position>starlink-services-lastNews</position>
-		<position>starlink-services-aboutPageBl</position>
-		<position>starlink-services-itOutsourcingTopBlWithBg</position>
-		<position>starlink-services-itOutsourcingWeProposeYou</position>
-		<position>starlink-services-itOutsourcingCallInfoBl</position>
-		<position>starlink-services-itOutsourcingCalculator</position>
-		<position>starlink-services-footerMenu</position>
-		<position>starlink-services-footerSocNetworks</position>
-		<position>starlink-services-modalContactForm</position>
-		<position>starlink-services-customModule</position>
-		<position>starlink-services-rightSideMenuBl</position>
+		<position>starlink-00-topPhone</position>
+		<position>starlink-01-mainMenu</position>
+		<position>starlink-02-search</position>
+		<position>starlink-03-footerMenu</position>
+		<position>starlink-04-footerSocNetworks</position>
+		<position>starlink-05-mainSlider</position>
+		<position>starlink-08-services</position>
+		<position>starlink-10-notReadyToCall</position>
+		<position>starlink-13-sendLetterToUs</position>
+		<position>starlink-14-lastNews</position>
+		<position>starlink-15-aboutPageBl</position>
+		<position>starlink-16-modalContactForm</position>
+		<position>starlink-17-customModule</position>
+		<position>starlink-18-rightSideMenuBl</position>
 	</positions>
 	
 </extension>

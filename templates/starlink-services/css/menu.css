@@ -155,7 +155,6 @@
 
 /* Bootstrap menu: main Joomla menu */
 
-
 .navbar {
   border        : none;
   margin-top: 48px;
@@ -164,6 +163,9 @@
 }
 .navbar-default {
   background-color : transparent;
+}
+.navbar-nav {
+  margin : 0;
 }
 .navbar-default .navbar-toggle {
   margin-top   : 3px;
@@ -186,13 +188,10 @@
   background-color : #fff;
 }
 
-#mainmenu.nav > li {
-  display : inline-block;
-}
-#mainmenu.nav > li.item-101 {
+#mainmenu > li.item-101 {
   display : none;
 }
-#mainmenu.nav > li.deeper {
+#mainmenu > li.deeper {
   position            : relative;
   padding-right       : 7px;
   background-image    : url('../images/main/menuBottomArrow.png');
@@ -200,10 +199,7 @@
   background-position : right 17px;
   border-right        : 7px solid transparent;
 }
-#mainmenu.nav > li > ul.nav-child {
-  display : none;
-}
-#mainmenu.nav > li > a {
+#mainmenu > li > a {
   border-bottom : 5px solid transparent;
   padding       : 10px 0 20px;
   margin        : 0 10px;
@@ -211,25 +207,24 @@
   color         : #1b1b1b;
   font-weight   : 500;
 }
-#mainmenu.nav > li.deeper a:hover,
-#mainmenu.nav > li.deeper.active a:hover,
-#mainmenu.nav > li.deeper a:hover {
-  color  : #ED1C24;
-  cursor : pointer;
-}
-#mainmenu.nav > li.active > a,
-#mainmenu.nav > li.active > a:hover,
-#mainmenu.nav > li > a:hover {
+#mainmenu > li.active > a,
+#mainmenu > li > a:hover {
   border-bottom : 5px solid #ED1C24;
   background    : none;
-  color         : #1b1b1b;
+  color         : #ED1C24;
   cursor        : pointer;
 }
-#mainmenu.nav > li > ul.nav-child > li {
+#mainmenu > li.expanded > a {
+  color         : #ED1C24;
+}
+#mainmenu > li > ul {
+  display : none;
+}
+#mainmenu > li > ul > li {
   display : block;
   float   : left;
 }
-#mainmenu.nav > li > ul.nav-child > li > a {
+#mainmenu > li > ul > li > a {
   display       : block;
   padding       : 15px 20px;
   min-width     : 250px;
@@ -238,7 +233,7 @@
   color         : #1b1b1b;
   border-bottom : 1px solid #777;
 }
-#mainmenu.nav > li > ul.nav-child > li > a:hover {
+#mainmenu > li > ul > li > a:hover {
   color      : #ED1C24;
   background : #ECEEEF;
 }
@@ -251,9 +246,6 @@
   .navbar-default {
     min-height : 0;
   }
-  .navbar-nav {
-    margin : 0;
-  }
   .navbar-collapse {
     padding-right : 0;
     padding-left  : 0;
@@ -264,42 +256,38 @@
     width      : 50px;
     float      : right;
   }
-  #mainmenu.nav > li {
+  #mainmenu > li {
     display       : block;
     border-bottom : 1px solid #e7e7e7;
   }
-  #mainmenu.nav > li.deeper {
+  #mainmenu > li.deeper {
     padding-right : 0;
     border-right  : none;
     background : none;
   }
-  #mainmenu.nav > li > a {
+  #mainmenu > li > a {
     margin        : 0;
-    padding       : 11px 30% 11px;
+    padding       : 10px 10px 10px 45px;
     border-bottom : none;
-    font-weight   : 400;
   }
-  #mainmenu.nav > li.active > a,
-  #mainmenu.nav > li.active > a:hover,
-  #mainmenu.nav > li > a:hover {
+  #mainmenu > li.active > a,
+  #mainmenu > li > a:hover {
     border-bottom : none;
-    color         : #ED1C24;
   }
-  #mainmenu.nav > li > ul.nav-child {
+  #mainmenu > li > ul {
     display : none;
     padding : 0;
     margin  : 0;
   }
-  #mainmenu.nav > li > ul.nav-child > li {
+  #mainmenu > li > ul > li {
     float      : none;
     border-top : 1px solid #e7e7e7;
   }
-  #mainmenu.nav > li > ul.nav-child > li > a {
-    padding       : 12px 30% 10px 32%;
+  #mainmenu > li > ul > li > a {
+    padding       : 10px 10px 10px 60px;
     border-bottom : none;
   }
-  #mainmenu.nav > li > ul.nav-child > li > a:hover {
-    color      : #1b1b1b;
+  #mainmenu > li > ul > li > a:hover {
     background : transparent;
   }
 }
@@ -311,68 +299,71 @@
   #mainCollapse {
     line-height : 75px;  /* to help vertically align child "search" inline-block using line-height: normal;*/
   }
-  #mainmenu.nav > li {
+  #mainmenu > li {
+    display: inline-block;
     margin-right: 25px;
   }
-  #mainmenu.nav > li.deeper {
-    background-position : right 9px;
+  #mainmenu > li.deeper {
+    background-position : right 18px;
   }
-  #mainmenu.nav > li > a {
-    font-size : 15px;
-    margin    : 0 7px;
-    padding-top: 0;
+  #mainmenu > li > a {
+    font-size      : 15px;
+    margin         : 10px 7px 0;
+    padding-top    : 0;
+    padding-bottom : 15px;
   }
-  #mainmenu.nav > li.deeper:hover > ul.nav-child {
+  #mainmenu > li.deeper:hover > ul {
     position      : absolute;
     box-shadow    : 0 5px 30px rgba(0, 0, 0, 0.5);
     border-radius : 6px;
     left          : 0;
-    top           : 60px;
+    top           : 51px;
     background    : #fff;
     display       : block;
     z-index       : 999999;
     padding       : 0;
   }
-  #mainmenu.nav > li.deeper:hover > ul.nav-child:after {
+  #mainmenu > li.deeper:hover > ul:after {
     content       : '';
     position      : absolute;
     left          : 25px; top : -18px;
     border        : 10px solid transparent;
     border-bottom : 8px solid #fff;
   }
-  #mainmenu.nav > li > ul.nav-child > li > a {
+  #mainmenu > li > ul > li > a {
     font-size : 13px;
   }
-  #mainmenu.nav > li > ul.nav-child > li:first-child > a {
+  #mainmenu > li > ul > li:first-child > a {
     border-radius : 6px 6px 0 0;
   }
-  #mainmenu.nav > li > ul.nav-child > li:last-child > a {
+  #mainmenu > li > ul > li:last-child > a {
     border-bottom : none;
     border-radius : 0 0 6px 6px;
   }
 }
 
 @media (min-width : 992px) {
-  #mainmenu.nav > li {
+  #mainmenu > li {
     margin-right: 0;
   }
-  #mainmenu.nav > li.deeper {
+  #mainmenu > li.deeper {
     background-position : right 39px;
   }
-  #mainmenu.nav > li > a {
+  #mainmenu > li > a {
+    margin    : 0 7px;
     padding   : 31px 0 19px;
     font-size : 13px;
   }
-  #mainmenu.nav > li.deeper:hover > ul.nav-child {
+  #mainmenu > li.deeper:hover > ul {
     top           : 75px;
   }
 }
 
 @media (min-width : 1200px) {
-  #mainmenu.nav > li > a {
+  #mainmenu > li > a {
     font-size : 14px;
   }
-  #mainmenu.nav > li > ul.nav-child > li > a {
+  #mainmenu > li > ul > li > a {
     font-size : 14px;
   }
 }

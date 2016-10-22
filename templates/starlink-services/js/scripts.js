@@ -72,34 +72,31 @@ jQuery(document).ready(function($) {
     // Change classes for last news block
     jQuery(".newsflash-lastNews").removeClass('container-fluid').removeClass('lastNews').addClass('container').addClass('blog');
 
-
-    // Add hover style to parent el in main menu
-    jQuery("#mainmenu>li>ul.nav-child>li>a").hover(
-        function() {
-          jQuery(this).parent().parent().parent().children('a').css('color', '#ED1C24');
-        },
-        function() {
-          jQuery(this).parent().parent().parent().children('a').css('color', '#1b1b1b');
-        }
+    // Menu for screen width <767 (mobile):
+    // Expand level 1 menu items with submenus instead of following the level 1 menu link
+    jQuery("#mainmenu > li.deeper > a").click(function (e) {
+      if (jQuery(window).width() <= 767) {
+        e.preventDefault();
+      }
+      jQuery(this).parent().children('ul').toggle();
+      jQuery(this).parent().toggleClass("expanded");
     );
 
-    // Change padding in Sevices-bl block
-    if (jQuery(".services-bl>.container>.row").children().length < 1) {
-        jQuery(".services-bl").hide();
-    }
-
-    // Change classes for IT outsourcing top block
-    jQuery(".custom-itOutsourcingTopBlWithBg").removeClass('container-fluid').removeClass('itOutsourcingTopBlWithBg').addClass('container');
-    jQuery(".custom-itOutsourcingWeProposeYou").removeClass('container-fluid').removeClass('itOutsourcingWeProposeYou').addClass('container');
-    jQuery(".custom-itOutsourcingCallInfoBl").removeClass('container-fluid').removeClass('itOutsourcingCallInfoBl').addClass('container');
-
-    // Scroll bottom on IT outsourcing page
-    jQuery("#itOutsourcingBottomScroll").click(function(e) {
-        e.preventDefault();
-        jQuery('html,body').animate({
-                scrollTop: jQuery(".contentBl").offset().top - 30},
-            'slow');
-    });
+    // Add hover style to parent el in main menu
+    jQuery("#mainmenu > li > ul").hover(
+      function () {
+        /*jQuery(this).parent().children('a').css('color', '#ED1C24');*/
+        if (jQuery(window).width() > 767) {
+          jQuery(this).parent().addClass("expanded");
+        }
+      },
+      function () {
+        /*jQuery(this).parent().children('a').css('color', '#1b1b1b');*/
+        if (jQuery(window).width() > 767) {
+          jQuery(this).parent().removeClass("expanded");
+        }
+      }
+    );
 
     // Search button changes
     jQuery('.searchButton').click(function() {
@@ -119,30 +116,7 @@ jQuery(document).ready(function($) {
     // Pre-footer height
     jQuery('.pre-footer').css('height', jQuery('.footer').innerHeight());
 
-    // Add required attribute for input fields Fox with class='foxContactAddRequired'
-    jQuery('.foxContactAddRequired input[type="text"]').attr('required', true);
-    jQuery('.foxContactAddTypeEmail input[type="text"]').attr('type', 'email');
 
-    // Change modal text before submit form IT-outsourcing
-    jQuery('form[name="fox-form-m115"]').submit(function(e) {
-        var form = this;
-        e.preventDefault();
-
-        jQuery('#fox-container-m115').prepend('<div class="modalFormCongratulation" xmlns="http://www.w3.org/1999/html"><h2>Ваша заявка успешно отправлена</h2><p>Спасибо за ваше обращение! Наши специалисты ответят на Ваш запрос в ближайшее время.</p></div>');
-
-        setTimeout(function() {
-          form.submit();
-        }, 3000);
-    });
-
-    // Menu for screen width <767 (mobile):
-    // Expand level 1 menu items with submenus instead of following the level 1 menu link
- ////  if (jQuery(window).width() <= 767) {
- //      jQuery("#mainmenu > .deeper > a").click(function (e) {
- //          e.preventDefault();
- //          jQuery(this).parent().find('ul.nav-child').toggle();
- //      });
- //  }
 
     // Scroll to top page on scrollTopButton click
     jQuery(".scrollTopBtn").click(function() {

@@ -20,6 +20,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,700,900&subset=cyrillic" rel="stylesheet">
   <!-- head -->
+  <!--suppress XmlUnboundNsPrefix -->
   <jdoc:include type="head" />
   <!-- /head -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
