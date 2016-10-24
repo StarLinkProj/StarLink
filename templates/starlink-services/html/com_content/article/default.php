@@ -23,7 +23,7 @@ JHtml::_('behavior.caption');
 <div class="item-page<?php echo $this->pageclass_sfx; ?> row" itemscope itemtype="https://schema.org/Article">
 	<meta itemprop="inLanguage" content="<?php echo ($this->item->language === '*') ? JFactory::getConfig()->get('language') : $this->item->language; ?>" />
 	<?php if ($this->params->get('show_page_heading')) : ?>
-	<div class="page-header col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-6">
+	<div class="page-header col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
 		<h1> <?php echo $this->escape($this->params->get('page_heading')); ?> </h1>
 	</div>
 	<?php endif;
@@ -44,7 +44,7 @@ JHtml::_('behavior.caption');
 		<div class="clearfix"> </div>
 	<?php endif; ?>
 	<?php if ($params->get('show_title') || $params->get('show_author')) : ?>
-	<div class="page-header col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-6">
+	<div class="page-header col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
 		<?php if ($params->get('show_title')) : ?>
 			<h2 itemprop="name">
 				<?php echo $this->escape($this->item->title); ?>
@@ -109,7 +109,7 @@ JHtml::_('behavior.caption');
 	<?php if (isset ($this->item->toc)) :
 		echo $this->item->toc;
 	endif; ?>
-	<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-6" itemprop="articleBody">
+	<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3" itemprop="articleBody">
 		<?php echo $this->item->text; ?>
 	</div>
 

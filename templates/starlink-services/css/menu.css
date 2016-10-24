@@ -154,12 +154,11 @@
 }
 
 /* Bootstrap menu: main Joomla menu */
-
 .navbar {
   border        : none;
-  margin-top: 48px;
+  margin-top    : 48px;
   margin-bottom : 0;
-  margin-right: 49px;
+  margin-right  : 49px;
 }
 .navbar-default {
   background-color : transparent;
@@ -171,7 +170,6 @@
   margin-top   : 3px;
   margin-right : 0;
   border-color : transparent;
-  /*  color : #fff;*/
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {

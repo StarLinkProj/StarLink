@@ -5,8 +5,6 @@
 <!doctype html>
 <html lang="<?php echo $this->language; ?>">
 <!-- starlink-services template -->
-<!-- <?php echo "URI:   ".$uri; ?> -->
-<!-- <?php echo "Query: ".$queryString ?> -->
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
   <!-- head -->
@@ -57,9 +55,7 @@
   </header>
 
     <div class="container-fluid newsFluidBl">
-      <div class="container">
-        <jdoc:include type="component" />
-      </div>
+      <jdoc:include type="component" />
     </div>
 
     <div class="container-fluid services-bl">
@@ -72,21 +68,21 @@
 
     <div class="pre-footer"></div>
 
-    <footer class="container-fluid footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3 col-xs-12 copyright">
-            &copy; 2016 &nbsp; <a href="<?php echo JURI::base(); ?>">Старлинк</a>
-          </div>
-          <div class="col-md-6 col-xs-12">
-            <jdoc:include type="modules" name="starlink-03-footerMenu" />
-          </div>
-          <div class="col-md-3 col-xs-12">
-            <jdoc:include type="modules" name="starlink-04-footerSocNetworks" />
-          </div>
+  <footer class="container-fluid footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-xs-12 copyright">
+          &copy; 2016 &nbsp; <a href="<?php echo JURI::base(); ?>">Старлинк</a>
+        </div>
+        <div class="col-md-6 col-xs-12">
+          <jdoc:include type="modules" name="starlink-03-footerMenu" />
+        </div>
+        <div class="col-md-3 col-xs-12">
+          <jdoc:include type="modules" name="starlink-04-footerSocNetworks" />
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 
 </body>
 </html>

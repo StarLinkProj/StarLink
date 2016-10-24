@@ -706,8 +706,8 @@ class JPagination
 		if (!is_numeric($item->text))
 		{
 			JHtml::_('bootstrap.tooltip');
-			$title = ' title="' . $item->text . '"';
-			$class = 'hasTooltip ';
+			$title = '';
+			$class = ' ';
 		}
 
 		if ($this->app->isAdmin())

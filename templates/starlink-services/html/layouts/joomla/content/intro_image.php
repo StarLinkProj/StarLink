@@ -13,9 +13,9 @@ $params  = $displayData->params;
 <?php $images = json_decode($displayData->images); ?>
 <?php if (isset($images->image_intro) && !empty($images->image_intro)) : ?>
 	<?php $imgfloat = (empty($images->float_intro)) ? $params->get('float_intro') : $images->float_intro; ?>
-	<div class="pull-<?php echo htmlspecialchars($imgfloat); ?> item-image"> 
+	<div class="pull-<?php echo htmlspecialchars($imgfloat); ?> item-image">
 	<?php if ($params->get('link_titles') && $params->get('access-view')) : ?>
-	<a href="<?php echo JRoute::_(ContentHelperRoute::getArticleRoute($displayData->slug, $displayData->catid, $displayData->language)); ?>"><img
+	<a href="<?php echo JRoute::_(ContentHelperRoute::getArticleRoute($displayData->slug, $displayData->catid, $displayData->language)); ?>"><img class="img-responsive imgMgAuto"
 	<?php if ($images->image_intro_caption):
 		echo 'class="caption"' . ' title="' . htmlspecialchars($images->image_intro_caption) . '"';
 	endif; ?>

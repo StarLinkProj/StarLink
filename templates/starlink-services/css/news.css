@@ -21,6 +21,12 @@
    line-height: 30px;
    text-align: center;
  }
+.newsFluidBl .items-row {
+  /* copy from Bootstrap .row */
+}
+.newsFluidBl .span4 {
+  /* copy from Bootstrap .col-xs-4 */
+}
 .newsFluidBl .blog .item {
   box-shadow: 0 5px 10px rgba(0,0,0,0.05);
   margin-bottom: 50px;
@@ -49,9 +55,6 @@
   padding: 20px 5px 20px 30px;
   margin: 0;
 }
-.newsFluidBl .item-page.item-news-page {
-
-}
 .newsFluidBl .item-page {
   margin-bottom: 80px;
 }
@@ -62,7 +65,6 @@
   font-size: 40px;
   font-weight: 400;
 }
-
 
 .newsHits{
   padding-left: 30px;

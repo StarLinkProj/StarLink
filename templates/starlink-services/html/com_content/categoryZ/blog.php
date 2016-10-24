@@ -72,11 +72,12 @@ JHtml::_('behavior.caption');
 	?>
 
 	<?php if (!empty($this->intro_items)) : ?>
+		<div class="row">
 		<?php foreach ($this->intro_items as $key => &$item) : ?>
 			<?php $rowcount = ((int) $key % (int) $this->columns) + 1; ?>
 			<?php if ($rowcount == 1) : ?>
 				<?php $row = $counter / $this->columns; ?>
-				<div class="items-row cols-<?php echo (int) $this->columns; ?> <?php echo 'row-' . $row; ?> row-fluid clearfix">
+				<div class="items-row col-xs-12 col-sm-6 col-md-4 cols-<?php echo (int) $this->columns; ?> <?php echo 'row-' . $row; ?> row-fluid clearfix">
 			<?php endif; ?>
 			<div class="span<?php echo round((12 / $this->columns)); ?>">
 				<div class="item column-<?php echo $rowcount; ?><?php echo $item->state == 0 ? ' system-unpublished' : null; ?>"
@@ -93,6 +94,7 @@ JHtml::_('behavior.caption');
 				</div><!-- end row -->
 			<?php endif; ?>
 		<?php endforeach; ?>
+		</div>
 	<?php endif; ?>
 
 	<?php if (!empty($this->link_items)) : ?>
@@ -114,5 +116,13 @@ JHtml::_('behavior.caption');
 				<p class="counter pull-right"> <?php echo $this->pagination->getPagesCounter(); ?> </p>
 			<?php endif; ?>
 			<?php echo $this->pagination->getPagesLinks(); ?> </div>
+	<?php endif; ?>
+
+	<?php if (preg_match('/news/', $_SERVER['REQUEST_URI'])) : ?>
+		<div class="row newsShowMoreNewsRow">
+			<div class="col-md-12 col-sm-12 col-xs-12 newsShowMoreNewsCol">
+				<a href="javascript:void(0)" class="newsShowMoreNews">Загрузить еще<span class="loadMoreNewsIcon">&nbsp;</span></a>
+			</div>
+		</div>
 	<?php endif; ?>
 </div>

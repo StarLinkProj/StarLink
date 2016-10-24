@@ -1,69 +1,5 @@
 jQuery(document).ready(function($) {
 
-    // Change img source on services hover
-    jQuery(".services .services-a").hover(function() {
-        var oldSrc = $(this).find('img').attr("src");
-        if (!oldSrc.match(/\-hover\.png/)) {
-            var newSrc = oldSrc.replace(/\-main\.png/, "-hover.png");
-            $(this).find('img').attr("src", newSrc);
-        }
-    }, function() {
-        var oldSrc = $(this).find('img').attr("src");
-        if (!oldSrc.match(/\-main\.png/)) {
-            var newSrc = oldSrc.replace(/\-hover\.png/, "-main.png");
-            $(this).find('img').attr("src", newSrc);
-        }
-    })
-
-    // Change img source on footer soc hover
-    jQuery(".footerSocNetworks a").hover(function() {
-        var oldSrc = $(this).find('img').attr("src");
-        if (!oldSrc.match(/\-hover\.png/)) {
-            var newSrc = oldSrc.replace(/\-main\.png/, "-hover.png");
-            $(this).find('img').attr("src", newSrc);
-        }
-    }, function() {
-        var oldSrc = $(this).find('img').attr("src");
-        if (!oldSrc.match(/\-main\.png/)) {
-            var newSrc = oldSrc.replace(/\-hover\.png/, "-main.png");
-            $(this).find('img').attr("src", newSrc);
-        }
-    })
-
-    // Place map on the first place on contacts page
-    if ((window.location.href).match(/contacts/)) {
-        jQuery("#map").parent().detach().insertAfter('header');
-    }
-
-    jQuery(".moduletable-partners").children("div").removeClass('container');
-    jQuery(".moduletable-reviewsBl").children("div").removeClass('container').removeClass('reviewsBl');
-    jQuery(".fox-column12").children().wrapAll('<div class="row" />');
-
-    // Show more news on Blog page
-    var singleNews = jQuery(".newsFluidBl .blog .row .items-row");
-    var newsCount = singleNews.size();
-    singleNews.hide();
-    var loadNewsOneTimeCount = 6;
-    jQuery('.newsFluidBl .blog .row .items-row:lt(' + loadNewsOneTimeCount + ')').show();
-    jQuery('.newsShowMoreNews').click(function () {
-        loadNewsOneTimeCount = (loadNewsOneTimeCount + loadNewsOneTimeCount <= newsCount) ? loadNewsOneTimeCount + loadNewsOneTimeCount : newsCount;
-        jQuery('.newsFluidBl .blog .row .items-row:lt(' + loadNewsOneTimeCount + ')').delay(200).slideDown(800);
-        if(loadNewsOneTimeCount == newsCount){
-            jQuery('.newsShowMoreNews').delay(800).slideUp(100);
-        }
-    });
-
-    // Wrap every 3 news to block
-    var newsBlock = jQuery('.blog>.row');
-    while( newsBlock.children('div:not(.singleRow)' ).length){
-      newsBlock.children('div:not(.singleRow):lt(3)').wrapAll('<div class="singleRow">');
-    }
-    jQuery('.blog>.row .singleRow').append('<div class="clear"></div>');
-
-    // Change classes for last news block
-    jQuery(".newsflash-lastNews").removeClass('container-fluid').removeClass('lastNews').addClass('container').addClass('blog');
-
-
   /******** Menu utilities ********/
 
     // Menu for screen width <767 (mobile):
@@ -96,8 +32,86 @@ jQuery(document).ready(function($) {
     jQuery(window).resize(function () {
       if (jQuery('.container').width() >= 720 ) {
         jQuery("#mainmenu > li.deeper > ul").hide();
+        jQuery("#mainmenu > li.deeper > ul").removeAttr("style");
       }
     });
+
+
+  /*****   FOOTER UTILITIES  *******/
+
+  // Pre-footer height
+  jQuery('.pre-footer').css('height', jQuery('.footer').innerHeight());
+
+  // Change img source on footer soc hover
+  jQuery(".footerSocNetworks a").hover(function() {
+    var oldSrc = $(this).find('img').attr("src");
+    if (!oldSrc.match(/\-hover\.png/)) {
+      var newSrc = oldSrc.replace(/\-main\.png/, "-hover.png");
+      $(this).find('img').attr("src", newSrc);
+    }
+  }, function() {
+    var oldSrc = $(this).find('img').attr("src");
+    if (!oldSrc.match(/\-main\.png/)) {
+      var newSrc = oldSrc.replace(/\-hover\.png/, "-main.png");
+      $(this).find('img').attr("src", newSrc);
+    }
+  })
+
+
+  /***********     SERVICES  ************/
+
+  // Change img source on services hover
+  jQuery(".services .services-a").hover(function () {
+    var oldSrc = $(this).find('img').attr("src");
+    if (!oldSrc.match(/\-hover\.png/)) {
+      var newSrc = oldSrc.replace(/\-main\.png/, "-hover.png");
+      $(this).find('img').attr("src", newSrc);
+    }
+  }, function () {
+    var oldSrc = $(this).find('img').attr("src");
+    if (!oldSrc.match(/\-main\.png/)) {
+      var newSrc = oldSrc.replace(/\-hover\.png/, "-main.png");
+      $(this).find('img').attr("src", newSrc);
+    }
+  })
+
+  // Change padding in Sevices-bl block
+  if (jQuery(".services-bl>.container>.row").children().length < 1) {
+    jQuery(".services-bl").hide();
+  }
+
+
+  /*****  NEWS   and   BLOG  pages  ******/
+
+  // Show more news on Blog page
+  var singleNews = jQuery(".newsFluidBl .blog .row .items-row");
+  var newsCount = singleNews.size();
+  singleNews.hide();
+  var loadNewsOneTimeCount = 6;
+  jQuery('.newsFluidBl .blog .row .items-row:lt(' + loadNewsOneTimeCount + ')').show();
+  jQuery('.newsShowMoreNews').click(function () {
+    loadNewsOneTimeCount = (loadNewsOneTimeCount + loadNewsOneTimeCount <= newsCount) ? loadNewsOneTimeCount + loadNewsOneTimeCount : newsCount;
+    jQuery('.newsFluidBl .blog .row .items-row:lt(' + loadNewsOneTimeCount + ')').delay(200).slideDown(800);
+    if(loadNewsOneTimeCount == newsCount){
+      jQuery('.newsShowMoreNews').delay(800).slideUp(100);
+    }
+  });
+
+  // Wrap every 3 news to block
+/*  var newsBlock = jQuery('.blog>.row');
+  while( newsBlock.children('div:not(.singleRow)' ).length){
+    newsBlock.children('div:not(.singleRow):lt(3)').wrapAll('<div class="singleRow">');
+  }
+  jQuery('.blog>.row .singleRow').append('<div class="clear"></div>');*/
+
+  //jQuery('.newsFluidBl .items-row').addClass('row');
+  //jQuery('.newsFluidBl .items-row .span4').addClass('col-xs-4');
+  jQuery('.newsFluidBl .items-row.clearfix').removeClass('clearfix');
+  jQuery('.newsFluidBl .span12').addClass('col-xs-4');
+  jQuery('.newsFluidBl .blog .items-row:eq(3n+1)').addClass('clearfix');
+
+  // Change classes for last news block
+  jQuery(".newsflash-lastNews").removeClass('container-fluid').removeClass('lastNews').addClass('container').addClass('blog');
 
 
   /*********** Search button ***********/
@@ -118,29 +132,6 @@ jQuery(document).ready(function($) {
     });
 
 
- /****** Sticky menu on /services pages ******/
-
- // // TODO remove comments after checking
- // jQuery(window).scroll(function(){
- //     var headerAndTopBlHeight = jQuery("header").innerHeight() /*+ jQuery(".servicesBgBl1Margin").innerHeight()*/;
- //     if (jQuery(".secondaryConsultingMenuBl").length > 0) {    // TODO move this into 2nd .sticky addition instruction
- //         if(jQuery(window).scrollTop() > headerAndTopBlHeight) {
- //           /*jQuery('.scrollFixedConsultingBl').css('position', 'fixed');
- //           jQuery('body').css('margin-top', '200px');
- //           jQuery('.scrollBl').slideDown();*/
- //           jQuery('body>div.custom-services-image-header').addClass('sticky');
- //           jQuery('.scrollFixedConsultingBl').addClass('sticky');
- //         } else {
- //           jQuery('body>div.custom-services-image-header').removeClass('sticky');
- //           jQuery('.scrollFixedConsultingBl').removeClass('sticky');
- //           /*jQuery('.scrollFixedConsultingBl').css('position', 'relative');
- //           jQuery('body').css('margin-top', '0');
- ////           jQuery('.scrollBl').hide();*/
- //         }
- //     }
- // });
-
-
  /******* Other utilities ******/
 
    // Scroll bottom on about page
@@ -150,9 +141,6 @@ jQuery(document).ready(function($) {
            scrollTop: jQuery(".contentBl").offset().top - 30},
          'slow');
    });
-
-   // Pre-footer height
-   jQuery('.pre-footer').css('height', jQuery('.footer').innerHeight());
 
    // Scroll to top page on scrollTopButton click
    jQuery(".scrollTopBtn").click(function() {

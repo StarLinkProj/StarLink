@@ -5,6 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/templates/starlink" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/modules/mod_calculator_it_outsourcing" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/templates/starlink-services" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/.idea" />
       <excludeFolder url="file://$MODULE_DIR$/administrator" />
       <excludeFolder url="file://$MODULE_DIR$/bin" />
@@ -14,22 +15,18 @@
       <excludeFolder url="file://$MODULE_DIR$/components/com_banners" />
       <excludeFolder url="file://$MODULE_DIR$/components/com_config" />
       <excludeFolder url="file://$MODULE_DIR$/components/com_contact" />
-      <excludeFolder url="file://$MODULE_DIR$/components/com_content" />
       <excludeFolder url="file://$MODULE_DIR$/components/com_contenthistory" />
       <excludeFolder url="file://$MODULE_DIR$/components/com_finder" />
       <excludeFolder url="file://$MODULE_DIR$/components/com_mailto" />
       <excludeFolder url="file://$MODULE_DIR$/components/com_media" />
       <excludeFolder url="file://$MODULE_DIR$/components/com_modules" />
       <excludeFolder url="file://$MODULE_DIR$/components/com_newsfeeds" />
-      <excludeFolder url="file://$MODULE_DIR$/components/com_search" />
       <excludeFolder url="file://$MODULE_DIR$/components/com_tags" />
       <excludeFolder url="file://$MODULE_DIR$/components/com_users" />
       <excludeFolder url="file://$MODULE_DIR$/components/com_wrapper" />
       <excludeFolder url="file://$MODULE_DIR$/images/banners" />
       <excludeFolder url="file://$MODULE_DIR$/images/sampledata" />
       <excludeFolder url="file://$MODULE_DIR$/includes" />
-      <excludeFolder url="file://$MODULE_DIR$/layouts" />
-      <excludeFolder url="file://$MODULE_DIR$/libraries" />
       <excludeFolder url="file://$MODULE_DIR$/media/cms" />
       <excludeFolder url="file://$MODULE_DIR$/media/com_contenthistory" />
       <excludeFolder url="file://$MODULE_DIR$/media/com_finder" />
@@ -87,6 +84,7 @@
       <excludeFolder url="file://$MODULE_DIR$/plugins/user" />
       <excludeFolder url="file://$MODULE_DIR$/templates/beez3" />
       <excludeFolder url="file://$MODULE_DIR$/templates/protostar" />
+      <excludeFolder url="file://$MODULE_DIR$/templates/starlink-services/bower_components" />
       <excludeFolder url="file://$MODULE_DIR$/templates/starlink/!remove" />
       <excludeFolder url="file://$MODULE_DIR$/templates/starlink/bower_components" />
       <excludeFolder url="file://$MODULE_DIR$/templates/starlink/node_modules" />
