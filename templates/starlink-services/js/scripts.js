@@ -30,23 +30,14 @@ jQuery(document).ready(function($) {
         }
     })
 
-    // Change modules order on contacts page
+    // Place map on the first place on contacts page
     if ((window.location.href).match(/contacts/)) {
         jQuery("#map").parent().detach().insertAfter('header');
     }
 
     jQuery(".moduletable-partners").children("div").removeClass('container');
     jQuery(".moduletable-reviewsBl").children("div").removeClass('container').removeClass('reviewsBl');
-
     jQuery(".fox-column12").children().wrapAll('<div class="row" />');
-
-    // Scroll bottom on about page
-    jQuery("#aboutBottomScroll").click(function(e) {
-        e.preventDefault();
-        jQuery('html,body').animate({
-                scrollTop: jQuery(".contentBl").offset().top - 30},
-            'slow');
-    });
 
     // Show more news on Blog page
     var singleNews = jQuery(".newsFluidBl .blog .row .items-row");
@@ -72,31 +63,44 @@ jQuery(document).ready(function($) {
     // Change classes for last news block
     jQuery(".newsflash-lastNews").removeClass('container-fluid').removeClass('lastNews').addClass('container').addClass('blog');
 
+
+  /******** Menu utilities ********/
+
     // Menu for screen width <767 (mobile):
     // Expand level 1 menu items with submenus instead of following the level 1 menu link
     jQuery("#mainmenu > li.deeper > a").click(function (e) {
       if (jQuery(window).width() <= 767) {
         e.preventDefault();
+        jQuery(this).siblings('ul').toggle(250, "swing", true);                               // show or hide submeny of currently clicked item
+        jQuery(this).parent().siblings("li.deeper").children("ul").hide(250, "swing", true);  // hide sibling submenus in any case
+        jQuery.dequeue();
+        jQuery(this).parent().toggleClass("expanded");
       }
-      jQuery(this).parent().children('ul').toggle();
-      jQuery(this).parent().toggleClass("expanded");
     });
 
-    // Add hover style to parent el in main menu
+    // Add hover style to parent menu item in main menu
     jQuery("#mainmenu > li > ul").hover(
       function () {
-        /*jQuery(this).parent().children('a').css('color', '#ED1C24');*/
         if (jQuery(window).width() > 767) {
           jQuery(this).parent().addClass("expanded");
         }
       },
       function () {
-        /*jQuery(this).parent().children('a').css('color', '#1b1b1b');*/
         if (jQuery(window).width() > 767) {
           jQuery(this).parent().removeClass("expanded");
         }
       }
     );
+
+    // Hide expanded submenus when screen becomes wider than mobile
+    jQuery(window).resize(function () {
+      if (jQuery('.container').width() >= 720 ) {
+        jQuery("#mainmenu > li.deeper > ul").hide();
+      }
+    });
+
+
+  /*********** Search button ***********/
 
     // Search button changes
     jQuery('.searchButton').click(function() {
@@ -113,17 +117,8 @@ jQuery(document).ready(function($) {
         }, 150);
     });
 
-    // Pre-footer height
-    jQuery('.pre-footer').css('height', jQuery('.footer').innerHeight());
 
-
-
-    // Scroll to top page on scrollTopButton click
-    jQuery(".scrollTopBtn").click(function() {
-        jQuery('html,body').animate({
-                scrollTop: jQuery("html").offset().top - 30},
-            'slow');
-    });
+ /****** Sticky menu on /services pages ******/
 
  // // TODO remove comments after checking
  // jQuery(window).scroll(function(){
@@ -144,5 +139,26 @@ jQuery(document).ready(function($) {
  //         }
  //     }
  // });
+
+
+ /******* Other utilities ******/
+
+   // Scroll bottom on about page
+   jQuery("#aboutBottomScroll").click(function(e) {
+     e.preventDefault();
+     jQuery('html,body').animate({
+           scrollTop: jQuery(".contentBl").offset().top - 30},
+         'slow');
+   });
+
+   // Pre-footer height
+   jQuery('.pre-footer').css('height', jQuery('.footer').innerHeight());
+
+   // Scroll to top page on scrollTopButton click
+   jQuery(".scrollTopBtn").click(function() {
+     jQuery('html,body').animate({
+           scrollTop: jQuery("html").offset().top - 30},
+         'slow');
+   });
 
 });
