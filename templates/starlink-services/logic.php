@@ -12,7 +12,6 @@ $tpath = $this->baseurl.'/templates/'.$this->template;
 $itemId = JRequest::getInt('Itemid');
 $uri= JFactory::getURI();
 $queryString=$uri->getQuery();
-$queryString = http_build_query(JRequest::get( 'get' ));
 
 // generator tag
 $this->setGenerator(null);

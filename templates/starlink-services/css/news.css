@@ -133,10 +133,8 @@
   text-align: center;
   font-weight: normal;
   font-size: 34px;
-  /*line-height: 20px;*/
   text-transform: uppercase;
-  margin: 50px 0 20px;
-  /*color: #000;*/
+  margin: 50px 0 30px;
 }
 .showAllNews{
   text-align: center;
@@ -147,10 +145,6 @@
   font-size: 16px;
   line-height: 26px;
   font-weight: 500;
-}
-
-.imgMgAuto{
-  margin: 0 auto;
 }
 
 .services-bl{

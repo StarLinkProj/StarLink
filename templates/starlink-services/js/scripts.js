@@ -39,8 +39,9 @@ jQuery(document).ready(function($) {
 
   /*****   FOOTER UTILITIES  *******/
 
-  // Pre-footer height
-  jQuery('.pre-footer').css('height', jQuery('.footer').innerHeight());
+  // make last container-fluid before footer 100% width of screen
+  jQuery('.pre-footer').prev('.container-fluid').css('width','100%');
+
 
   // Change img source on footer soc hover
   jQuery(".footerSocNetworks a").hover(function() {
@@ -55,7 +56,7 @@ jQuery(document).ready(function($) {
       var newSrc = oldSrc.replace(/\-hover\.png/, "-main.png");
       $(this).find('img').attr("src", newSrc);
     }
-  })
+  });
 
 
   /***********     SERVICES  ************/
@@ -73,13 +74,7 @@ jQuery(document).ready(function($) {
       var newSrc = oldSrc.replace(/\-hover\.png/, "-main.png");
       $(this).find('img').attr("src", newSrc);
     }
-  })
-
-  // Change padding in Sevices-bl block
-  if (jQuery(".services-bl>.container>.row").children().length < 1) {
-    jQuery(".services-bl").hide();
-  }
-
+  });
 
   /*****  NEWS   and   BLOG  pages  ******/
 
@@ -105,7 +100,6 @@ jQuery(document).ready(function($) {
     if ( (index+1) % nColumns == 0 ) {
       jQuery(this).addClass("clearfix");
     }
-    console.log( index, nColumns );
   });
 
   jQuery(window).resize(function () {
@@ -118,44 +112,41 @@ jQuery(document).ready(function($) {
     });
   });
 
-  // Change classes for last news block
-  jQuery(".newsflash-lastNews").removeClass('container-fluid').removeClass('lastNews').addClass('container').addClass('blog');
-
 
   /*********** Search button ***********/
 
-    // Search button changes
-    jQuery('.searchButton').click(function() {
-        jQuery('.mainMenuDiv').fadeOut(100);
-        setTimeout(function() {
-            jQuery('.searchLineDiv').fadeIn(200);
-            jQuery('#mod-search-searchword').focus();
-        }, 250);
-    });
-    jQuery('#mod-search-searchword').focusout(function() {
-        jQuery('.searchLineDiv').fadeOut(100);
-        setTimeout(function() {
-            jQuery('.mainMenuDiv').fadeIn(100);
-        }, 150);
-    });
+  // Search button changes
+  jQuery('.searchButton').click(function() {
+      jQuery('.mainMenuDiv').fadeOut(100);
+      setTimeout(function() {
+          jQuery('.searchLineDiv').fadeIn(200);
+          jQuery('#mod-search-searchword').focus();
+      }, 250);
+  });
+  jQuery('#mod-search-searchword').focusout(function() {
+      jQuery('.searchLineDiv').fadeOut(100);
+      setTimeout(function() {
+          jQuery('.mainMenuDiv').fadeIn(100);
+      }, 150);
+  });
 
 
  /******* Other utilities ******/
 
-   // Scroll bottom on about page
-   jQuery("#aboutBottomScroll").click(function(e) {
-     e.preventDefault();
-     jQuery('html,body').animate({
-           scrollTop: jQuery(".contentBl").offset().top - 30},
-         'slow');
-   });
+ // Scroll bottom on about page
+ jQuery("#aboutBottomScroll").click(function(e) {
+   e.preventDefault();
+   jQuery('html,body').animate({
+         scrollTop: jQuery(".contentBl").offset().top - 30},
+       'slow');
+ });
 
-   // Scroll to top page on scrollTopButton click
-   jQuery(".scrollTopBtn").click(function() {
-     jQuery('html,body').animate({
-           scrollTop: jQuery("html").offset().top - 30},
-         'slow');
-   });
+ // Scroll to top page on scrollTopButton click
+ jQuery(".scrollTopBtn").click(function() {
+   jQuery('html,body').animate({
+         scrollTop: jQuery("html").offset().top - 30},
+       'slow');
+ });
 
 });
 

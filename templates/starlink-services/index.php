@@ -39,9 +39,7 @@
             </button>
           </div>
           <div class="collapse navbar-collapse" id="mainCollapse">
-            <!-- Main menu begin <ul class="nav menu navbar-nav" id="mainmenu">  -->
-              <jdoc:include type="modules" name="starlink-01-mainMenu" />
-            <!-- Main menu end -->
+            <jdoc:include type="modules" name="starlink-01-mainMenu" />
             <a href="javascript:void(0)" class="searchButton">
               <img src="/images/main/search_icon.png">
             </a>
@@ -54,23 +52,23 @@
     </div>
   </header>
 
-    <div class="container-fluid newsFluidBl">
-      <div class="container">
-        <jdoc:include type="component" />
+  <div class="container-fluid newsFluidBl">
+    <div class="container">
+      <jdoc:include type="component" />
+    </div>
+  </div>
+
+  <div class="container-fluid services-bl">
+    <div class="container">
+      <div class="row">
+        <jdoc:include type="modules" name="starlink-08-services" style="xhtml" />
       </div>
     </div>
+  </div>
 
-    <div class="container-fluid services-bl">
-      <div class="container">
-        <div class="row">
-          <jdoc:include type="modules" name="starlink-08-services" style="xhtml" />
-        </div>
-      </div>
-    </div>
+  <div class="pre-footer"></div>
 
-    <div class="pre-footer"></div>
-
-  <footer class="container-fluid footer">
+  <footer class="footer">
     <div class="container">
       <div class="row">
         <div class="col-md-3 col-xs-12 copyright">

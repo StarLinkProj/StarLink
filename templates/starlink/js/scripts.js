@@ -39,8 +39,9 @@ jQuery(document).ready(function ($) {
 
   /*****   FOOTER UTILITIES  *******/
 
-  // Pre-footer height
-  jQuery('.pre-footer').css('height', jQuery('.footer').innerHeight());
+  // make last container-fluid before footer 100% width of screen
+  jQuery('.pre-footer').prev('.container-fluid').css('width','100%');
+
 
   // Change img source on footer soc hover
   jQuery(".footerSocNetworks a").hover(function() {
@@ -55,7 +56,7 @@ jQuery(document).ready(function ($) {
       var newSrc = oldSrc.replace(/\-hover\.png/, "-main.png");
       $(this).find('img').attr("src", newSrc);
     }
-  })
+  });
 
 
   /***********     SERVICES  ************/
@@ -73,13 +74,7 @@ jQuery(document).ready(function ($) {
       var newSrc = oldSrc.replace(/\-hover\.png/, "-main.png");
       $(this).find('img').attr("src", newSrc);
     }
-  })
-
-  // Change padding in Sevices-bl block
-  if (jQuery(".services-bl>.container>.row").children().length < 1) {
-    jQuery(".services-bl").hide();
-  }
-
+  });
 
   /*****  NEWS   and   BLOG  pages  ******/
 
@@ -104,8 +99,6 @@ jQuery(document).ready(function ($) {
   }
   jQuery('.blog>.row .singleRow').append('<div class="clear"></div>');
 
-  // Change classes for last news block
-  jQuery(".newsflash-lastNews").removeClass('container-fluid').removeClass('lastNews').addClass('container').addClass('blog');
 
 
   /*********** Search button ***********/

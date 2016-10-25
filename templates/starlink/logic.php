@@ -5,27 +5,24 @@ $app = JFactory::getApplication();
 $doc = JFactory::getDocument();
 $menu = $app->getMenu();
 $active = $app->getMenu()->getActive();
+$alias = $active->alias;
 $params = $app->getParams();
 $pageclass = $params->get('pageclass_sfx');
 $tpath = $this->baseurl.'/templates/'.$this->template;
+$itemId = JRequest::getInt('Itemid');
+$uri= JFactory::getURI();
+$queryString=$uri->getQuery();
 
 // generator tag
 $this->setGenerator(null);
-?>
 
-<!-- немного текста -->
-
-<?php
 // template css
 
 // am: replacing this to plain css in order to help debug in Firefox development tools
-$doc->addStyleSheet($tpath.'/css/bootstrap.min.css');
-//$doc->addStyleSheet($tpath.'/css/fonts.css');
-$doc->addStyleSheet($tpath.'/css/app.css');
-$doc->addStyleSheet($tpath.'/css/font-awesome.min.css');
-/* $doc->addStyleSheet($tpath.'/css/template.css');
-   $doc->addStyleSheet($tpath.'/css/calculator.css');
-   $doc->addStyleSheet($tpath.'/../../media/system/css/system.css');
+$doc->addStyleSheet($tpath . '/css/bootstrap.min.css');
+$doc->addStyleSheet($tpath . '/css/template.css');
+$doc->addStyleSheet($tpath . '/css/calculator.css');
+/* $doc->addStyleSheet($tpath.'/../../media/system/css/system.css');
    $doc->addStyleSheet($tpath.'/../system/css/system.css');
    $doc->addStyleSheet($tpath.'/../system/css/general.css');             */
 
@@ -33,7 +30,6 @@ $doc->addStyleSheet($tpath.'/css/font-awesome.min.css');
 // template js
 
 $doc->addScript($tpath.'/js/libs/jquery-ui.js');
-//$doc->addScript($tpath.'/js/libs/bootstrap.min.js');
 $doc->addScript($tpath.'/js/jui/bootstrap.min.js');
 $doc->addScript($tpath.'/js/scripts.js');
 $doc->addScript($tpath.'/js/calculator_it_outsourcing.js');

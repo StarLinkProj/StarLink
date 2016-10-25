@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,700,900&subset=cyrillic');
 @import "font-awesome.min.css";
 @import "menu.css";
+@import "footer.css";
 @import "news.css";
 
 /* FRONTEND CSS
@@ -20,9 +21,16 @@ body, .tooltip, .popover {
   font-family : Roboto, sans-serif;
 }
 body {
-  font-weight : 300;
-  min-height  : 100%;
-  position    : relative;
+  font-weight    : 300;
+  min-height     : 100%;
+  height         : 100%;
+  position       : relative;
+  display        : flex;
+  flex-direction : column;
+}
+/* repeat definition because of body flex */
+.container-fluid {
+  width : 100%;
 }
 a:hover, a:focus {
   text-decoration : none;
@@ -37,92 +45,6 @@ a:hover, a:focus {
   margin: 20px auto;
 }
 
-.searchButton {
-	display: none;
-}
-#searchForm{
-	display: none;
-}
-#mod-search-searchword{
-	color: #333;
-	font-size: 26px;
-	font-weight: bold;
-	padding: 5px 5px 5px 40px;
-	background: url('../images/main/search_icon.png') no-repeat center left;
-	border: none;
-	outline: none;
-	width: 100%;
-}
-#mod-search-searchword::-webkit-input-placeholder {color:#333;}
-#mod-search-searchword::-moz-placeholder          {color:#333;}/* Firefox 19+ */
-#mod-search-searchword:-moz-placeholder           {color:#333;}/* Firefox 18- */
-#mod-search-searchword:-ms-input-placeholder      {color:#333;}
-
-.search{
-	margin: 15px 0;
-}
-.searchLineDiv{
-	display: none;
-}
-
-/********** Footer *********/
-.footer{
-	background: #33383F;
-	color: #fff;
-	font-weight: bold;
-	padding: 50px 0 50px;
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	height: auto;
-	width: 100%;
-}
-.footer p {
-	margin-bottom: 0;
-}
-.footer a, #footerMenu>li>a {
-	color: #fff;
-	cursor: pointer;
-}
-.footer a:hover, #footerMenu>li>a:hover {
-	color: #fff;
-	opacity: 0.8;
-	background: transparent;
-}
-#footerMenu li.item-101{
-	display: none;
-}
-#footerMenu>li{
-	display: inline-block;
-}
-#footerMenu>li>a{
-	display: inline-block;
-	padding: 0 10px;
-}
-.footerSocNetworks a{
-	margin: 0 10px;
-	border: 1px solid rgba(255, 255, 255, 0.3);
-	border-radius: 50%;
-	cursor: pointer;
-}
-.footerSocNetworks a:hover{
-	background: rgba(255, 255, 255, 1);
-}
-.footerSocNetworks .facebookIcon{
-	padding: 6px 13px 8px 13px;
-}
-.footerSocNetworks .twitterIcon{
-	padding: 6px 5px 8px 4px;
-}
-.footerSocNetworks .googleIcon{
-	padding: 7px 6px 7px 9px;
-}
-.footer .container .row > div{
-	text-align: center;
-	margin: 15px 0;
-}
-
-
 /* MEDIA QUERIES
 *********************************************/
 
@@ -136,18 +58,7 @@ a:hover, a:focus {
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-	.searchButton{
-    margin-left: 15px;
-		display: inline-block;
-    line-height: normal;
-	}
-	.footer {
-		padding: 50px 0 165px;
-	}
-	.footer .container .row > div{
-		text-align: left;
-		margin: 0;
-	}
+
 }
 
 /* Large devices (large desktops, 1200px and up) */

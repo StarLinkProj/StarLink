@@ -1,15 +1,9 @@
-<?php defined( '_JEXEC' ) or die; ?>
-
+<?php
+  defined( '_JEXEC' ) or die;
+  require_once JPATH_THEMES.'/'.$this->template.'/logic.php';
+?>
 <!doctype html>
 <html lang="<?php echo $this->language; ?>">
-
-<?php
-  require_once JPATH_THEMES.'/'.$this->template.'/logic.php';
-
-  # TODO remove me
-  # require_once 'vendor/MobileDetect.php';
-  # $mobileDetectObj = new Mobile_Detect();
-?>
 
 <head>
   <!-- TODO remove redundand & debug css/js in production:
@@ -20,11 +14,9 @@
 
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,700,900&subset=cyrillic" rel="stylesheet">
   <!-- head -->
-  <!--suppress XmlUnboundNsPrefix -->
   <jdoc:include type="head" />
   <!-- /head -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-  <script type="text/javascript">var myDomain = "http://<?php echo $_SERVER['HTTP_HOST'] ?>/";</script>
 </head>
 
 <body>
@@ -33,12 +25,7 @@
       <div class="col-xs-12 col-sm-8 col-md-3 col-lg-4">
         <a title="StarLink" href="<?php echo JURI::base(); ?>">
           <div class="b-logo">
-<!--            <img class="b-logo__image"
-                 src=   "/images/main/logo-star@1x.png"
-                 srcset="/images/main/logo@1x.png,
-                         /images/main/logo@2x.png 2x,
-                         /images/main/logo@3x.png 3x">-->
-            <img class="b-logo__image" src="/images/main/logo-vector.svg" width="193" height="57">
+            <img class="b-logo__image" src="/images/main/logo-vector.svg">
           </div>
         </a>
       </div>
@@ -60,9 +47,7 @@
             </button>
           </div>
           <div class="collapse navbar-collapse" id="mainCollapse">
-            <!-- Main menu begin <ul class="nav menu navbar-nav" id="mainmenu">  -->
-              <jdoc:include type="modules" name="mainMenu" />
-            <!-- Main menu end -->
+            <jdoc:include type="modules" name="mainMenu" />
             <a href="javascript:void(0)" class="searchButton">
               <img src="/images/main/search_icon.png">
             </a>
@@ -205,9 +190,9 @@
 
     <jdoc:include type="modules" name="reviews" style="xhtml" />
 
-    <div class="pre-footer">
-    </div>
-    <footer class="container-fluid footer">
+    <div class="pre-footer"></div>
+
+    <footer class="footer">
       <div class="container">
         <div class="row">
           <div class="col-md-3 col-xs-12 copyright">

@@ -370,5 +370,42 @@
   #mainmenu {
     margin-left : 100px;
   }
-} 
+}
 
+
+/*   SEARCH element */
+.searchButton {
+  display: none;
+}
+#searchForm{
+  display: none;
+}
+#mod-search-searchword{
+  color: #333;
+  font-size: 26px;
+  font-weight: bold;
+  padding: 5px 5px 5px 40px;
+  background: url('../images/main/search_icon.png') no-repeat center left;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+#mod-search-searchword::-webkit-input-placeholder {color:#333;}
+#mod-search-searchword::-moz-placeholder          {color:#333;}/* Firefox 19+ */
+#mod-search-searchword:-moz-placeholder           {color:#333;}/* Firefox 18- */
+#mod-search-searchword:-ms-input-placeholder      {color:#333;}
+
+.search{
+  margin: 15px 0;
+}
+.searchLineDiv{
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .searchButton{
+    margin-left: 15px;
+    display: inline-block;
+    line-height: normal;
+  }
+}
