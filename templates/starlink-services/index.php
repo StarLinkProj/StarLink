@@ -55,7 +55,9 @@
   </header>
 
     <div class="container-fluid newsFluidBl">
-      <jdoc:include type="component" />
+      <div class="container">
+        <jdoc:include type="component" />
+      </div>
     </div>
 
     <div class="container-fluid services-bl">

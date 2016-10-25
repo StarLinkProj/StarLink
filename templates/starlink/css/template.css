@@ -585,7 +585,7 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 	font-size: 28px;
 	line-height: 20px;
 	text-transform: uppercase;
-	margin: 50px 0;
+	margin: 50px 0 20px;
 	color: #000;
 }
 .showAllNews{
@@ -1605,3 +1605,325 @@ body>div.custom-services-image-header.sticky {
   }
 }
 
+/* TODO
+
+{
+   "used on page starlink.ua/services ":{
+      "url":"http://starlink.ua/templates/starlink/css/template.css",
+      "summary":"77 used selectors",
+      "selectors":[
+         {
+            "selector":"html",
+            "line":6
+         },
+         {
+            "selector":"body",
+            "line":14
+         },
+         {
+            "selector":"body",
+            "line":17
+         },
+         {
+            "selector":"a:hover",
+            "line":22
+         },
+         {
+            "selector":"a:focus",
+            "line":22
+         },
+         {
+            "selector":".services-bl",
+            "line":83
+         },
+         {
+            "selector":".services-bl > div.container",
+            "line":87
+         },
+         {
+            "selector":".no-ready-to-call-bl",
+            "line":137
+         },
+         {
+            "selector":".no-ready-to-call-bl .container",
+            "line":140
+         },
+         {
+            "selector":".reviewsBl",
+            "line":250
+         },
+         {
+            "selector":".reviews h3",
+            "line":253
+         },
+         {
+            "selector":".singleReview",
+            "line":262
+         },
+         {
+            "selector":".reviewerPText",
+            "line":268
+         },
+         {
+            "selector":".reviewerPosition",
+            "line":275
+         },
+         {
+            "selector":".reviewerName",
+            "line":281
+         },
+         {
+            "selector":".reviewerImg",
+            "line":288
+         },
+         {
+            "selector":".contentBl",
+            "line":296
+         },
+         {
+            "selector":".moreAboutOurProjLink",
+            "line":320
+         },
+         {
+            "selector":".moreAboutOurProjLink a",
+            "line":324
+         },
+         {
+            "selector":".moreAboutOurProjLink a .rightArrow",
+            "line":330
+         },
+         {
+            "selector":"a .rightArrow",
+            "line":330
+         },
+         {
+            "selector":".imgMgAuto",
+            "line":443
+         },
+         {
+            "selector":".blog .items-row .span12",
+            "line":446
+         },
+         {
+            "selector":".blog .items-row .span12 .page-header",
+            "line":450
+         },
+         {
+            "selector":".blog .items-row .span12 .page-header h2",
+            "line":455
+         },
+         {
+            "selector":".blog .items-row .span12 .page-header h2 a",
+            "line":459
+         },
+         {
+            "selector":".blog .items-row .span12 .newsCatAndDate",
+            "line":465
+         },
+         {
+            "selector":".blog .items-row .span12 .item > p",
+            "line":470
+         },
+         {
+            "selector":".blog .items-row .span12 .newsCategoryItemFooter",
+            "line":473
+         },
+         {
+            "selector":".newsHits",
+            "line":478
+         },
+         {
+            "selector":".newsReadMore p.readmore",
+            "line":483
+         },
+         {
+            "selector":".newsReadMore p.readmore a.btn",
+            "line":487
+         },
+         {
+            "selector":".servicesPageInnerServicesBl",
+            "line":519
+         },
+         {
+            "selector":".servicesPageInnerServicesBl .consulting",
+            "line":522
+         },
+         {
+            "selector":".servicesPageInnerServicesBl .outsourcing",
+            "line":528
+         },
+         {
+            "selector":".servicesPageInnerServicesBl .integration",
+            "line":534
+         },
+         {
+            "selector":".servicesPageInnerServicesBl .dataCenter",
+            "line":540
+         },
+         {
+            "selector":".servicesPageInnerServicesBl .security",
+            "line":546
+         },
+         {
+            "selector":".servicesPageInnerServicesBl .webprojects",
+            "line":552
+         },
+         {
+            "selector":".servicesPageInnerServicesBl img.img-responsive",
+            "line":558
+         },
+         {
+            "selector":".servicesPageInnerServicesBl h4",
+            "line":561
+         },
+         {
+            "selector":".servicesPageInnerServicesBl h4 a",
+            "line":565
+         },
+         {
+            "selector":".servicesPageInnerServicesBl p",
+            "line":570
+         },
+         {
+            "selector":".servicesPageInnerServicesBl > .row > div",
+            "line":575
+         },
+         {
+            "selector":".lastNews",
+            "line":579
+         },
+         {
+            "selector":".lastNews h3",
+            "line":582
+         },
+         {
+            "selector":".showAllNews",
+            "line":591
+         },
+         {
+            "selector":".showAllNews a",
+            "line":595
+         },
+         {
+            "selector":".searchButton",
+            "line":688
+         },
+         {
+            "selector":"#mod-search-searchword",
+            "line":694
+         },
+         {
+            "selector":"#mod-search-searchword::-moz-placeholder",
+            "line":705
+         },
+         {
+            "selector":"#mod-search-searchword:-moz-placeholder",
+            "line":706
+         },
+         {
+            "selector":".search",
+            "line":709
+         },
+         {
+            "selector":".searchLineDiv",
+            "line":712
+         },
+         {
+            "selector":"button.modalFormCloseBtn",
+            "line":746
+         },
+         {
+            "selector":".b-heroImage",
+            "line":1127
+         },
+         {
+            "selector":".b-heroImage--top",
+            "line":1150
+         },
+         {
+            "selector":".b-heroImage__header",
+            "line":1175
+         },
+         {
+            "selector":".b-heroImage__header--level2",
+            "line":1183
+         },
+         {
+            "selector":".footer",
+            "line":1347
+         },
+         {
+            "selector":".footer p",
+            "line":1358
+         },
+         {
+            "selector":".footer a",
+            "line":1361
+         },
+         {
+            "selector":"#footerMenu > li > a",
+            "line":1361
+         },
+         {
+            "selector":".footer a:hover",
+            "line":1365
+         },
+         {
+            "selector":"#footerMenu > li > a:hover",
+            "line":1365
+         },
+         {
+            "selector":"#footerMenu li.item-101",
+            "line":1370
+         },
+         {
+            "selector":"#footerMenu > li",
+            "line":1373
+         },
+         {
+            "selector":"#footerMenu > li > a",
+            "line":1376
+         },
+         {
+            "selector":".footerSocNetworks a",
+            "line":1380
+         },
+         {
+            "selector":".footerSocNetworks a:hover",
+            "line":1386
+         },
+         {
+            "selector":".footerSocNetworks .facebookIcon",
+            "line":1389
+         },
+         {
+            "selector":".footerSocNetworks .twitterIcon",
+            "line":1392
+         },
+         {
+            "selector":".footerSocNetworks .googleIcon",
+            "line":1395
+         },
+         {
+            "selector":".footer .container .row > div",
+            "line":1398
+         },
+         {
+            "selector":".searchButton",
+            "line":1466
+         },
+         {
+            "selector":".footer",
+            "line":1500
+         },
+         {
+            "selector":".footer .container .row > div",
+            "line":1503
+         }
+      ]
+   }
+]
+}
+
+
+*/

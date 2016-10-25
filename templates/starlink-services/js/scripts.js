@@ -97,18 +97,26 @@ jQuery(document).ready(function($) {
     }
   });
 
-  // Wrap every 3 news to block
-/*  var newsBlock = jQuery('.blog>.row');
-  while( newsBlock.children('div:not(.singleRow)' ).length){
-    newsBlock.children('div:not(.singleRow):lt(3)').wrapAll('<div class="singleRow">');
-  }
-  jQuery('.blog>.row .singleRow').append('<div class="clear"></div>');*/
+  // Get current number of columns from css media query via border-right-width property
+  // Inserts .clearfixes after every nColumns article block
+  jQuery('.items-row').removeClass('clearfix');
+  nColumns = jQuery(".span12:first").css("border-right-width").substring(0,1);
+  jQuery('.items-row').each(function (index, value) {
+    if ( (index+1) % nColumns == 0 ) {
+      jQuery(this).addClass("clearfix");
+    }
+    console.log( index, nColumns );
+  });
 
-  //jQuery('.newsFluidBl .items-row').addClass('row');
-  //jQuery('.newsFluidBl .items-row .span4').addClass('col-xs-4');
-  jQuery('.newsFluidBl .items-row.clearfix').removeClass('clearfix');
-  jQuery('.newsFluidBl .span12').addClass('col-xs-4');
-  jQuery('.newsFluidBl .blog .items-row:eq(3n+1)').addClass('clearfix');
+  jQuery(window).resize(function () {
+    jQuery('.items-row').removeClass('clearfix');
+    nColumns = jQuery(".span12:first").css("border-right-width").substring(0,1);
+    jQuery('.items-row').each(function (index, value) {
+      if ( (index+1) % nColumns == 0 ) {
+        jQuery(this).addClass("clearfix");
+      }
+    });
+  });
 
   // Change classes for last news block
   jQuery(".newsflash-lastNews").removeClass('container-fluid').removeClass('lastNews').addClass('container').addClass('blog');
@@ -150,3 +158,5 @@ jQuery(document).ready(function($) {
    });
 
 });
+
+
