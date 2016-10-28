@@ -20,6 +20,7 @@
 </head>
 
 <body>
+  <?php echo '<!-- itemId=' . $itemId . '-->'; ?>
   <header class="container-fluid">
     <div class="b-topRow row">
       <div class="col-xs-12 col-sm-8 col-md-3 col-lg-4">
@@ -61,45 +62,56 @@
   </header>
 
 	<!-- Menu О Компании -->
-    <?php if (preg_match("/about/", $_SERVER['REQUEST_URI'])) : ?>
-        <div class="container-fluid aboutPageBl">
-            <div class="container">
-                <jdoc:include type="modules" name="aboutPageBl" />
-            </div>
-        </div>
-    <?php endif; ?>
+  <?php if ($itemId == 111) : ?>
+    <div class="container-fluid aboutPageBl">
+      <div class="container">
+        <jdoc:include type="modules" name="aboutPageBl" />
+      </div>
+    </div>
+  <?php endif; ?>
+  <!-- /Menu О Компании -->
 
+    <!-- begin jdoc:include type="modules" name="servicesTopBlWithBg"  -->
     <jdoc:include type="modules" name="servicesTopBlWithBg" />
+    <!-- end   jdoc:include type="modules" name="servicesTopBlWithBg"  -->
 
+    <!-- begin jdoc:include type="modules" name="itOutsourcingTopBlWithBg" style="xhtml" -->
     <jdoc:include type="modules" name="itOutsourcingTopBlWithBg" style="xhtml" />
+    <!-- end   jdoc:include type="modules" name="itOutsourcingTopBlWithBg" style="xhtml" -->
 
+    <!-- begin jdoc:include type="modules" name="itOutsourcingWeProposeYou" style="xhtml" -->
     <jdoc:include type="modules" name="itOutsourcingWeProposeYou" style="xhtml" />
+    <!-- end   jdoc:include type="modules" name="itOutsourcingWeProposeYou" style="xhtml" -->
 
-    <?php $itemId = JRequest::getInt('Itemid'); ?>
-	  <!-- Not Menu IT-консалтинг, IT-интеграция, Дата-центр, Безопасность, Web-проекты, Блог, Вакансии, Совместная работа сотрудников на базе продуктов Kerio,
-		Безопасность и защита информации, Объединение распределенных офисов в единую сеть, 	IP-телефония и видеоконференции  -->
-    <?php if ($_SERVER['REQUEST_URI'] != '/' && !preg_match('/news/', $_SERVER['REQUEST_URI']) && !in_array($itemId, [105, 107, 108, 109, 110, 118, 120, 121, 122, 123, 124])) : ?>
+	  <?php
+/*    Not Menu IT-консалтинг, IT-интеграция, Дата-центр, Безопасность, Web-проекты, Блог, Вакансии, Совместная работа сотрудников на базе продуктов Kerio,
+		Безопасность и защита информации, Объединение распределенных офисов в единую сеть, 	IP-телефония и видеоконференции
+		105 consulting
+		107 integration
+		108 datacenter
+    109 security
+    110 webprojects
+    114 about/news
+		118 blog
+		120 job-positions
+		121 collaboration-kerio-connect,
+    122 dataprotection-kerio-control,
+    123 distributedorganization-starlink,
+    124 conferencing-kerio-operator, */
+    ?>
+    <?php if (!in_array($itemId, [101, 114, 105, 107, 108, 109, 110, 118, 120, 121, 122, 123, 124])) : ?>
       <div class="container contentBl">
         <jdoc:include type="component" />
       </div>
     <?php endif; ?>
 
-    <!-- Styles for Menu page Blog -->
+    <?php # Styles for Menu page Blog ?>
     <?php if ($itemId == 118) : ?>
-        <?php if (preg_match('/blog/', $_SERVER['REQUEST_URI']) || preg_match('/\&Itemid\=118/', $_SERVER['REQUEST_URI'] )) : ?>
-          <div class="container-fluid contentBlBlogHeader">
-            <div class="container">
-              <div class="row">
-                <div class="col-xs-12">
-                  <h1 class="blogHeader">Блог</h1>
-                </div>
-              </div>
-            </div>
-          </div>
-        <?php endif; ?>
-
-        <div class="container contentBlBlog">
+      <div class="container-fluid contentBlBlog">
+        <div class="container">
           <div class="row">
+            <h1 class="col-xs-12 col-md-9 blogHeader">Блог</h1>
+            <div class="clearfix"></div>
             <div class="col-xs-12 col-md-9">
               <jdoc:include type="component" />
             </div>
@@ -108,29 +120,30 @@
             </div>
           </div>
         </div>
-    <?php endif; ?>
-
-    <jdoc:include type="modules" name="lastNews" style="xhtml" />
-
-    <?php if (preg_match('/news/', $_SERVER['REQUEST_URI'])) : ?>
-      <div class="container-fluid newsFluidBl">
-        <div class="container">
-          <jdoc:include type="component" />
-        </div>
       </div>
     <?php endif; ?>
 
+    <!-- begin jdoc:include type="modules" name="lastNews" style="xhtml"  -->
+    <jdoc:include type="modules" name="lastNews" style="xhtml" />
+    <!-- end   jdoc:include type="modules" name="lastNews" style="xhtml"  -->
+
+    <!-- begin jdoc:include type="modules" name="itOutsourcingCallInfoBl" style="xhtml"  -->
     <jdoc:include type="modules" name="itOutsourcingCallInfoBl" style="xhtml" />
-
-
+    <!-- end   jdoc:include type="modules" name="itOutsourcingCallInfoBl" style="xhtml"  -->
 
     <div class="container-fluid mainSliderBlock">
       <jdoc:include type="modules" name="mainSlider" />
     </div>
 
+    <!-- begin jdoc:include type="modules" name="partners" style="xhtml"-->
     <jdoc:include type="modules" name="partners" style="xhtml" />
+    <!-- end   jdoc:include type="modules" name="partners" style="xhtml"  -->
 
-    <jdoc:include type="modules" name="customModule" />
+    <div class="container-fluid vacationsBlock">
+      <!--begin jdoc:include type="modules" name="customModule"-->
+      <jdoc:include type="modules" name="customModule" />
+      <!--end   jdoc:include type="modules" name="customModule" -->
+    </div>
 
     <div class="container-fluid services-bl">
       <div class="container">
@@ -148,7 +161,8 @@
       </div>
     </div>
 
-    <?php if ($_SERVER['REQUEST_URI'] == '/') : ?>
+    <?php #for Home page only  ?>
+    <?php if ($itemId == 101) : ?>
       <div class="container-fluid profitable-it-outsourcing">
         <div class="container">
           <div class="row">
@@ -160,7 +174,8 @@
 
     <jdoc:include type="modules" name="itOutsourcingCalculator" style="xhtml" />
 
-    <?php if ($_SERVER['REQUEST_URI'] == '/' || preg_match('/contacts/', $_SERVER['REQUEST_URI']) || preg_match('/services\/outsourcing/', $_SERVER['REQUEST_URI'])) : ?>
+    <!-- for Home page, /contacts and /services/outsourcing -->
+    <?php if (in_array($itemId, [101, 106, 115])) : ?>
       <div class="container-fluid">
         <div id="map">
         </div>
@@ -187,6 +202,7 @@
         </script>
       </div>
     <?php endif; ?>
+    <!-- / for Home page, /contacts and /services/outsourcing -->
 
     <jdoc:include type="modules" name="reviews" style="xhtml" />
 

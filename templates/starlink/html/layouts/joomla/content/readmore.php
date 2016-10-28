@@ -12,26 +12,14 @@ defined('JPATH_BASE') or die;
 $params = $displayData['params'];
 $item = $displayData['item'];
 
-if (preg_match('/news/', $_SERVER['REQUEST_URI'])) {
-	$classReadmoreBtn = 'btn';
+$catid=getCatId();
+echo '<!-- catid= ' . $catid . ' -->' ;
+
+if ($catid == 9) {
+  $classReadmoreBtn = 'btn';
 } else {
-	$classReadmoreBtn = 'blogReadmore';
+  $classReadmoreBtn = 'blogReadmore';
 }
-
-//Modified from: http://stackoverflow.com/questions/8928967/joomla-display-catagory-name-in-template
-
-$db = &JFactory::getDBO();
-$id = JRequest::getString('id');
-$view = JRequest::getString('view');
-if ($view == 'category') {
-  $sql = "SELECT title FROM #__categories WHERE #__categories.id = $id";
-} else {
-  $sql = "SELECT #__categories.title FROM #__content, #__categories WHERE #__content.catid = #__categories.id AND #__content.id = $id";
-}
-$db->setQuery($sql);
-$category = $db->loadResult();
-
-echo '<!-- category= ' . $category . ' -->' ;
 
 ?>
 

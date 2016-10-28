@@ -92,26 +92,6 @@ jQuery(document).ready(function($) {
     }
   });
 
-  // Get current number of columns from css media query via border-right-width property
-  // Inserts .clearfixes after every nColumns article block
-  jQuery('.items-row').removeClass('clearfix');
-  nColumns = jQuery(".span12:first").css("border-right-width").substring(0,1);
-  jQuery('.items-row').each(function (index, value) {
-    if ( (index+1) % nColumns == 0 ) {
-      jQuery(this).addClass("clearfix");
-    }
-  });
-
-  jQuery(window).resize(function () {
-    jQuery('.items-row').removeClass('clearfix');
-    nColumns = jQuery(".span12:first").css("border-right-width").substring(0,1);
-    jQuery('.items-row').each(function (index, value) {
-      if ( (index+1) % nColumns == 0 ) {
-        jQuery(this).addClass("clearfix");
-      }
-    });
-  });
-
 
   /*********** Search button ***********/
 

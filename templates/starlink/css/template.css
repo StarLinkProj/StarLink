@@ -2,6 +2,7 @@
 @import "font-awesome.min.css";
 @import "menu.css";
 @import "footer.css";
+@import "calculator.css";
 
 /* FRONTEND CSS
 *********************************************/
@@ -94,7 +95,7 @@ a:hover, a:focus {
 
 .services-bl{
 	background: #33383F;
-	padding-bottom: 40px;
+	/*padding-bottom: 40px;*/
 }
 .services-bl>div.container{
 	padding: 0 15px;
@@ -870,17 +871,21 @@ button.modalFormCloseBtn{
 }
 
 /*************** Blog page styles ****************/
-.contentBlBlogHeader{
+.contentBlBlog{
 	border-top: 1px solid #E1E7EB;
-	border-bottom: 1px solid #E1E7EB;
+  background: #F5F6F7;
 }
-.blogHeader{
+.contentBlBlog .blogHeader{
 	text-align: center;
 	font-weight: 300;
 	font-size: 32px;
-	color: #000000;
+/*	color: #000000;*/
 	line-height: 40px;
 	margin: 11px 0;
+  margin: 45px 0 20px;
+  font-size: 72px;
+  font-weight: 300;
+  text-align: center;
 }
 .contentBlBlog .page-header{
 	margin: 20px 0 10px;
@@ -891,7 +896,7 @@ button.modalFormCloseBtn{
 	font-weight: bold;
 	font-size: 20px;
 	color: #3FA2F7;
-	line-height: 28px;
+/*	line-height: 28px;*/
 }
 .contentBlBlog .blogCatAndDate{
 	margin-bottom: 10px;
@@ -1459,7 +1464,7 @@ body>div.custom-services-image-header.sticky {
   }
   .contentBlBlog .page-header h2 a {
     font-size   : 15px;
-    line-height : 20px;
+/*  line-height : 20px;   */
   }
   .blogBottomAdvBl {
     background    : #3FA2F7;

@@ -17,19 +17,9 @@ $queryString=$uri->getQuery();
 $this->setGenerator(null);
 
 // template css
-
-// am: replacing this to plain css in order to help debug in Firefox development tools
 $doc->addStyleSheet($tpath . '/css/bootstrap.min.css');
 $doc->addStyleSheet($tpath . '/css/template.css');
-$doc->addStyleSheet($tpath . '/css/calculator.css');
-/* $doc->addStyleSheet($tpath.'/../../media/system/css/system.css');
-   $doc->addStyleSheet($tpath.'/../system/css/system.css');
-   $doc->addStyleSheet($tpath.'/../system/css/general.css');             */
-
 
 // template js
-
-$doc->addScript($tpath.'/js/libs/jquery-ui.js');
-$doc->addScript($tpath.'/js/jui/bootstrap.min.js');
-$doc->addScript($tpath.'/js/scripts.js');
-$doc->addScript($tpath.'/js/calculator_it_outsourcing.js');
+$doc->addScript($tpath . '/js/jui/bootstrap.min.js');
+$doc->addScript($tpath . '/js/scripts.js');

@@ -13,6 +13,7 @@
 </head>
 
 <body>
+  <?php echo '<!-- itemId=' . $itemId . '-->'; ?>
   <header class="container-fluid">
     <div class="b-topRow row">
       <div class="col-xs-12 col-sm-8 col-md-3 col-lg-4">
