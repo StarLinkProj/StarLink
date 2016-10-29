@@ -21,5 +21,7 @@ $doc->addStyleSheet($tpath . '/css/bootstrap.min.css');
 $doc->addStyleSheet($tpath . '/css/template.css');
 
 // template js
+$doc->addScript($tpath . '/js/libs/jquery-ui.js');
 $doc->addScript($tpath . '/js/jui/bootstrap.min.js');
 $doc->addScript($tpath . '/js/scripts.js');
+$doc->addScript($tpath . '/js/calculator_it_outsourcing.js');
