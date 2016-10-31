@@ -83,6 +83,10 @@ fabric.properties
 
 # Joomla files
 /administrator/
-/language/
-/includes/
 /components/com_akeeba/
+/media/com_akeeba/
+/includes/
+/language/
+/libraries/
+/plugins/
+
