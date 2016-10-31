@@ -5,15 +5,49 @@
       <sourceFolder url="file://$MODULE_DIR$/modules/mod_calculator_it_outsourcing" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/templates/starlink" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/templates/starlink-services" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/modules/mod_starlink_services_block" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/administrator" />
       <excludeFolder url="file://$MODULE_DIR$/bin" />
       <excludeFolder url="file://$MODULE_DIR$/cache" />
       <excludeFolder url="file://$MODULE_DIR$/cli" />
+      <excludeFolder url="file://$MODULE_DIR$/components" />
+      <excludeFolder url="file://$MODULE_DIR$/includes" />
+      <excludeFolder url="file://$MODULE_DIR$/language/en-GB" />
+      <excludeFolder url="file://$MODULE_DIR$/language/ru-RU" />
+      <excludeFolder url="file://$MODULE_DIR$/language/uk-UA" />
+      <excludeFolder url="file://$MODULE_DIR$/layouts" />
       <excludeFolder url="file://$MODULE_DIR$/libraries" />
+      <excludeFolder url="file://$MODULE_DIR$/media" />
+      <excludeFolder url="file://$MODULE_DIR$/modules/mod_articles_archive" />
+      <excludeFolder url="file://$MODULE_DIR$/modules/mod_articles_categories" />
+      <excludeFolder url="file://$MODULE_DIR$/modules/mod_articles_category" />
+      <excludeFolder url="file://$MODULE_DIR$/modules/mod_articles_latest" />
+      <excludeFolder url="file://$MODULE_DIR$/modules/mod_articles_news" />
+      <excludeFolder url="file://$MODULE_DIR$/modules/mod_articles_popular" />
+      <excludeFolder url="file://$MODULE_DIR$/modules/mod_banners" />
+      <excludeFolder url="file://$MODULE_DIR$/modules/mod_breadcrumbs" />
+      <excludeFolder url="file://$MODULE_DIR$/modules/mod_custom" />
+      <excludeFolder url="file://$MODULE_DIR$/modules/mod_feed" />
+      <excludeFolder url="file://$MODULE_DIR$/modules/mod_finder" />
+      <excludeFolder url="file://$MODULE_DIR$/modules/mod_footer" />
+      <excludeFolder url="file://$MODULE_DIR$/modules/mod_languages" />
+      <excludeFolder url="file://$MODULE_DIR$/modules/mod_login" />
+      <excludeFolder url="file://$MODULE_DIR$/modules/mod_menu" />
+      <excludeFolder url="file://$MODULE_DIR$/modules/mod_random_image" />
+      <excludeFolder url="file://$MODULE_DIR$/modules/mod_related_items" />
+      <excludeFolder url="file://$MODULE_DIR$/modules/mod_search" />
+      <excludeFolder url="file://$MODULE_DIR$/modules/mod_stats" />
+      <excludeFolder url="file://$MODULE_DIR$/modules/mod_syndicate" />
+      <excludeFolder url="file://$MODULE_DIR$/modules/mod_tags_popular" />
+      <excludeFolder url="file://$MODULE_DIR$/modules/mod_tags_similar" />
+      <excludeFolder url="file://$MODULE_DIR$/modules/mod_users_latest" />
+      <excludeFolder url="file://$MODULE_DIR$/modules/mod_whosonline" />
+      <excludeFolder url="file://$MODULE_DIR$/modules/mod_wrapper" />
       <excludeFolder url="file://$MODULE_DIR$/plugins" />
       <excludeFolder url="file://$MODULE_DIR$/templates/beez3" />
       <excludeFolder url="file://$MODULE_DIR$/templates/protostar" />
       <excludeFolder url="file://$MODULE_DIR$/templates/starlink/scss/scss_cache" />
+      <excludeFolder url="file://$MODULE_DIR$/templates/system" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
     </content>
     <orderEntry type="inheritedJdk" />

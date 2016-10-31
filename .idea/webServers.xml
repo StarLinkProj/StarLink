@@ -2,8 +2,16 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="6899e1a0-cad1-46b6-85a5-edc706686d81" name="PHP5 internal (project level)" url="http://localhost">
+      <webServer id="f95b53f9-453f-4e2b-8aaa-ce9cf6404d54" name="Docker@localhost" url="http://localhost:8000">
         <fileTransfer port="0" accessType="LOCAL" />
+      </webServer>
+      <webServer id="ffc87eb5-84ec-4a28-89a4-ba22418c8f99" name="starlink.ua (project level)" url="http://starlink.ua">
+        <fileTransfer host="lists.starlink.ua" port="22" privateKey="E:\Dropbox\Private\05_utilitarian\IT\keys\starlink\starlink_mao_rsa" rootFolder="/var/www/starlink.ua" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
       </webServer>
     </option>
   </component>

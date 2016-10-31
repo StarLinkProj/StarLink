@@ -1,39 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="PHP5 internal (project level)">
+  <component name="PublishConfigData" serverName="Docker@localhost">
     <serverData>
-      <paths name="AWS ma0.dynu.com">
+      <paths name="Docker@localhost">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
-      <paths name="PHP5 internal">
+      <paths name="starlink.ua">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="PHP5 internal (project level)">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="lists.starlink.ua">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="starlink.pp.ua">
-        <serverdata>
-          <mappings>
-            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/var/www/starlink.ua" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
