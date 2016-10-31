@@ -3,8 +3,6 @@
 
 logs/
 tmp/
-administrator/
-language/
 
 # Resources of development and build systems (Node.js, Bower etc.)
 
@@ -83,4 +81,8 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
-
+# Joomla files
+/administrator/
+/language/
+/includes/
+/components/com_akeeba/
