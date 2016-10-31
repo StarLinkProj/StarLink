@@ -307,7 +307,7 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 }
 
 .contentBl{
-	/*margin-bottom: 30px;*/
+	margin-bottom: 30px;
 }
 .contactsBl>.row{
 	margin: 0;
@@ -780,7 +780,7 @@ button.modalFormCloseBtn{
 .vacationsBlock{
 	background: #F5F6F7;
 	border-top: 1px solid #E1E7EB;
-	padding-bottom: 20px;
+	/*padding-bottom: 20px;*/
 }
 .vacationsBlock * {
 	font-family: Roboto, sans-serif;

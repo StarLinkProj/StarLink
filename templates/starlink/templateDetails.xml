@@ -16,15 +16,20 @@
 	]]></description><!-- change the description as you like -->
 	
 	<files><!-- no need to change -->
+    <folder>code</folder>
 		<folder>css</folder>
+    <folder>fonts</folder>
+    <folder>html</folder>
 		<folder>images</folder>
 		<folder>js</folder>
 		<filename>component.php</filename>
 		<filename>error.php</filename>
+    <filename>favicon.ico</filename>
+    <filename>favicon-red.ico</filename>
+    <filename>favicon-white.ico</filename>
 		<filename>index.php</filename>
 		<filename>logic.php</filename>
 		<filename>offline.php</filename>
-		<filename>favicon.ico</filename>
 		<filename>template_description.html</filename>
 		<filename>template_preview.png</filename>
 		<filename>template_thumbnail.png</filename>
@@ -54,6 +59,7 @@
 		<position>footerSocNetworks</position>
 		<position>modalContactForm</position>
 		<position>customModule</position>
+    <position>s-19-vacancies</position>
 		<position>rightSideMenuBl</position>
 	</positions>
 	

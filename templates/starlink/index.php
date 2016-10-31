@@ -105,7 +105,7 @@
       </div>
     <?php endif; ?>
 
-    <?php # Styles for Menu page Blog ?>
+    <!-- begin Menu page Blog -->
     <?php if ($itemId == 118) : ?>
       <div class="container-fluid contentBlBlog">
         <div class="container">
@@ -122,6 +122,7 @@
         </div>
       </div>
     <?php endif; ?>
+    <!-- end    Menu page Blog -->
 
     <!-- begin jdoc:include type="modules" name="lastNews" style="xhtml"  -->
     <jdoc:include type="modules" name="lastNews" style="xhtml" />
@@ -140,6 +141,12 @@
     <!-- end   jdoc:include type="modules" name="partners" style="xhtml"  -->
 
     <div class="container-fluid vacationsBlock">
+      <!--begin jdoc:include type="modules" name="s-19-vacancies"-->
+      <jdoc:include type="modules" name="s-19-vacancies" />
+      <!--end   jdoc:include type="modules" name="s-19-vacancies" -->
+    </div>
+
+    <div class="container-fluid">
       <!--begin jdoc:include type="modules" name="customModule"-->
       <jdoc:include type="modules" name="customModule" />
       <!--end   jdoc:include type="modules" name="customModule" -->
