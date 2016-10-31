@@ -6,8 +6,8 @@
 
 class ModStarlinkServicesBlockHelper {
 
-  public static function getTitle($params) {
-
-    return ('IT-услуги для бизнеса, работающего без остановки');
-  }
+  //public static function getTitle($params) {
+    // return ('IT-услуги для бизнеса, работающего без остановки');
+    // return $module->title;
+  //}
 }

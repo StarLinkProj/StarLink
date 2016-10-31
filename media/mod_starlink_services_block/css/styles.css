@@ -1,0 +1,47 @@
+/* Container for collection of Services */
+.s-ServicesBlock {
+  background: #33383F;
+}
+.s-ServicesBlock__header {
+  margin: 30px 0 30px;
+  color: #fff;
+  opacity: 0.8;
+  font-size: 42px;
+  font-weight: 300;
+  text-align: center;
+}
+
+/* Singular Service */
+.s-ServiceType {
+  display: block;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  margin-bottom: 30px;
+  padding: 25px 10px;
+  color: #fff;
+  cursor: pointer;
+}
+.s-ServiceType__linkHeader {
+  display: block;
+  font-weight: 900;
+  font-size: 14px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+.s-ServiceType__linkText {
+  display: block;
+  font-size: 14px;
+  line-height: 15px;
+  margin-right: 40px;
+}
+.s-ServiceType__linkImage {
+  min-height: 75px;
+}
+.s-ServiceType:hover {
+  background: #fff;
+  color: #1B1B1B;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+.s-ServiceType:hover .s-ServiceType__linkHeader {
+  color: #D0021B;
+}

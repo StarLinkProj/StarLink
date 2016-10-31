@@ -59,13 +59,9 @@
     </div>
   </div>
 
-  <div class="container-fluid services-bl">
-    <div class="container">
-      <div class="row">
-        <jdoc:include type="modules" name="starlink-08-services" style="xhtml" />
-      </div>
-    </div>
-  </div>
+  <!-- begin jdoc:include type="modules" name="starlink-08-services" style="services" -->
+  <jdoc:include type="modules" name="starlink-08-services" style="services" />
+  <!-- end   jdoc:include type="modules" name="starlink-08-services" style="services" -->
 
   <div class="pre-footer"></div>
 

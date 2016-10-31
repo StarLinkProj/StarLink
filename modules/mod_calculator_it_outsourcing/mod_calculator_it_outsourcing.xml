@@ -28,11 +28,11 @@
 		<fields name="params">
 			<fieldset name="basic">
 				<field name="pc_price" type="text" default="" label="Цена за ПК, евро" description="" size="100" />
-                <field name="server_price" type="text" default="" label="Цена за сервер, евро" description="" size="100" />
-                <field name="virtual_server_price" type="text" default="" label="Цена за виртуалку, евро" description="" size="100" />
-                <field name="personal_device_price" type="text" default="" label="Цена за перс. устр., евро" description="" size="100" />
-                <field name="additional_leave" type="text" default="" label="Плановый выезд, евро" description="" size="100" />
-                <field name="kurs_euro" type="text" default="" label="Курс евро" description="" size="100" />
+        <field name="server_price" type="text" default="" label="Цена за сервер, евро" description="" size="100" />
+        <field name="virtual_server_price" type="text" default="" label="Цена за виртуалку, евро" description="" size="100" />
+        <field name="personal_device_price" type="text" default="" label="Цена за перс. устр., евро" description="" size="100" />
+        <field name="additional_leave" type="text" default="" label="Плановый выезд, евро" description="" size="100" />
+        <field name="kurs_euro" type="text" default="" label="Курс евро" description="" size="100" />
 				<field name="inflation_percent" type="text" default="" label="Процент инфляции" description="" size="100" />
 			</fieldset>
 		</fields>
