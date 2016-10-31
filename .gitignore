@@ -82,11 +82,13 @@ crashlytics-build.properties
 fabric.properties
 
 # Joomla files
-/administrator/
-/components/com_akeeba/
-/media/com_akeeba/
-/includes/
-/language/
-/libraries/
-/plugins/
+administrator/
+components/com_akeeba/
+media/com_akeeba/
+includes/
+language/
+libraries/
+plugins/
+components/com_admintools/
+media/akeeba_strapper/
 
