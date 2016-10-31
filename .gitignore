@@ -4,6 +4,7 @@
 logs/
 tmp/
 templates/starlink/scss/scss_cache
+administrator/administrator/cache
 
 
 # Resources of development and build systems (Node.js, Bower etc.)
