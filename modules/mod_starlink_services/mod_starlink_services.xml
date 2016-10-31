@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="3.1" client="site" method="upgrade">
-  <name>Starlink services block</name>
+  <name>Starlink services</name>
   <author>Andriy Melnyk</author>
   <authorEmail>greenturban@gmail.com</authorEmail>
   <authorUrl>http://starlink.ua</authorUrl>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
   <description>Starlink service block</description>
   <files>
-    <filename module="mod_starlink_services_block">mod_starlink_services_block.php</filename>
+    <filename module="mod_starlink_services">mod_starlink_services.php</filename>
     <folder>tmpl</folder>
-    <filename>mod_starlink_services_block.xml</filename>
+    <filename>mod_starlink_services.xml</filename>
     <filename>helper.php</filename>
   </files>
-  <media folder="media" destination="mod_starlink_services_block">
+  <media folder="media" destination="mod_starlink_services">
     <folder>css</folder>
+    <folder>images</folder>
   </media>
   <config>
     <fields name="params">

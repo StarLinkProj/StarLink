@@ -59,23 +59,6 @@ jQuery(document).ready(function ($) {
   });
 
 
-  /***********     SERVICES  ************/
-
-  // Change img source on services hover
-  jQuery(".services .services-a").hover(function () {
-    var oldSrc = $(this).find('img').attr("src");
-    if (!oldSrc.match(/\-hover\.png/)) {
-      var newSrc = oldSrc.replace(/\-main\.png/, "-hover.png");
-      $(this).find('img').attr("src", newSrc);
-    }
-  }, function () {
-    var oldSrc = $(this).find('img').attr("src");
-    if (!oldSrc.match(/\-main\.png/)) {
-      var newSrc = oldSrc.replace(/\-hover\.png/, "-main.png");
-      $(this).find('img').attr("src", newSrc);
-    }
-  });
-
   /*****  NEWS   and   BLOG  pages  ******/
 
   // Show more news on Blog page

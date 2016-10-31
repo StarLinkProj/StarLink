@@ -20,6 +20,8 @@
   padding: 25px 10px;
   color: #fff;
   cursor: pointer;
+  -webkit-transition : 0.3s;
+  transition         : 0.3s;
 }
 .s-ServiceType__linkHeader {
   display: block;
@@ -37,11 +39,25 @@
 .s-ServiceType__linkImage {
   min-height: 75px;
 }
-.s-ServiceType:hover {
+.s-ServiceType:hover,
+.s-ServiceType:focus {
   background: #fff;
   color: #1B1B1B;
   box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  -webkit-transition : 0.3s;
+  transition         : 0.3s;
 }
 .s-ServiceType:hover .s-ServiceType__linkHeader {
   color: #D0021B;
+}
+
+/* Change image on hover */
+.s-ServiceType__imageFlip {
+  -webkit-filter     : grayscale(100%) brightness(500%) contrast(120%);
+  filter             : grayscale(100%) brightness(500%) contrast(120%);
+}
+.s-ServiceType:hover .s-ServiceType__imageFlip,
+.s-ServiceType:focus .s-ServiceType__imageFlip {
+  -webkit-filter : none;
+  filter         : none;
 }

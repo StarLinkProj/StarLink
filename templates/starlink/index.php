@@ -152,13 +152,9 @@
       <!--end   jdoc:include type="modules" name="customModule" -->
     </div>
 
-    <div class="container-fluid services-bl">
-      <div class="container">
-        <div class="row">
-          <jdoc:include type="modules" name="services" style="xhtml" />
-        </div>
-      </div>
-    </div>
+    <!-- begin jdoc:include type="modules" name="s-08-services" style="services" -->
+    <jdoc:include type="modules" name="s-08-services" style="services" />
+    <!-- end   jdoc:include type="modules" name="s-08-services" style="services" -->
 
     <div class="container-fluid no-ready-to-call-bl">
       <div class="container">

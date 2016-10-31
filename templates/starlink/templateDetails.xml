@@ -16,17 +16,18 @@
 	]]></description><!-- change the description as you like -->
 	
 	<files><!-- no need to change -->
-    <folder>code</folder>
+		<folder>0install</folder>
+		<folder>code</folder>
 		<folder>css</folder>
-    <folder>fonts</folder>
-    <folder>html</folder>
+		<folder>fonts</folder>
+		<folder>html</folder>
 		<folder>images</folder>
 		<folder>js</folder>
 		<filename>component.php</filename>
 		<filename>error.php</filename>
-    <filename>favicon.ico</filename>
-    <filename>favicon-red.ico</filename>
-    <filename>favicon-white.ico</filename>
+		<filename>favicon.ico</filename>
+		<filename>favicon-red.ico</filename>
+		<filename>favicon-white.ico</filename>
 		<filename>index.php</filename>
 		<filename>logic.php</filename>
 		<filename>offline.php</filename>
@@ -43,7 +44,7 @@
 		<position>mainSlider</position>
 		<position>partners</position>
 		<position>reviews</position>
-		<position>services</position>
+		<position>s-08-services</position>
 		<position>servicesTopBlWithBg</position>
 		<position>notReadyToCall</position>
 		<position>orderFreeQuestionnaire</position>

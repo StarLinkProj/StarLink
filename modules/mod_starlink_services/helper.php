@@ -4,7 +4,7 @@
  *
  */
 
-class ModStarlinkServicesBlockHelper {
+class ModStarlinkServicesHelper {
 
   //public static function getTitle($params) {
     // return ('IT-услуги для бизнеса, работающего без остановки');

@@ -13,5 +13,5 @@ require_once dirname(__FILE__) . '/helper.php';
 
 $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'), ENT_COMPAT, 'UTF-8');
 
-//$title = modStarlinkServicesBlockHelper::getTitle($params);
-require JModuleHelper::getLayoutPath('mod_starlink_services_block');
+//$title = modStarlinkServicesHelper::getTitle($params);
+require JModuleHelper::getLayoutPath('mod_starlink_services');

@@ -59,9 +59,9 @@
     </div>
   </div>
 
-  <!-- begin jdoc:include type="modules" name="starlink-08-services" style="services" -->
-  <jdoc:include type="modules" name="starlink-08-services" style="services" />
-  <!-- end   jdoc:include type="modules" name="starlink-08-services" style="services" -->
+  <!-- begin jdoc:include type="modules" name="s-08-services" style="services" -->
+  <jdoc:include type="modules" name="s-08-services" style="services" />
+  <!-- end   jdoc:include type="modules" name="s-08-services" style="services" -->
 
   <div class="pre-footer"></div>
 
