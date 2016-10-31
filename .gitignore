@@ -3,9 +3,8 @@
 
 logs/
 tmp/
-templates/starlink/scss/scss_cache
-administrator/administrator/cache
-
+administrator/
+language/
 
 # Resources of development and build systems (Node.js, Bower etc.)
 
