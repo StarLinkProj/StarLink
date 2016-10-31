@@ -84,11 +84,13 @@ fabric.properties
 # Joomla files
 administrator/
 components/com_akeeba/
+components/com_admintools/
 media/com_akeeba/
+media/akeeba_strapper/
 includes/
 language/
 libraries/
 plugins/
-components/com_admintools/
-media/akeeba_strapper/
+
+
 
