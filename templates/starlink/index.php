@@ -7,9 +7,6 @@
 
 <head>
   <!-- TODO remove redundand & debug css/js in production:
-       TODO remove /media/jui/js/jquery-migrate,
-       TODO remove /media/jui/js/jquery-ui,
-       TODO remove /media/jui/js/bootstrap.min.js etc
        TODO replace with minified files the rest -->
 
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,700,900&subset=cyrillic" rel="stylesheet">
@@ -32,7 +29,7 @@
       </div>
       <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
         <div class="b-phone">
-          <!-- TODO  change phone number and logo for parameters of tempalte  -->
+          <!-- TODO  change phone number and logo for parameters of template  -->
           <jdoc:include type="modules" name="topPhone"/>
         </div>
       </div>

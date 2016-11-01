@@ -4,6 +4,10 @@ defined('_JEXEC') or die;
 
 $doc = JFactory::getDocument();
 $doc->addStyleSheet('/media/mod_starlink_services/css/styles.css');
+
+/*
+ *  TODO: designer: convert icons to svg
+ */
 ?>
 
 <div class="row">
