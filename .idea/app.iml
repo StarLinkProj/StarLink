@@ -6,6 +6,8 @@
       <sourceFolder url="file://$MODULE_DIR$/templates/starlink" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/templates/starlink-services" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/modules/mod_starlink_services_block" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/modules/mod_starlink_services" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/media/mod_starlink_services" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/administrator" />
       <excludeFolder url="file://$MODULE_DIR$/bin" />
       <excludeFolder url="file://$MODULE_DIR$/cache" />
@@ -17,7 +19,27 @@
       <excludeFolder url="file://$MODULE_DIR$/language/uk-UA" />
       <excludeFolder url="file://$MODULE_DIR$/layouts" />
       <excludeFolder url="file://$MODULE_DIR$/libraries" />
-      <excludeFolder url="file://$MODULE_DIR$/media" />
+      <excludeFolder url="file://$MODULE_DIR$/media/cms" />
+      <excludeFolder url="file://$MODULE_DIR$/media/com_akeeba" />
+      <excludeFolder url="file://$MODULE_DIR$/media/com_contenthistory" />
+      <excludeFolder url="file://$MODULE_DIR$/media/com_finder" />
+      <excludeFolder url="file://$MODULE_DIR$/media/com_foxcontact" />
+      <excludeFolder url="file://$MODULE_DIR$/media/com_joomlaupdate" />
+      <excludeFolder url="file://$MODULE_DIR$/media/com_wrapper" />
+      <excludeFolder url="file://$MODULE_DIR$/media/contacts" />
+      <excludeFolder url="file://$MODULE_DIR$/media/djextensions" />
+      <excludeFolder url="file://$MODULE_DIR$/media/editors" />
+      <excludeFolder url="file://$MODULE_DIR$/media/jui" />
+      <excludeFolder url="file://$MODULE_DIR$/media/mailto" />
+      <excludeFolder url="file://$MODULE_DIR$/media/media" />
+      <excludeFolder url="file://$MODULE_DIR$/media/mod_languages" />
+      <excludeFolder url="file://$MODULE_DIR$/media/overrider" />
+      <excludeFolder url="file://$MODULE_DIR$/media/plg_captcha_recaptcha" />
+      <excludeFolder url="file://$MODULE_DIR$/media/plg_quickicon_extensionupdate" />
+      <excludeFolder url="file://$MODULE_DIR$/media/plg_quickicon_joomlaupdate" />
+      <excludeFolder url="file://$MODULE_DIR$/media/plg_system_highlight" />
+      <excludeFolder url="file://$MODULE_DIR$/media/plg_system_stats" />
+      <excludeFolder url="file://$MODULE_DIR$/media/system" />
       <excludeFolder url="file://$MODULE_DIR$/modules/mod_articles_archive" />
       <excludeFolder url="file://$MODULE_DIR$/modules/mod_articles_categories" />
       <excludeFolder url="file://$MODULE_DIR$/modules/mod_articles_category" />
