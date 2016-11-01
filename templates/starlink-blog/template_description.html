@@ -1,0 +1,122 @@
+<html>
+<head>
+  <meta name="generator"
+        content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39"/>
+  <title>Starlink: техзадание на темплейты</title>
+</head>
+<style>
+  body {
+    font-family: Calibri, Tahoma, Helvetica, sans-serif;
+    font-size: 20px;
+  }
+  table {
+    font-size: inherit;
+  }
+  thead tr th {
+    margin-bottom: 30px;
+    border-bottom: solid 5px #ccc;
+  }
+  th, td {
+    text-align: left;
+    vertical-align: top;
+    padding-left: 0.5em;
+    padding-right: 0.2em;
+  }
+  th {
+    font-size: 115%;
+  }
+  th, tr:nth-child(even) {
+    background: #ddd;
+  }
+  tr:nth-child(odd) {
+    background: #fff;
+  }
+  td:first-child {
+    font-family: Consolas, "Lucida Console", monospace;
+    font-size: 85%;
+    vertical-align: middle;
+    font-weight: bold;
+    color: goldenrod;
+  }
+  td p {
+    margin: 0;
+  }
+  p::first-line {
+    border-top: dotted dimgray 1px;
+  }
+</style>
+<body>
+<h1>Starlink: техзадание на темплейты</h1>
+<p><time>22.09.2016</time></p>
+<h2>Список темплейтов</h2>
+<p>Список темплейтов определяется тем, какие разновидности страниц будут отображаться на сайте starlink.ua</p>
+<table>
+  <colgroup>
+    <col class="template-name1">
+    <col>
+    <col>
+  </colgroup>
+  <thead>
+  <tr>
+    <th width="17%">Название (суффикс)</th>
+    <th>Описание</th>
+    <th width="25%">Пункты главного меню (примеры)</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td class="template-name">-01-homepage</td>
+    <td>Домашняя страница сайта. Самая подверженная изменениям страница сайта. Должна предусматривать
+      максимально простое изменение очередности отображаемых блоков в позициях встроенными средствами Joomla.
+    </td>
+    <td>/ (домашняя страница сайта)</td>
+  </tr>
+
+  <tr>
+    <td class="template-name">-02-service</td>
+    <td>Страница, описывающая группу услуг. Кроме собственного изображения и описания группы услуг, содержит блок,
+      отображающий все услуги из этой группы, количество которых не фиксированное. Кроме того, содержит
+      дополнительное меню со всеми подуслугами, которое при скроллинге страницы вниз замещает собой основное меню
+      сайта</td>
+    <td>
+      <p>/услуги/дата-центр</p>      <p>/услуги/it-консалтинг</p>      <p>/услуги/it-интеграция</p>
+    </td>
+  </tr>
+  <tr>
+    <td class="template-name">-03-simple-service</td>
+    <td>Простая услуга или продукт, не содержит никакой иерархии подуслуг/подпродуктов. Страница должна отображать
+      титульное изображение услуги, блок с ее описанием, блок отзывов клиентов</td>
+    <td>
+      <p>/услуги/дата-центр/виртуализация</p>
+      <p>/услуги/дата-центр/безопасность</p>
+      <p>/услуги/дата-центр/хостинг-колокейшн</p>
+      <p>/услуги/дата-центр/SSL-сертификаты</p>
+      <p>/услуги/дата-центр/каналы-связи</p>
+    </td>
+  </tr>
+  <tr>
+    <td class="template-name">-05-outsourcing</td>
+    <td>Типовая лендинг-страница по образцу существующей страницы по IT-аутсорсингу. Убрать лишние позиции, чтобы
+      упростить структуру</td>
+    <td>/услуги/IT-аутсорсинг</td>
+  </tr>
+  <tr>
+    <td class="template-name">-31-blog</td>
+    <td>Страница, которая выводит список статей блога с возможностью фильтрации по тегам и навигации по календарю.
+    Кроме статей блога, содержит позицию, отображающую только важные уведомления.</td>
+    <td>/blog</td>
+  </tr>
+  <tr>
+    <td class="template-name">-32-news</td>
+    <td>Страница, которая выводит список новостей с возможностью фильтрации по тегам и навигации по календарю.
+    </td>
+    <td>/news</td>
+  </tr>
+  </tbody>
+</table>
+<section title="">
+
+
+</section>
+</body>
+</html>

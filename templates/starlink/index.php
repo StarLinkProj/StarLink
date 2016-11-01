@@ -9,7 +9,6 @@
   <!-- TODO remove redundand & debug css/js in production:
        TODO replace with minified files the rest -->
 
-  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,700,900&subset=cyrillic" rel="stylesheet">
   <!-- head -->
   <jdoc:include type="head" />
   <!-- /head -->

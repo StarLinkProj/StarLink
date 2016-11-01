@@ -17,7 +17,7 @@ $queryString=$uri->getQuery();
 $this->setGenerator(null);
 
 // template css
-$doc->addStyleSheet($tpath . '/css/bootstrap.min.css');
+$doc->addStyleSheet($this->baseurl . '/media/mod_starlink/css/bootstrap.min.css');
 $doc->addStyleSheet($tpath . '/css/template.css');
 
 // template js

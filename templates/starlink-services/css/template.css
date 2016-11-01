@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,700,900&subset=cyrillic');
-@import "font-awesome.min.css";
-@import "menu.css";
-@import "footer.css";
-@import "news.css";
+@import "/media/mod_starlink/css/font-awesome.min.css";
+@import "/media/mod_starlink/css/common.css";
+@import "/media/mod_starlink/css/news.css";
+@import "/media/mod_starlink/css/menu.css";
+@import "/media/mod_starlink/css/footer.css";
 
 /* FRONTEND CSS
 *********************************************/
@@ -31,18 +32,6 @@ body {
 /* repeat definition because of body flex */
 .container-fluid {
   width : 100%;
-}
-a:hover, a:focus {
-  text-decoration : none;
-  cursor          : pointer;
-}
-.clear {
-  clear : both;
-}
-.b-wrapper {
-  display: block;
-  position: static;
-  margin: 20px auto;
 }
 
 /* MEDIA QUERIES

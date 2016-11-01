@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+  <name>Starlink common files</name>
+  <author>Andriy Melnyk</author>
+  <authorEmail>greenturban@gmail.com</authorEmail>
+  <authorUrl>https://starlink.ua</authorUrl>
+  <version>1.0.1</version>
+  <description>Starlink common files</description>
+  <files>
+    <filename module="mod_starlink">mod_starlink.php</filename>
+    <filename>mod_starlink.xml</filename>
+  </files>
+  <media folder="media" destination="mod_starlink">
+    <folder>css</folder>
+    <folder>fonts</folder>
+    <folder>images</folder>
+  </media>
+  <config>
+  </config>
+</extension>
