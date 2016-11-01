@@ -19,6 +19,13 @@
 .b-logo__image {
   height: 100%;
   width: auto;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.b-logo__image:hover {
+  filter: drop-shadow(1px 0px 1px rgba(1,1,1,.8));
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 .b-phone {
   position       : absolute;
