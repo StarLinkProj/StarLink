@@ -13,31 +13,51 @@
 
 /* Singular Service */
 .s-ServiceType {
-  display: block;
-  border: 1px solid #fff;
-  border-radius: 4px;
-  margin-bottom: 30px;
-  padding: 25px 10px;
-  color: #fff;
-  cursor: pointer;
-  -webkit-transition : 0.3s;
-  transition         : 0.3s;
+  display             : -ms-flexbox;
+  display             : -webkit-flex;
+  display             : flex;
+
+  -ms-flex-align      : center;
+  -webkit-align-items : center;
+  -webkit-box-align   : center;
+  align-items         : center;
+  justify-content     : space-around;
+
+  min-height          : 100px;
+  border              : 1px solid #fff;
+
+  margin-bottom       : 30px;
+  padding             : 15px 10px;
+  border-radius       : 8px;
+  color               : #fff;
+  cursor              : pointer;
+  -webkit-transition  : 0.3s;
+  transition          : 0.3s;
+}
+.s-ServiceType__imageWrap {
+  flex-grow    : 0;
+  flex-basis   : 80px;
+  max-width    : 80px;
+  min-width    : 80px;
+  text-align   : center;
+  padding-left : 15px;
 }
 .s-ServiceType__linkHeader {
-  display: block;
-  font-weight: 900;
-  font-size: 14px;
-  margin-bottom: 6px;
-  text-transform: uppercase;
+  display        : block;
+  font-weight    : 900;
+  font-size      : 14px;
+  margin-bottom  : 6px;
+  text-transform : uppercase;
 }
 .s-ServiceType__linkText {
-  display: block;
-  font-size: 14px;
-  line-height: 15px;
-  margin-right: 40px;
+  display     : block;
+  font-size   : 14px;
+  line-height : 15px;
+  margin      : 0;
 }
-.s-ServiceType__linkImage {
-  min-height: 75px;
+.s-ServiceType__details {
+  padding: 0 15px;
+  flex-basis: 90%;
 }
 .s-ServiceType:hover,
 .s-ServiceType:focus {
@@ -52,12 +72,14 @@
 }
 
 /* Change image on hover */
-.s-ServiceType__imageFlip {
+.s-ServiceType__icon {
+  max-height: 60px;
+  max-width: 65px;
   -webkit-filter     : grayscale(100%) brightness(500%) contrast(120%);
   filter             : grayscale(100%) brightness(500%) contrast(120%);
 }
-.s-ServiceType:hover .s-ServiceType__imageFlip,
-.s-ServiceType:focus .s-ServiceType__imageFlip {
+.s-ServiceType:hover .s-ServiceType__icon,
+.s-ServiceType:focus .s-ServiceType__icon {
   -webkit-filter : none;
   filter         : none;
 }
