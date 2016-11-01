@@ -3,6 +3,7 @@
 @import "menu.css";
 @import "footer.css";
 @import "calculator.css";
+@import "survey.css";
 
 /* FRONTEND CSS
 *********************************************/
@@ -86,99 +87,11 @@ a:hover, a:focus {
 	right: 0;
 }
 
-#map{
-	width: auto;
-	height: 400px;
-	margin-left: -15px;
-	margin-right: -15px;
-}
 
-.no-ready-to-call-bl{
-	background: #F5F6F7;
-}
-.no-ready-to-call-bl .container{
-	background: url('../images/main/paper.png') no-repeat bottom left;
-}
-.not-ready-to-call h3 {
-	margin: 50px 0 28px;
-	text-align: center;
-	font-weight: 300;
-	font-size: 42px;
-}
-.not-ready-to-call .leftBlNotReadyCall p, .not-ready-to-call .rightBlNotReadyCall p{
-	margin: 0 15px 20px;
-}
-
-.moduletable-orderSurvey {
-	padding:0 15px;
-}
-
-/* Fox email sending plugin */
-/* TODO move all #fox-* into module override */
-
-div#fox-container-m95{
-	margin: 20px 15px 30px;
-	min-height: 265px;
-}
-div#fox-container-m95 h2{
-	font-weight: bold;
-	font-size: 18px;
-	color: #3C3D41;
-	margin: 0 15px;;
-}
-div#fox-container-m95 .freeQuestionnaire button.btn, div#fox-container-m100 .sendLetterButton button.btn,
-div#fox-container-m115 .sendLetterButton button.btn{
-	text-align: center;
-	width:100%;
-	margin: 0 auto;
-	padding: 20px;
-	background: #3FA2F7;
-	border-radius: 30px;
-	outline: none;
-	text-shadow: none;
-	border: 1px solid #3FA2F7;
-}
-div#fox-container-m95 .freeQuestionnaire button.btn:hover, div#fox-container-m100 .sendLetterButton button.btn:hover,
-div#fox-container-m115 .sendLetterButton button.btn:hover{
-	background: #fff;
-}
-div#fox-container-m95 .freeQuestionnaire button.btn:hover span, div#fox-container-m100 .sendLetterButton button.btn:hover span,
-div#fox-container-m115 .sendLetterButton button.btn:hover span{
-	color: #3FA2F7;
-}
-div#fox-container-m95 .freeQuestionnaire button.btn span, div#fox-container-m100 .sendLetterButton button.btn span,
-div#fox-container-m115 .sendLetterButton button.btn span{
-	color: #fff;
-	font-weight: bold;
-	font-size: 16px;
-}
-div#fox-container-m95 .freeQuestionnaireInput input[type="text"], div#fox-container-m100 .sendLetterInput input[type="text"],
-div#fox-container-m100 .sendLetterArea textarea{
-	padding: 12px 10px;
-	font-size: 14px;
-	height: auto;
-	line-height: 14px;
-	margin-bottom: 20px;
-	width: 100%;
-}
-div#fox-container-m100 .sendLetterArea textarea{
-	margin-bottom: 0;
-}
-div#fox-container-m95 .fox-form-stacked .controls, div#fox-container-m100 .fox-form-stacked .controls {
-	float: none !important;
-}
-div#fox-container-m95 .freeQuestionnaireInput .control-label label {
-	display: none;
-}
-div#fox-container-m100 .fox-form-stacked #fox-m100-submit-box .controls{
-	width: 100%;
-}
-
-/* TODO refactor this mess */
-
+/* TODO refactor this  */
 
 .profitable-it-outsourcing {
-	padding-bottom: 115px;
+	/*padding-bottom: 115px;*/
 	color: #1B1B1B;
 	background: url('../images/main/business.jpg') no-repeat center center;
 	background-size: cover;
@@ -193,7 +106,7 @@ div#fox-container-m100 .fox-form-stacked #fox-m100-submit-box .controls{
 	line-height: 48px;
 }
 .profitable-it-outsourcing h4 {
-	margin: 30px 0 16px;
+	margin: 30px 0 130px;
 	font-family: Roboto, sans-serif;
 	font-weight: 400;
 	font-size: 24px;
@@ -205,6 +118,7 @@ div#fox-container-m100 .fox-form-stacked #fox-m100-submit-box .controls{
 	font-size: 18px;
 	line-height: 20px;
 }
+
 
 .reviewsBl{
 	margin-bottom: 50px;
@@ -248,33 +162,28 @@ div#fox-container-m100 .fox-form-stacked #fox-m100-submit-box .controls{
 	margin-top: -30px;
 }
 
-div#fox-container-m100 .control-label, div#fox-container-m100 .control-label label{
-	display: none;
-}
 
-.contentBl{
-	margin-bottom: 30px;
-}
+/*    /CONTACTS     */
 .contactsBl>.row{
-	margin: 0;
-	border-top: 1px solid #E1E7EB;
+  margin: 0;
+  border-top: 1px solid #E1E7EB;
 }
 .contactsBl>.row:last-child{
-	border-bottom: 1px solid #E1E7EB;
+  border-bottom: 1px solid #E1E7EB;
 }
 .contactsBl>.row>div{
-	font-size: 16px;
-	padding: 17px 0 17px 17px;
-	color: #000;
-	font-weight: bold;
+  font-size: 16px;
+  padding: 17px 0 17px 17px;
+  color: #000;
+  font-weight: bold;
 }
 .contactsBl>.row>div:first-child{
-	color: #9B9B9B;
-	font-weight: 300;
-	padding: 17px 0 17px 0;
+  color: #9B9B9B;
+  font-weight: 300;
+  padding: 17px 0 17px 0;
 }
 .contactsBl>.row .alignRight{
-	text-align: right;
+  text-align: right;
 }
 .moreAboutOurProjLink{
 	text-align: center;
@@ -292,15 +201,15 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 	background: url('../images/main/rightArrow.png') no-repeat center 6px;
 }
 .sendLetterBl {
-	margin-left:-10px;
-	margin-right:-10px;
+/*	margin-left:-10px;
+	margin-right:-10px;*/
 }
 .contactsBl {
-	margin-left:-15px;
-	margin-right:-10px;
+/*	margin-left:-15px;
+	margin-right:-10px;*/
 }
 .contactsBl>.row .alignRight * {
-	margin:0 -35px 0 -15px;
+	/*margin:0 -35px 0 -15px;*/
 }
 .sendLetterBl h3, .contactsBl h3{
 	font-size: 32px;
@@ -316,165 +225,75 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 }
 
 
-.aboutPageBl{
+/******   /about   ******/
+.aboutCompany {
 	background: url('../images/main/aboutBg.jpg') no-repeat center center;
 	background-size: cover;
+  color: #fff;
+  font-weight: 300;
+  text-align: center;
 }
-.aboutMainCenterText{
-	padding-top: 100px;
-	color: #fff;
-	font-weight: 300;
-	text-align: center;
-}
-.aboutMainCenterText h2{
+.aboutCompany__header {
+  margin-top: 100px;
 	margin-bottom: 16px;
 	font-weight: 300;
 	font-size: 42px;
 }
-.aboutMainCenterText h4{
+.aboutCompany__text {
 	font-size: 21px;
 	line-height: 30px;
 	font-weight: 300;
 	margin: 0 30px 40px;
 }
-.aboutMainCenterText h4:last-child{
+p.aboutCompany__text:last-child{
 	margin: 10px 0 30px;
 }
-.iconBlocks{
-	padding-bottom: 60px;
-	margin-top: 10px;
+.aboutCompany__icons {
+	margin: 10px auto 60px;
+  text-align: center;
 }
-.iconBlocks>div{
-	text-align: center;
-}
-.iconBlocks>div .aboutIcon{
+.aboutCompany__iconText {
 	color: #fff;
 	margin: 20px 0;
 	line-height: 20px;
+  font-weight: 400;
+  -webkit-transition  : 0.3s;
+  transition          : 0.3s;
 }
-.aboutPageArticleText h2{
-	margin: 0 0 30px;
-	/*font-family: 'HelveticaNeue-Ligth', sans-serif;*/
-	font-size: 42px;
-	line-height: 50px;
+.aboutCompany__icons:hover .aboutCompany__iconText,
+.aboutCompany__bottomArrow:hover {
+  color: #ED1C24;
+  -webkit-transition  : 0.3s;
+  transition          : 0.3s;
 }
-.aboutPageArticleText p{
-	/*font-family: 'HelveticaNeue-Roman', sans-serif;*/
-	line-height: 20px;
-	color: #1b1b1b;
-	margin-bottom: 20px;
-}
-.aboutArticle{
-	margin: 35px 0;
-}
-.bottomArrowBl{
+.aboutCompany__bottom {
 	text-align: center;
 	margin-bottom: 50px;
 }
 
-.newsFluidBl .page-header h2{
+/*   Singular article   */
+.article,
+.contentBl {
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+.article__header {
+  margin: 0 0 15px;
+  font-size: 50px;
+  font-weight: 400;
   text-align: center;
 }
-.newsFluidBl p {
-  font-size: 18px;
+.article__image {
+  margin: 0 auto 25px;
+}
+.article__text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #1b1b1b;
+  margin-bottom: 20px;
 }
 
-.newsFluidBl{
-	background: #F5F6F7;
-	border-top: 1px solid #E1E7EB;
-}
-.newsFluidBl .blog h2{
-	margin: 45px 0 20px;
-	text-align: center;
-}
-.newsFluidBl .blog h2 .subheading-category{
-	font-size: 72px;
-	font-weight: 300;
-	line-height: 80px;
-	color: #1b1b1b;
-}
-.newsFluidBl .blog .category-desc{
-	color: #9B9B9B;
-	font-size: 21px;
-	line-height: 30px;
-	text-align: center;
-}
-.imgMgAuto{
-	margin: 0 auto;
-}
-.blog .items-row .span12{
-	box-shadow: 0 5px 10px rgba(0,0,0,0.05);
-	margin-bottom: 50px;
-}
-.blog .items-row .span12 .page-header{
-	margin: 20px 30px 10px;
-	border: none;
-	padding-bottom: 0;
-}
-.blog .items-row .span12 .page-header h2{
-	margin: 0;
-	text-align: left;
-}
-.blog .items-row .span12 .page-header h2 a{
-	color: #3FA2F7;
-	font-size: 20px;
-	line-height: 20px;
-	font-weight: bold;
-}
-.blog .items-row .span12 .newsCatAndDate{
-	margin: 0 30px 10px;
-	color: #9B9B9B;
-	line-height: 20px;
-}
-.blog .items-row .span12 .item>p{
-	margin: 0 30px 10px;
-}
-.blog .items-row .span12 .newsCategoryItemFooter{
-	border-top: 1px solid #EAEAEA;
-	padding: 20px 5px 20px 30px;
-	margin: 0;
-}
-.newsHits{
-	padding-left: 30px;
-	background: url('../images/main/eye.png') no-repeat left center;
-	color: #9B9B9B;
-}
-.newsReadMore p.readmore{
-	margin: 0;
-	text-align: right;
-}
-.newsReadMore p.readmore a.btn{
-	font-size: 0;
-	padding: 10px 11px;
-	background: url('../images/main/readmoreIcon.png') no-repeat left center;
-}
-.newsShowMoreNewsRow{
-	margin: 20px auto 50px;
-}
-.newsShowMoreNewsRow .newsShowMoreNewsCol{
-	text-align: center;
-}
-.newsShowMoreNews{
-	color: #3FA2F7;
-	font-size: 16px;
-	line-height: 20px;
-	font-weight: bold;
-	border: 1px solid #3FA2F7;
-	border-radius: 30px;
-	padding: 20px 105px 20px 95px;
-}
-.newsShowMoreNews{
-	padding: 20px 35px 20px 25px;
-}
-.newsShowMoreNews:hover, .newsShowMoreNews:focus{
-	color: #3FA2F7;
-	background: rgba(63, 162, 247, 0.03);
-}
-.newsShowMoreNews .loadMoreNewsIcon{
-	margin: 0 0 0 20px;
-	padding: 13px 11px;
-	background: url('../images/main/showMoreNewsIcon.png') no-repeat left center;
-}
 .servicesPageInnerServicesBl{
 	margin-top: 50px;
 }
@@ -635,77 +454,6 @@ div#fox-container-m100 .control-label, div#fox-container-m100 .control-label lab
 }
 .itOutsourcingSingleTextBl:first-child{
 	margin: 50px 0 40px;
-}
-
-/*** Modal contact form ***/
-#modalContactFormBlock form{
-	padding: 10px 30px;
-}
-.modalContactFormH2{
-	font-weight: 300;
-	font-size: 32px;
-	line-height: 40px;
-	color: #000;
-}
-div#fox-container-m115 .control-label, div#fox-container-m115 .control-label label{
-	display: none !important;
-}
-#modalContactFormBlock form .controls{
-	width: 100%;
-}
-#modalContactFormBlock form .controls input[type="text"], #modalContactFormBlock form .controls input[type="email"] {
-	padding: 12px 15px;
-	font-size: 14px;
-	height: auto;
-	line-height: 14px;
-	margin-bottom: 20px;
-	width: 100%;
-	border-radius: 4px;
-	color: #555555;
-	background-color: #ffffff;
-}
-#modalContactFormBlock div#fox-container-m115 .fox-form-stacked .fox-item-submit .controls {
-	width: 100%;
-}
-button.modalFormCloseBtn{
-	background: url('../images/calculator/close-icon.png') no-repeat;
-	position: absolute;
-	width: 31px;
-	height: 30px;
-	display: block;
-	right: 20px;
-	top: 20px;
-	opacity: 1;
-	outline: none;
-	z-index: 10000;
-}
-.modalFormCongratulation{
-	position: absolute;
-	background: #fff;
-	z-index: 1000;
-	width: 550px;
-	height: 270px;
-	left: 30px;
-	top: 30px;
-}
-.modalFormCongratulation h2{
-	margin: 40px auto 0;
-	width: 320px;
-	text-align: center;
-	font-weight: 300;
-	font-size: 32px;
-	color: #000000;
-	line-height: 40px;
-}
-.modalFormCongratulation p{
-	font-size: 14px;
-	color: #1B1B1B;
-	letter-spacing: 0;
-	line-height: 20px;
-	text-align: center;
-	width: 410px;
-	display: block;
-	margin: 20px auto;
 }
 
 /******* Vacancy styles *******/
@@ -1378,18 +1126,6 @@ body>div.custom-services-image-header.sticky {
 
 /* for higher resolutions (android and retina) */
 @media screen and (-webkit-min-device-pixel-ratio : 1.5) , screen and (min--moz-device-pixel-ratio : 1.5), (max-width : 767px) {
-
-  div#fox-container-m100 .fox-form-stacked #fox-m100-submit-box .controls {
-    /* 		width: 100%; */
-  }
-  div#fox-container-m95 .freeQuestionnaire button.btn span,
-  div#fox-container-m100 .sendLetterButton button.btn span {
-    font-size : 14px;
-  }
-  div#fox-container-m95 h2 {
-    /* 		margin-left: 5%;
-        margin-right: 5%; */
-  }
   .vacationH2, .vacationH4 {
     font-family : Roboto, sans-serif;
     font-weight : 300;
@@ -1459,326 +1195,3 @@ body>div.custom-services-image-header.sticky {
     border-bottom : 2px solid #ED1C24;
   }
 }
-
-/* TODO
-
-{
-   "used on page starlink.ua/services ":{
-      "url":"http://starlink.ua/templates/starlink/css/template.css",
-      "summary":"77 used selectors",
-      "selectors":[
-         {
-            "selector":"html",
-            "line":6
-         },
-         {
-            "selector":"body",
-            "line":14
-         },
-         {
-            "selector":"body",
-            "line":17
-         },
-         {
-            "selector":"a:hover",
-            "line":22
-         },
-         {
-            "selector":"a:focus",
-            "line":22
-         },
-         {
-            "selector":".services-bl",
-            "line":83
-         },
-         {
-            "selector":".services-bl > div.container",
-            "line":87
-         },
-         {
-            "selector":".no-ready-to-call-bl",
-            "line":137
-         },
-         {
-            "selector":".no-ready-to-call-bl .container",
-            "line":140
-         },
-         {
-            "selector":".reviewsBl",
-            "line":250
-         },
-         {
-            "selector":".reviews h3",
-            "line":253
-         },
-         {
-            "selector":".singleReview",
-            "line":262
-         },
-         {
-            "selector":".reviewerPText",
-            "line":268
-         },
-         {
-            "selector":".reviewerPosition",
-            "line":275
-         },
-         {
-            "selector":".reviewerName",
-            "line":281
-         },
-         {
-            "selector":".reviewerImg",
-            "line":288
-         },
-         {
-            "selector":".contentBl",
-            "line":296
-         },
-         {
-            "selector":".moreAboutOurProjLink",
-            "line":320
-         },
-         {
-            "selector":".moreAboutOurProjLink a",
-            "line":324
-         },
-         {
-            "selector":".moreAboutOurProjLink a .rightArrow",
-            "line":330
-         },
-         {
-            "selector":"a .rightArrow",
-            "line":330
-         },
-         {
-            "selector":".imgMgAuto",
-            "line":443
-         },
-         {
-            "selector":".blog .items-row .span12",
-            "line":446
-         },
-         {
-            "selector":".blog .items-row .span12 .page-header",
-            "line":450
-         },
-         {
-            "selector":".blog .items-row .span12 .page-header h2",
-            "line":455
-         },
-         {
-            "selector":".blog .items-row .span12 .page-header h2 a",
-            "line":459
-         },
-         {
-            "selector":".blog .items-row .span12 .newsCatAndDate",
-            "line":465
-         },
-         {
-            "selector":".blog .items-row .span12 .item > p",
-            "line":470
-         },
-         {
-            "selector":".blog .items-row .span12 .newsCategoryItemFooter",
-            "line":473
-         },
-         {
-            "selector":".newsHits",
-            "line":478
-         },
-         {
-            "selector":".newsReadMore p.readmore",
-            "line":483
-         },
-         {
-            "selector":".newsReadMore p.readmore a.btn",
-            "line":487
-         },
-         {
-            "selector":".servicesPageInnerServicesBl",
-            "line":519
-         },
-         {
-            "selector":".servicesPageInnerServicesBl .consulting",
-            "line":522
-         },
-         {
-            "selector":".servicesPageInnerServicesBl .outsourcing",
-            "line":528
-         },
-         {
-            "selector":".servicesPageInnerServicesBl .integration",
-            "line":534
-         },
-         {
-            "selector":".servicesPageInnerServicesBl .dataCenter",
-            "line":540
-         },
-         {
-            "selector":".servicesPageInnerServicesBl .security",
-            "line":546
-         },
-         {
-            "selector":".servicesPageInnerServicesBl .webprojects",
-            "line":552
-         },
-         {
-            "selector":".servicesPageInnerServicesBl img.img-responsive",
-            "line":558
-         },
-         {
-            "selector":".servicesPageInnerServicesBl h4",
-            "line":561
-         },
-         {
-            "selector":".servicesPageInnerServicesBl h4 a",
-            "line":565
-         },
-         {
-            "selector":".servicesPageInnerServicesBl p",
-            "line":570
-         },
-         {
-            "selector":".servicesPageInnerServicesBl > .row > div",
-            "line":575
-         },
-         {
-            "selector":".lastNews",
-            "line":579
-         },
-         {
-            "selector":".lastNews h3",
-            "line":582
-         },
-         {
-            "selector":".showAllNews",
-            "line":591
-         },
-         {
-            "selector":".showAllNews a",
-            "line":595
-         },
-         {
-            "selector":".searchButton",
-            "line":688
-         },
-         {
-            "selector":"#mod-search-searchword",
-            "line":694
-         },
-         {
-            "selector":"#mod-search-searchword::-moz-placeholder",
-            "line":705
-         },
-         {
-            "selector":"#mod-search-searchword:-moz-placeholder",
-            "line":706
-         },
-         {
-            "selector":".search",
-            "line":709
-         },
-         {
-            "selector":".searchLineDiv",
-            "line":712
-         },
-         {
-            "selector":"button.modalFormCloseBtn",
-            "line":746
-         },
-         {
-            "selector":".b-heroImage",
-            "line":1127
-         },
-         {
-            "selector":".b-heroImage--top",
-            "line":1150
-         },
-         {
-            "selector":".b-heroImage__header",
-            "line":1175
-         },
-         {
-            "selector":".b-heroImage__header--level2",
-            "line":1183
-         },
-         {
-            "selector":".footer",
-            "line":1347
-         },
-         {
-            "selector":".footer p",
-            "line":1358
-         },
-         {
-            "selector":".footer a",
-            "line":1361
-         },
-         {
-            "selector":"#footerMenu > li > a",
-            "line":1361
-         },
-         {
-            "selector":".footer a:hover",
-            "line":1365
-         },
-         {
-            "selector":"#footerMenu > li > a:hover",
-            "line":1365
-         },
-         {
-            "selector":"#footerMenu li.item-101",
-            "line":1370
-         },
-         {
-            "selector":"#footerMenu > li",
-            "line":1373
-         },
-         {
-            "selector":"#footerMenu > li > a",
-            "line":1376
-         },
-         {
-            "selector":".footerSocNetworks a",
-            "line":1380
-         },
-         {
-            "selector":".footerSocNetworks a:hover",
-            "line":1386
-         },
-         {
-            "selector":".footerSocNetworks .facebookIcon",
-            "line":1389
-         },
-         {
-            "selector":".footerSocNetworks .twitterIcon",
-            "line":1392
-         },
-         {
-            "selector":".footerSocNetworks .googleIcon",
-            "line":1395
-         },
-         {
-            "selector":".footer .container .row > div",
-            "line":1398
-         },
-         {
-            "selector":".searchButton",
-            "line":1466
-         },
-         {
-            "selector":".footer",
-            "line":1500
-         },
-         {
-            "selector":".footer .container .row > div",
-            "line":1503
-         }
-      ]
-   }
-]
-}
-
-
-*/

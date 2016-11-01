@@ -128,22 +128,35 @@ jQuery(document).ready(function ($) {
   /******* Other utilities ******/
 
   // Scroll bottom on about page
-  jQuery("#aboutBottomScroll").click(function (e) {
+  jQuery(".aboutCompany__bottomArrow").click( function (e) {
     e.preventDefault();
-    jQuery('html,body').animate({
-              scrollTop: jQuery(".contentBl").offset().top - 30
+    jQuery('html, body').animate({
+              scrollTop: jQuery(".article").offset().top - 30
             },
             'slow');
   });
 
   // Scroll to top page on scrollTopButton click
   jQuery(".scrollTopBtn").click(function () {
-    jQuery('html,body').animate({
+    jQuery('html, body').animate({
               scrollTop: jQuery("html").offset().top - 30
             },
             'slow');
   });
 
+  // Initialize Google maps, of any
+  /*var mapOptions = {
+    center: new google.maps.LatLng(50.4070134,30.6364289),
+    zoom: 16,
+    scrollwheel: false
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  new google.maps.Map(document.getElementById('map'), mapOptions);
+  var marker = new google.maps.Marker({
+    position: {lat: 50.4070134, lng: 30.6364289},
+    map: map,
+    title: 'StarLink'
+  });*/
 
   /*********   CONTACT FORMS   **********/
 

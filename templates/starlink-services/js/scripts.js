@@ -96,21 +96,6 @@ jQuery(document).ready(function($) {
 
  /******* Other utilities ******/
 
- // Scroll bottom on about page
- jQuery("#aboutBottomScroll").click(function(e) {
-   e.preventDefault();
-   jQuery('html,body').animate({
-         scrollTop: jQuery(".contentBl").offset().top - 30},
-       'slow');
- });
-
- // Scroll to top page on scrollTopButton click
- jQuery(".scrollTopBtn").click(function() {
-   jQuery('html,body').animate({
-         scrollTop: jQuery("html").offset().top - 30},
-       'slow');
- });
-
 });
 
 

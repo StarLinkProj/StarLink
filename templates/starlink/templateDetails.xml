@@ -41,17 +41,18 @@
 		<position>topPhone</position>
 		<position>mainMenu</position>
 		<position>search</position>
-		<position>mainSlider</position>
+    <position>s-04-aboutCompany</position>
+    <position>mainSlider</position>
 		<position>partners</position>
 		<position>reviews</position>
 		<position>s-08-services</position>
 		<position>servicesTopBlWithBg</position>
-		<position>notReadyToCall</position>
+		<position>s-10-notReadyToCall</position>
 		<position>orderFreeQuestionnaire</position>
-		<position>profitableItOutsourcing</position>
+		<position>s-11-profitableItOutsourcing</position>
+    <position>s-12-googleMap</position>
 		<position>sendLetterToUs</position>
 		<position>lastNews</position>
-		<position>aboutPageBl</position>
 		<position>itOutsourcingTopBlWithBg</position>
 		<position>itOutsourcingWeProposeYou</position>
 		<position>itOutsourcingCallInfoBl</position>

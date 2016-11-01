@@ -59,29 +59,26 @@
   </header>
 
 	<!-- Menu О Компании -->
-  <?php if ($itemId == 111) : ?>
-    <div class="container-fluid aboutPageBl">
-      <div class="container">
-        <jdoc:include type="modules" name="aboutPageBl" />
-      </div>
+  <div class="container-fluid aboutCompany">
+    <div class="container">
+      <jdoc:include type="modules" name="s-04-aboutCompany" />
     </div>
-  <?php endif; ?>
-  <!-- /Menu О Компании -->
+  </div>
 
-    <!-- begin jdoc:include type="modules" name="servicesTopBlWithBg"  -->
-    <jdoc:include type="modules" name="servicesTopBlWithBg" />
-    <!-- end   jdoc:include type="modules" name="servicesTopBlWithBg"  -->
+  <!-- begin jdoc:include type="modules" name="servicesTopBlWithBg"  -->
+  <jdoc:include type="modules" name="servicesTopBlWithBg" />
+  <!-- end   jdoc:include type="modules" name="servicesTopBlWithBg"  -->
 
-    <!-- begin jdoc:include type="modules" name="itOutsourcingTopBlWithBg" style="xhtml" -->
-    <jdoc:include type="modules" name="itOutsourcingTopBlWithBg" style="xhtml" />
-    <!-- end   jdoc:include type="modules" name="itOutsourcingTopBlWithBg" style="xhtml" -->
+  <!-- begin jdoc:include type="modules" name="itOutsourcingTopBlWithBg" style="xhtml" -->
+  <jdoc:include type="modules" name="itOutsourcingTopBlWithBg" style="xhtml" />
+  <!-- end   jdoc:include type="modules" name="itOutsourcingTopBlWithBg" style="xhtml" -->
 
-    <!-- begin jdoc:include type="modules" name="itOutsourcingWeProposeYou" style="xhtml" -->
-    <jdoc:include type="modules" name="itOutsourcingWeProposeYou" style="xhtml" />
-    <!-- end   jdoc:include type="modules" name="itOutsourcingWeProposeYou" style="xhtml" -->
+  <!-- begin jdoc:include type="modules" name="itOutsourcingWeProposeYou" style="xhtml" -->
+  <jdoc:include type="modules" name="itOutsourcingWeProposeYou" style="xhtml" />
+  <!-- end   jdoc:include type="modules" name="itOutsourcingWeProposeYou" style="xhtml" -->
 
 	  <?php
-/*    Not Menu IT-консалтинг, IT-интеграция, Дата-центр, Безопасность, Web-проекты, Блог, Вакансии, Совместная работа сотрудников на базе продуктов Kerio,
+/*    Not Menu Home, IT-консалтинг, IT-интеграция, Дата-центр, Безопасность, Web-проекты, Блог, Вакансии, Совместная работа сотрудников на базе продуктов Kerio,
 		Безопасность и защита информации, Объединение распределенных офисов в единую сеть, 	IP-телефония и видеоконференции
 		105 consulting
 		107 integration
@@ -94,32 +91,28 @@
 		121 collaboration-kerio-connect,
     122 dataprotection-kerio-control,
     123 distributedorganization-starlink,
-    124 conferencing-kerio-operator, */
+    124 conferencing-kerio-operator
+
+    то есть
+    106 IT-outsourcing
+    111 О компании
+    112 Услуги,
+    113 Решения,
+    115 Контакты,
+    117 Кто мы?,
+    119 Портфолио,
+    134 Виртуализация,
+    135 Хостинг / Колокейшн,
+    136 Аренда серверов и ПО (SaaS),
+    137 SSL-сертификаты,
+    138 аналы связи,
+ */
     ?>
     <?php if (!in_array($itemId, [101, 114, 105, 107, 108, 109, 110, 118, 120, 121, 122, 123, 124])) : ?>
-      <div class="container contentBl">
+      <div class="container article">
         <jdoc:include type="component" />
       </div>
     <?php endif; ?>
-
-    <!-- begin Menu page Blog -->
-    <?php if ($itemId == 118) : ?>
-      <div class="container-fluid contentBlBlog">
-        <div class="container">
-          <div class="row">
-            <h1 class="col-xs-12 col-md-9 blogHeader">Блог</h1>
-            <div class="clearfix"></div>
-            <div class="col-xs-12 col-md-9">
-              <jdoc:include type="component" />
-            </div>
-            <div class="hidden-xs hidden-sm col-md-3 rightSideMenuBl">
-              <jdoc:include type="modules" name="rightSideMenuBl" />
-            </div>
-          </div>
-        </div>
-      </div>
-    <?php endif; ?>
-    <!-- end    Menu page Blog -->
 
     <!-- begin jdoc:include type="modules" name="lastNews" style="xhtml"  -->
     <jdoc:include type="modules" name="lastNews" style="xhtml" />
@@ -143,96 +136,90 @@
       <!--end   jdoc:include type="modules" name="s-19-vacancies" -->
     </div>
 
-    <div class="container-fluid">
-      <!--begin jdoc:include type="modules" name="customModule"-->
-      <jdoc:include type="modules" name="customModule" />
-      <!--end   jdoc:include type="modules" name="customModule" -->
-    </div>
 
-    <!-- begin jdoc:include type="modules" name="s-08-services" style="services" -->
-    <jdoc:include type="modules" name="s-08-services" style="services" />
-    <!-- end   jdoc:include type="modules" name="s-08-services" style="services" -->
-
-    <div class="container-fluid no-ready-to-call-bl">
+  <!-- begin Menu page Blog -->
+  <!-- TODO move to separate template -->
+  <?php if ($itemId == 118) : ?>
+    <div class="container-fluid contentBlBlog">
       <div class="container">
         <div class="row">
-          <jdoc:include type="modules" name="notReadyToCall" style="xhtml" />
+          <h1 class="col-xs-12 col-md-9 blogHeader">Блог</h1>
+          <div class="clearfix"></div>
+          <div class="col-xs-12 col-md-9">
+            <jdoc:include type="component" />
+          </div>
+          <div class="hidden-xs hidden-sm col-md-3 rightSideMenuBl">
+            <jdoc:include type="modules" name="rightSideMenuBl" />
+          </div>
         </div>
       </div>
     </div>
+  <?php endif; ?>
+  <!-- end    Menu page Blog -->
 
-    <?php #for Home page only  ?>
-    <?php if ($itemId == 101) : ?>
-      <div class="container-fluid profitable-it-outsourcing">
-        <div class="container">
-          <div class="row">
-            <jdoc:include type="modules" name="profitableItOutsourcing" style="xhtml" />
-          </div>
-        </div>
+  <!-- Blog's blue box -->
+  <div class="container-fluid">
+    <!--begin jdoc:include type="modules" name="customModule"-->
+    <jdoc:include type="modules" name="customModule" />
+    <!--end   jdoc:include type="modules" name="customModule" -->
+  </div>
+
+  <!-- begin jdoc:include type="modules" name="s-08-services" style="services" -->
+  <jdoc:include type="modules" name="s-08-services" style="services" />
+  <!-- end   jdoc:include type="modules" name="s-08-services" style="services" -->
+
+  <div class="container-fluid notReadyToCall">
+    <div class="container">
+      <div class="row">
+        <jdoc:include type="modules" name="s-10-notReadyToCall" style="xhtml" />
       </div>
-    <?php endif; ?>
+    </div>
+  </div>
 
-    <jdoc:include type="modules" name="itOutsourcingCalculator" style="xhtml" />
-
-    <!-- for Home page, /contacts and /services/outsourcing -->
-    <?php if (in_array($itemId, [101, 106, 115])) : ?>
-      <div class="container-fluid">
-        <div id="map">
-        </div>
-        <script>
-          function initMap() {
-            var mapDiv = document.getElementById('map');
-            var map = new google.maps.Map(mapDiv, {
-                center: {
-                  lat: 50.4070134,
-                  lng: 30.6364289
-                },
-                zoom: 16,
-                scrollwheel: false
-            });
-            var marker = new google.maps.Marker({
-                position: {lat: 50.4070134, lng: 30.6364289},
-                map: map,
-                title: 'StarLink'
-            });
-          }
-        </script>
-        <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcF4_JMyp4KWtLS_HwnKlAOw7Q9OCNleA&callback=initMap">
-        </script>
+  <div class="container-fluid profitable-it-outsourcing">
+    <div class="container">
+      <div class="row">
+        <jdoc:include type="modules" name="s-11-profitableItOutsourcing" style="xhtml" />
       </div>
-    <?php endif; ?>
-    <!-- / for Home page, /contacts and /services/outsourcing -->
+    </div>
+  </div>
 
-    <jdoc:include type="modules" name="reviews" style="xhtml" />
 
-    <div class="pre-footer"></div>
+  <jdoc:include type="modules" name="itOutsourcingCalculator" style="xhtml" />
 
-    <footer class="footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3 col-xs-12 copyright">
-            &copy; 2016 &nbsp; <a href="<?php echo JURI::base(); ?>">Старлинк</a>
-          </div>
-          <div class="col-md-6 col-xs-12">
-            <jdoc:include type="modules" name="footerMenu" />
-          </div>
-          <div class="col-md-3 col-xs-12">
-            <jdoc:include type="modules" name="footerSocNetworks" />
-          </div>
+  <!-- begin doc:include type="modules" name="s-12-googleMap" style="none" -->
+  <jdoc:include type="modules" name="s-12-googleMap" style="none" />
+  <!-- end   doc:include type="modules" name="s-12-googleMap" style="none" -->
+
+  <jdoc:include type="modules" name="reviews" style="xhtml" />
+
+  <div class="pre-footer"></div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-xs-12 copyright">
+          &copy; 2016 &nbsp; <a href="<?php echo JURI::base(); ?>">Старлинк</a>
         </div>
-      </div>
-    </footer>
-
-    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modalContactFormBlock">
-      <div class="modal-dialog modal-custom-form" role="document">
-        <div class="modal-content">
-          <button type="button" class="modalFormCloseBtn close" data-dismiss="modal">
-          </button>
-          <jdoc:include type="modules" name="modalContactForm" />
+        <div class="col-md-6 col-xs-12">
+          <jdoc:include type="modules" name="footerMenu" />
+        </div>
+        <div class="col-md-3 col-xs-12">
+          <jdoc:include type="modules" name="footerSocNetworks" />
         </div>
       </div>
     </div>
+  </footer>
+
+  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="modalContactFormBlock">
+    <div class="modal-dialog modal-custom-form" role="document">
+      <div class="modal-content">
+        <button type="button" class="modalFormCloseBtn close" data-dismiss="modal">
+        </button>
+        <jdoc:include type="modules" name="modalContactForm" />
+      </div>
+    </div>
+  </div>
 
 </body>
 
