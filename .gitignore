@@ -8,6 +8,9 @@ tmp/
 
 node_modules/
 bower_components/
+0joomla/
+0joomla*
+0joomla*/
 
 # Web-server settings and directives for indexing robots
 
