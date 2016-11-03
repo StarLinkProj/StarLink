@@ -1,0 +1,127 @@
+/*
+  -------------------------------------------------------------------------------------------------------------------------
+  If you edit this file, your modifications will be overwritten during the next upgrade.
+  If you need to modify the appearance of the forms, add your own css rules to the style sheets bundled with your template.
+  -------------------------------------------------------------------------------------------------------------------------
+*/
+@import 'https://fonts.googleapis.com/css?family=Open+Sans';
+
+/* For the form controls */
+div#fox-container-uid
+{
+	font-size: 16px;
+	line-height: 24px;
+	font-family: 'Open Sans', sans-serif;
+	color: #939393;
+	text-shadow: 1px 2px 1px rgb(0, 0, 0);
+	background: #383838 url("../../../media/com_foxcontact/images/noise.png");
+}
+
+div#fox-container-uid .fox-form .control-group
+{
+	margin-bottom: 1.5em;
+}
+
+div#fox-container-uid .fox-form input,
+div#fox-container-uid .fox-form textarea,
+div#fox-container-uid .fox-form button
+{
+	border-radius: 21px;
+	font: inherit;
+}
+
+div#fox-container-uid .fox-form input[type="text"],
+div#fox-container-uid .fox-form textarea
+{
+	height: 42px;
+	padding: 0 20px;
+	border: 0 solid #8c8c8c;
+	color: #8c8c8c;
+	background: rgba(40, 40, 40, 0.4);
+	box-shadow: -1px -1px 0 rgba(255, 255, 255, 0.4) inset, 1px 1px 3px rgba(0, 0, 0, 0.8) inset;
+	font-size: 18px;
+	transition: all .2s linear 0s;
+	text-shadow: 1px 2px 1px #000000;
+}
+
+div#fox-container-uid .fox-form input[type="text"]:focus,
+div#fox-container-uid .fox-form textarea:focus
+{
+	color: #b5b5b5;
+	background: rgba(0, 0, 0, 0.4);
+	transition: all .2s linear 0s;
+}
+
+/* Placeholder style documentation at https://css-tricks.com/almanac/selectors/p/placeholder-shown/ */
+/* Firefox 19+ */
+div#fox-container-uid .fox-form input[type="text"]::-moz-placeholder,
+div#fox-container-uid .fox-form textarea::-moz-placeholder
+{
+	/* Firefox attenuates the color applied here, so it is required to set a color a little lighter */
+	color: #d0d0d0;
+}
+
+div#fox-container-uid .fox-form textarea
+{
+	padding: 20px;
+}
+
+div#fox-container-uid .fox-form button
+{
+	height: 42px;
+	border: none;
+	background: #a6a6a6 linear-gradient(to bottom, #f1f1f2, #595b5d);
+	box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7) inset, 1px 1px 1px rgba(0, 0, 0, 0.5);
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.7), 0 -1px 1px rgba(0, 0, 0, 0.5);
+	color: #333333;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 0 48px;
+}
+
+div#fox-container-uid .fox-form button:hover
+{
+	background: #F5F5F5 linear-gradient(to bottom, #ffffff, #707070);
+}
+
+
+/* == Demo content specific style == */
+div#fox-container-uid h2
+{
+	color: #c2c2c2;
+	text-shadow: 1px 2px 1px #000000;
+}
+div#fox-container-uid p
+{
+	width: 300px;
+	max-width: 100%;
+	text-align: justify;
+}
+div#fox-container-uid .fox-form button
+{
+	width: 300px;
+	max-width: 100%;
+}
+
+
+/* Chosen (partial) */
+/*
+div#fox-container-uid .chzn-container
+{
+	font-size: 18px;
+}
+
+div#fox-container-uid .chzn-container-single .chzn-single
+{
+	height: 42px;
+	line-height: 40px;
+	border-radius: 21px;
+	border: none;
+	padding: 0 20px;
+	background: transparent linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.4));
+}
+div#fox-container-uid .chzn-container-active .chzn-single
+{
+	border: none;
+}
+*/

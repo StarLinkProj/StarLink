@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<metadata>
+
+	<layout title="COM_FOXCONTACT_VIEW_DEFAULT_TITLE">
+		<message>COM_FOXCONTACT_FOXCONTACT_VIEW_DEFAULT_TITLE</message>
+	</layout>
+
+	<!-- this block must be identical to the one in the module except for: default-scope="component" -->
+	<fields name="params" addfieldpath="/administrator/components/com_foxcontact/models/fields">
+
+		<fieldset name="visualdesigner" label="COM_FOXCONTACT_FIELDS_LBL">
+			<field name="design" type="visualdesigner" filter="raw" default="{}" default-scope="component"/>
+		</fieldset>
+
+		<fieldset name="actions" label="COM_FOXCONTACT_ACTIONS_LBL">
+
+			<field type="tabs" css="design">
+				<field type="tabpane" id="action-admin" active="1" label="COM_FOXCONTACT_ADMINS" icon="mail">
+					<field type="Legend" icon="mail" help="http://www.fox.ra.it/forum/enquiries-processors/11143-e-mail-notification-templates.html">
+						COM_FOXCONTACT_ADMINS_ACTION
+					</field>
+
+					<field type="container" element="div" class="row-fluid">
+						<field type="container" element="div" class="span4">
+							<!-- translate_default="1" doesn't work for the module -->
+							<field name="to_address" type="ftext" size="26" label="COM_FOXCONTACT_EMAIL_TO" description="COM_FOXCONTACT_EMAIL_TO_DSC" wizard="user.email"/>
+							<field name="cc_address" type="ftext" size="26" label="COM_FOXCONTACT_EMAIL_CC_LBL" description="COM_FOXCONTACT_EMAIL_CC_DSC" wizard="system.email.if.neq.user.email"/>
+							<field name="bcc_address" type="text" size="26" label="COM_FOXCONTACT_EMAIL_BCC_LBL" description="COM_FOXCONTACT_EMAIL_BCC_DSC"/>
+
+							<field name="email_subject" type="ftext" size="26" label="COM_FOXCONTACT_SUBJECT" description="COM_FOXCONTACT_SUBJECT_DSC" wizard="COM_FOXCONTACT_SUBJECT_DFLT"/>
+						</field>
+						<field type="container" element="div" class="span8">
+							<field name="email_body" type="fhtmleditor" filter="raw" label="COM_FOXCONTACT_EMAIL_TEMPLATE_LBL" template="admin_email_tmpl"/>
+						</field>
+					</field>
+				</field>
+
+				<field type="tabpane" id="action-user" label="COM_FOXCONTACT_USER" icon="user">
+					<field type="Legend" icon="user" help="http://www.fox.ra.it/forum/enquiries-processors/11143-e-mail-notification-templates.html">
+						COM_FOXCONTACT_USER_ACTION
+					</field>
+
+					<field type="container" element="div" class="row-fluid">
+						<field type="container" element="div" class="span4">
+							<field name="user_notification" type="radio" label="JENABLED" description="COM_FOXCONTACT_EMAIL_USER_DSC" class="btn-group btn-group-yesno" default="1">
+								<option value="1">JYES</option>
+								<option value="0">JNO</option>
+							</field>
+							<field name="email_copy_subject" type="ftext" size="26" label="COM_FOXCONTACT_SUBJECT" description="COM_FOXCONTACT_SUBJECT_DSC" wizard="COM_FOXCONTACT_EMAIL_COPY_SUBJECT_DFLT"/>
+						</field>
+						<field type="container" element="div" class="span8">
+							<field name="email_copy_body" type="fhtmleditor" filter="raw" label="COM_FOXCONTACT_EMAIL_TEMPLATE_LBL" showon="user_notification:1" template="user_email_tmpl"/>
+						</field>
+					</field>
+				</field>
+
+				<field type="tabpane" id="action-messenger" label="COM_FOXCONTACT_MESSENGER" icon="comment">
+					<field type="Legend" icon="comment" help="http://www.fox.ra.it/forum/enquiries-processors/3692-joomla-private-messages-delivery-configuration.html">
+						COM_FOXCONTACT_JMESSENGER_OPTIONS_LBL
+					</field>
+
+					<field type="container" element="div" class="row-fluid">
+						<field type="container" element="div" class="span4">
+							<field name="jmessenger_user" type="fuser" label="COM_FOXCONTACT_JMESSENGER_LBL" description="COM_FOXCONTACT_JMESSENGER_DSC" wizard="user.id"/>
+							<field name="jmessenger_subject" type="ftext" size="26" label="COM_FOXCONTACT_SUBJECT" description="COM_FOXCONTACT_SUBJECT_DSC" wizard="COM_FOXCONTACT_SUBJECT_DFLT"/>
+							<field type="fspacer" label="COM_FOXCONTACT_JMESSENGER_LINK" url="index.php?option=com_messages"/>
+						</field>
+						<field type="container" element="div" class="span8">
+							<field name="jmessenger_body" type="fhtmleditor" filter="raw" label="COM_FOXCONTACT_EMAIL_TEMPLATE_LBL" template="jmessenger_tmpl"/>
+						</field>
+					</field>
+				</field>
+
+				<field type="tabpane" id="action-onscreen" label="COM_FOXCONTACT_ONSCREEN" icon="screen">
+					<field type="Legend" icon="screen">COM_FOXCONTACT_ONSCREEN_ACTION</field>
+					<field type="container" element="div" class="row-fluid">
+						<field type="container" element="div" class="span4">
+							<field name="show_onscreen_message" type="radio" label="COM_FOXCONTACT_ONSCREEN_MESSAGE" description="COM_FOXCONTACT_ONSCREEN_MESSAGE_DSC" class="btn-group btn-group-yesno" default="1">
+								<option value="1">JYES</option>
+								<option value="0">JNO</option>
+							</field>
+							<field name="do_onscreen_redirect" type="radio" label="COM_FOXCONTACT_ONSCREEN_REDIRECT" description="COM_FOXCONTACT_ONSCREEN_REDIRECT_DSC" class="btn-group btn-group-yesno" default="0">
+								<option value="1">JYES</option>
+								<option value="0">JNO</option>
+							</field>
+							<field name="onscreen_redirect_item" type="menuitem" label="COM_FOXCONTACT_ONSCREEN_REDIRECT_ITEM" showon="do_onscreen_redirect:1"/>
+						</field>
+						<field type="container" element="div" class="span8">
+							<field name="onscreen_message_content" type="fhtmleditor" filter="raw" label="COM_FOXCONTACT_ONSCREEN_MESSAGE_CONTENT" showon="show_onscreen_message:1" template="onscreen_tmpl"/>
+						</field>
+					</field>
+				</field>
+
+				<field type="tabpane" id="action-database" label="COM_FOXCONTACT_DATABASE" icon="database">
+					<field type="Legend" icon="database" help="http://www.fox.ra.it/forum/enquiries-processors/10367-database-collector-and-export-to-excel.html">
+						COM_FOXCONTACT_DELIVERY_DB
+					</field>
+					<field name="delivery_db" type="radio" label="JENABLED" description="COM_FOXCONTACT_DELIVERY_DB_DSC" class="btn-group btn-group-yesno" default="1">
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+					</field>
+					<field type="fspacer" label="COM_FOXCONTACT_DELIVERY_DB_LINK" url="index.php?option=com_foxcontact&amp;view=enquiries"/>
+				</field>
+			</field>
+
+		</fieldset>
+
+		<fieldset name="security" label="COM_FOXCONTACT_SECURITY_LBL">
+
+			<field type="Legend" icon="shield">COM_FOXCONTACT_ANTISPAM_LBL</field>
+			<field name="spam_check" type="radio" label="JENABLED" description="COM_FOXCONTACT_ANTISPAM_ENABLED_DSC" class="btn-group btn-group-yesno" default="1">
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>
+
+			<field name="spam_words" type="ftextarea" cols="30" rows="3" label="COM_FOXCONTACT_ANTISPAM_WORDS_LBL" description="COM_FOXCONTACT_ANTISPAM_WORDS_DSC" wizard="COM_FOXCONTACT_SPAMWORDS_DFLT"/>
+
+			<field name="spam_detected_text" type="ftextarea" rows="4" cols="48" filter="raw" label="COM_FOXCONTACT_ANTISPAM_MESSAGE_LBL" description="COM_FOXCONTACT_ANTISPAM_MESSAGE_DSC" wizard="COM_FOXCONTACT_SPAMTEXT_DFLT"/>
+			<field name="spam_detected_textdisplay" type="hidden" default="1"/>
+
+			<field name="spam_log" type="radio" label="COM_FOXCONTACT_ANTISPAM_LOG_LBL" description="COM_FOXCONTACT_ANTISPAM_LOG_DSC" class="btn-group btn-group-yesno" default="1">
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>
+
+		</fieldset>
+
+	</fields>
+
+</metadata>

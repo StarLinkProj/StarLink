@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="module" version="1.6.0" client="site" method="upgrade">
+    <name>TopCloud</name>
+    <author>Bob Galway</author>
+    <creationDate>June 2016</creationDate>
+    <copyright>Copyright Bob Galway. All rights reserved.</copyright>
+    <license>GNU General Public License version 3</license>
+    <authorEmail>reply@blackdale.com</authorEmail>
+    <authorUrl>www.blackdale.com</authorUrl>
+    <version>5.0.4</version>
+    <description>TOPCLOUD300</description>
+    <languages>
+        <language tag="en-GB">language/en-GB/en-GB.mod_topcloud300.ini</language>
+        <language tag="fr-FR">language/fr-FR/fr-FR.mod_topcloud300.ini</language>
+        <language tag="de-DE">language/de-DE/de-DE.mod_topcloud300.ini</language>
+        <language tag="ru-RU">language/ru-RU/ru-RU.mod_topcloud300.ini</language>
+    </languages>
+    <files>
+        <filename module="mod_topcloud300">mod_topcloud300.php</filename>
+        <filename>index.html</filename>
+        <filename>gpl3.txt</filename>
+        <filename>helper.php</filename>
+        <folder>tmpl</folder>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="TITLE">
+                <field name="title"  type="text" default="" label="TC300_TITLE" description="TC300_TITLE_DESC" />
+                <field name="titletag" type="list" default="span" label="TC300_TITLE_TAG" description="TC300_TITLE_TAG_DESC">
+                    <option value="p">&lt; p &gt;</option>
+                    <option value="h1">&lt; h1 &gt;</option>
+                    <option value="h2">&lt; h2 &gt;</option>
+                    <option value="h3">&lt; h3 &gt;</option>
+                    <option value="h4">&lt; h4 &gt;</option>
+                    <option value="h5">&lt; h5 &gt;</option>
+                    <option value="h6">&lt; h6 &gt;</option>
+                    <option value="span">&lt; span &gt;</option>
+                </field>
+                <field name="titlealign" type="list" default="center" label="TC300_TITLE_ALIGN" description="TC300_TITLE_ALIGN_DESC">
+                    <option value="center">TC300_TITLE_ALIGN_OPT1</option>
+                    <option value="right">TC300_TITLE_ALIGN_OPT2</option>
+                    <option value="left">TC300_TITLE_ALIGN_OPT3</option>
+                </field>
+                <field name="titlecolour" type="color" default="000000" label="TC300_TITLECOLOUR" />
+                <field name="tfont" type="list" default="arial" label="TC300_TITLE_FONT" description="TC300_TITLE_FONT_DESC">
+                    <option value="arial">Arial</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="trebuchet">Trebuchet</option>
+                    <option value="georgia">Georgia</option>
+                    <option value="times">Times</option>
+                    <option value="courier">Courier</option>
+                    <option value="andale mono">Andale</option>
+                </field>
+                <field name="tfontweight" type="list" default="600" label="TC300_TITLE_FONTWEIGHT" description="TC300_TITLE_FONTWEIGHT_DESC">
+                    <option value="400">400</option>
+                    <option value="600">600</option>
+                    <option value="800">800</option>
+                </field>
+            </fieldset>
+            <fieldset name="LINKS">
+                <field name="sub4" label="TC300_SUB4" type="spacer" />
+                <field name="font" type="list" default="arial" label="TC300_CLOUD_TAGS_FONT" description="TC300_CLOUD_TAGS_FONT_DESC">
+                    <option value="arial">Arial</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="trebuchet">Trebuchet</option>
+                    <option value="georgia">Georgia</option>
+                    <option value="times">Times</option>
+                    <option value="courier">Courier</option>
+                    <option value="andale">Andale</option>
+                </field>
+                <field name="fontweight" type="list" default="400" label="TC300_CLOUD_TAGS_FONTWEIGHT" description="TC300_CLOUD_TAGS_FONTWEIGHT_DESC">
+                    <option value="400">400</option>
+                    <option value="600">600</option>
+                    <option value="800">800</option>
+                </field>
+                <field name="scale" type="list" default="1" label="TC300_CLOUD_TAGS_FONTSCALE" description="TC300_CLOUD_TAGS_FONTSCALE_DESC">
+                    <option value="0.8">TC300_SMALL</option>
+                    <option value="1">TC300_MEDIUM</option>
+                    <option value="1.2">TC300_LARGE</option>
+                </field>
+                <field name="sub20" label="TC300_SUB20" type="spacer" />
+                    <field name="keycolour" type="list" default="grey" label="TC300_MODULE_KEY_COLOUR" description="TC300_MODULE_KEY_COLOUR_DESC">
+                    <option value="grey">TC300_KEYCOLOUR_OPT7</option>
+                    <option value="red">TC300_KEYCOLOUR_OPT1</option>
+                    <option value="orange">TC300_KEYCOLOUR_OPT2</option>
+                    <option value="yellow">TC300_KEYCOLOUR_OPT3</option>
+                    <option value="green">TC300_KEYCOLOUR_OPT4</option>
+                    <option value="blue">TC300_KEYCOLOUR_OPT5</option>
+                    <option value="purple">TC300_KEYCOLOUR_OPT6</option>
+                </field>
+                <field name="customcolour" type="list" default="2" label="TC300_TAG_CUSTOMCOLOUR" description="TC300_TAG_CUSTOMCOLOUR_DESC">
+                    <option value="1">TC300_TAG_CUSTOMCOLOUR_OPT1</option>
+                    <option value="2">TC300_TAG_CUSTOMCOLOUR_OPT2</option>
+                </field>
+                <field name="link" type="color" default="000000" label="TC300_LINK" description="TC300_LINK_DESC" />
+                <field name="visited" type="color" default="000000" label="TC300_VISITED" description="TC300_VISITED_DESC" />
+                <field name="hover" type="color" default="000000" label="TC300_HOVER" description="TC300_HOVER_DESC" />
+                <field name="hoverbg" type="color" default="ffffff" label="TC300_HOVERBG" description="TC300_HOVERBG_DESC" />
+                <field name="active" type="color" default="000000" label="TC300_ACTIVE" description="TC300_ACTIVE_DESC" />
+                <field name="activebg" type="color" default="ffffff" label="TC300_ACTIVEBG" description="TC300_ACTIVEBG_DESC" />
+            </fieldset>
+            <fieldset name="GRAPHICS">
+                <field name="graphics" type="list" default="2" label="TC300_GRAPHICS" description="">
+                    <option value="1">JYES</option>
+                    <option value="2">JNO</option>
+                </field>
+                <field name="sub23" label="TC300_SUB23" type="spacer" />
+
+                <field name="bgpattern" type="imagelist" default="Herring.png" label="TC300_BG_PATTERN" directory="modules/mod_topcloud300/tmpl/images/backgrounds/" tripext="1" />
+                <field name="colour1" type="color" default="9CC0FF" label="TC300_MODULE_INTERIOR_COLOUR_BACKGROUND_LABEL" />
+                <field name="trans1" type="list" default="1" label="TC300_MODULE_COLOUR1_BACKGROUND">
+					<option value="1">TC300_COLOUR</option>
+					<option value="2">TC300_TRANS</option>
+				</field>
+                <field name="sub24" label="TC300_SUB24" type="spacer" />
+                <field name="bordercol" type="color" default="" label="TC300_MODULE_COLOUR_BORDER" />
+                <field name="bordersz" type="list" default="4" label="TC300_BORDERSZ" >
+					<option value="0">0</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+                    <option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+                    <option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+                    <option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+                    <option value="18">18</option>
+					<option value="19">19</option>
+					<option value="10">20</option>
+				</field>
+                <field name="shadcol" type="color" default="444444" label="TC300_SHAD_COLOUR" />
+                <field name="shadsz" type="list" default="4" label="TC300_SHADSZ" >
+					<option value="0">0</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+                    <option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+                    <option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+                    <option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+                    <option value="18">18</option>
+					<option value="19">19</option>
+					<option value="10">20</option>
+				</field>
+            </fieldset>
+            <fieldset name="INCLUDE">
+                <field name="sub5" label="TC300_SUB5" type="spacer" />
+                <field name="keywords" type="list" default="1" label="TC300_KEYWORD" description="TC300_KEYWORD_DESC">
+                    <option value="1">JYES</option>
+                    <option value="2">JNO</option>
+                </field>
+                <field name="articles" type="list" default="1" label="TC300_ARTICLE" description="TC300_ARTICLE_DESC">
+                    <option value="1">JYES</option>
+                    <option value="2">JNO</option>
+                </field>
+                <field name="weblinks" type="list" default="2" label="TC300_WEBLINK" description="TC300_WEBLINK_DESC">
+                    <option value="1">JYES</option>
+                    <option value="2">JNO</option>
+                </field>
+                <field name="categories" type="list" default="2" label="TC300_CATEGORIES" description="TC300_CATEGORIES_DESC">
+                    <option value="1">JYES</option>
+                    <option value="2">JNO</option>
+                </field>
+                <field name="newsfeeds" type="list" default="2" label="TC300_NEWSFEEDS" description="TC300_NEWSFEEDS_DESC">
+                    <option value="1">JYES</option>
+                    <option value="2">JNO</option>
+                </field>
+                <field name="contacts" type="list" default="2" label="TC300_CONTACTS" description="TC300_CONTACTS_DESC">
+                    <option value="1">JYES</option>
+                    <option value="2">JNO</option>
+                </field>
+                <field name="tags" type="list" default="2" label="Joomla Tags" >
+                    <option value="1">JYES</option>
+                    <option value="2">JNO</option>
+                </field>
+                <field name="sub6" label="TC300_SUB6" type="spacer" />
+                <field name="exclude" type="textarea" default="" label="TC300_EXCLUDE_LABEL" description="TC300_EXCLUDE_DESC" rows="8"/>
+                <field name="include" type="textarea" default="" label="TC300_INCLUDE_LABEL" description="TC300_INCLUDE_DESC" rows="8"/>
+                <field name="sub7" label="TC300_SUB7" type="spacer" />
+                <field name="start" type="text" default="0" label="TC300_START_LABEL" description="TC300_START_DESC" />
+                <field name="length" type="text" default="100" label="TC300_LENGTH_LABEL" description="TC300_LENGTH_DESC" />
+                <field name="wordmin" type="list" default="4" label="TC300_WORDMIN" description="">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </field>
+                <field name="wordmax" type="list" default="50" label="TC300_WORDMAX" description="">
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="30">30</option>
+                    <option value="35">35</option>
+                    <option value="40">40</option>
+                    <option value="45">45</option>
+                    <option value="50">50</option>
+                    <option value="60">60</option>
+                    <option value="70">70</option>
+                    <option value="80">80</option>
+                    <option value="90">90</option>
+                    <option value="100">100</option>
+                </field>
+                <field name="lang" type="language" client="site" default="*" label="TC300_LANG" description="TC300_LANG_DESC">
+                    <option value="*">JALL</option>
+                </field>
+                <field name="all_lang" type="list" default="*" label="TC300_UNC_LANG">
+                    <option value="*">TC300_UNC_LANG_OPT1</option>
+                    <option value="xxx">TC300_UNC_LANG_OPT2</option>
+                </field>
+                <field name="xchars" type="textarea" default="" label="TC300_XCHARS_LABEL" description="TC300_XCHARS_DESC" rows="8" />
+            </fieldset>
+            <fieldset name="ADMIN">
+                <field name="sub1" label="TC300_SUB1" type="spacer" />
+                <field type="list" default="1" label="TC300_LANDING_LABEL" description="TC300_LANDING_DESC" name="pageselect">
+                    <option value="1">TC300_PAGE_SAME</option>
+                    <option value="2">TC300_PAGE_MENU</option>
+                </field>
+                <field type="menuitem" default="1" label="TC300_LANDING_MENU_LABEL" description="TC300_LANDING_MENU_DESC" name="menuitem" />
+                <field name="modno" type="list" default="0" label="TC300_MODNO_LABEL" description="TC300_MODNO_DESC">
+                    <option value="0">TC300_MODNO_OPT0</option>
+                    <option value="TC1">TC300_MODNO_OPT1</option>
+                    <option value="TC2">TC300_MODNO_OPT2</option>
+                    <option value="TC3">TC300_MODNO_OPT3</option>
+                    <option value="TC4">TC300_MODNO_OPT4</option>
+                    <option value="TC5">TC300_MODNO_OPT5</option>
+                    <option value="TC6">TC300_MODNO_OPT6</option>
+                    <option value="TC7">TC300_MODNO_OPT7</option>
+                    <option value="TC8">TC300_MODNO_OPT8</option>
+                </field>
+                <field type="list" default="1" label="TC300_PHRASE_LABEL" description="TC300_PHRASE_DESC" name="phrase">
+                    <option value="1">OPT_PHRASE</option>
+                    <option value="2">OPT_SINGLE</option>
+                </field>
+                <field type="list" default="1" label="TC300_SHUFFLE_LABEL" description="TC300_SHUFFLE_DESC" name="shuffle">
+                    <option value="1">JYES</option>
+                    <option value="2">JNO</option>
+                </field>
+
+                <field type="list" default="1" label="TC300_LOGREQ_LABEL" description="TC300_LOGREQ_DESC" name="logreq">
+                    <option value="1">JYES</option>
+                    <option value="2">JNO</option>
+                </field>
+                <field name="sub2" label="TC300_SUB2" type="spacer" />
+                <field name="margin-leftmodule" type="text" default="" label="TC300_LEFT_MARGIN_LABEL" description="TC300_LEFT_MARGIN_DESC" />
+                <field name="paddingleft" type="text" default="" label="TC300_PADDING_LEFT" description="TC300_PADDING_LEFT_DESC" />
+                <field name="paddingright" type="text" default="" label="TC300_PADDING_RIGHT" description="TC300_PADDING_RIGHT_DESC" />
+                <field name="paddingtop" type="text" default="" label="TC300_PADDING_TOP" description="TC300_PADDING_TOP_DESC" />
+                <field name="paddingbottom" type="text" default="" label="TC300_PADDING_BOTTOM" description="TC300_PADDING_BOTTOM_DESC" />
+                <field name="margin-top" type="text" default="5" label="TC300_TOP_MARGIN" description="TC300_TOP_MARGIN_DESC" />
+                <field name="margin-bottom" type="text" default="5" label="TC300_BOTTOM_MARGIN" description="TC300_BOTTOM_MARGIN_DESC" />
+                <field name="width" type="text" default="100" label="TC300_WIDTH" description="TC300_MODULE_WIDTH" />
+                <field name="widthunit" type="list" default="%" label="TC300_WIDTH_UNIT" description="TC300_WIDTH_UNIT">
+                    <option value="%">TC300_WIDTH_UNIT_OPT2</option>
+                    <option value="px">TC300_WIDTH_UNIT_OPT1</option>
+                </field>
+                <field name="colour2" type="color" default="FFFFFF" label="TC300_MODULE_COLOUR_BACKGROUND" />
+                <field name="trans2" type="list" default="2" label="TC300_MODULE_COLOUR_BACKGROUND">
+                    <option value="1">TC300_COLOUR</option>
+                    <option value="2">TC300_TRANS</option>
+                </field>
+                <field name="ctag" type="textarea" default="" filter="raw" label="TC300_CTAG" description="TC300_CTAG_DESC" rows="10"/>
+                <field name="moduleclass_sfx" type="text" default="" label="TC300_MODULE_CLASS_SUFFIX_LABEL" description="TC300_MODULE_CLASS_SUFFIX_DESC" />
+            </fieldset>
+        </fields>
+    </config>
+    <updateservers>
+		<server type="extension" name="Blackdale" priority="1"><![CDATA[http://updates.blackdale.com/update/topcloud300/topcloud300.xml]]></server>
+	</updateservers>
+</extension>
