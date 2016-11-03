@@ -4,6 +4,12 @@
 defined('_JEXEC') or die;
 
 $css = "
+    /* TopCloud300 Starts */
+    a.cloud".$modno.":link{text-decoration:none !important;color:".$link.";}
+
+    a.cloud".$modno.":visited{text-decoration:none !important;color:".$visited.";}
+    a.cloud".$modno.":hover{text-decoration:none !important;color:".$hover.";background:".$hoverbg.";}
+    a.cloud".$modno.":active{text-decoration:none !important;color:".$active.";background:".$activebg.";}
 
     #holder".$modno."{width:".$width.$widthunit.";";
 if (!empty($margintop)) {

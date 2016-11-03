@@ -6,7 +6,7 @@ defined('_JEXEC') or die;
 // Retrieve selected words
 $user = JFactory::getUser();
 $cond='';
-if (($user->guest)&&($logreq==1)) {$cond='AND (`access`=1) ';}
+if (($user->guest)&&($logreq==1)) {$cond='AND (`access`=1)';}
 
 $db = JFactory::getDBO();
 if ($keywords == 1) {
@@ -20,10 +20,9 @@ if ($keywords == 1) {
     }
 }
 if ($articles == 1) {
-    $db->setQuery('SELECT * FROM `#__content` WHERE `catid`=11 AND `state`=1 AND (`language`="' . $lang .
+    $db->setQuery('SELECT * FROM `#__content` WHERE `state`=1 AND (`language`="' . $lang .
         '" OR `language`="' . $all_lang . '") '.$cond);
     $contents = $db->loadObjectList();
-
     $i = 0;
     while (!empty($contents[$i])) {
         $querytext .= ($contents[$i]->title) . ',';

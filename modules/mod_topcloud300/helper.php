@@ -59,7 +59,7 @@ class modtopcloud300Helper
         foreach ($data as $tag => $count) {
             $size = $minFontSize + ($count - $minimumCount) * ($maxFontSize - $minFontSize) / $spread;
             $tag = str_replace("###", " ", $tag);
-            $links .= '<a class="cloudTagsSingleTag cloud' . $no .'" href="' . $url1 . 'index.php?searchword=' . $tag .'&ordering=&searchphrase=exact&Itemid=' . $menu . '&option=com_search" >' . $tag .'</a>'. PHP_EOL."\t\t\txxx";
+            $links .= '<a style="font-family:' . $font1 . ';font-weight:' . $fontweight1 . ';font-size: ' . (floor($size) * ($scale1)) . 'px" class="cloud' . $no .'" href="' . $url1 . 'index.php?searchword=' . $tag .'&ordering=&searchphrase=exact&Itemid=' . $menu . '&option=com_search" >' . $tag .'</a>'. PHP_EOL."\t\t\txxx";
         }
         $cloudTags= array();
         $cloudTags=explode("xxx", $links);
