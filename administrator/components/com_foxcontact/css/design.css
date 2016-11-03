@@ -1,0 +1,84 @@
+/* Loaded by the class JFormFieldTabs, used in Menu Item editing, Module editing.
+Must be divided into field specific parts.
+Probably the part of the editor fixes are no longer required */
+
+#jform_params_email_body_ifr, /* TinyMce*/
+#jform_params_email_copy_body_ifr
+{
+	height: auto !important;
+}
+
+.editor, /* TinyMce*/
+textarea#jform_params_email_body, /* No editor*/
+textarea#jform_params_email_copy_body,
+div.CodeMirror:not(.CodeMirror-fullscreen), /* Codemirror*/
+div#jform_params_email_body_parent, /* JCE*/
+div#jform_params_email_copy_body_parent
+{
+	max-width: 680px;
+}
+
+/* Actions tab */
+#attrib-actions .span6
+{
+	padding: 0 16px;
+}
+
+#attrib-actions legend
+{
+	position: relative;
+}
+
+#attrib-actions .icon-question-circle
+{
+	position: absolute;
+	right: .25em; /* It's not 0 to compensate the right margin set by isis */
+	top: 10px;
+}
+
+html[dir="rtl"] #attrib-actions .icon-question-circle
+{
+	right: auto;
+	left: 10px;
+}
+
+#attrib-actions
+{
+	color: #555555;
+}
+
+#attrib-actions legend
+{
+	color: inherit;
+}
+
+#attrib-actions .control-label
+{
+	width: 160px;
+}
+
+#attrib-actions .controls
+{
+	margin: 0;
+}
+
+/* Fixes the dropdown list of chosen select partially hidden by the bottom border */
+#attrib-actions .tab-pane
+{
+	min-height: 500px;
+}
+
+/* Joomla 3.3 backward compatibility */
+form [class^="icon-"],
+form [class*=" icon-"]
+{
+	margin-right: .25em;
+}
+
+html[dir="rtl"] form [class^="icon-"],
+html[dir="rtl"] form [class*=" icon-"]
+{
+	margin-right: 0;
+	margin-left: .25em;
+}
+/* --------------------------------- */

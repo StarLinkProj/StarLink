@@ -1,0 +1,245 @@
+div.control-group.fox-field-full-row .controls
+{
+	margin-left: 0;
+	margin-right: 0;
+}
+
+div.fox-html-editor
+{
+	position: relative;
+	box-sizing: border-box;
+
+	margin: 0 0 32px;
+	padding: 0;
+
+	height: 152px;
+}
+
+iframe.fox-html-editor-iframe
+{
+	border: 1px solid #cccccc;
+	border-bottom: none;
+	border-radius: 3px;
+	box-sizing: border-box;
+
+	width: 100%;
+	height: 100%;
+
+	overflow: auto;
+
+	margin: 0;
+	padding: 0;
+}
+
+div.fox-html-editor-iframe-shadow
+{
+	position: absolute;
+	box-sizing: border-box;
+
+	left: 0;
+	right: 0;
+	bottom: -32px;
+
+	margin: 0;
+	padding: 0;
+
+	height: 32px;
+
+	background: transparent;
+
+	box-shadow: 0 -24px 18px rgba(255, 255, 255, 0.8);
+}
+
+div:hover + div.fox-html-editor-iframe-shadow
+{
+	display: none;
+}
+
+div.fox-html-editor-toolbar
+{
+	border: 1px solid #cccccc;
+
+	opacity: 0;
+
+	position: absolute;
+
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	background: rgba(232, 232, 232, 0.7);
+	border-radius: 3px;
+	box-sizing: border-box;
+
+	width: 100%;
+
+	margin: 0;
+	padding: 0;
+}
+
+div.fox-html-editor-toolbar
+{
+	text-align: right;
+}
+
+html[dir="rtl"] div.fox-html-editor-toolbar
+{
+	text-align: left;
+}
+
+i.fox-html-editor-popup-close,
+i.fox-html-editor-toolbar-edit
+{
+	cursor: pointer;
+
+	margin: 6px;
+}
+
+i.fox-html-editor-popup-close:before,
+i.fox-html-editor-toolbar-edit:before
+{
+	color: #bbbbbb;
+}
+
+i.fox-html-editor-toolbar-ico:before,
+i.fox-html-editor-popup-close:hover:before,
+i.fox-html-editor-toolbar-edit:hover:before
+{
+	color: #777777;
+}
+
+div.fox-html-editor-toolbar:hover,
+iframe:hover + div.fox-html-editor-toolbar
+{
+	opacity: 1;
+}
+
+div.fox-html-editor-pupup
+{
+	display: none;
+
+	position: fixed;
+
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	background: rgba(0, 0, 0, 0.6);
+
+	z-index: 9999;
+}
+
+div.fox-html-editor-pupup-container
+{
+	position: absolute;
+	left: 10%;
+	top: 10%;
+
+	background: white;
+
+	height: 80%;
+	width: 80%;
+	box-sizing: border-box;
+
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+}
+
+div.fox-html-editor-popup-header
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+
+	min-height: 20px;
+
+	background: #eeeeee;
+	padding: 2px;
+
+	border-bottom: 1px solid #cccccc;
+	border-radius: 3px 3px 0 0;
+
+	z-index: 2;
+}
+
+span.fox-html-editor-popup-title
+{
+	color: #777777;
+	font-weight: bold;
+}
+
+div.fox-html-editor-popup-header i
+{
+	margin: 0 2px;
+}
+
+html[dir="rtl"] div.fox-html-editor-popup-header i.fox-html-editor-toolbar-ico,
+div.fox-html-editor-popup-header i.fox-html-editor-popup-close
+{
+	float: right;
+}
+
+div.fox-html-editor-popup-header i.fox-html-editor-toolbar-ico,
+html[dir="rtl"] div.fox-html-editor-popup-header i.fox-html-editor-popup-close
+{
+	float: left;
+}
+
+div.fox-html-editor-popup-main
+{
+	position: absolute;
+
+	top: 33px;
+	bottom: 43px;
+	left: 8px;
+	right: 8px;
+	box-sizing: border-box;
+}
+
+div.fox-html-editor-popup-main .mce-menubar,
+div.fox-html-editor-popup-main .mce-resizehandle
+{
+	display: none;
+}
+
+div.fox-html-editor-popup-footer
+{
+	position: absolute;
+	bottom: 8px;
+	left: 8px;
+	right: 8px;
+}
+
+div.fox-html-editor-popup-footer.btn-toolbar
+{
+	margin: 0;
+}
+
+div.fox-html-editor-popup-footer
+{
+	text-align: right;
+}
+
+html[dir="rtl"] div.fox-html-editor-popup-footer
+{
+	text-align: left;
+}
+
+a.fox-html-editor-popup-save,
+a.fox-html-editor-popup-close
+{
+	font-size: 14px;
+}
+
+textarea.fvd-html-edt-mce
+{
+	box-sizing: border-box;
+
+	width: 100%;
+	height: 100%;
+
+	resize: none;
+}

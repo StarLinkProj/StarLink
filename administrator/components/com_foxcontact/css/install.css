@@ -1,0 +1,61 @@
+#j-main-container > div:first-child, /* Component description j3.4 */
+#j-main-container > form, /* Install tabs j3.4 */
+#j-main-container > table tbody tr:first-child, /* Component description j3.3 */
+#j-main-container > ul.nav-tabs, /* Install tabs j3.3 */
+#j-main-container > div.tab-content /* Install tabs j3.3 */
+{
+	display: none;
+}
+
+#j-main-container > div
+{
+	margin: 0;
+}
+
+#j-main-container h2 {
+	margin-bottom: 0;
+}
+
+#j-main-container h2, #j-main-container h5{
+	font-weight: normal;
+}
+
+#j-main-container h5{
+	margin-top: 0;
+}
+
+.product-logo {
+	float: left;
+	margin: 0 16px 0 -10px;
+}
+
+html[dir="rtl"] .product-logo {
+	float: right;
+	margin: 0 -10px 0 16px;
+}
+
+.info-box {
+	overflow: hidden; /* Consider all the inner elements as a single block */
+	color: #555555;
+}
+
+.info-box > div
+{
+	margin: 0.5em 0;
+}
+
+.info-box > a.btn-primary
+{
+	margin: 2.0em 0;
+	font-size: 14px; /* Set the same width as the icon beside */
+}
+
+.orange {
+	color: #f28e14;
+}
+
+#j-main-container .icon-delete:before
+{
+	color: #942a25;
+}
+

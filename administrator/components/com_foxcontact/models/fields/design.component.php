@@ -1,0 +1,8 @@
+<?php defined('_JEXEC') or die(file_get_contents('index.html'));
+/**
+ * @package   Fox Contact for Joomla
+ * @copyright Copyright (c) 2010 - 2015 Demis Palma. All rights reserved.
+ * @license   Distributed under the terms of the GNU General Public License GNU/GPL v3 http://www.gnu.org/licenses/gpl-3.0.html
+ * @see       Documentation: http://www.fox.ra.it/forum/2-documentation.html
+ */
+return json_encode(array('option' => array(), 'rows' => array(array('columns' => array(array('size' => 12, 'items' => array(array('type' => 'html', 'html' => '<h2>' . JText::_('COM_FOXCONTACT_SUBHEADING_DFLT') . '</h2>' . '<p>' . JText::_('COM_FOXCONTACT_TOP_EXAMPLE_CONTENT') . '</p>'), array('type' => 'board'), array('type' => 'name'), array('type' => 'email'), array('type' => 'text_field', 'label' => JText::_('COM_FOXCONTACT_TELEPHONE_EXAMPLE_LABEL')), array('type' => 'dropdown', 'label' => JText::_('COM_FOXCONTACT_DROPDOWN_EXAMPLE_LABEL'), 'options' => array(array('text' => JText::_('COM_FOXCONTACT_DROPDOWN_EXAMPLE_OPTION_1'), 'to' => ''), array('text' => JText::_('COM_FOXCONTACT_DROPDOWN_EXAMPLE_OPTION_2'), 'to' => ''), array('text' => JText::_('COM_FOXCONTACT_DROPDOWN_EXAMPLE_OPTION_3'), 'to' => ''))), array('type' => 'text_area', 'label' => JText::_('COM_FOXCONTACT_TEXTAREA_EXAMPLE_LABEL')), array('type' => 'checkbox', 'label' => JText::_('COM_FOXCONTACT_CHECKBOX_EXAMPLE_LABEL')), array('type' => 'submit'), array('type' => 'user_info', 'info' => array('device' => true, 'os' => true, 'browser' => true, 'ip' => false)))))))));

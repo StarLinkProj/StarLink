@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<extension type="component" version="3.2" method="upgrade">
+
+	<name>COM_FOXCONTACT</name>
+	<creationDate>Feb 2016</creationDate>
+	<author>Demis Palma</author>
+	<authorEmail>demis@fox.ra.it</authorEmail>
+	<authorUrl>http://www.fox.ra.it/</authorUrl>
+	<copyright>Copyright (c) 2010 - 2015 Demis Palma. All rights reserved.</copyright>
+	<license>GNU/GPL v3</license>
+	<version>3.6.0</version>
+	<requiredVersion>3.5.0</requiredVersion>
+	<description>COM_FOXCONTACT_DESCRIPTION</description>
+	<forum>http://www.fox.ra.it/forum/1-fox-contact-form.html</forum>
+	<rating>http://extensions.joomla.org/extensions/extension/contacts-and-feedback/contact-forms/fox-contact-form</rating>
+	<download>http://www.fox.ra.it/forum/15-installation/478-upgrade-to-a-new-release.html</download>
+	<documentation>http://www.fox.ra.it/forum/2-documentation.html</documentation>
+	<transifex>https://www.transifex.com/fox-labs/fox-contact/</transifex>
+
+	<files folder="site">
+		<folder>controller</folder>
+		<folder>css</folder>
+		<folder>js</folder>
+		<folder>language</folder>
+		<folder>layouts</folder>
+		<folder>sef_ext</folder>
+		<folder>uploads</folder>
+		<folder>views</folder>
+		<filename>controller.php</filename>
+		<filename>foxcontact.php</filename>
+		<filename>index.html</filename>
+		<filename>router.php</filename>
+	</files>
+
+	<media destination="com_foxcontact" folder="media">
+		<folder>css</folder>
+		<folder>fonts</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<filename>index.html</filename>
+	</media>
+
+	<administration>
+		<!-- Administration Menu Section -->
+		<menu>COM_FOXCONTACT_MENU</menu>
+		<!-- Administration Main File Copy Section -->
+		<files folder="admin">
+			<folder>controllers</folder>
+			<folder>css</folder>
+			<folder>js</folder>
+			<folder>language</folder>
+			<folder>layouts</folder>
+			<folder>models</folder>
+			<folder>sql</folder>
+			<folder>tables</folder>
+			<folder>views</folder>
+			<filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<filename>foxcontact.php</filename>
+			<!-- <filename>foxcontact.xml</filename> -->
+			<filename>index.html</filename>
+			<!-- <filename>install.php</filename> -->
+			<filename>LICENSE.txt</filename>
+		</files>
+
+	</administration>
+
+	<scriptfile>install.php</scriptfile>
+
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+
+	<update>
+		<schemas>
+			<schemapath type="mysql">sql/updates/mysql</schemapath>
+		</schemas>
+	</update>
+
+	<updateservers>
+		<server type="extension" priority="1" name="Foxcontact update site"><![CDATA[http://cdn.fox.ra.it/download/foxcontact.xml]]></server>
+	</updateservers>
+
+	<chain>
+		<extension directory="modules" name="lib_foxcontact" type="library"/>
+		<extension directory="modules" name="mod_foxcontact" type="module"/>
+		<extension directory="modules" name="plg_foxcontact" type="plugin"/>
+	</chain>
+
+</extension>
