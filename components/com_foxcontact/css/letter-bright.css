@@ -1,0 +1,175 @@
+/*
+  -------------------------------------------------------------------------------------------------------------------------
+  If you edit this file, your modifications will be overwritten during the next upgrade.
+  If you need to modify the appearance of the forms, add your own css rules to the style sheets bundled with your template.
+  -------------------------------------------------------------------------------------------------------------------------
+*/
+@import 'https://fonts.googleapis.com/css?family=Neucha';
+
+/* For the form controls */
+div#fox-container-uid
+{
+	font-size: 18px;
+	line-height: 1.6em;
+	font-family: 'Neucha', cursive;
+	color: #63553f;
+	background: #f1ebe2 url("../../../media/com_foxcontact/images/noise.png");
+	border: 15px solid #f1ebe2;
+	box-shadow: 0 0 0 1px #ddcfb9 inset;
+}
+
+div#fox-container-uid .fox-form .control-group
+{
+	margin-bottom: 1em;
+}
+
+div#fox-container-uid .fox-form input,
+div#fox-container-uid .fox-form textarea,
+div#fox-container-uid .fox-form button
+{
+	border-radius: 0;
+	font: inherit;
+}
+
+div#fox-container-uid .fox-form input[type="text"],
+div#fox-container-uid .fox-form textarea
+{
+	box-shadow: none;
+	background: transparent;
+
+	height: 40px;
+	border-width: 0 0 1px;
+	border-color: #63553f;
+	color: #63553f;
+}
+
+div#fox-container-uid .fox-form input[type="text"]:focus,
+div#fox-container-uid .fox-form textarea:focus
+{
+	border-color: #332c20;
+	color: #332c20;
+	box-shadow: 0 6px 8px -8px rgba(0,0,0,.5);
+}
+
+/* Placeholder style documentation at https://css-tricks.com/almanac/selectors/p/placeholder-shown/ */
+
+/* Safari, Chrome and Opera */
+div#fox-container-uid .fox-form input[type="text"]::-webkit-input-placeholder,
+div#fox-container-uid .fox-form textarea::-webkit-input-placeholder
+{
+	/* Uniform the color of the placeholder between browsers */
+	color: #63553f;
+}
+
+/* Firefox 19+ */
+div#fox-container-uid .fox-form input[type="text"]::-moz-placeholder,
+div#fox-container-uid .fox-form textarea::-moz-placeholder
+{
+	/* Firefox attenuates the color applied here, so it is required to set a color a little darker */
+	color: #1a1610;
+}
+
+/* Edge */
+div#fox-container-uid .fox-form input[type="text"]::-ms-input-placeholder,
+div#fox-container-uid .fox-form textarea::-ms-input-placeholder
+{
+	color: #63553f;
+}
+
+/* Safari, Chrome and Opera */
+div#fox-container-uid .fox-form input[type="text"]:focus::-webkit-input-placeholder,
+div#fox-container-uid .fox-form textarea:focus::-webkit-input-placeholder
+{
+	color: #998361;
+	/* Transition on focus worked only on Chrome based browsers for me */
+	transition: all .2s linear 0s;
+}
+
+/* Firefox 19+ */
+div#fox-container-uid .fox-form input[type="text"]:focus::-moz-placeholder,
+div#fox-container-uid .fox-form textarea:focus::-moz-placeholder
+{
+	/* Firefox attenuates the color applied here, so it is required to set a color a little darker */
+	color: #63553f;
+}
+
+/* Edge */
+div#fox-container-uid .fox-form input[type="text"]:focus::-ms-input-placeholder,
+div#fox-container-uid .fox-form textarea:focus::-ms-input-placeholder
+{
+	color: #b89e75;
+}
+
+div#fox-container-uid .fox-form button
+{
+	line-height: normal;
+
+	padding: 6px 24px;
+}
+
+div#fox-container-uid .btn-success
+{
+	color: #63553f;
+	text-shadow: none;
+	/* Reset both background-color and background-image in one shot */
+	background: transparent none;
+	filter: none;
+	border-color: #63553f;
+}
+
+div#fox-container-uid .btn-success:hover
+{
+	background-color: #e4d8c6;
+	transition: all .2s linear 0s;
+}
+
+/* == Demo content specific style == */
+div#fox-container-uid .text-center
+{
+	text-align: center;
+}
+
+div#fox-container-uid .border-circle
+{
+	border-radius: 50%;
+	border: 1px solid #ddcfb9;
+	padding: 8px;
+}
+
+div#fox-container-uid h2
+{
+	font-size: 26px;
+	font-weight: normal;
+	margin: 24px 0;
+	line-height: 1.6em;
+	font-family: 'Neucha', cursive;
+	color: #63553f;
+}
+
+div#fox-container-uid h3
+{
+	font-size: 18px;
+	line-height: 1.6em;
+	font-family: 'Neucha', cursive;
+	color: #63553f;
+	font-weight: bold;
+}
+
+div#fox-container-uid h3 i
+{
+	font-weight: normal;
+}
+
+div#fox-container-uid .fox-column
+{
+	padding: 0 16px;
+}
+
+@media (min-width: 768px)
+{
+	div#fox-container-uid .fox-row
+	{
+		margin-top: 50px !important;
+		margin-bottom: 50px !important;
+	}
+}
