@@ -4,7 +4,8 @@
 ?>
 <!doctype html>
 <html lang="<?php echo $this->language; ?>">
-
+<!-- template:<?php echo $this->template; ?> -->
+<!--   itemId:<?php echo $itemId; ?>         -->
 <head>
   <!-- TODO remove redundand & debug css/js in production:
        TODO replace with minified files the rest -->
@@ -26,7 +27,6 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WXQGPR"
                     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <?php echo '<!-- itemId=' . $itemId . '-->'; ?>
   <header class="container-fluid">
     <div class="b-topRow row">
       <div class="col-xs-12 col-sm-8 col-md-3 col-lg-4">
@@ -145,28 +145,7 @@
       <!--end   jdoc:include type="modules" name="s-19-vacancies" -->
     </div>
 
-
-  <!-- begin Menu page Blog -->
-  <!-- TODO move to separate template -->
-  <?php if ($itemId == 118) : ?>
-    <div class="container-fluid contentBlBlog">
-      <div class="container">
-        <div class="row">
-          <h1 class="col-xs-12 col-md-9 blogHeader">Блог</h1>
-          <div class="clearfix"></div>
-          <div class="col-xs-12 col-md-9">
-            <jdoc:include type="component" />
-          </div>
-          <div class="hidden-xs hidden-sm col-md-3 rightSideMenuBl">
-            <jdoc:include type="modules" name="rightSideMenuBl" />
-          </div>
-        </div>
-      </div>
-    </div>
-  <?php endif; ?>
-  <!-- end    Menu page Blog -->
-
-  <!-- Blog's blue box -->
+  <!-- customModule with Component inside -->
   <div class="container-fluid">
     <!--begin jdoc:include type="modules" name="customModule"-->
     <jdoc:include type="modules" name="customModule" />

@@ -4,7 +4,8 @@
 ?>
 <!doctype html>
 <html lang="<?php echo $this->language; ?>">
-<!-- starlink-blog template -->
+<!-- template:<?php echo $this->template; ?> -->
+<!--   itemId:<?php echo $itemId; ?>         -->
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
   <!-- Google Tag Manager -->

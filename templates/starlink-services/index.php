@@ -4,7 +4,8 @@
 ?>
 <!doctype html>
 <html lang="<?php echo $this->language; ?>">
-<!-- starlink-services template -->
+<!-- template:<?php echo $this->template; ?> -->
+<!--   itemId:<?php echo $itemId; ?>         -->
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
   <!-- Google Tag Manager -->
@@ -24,7 +25,6 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WXQGPR"
                     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <?php echo '<!-- itemId=' . $itemId . '-->'; ?>
   <header class="container-fluid">
     <div class="b-topRow row">
       <div class="col-xs-12 col-sm-8 col-md-3 col-lg-4">
