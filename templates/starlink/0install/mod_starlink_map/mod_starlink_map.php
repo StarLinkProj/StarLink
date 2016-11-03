@@ -1,6 +1,10 @@
-/* starlink footer module */
 <?php
-defined( '_JEXEC' ) or die;
+/**
+ * Created by PhpStorm.
+ * User: mao
+ * Date: 01.11.2016
+ * Time: 15:31
+ */
 
 // No direct access
 defined('_JEXEC') or die;
@@ -10,4 +14,4 @@ defined('_JEXEC') or die;
 $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'), ENT_COMPAT, 'UTF-8');
 
 //$title = modStarlinkServicesHelper::getTitle($params);
-require JModuleHelper::getLayoutPath('mod_starlink_footer');
+require JModuleHelper::getLayoutPath('mod_starlink_map');
