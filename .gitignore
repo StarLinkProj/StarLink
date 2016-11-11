@@ -658,4 +658,5 @@ jspm_packages
 ### node template
 
 0-joomla-virgin
-9-dist
+.dist
+/.dist/
