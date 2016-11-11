@@ -3,14 +3,54 @@
 does not containt core Joomla files
 
 ##svg icons
-- include in the template:
+
+### include icon library in the php template:
  
-      require_once '../media/mod_starlink/images/icons.svg';
-- insert icon: 
+```php
+require_once '../media/mod_starlink/images/icons.svg';
+```
+  
+### insert particular icon in HTML: 
 
-      <svg class="icon"> <use xlink:href="#iconCancel" /> </svg>
-- style icon: 
+```html
+<svg class="icon"><use xlink:href="#iconCancel" /></svg>
+```
+  
+### currently available icons:
 
-      .icon    { height: 50px; width: 50px; }
-      svg.icon { fill: blue; }
+- common icons:
+  - `#iconCancel`
+  - `#iconCheck`
+  - `#iconChevronLeft`
+  - `#iconChevronRight`
+  - `#iconExpandLess`
+  - `#iconExpandMore`
+  - `#iconPhone`
+
+- social networks' logos:
+  - `#iconFacebook`
+  - `#iconGooglePlus`
+  - `#iconTwitter`
+
+
+### style/theme icon in CSS 
       
+```css
+/* base/default style */
+.icon { 
+  height: 2em; 
+  width: 2em; 
+}
+
+/* add custom themes */
+svg.icon--main {
+  fill: blue;
+}
+svg.icon--alert {
+  fill: red;
+}
+```
+
+```html
+<svg class="icon icon--main"><use xlink:href="#iconCheck" /></svg>
+<svg class="icon icon--alert"><use xlink:href="#iconCheck" /></svg>
