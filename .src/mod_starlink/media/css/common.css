@@ -103,15 +103,15 @@ a:hover, a:focus {
 /* utility mixin for adding top and bottom margins */
 @define-mixin top $block, $rems {
   .$(block)--top$(rems) {
-    margin-top : $(rems)rem;
+    margin-top : $(rems)rem !important;
   }
 }
 @define-mixin bot $block, $rems {
   .$(block)--bot$(rems) {
-    margin-bottom : $(rems)rem;
+    margin-bottom : $(rems)rem !important;
   }
 }
-@for $i from 0 to 5 {
+@for $i from 0 to 15 {
   @mixin top u, $(i);
   @mixin bot u, $(i);
 }
@@ -126,6 +126,9 @@ a:hover, a:focus {
 }
     .header--spaceDown {
       margin-bottom : 5rem;
+    }
+    .header--left {
+      text-align: start;
     }
     @for $i from 0 to 5 {
       @mixin top header, $(i);

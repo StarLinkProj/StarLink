@@ -1,9 +1,11 @@
 /* postCSS */
-@import "bootstrap.css";
-@import "font-default.css";
+/*@import "bootstrap.css";*/
+/*@import "font-default.css";*/
+@import "_variables";
+@import "_mixins";
 @import "common.css";
 @import "menu.css";
 @import "footer.css";
 @import "article.css";
 @import "survey.css";
-@import "starlink_calculator_outsourcing.css";
+/*@import "starlink_calculator_outsourcing.css";*/
