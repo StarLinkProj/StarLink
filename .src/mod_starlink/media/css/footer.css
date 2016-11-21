@@ -1,0 +1,91 @@
+/********** Footer *********/
+.pre-footer {
+  background: #33383F;
+  flex: 1;
+}
+.footer {
+  background: #33383F;
+  color: #fff;
+  font-weight: bold;
+  padding: 50px 0 50px;
+  width: 100%;
+}
+.footer__link, #footerMenu>li>a {
+  color: #fff;
+  cursor: pointer;
+}
+.footer__link:hover, #footerMenu>li>a:hover {
+  color: #fff;
+  background: transparent;
+  text-decoration : underline;
+}
+#footerMenu li.item-101 {
+  display: none;
+}
+#footerMenu>li {
+  display: inline-block;
+}
+#footerMenu>li>a {
+  display: inline-block;
+  padding: 0 10px;
+}
+.footer__icon {
+  margin: 10px;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: bottom;
+  min-width:40px;
+  height: 40px;
+  text-align:center;
+}
+.footer__svg {
+  position: relative;
+  top: 7px;
+  height: 20px;
+  width: auto;
+  -webkit-transition : all 300ms; -moz-transition : all 300ms; -ms-transition : all 300ms; -o-transition : all 300ms; transition : all 300ms;
+}
+.footer__svg_facebook {
+  fill: #5a7abf;
+  left: -1px;
+}
+.footer__svg_googlePlus {
+  height: 18px;
+  top: 8px;
+}
+.footer__icon:hover, .footer__icon:focus {
+  background: rgba(255, 255, 255, 1);
+  -webkit-transition : all 300ms; -moz-transition : all 300ms; -ms-transition : all 300ms; -o-transition : all 300ms; transition : all 300ms;
+}
+.footer__icon:hover .footer__svg,
+.footer__icon:focus .footer__svg {
+  fill: #111;
+  -webkit-transition : all 300ms; -moz-transition : all 300ms; -ms-transition : all 300ms; -o-transition : all 300ms; transition : all 300ms;
+}
+.footer .container .row > div{
+  text-align: center;
+  margin: 15px 0;
+}
+.footer__socialBlock {
+  position: relative;
+  top: 5px;
+}
+
+/* MEDIA QUERIES
+*********************************************/
+@media (min-width: 768px) {  }
+@media (min-width: 992px) {
+  .footer {
+    padding: 50px 0 165px;
+  }
+  .footer .container .row > div{
+    text-align: left;
+    margin: 0;
+  }
+  .footer__socialBlock {
+    top: -20px;
+  }
+}
+

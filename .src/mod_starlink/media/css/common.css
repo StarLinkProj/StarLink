@@ -1,0 +1,137 @@
+/*
+
+- Resets
+- Base
+- Layout
+- Module
+- State
+- Theme
+
+Include after Bootstrap and Fonts definitions
+
+*/
+
+
+/* RESETS */
+html {
+    /* scrollbar fix (prevent ugly left pull for lower content sites) */
+    overflow-y : scroll;
+    min-height : 100%;
+    height     : 100%;
+}
+body {
+    min-height     : 100%;
+    height         : 100%;
+    position       : relative;
+    display        : flex;
+    flex-direction : column;
+}
+/* repeat definition of Bootstrap's container because of body display=flex */
+.container-fluid {
+    width : 100%;
+}
+
+/***** BASE                      */
+html, body, p, ul, ol, li,
+h1, h2, h3, h4, h5, h6
+.tooltip, .popover {
+  font-family: 'Roboto', Calibri, Arial, sans-serif;
+}
+html, body, p, ul, ol, li,
+.tooltip, .popover
+{
+  font-weight: 300;
+}
+
+:root {
+  --brandColor: #ed1c24;
+  --linkColor:  #3fa2f7;
+  --textColor:  #1b1b1b;
+}
+
+
+a:hover, a:focus {
+  text-decoration : none;
+  cursor          : pointer;
+}
+.clear {
+  clear : both;
+}
+.btnStarlink {
+  display       : block;
+  margin        : 0 auto;
+  padding       : 20px;
+  width         : 80%;
+  color         : #fff;
+  background    : #3FA2F7;
+  border        : 1px solid #fff;
+  border-radius : 30px;
+  outline       : none;
+  text-align    : center;
+  text-shadow   : none;
+  font-weight   : 400;
+  font-size     : 18px;
+  transition    : background 300ms ease-in-out;
+}
+    .btnStarlink:hover,
+    .btnStarlink:focus {
+      background   : #fff;
+      border-color : var(--linkColor);
+      color        : var(--linkColor);
+    }
+    .btnStarlink--narrow {
+      max-width:  300px;
+    }
+    @media (max-width: 991px) {
+      .btnStarlink--narrow {
+        margin-top: 10px;
+        padding:    10px;
+      }
+    }
+
+/* BLOCK: block */
+.block {
+  width: 100%;
+  padding: 0 15px;
+}
+    .block--spaceUp {
+       padding-top: 15px;
+     }
+    .block--spaceDown {
+      padding-bottom: 30px;
+    }
+    .block--grey {
+      background: #F5F6F7;
+      border-top: 1px solid #E1E7EB;
+    }
+    .block--lightGrey {
+      background: #F8F9FA;
+    }
+        .block__header {
+          margin      : 45px auto 20px;
+          text-align  : center;
+          font-size   : 56px;
+          font-weight : 300;
+          color       : var(--textColor);
+        }
+        @media (min-width: 768px) {
+          .block__header {
+            font-size: 72px;
+          }
+        }
+
+.margin-top    { margin-top: 5px; }
+.margin-bottom { margin-bottom: .5em; }
+.margin-bottom-big { margin-bottom: 3rem;}
+
+.header {
+  margin      : 5rem auto 1rem;
+  color       : var(--textColor);
+  font-size   : 42px;
+  line-height : 50px;
+  font-weight : 300;
+  text-align  : center;
+}
+.header--spaceDown {
+  margin-bottom : 5rem;
+}
