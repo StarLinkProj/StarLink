@@ -4,8 +4,6 @@ import gulp     from 'gulp';
 import plugins  from 'gulp-load-plugins';
 import yargs    from 'yargs';
 import rimraf   from 'rimraf';
-import autoprefixer from 'autoprefixer';
-var cssnext = require('postcss-cssnext');
 const $ = plugins();
 
 const paths = {
@@ -64,11 +62,14 @@ export function images() {
 export function postcss() {
   const plugins = [
     require('postcss-import')(),
-    require('postcss-cssnext')({ browsers: ['> 1%'] })
-    /*,
-    autoprefixer({ browsers: ['> 1%'], "cascade": false })*/
+    require('precss')(),
+    require('postcss-sass-extend')(),
+    require('postcss-color-function')(),
+    require('postcss-color-gray')(),
+    require('postcss-cssnext')({ browsers: ['> 1%'] }),
+    require('css-mqpacker')()
   ];
-  return gulp.src(['.src/mod_starlink/media/css/**/styles.css'])
+  return gulp.src(['.src/mod_starlink/media/css/**/*.css'])
   .pipe($.postcss(plugins))
   .pipe($.if(PRODUCTION, $.cssnano()))
   .pipe(gulp.dest('.dist/mod_starlink/media/css'))

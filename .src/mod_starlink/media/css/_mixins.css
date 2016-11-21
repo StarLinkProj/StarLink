@@ -1,0 +1,31 @@
+%hoverButton {
+  display       : block;
+  margin        : 0 auto;
+  color         : #fff !important;
+  background    : $linkColor !important;
+  border        : 1px solid @color !important;
+  border-radius : 30px !important;
+  outline       : none;
+  text-align    : center;
+  text-shadow   : none !important;
+  font-weight   : 400 !important;
+  font-size     : 18px !important;
+  transition    : background 300ms ease-in-out;
+  &:hover,
+  &:focus {
+     border-color : $linkColor !important;
+     color        : $linkColor !important;
+     background   : #fff !important;
+  }
+  &:hover span,
+  &:focus span {
+    color : $linkColor !important;
+  }
+  span {
+    color       : #fff !important;
+    font-weight : 400 !important;
+  }
+}
+
+
+

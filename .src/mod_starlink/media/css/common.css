@@ -1,3 +1,6 @@
+@import "_variables";
+@import "_mixins";
+
 /*
 
 - Resets
@@ -43,13 +46,6 @@ html, body, p, ul, ol, li,
   font-weight: 300;
 }
 
-:root {
-  --brandColor: #ed1c24;
-  --linkColor:  #3fa2f7;
-  --textColor:  #1b1b1b;
-}
-
-
 a:hover, a:focus {
   text-decoration : none;
   cursor          : pointer;
@@ -57,28 +53,12 @@ a:hover, a:focus {
 .clear {
   clear : both;
 }
+
 .btnStarlink {
-  display       : block;
-  margin        : 0 auto;
-  padding       : 20px;
+  @extend %hoverButton;
+  padding       : 1.5rem;
   width         : 80%;
-  color         : #fff;
-  background    : #3FA2F7;
-  border        : 1px solid #fff;
-  border-radius : 30px;
-  outline       : none;
-  text-align    : center;
-  text-shadow   : none;
-  font-weight   : 400;
-  font-size     : 18px;
-  transition    : background 300ms ease-in-out;
 }
-    .btnStarlink:hover,
-    .btnStarlink:focus {
-      background   : #fff;
-      border-color : var(--linkColor);
-      color        : var(--linkColor);
-    }
     .btnStarlink--narrow {
       max-width:  300px;
     }
@@ -112,7 +92,7 @@ a:hover, a:focus {
           text-align  : center;
           font-size   : 56px;
           font-weight : 300;
-          color       : var(--textColor);
+          color       : $textColor;
         }
         @media (min-width: 768px) {
           .block__header {
@@ -120,18 +100,35 @@ a:hover, a:focus {
           }
         }
 
-.margin-top    { margin-top: 5px; }
-.margin-bottom { margin-bottom: .5em; }
-.margin-bottom-big { margin-bottom: 3rem;}
+/* utility mixin for adding top and bottom margins */
+@define-mixin top $block, $rems {
+  .$(block)--top$(rems) {
+    margin-top : $(rems)rem;
+  }
+}
+@define-mixin bot $block, $rems {
+  .$(block)--bot$(rems) {
+    margin-bottom : $(rems)rem;
+  }
+}
+@for $i from 0 to 5 {
+  @mixin top u, $(i);
+  @mixin bot u, $(i);
+}
 
 .header {
   margin      : 5rem auto 1rem;
-  color       : var(--textColor);
+  color       : $textColor;
   font-size   : 42px;
   line-height : 50px;
   font-weight : 300;
   text-align  : center;
 }
-.header--spaceDown {
-  margin-bottom : 5rem;
-}
+    .header--spaceDown {
+      margin-bottom : 5rem;
+    }
+    @for $i from 0 to 5 {
+      @mixin top header, $(i);
+      @mixin bot header, $(i);
+    }
+
