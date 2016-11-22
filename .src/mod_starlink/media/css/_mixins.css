@@ -27,5 +27,24 @@
   }
 }
 
+@define-mixin fillBottom $color: white, $image, $size: 100% {
+  background-color : $color;
+  background       : url($image) no-repeat bottom center;
+  background-size  : $size;
+ }
 
-
+@define-mixin image-spacer $ar: 1.00, $max-height: 600px, $container-width: 1.00 {
+  &:before {
+    content: '';
+    display: inline-block;
+    padding-top: $ar * 100%;
+    vertical-align: middle;
+  }
+  @media (min-width: ($max-height / ($container-width * $ar))) {
+    height: $max-height;
+    &:before {
+       padding-top: 0;
+       height: 100%;
+    }
+  }
+}
