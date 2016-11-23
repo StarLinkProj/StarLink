@@ -1,0 +1,67 @@
+@import "../../../mod_starlink/media/css/_variables";
+
+/* Container for collection of Services */
+.s-ServicesBlock {
+  background: $softBlack;
+}
+
+/* Singular Service */
+.s-ServiceType {
+  display             : flex;
+  align-items         : center;
+  justify-content     : space-around;
+  min-height          : 100px;
+  border              : 1px solid #fff;
+  margin-bottom       : 30px;
+  padding             : 15px 10px;
+  border-radius       : 8px;
+  color               : #fff;
+  cursor              : pointer;
+  transition          : 0.3s;
+}
+.s-ServiceType__imageWrap {
+  flex-grow    : 0;
+  flex-basis   : 80px;
+  max-width    : 80px;
+  min-width    : 80px;
+  text-align   : center;
+  padding-left : 15px;
+}
+.s-ServiceType__linkHeader {
+  display        : block;
+  font-weight    : 900;
+  font-size      : 14px;
+  margin-bottom  : 6px;
+  text-transform : uppercase;
+}
+.s-ServiceType__linkText {
+  display     : block;
+  font-size   : 14px;
+  line-height : 15px;
+  margin      : 0;
+}
+.s-ServiceType__details {
+  padding: 0 15px;
+  flex-basis: 90%;
+}
+.s-ServiceType:hover,
+.s-ServiceType:focus {
+  background : #fff;
+  color      : #1B1B1B;
+  box-shadow : 0 10px 20px rgba(0, 0, 0, 0.5);
+  transition : 0.3s;
+}
+.s-ServiceType:hover .s-ServiceType__linkHeader {
+  color: #D0021B;
+}
+
+/* Change image on hover */
+.s-ServiceType__icon {
+  max-height : 60px;
+  max-width  : 65px;
+  filter     : grayscale(100%) brightness(500%) contrast(120%);
+}
+.s-ServiceType:hover .s-ServiceType__icon,
+.s-ServiceType:focus .s-ServiceType__icon {
+  filter: none;
+}
