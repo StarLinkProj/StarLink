@@ -38,8 +38,7 @@ body {
 html, body, p, ul, ol, li, h1, h2, h3, h4, h5, h6, .tooltip, .popover {
   font-family: $textFont;
 }
-html, body, p, ul, ol, li, .tooltip, .popover
-{
+html, body, p, ul, ol, li, .tooltip, .popover {
   font-weight: 300;
 }
 
@@ -58,15 +57,14 @@ a:hover, a:focus {
 }
     .btnStarlink--narrow {
       max-width:  300px;
-    }
-    @media (max-width: 991px) {
-      .btnStarlink--narrow {
+      @media (max-width: 991px) {
         margin-top: 10px;
         padding:    10px;
       }
     }
 
 /* BLOCK: block */
+/* TODO redo completely */
 .block {
   width: 100%;
   padding: 0 15px;
@@ -90,32 +88,12 @@ a:hover, a:focus {
           font-size   : 56px;
           font-weight : 300;
           color       : $textColor;
-        }
-        @media (min-width: 768px) {
-          .block__header {
+
+          @media (min-width: 768px) {
             font-size: 72px;
           }
         }
 
-/* utility mixin for adding top and bottom margins */
-@define-mixin top $block, $rems {
-  .$(block)--top$(rems) {
-    margin-top : $(rems)rem !important;
-  }
-}
-@define-mixin bot $block, $rems {
-  .$(block)--bot$(rems) {
-    margin-bottom : $(rems)rem !important;
-  }
-}
-@for $i from 0 to 5 {
-  @mixin top u, $(i);
-  @mixin bot u, $(i);
-}
-@for $i from 6 to 12 by 2 {
-  @mixin top u, $(i);
-  @mixin bot u, $(i);
-}
 
 .header {
   margin      : 5rem auto 1rem;
@@ -125,9 +103,6 @@ a:hover, a:focus {
   font-weight : 300;
   text-align  : center;
 }
-    .header--spaceDown {
-      margin-bottom : 5rem;
-    }
     .header--left {
       text-align: start;
     }
@@ -140,23 +115,41 @@ a:hover, a:focus {
       font-size: 20px;
       line-height: 26px;
     }
-    @for $i from 0 to 2 {
-      @mixin top header, $(i);
-      @mixin bot header, $(i);
+    .header--white {
+      color:  color(white a(-20%));
     }
 
-.mainText {
-  font-size: 1.75rem;
-  font-weight: 300;
-  line-height: 2.5rem;
-  margin: 0;
-  padding: 0;
-
+/* styles .u--top{0-12}, .u--bot{0-12}, .u--tb{0-12}, .u--all{0-12} */
+@for $i from 0 to 5 {
+  @mixin top        u, $(i);
+  @mixin bot        u, $(i);
+  @mixin topbot     u, $(i);
+  @mixin allmargins u, $(i);
+}
+@for $i from 6 to 12 by 2 {
+  @mixin top        u, $(i);
+  @mixin bot        u, $(i);
+  @mixin topbot     u, $(i);
+  @mixin allmargins u, $(i);
 }
 
+.contrast--soft {
+  color: $textColorSoft;
+}
+
+.mainText {
+  font-size     : 1.75rem;
+  font-weight   : 300;
+  line-height   : 2.5rem;
+  margin-bottom : 2.5rem;
+}
+
+.text--looseLines {
+  line-height   : 1.5;
+}
 
 /***** LAYOUTS      */
 
 .notReadyToCall {
-  @mixin fillBottom hsl(60, 100 %, 97 %), '../images/main/paper.png', 750 px;
+  @mixin fillBottom hsl(60, 100 %, 97 %), '../images/main/paper.png', 750px;
 }

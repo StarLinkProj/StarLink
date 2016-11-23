@@ -1,10 +1,10 @@
 /********** Footer *********/
 .pre-footer {
-  background: #33383F;
+  background: $softBlack;
   flex: 1;
 }
 .footer {
-  background: #33383F;
+  background: $softBlack;
   color: #fff;
   font-weight: bold;
   padding: 50px 0 50px;

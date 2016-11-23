@@ -1,6 +1,8 @@
-
-$brandColor: #ed1c24;
-$linkColor:  #3fa2f7;
-$textColor:  #1b1b1b;
-$loudFont:   'Roboto', Calibri, Arial, sans-serif;
-$textFont:   $loudFont;
+$softBlack:      #33383f;
+$brandColor:     #ed1c24;
+$linkColor:      #3fa2f7;
+$accentColor:    color($linkColor tint(10%));
+$textColor:      #1b1b1b;
+$textColorSoft:  #373a3c;
+$loudFont:       'Roboto', Calibri, Arial, sans-serif;
+$textFont:       $loudFont;

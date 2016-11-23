@@ -60,7 +60,6 @@
 #modalContactFormBlock form {
   padding: 10px 30px;
 }
-
 #modalContactFormBlock form .controls {
   width: 100%;
 }
@@ -91,15 +90,6 @@ button.modalFormCloseBtn {
   z-index: 10000;
 }
 
-.modalFormCongratulation {
-  position: absolute;
-  background: #fff;
-  z-index: 1000;
-  width: 550px;
-  height: 270px;
-  left: 30px;
-  top: 30px;
-}
 .js-thankYouOutsourcing {
   display: none;
   position: absolute;

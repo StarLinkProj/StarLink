@@ -147,35 +147,37 @@
     }
 
 /* Auto-clear Category Blog & Article-NewsFlash articles           */
-
-@media (min-width:1200px){
-  section.col-lg-1:nth-of-type(12n+1){clear:left;}
-  section.col-lg-2:nth-of-type(6n+1){clear:left;}
-  section.col-lg-3:nth-of-type(4n+1){clear:left;}
-  section.col-lg-4:nth-of-type(3n+1){clear:left;}
-  section.col-lg-6:nth-of-type(odd){clear:left;}
-}
-@media (min-width:992px) and (max-width:1199px){
-  section.col-md-1:nth-of-type(12n+1){clear:left;}
-  section.col-md-2:nth-of-type(6n+1){clear:left;}
-  section.col-md-3:nth-of-type(4n+1){clear:left;}
-  section.col-md-4:nth-of-type(3n+1){clear:left;}
-  section.col-md-6:nth-of-type(odd){clear:left;}
-}
-@media (min-width:768px) and (max-width:991px){
+/*@media (max-width: 767px){*/
+  section.col-xs-1:nth-of-type(12n+1){clear:left;}
+  section.col-xs-2:nth-of-type(6n+1){clear:left;}
+  section.col-xs-3:nth-of-type(4n+1){clear:left;}
+  section.col-xs-4:nth-of-type(3n+1){clear:left;}
+  section.col-xs-6:nth-of-type(odd){clear:left;}
+/*}*/
+@media (min-width: 768px) and (max-width: 991px){
   section.col-sm-1:nth-of-type(12n+1){clear:left;}
   section.col-sm-2:nth-of-type(6n+1){clear:left;}
   section.col-sm-3:nth-of-type(4n+1){clear:left;}
   section.col-sm-4:nth-of-type(3n+1){clear:left;}
   section.col-sm-6:nth-of-type(odd){clear:left;}
 }
-@media (max-width:767px){
-  section.col-xs-1:nth-of-type(12n+1){clear:left;}
-  section.col-xs-2:nth-of-type(6n+1){clear:left;}
-  section.col-xs-3:nth-of-type(4n+1){clear:left;}
-  section.col-xs-4:nth-of-type(3n+1){clear:left;}
-  section.col-xs-6:nth-of-type(odd){clear:left;}
+@media (min-width: 992px) and (max-width: 1199px){
+  section.col-md-1:nth-of-type(12n+1){clear:left;}
+  section.col-md-2:nth-of-type(6n+1){clear:left;}
+  section.col-md-3:nth-of-type(4n+1){clear:left;}
+  section.col-md-4:nth-of-type(3n+1){clear:left;}
+  section.col-md-6:nth-of-type(odd){clear:left;}
 }
+@media (min-width: 1200px) {
+  section.col-lg-1:nth-of-type(12n+1){clear:left;}
+  section.col-lg-2:nth-of-type(6n+1){clear:left;}
+  section.col-lg-3:nth-of-type(4n+1){clear:left;}
+  section.col-lg-4:nth-of-type(3n+1){clear:left;}
+  section.col-lg-6:nth-of-type(odd){clear:left;}
+}
+
+
+
 
 .newsShowMoreNewsRow{
   margin: 20px auto 50px;

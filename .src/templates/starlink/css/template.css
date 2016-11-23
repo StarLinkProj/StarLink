@@ -1,0 +1,830 @@
+@import "../../../mod_starlink/media/css/_variables";
+
+/* FRONTEND CSS
+*********************************************/
+/* TODO change break to 540px */
+
+/****** PARTNERS BLOCK ELEMENTS ******/
+
+.partners {
+/*	color: #373A3C;
+	font-weight: 300;
+	text-align: center;*/
+}
+.partners div div div:last-child {
+  margin-bottom: 45px;
+}
+.partners__heading {
+  margin: 50px 0 20px;
+  font-size: 42px;
+  font-weight: inherit;
+}
+.partners__text {
+	font-size: 16px;
+	line-height: 25px;
+  margin-bottom: 25px;
+}
+.partners__boilerplate {
+	height: 100px;
+	border: 2px solid #cacfd3;
+	border-radius: 8px;
+	display: block;
+	margin: 0 auto 30px;
+	position:relative;
+	max-width: 250px;
+}
+.partners__logo {
+	margin: auto;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+  max-width:95%;
+  height:auto;
+}
+
+
+/* TODO refactor this  */
+/***** IT-OUTSOURCING ELEMENTS *****/
+
+.profitable-it-outsourcing {
+	background: url('../images/main/business.jpg') no-repeat center top;
+	background-size: cover;
+}
+
+.itOutsourcingTopBlWithBg {
+  background: url('../images/main/itOutsourcingTopBlBg.jpg') no-repeat center center;
+  background-size: cover;
+}
+.itOutsourcingTopBlWithBg h3{
+  margin: 210px auto 150px;
+  color: #fff;
+  font-size: 50px;
+  line-height: 60px;
+  text-align: center;
+  font-weight: 300;
+  max-width: 435px;
+}
+
+.itOutsourcingWeProposeYou{
+  background: #F5F6F7;
+}
+.itOutsourcingWeProposeYou h3{
+  margin: 50px 0 20px;
+  text-align: center;
+  font-size: 42px;
+  line-height: 50px;
+  color: #1b1b1b;
+  font-weight: 300;
+}
+.itOutsourcingWeProposeYou h4{
+  font-size: 22px;
+  text-align: center;
+  font-weight: 300;
+}
+.itOutsourcingWeProposeYouCenterText{
+  margin-bottom: 50px;
+}
+.itOutsourcingWeProposeYouCenterText p{
+  font-weight: 300;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+.itOutsourcingWeProposeYouCenterText h4{
+  font-weight: 300;
+  color: #373A3C;
+  font-size: 22px;
+  line-height: 25px;
+}
+.itOutsourcingWeProposeYouIconBlocks{
+  margin-bottom: 55px;
+}
+.itOutsourcingWeProposeYouIconBlocks>div{
+  text-align: center;
+}
+.itOutsourcingWeProposeYouIconBlocks h5{
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 20px;
+  color: #2c2c2c;
+  margin: 20px 15px 30px;
+}
+
+.itOutsourcingCallInfoBl{
+  background: url('../images/main/itOutsourcingCallInfoBl.png') no-repeat center center;
+  background-size: cover;
+}
+.itOutsourcingCallInfoBl h3 {
+  margin: 25px auto 25px;
+  color: #fff;
+  font-size: 32px;
+  line-height: 32px;
+  text-align: center;
+  font-weight: 300;
+}
+.itOutsourcingSingleTextBl {
+  margin: 0 0 40px;
+}
+
+.itOutsourcingSingleTextBl p {
+  font-size: 18px;
+  line-height: 26px;
+  color: #333;
+}
+.itOutsourcingSingleTextBl:first-child{
+  margin: 50px 0 40px;
+}
+
+.bottomScroll {
+  padding-bottom: 20px;
+}
+.bottomScroll--outsourcing { }
+
+@media (min-width: 992px) {
+  .itOutsourcingWeProposeYouCenterText h4{
+    margin: 0 100px;
+  }
+}
+@media screen and (-webkit-min-device-pixel-ratio : 1.5) , screen and (min--moz-device-pixel-ratio : 1.5), (max-width : 767px) {
+  .itOutsourcingWeProposeYou h3 {
+    font-size   : 32px;
+    line-height : 40px;
+  }
+}
+
+
+/******* CUSTOMER REVIEW ELEMENTS *******/
+.customerBlock .container {
+  padding: 0;
+}
+.customerReview {
+  margin-bottom : 40px;
+  border        : 1px solid rgba(155, 155, 155, 0.3);
+  border-radius : 6px;
+  background    : white;
+  color         : $textColor;
+  text-align    : center;
+  padding       : 0 3rem;
+}
+.customerReview__photo {
+  margin-top: -30px;
+}
+.customerReview__name {
+  line-height: 20px;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+.customerReview__company {
+	color: $accentColor ;
+	line-height: 20px;
+	font-size: 16px;
+}
+.customerReview__more {
+  text-align: center;
+  margin-top: 8px;
+  color: #2C99ED;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+/******    /CONTACTS   *******/
+.contactsBl>.row{
+  margin: 0;
+  border-top: 1px solid #E1E7EB;
+}
+.contactsBl>.row:last-child{
+  border-bottom: 1px solid #E1E7EB;
+}
+.contactsBl>.row>div{
+  font-size: 16px;
+  padding: 17px 0 17px 17px;
+  color: #000;
+  font-weight: bold;
+}
+.contactsBl>.row>div:first-child{
+  color: #9B9B9B;
+  font-weight: 300;
+  padding: 17px 0 17px 0;
+}
+.contactsBl>.row .alignRight{
+  text-align: right;
+}
+.sendLetterBl h3, .contactsBl h3{
+	font-size: 32px;
+	font-weight: 300;
+	line-height: 40px;
+}
+.sendLetterBl h3 {
+	margin-bottom: 0;
+}
+.contactsBl h3 {
+	margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .sendLetterBl, .contactsBl, .contactsBl > .row .alignRight * {
+    margin-left  : 0;
+    margin-right : 0;
+  }
+}
+
+
+
+/******   /ABOUT   ******/
+.aboutCompany {
+	background: url('../images/main/aboutBg.jpg') no-repeat center center;
+	background-size: cover;
+  color: #fff;
+  font-weight: 300;
+  text-align: center;
+}
+.aboutCompany__header {
+  margin-top: 100px;
+	margin-bottom: 16px;
+	font-weight: 300;
+	font-size: 42px;
+}
+.aboutCompany__text {
+	font-size: 21px;
+	line-height: 30px;
+	font-weight: 300;
+	margin: 0 30px 40px;
+}
+p.aboutCompany__text:last-child{
+	margin: 10px 0 30px;
+}
+.aboutCompany__icons {
+	margin: 10px auto 60px;
+  text-align: center;
+}
+.aboutCompany__iconText {
+	color: #fff;
+	margin: 20px 0;
+	line-height: 20px;
+  font-weight: 400;
+  -webkit-transition  : 0.3s;
+  transition          : 0.3s;
+}
+.aboutCompany__icons:hover .aboutCompany__iconText,
+.aboutCompany__bottomArrow:hover {
+  color: #ED1C24;
+  -webkit-transition  : 0.3s;
+  transition          : 0.3s;
+}
+.aboutCompany__bottom {
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+@media (min-width: 992px) {
+  .aboutCompany__iconText {
+    padding: 0 20px;
+  }
+  .aboutCompany__icons {
+    padding-bottom: 60px;
+  }
+}
+
+/******  /SERVICES   *******/
+.servicesPageInnerServicesBl{
+	margin-top: 50px;
+}
+.servicesPageInnerServicesBl .consulting{
+	text-align: center;
+	padding: 25px 0;
+	background: #3FA2F7;
+	border-radius: 4px;
+}
+.servicesPageInnerServicesBl .outsourcing{
+	text-align: center;
+	padding: 25px 0 26px;
+	background: #78379D;
+	border-radius: 4px;
+}
+.servicesPageInnerServicesBl .integration{
+	text-align: center;
+	padding: 24px 0;
+	background: #E67E22;
+	border-radius: 4px;
+}
+.servicesPageInnerServicesBl .dataCenter{
+	text-align: center;
+	padding: 25px 0;
+	background: #E74C3C;
+	border-radius: 4px;
+}
+.servicesPageInnerServicesBl .security{
+	text-align: center;
+	padding: 24px 0;
+	background: #40BE65;
+	border-radius: 4px;
+}
+.servicesPageInnerServicesBl .webprojects{
+	 text-align: center;
+	 padding: 25px 0 26px;
+	 background: #EDC054;
+	 border-radius: 4px;
+ }
+.servicesPageInnerServicesBl img.img-responsive{
+	margin: 0 auto;
+}
+.servicesPageInnerServicesBl h4{
+	margin: 20px 0;
+	font-weight: normal;
+  font-size: 24px;
+}
+.servicesPageInnerServicesBl a{
+	color: #3FA2F7;
+}
+.servicesPageInnerServicesBl p{
+	color: #333;
+	margin: 0 0 50px;
+}
+
+/******* /VACANCIES styles *******/
+
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    margin-right:-4px;
+	  vertical-align:top;
+}
+.vacationsBlock{
+	background: #F5F6F7;
+	border-top: 1px solid #E1E7EB;
+}
+.vacationsBlock * {
+	font-weight: 400;
+}
+.vacationsBlock h2 {
+	font-size: 55px;
+	line-height: 60px;
+}
+.vacationsBlock h4 {
+	width: 94%;
+}
+.vacationH2{
+	text-align: center;
+	margin: 45px 0 20px;
+	font-size: 72px;
+	font-weight: 300;
+	line-height: 80px;
+	color: #1b1b1b;
+}
+.vacationH4{
+	width: 600px;
+	margin: 0 auto 50px;
+	color: #9b9b9b;
+	font-size: 21px;
+	line-height: 30px;
+	text-align: center;
+}
+.vacationBl{
+	border-radius: 6px;
+	background: #fff;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+	margin-bottom: 30px;
+}
+.vacationImgBlock{
+	padding: 42px 0;
+	text-align: center;
+	border-radius: 6px 6px 0 0;
+	height: 160px;
+}
+.vacationDeveloper{
+	background: #0072ca;
+}
+.vacationDesigner{
+	background: #E9BE52;
+}
+.vacationCopywriter{
+	background: #753699;
+}
+.vacationEngeneer{
+	background: #3FBE65;
+}
+.vacationTextBlock{
+	padding: 0 20px 20px 20px;
+}
+.vacationTextBlock h3{
+	color: #1b1b1b;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 24px;
+	letter-spacing: 1px;
+}
+@media screen and (-webkit-min-device-pixel-ratio : 1.5) , screen and (min--moz-device-pixel-ratio : 1.5), (max-width : 767px) {
+  .vacationH2, .vacationH4 {
+    font-family : Roboto, sans-serif;
+    font-weight : 300;
+  }
+
+  .vacationsBlock h2 {
+    font-size   : 55px;
+    line-height : 60px;
+  }
+
+  .vacationsBlock h4 {
+    width : 94%;
+  }
+}
+
+
+/*   Solutions page styles
+     ---------------------
+*/
+.solutionBtn{
+	margin: 30px auto 20px;
+}
+
+/*********** Services **********/
+
+/* BLOCK: b-service */
+.b-service {
+  padding-bottom : 50px;
+  font-weight    : 300;
+  font-size      : 16px;
+  line-height    : 1.2;
+  text-align     : left;
+  color          : inherit;
+}
+    .b-service--lightGrey {
+      background: #F5F6F7;
+    }
+    .b-service--dark {
+      background: #33383F;
+      color: #fff;
+    }
+    .b-service--extraMargin {
+      margin-bottom: 40px;
+      padding: 50px 0 30px;
+    }
+    .b-service--outsourceBackground {
+      padding-bottom: 115px;
+      background: url('../images/main/business.jpg') no-repeat center center;
+      background-size: cover;
+    }
+        .b-service__header {
+          margin-top    : 48px;
+          margin-bottom : 20px;
+          font          : inherit;
+          font-size     : 42px;
+          line-height   : 1.05;
+          text-align    : center;
+        }
+            .b-service__header--marginPlus {
+            }
+            .b-service__header--level2 {
+              margin-top    : 4px;
+              margin-bottom : 16px;
+              font-size     : 30px;
+              line-height   : 1;
+            }
+            .b-service__header--left {
+              text-align: left;
+            }
+            .b-service__header--overlay {
+              margin-top    : -100px;
+              margin-bottom : 0;
+              padding       : 0 10px;
+              height        : 100px;
+              font-size     : 22px;
+              font-weight   : 400;
+              color         : #fff;
+              text-shadow   : 0 0 4px #00495b;
+            }
+        .b-service__headerLink {
+          color: inherit;
+        }
+            .b-service__headerLink:hover {
+              color: inherit;
+              text-shadow   : 0 0 16px #008da8;
+            }
+        .b-service__headerImage {
+          display          : block;
+          height           : 166px;
+          width            : 100%;
+          margin-bottom    : 10px;
+          background-color : rgba(255, 255, 255, 0);
+          object-fit       : cover;
+        }
+        .b-service__text {
+          margin-top    : 0;
+          margin-bottom : 16px;
+          font: inherit;
+        }
+            .b-service__text--loud {
+              margin-bottom : 24px;
+              font-size     : 22px;
+              text-align    : center;
+              line-height   : 1.05;
+            }
+            .b-service__text--bolder {
+              font-weight   : 400;
+            }
+            .b-service__text--left {
+              text-align    : left;
+              /*max-width     : 600px;*/
+              padding-left  : 40px;
+              text-indent   : -40px;
+              margin-bottom : 0;
+              line-height   : 1;
+            }
+            .b-service__text--left:last-child {
+              margin-bottom : 24px;
+            }
+            .b-service__text--icon {
+              margin-bottom : 24px;
+              font-size     : 18px;
+              text-align    : center;
+              line-height   : 1.05;
+            }
+        .b-service__icon {
+          fill:  #3FA2F7;
+          height: 30px;
+          width:  30px;
+          margin-right: 10px;
+          vertical-align: text-bottom;
+        }
+        .b-service__glyph {
+          color: #3FA2F7;
+          font-size: 80%;
+        }
+        .b-service__image {
+          margin-top    : 8px;
+          margin-bottom : 20px;
+        }
+            .b-service__image--icon {
+              margin-top: 50px;
+              height: 60px;
+            }
+
+.b-heroImage {
+  background-image    : url('https://placehold.it/2600x1200.png/e8117f/ffffff');  /* placeholder - must be overwrited */
+  background-position : center;
+  background-repeat   : no-repeat;
+  background-size     : cover;
+  font-weight         : 300;
+  font-size           : 50px;
+  line-height         : 1.1;
+  text-align          : center;
+  color               : #fff;
+  text-shadow         : 0 0 16px #333;
+}
+.b-heroImage--outsourcing {
+  background-image    : url('../images/main/itOutsourcingTopBlBg.jpg');
+}
+.b-heroImage--callUs {
+  background-image : url('../images/main/itOutsourcingCallInfoBl.png');
+  max-height       : 115px;
+  position         : relative;
+}
+
+/* top block with image for all solutions */
+.b-heroImage--top {
+  background-image    : url('../images/main/solutions-header-01.jpg');
+  padding:  40px 0;
+}
+/* top blocks with image for services */
+.b-heroImage--integration {
+  background-image : url('../images/main/services-integration-header-01.jpg');
+  padding          : 40px 0;
+}
+.b-heroImage--consulting {
+  background-image : url('../images/main/services-consulting-header-01.jpg');
+  padding          : 40px 0;
+}
+.b-heroImage--datacenter {
+  background-image : url('../images/main/services-datacenter-header-01.jpg');
+  padding          : 40px 0;
+}
+.b-heroImage--security {
+  background-image : url('../images/main/services-security-header-01.jpg');
+  padding          : 40px 0;
+}
+.b-heroImage--webprojects {
+  background-image : url('../images/main/services-webprojects-header-01.jpg');
+  padding          : 40px 0;
+}
+.b-heroImage__header {
+  margin      : 20px 0;
+  font        : inherit;
+  font-size   : 42px;
+  line-height : 1.05;
+  text-align  : center;
+  color       : #fff;
+}
+.b-heroImage__header--level2 {
+  margin    : 0 auto 20px;
+  font-size : 20px;
+}
+.b-heroImage__title {
+  position  : absolute;
+  top       : 50%;
+  left      : 50%;
+  transform : translate(-50%, -50%);
+}
+.b-heroImage__bottomCaption {
+  margin-bottom: 50px;
+}
+.b-flexImage {
+  display         : flex;
+  flex-flow       : row nowrap;
+  justify-content : flex-start;
+  align-items     : center;
+  height:  520px;
+  width:100%;
+}
+.b-flexImage__titleBlock {
+  width     : 100%;
+  max-width : 500px;
+  margin    : auto;
+}
+
+
+.secondaryConsultingMenuBl{
+	border-bottom: 1px solid #E1E7EB;
+	background: #fff;
+}
+.secondaryConsultingMenu a{
+	display: inline-block;
+	color: #3FA2F7;
+	text-transform: uppercase;
+	margin: 0 20px 0 0;
+	padding: 5px 0 5px;
+	border-bottom: 5px solid transparent;
+}
+.secondaryConsultingMenu a.active, .secondaryConsultingMenu a:hover {
+	color: #1B1B1B;
+	font-weight: bold;
+	border-bottom: 5px solid #ED1C24;
+}
+.secondaryConsultingMenu a:hover {
+	font-weight: normal;
+}
+.secondaryConsultingMenu a.active:hover{
+	font-weight: bold;
+}
+
+.scrollBlConsultingBg {
+	background: url('../images/main/services-consulting-header-01.jpg') no-repeat center center;
+	background-size: cover;
+}
+.scrollBlIntegrationBg {
+	background: url('../images/main/services-integration-header-01.jpg') no-repeat center center;
+	background-size: cover;
+}
+.scrollBlDataCenterBg{
+	background: url('../images/main/services-datacenter-header-01.jpg') no-repeat center center;
+	background-size: cover;
+}
+.scrollBlSecurityBg{
+	background: url('../images/main/services-security-header-01.jpg') no-repeat center center;
+	background-size: cover;
+}
+.scrollBlWebProjectsBg{
+	background: url('../images/main/services-webprojects-header-01.jpg') no-repeat center center;
+	background-size: cover;
+}
+.scrollTopBtn{
+	position: absolute;
+	top: 17px;
+	left: 15px;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: 1px solid #fff;
+	cursor: pointer;
+	color: #fff;
+	font-size: 32px;
+	line-height: 32px;
+	text-align: center;
+}
+.scrollTopBtn .scrollTopArrowSpan{
+	display: inline-block;
+	margin: 0 auto;
+}
+.scrollBl{
+	display: none;
+}
+.scrollBl .container{
+	position: relative;
+}
+.scrollBl h4{
+	font-weight: 300;
+	color: #fff;
+	font-size: 42px;
+	line-height: 45px;
+	padding: 5px 0;
+	text-align: center;
+}
+.scrollFixedConsultingBl{
+	position: relative;
+	top: 0;
+	width: 100%;
+	z-index: 100;
+	padding-left: 0;
+	padding-right: 0;
+    transition: all 0.25s ease-in-out;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio : 1.5) , screen and (min--moz-device-pixel-ratio : 1.5), (max-width : 767px) {
+  .scrollTopBtn {
+    display : none;
+  }
+  .secondaryConsultingMenu a {
+    display       : block;
+    margin        : 0 20px 0 0;
+    padding       : 12px 0 7px;
+    border-bottom : 2px solid transparent;
+  }
+  .secondaryConsultingMenu a.active,
+  .secondaryConsultingMenu a:hover {
+    font-weight   : normal;
+    border-bottom : 2px solid #ED1C24;
+  }
+}
+
+
+
+
+/***     THIS IS GOOD - USE FOR ALL SERVICES    ***/
+/*      sticky main image and title container     */
+body>div.custom-services-image-header.sticky {
+  position: fixed;
+  top: 0;
+	width: 100%;
+	max-height: 55px; /* 251px */
+  height: 55px;
+	font-size: 42px;
+	line-height: 45px;
+	padding: 0;
+	margin-top: 0;
+	text-align: left;
+  z-index: 1100;
+	overflow: hidden;
+  transition: all 0.25s ease-in-out;
+}
+.sticky h2 {
+  font-size: 42px;
+  line-height: 45px;
+  margin-top: 0;
+  margin-bottom:0;
+  transition-property: font-size, line-height;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+}
+.sticky h4 {
+  display: none;
+}
+.sticky .services-webprojects-header-background-01,
+.sticky .services-security-header-background-01,
+.sticky .services-datacenter-header-background-01,
+.sticky .services-consulting-header-background-01,
+.sticky .services-integration-header-background-01 {
+  margin-top:   0;
+  margin-bottom:0;
+  padding: 0;
+  transition: all 0.25s ease-in-out;
+}
+
+/***     THIS IS GOOD - USE FOR ALL SERVICES    ***/
+/* secondary sticky menu bar below the main image */
+.scrollFixedConsultingBl.sticky {
+  position: fixed;
+  top: 55px;
+  left: 0px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* MEDIA QUERIES
+*********************************************/
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query -> mobile first strategy */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
+
+/* for higher resolutions (android and retina) */
+@media screen and (-webkit-min-device-pixel-ratio : 1.5) , screen and (min--moz-device-pixel-ratio : 1.5), (max-width : 767px) {
+
+}
