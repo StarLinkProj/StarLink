@@ -151,5 +151,5 @@ a:hover, a:focus {
 /***** LAYOUTS      */
 
 .notReadyToCall {
-  @mixin fillBottom hsl(60, 100 %, 97 %), '../images/main/paper.png', 750px;
+  @mixin fillBottom hsl(60, 100%, 97%), '../images/main/paper.png', 750px;
 }
