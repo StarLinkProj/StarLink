@@ -2,7 +2,7 @@
   display       : block;
   margin        : 0 auto;
   color         : #fff !important;
-  background    : $linkColor !important;
+  background    : var(--linkColor) !important;
   border        : 1px solid @color !important;
   border-radius : 30px !important;
   outline       : none;
@@ -13,13 +13,13 @@
   transition    : background 300ms ease-in-out;
   &:hover,
   &:focus {
-     border-color : $linkColor !important;
-     color        : $linkColor !important;
+     border-color : var(--linkColor) !important;
+     color        : var(--linkColor) !important;
      background   : #fff !important;
   }
   &:hover span,
   &:focus span {
-    color : $linkColor !important;
+    color : var(--linkColor) !important;
   }
   span {
     color       : #fff !important;

@@ -1,8 +1,8 @@
-@import "../../../mod_starlink/media/css/_variables";
+@import "_variables";
 
 /* Container for collection of Services */
 .s-ServicesBlock {
-  background: $softBlack;
+  background: var(--softBlack);
 }
 
 /* Singular Service */

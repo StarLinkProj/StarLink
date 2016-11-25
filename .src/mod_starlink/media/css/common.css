@@ -1,5 +1,5 @@
-@import "_variables.css";
-@import "_mixins.css";
+@import "_variables";
+
 
 /*
 
@@ -36,7 +36,7 @@ body {
 
 /***** BASE                      */
 html, body, p, ul, ol, li, h1, h2, h3, h4, h5, h6, .tooltip, .popover {
-  font-family: $textFont;
+  font-family: var(--textFont);
 }
 html, body, p, ul, ol, li, .tooltip, .popover {
   font-weight: 300;
@@ -87,7 +87,7 @@ a:hover, a:focus {
           text-align  : center;
           font-size   : 56px;
           font-weight : 300;
-          color       : $textColor;
+          color       : var(--textColor);
 
           @media (min-width: 768px) {
             font-size: 72px;
@@ -97,7 +97,7 @@ a:hover, a:focus {
 
 .header {
   margin      : 5rem auto 1rem;
-  color       : $textColor;
+  color       : var(--textColor);
   font-size   : 42px;
   line-height : 50px;
   font-weight : 300;
@@ -134,7 +134,7 @@ a:hover, a:focus {
 }
 
 .contrast--soft {
-  color: $textColorSoft;
+  color: var(--textColorSoft);
 }
 
 .mainText {

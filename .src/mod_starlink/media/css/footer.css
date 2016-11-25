@@ -1,12 +1,12 @@
 @import "_variables";
-@import "_mixins";
+
 /********** Footer *********/
 .pre-footer {
-  background: $softBlack;
+  background: var(--softBlack);
   flex: 1;
 }
 .footer {
-  background: $softBlack;
+  background: var(--softBlack);
   color: #fff;
   font-weight: bold;
   padding: 50px 0 50px;

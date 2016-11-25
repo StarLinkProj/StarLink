@@ -1,9 +1,10 @@
 /** $Module: Menu, Logo, Phone */
 @import "_variables";
-@import "_mixins";
 
-$mobileHeight:   50px;
-$standardHeight: 75px;
+:root {
+  --mobileHeight:   50px;
+  --standardHeight: 75px;
+}
 
 /** $TopHeader */
 .TopHeader {
@@ -21,7 +22,7 @@ $standardHeight: 75px;
   background-repeat: no-repeat;
   background-size: cover;*/
   color                      : #fff;
-  height                     : $mobileHeight;
+  height                     : var(--mobileHeight);
   transition                 : height 300ms, margin 300ms, background-position 300ms;
   transition-timing-function : cubic-bezier(0.95, 0.05, 0.795, 0.035), cubic-bezier(0.95, 0.05, 0.795, 0.035), ease-in-out;
 
@@ -29,7 +30,7 @@ $standardHeight: 75px;
     height: 90px;
     margin-bottom: -16px;
     background-position: left 2600px top 0px;
-    color: $softBlack;
+    color: var(--softBlack);
     transition                 : height 300ms, margin 300ms, background-position 500ms;
     transition-timing-function : cubic-bezier(0.95, 0.05, 0.795, 0.035), cubic-bezier(0.95, 0.05, 0.795, 0.035), ease-in-out;
   }
@@ -83,38 +84,6 @@ $standardHeight: 75px;
 /** $iconPhone */
 
 @keyframes colorwink {
-/*  0% {
-    fill-opacity: 1;
-    fill: orange;
-    padding: 0;
-  }
-  25% {
-    fill-opacity: 0;
-  }
-  33% {
-    padding: 2px;
-  }
-  45% {
-    fill: green;
-  }
-  50% {
-    fill-opacity: 1;
-    padding: 0;
-  }
-  55% {
-    fill: green;
-  }
-  67% {
-    padding: 2px;
-  }
-  75% {
-    fill-opacity: 0;
-  }
-  100% {
-    fill-opacity: 1;
-    fill: orange;
-    padding: 0;
-  }*/
   0% {
     fill: orange;
     fill-opacity: 1;
@@ -152,21 +121,7 @@ $standardHeight: 75px;
   overflow: visible;
   transition: padding 300ms ease-in-out;
   animation: 4s linear 0s infinite alternate colorwink;
-
-/*  @media (min-width: 361px) {
-    top: -2px;
-    right: 5px;
-    width: 30px;
-    height: 30px;
-    padding: 0px;
-  }
-  @media (min-width: 920px) {
-    stroke: grey;
-  }*/
 }
-/*.iconPhone:hover {
-  padding: 0px;
-}*/
 
 
 /** $Phone */
@@ -174,7 +129,7 @@ $standardHeight: 75px;
 .Phone {
   position       : relative;
   color          : #fff;
-  background     : $softBlack;
+  background     : var(--softBlack);
 /*  background-image: url("data:image/svg+xml,%3Csvg width='700' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg%3E%3Crect id='canvas_white' height='100' width='700' y='0' x='0' fill='#fff'/%3E%3C/g%3E%3Cg%3E%3Crect id='rect_black' height='100' width='690' y='0' x='10' fill='$(softBlack)'/%3E%3C/g%3E%3C/svg%3E");
   background-position: 160px top;
   background-repeat: no-repeat;
@@ -264,7 +219,7 @@ $standardHeight: 75px;
 }
 
 .navbar--Starlink {
-  background-color: $softBlack;
+  background-color: var(--softBlack);
   margin-bottom: 0px;
   border: 0px solid transparent;
   right: 0;
@@ -293,7 +248,7 @@ $standardHeight: 75px;
   border: 0px transparent;
   padding: 15px 25px 15px 1px;
   margin: 0;
-  height: $mobileHeight;
+  height: var(--mobileHeight);
   z-index: 10;
 }
 .navbar--Starlink .navbar-toggle .icon-bar {
