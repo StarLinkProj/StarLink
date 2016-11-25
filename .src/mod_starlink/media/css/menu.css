@@ -1,8 +1,9 @@
 /** $Module: Menu, Logo, Phone */
+@import "_variables";
+@import "_mixins";
 
 $mobileHeight:   50px;
 $standardHeight: 75px;
-
 
 /** $TopHeader */
 .TopHeader {

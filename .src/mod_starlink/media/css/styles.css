@@ -1,8 +1,8 @@
 /* postCSS */
 /*@import "bootstrap.css";*/
 /*@import "font-default.css";*/
-@import "_variables";
-@import "_mixins";
+@import "_variables.css";
+@import "_mixins.css";
 @import "common.css";
 @import "menu.css";
 @import "footer.css";
