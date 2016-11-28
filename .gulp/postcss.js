@@ -23,11 +23,6 @@ const pcss_common = () =>
         .pipe($.postcss(postCSSplugins))
         .pipe(gulp.dest(paths.postcss.mod_starlink.build));
 
-const pcss_vendor = () =>
-        gulp.src(paths.postcss.vendor.src)
-        .pipe($.if(DEBUG, $.debug()))
-        .pipe(gulp.dest(paths.postcss.vendor.build));
-
 const pcss_calc = () =>
         gulp.src(paths.postcss.mod_calc.src)
         .pipe($.if(DEBUG, $.debug()))
@@ -49,7 +44,6 @@ export const pcss_templates = () =>
 gulp.task('postcss',
   gulp.parallel(
     pcss_common,
-    pcss_vendor,
     pcss_calc,
     pcss_services,
     pcss_templates
