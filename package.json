@@ -65,6 +65,7 @@
     "postcss-nested": "^1.0.0",
     "postcss-sass-extend": "0.0.1",
     "postcss-simple-vars": "^3.0.0",
+    "postcss-url": "^5.1.2",
     "postcss-use": "^2.3.0",
     "postcss-utilities": "^0.6.1",
     "precss": "^1.4.0",
