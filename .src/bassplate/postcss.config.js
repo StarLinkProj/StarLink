@@ -3,15 +3,15 @@ var postcss = require('postcss')
 
 module.exports = {
   use: [
-    'postcss-cssnext' /*,
+    'postcss-import' ,
     'postcss-custom-media',
     'postcss-custom-properties',
     'postcss-calc',
     'postcss-color-function',
     'postcss-discard-comments',
-    'autoprefixer' */
+    'autoprefixer'
   ],
-  input: 'src/*.css',
+  input: 'src/base.css',
   dir: 'css'
 }
 
