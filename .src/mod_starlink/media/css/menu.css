@@ -1,5 +1,5 @@
 /** $Module: Menu, Logo, Phone */
-@import "_variables";
+/** PostCSS plugins: postcss-custom-properties, postcss-nesting */
 
 :root {
   --mobileHeight:   50px;
@@ -144,11 +144,11 @@
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
 
-  a, a:hover, a:focus {
+  @nest & a, & a:hover, & a:focus {
     color: inherit;
   }
 
-  a, span {
+  @nest & a, & span {
     vertical-align: middle;
   }
 

@@ -1,6 +1,5 @@
-@import "_variables";
-
 /********** Footer *********/
+/** PostCSS plugins: postcss-custom-properties */
 .pre-footer {
   background: var(--softBlack);
   flex: 1;

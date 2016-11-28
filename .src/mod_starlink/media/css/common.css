@@ -1,5 +1,5 @@
-@import "_variables";
-
+/** Styles common to all Starlink modules and templates */
+/** Post-CSS plugins:  mixins, for, nesting, custom-properties */
 
 /*
 
@@ -51,7 +51,7 @@ a:hover, a:focus {
 }
 
 .btnStarlink {
-  @extend %hoverButton;
+  @mixin hoverButton;
   padding : 1.5rem;
   width   : 80%;
 }
@@ -82,17 +82,17 @@ a:hover, a:focus {
     .block--lightGrey {
       background: #F8F9FA;
     }
-        .block__header {
-          margin      : 45px auto 20px;
-          text-align  : center;
-          font-size   : 56px;
-          font-weight : 300;
-          color       : var(--textColor);
+    .block__header {
+      margin      : 45px auto 20px;
+      text-align  : center;
+      font-size   : 56px;
+      font-weight : 300;
+      color       : var(--textColor);
 
-          @media (min-width: 768px) {
-            font-size: 72px;
-          }
-        }
+      @media (min-width: 768px) {
+        font-size: 72px;
+      }
+    }
 
 
 .header {
@@ -120,13 +120,7 @@ a:hover, a:focus {
     }
 
 /* styles .u--top{0-12}, .u--bot{0-12}, .u--tb{0-12}, .u--all{0-12} */
-@for $i from 0 to 5 {
-  @mixin top        u, $(i);
-  @mixin bot        u, $(i);
-  @mixin topbot     u, $(i);
-  @mixin allmargins u, $(i);
-}
-@for $i from 6 to 12 by 2 {
+@for $i from 0 to 2 {
   @mixin top        u, $(i);
   @mixin bot        u, $(i);
   @mixin topbot     u, $(i);

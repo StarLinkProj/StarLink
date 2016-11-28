@@ -13,7 +13,7 @@
 #fox-container-m95  .btn.submit-button.btn.submit-button,
 #fox-container-m100 .btn.submit-button.btn.submit-button,
 #fox-container-m115 .btn.submit-button.btn.submit-button {
-  @extend %hoverButton;
+  @mixin hoverButton;
   padding: 1.5rem 3rem;
 }
 

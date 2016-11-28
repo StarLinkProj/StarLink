@@ -2,6 +2,7 @@
 /*@import "bootstrap.css";*/
 /*@import "font-default.css";*/
 @import "_variables";
+@import "_mixins";
 
 @import "common";
 @import "menu";

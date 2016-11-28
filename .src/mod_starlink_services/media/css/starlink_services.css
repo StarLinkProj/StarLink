@@ -1,4 +1,4 @@
-@import "_variables";
+@import "_variables";  /* Set path to includes via postcss-import options */
 
 /* Container for collection of Services */
 .s-ServicesBlock {
