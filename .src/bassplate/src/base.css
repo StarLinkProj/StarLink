@@ -63,15 +63,25 @@
 /* Custom properties */
 
 :root {
-  --h1: 2rem;
-  --h2: 1.5rem;
-  --h3: 1.25rem;
-  --h4: 1rem;
-  --h5: .875rem;
-  --h6: .75rem;
-
   --font-family: 'Roboto', Calibri, Arial, sans-serif;
+  --body-font-size: 16px;
+  --line-height: 1.5;
+  --h1: 4.236rem;
+  --h2: 2.618rem;
+  --h3: 1.618rem;
+  --h4: 1rem;
+  --h5: 0.618rem;
+  --h6: 0.382rem;
+  --heading-font-weight: 400;
+  --heading-line-height: 1.25;
+  --heading-font-family: var(--font-family);
+  --heading-margin-top: var(--space-2);
+  --heading-margin-bottom: var(--space-1);
+
   --bold-font-weight: 500;
+
+  --paragraph-margin-top: var(--space-2);
+  --paragraph-margin-bottom: var(--space-1);
 
   --textColor:      #1b1b1b;
   --textColorSoft:  #373a3c;

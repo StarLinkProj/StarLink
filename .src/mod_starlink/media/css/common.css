@@ -14,7 +14,6 @@ Include after Bootstrap and Fonts definitions
 
 */
 
-
 /* RESETS */
 html {
     /* scrollbar fix (prevent ugly left pull for lower content sites) */
@@ -35,7 +34,7 @@ body {
 }
 
 /***** BASE                      */
-html, body, p, ul, ol, li, h1, h2, h3, h4, h5, h6, .tooltip, .popover {
+html, p, ul, ol, li, h1, h2, h3, h4, h5, h6, .tooltip, .popover {
   font-family: var(--textFont);
 }
 html, body, p, ul, ol, li, .tooltip, .popover {
@@ -118,14 +117,6 @@ a:hover, a:focus {
     .header--white {
       color:  color(white a(-20%));
     }
-
-/* styles .u--top{0-12}, .u--bot{0-12}, .u--tb{0-12}, .u--all{0-12} */
-@for $i from 0 to 2 {
-  @mixin top        u, $(i);
-  @mixin bot        u, $(i);
-  @mixin topbot     u, $(i);
-  @mixin allmargins u, $(i);
-}
 
 .contrast--soft {
   color: var(--textColorSoft);

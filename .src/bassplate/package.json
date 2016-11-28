@@ -33,7 +33,8 @@
     "minify": "postcss -u cssnano css/base.css -o css/base.min.css",
     "start": "postcss -c postcss.config.js -w",
     "starlink": "postcss -c postcss-starlink.config.js",
-    "debug": "postcss-debug src/debugstyles.css"
+    "debug": "postcss-debug src/debugstyles.css",
+    "prettify": "cd .. & cd css & PrettyCSS base.css > bass.pretty.css --ignore-all"
   },
   "repository": {
     "type": "git",

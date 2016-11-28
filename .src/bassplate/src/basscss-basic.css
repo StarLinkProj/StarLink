@@ -6,7 +6,8 @@
 
 body {
   font-family: var(--font-family);
-  line-height: 1.5;
+  line-height: var(--line-height);
+  font-size: var(--body-font-size);
   margin: 0;
   color: var(--textColor);
   background-color: #fff;
@@ -27,10 +28,11 @@ a {
 
 h1, h2, h3,
 h4, h5, h6 {
-  font-weight: var(--bold-font-weight);
-  line-height: 1.25;
-  margin-top: 1em;
-  margin-bottom: .5em;
+  font-family: var(--heading-font-family);
+  font-weight: var(--heading-font-weight);
+  line-height: var(--heading-line-height);
+  margin-top: var(--heading-margin-top);
+  margin-bottom: var(--heading-margin-bottom);
 }
 
 h1 { font-size: var(--h1) }
@@ -41,8 +43,8 @@ h5 { font-size: var(--h5) }
 h6 { font-size: var(--h6) }
 
 p, dl, ol, ul, pre, blockquote {
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin-top: var(--paragraph-margin-top);
+  margin-bottom: var(--paragraph-margin-bottom);
 }
 
 code,

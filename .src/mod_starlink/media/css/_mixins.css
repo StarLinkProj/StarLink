@@ -30,29 +30,6 @@
   }
 }
 
-/* utility mixin for adding top and bottom margins */
-@define-mixin top $block, $rems {
-  .$(block)--top$(rems) {
-    margin-top : $(rems)rem !important;
-  }
-}
-@define-mixin bot $block, $rems {
-  .$(block)--bot$(rems) {
-    margin-bottom : $(rems)rem !important;
-  }
-}
-@define-mixin topbot  $block, $rems {
-  .$(block)--tb$(rems) {
-    margin-top    : $(rems)rem !important;
-    margin-bottom : $(rems)rem !important;
-  }
-}
-@define-mixin allmargins $block, $rems {
-  .$(block)--all$(rems) {
-    margin : $(rems)rem !important;
-  }
-}
-
 @define-mixin fillBottom $color: white, $image, $size: 100% {
   background-color : $color;
   background       : url($image) no-repeat bottom center;

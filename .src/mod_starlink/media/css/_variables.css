@@ -5,6 +5,6 @@
   --accentColor:    color(var(--linkColor) tint(10%));
   --textColor:      #1b1b1b;
   --textColorSoft:  #373a3c;
-  --loudFont:       'Roboto', Calibri, Arial, sans-serif;
-  --textFont:       var(--loudFont);
+  --textFont:       'Roboto', Calibri, Arial, sans-serif;
+  --loudFont:       var(--textFont);
 };
