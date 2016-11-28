@@ -64,20 +64,22 @@
 
 :root {
   --font-family: 'Roboto', Calibri, Arial, sans-serif;
-  --body-font-size: 16px;
   --line-height: 1.5;
-  --h1: 4.236rem;
-  --h2: 2.618rem;
-  --h3: 1.618rem;
-  --h4: 1rem;
-  --h5: 0.618rem;
-  --h6: 0.382rem;
+  --heading-font-family: var(--font-family);
   --heading-font-weight: 400;
   --heading-line-height: 1.25;
-  --heading-font-family: var(--font-family);
+
+  --h1: 3.375rem;
+  --h2: 2.25rem;
+  --h3: 1.5rem;
+  --h4: 1rem;
+  --h5: 0.667rem;
+  --h6: 0.444rem;
+
   --heading-margin-top: var(--space-2);
   --heading-margin-bottom: var(--space-1);
 
+  --body-font-size: 18px;
   --bold-font-weight: 500;
 
   --paragraph-margin-top: var(--space-2);
@@ -94,5 +96,3 @@
   --border-width: 1px;
   --border-radius: 3px;
 }
-
-
