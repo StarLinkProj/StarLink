@@ -419,11 +419,7 @@ p.aboutCompany__text:last-child{
 	line-height: 24px;
 	letter-spacing: 1px;
 }
-@media screen and (-webkit-min-device-pixel-ratio : 1.5) , screen and (min--moz-device-pixel-ratio : 1.5), (max-width : 767px) {
-  .vacationH2, .vacationH4 {
-    font-family : Roboto, sans-serif;
-    font-weight : 300;
-  }
+
 
   .vacationsBlock h2 {
     font-size   : 55px;
