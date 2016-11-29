@@ -2,15 +2,10 @@
 import gulp     from 'gulp';
 import plugins  from 'gulp-load-plugins';
 const $ = plugins();
-//import requireDir from 'require-dir';
 import yargs    from 'yargs';
 import rimraf   from 'rimraf';
-import path     from 'path';
 import {create as bcCreate} from 'browser-sync';
 const browser = bcCreate();
-import paths from './config.paths';
-
-//requireDir(__dirname + '/.gulp', { recurse: true } );
 
 const PRODUCTION = !!(yargs.argv.production);   // Look for the --production flag in command line
 
@@ -32,29 +27,28 @@ gulp.task('build',
 
 const DEBUG = true;
 
-// helper function to move modules' assets to Joomla /media folder
-const assetRename = path => { path.dirname = path.dirname.replace( '/media', ''); }
 
-const paths = {
+const CodePaths = {
   postcss: {
     basscss: {
       src:   './.src/bassplate/src/base.css',
-      build: './.src/bassplate/css',
-      dest:  './.src/mod_starlink/media/css'
+      dest:  './media/mod_starlink/css'
     },
     mod_starlink: {
-      src: [
-        './.src/mod_starlink/.src/*.css', '!./.src/mod_starlink/.src/_*'
-      ],
-      dest: './.src/mod_starlink/media/css'
+      src:  ['./.src/mod_starlink/css/!(_)*.css', '!(bootstrap)*.css' ],
+      dest:  './media/mod_starlink/css'
     },
     mod_services: {
-      src:   './.src/mod_starlink_services/.src/*.css',
-      dest: './.src/mod_starlink_services/media/css'
+      src:   './.src/mod_starlink_services/css/!(_)*.css',
+      dest:  './media/mod_starlink_services/css'
+    },
+    templates: {
+      src:   './.src/templates/*/css/!(_)*.css',
+      dest:  './templates'
     }
   },
   css: {
-    src:  './.src/mod_starlink*/**/css/*',
+    src: ['./.src/mod_starlink*/**/bootstrap*.css', './.src/mod_starlink_calculator_*/**/*.css' ],
     dest: './media/'
   },
   js: {
@@ -69,23 +63,21 @@ const paths = {
     src:  './.src/mod_starlink*/**/fonts/*',
     dest: './media'
   },
+  code: {
+    src: [ './.src/mod_starlink*/**/*.+(php|xml|html)',
+    dest:  './modules/'
+  },
   other: {
     src: [
       './.src/mod_starlink*/*',
-      './.src/mod_starlink*/!(media|.src)/**/*',
-      './.src/mod_starlink*/media/!(css|fonts|images|js)/**/*'
+      './.src/mod_starlink*/!(css|fonts|images|js|media)/**/*'
     ],
     dest: './.media'
-  },
-  templates: {
-    src:  './.src/templates/**/*.*',
-    dest: './templates'
   }
 };
 
-var postcssImport = require('postcss-import');
-const postCSSplugins = [
-  postcssImport({path: [ ".src/_includes" ]}), require('postcss-mixins'),
+
+const postCSSplugins=[ require('postcss-import')({ path: [".src/_includes"] }), require('postcss-mixins'),
   require('postcss-custom-properties'), require('postcss-apply'), require('postcss-calc'), require('postcss-nesting'), require('postcss-custom-media'),
   require('postcss-media-minmax'), require('postcss-custom-selectors'), require('postcss-color-hwb'), require('postcss-color-gray'),
   require('postcss-color-hex-alpha'),require('postcss-color-function'), require('pixrem'),
@@ -95,48 +87,45 @@ const postCSSplugins = [
 ];
 
 gulp.task('postcss',
-  gulp.parallel(
-      gulp.src(paths.postcss.basscss.src)
-        .pipe($.postcss([postcssImport({from: paths.postcss.basscss.src}), ...postCSSplugins]))
-        .pipe($.if(DEBUG, $.debug({title: 'basscss: '})))
-        .pipe(gulp.dest(paths.postcss.basscss.build))
-        .pipe(gulp.dest(paths.postcss.mod_starlink.dest)),
-      gulp.src(paths.postcss.mod_starlink.src)
-        .pipe($.postcss(postCSSplugins))
-        .pipe($.if(DEBUG, $.debug({title: 'mod_starlink: '})))
-        .pipe(gulp.dest(paths.postcss.mod_starlink.dest)),
-      gulp.src(paths.postcss.mod_services.src)
-        .pipe($.postcss(postCSSplugins))
-        .pipe($.if(DEBUG, $.debug({title: 'mod_services: '})))
-        .pipe(gulp.dest(paths.postcss.mod_services.dest))
-  )
+        gulp.parallel(
+                ()=>gulp.src(CodePaths.postcss.basscss.src)
+                    .pipe($.postcss(postCSSplugins))
+                    .pipe($.if(DEBUG, $.debug({title: 'basscss: '})))
+                    .pipe(gulp.dest(CodePaths.postcss.mod_starlink.dest)),
+                ()=>gulp.src(CodePaths.postcss.mod_starlink.src)
+                    .pipe($.postcss(postCSSplugins))
+                    .pipe($.if(DEBUG, $.debug({title: 'mod_starlink: '})))
+                    .pipe(gulp.dest(CodePaths.postcss.mod_starlink.dest)),
+                ()=>gulp.src(CodePaths.postcss.mod_services.src)
+                    .pipe($.postcss(postCSSplugins))
+                    .pipe($.if(DEBUG, $.debug({title: 'mod_services: '})))
+                    .pipe(gulp.dest(CodePaths.postcss.mod_services.dest)),
+                ()=>gulp.src(CodePaths.postcss.templates.src)
+                    .pipe($.postcss(postCSSplugins))
+                    .pipe($.if(DEBUG, $.debug({title: 'templates: '})))
+                    .pipe(gulp.dest(CodePaths.postcss.templates.dest))
+        )
 );
 
 gulp.task('deploy:css',
-  gulp.parallel(
-    gulp.src(paths.css.src)
-      .pipe($.rename(assetRename))
-      .pipe($.if(DEBUG, $.debug({title: 'allcss 1: '})))
-      .pipe(gulp.dest(paths.css.dest)),
-    gulp.src(paths.postcss.templates.src)
-      .pipe($.if(DEBUG, $.debug({title: 'allcss 2: '})))
-      .pipe($.postcss(postCSSplugins))
-      .pipe(gulp.dest(paths.postcss.templates.dest))
-  )
+        gulp.parallel(
+              ()=>gulp.src(CodePaths.css.src)
+                .pipe($.if(DEBUG, $.debug({title: 'allcss 1: '})))
+                .pipe(gulp.dest(CodePaths.css.dest))
+        )
 );
 
-export const processImagesJsFontsOther = () =>
-  gulp.src([paths.js.src, paths.images.src, path.fonts.src, ...paths.other.src])
-    .pipe($.rename(assetRename))
+export const otherAssets = () =>
+  gulp.src([CodePaths.js.src, CodePaths.images.src, CodePath.fonts.src, ...CodePaths.other.src])
     .pipe($.if(DEBUG, $.debug({title: 'imagesJsFontsOther: '})))
-    .pipe(gulp.dest(paths.js.dest));
+    .pipe(gulp.dest(CodePaths.js.dest));
 
 gulp.task('build:css',
   gulp.series('postcss', 'deploy:css')
 );
 
 gulp.task('build:all',
-  gulp.parallel('build:css', processImagesJsFontsOther)
+  gulp.parallel('build:css', otherAssets)
 );
 
 
@@ -145,7 +134,7 @@ export const serve = () => {
     proxy: "localhost:8000",
     browser: ["chrome"]
   });
-  gulp.watch([...paths.postcss.mod_starlink.src, ...paths.postcss.mod_calc.src, ...paths.postcss.mod_services.src, ...paths.postcss.templates.src], postcss_cycle);
+  gulp.watch([...CodePaths.postcss.mod_starlink.src, ...CodePaths.postcss.mod_calc.src, ...CodePaths.postcss.mod_services.src, ...CodePaths.postcss.templates.src], postcss_cycle);
 };
 
 const postcss_cycle = () => {
