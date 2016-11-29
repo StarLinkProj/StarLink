@@ -64,7 +64,7 @@ const CodePaths = {
     dest: './media'
   },
   code: {
-    src: [ './.src/mod_starlink*/**/*.+(php|xml|html)',
+    src: [ './.src/mod_starlink*/**/*.+(php|xml|html)' ],
     dest:  './modules/'
   },
   other: {
