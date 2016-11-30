@@ -1,4 +1,5 @@
 @import "_01variables";
+@import "_blog";
 
 /* FRONTEND CSS
 *********************************************/
@@ -429,7 +430,7 @@ p.aboutCompany__text:last-child{
   .vacationsBlock h4 {
     width : 94%;
   }
-}
+
 
 
 /*   Solutions page styles

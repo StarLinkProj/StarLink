@@ -1,5 +1,5 @@
-/** Styles common to all Starlink modules and templates */
-/** Post-CSS plugins:  mixins, for, nesting, custom-properties */
+/** Styles common to all Starlink modules and templates
+    Post-CSS plugins:  mixins, for, nesting, custom-properties */
 
 /*
 
@@ -28,6 +28,7 @@ body {
     display        : flex;
     flex-direction : column;
 }
+
 /* repeat definition of Bootstrap's container because of body display=flex */
 .container-fluid {
     width : 100%;
