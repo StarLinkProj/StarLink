@@ -8,7 +8,7 @@
  *
  */
 
-
+@import "_01variables";
 @import 'basscss-basic';
 
 /* Basscss Modules */
@@ -36,12 +36,13 @@
 @import 'basscss-addons/modules/forms';
 @import 'basscss-addons/modules/input-range';
 @import 'basscss-addons/modules/progress';
+*/
 
 @import 'basscss-addons/modules/btn';
 @import 'basscss-addons/modules/btn-primary';
 @import 'basscss-addons/modules/btn-outline';
 @import 'basscss-addons/modules/btn-sizes';
-*/
+
 
 @import 'basscss-addons/modules/colors';
 @import 'basscss-addons/modules/background-colors';
@@ -95,4 +96,7 @@
 
   --border-width: 1px;
   --border-radius: 3px;
+
+  --button-color: white;
+  --button-background-color: var(--linkColor);
 }
