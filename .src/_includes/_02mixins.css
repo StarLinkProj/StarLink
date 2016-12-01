@@ -62,3 +62,34 @@
     }
   }
 }
+
+/** creates block container and x&y centered image block inside it
+
+    .card_block {
+      @mixin _imageBlock_container 100px 250px;
+    }
+    .card_image {
+      @mixin _imageBlock_image;
+    }
+
+    HTML:
+    <div class="card_block"><img class="card_image" src="logo.png"></div>
+
+*/
+
+@define-mixin _imageBlock_container $height $max-width {
+  position: relative;
+  height: $height;
+  max-width: $max-width;
+}
+
+@define-mixin _imageBlock_image $max-width: 95% {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-width: $max-width;
+  height: auto;
+}
