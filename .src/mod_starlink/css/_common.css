@@ -52,14 +52,14 @@ a:hover, a:focus {
 
 .btnStarlink {
   @mixin hoverButton;
-  padding : 1.5rem;
+  padding : 1rem;
   width   : 80%;
 }
     .btnStarlink--narrow {
       max-width:  300px;
       @media (max-width: 991px) {
-        margin-top: 10px;
-        padding:    10px;
+        margin-top: 0.55rem;
+        padding:    0.55rem;
       }
     }
 
@@ -135,6 +135,25 @@ a:hover, a:focus {
 
 /***** LAYOUTS      */
 
+.myauto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
 .notReadyToCall {
   @mixin fillBottom hsl(60, 100%, 97%), '../images/main/paper.png', 750px;
 }
+
+
+/** TYPOGRAPHY */
+.thin, .w300 {
+  font-weight: 300;
+}
+.w200 {
+  font-weight: 200;
+}
+.w100 {
+  font-weight: 100;
+}
+
+
+/** THEMES     */
