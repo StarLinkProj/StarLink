@@ -85,7 +85,9 @@ gulp.task('postcss',
         gulp.parallel(
                 'build:basscss',
                 ()=>gulp.src(CodePaths.postcss.mod_starlink.src)
+                    .pipe($.if(!PRODUCTION, $.sourcemaps.init()))
                     .pipe($.postcss(postCSSplugins))
+                    .pipe($.if(!PRODUCTION, $.sourcemaps.write('.')))
                     .pipe($.if(DEBUG, $.debug({title: 'mod_starlink: '})))
                     .pipe(gulp.dest(CodePaths.postcss.mod_starlink.dest)),
                 ()=>gulp.src(CodePaths.postcss.mod_services.src)
@@ -96,16 +98,16 @@ gulp.task('postcss',
         )
 );
 
-gulp.task('build:css',
-        gulp.series('postcss', 'deploy:css')
-);
-
 gulp.task('deploy:css',
         gulp.parallel(
-              ()=>gulp.src(CodePaths.css.src)
+                ()=>gulp.src(CodePaths.css.src)
                 .pipe($.if(DEBUG, $.debug({title: 'allcss 1: '})))
                 .pipe(gulp.dest(CodePaths.css.dest))
         )
+);
+
+gulp.task('build:css',
+        gulp.series('postcss', 'deploy:css')
 );
 
 export const otherAssets = () =>
