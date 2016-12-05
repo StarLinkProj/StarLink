@@ -18,10 +18,10 @@ $imgBase = JUri::base(true) . '/media/mod_starlink_calculator_outsourcing/images
 			<tr>
 				<td width="15%" class="calcTdRangeNameText">КОЛИЧЕСТВО КОМПЬЮТЕРОВ</td>
 				<td colspan="4" class="pt20">
-					<div id="slider-pc-count"></div>
-					<div id="slider-pc-count-digits">
+					<div id="slider-pc-count" class="mx-auto my0 px2"></div>
+					<div class="digitContainer" id="slider-pc-count-digits">
 						<?php for ($pcCountDigit = 0; $pcCountDigit <= 29; $pcCountDigit++) : ?>
-							<span class="slider-pc-count-digit" data-pcDigit="<?=$pcCountDigit?>"><?=$pcCountDigit?></span>
+							<span class="digit ----slider-pc-count-digit" data-pcDigit="<?=$pcCountDigit?>"><?=$pcCountDigit?></span>
 						<?php endfor; ?>
 					</div>
 				</td>
@@ -29,19 +29,19 @@ $imgBase = JUri::base(true) . '/media/mod_starlink_calculator_outsourcing/images
 			<tr>
 				<td class="calcTdRangeNameText pt15">КОЛИЧЕСТВО ФИЗИЧЕСКИХ СЕРВЕРОВ</td>
 				<td colspan="2" class="pt25 servers-range-td">
-					<div id="slider-server-count"></div>
-					<div id="slider-server-count-digits">
+					<div id="slider-server-count" class="mx-auto my0"></div>
+					<div class="digitContainer" id="slider-server-count-digits">
 						<?php for ($serverCountDigit = 0; $serverCountDigit <= 15; $serverCountDigit++) : ?>
-							<span class="slider-server-count-digit" data-serverDigit="<?=$serverCountDigit?>"><?=$serverCountDigit?></span>
+							<span class="digit ----slider-server-count-digit" data-serverDigit="<?=$serverCountDigit?>"><?=$serverCountDigit?></span>
 						<?php endfor; ?>
 					</div>
 				</td>
 				<td class="virtualServerNameText" width="25%">КОЛИЧЕСТВО ВИРТУАЛЬНЫХ СЕРВЕРОВ</td>
 				<td class="pt25">
-					<div id="slider-virtual-count"></div>
-					<div id="slider-virtual-count-digits">
+					<div id="slider-virtual-count" class="mx-auto my0"></div>
+					<div class="digitContainer" id="slider-virtual-count-digits">
 						<?php for ($serverCountDigit = 0; $serverCountDigit <= 7; $serverCountDigit++) : ?>
-							<span class="slider-virtual-count-digit" data-virtualDigit="<?=$serverCountDigit?>"><?=$serverCountDigit?></span>
+							<span class="digit ----slider-virtual-count-digit" data-virtualDigit="<?=$serverCountDigit?>"><?=$serverCountDigit?></span>
 						<?php endfor; ?>
 					</div>
 				</td>
