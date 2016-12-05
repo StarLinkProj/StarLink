@@ -59,28 +59,131 @@
 */
 
 
+
+
+
 /* Custom properties */
 
+/* Basscss Type Scale */
 :root {
-  --h1: 5.063rem;
+  --h1: 5rem;
   --h2: 3.375rem;
   --h3: 2.25rem;
   --h4: 1.5rem;
   --h5: 1rem;
-  --h6: .667rem;
+  --h6: .75rem;
+  
+  /*
+  --h1: 2rem;
+  --h2: 1.5rem;
+  --h3: 1.25rem;
+  --h4: 1rem;
+  --h5: .875rem;
+  --h6: .75rem;
+  */
+}
 
+
+/* Basscss Typography */
+:root {
+  --bold-font-weight: 400;
+    
+  /*
+  --line-height-1: 1;
+  --line-height-2: 1.125;
+  --line-height-3: 1.25;
+  --line-height-4: 1.5;
+  --letter-spacing: 1;
+  --caps-letter-spacing: .2em;
+  --bold-font-weight: bold;
+  */
+}
+
+
+/* Basscss Border */
+:root {
+  --border-width: 1px;
+  --border-radius: 3px;
+  
+  /*
+  --border-width: 1px;
+  --border-radius: 3px;
+  */
+}
+
+/* Basscss Margin */
+.m25  { margin:        var(--space-25) }
+.mt25 { margin-top:    var(--space-25) }
+.mr25 { margin-right:  var(--space-25) }
+.mb25 { margin-bottom: var(--space-25) }
+.ml25 { margin-left:   var(--space-25) }
+.mx25 { margin-left:   var(--space-25); margin-right:  var(--space-25) }
+.my25 { margin-top:    var(--space-25); margin-bottom: var(--space-25) }
+
+.m35  { margin:        var(--space-35) }
+.mt35 { margin-top:    var(--space-35) }
+.mr35 { margin-right:  var(--space-35) }
+.mb35 { margin-bottom: var(--space-35) }
+.ml35 { margin-left:   var(--space-35) }
+.mx35 { margin-left:   var(--space-35); margin-right:  var(--space-35) }
+.my35 { margin-top:    var(--space-35); margin-bottom: var(--space-35) }
+
+.m45  { margin:        var(--space-45) }
+.mt45 { margin-top:    var(--space-45) }
+.mr45 { margin-right:  var(--space-45) }
+.mb45 { margin-bottom: var(--space-45) }
+.ml45 { margin-left:   var(--space-45) }
+.mx45 { margin-left:   var(--space-45); margin-right:  var(--space-45) }
+.my45 { margin-top:    var(--space-45); margin-bottom: var(--space-45) }
+
+.mxn25 { margin-left: -var(--space-25); margin-right: -var(--space-25); }
+.mxn35 { margin-left: -var(--space-35); margin-right: -var(--space-35); }
+.mxn45 { margin-left: -var(--space-45); margin-right: -var(--space-45); }
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+h6 {
+  line-height: 2;
+  margin-bottom: 1.5rem;
+}
+h5 {
+  line-height: 1.5;
+}
+h4 {
+  line-height: 1;
+}
+h3 {
+  line-height: 1.3333333;
+  margin-bottom: 1.5rem;
+}
+h2 {
+  line-height: 1.3333333;
+  margin-bottom: 3rem;
+}
+h1 {
+  line-height: 1.2;
+  margin-bottom: 4.5rem;
+}
+
+
+:root {
   --font-family: 'Roboto', sans-serif;
-  --body-font-size: 16px;
-  --bold-font-weight: 600;
-  --heading-font-weight:400;
+  --body-font-size: 1em;
+  --heading-font-weight:300;
 
+  --space-25: 1.5rem;
+  --space-35: 3rem;
+  --space-45: 6rem;
+  
   --space-1: .5rem;
   --space-2: 1rem;
   --space-3: 2rem;
   --space-4: 4rem;
-
-  --border-width: 1px;
-  --border-radius: 3px;
 }
+
+
 
 
