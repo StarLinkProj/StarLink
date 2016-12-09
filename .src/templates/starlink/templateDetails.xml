@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 3.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/3.5/template-install.dtd">
+<extension version="3.5" type="template" client="site" method="upgrade">
+	
+	<name>StarLink</name><!-- name the template -->
+	<creationDate>2016-01-07</creationDate><!-- the date your are beginn to code -->
+	<author>Vilan, mao</author><!-- your name (oops, I repeat myself) -->
+	<copyright>Copyright © 2016 starlink.ua</copyright><!-- for who you are coding -->
+	<authorEmail>greenturban@gmail.com</authorEmail><!-- your email address -->
+	<authorUrl>https://starlink.ua</authorUrl><!-- your url -->
+	<version>1.1.0</version><!-- give your template a number -->
+	<description><![CDATA[ 
+		<h1>frontend</h1>
+		<p>Created by <a href="https://starlink.ua" target="_blank">Vilan & Mao | starlink.ua</a>.</p>
+	]]></description><!-- change the description as you like -->
+	
+	<files><!-- no need to change -->
+		<folder>code</folder>
+		<folder>css</folder>
+		<folder>html</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<filename>component.php</filename>
+		<filename>error.php</filename>
+		<filename>index.php</filename>
+		<filename>logic.php</filename>
+		<filename>offline.php</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<filename>templateDetails.xml</filename>
+	</files>
+	
+	<positions>
+		<position>s01-MainMenu</position>
+		<position>s02-Search</position>
+    <position>s03-HeroPosition</position>
+    <position>s04-SubMenu</position>
+    <position>s05-Offer</position>
+    <position>s06-Details</position>
+    <position>s07-AllServices</position>
+    <position>s08-CallToAction</position>
+    <position>s09-InfoBlock</position>
+    <position>s10-BottomBlock</position>
+    <position>s80-FooterMenu</position>
+    <position>s99-ModalContactForm</position>
+    <position>sBlog-RightSideMenu</position>
+    <position>sFox-SendLetter2Us</position>
+  </positions>
+  <config>
+    <fields name="params">
+      <fieldset name="advanced">
+        <field name="googleFont"
+               type="radio"
+               class="btn-group btn-group-yesno"
+               default="0"
+               label="custom Google Fonts"
+               description="Load a Google fonts">
+          <option value="1">JYES</option>
+          <option value="0">JNO</option>
+        </field>
+        <field name="googleFontNameHeadings" class="" type="text" default="Roboto"
+               label="Google Font Name for Headings"
+               description="Example: Open+Sans or Source+Sans+Pro."
+               showon="googleFont:1" />
+        <field name="googleFontNameBody" class="" type="text" default="Roboto"
+               label="Google Font Name for body text"
+               description="Example: Open+Sans or Source+Sans+Pro."
+               showon="googleFont:1" />
+        <field name="mainPhone"  type="text" default="377-090"
+               label="Phone number"
+               description="Phone number without country (area) codes"
+               filter="string" />
+        <field name="mainPhoneCityCode"  type="text" default="044"
+               label="Phone number area code"
+               description="Phone number area/city code"
+               filter="string" />
+        <field name="mainPhoneCountryCode"  type="text" default=""
+               label="Phone number country code"
+               description="Phone number country code, eg. +1, +49, +380"
+               filter="string" />
+        <field name="assetsBasePath"  type="text" default="/media/mod_starlink"
+               label="Base path for template assets"
+               description="Example: images/myTheme (relative to Joomla root)"
+               filter="string" />
+      </fieldset>
+    </fields>
+  </config>
+</extension>
