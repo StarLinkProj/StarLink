@@ -6,27 +6,8 @@ import yargs    from 'yargs';
 import rimraf   from 'rimraf';
 import {create as bcCreate} from 'browser-sync';
 const browser = bcCreate();
-
 const PRODUCTION = !!(yargs.argv.production);   // Look for the --production flag in command line
-
-const cleanBuild = done => rimraf("./.build", done);
-/*gulp.task('build:clean', cleanBuild);
-
-gulp.task('build',
-  gulp.series(
-    'build:clean',
-    gulp.parallel(
-      'postcss',
-      'images',
-      'fonts',
-      'javascript',
-      'other'
-    )
-  )
-);*/
-
 const DEBUG = true;
-
 
 const CodePaths = {
   postcss: {
@@ -86,12 +67,23 @@ const postCSSplugins=[ require('postcss-import')({ path: [".src/_includes"] }), 
   require('css-mqpacker')({sort: true})
 ];
 
+gulp.task('build:templates',
+        ()=>gulp.src(CodePaths.postcss.templates.src)
+            .pipe($.postcss(postCSSplugins))
+            .pipe($.if(DEBUG, $.debug({title: 'templates: '})))
+            .pipe(gulp.dest(CodePaths.postcss.templates.dest))
+);
+
+gulp.task('build:basscss',
+        ()=>gulp.src(CodePaths.postcss.basscss.src)
+            .pipe($.postcss(postCSSplugins))
+            .pipe($.if(DEBUG, $.debug({title: 'basscss: '})))
+            .pipe(gulp.dest(CodePaths.postcss.mod_starlink.dest))
+);
+
 gulp.task('postcss',
         gulp.parallel(
-                ()=>gulp.src(CodePaths.postcss.basscss.src)
-                    .pipe($.postcss(postCSSplugins))
-                    .pipe($.if(DEBUG, $.debug({title: 'basscss: '})))
-                    .pipe(gulp.dest(CodePaths.postcss.mod_starlink.dest)),
+                'build:basscss',
                 ()=>gulp.src(CodePaths.postcss.mod_starlink.src)
                     .pipe($.postcss(postCSSplugins))
                     .pipe($.if(DEBUG, $.debug({title: 'mod_starlink: '})))
@@ -100,11 +92,12 @@ gulp.task('postcss',
                     .pipe($.postcss(postCSSplugins))
                     .pipe($.if(DEBUG, $.debug({title: 'mod_services: '})))
                     .pipe(gulp.dest(CodePaths.postcss.mod_services.dest)),
-                ()=>gulp.src(CodePaths.postcss.templates.src)
-                    .pipe($.postcss(postCSSplugins))
-                    .pipe($.if(DEBUG, $.debug({title: 'templates: '})))
-                    .pipe(gulp.dest(CodePaths.postcss.templates.dest))
+                'build:templates'
         )
+);
+
+gulp.task('build:css',
+        gulp.series('postcss', 'deploy:css')
 );
 
 gulp.task('deploy:css',
@@ -120,12 +113,17 @@ export const otherAssets = () =>
     .pipe($.if(DEBUG, $.debug({title: 'imagesJsFontsOther: '})))
     .pipe(gulp.dest(CodePaths.js.dest));
 
-gulp.task('build:css',
-  gulp.series('postcss', 'deploy:css')
-);
-
 gulp.task('build:all',
   gulp.parallel('build:css', otherAssets)
+);
+
+gulp.task('build:bootstrap', () =>
+        gulp.src('./.src/bootstrap/*.scss')
+        .pipe($.sass({
+          includePaths: [ './.src/_includes', './node_modules/bootstrap-sass/assets/stylesheets' ]
+        }).on('error', $.sass.logError))
+        .pipe(gulp.dest('./.dist/vendors'))
+        .pipe(gulp.dest('./media/mod_starlink/css'))
 );
 
 
@@ -134,7 +132,7 @@ export const serve = () => {
     proxy: "localhost:8000",
     browser: ["chrome"]
   });
-  gulp.watch([...CodePaths.postcss.mod_starlink.src, ...CodePaths.postcss.mod_calc.src, ...CodePaths.postcss.mod_services.src, ...CodePaths.postcss.templates.src], postcss_cycle);
+  gulp.watch([...CodePaths.postcss.mod_starlink.src,  ...CodePaths.postcss.mod_services.src, ...CodePaths.postcss.templates.src], postcss_cycle);
 };
 
 const postcss_cycle = () => {
