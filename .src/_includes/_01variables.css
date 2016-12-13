@@ -7,4 +7,5 @@
     --textColorSoft: #373a3c;
     --textFont: 'Roboto', Calibri, Arial, sans-serif;
     --loudFont: var(--textFont);
+    --fontSize: 14px;
 };

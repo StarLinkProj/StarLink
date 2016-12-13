@@ -7,6 +7,7 @@
 - Base
 - Layout
 - Module
+- Typography
 - State
 - Theme
 
@@ -35,6 +36,10 @@ body {
 }
 
 /***** BASE                      */
+html {
+  font-size: var(--fontSize);
+}
+
 html, p, ul, ol, li, h1, h2, h3, h4, h5, h6, .tooltip, .popover {
   font-family: var(--textFont);
 }
@@ -94,43 +99,8 @@ a:hover, a:focus {
       }
     }
 
-.header {
-  margin      : 5rem auto 1rem;
-  color       : var(--textColor);
-  font-size   : 42px;
-  line-height : 50px;
-  font-weight : 300;
-  text-align  : center;
-}
-    .header--left {
-      text-align: start;
-    }
-    .header--subheader {
-      font-size: 26px;
-      line-height: 32px;
-      font-weight: 500;
-    }
-    .header--small {
-      font-size: 20px;
-      line-height: 26px;
-    }
-    .header--white {
-      color:  color(white a(-20%));
-    }
-
 .contrast--soft {
   color: var(--textColorSoft);
-}
-
-.mainText {
-  font-size     : 1.75rem;
-  font-weight   : 300;
-  line-height   : 2.5rem;
-  margin-bottom : 2.5rem;
-}
-
-.text--looseLines {
-  line-height   : 1.5;
 }
 
 /***** LAYOUTS      */
@@ -140,9 +110,15 @@ a:hover, a:focus {
   margin-bottom: auto;
 }
 .notReadyToCall {
-  @mixin fillBottom hsl(60, 100%, 97%), '../images/main/paper.png', 750px;
+  background-image: url('../images/main/paper.png');
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size  : 750px;
 }
 
+.mbn4 {
+  margin-bottom: -4rem;
+}
 
 /** TYPOGRAPHY */
 .thin, .w300 {
@@ -154,6 +130,48 @@ a:hover, a:focus {
 .w100 {
   font-weight: 100;
 }
+
+.h0 {
+  font-size: 3.375rem;
+}
+.h00 {
+  font-size : 5.06rem;
+}
+
+.mainText {
+  font-size     : 1.75rem;
+  font-weight   : 300;
+  line-height   : 2.5rem;
+  margin-bottom : 2.5rem;
+}
+
+.text--looseLines {
+    line-height   : 1.5;
+  }
+
+.header {
+  margin      : 5rem auto 1rem;
+  color       : var(--textColor);
+  font-size   : 42px;
+  line-height : 50px;
+  font-weight : 300;
+  text-align  : center;
+}
+  .header--left {
+    text-align: start;
+  }
+  .header--subheader {
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: 500;
+  }
+  .header--small {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  .header--white {
+    color:  color(white a(-20%));
+  }
 
 
 /** THEMES     */
