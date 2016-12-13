@@ -36,7 +36,7 @@ const ROOTS = {
   modcalc:     SRC_ROOT + '/mod_starlink_calculator_outsourcing',
   modmaps:     SRC_ROOT + '/mod_starlink_map',
   modservices: SRC_ROOT + '/mod_starlink_services',
-  modstarlink: SRC_ROOT + '/modstarlink',
+  modstarlink: SRC_ROOT + '/mod_starlink',
   template:    SRC_ROOT + '/templates/starlink'
 };
 const JOOMLA_MEDIA = './media';

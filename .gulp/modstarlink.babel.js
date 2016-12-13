@@ -4,7 +4,6 @@ import gulp     from 'gulp';
 import plugins  from 'gulp-load-plugins';
 const $ = plugins();
 
-import merge from 'merge';
 import del from 'del';
 
 import config from '../config.gulp';   // src.{css, js, images, other}, dest.{css, js, images, other, zip}, postcss

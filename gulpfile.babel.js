@@ -12,11 +12,12 @@ import config from './config.gulp';
 import basscss from './.gulp/basscss.babel';
 import bootstrap from './.gulp/bootstrap.babel';
 import modcalc from './.gulp/modcalc.babel';
+import modservices from './.gulp/modservices.babel';
 import modstarlink from './.gulp/modstarlink.babel';
 import modmaps from './.gulp/modmaps.babel';
 import templates from './.gulp/templates.babel';
 
-const components = { bootstrap, modcalc, modstarlink, templates };
+const components = { bootstrap, modcalc, modstarlink, modservices, templates };
 
 export const init = () => {
   for (const c of Object.keys(components))
@@ -45,6 +46,13 @@ gulp.task('modcalc:zip', modcalc.zip);
 
 gulp.task('modmaps:build', modmaps.build);
 gulp.task('modmaps:clean', modmaps.clean);
+
+
+gulp.task('modservices:css', modservices.css);
+gulp.task('modservices:build', modservices.build);
+gulp.task('modservices:other', modservices.other);
+gulp.task('modservices:zip', modservices.zip);
+
 
 gulp.task('modstarlink:clean', modstarlink.clean);
 gulp.task('modstarlink:css', modstarlink.css);
