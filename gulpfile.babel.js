@@ -4,6 +4,8 @@ import gulp     from 'gulp';
 import plugins  from 'gulp-load-plugins';
 import yargs    from 'yargs';
 import rimraf   from 'rimraf';
+import autoprefixer from 'autoprefixer';
+var cssnext = require('postcss-cssnext');
 const $ = plugins();
 
 const paths = {
@@ -59,6 +61,20 @@ export function images() {
   .pipe(gulp.dest('./.dist/images'));
 }
 
+export function postcss() {
+  const plugins = [
+    require('postcss-import')(),
+    require('postcss-cssnext')({ browsers: ['> 1%'] })
+    /*,
+    autoprefixer({ browsers: ['> 1%'], "cascade": false })*/
+  ];
+  return gulp.src(['.src/mod_starlink/media/css/**/styles.css'])
+  .pipe($.postcss(plugins))
+  .pipe($.if(PRODUCTION, $.cssnano()))
+  .pipe(gulp.dest('.dist/mod_starlink/media/css'))
+  .pipe(gulp.dest('media/mod_starlink/css'));
+}
+gulp.task('postcss', postcss);
 
 const build = gulp.series(clean, gulp.parallel(css /*, scripts, images*/));
 
