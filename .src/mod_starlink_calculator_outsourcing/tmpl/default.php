@@ -14,161 +14,139 @@ $imgBase = JUri::base(true) . '/media/mod_starlink_calculator_outsourcing/images
     Рассчитайте стоимость абонентского обслуживания ПК и серверов:</p>
 
 	<div id="connect_form">
-		<table width="100%" class="tb-calc" cellpadding="0" cellspacing="0" align="center">
-			<tr>
-				<td width="15%" class="calcTdRangeNameText">КОЛИЧЕСТВО КОМПЬЮТЕРОВ</td>
-				<td colspan="4" class="pt20">
-					<div id="slider-pc-count" class="mx-auto my0 px2"></div>
-					<div class="digitContainer" id="slider-pc-count-digits">
-						<?php for ($pcCountDigit = 0; $pcCountDigit <= 29; $pcCountDigit++) : ?>
-							<span class="digit ----slider-pc-count-digit" data-pcDigit="<?=$pcCountDigit?>"><?=$pcCountDigit?></span>
-						<?php endfor; ?>
-					</div>
-				</td>
-			</tr>
-			<tr>
-				<td class="calcTdRangeNameText pt15">КОЛИЧЕСТВО ФИЗИЧЕСКИХ СЕРВЕРОВ</td>
-				<td colspan="2" class="pt25 servers-range-td">
-					<div id="slider-server-count" class="mx-auto my0"></div>
-					<div class="digitContainer" id="slider-server-count-digits">
-						<?php for ($serverCountDigit = 0; $serverCountDigit <= 15; $serverCountDigit++) : ?>
-							<span class="digit ----slider-server-count-digit" data-serverDigit="<?=$serverCountDigit?>"><?=$serverCountDigit?></span>
-						<?php endfor; ?>
-					</div>
-				</td>
-				<td class="virtualServerNameText" width="25%">КОЛИЧЕСТВО ВИРТУАЛЬНЫХ СЕРВЕРОВ</td>
-				<td class="pt25">
-					<div id="slider-virtual-count" class="mx-auto my0"></div>
-					<div class="digitContainer" id="slider-virtual-count-digits">
-						<?php for ($serverCountDigit = 0; $serverCountDigit <= 7; $serverCountDigit++) : ?>
-							<span class="digit ----slider-virtual-count-digit" data-virtualDigit="<?=$serverCountDigit?>"><?=$serverCountDigit?></span>
-						<?php endfor; ?>
-					</div>
-				</td>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-		</table>
-		<table width="100%" class="tb-calc-bottom" cellpadding="0" cellspacing="0" align="center">
-			<tr>
-				<td width="15%" class="calcTdRangeNameText calcTdLeft">
-					<img src="<?=$imgBase?>/icons/calcServiceLevel.png" class="calcIconImg">
-					УРОВЕНЬ ОБСЛУЖИВАНИЯ
-				</td>
-				<td width="25%" class="calcTdRangeNameText">
-					<img src="<?=$imgBase?>/icons/calcClockIcon.png" class="calcIconImg">
-					ВРЕМЯ РЕАКЦИИ
-				</td>
-				<td width="19%" class="calcTdRangeNameText">
-					<img src="<?=$imgBase?>/icons/calcPersonIcon.png" class="calcIconImg">
-					ВЫДЕЛЕННЫЙ ПЕРСОНАЛ
-				</td>
-				<td width="20%" class="calcTdRangeNameText">
-					<img src="<?=$imgBase?>/icons/calcVechicleIcon.png" class="calcIconImg">
-					АВАРИЙНЫХ ВЫЕЗДОВ
-				</td>
-				<td width="20%" class="calcTdRangeNameText">
-					<img src="<?=$imgBase?>/icons/calcVechicleIcon.png" class="calcIconImg">
-					ПЛАНОВЫХ ВЫЕЗДОВ
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<input type="radio" name="level" id="level1" value="0" class="r_button">
-					<label for="level1"></label>
-					<span class="slaLevel"><br>SLA 1</span>
-				</td>
-<<<<<<< HEAD
-				<td>
-					1 час
-				</td>
-				<td>
-					1 чел.
-				</td>
-				<td>
-					НЕОГРАНИЧЕНО
-				</td>
-=======
-				<td> 1 час         </td>
-				<td> 2 чел.        </td>
-				<td> НЕОГРАНИЧЕНО	 </td>
->>>>>>> b117f1f... icon Starlink SVG; calculator fix business data
-				<td>
-					<span class="minus" id="minus1"></span>
-					<input type="text" name="leavesCount1" id="leavesCount1" value="0" size="2" readonly="readonly">
-					<span class="plus" id="plus1"></span>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<input type="radio" name="level" id="level2" value="1" class="r_button">
-					<label for="level2"></label>
-					<span class="slaLevel"><br>SLA 2</span>
-				</td>
-				<td>
-					2 часа
-				</td>
-				<td>
-					1 чел.
-				</td>
-				<td>
-					НЕОГРАНИЧЕНО
-				</td>
-				<td>
-					<span class="minus" id="minus1"></span>
-					<input type="text" name="leavesCount2" id="leavesCount2" value="0" size="2" readonly="readonly">
-					<span class="plus" id="plus1"></span>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<input type="radio" name="level" id="level3" value="2" class="r_button">
-					<label for="level3"></label>
-					<span class="slaLevel"><br>SLA 3</span>
-				</td>
-				<td>
-					4 часа
-				</td>
-				<td>
-					1 чел.
-				</td>
-				<td>
-					1 ВЫЕЗД В МЕСЯЦ
-				</td>
-				<td>
-					<span class="minus" id="minus1"></span>
-					<input type="text" name="leavesCount3" id="leavesCount3" value="0" size="2" readonly="readonly">
-					<span class="plus" id="plus1"></span>
-				</td>
-			</tr>
-			<tr class="calcResultTr">
-				<td class="calcTdRangeNameText">
-					СТОИМОСТЬ ОБСЛУЖИВАНИЯ
-				</td>
-				<td>
-					<input type="text" name="calcResult" id="calcResult" value="0" readonly="">
-					<span class="currency">ГРН/МЕС</span>
-				</td>
-				<td colspan="3">
-					<button type="submit" class="calcItOutsourceBtn btn submit-button" data-toggle="modal" data-target="#modalContactFormBlock">Заказать</button>
-				</td>
-			</tr>
-		</table>
 
-	<input type="hidden" name="pc_price" id="pc_price" value="<?php print_r($params->get('pc_price')); ?>"/>
-	<input type="hidden" name="server_price" id="server_price" value="<?php print_r($params->get('server_price')); ?>"/>
-	<input type="hidden" name="virtual_server_price" id="virtual_server_price" value="<?php print_r($params->get('virtual_server_price')); ?>"/>
-	<input type="hidden" name="personal_device_price" id="personal_device_price" value="<?php print_r($params->get('personal_device_price')); ?>"/>
-	<input type="hidden" name="additional_leave" id="additional_leave" value="<?php print_r($params->get('additional_leave')); ?>"/>
-	<input type="hidden" name="kurs_euro" id="kurs_euro" value="<?php print_r($params->get('kurs_euro')); ?>"/>
-	<input type="hidden" name="inflation_percent" id="inflation_percent" value="<?php print_r($params->get('inflation_percent')); ?>"/>
+    <section class="">
+      <div class="flex">
+        <div class="SLAtable__th SLAtable__th--left SlidersTable__col1 pt2" style="flex: 0 0 auto;">количество компьютеров</div>
+        <div class="flex-auto-- py2" style="flex: 1 1 auto;">
+          <div class="sliderContainer">
+            <div id="slider-pc-count" class="Slider Slider--pc"></div>
+          </div>
+          <div class="digitContainer" id="slider-pc-count-digits">
+            <?php for ($pcCountDigit = 0; $pcCountDigit <= 29; $pcCountDigit++) : ?>
+              <span class="digit" data-pcDigit="<?=$pcCountDigit?>"><?=$pcCountDigit?></span>
+            <?php endfor; ?>
+          </div>
+        </div>
+      </div>
+      <div class="flex" style="flex-flow: row nowrap;">
+        <div class="SLAtable__th SLAtable__th--left SlidersTable__col1 pt2" style="flex: 0 0 auto;">количество физических <br> серверов</div>
+        <div class="py2" style="flex: 1 1 36rem;">
+          <div class="sliderContainer">
+            <div id="slider-server-count" class="Slider Slider--server"></div>
+          </div>
+          <div class="digitContainer" id="slider-server-count-digits">
+            <?php for ($serverCountDigit = 0; $serverCountDigit <= 15; $serverCountDigit++) : ?>
+              <span class="digit" data-serverDigit="<?=$serverCountDigit?>"><?=$serverCountDigit?></span>
+            <?php endfor; ?>
+          </div>
+        </div>
+        <div class="SLAtable__th SLAtable__th--left SlidersTable__col3 pt2 ml3" style="flex: 0 0 auto;">количество виртуальных <br> серверов</div>
+        <div class="py2" style="flex: 1 0.67 16rem;">
+          <div class="sliderContainer">
+            <div id="slider-virtual-count" class="Slider Slider--virtual"></div>
+          </div>
+          <div class="digitContainer" id="slider-virtual-count-digits">
+            <?php for ($serverCountDigit = 0; $serverCountDigit <= 7; $serverCountDigit++) : ?>
+              <span class="digit" data-virtualDigit="<?=$serverCountDigit?>"><?=$serverCountDigit?></span>
+            <?php endfor; ?>
+          </div>
+        </div>
+      </div>
+    </section>
 
-	<input type="hidden" id="pcCount">
-	<input type="hidden" id="serverCount">
-	<input type="hidden" id="virtualCount">
+    <table class="SLAtable">
+      <thead class="">
+        <tr class="">
+          <th width="20%" class="SLAtable__th">
+            <img src="<?= $imgBase ?>/icons/calcServiceLevel.png" class=""></th>
+          <th width="15%" class="SLAtable__th">
+            <img src="<?= $imgBase ?>/icons/calcClockIcon.png" class=""></th>
+          <th width="25%" class="SLAtable__th">
+            <img src="<?= $imgBase ?>/icons/calcPersonIcon.png" class=""></th>
+          <th width="25%" class="SLAtable__th">
+            <img src="<?= $imgBase ?>/icons/calcVechicleIcon.png" class=""></th>
+          <th width="20%" class="SLAtable__th">
+            <img src="<?= $imgBase ?>/icons/calcVechicleIcon.png" class=""></th>
+        </tr>
+        <tr class="">
+          <th class="SLAtable__th py1">уровень обслуживания</th>
+          <th class="SLAtable__th py1">время реакции</th>
+          <th class="SLAtable__th py1">выделенный персонал</th>
+          <th class="SLAtable__th py1">аварийных выездов</th>
+          <th class="SLAtable__th py1">плановых выездов</th>
+        </tr>
+      <tbody>
+        <tr class="SLAtable__row">
+          <th class="SLAtable__th p2">
+            <input class="display-none" type="radio" name="level" id="level1" value="0">
+            <label class="SLAtable__label" for="level1"></label>
+            <div class="">SLA 1</div>
+          <td class=""> 1 час
+          <td class=""> 1 чел.
+          <td class=""> НЕОГРАНИЧЕНО
+          <td class="">
+            <span class="sign sign--minus" id="minus1"></span>
+            <input class="visits" type="text" name="leavesCount1" id="leavesCount1" value="0" size="2" readonly="readonly">
+            <span class="sign sign--plus" id="plus1"></span>
+          </td>
+        </tr>
+        <tr class="SLAtable__row">
+          <th class="SLAtable__th p2">
+            <input class="display-none" type="radio" name="level" id="level2" value="1">
+            <label class="SLAtable__label" for="level2"></label>
+            <span class=""><br>SLA 2</span>
+          <td class=""> 2 часа
+          <td class=""> 1 чел.
+          <td class=""> НЕОГРАНИЧЕНО
+          <td class="">
+            <span class="sign sign--minus" id="minus1"></span>
+            <input class="visits" type="text" name="leavesCount2" id="leavesCount2" value="0" size="2" readonly="readonly">
+            <span class="sign sign--plus" id="plus1"></span>
+          </td>
+        </tr>
+        <tr class="SLAtable__row">
+          <th class="SLAtable__th p2">
+            <input class="display-none" type="radio" name="level" id="level3" value="2">
+            <label class="SLAtable__label" for="level3"></label>
+            <span class=""><br>SLA 3</span>
+          <td class=""> 4 часа
+          <td class=""> 1 чел.
+          <td class=""> 1 ВЫЕЗД В МЕСЯЦ
+          <td class="">
+            <span class="sign sign--minus" id="minus1"></span>
+            <input class="visits" type="text" name="leavesCount3" id="leavesCount3" value="0" size="2" readonly="readonly">
+            <span class="sign sign--plus" id="plus1"></span>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot class="">
+        <tr>
+          <th class="SLAtable__th SLAtable__th--left pt3">
+            стоимость обслуживания
+          <td class="">
+            <input class="calcResult" type="text" name="calcResult" id="calcResult" value="0" readonly="">
+            <span class="">ГРН/МЕС</span>
+          <td class="" colspan="2">
+            <button type="submit" class="btnStarlink btn submit-button" data-toggle="modal" data-target="#modalContactFormBlock">
+              Заказать
+            </button>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <!-- -->
+    <input type="hidden" name="pc_price" id="pc_price" value="<?php print_r($params->get('pc_price')); ?>"/>
+    <input type="hidden" name="server_price" id="server_price" value="<?php print_r($params->get('server_price')); ?>"/>
+    <input type="hidden" name="virtual_server_price" id="virtual_server_price" value="<?php print_r($params->get('virtual_server_price')); ?>"/>
+    <input type="hidden" name="personal_device_price" id="personal_device_price" value="<?php print_r($params->get('personal_device_price')); ?>"/>
+    <input type="hidden" name="additional_leave" id="additional_leave" value="<?php print_r($params->get('additional_leave')); ?>"/>
+    <input type="hidden" name="kurs_euro" id="kurs_euro" value="<?php print_r($params->get('kurs_euro')); ?>"/>
+    <input type="hidden" name="inflation_percent" id="inflation_percent" value="<?php print_r($params->get('inflation_percent')); ?>"/>
+
+    <input type="hidden" id="pcCount">
+    <input type="hidden" id="serverCount">
+    <input type="hidden" id="virtualCount">
 	</div>
 </div>
