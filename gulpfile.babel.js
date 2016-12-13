@@ -1,149 +1,91 @@
 'use strict';
+
 import gulp     from 'gulp';
 import plugins  from 'gulp-load-plugins';
 const $ = plugins();
-import yargs    from 'yargs';
-import rimraf   from 'rimraf';
-import {create as bcCreate} from 'browser-sync';
-const browser = bcCreate();
-const PRODUCTION = !!(yargs.argv.production);   // Look for the --production flag in command line
-const DEBUG = true;
 
-const CodePaths = {
-  postcss: {
-    basscss: {
-      src:   './.src/bassplate/src/base.css',
-      dest:  './media/mod_starlink/css'
-    },
-    mod_starlink: {
-      src:  ['./.src/mod_starlink/css/!(_)*.css', '!(bootstrap)*.css' ],
-      dest:  './media/mod_starlink/css'
-    },
-    mod_services: {
-      src:   './.src/mod_starlink_services/css/!(_)*.css',
-      dest:  './media/mod_starlink_services/css'
-    },
-    templates: {
-      src:   './.src/templates/*/css/!(_)*.css',
-      dest:  './templates'
+
+import browserSync from 'browser-sync';
+
+import stringly from './.gulp/stringly';
+import config from './config.gulp';
+import basscss from './.gulp/basscss.babel';
+import bootstrap from './.gulp/bootstrap.babel';
+import modcalc from './.gulp/modcalc.babel';
+import modstarlink from './.gulp/modstarlink.babel';
+import modmaps from './.gulp/modmaps.babel';
+import templates from './.gulp/templates.babel';
+
+const components = { bootstrap, modcalc, modstarlink, templates };
+
+export const init = () => {
+  for (const c of Object.keys(components))
+    for (const task of ['clean', 'css', 'build', 'zip']) {
+      gulp.task(components[c].COMPONENT + ':' + task, components[c][task]);
+      $.util.log(components[c].COMPONENT + ':' + task, '=', components[c][task]);
     }
-  },
-  css: {
-    src: ['./.src/mod_starlink*/**/bootstrap*.css', './.src/mod_starlink_calculator_*/**/*.css' ],
-    dest: './media/'
-  },
-  js: {
-    src:  './.src/mod_starlink*/**/js/*',
-    dest: './media'
-  },
-  images: {
-    src:  './.src/mod_starlink*/**/images/**/*',
-    dest: './media'
-  },
-  fonts: {
-    src:  './.src/mod_starlink*/**/fonts/*',
-    dest: './media'
-  },
-  code: {
-    src: [ './.src/mod_starlink*/**/*.+(php|xml|html)' ],
-    dest:  './modules/'
-  },
-  other: {
-    src: [
-      './.src/mod_starlink*/*',
-      './.src/mod_starlink*/!(css|fonts|images|js|media)/**/*'
-    ],
-    dest: './.media'
+};
+
+gulp.task('basscss:build', basscss.build);
+
+
+gulp.task('bootstrap:clean', bootstrap.clean);
+gulp.task('bootstrap:css', bootstrap.css);
+gulp.task('bootstrap:build', bootstrap.build);
+gulp.task('bootstrap:zip', bootstrap.zip);
+
+
+gulp.task('modcalc:build', modcalc.build);
+gulp.task('modcalc:clean', modcalc.clean);
+gulp.task('modcalc:css', modcalc.css);
+gulp.task('modcalc:images', modcalc.images);
+gulp.task('modcalc:js', modcalc.js);
+gulp.task('modcalc:other', modcalc.other);
+gulp.task('modcalc:zip', modcalc.zip);
+
+gulp.task('modmaps:build', modmaps.build);
+gulp.task('modmaps:clean', modmaps.clean);
+
+gulp.task('modstarlink:clean', modstarlink.clean);
+gulp.task('modstarlink:css', modstarlink.css);
+gulp.task('modstarlink:build', modstarlink.build);
+gulp.task('modstarlink:clean:build', modstarlink.buildClean);
+gulp.task('modstarlink:other', modstarlink.other);
+gulp.task('modstarlink:zip', modstarlink.zip);
+
+//gulp.task('templates:clean', templates.clean);
+gulp.task('templates:css', templates.css);
+gulp.task('templates:build', templates.build);
+//gulp.task('templates:clean:build', templates.buildClean);
+gulp.task('templates:other', templates.other);
+gulp.task('templates:zip', templates.zip);
+
+
+gulp.task('list', (done) => {
+  init();
+  gulp.start('bootstrap:zip');
+  done();
+});
+
+gulp.task('serve', (done) => {
+  $.util.log(`Starting environment: ${config.env}`);
+  browserSync(config.plugin.browserSync);
+  const comp = $.util.env.mod || 'templates';
+
+  if ( ! Object.keys(components).includes(comp) ) {
+    console.log(`Error: unknown module ${comp}`);
+    console.log('Usage:\ngulp serve --mod={modcalc|modservices|modstarlink|templates}');
+    return(1);
   }
-};
+  $.util.log(`watch for ${comp} events`);
 
+  gulp.watch([config.modules[ comp ].src.css])
+    .on('change', () => components[comp].css().pipe(browserSync.reload({stream: true}))
+    );
+  gulp.watch([config.modules[ comp ].src.js ])
+    .on('change', gulp.series(components[comp].js, browserSync.reload));
+  gulp.watch([...config.modules[ comp ].src.other])
+    .on('change', gulp.series(components[comp].other, browserSync.reload));
 
-const postCSSplugins=[ require('postcss-import')({ path: [".src/_includes"] }), require('postcss-mixins'),
-  require('postcss-custom-properties'), require('postcss-apply'), require('postcss-calc'), require('postcss-nesting'), require('postcss-custom-media'),
-  require('postcss-media-minmax'), require('postcss-custom-selectors'), require('postcss-color-hwb'), require('postcss-color-gray'),
-  require('postcss-color-hex-alpha'),require('postcss-color-function'), require('pixrem'),
-  require('postcss-url'), require('postcss-for'), require('postcss-discard-comments'),
-  require('autoprefixer')({ 'browsers': '> 1%' }),
-  require('css-mqpacker')({sort: true})
-];
-
-gulp.task('build:templates',
-        ()=>gulp.src(CodePaths.postcss.templates.src)
-            .pipe($.postcss(postCSSplugins))
-            .pipe($.if(DEBUG, $.debug({title: 'templates: '})))
-            .pipe(gulp.dest(CodePaths.postcss.templates.dest))
-);
-
-gulp.task('build:basscss',
-        ()=>gulp.src(CodePaths.postcss.basscss.src)
-            .pipe($.postcss(postCSSplugins))
-            .pipe($.if(DEBUG, $.debug({title: 'basscss: '})))
-            .pipe(gulp.dest(CodePaths.postcss.mod_starlink.dest))
-);
-
-gulp.task('postcss',
-        gulp.parallel(
-                'build:basscss',
-                ()=>gulp.src(CodePaths.postcss.mod_starlink.src)
-                    .pipe($.if(!PRODUCTION, $.sourcemaps.init()))
-                    .pipe($.postcss(postCSSplugins))
-                    .pipe($.if(!PRODUCTION, $.sourcemaps.write('.')))
-                    .pipe($.if(DEBUG, $.debug({title: 'mod_starlink: '})))
-                    .pipe(gulp.dest(CodePaths.postcss.mod_starlink.dest)),
-                ()=>gulp.src(CodePaths.postcss.mod_services.src)
-                    .pipe($.postcss(postCSSplugins))
-                    .pipe($.if(DEBUG, $.debug({title: 'mod_services: '})))
-                    .pipe(gulp.dest(CodePaths.postcss.mod_services.dest)),
-                'build:templates'
-        )
-);
-
-gulp.task('deploy:css',
-        gulp.parallel(
-                ()=>gulp.src(CodePaths.css.src)
-                .pipe($.if(DEBUG, $.debug({title: 'allcss 1: '})))
-                .pipe(gulp.dest(CodePaths.css.dest))
-        )
-);
-
-gulp.task('build:css',
-        gulp.series('postcss', 'deploy:css')
-);
-
-export const otherAssets = () =>
-  gulp.src([CodePaths.js.src, CodePaths.images.src, CodePath.fonts.src, ...CodePaths.other.src])
-    .pipe($.if(DEBUG, $.debug({title: 'imagesJsFontsOther: '})))
-    .pipe(gulp.dest(CodePaths.js.dest));
-
-gulp.task('build:all',
-  gulp.parallel('build:css', otherAssets)
-);
-
-gulp.task('build:bootstrap', () =>
-        gulp.src('./.src/bootstrap/*.scss')
-        .pipe($.sass({
-          includePaths: [ './.src/_includes', './node_modules/bootstrap-sass/assets/stylesheets' ]
-        }).on('error', $.sass.logError))
-        .pipe(gulp.dest('./.dist/vendors'))
-        .pipe(gulp.dest('./media/mod_starlink/css'))
-);
-
-
-export const serve = () => {
-  browser.init({
-    proxy: "localhost:8000",
-    browser: ["chrome"]
-  });
-  gulp.watch([...CodePaths.postcss.mod_starlink.src,  ...CodePaths.postcss.mod_services.src, ...CodePaths.postcss.templates.src], postcss_cycle);
-};
-
-const postcss_cycle = () => {
-  gulp.series(
-      'postcss',
-      browser.reload()
-  );
-};
-gulp.task('postcss_cycle', postcss_cycle);
-
-
-
+  done();
+});

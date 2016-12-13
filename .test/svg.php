@@ -25,5 +25,5 @@
 <h1>SVG icons</h1>
 <p>Some text and icon: <svg class="icon"><use xlink:href="#iconCheck" /></svg></p>
 <svg class="icon"><use xlink:href="#iconCancel" /></svg>
-<svg class="icon"><use xlink:href="#iconExpandMore" /></svg>
+<svg class="icon"><use xlink:href="#iconStarlink" /></svg>
 </body>
