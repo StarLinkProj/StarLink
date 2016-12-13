@@ -82,6 +82,7 @@ $imgBase = JUri::base(true) . '/media/mod_starlink_calculator_outsourcing/images
 					<label for="level1"></label>
 					<span class="slaLevel"><br>SLA 1</span>
 				</td>
+<<<<<<< HEAD
 				<td>
 					1 час
 				</td>
@@ -91,6 +92,11 @@ $imgBase = JUri::base(true) . '/media/mod_starlink_calculator_outsourcing/images
 				<td>
 					НЕОГРАНИЧЕНО
 				</td>
+=======
+				<td> 1 час         </td>
+				<td> 2 чел.        </td>
+				<td> НЕОГРАНИЧЕНО	 </td>
+>>>>>>> b117f1f... icon Starlink SVG; calculator fix business data
 				<td>
 					<span class="minus" id="minus1"></span>
 					<input type="text" name="leavesCount1" id="leavesCount1" value="0" size="2" readonly="readonly">
