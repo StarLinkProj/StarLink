@@ -154,6 +154,7 @@ const modules = {
       all:    ROOTS.modservices + '/**/*.*',
       css:    ROOTS.modservices + '/css/!(_)*.css',
       images: ROOTS.modservices + '/images/**/*.*',
+      js:     '',
       other:  [
         ROOTS.modservices + '/**/*.*',
         '!**/css/*.*',
@@ -168,6 +169,7 @@ const modules = {
     dest : {
       css:    JOOMLA_MEDIA + '/mod_starlink_services/css',
       images: JOOMLA_MEDIA + '/mod_starlink_services/images',
+      js:     '',
       other:  JOOMLA_MODULES + '/mod_starlink_services',
       zip:    PACKAGES
     },

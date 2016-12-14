@@ -17,14 +17,20 @@ import modstarlink from './.gulp/modstarlink.babel';
 import modmaps from './.gulp/modmaps.babel';
 import templates from './.gulp/templates.babel';
 
-const components = { bootstrap, modcalc, modstarlink, modservices, templates };
+const components = [ modstarlink, modcalc, modservices, templates ];
 
 export const init = () => {
-  for (const c of Object.keys(components))
+  for (const c of components)
     for (const task of ['clean', 'css', 'build', 'zip']) {
-      gulp.task(components[c].COMPONENT + ':' + task, components[c][task]);
-      $.util.log(components[c].COMPONENT + ':' + task, '=', components[c][task]);
+      gulp.task(c.COMPONENT + ':' + task, c[task]);
+      $.util.log(c.COMPONENT + ':' + task, '=', c[task]);
     }
+}
+
+
+const doNothing = (taskName, done) => {
+  $.util.log(`${taskName}`);
+  done();
 };
 
 gulp.task('basscss:build', basscss.build);
@@ -34,6 +40,7 @@ gulp.task('bootstrap:clean', bootstrap.clean);
 gulp.task('bootstrap:css', bootstrap.css);
 gulp.task('bootstrap:build', bootstrap.build);
 gulp.task('bootstrap:zip', bootstrap.zip);
+gulp.task('bootstrap:js', doNothing('bootstrap:js', () => $.util.log('Finished successfully')));
 
 
 gulp.task('modcalc:build', modcalc.build);
@@ -52,10 +59,12 @@ gulp.task('modservices:css', modservices.css);
 gulp.task('modservices:build', modservices.build);
 gulp.task('modservices:other', modservices.other);
 gulp.task('modservices:zip', modservices.zip);
+gulp.task('modservices:js', (done) => { $.util.log('modservices:js finished'); done(); });
 
 
 gulp.task('modstarlink:clean', modstarlink.clean);
 gulp.task('modstarlink:css', modstarlink.css);
+gulp.task('modstarlink:js', modstarlink.js);
 gulp.task('modstarlink:build', modstarlink.build);
 gulp.task('modstarlink:clean:build', modstarlink.buildClean);
 gulp.task('modstarlink:other', modstarlink.other);
@@ -63,6 +72,7 @@ gulp.task('modstarlink:zip', modstarlink.zip);
 
 //gulp.task('templates:clean', templates.clean);
 gulp.task('templates:css', templates.css);
+gulp.task('templates:js', templates.js);
 gulp.task('templates:build', templates.build);
 //gulp.task('templates:clean:build', templates.buildClean);
 gulp.task('templates:other', templates.other);
@@ -78,22 +88,40 @@ gulp.task('list', (done) => {
 gulp.task('serve', (done) => {
   $.util.log(`Starting environment: ${config.env}`);
   browserSync(config.plugin.browserSync);
-  const comp = $.util.env.mod || 'templates';
 
-  if ( ! Object.keys(components).includes(comp) ) {
-    console.log(`Error: unknown module ${comp}`);
-    console.log('Usage:\ngulp serve --mod={modcalc|modservices|modstarlink|templates}');
-    return(1);
+  // checking which component user asks to run using --mod=component_name command line option;
+  // if no component specified -> serve all modules & templates
+  const comp = $.util.env.mod ? $.util.env.mod : 'all';
+
+  if (comp !== 'all') {
+    if (!Object.keys(components).includes(comp)) {
+      console.log(`Error: unknown module ${comp}`);
+      console.log('Usage:\ngulp serve --mod={modcalc|modservices|modstarlink|templates}');
+      return (1);
+    }
+    $.util.log(`watch for ${comp} events`);
+    $.util.log(`skip this part for now.`);
+    return (0);
   }
-  $.util.log(`watch for ${comp} events`);
 
-  gulp.watch([config.modules[ comp ].src.css])
-    .on('change', () => components[comp].css().pipe(browserSync.reload({stream: true}))
-    );
-  gulp.watch([config.modules[ comp ].src.js ])
-    .on('change', gulp.series(components[comp].js, browserSync.reload));
-  gulp.watch([...config.modules[ comp ].src.other])
-    .on('change', gulp.series(components[comp].other, browserSync.reload));
+/*  const js = components.reduce( (acc, cur) => [...acc, ...cur['src']['js']], [] );
+  const styles = components.reduce( (acc, cur) => [...acc, ...cur.src.css], [] );
+  const other = components.reduce( (acc, cur) => [...acc, ...cur.src.other], [] );
+  $.util.log(`css: ${stringly(styles)}\
+js: ${stringly(js)}\
+other:${stringly(other)}`);*/
+  $.util.log(stringly(Object.keys(components[0])));
+  //$.util.log(stringly(config));
 
-  done();
+  for ( const c of components ) {
+    $.util.log(c.COMPONENT, stringly(config.modules[ c.COMPONENT ]));
+    gulp.watch([ ...config.modules[ c.COMPONENT ].src.js ])
+      .on( 'change', gulp.series(c['js'], browserSync.reload) );
+    gulp.watch([ ...config.modules[ c.COMPONENT ].src.other ])
+      .on( 'change', gulp.series(c.COMPONENT+':other', browserSync.reload) );
+    gulp.watch([ ...config.modules[ c.COMPONENT ].src.css ])
+      .on( 'change', c['css']().pipe(browserSync.reload({stream: true})) );
+  }
+
+  //done();
 });
