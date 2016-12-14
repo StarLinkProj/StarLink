@@ -136,15 +136,26 @@
 /*   Article cards implemented by mod_article_news   */
 
 /* BLOCK: newsflash */
-.newsflash {
+/*.newsflash {
   padding: 24px 0;
+}*/
+.newsflash {
+  box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.05);
+  border: none;
+  border-radius: 8px;
+
+  & .newsflash {
+    box-shadow: none;
+  }
+
 }
-    .newsflash__header {
-      margin      : 0 auto 16px;
+
+/*    .newsflash__header {
+!*      margin      : 0 auto 16px;*!
       text-align  : center;
-      font-size   : 38px;
-      font-weight : 300;
-    }
+!*      font-size   : 38px;
+      font-weight : 300;*!
+    }*/
 
 /* Auto-clear Category Blog & Article-NewsFlash articles           */
 /*@media (max-width: 767px){*/
@@ -207,6 +218,7 @@
   background: url('../images/main/showMoreNewsIcon.png') no-repeat left center;
 }
 
+/*
 .showAllNews{
   text-align: center;
   margin-bottom: 50px;
@@ -216,4 +228,4 @@
   font-size: 16px;
   line-height: 26px;
   font-weight: 500;
-}
+}*/

@@ -21,12 +21,12 @@ $assetsPathFile = JPATH_ROOT.$this->params->get('assetsBasePath', '/media/mod_st
 $assetsPath = $this->baseurl .$this->params->get('assetsBasePath', '/media/mod_starlink');
 
 // bootstrap and common styles css
-//$doc->addStyleSheet($assetsPath . '/css/bootstrap.css');
 $doc->addStyleSheet($assetsPath . '/css/bootstrap.css');
 $doc->addStyleSheet($assetsPath . '/css/font-default.css');
 $doc->addStyleSheet($assetsPath . '/css/base.css');
 $doc->addStyleSheet($assetsPath . '/css/styles.css');
 $doc->addStyleSheet($tpath . '/css/template.css');
+//$doc->addStyleSheet($assetsPath . '/css/styles-all.css');
 
 // Override template font using Google Font or local Roboto font by default
 if ($this->params->get('googleFont')) {

@@ -28,14 +28,11 @@
   padding-left : 15px;
 }
 .s-ServiceType__linkHeader {
-  display        : block;
-  font-weight    : 900;
-  font-size      : 14px;
+  font-weight    : 700;
   margin-bottom  : 6px;
   text-transform : uppercase;
 }
 .s-ServiceType__linkText {
-  display     : block;
   font-size   : 14px;
   line-height : 15px;
   margin      : 0;

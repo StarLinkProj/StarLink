@@ -225,7 +225,12 @@ const modules = {
       zip:    PACKAGES
     },
     postcss: [
-      require('postcss-import')({path: [SRC_ROOT + '/_includes']}),
+      require('postcss-import')({path: [
+          ROOTS.$include,
+          ROOTS.basscss + '/css',
+          ROOTS.template + '/css',
+          ROOTS.modcalc + '/css'
+      ]}),
       require('postcss-mixins'),
       require('postcss-custom-properties'),
       require('postcss-apply'),

@@ -30,7 +30,8 @@ $item_heading = $params->get('item_heading', 'h4');
     ?>
   </div>
 
-<!--  <div class="showAllNews">
-    <a href="<?=JUri::base()?>/index.php?Itemid=114">Смотреть остальные новости</a>
-  </div>-->
+  <div class="article__title text-center">
+    <a class="btn btn-warning btn-lg" href="<?=JUri::base()?>/index.php?Itemid=114"">Все новости</a>
+  </div>
+
 </div>
