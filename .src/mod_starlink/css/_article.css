@@ -139,15 +139,12 @@
 /*.newsflash {
   padding: 24px 0;
 }*/
-.newsflash {
-  box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.05);
-  border: none;
-  border-radius: 8px;
-
-  & .newsflash {
-    box-shadow: none;
+@media (min-width: 992px) {
+  .moduletable.newsflash {
+    box-shadow    : 0 2rem 2rem rgba(0, 0, 0, 0.05);
+    border        : none;
+    border-radius : 8px;
   }
-
 }
 
 /*    .newsflash__header {

@@ -57,29 +57,19 @@ a:hover, a:focus {
 
 .btnStarlink {
   @mixin hoverButton;
-  padding : 1rem;
+  padding : 1.5rem;
   width   : 80%;
 }
     .btnStarlink--narrow {
       max-width:  300px;
       @media (max-width: 991px) {
-        margin-top: 0.55rem;
-        padding:    0.55rem;
+        margin-top: 0.5rem;
+        padding:    0.5rem;
       }
     }
 
 /* BLOCK: block */
 /* TODO redo completely */
-.block {
-  width: 100%;
-  padding: 0 15px;
-}
-    .block--spaceUp {
-       padding-top: 15px;
-     }
-    .block--spaceDown {
-      padding-bottom: 30px;
-    }
     .block--grey {
       background: #F5F6F7;
       border-top: 1px solid #E1E7EB;
@@ -88,14 +78,14 @@ a:hover, a:focus {
       background: #F8F9FA;
     }
     .block__header {
-      margin      : 45px auto 20px;
+      margin      : 3rem auto 1.5rem;
       text-align  : center;
-      font-size   : 56px;
+      font-size   : 3.375rem;
       font-weight : 300;
       color       : var(--textColor);
 
-      @media (min-width: 768px) {
-        font-size: 72px;
+      @media (min-width: calc(48rem)) {
+        font-size: 5rem;
       }
     }
 
@@ -117,7 +107,7 @@ a:hover, a:focus {
 }
 
 .mbn4 {
-  margin-bottom: -4rem;
+  margin-bottom: -4.5rem;
 }
 
 /** TYPOGRAPHY */
@@ -135,14 +125,14 @@ a:hover, a:focus {
   font-size: 3.375rem;
 }
 .h00 {
-  font-size : 5.06rem;
+  font-size : 5rem;
 }
 
 .mainText {
-  font-size     : 1.75rem;
+  font-size     : 1rem;
   font-weight   : 300;
-  line-height   : 2.5rem;
-  margin-bottom : 2.5rem;
+  line-height   : 1.5;
+  margin-bottom : 1.5rem;
 }
 
 .text--looseLines {
@@ -150,10 +140,10 @@ a:hover, a:focus {
   }
 
 .header {
-  margin      : 5rem auto 1rem;
+  margin      : 4.5rem auto 1.5rem;
   color       : var(--textColor);
-  font-size   : 42px;
-  line-height : 50px;
+  font-size   : 3.375rem;
+  line-height : 1.3333333;
   font-weight : 300;
   text-align  : center;
 }
@@ -161,8 +151,8 @@ a:hover, a:focus {
     text-align: start;
   }
   .header--subheader {
-    font-size: 26px;
-    line-height: 32px;
+    font-size: 1.5rem;
+    line-height: 1;
     font-weight: 500;
   }
   .header--small {

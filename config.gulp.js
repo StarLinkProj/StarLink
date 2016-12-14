@@ -232,6 +232,7 @@ const modules = {
           ROOTS.modcalc + '/css'
       ]}),
       require('postcss-mixins'),
+      require('postcss-simple-vars'),
       require('postcss-custom-properties'),
       require('postcss-apply'),
       require('postcss-calc'),
