@@ -96,7 +96,7 @@ function getCatId() {
       <?php $rowcount = ((int) $key % (int) $this->columns) + 1; ?>
       <?php if ($rowcount == 1) : ?>
         <?php $row = $counter / $this->columns; ?>
-        <section class="col-xs-12 col-sm-6 col-md-4">
+        <section class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <?php endif; ?>
         <div class="article article--box <?php echo $item->state == 0 ? ' system-unpublished' : null; ?>"
              itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
