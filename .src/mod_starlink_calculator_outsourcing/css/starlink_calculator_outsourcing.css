@@ -20,6 +20,7 @@
 
 .calcItOutsource {
   display: none;
+  background: linear-gradient(to top, color(rgba(129, 221, 36, 0.1) s -50%) 0%, rgba(150, 200, 100, 0.1) 7rem, rgba(255, 255, 255, 0.4) 15rem, rgba(255, 255, 255,0) 100%);
 
   @media (min-width: 992px) {
     display: block;
@@ -27,22 +28,24 @@
 }
 
 
-.calcItOutsource h3 {
+/*.calcItOutsource h3 {
   margin: 3rem auto 1.5rem;
   text-align: center;
   font-size: 42px;
   line-height: 50px;
   color: #1b1b1b;
   font-weight: 300;
-}
+}*/
 
-.calcItOutsource .calcItOutsourceTopParagraph{
+/*
+.calcItOutsource .calcItOutsourceTopParagraph {
   margin: 0 120px 50px;
   font-size: 16px;
   line-height: 25px;
   color: #373A3C;
   text-align: center;
 }
+*/
 
 
 
@@ -202,7 +205,7 @@
 .SLAtable {
   table-layout: fixed;
   margin-top: 0.5rem;
-  margin-bottom: 8rem;
+  margin-bottom: 2rem;
   width: 100%;
   font-weight: 500;
 
@@ -210,7 +213,7 @@
     padding: 1rem;
     vertical-align: middle;
     text-align: center;
-}
+  }
 
 }
 
@@ -253,7 +256,9 @@ input:checked + .SLAtable__label {
   background-image: url(../images/calcCheckedIcon.png);
 }
 
-
+.SLAtable__summary {
+  margin-bottom: 8rem;
+}
 
 /*</editor-fold>*/
 
@@ -295,10 +300,11 @@ input:checked + .SLAtable__label {
 
 
 .calcResult {
+  background-color: transparent;
   width: 10rem;
+  height: 3.5rem;
   font-size: 3.5rem;
   line-height: 1;
-  height: 3.5rem;
   text-align: center;
   color: #333;
   border: none;
