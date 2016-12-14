@@ -6,13 +6,38 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
   <link rel="stylesheet" href="css/base.css">
+  <style>
+    h1,h2,h3,p {
+      box-sizing: border-box;
+    }
+  </style>
+  <script>
+    var styles_enabled = true;
+
+    function toggleStyles() {
+      var target = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span');
+      Array.prototype.forEach.call(target, function (element) {
+        if (styles_enabled) {
+          element.setAttribute("style--", element.getAttribute("style") || "");
+          element.removeAttribute('style');
+        } else
+          element.setAttribute("style", element.getAttribute("style--") || "");
+      });
+      styles_enabled = !styles_enabled;
+    }
+    //document.querySelector('#js-disable-inline').addEventListener("click", disableStyles);
+  </script>
 </head>
 <body>
+<button id="js-disable-inline" onclick="toggleStyles()" style="position: fixed; top: 12px; right: 12px; width:84px; height: 48px; font-size: 1rem; line-height: 1;background-color: salmon; border: none;">toggle styles</button>
 <div class="flex">
   <div class="flex-auto col-5">
-    <h1 class="mr4">Header 1</h1>
-    <h2 class="h2">Header 2</h2>
+    <h1 class="mr4" style="background-color: #daa; border: 1px solid green">Hedr <span style="vertical-align:text-bottom;">1 He</span>dr 1</h1>
+    <h1 style="line-height: 1;background-color: #fdc; border: 1px solid green">Hdr <span style="vertical-align:text-top;">1 Hed</span>r 1</h1>
+    <h2 class="h2" style="background-color: #ada; border: 1px solid green">Hdr 2</h2>
+    <h2 style="line-height: 0.5;background-color: #cdf; border: 1px solid green">Hdr <span style="vertical-align:text-bottom;">2 Hd</span>er 2</h2>
     <h3 class="h3">Header 3</h3>
     <h4 class="h4">Hea<strong>der 4</strong></h4>
     <h5 class="h5">Header 5</h5>

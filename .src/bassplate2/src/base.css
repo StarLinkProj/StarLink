@@ -140,30 +140,31 @@
 .mxn35 { margin-left: -var(--space-35); margin-right: -var(--space-35); }
 .mxn45 { margin-left: -var(--space-45); margin-right: -var(--space-45); }
 
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6, p,
+.h1, .h2, .h3, .h4, .h5, .h6 {
   margin-top: 0;
   margin-bottom: 1.5rem;
 }
 
-h6 {
+h6, .h6 {
   line-height: 2;
   margin-bottom: 1.5rem;
 }
-h5 {
+h5, .h5 {
   line-height: 1.5;
 }
-h4 {
+h4, .h4 {
   line-height: 1;
 }
-h3 {
+h3, .h3 {
   line-height: 1.3333333;
   margin-bottom: 1.5rem;
 }
-h2 {
+h2, .h2 {
   line-height: 1.3333333;
   margin-bottom: 3rem;
 }
-h1 {
+h1, .h1 {
   line-height: 1.2;
   margin-bottom: 4.5rem;
 }
