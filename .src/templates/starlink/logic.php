@@ -26,6 +26,7 @@ $doc->addStyleSheet($assetsPath . '/css/font-default.css');
 $doc->addStyleSheet($assetsPath . '/css/base.css');
 $doc->addStyleSheet($assetsPath . '/css/styles.css');
 $doc->addStyleSheet($tpath . '/css/template.css');
+$doc->addStyleSheet('http://basehold.it/24');
 //$doc->addStyleSheet($assetsPath . '/css/styles-all.css');
 
 // Override template font using Google Font or local Roboto font by default
