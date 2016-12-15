@@ -8,7 +8,8 @@
     "test": "gulp --gulpfile gulptest.js",
     "initvars": "postcss --local-plugins -u postcss-import -u postcss-simple-vars -u postcss-color-function -o .src/_includes/_01variables.css .src/_includes/_get_sass_variables.pcss",
     "start": "gulp",
-    "build": "gulp --production"
+    "build": "gulp --production",
+    "serve": "browser-sync start --proxy \"localhost:8000\" --browser \"chrome\" --files \"templates/starlink/**/*.*\" "
   },
   "repository": {
     "type": "git",

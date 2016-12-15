@@ -1,11 +1,10 @@
 'use strict';
 
-import gulp     from 'gulp';
-import plugins  from 'gulp-load-plugins';
-const $ = plugins();
+import gulp from 'gulp';
+const $ = require('gulp-load-plugins')();
+import postcss from 'gulp-postcss';
 
 import config from '../config.gulp';   // src.{css, js, images, other}, dest.{css, js, images, other, zip}, postcss
-import merge from 'merge';
 
 
 
@@ -14,12 +13,13 @@ const COMPONENT = 'templates';
 const css = () =>
         gulp.src(config.modules.templates.src.css)
             .pipe(config.run.sourcemaps ? $.sourcemaps.init() : $.util.noop())
-            .pipe($.postcss(config.modules.templates.postcss))
+            .pipe(postcss(config.modules.templates.postcss))
             .pipe(config.run.sourcemaps ? $.sourcemaps.write('.') : $.util.noop())
             .pipe(config.run.debug ? $.debug({title: 'templates: read: '}) : $.util.noop())
             .pipe(gulp.dest(config.modules.templates.dest.css))
             .pipe(config.run.debug ? $.debug({title: 'templates: write: '}) : $.util.noop());
 
+css.displayName = COMPONENT + ':css';
 
 const js = () =>
         gulp.src(config.modules.templates.src.js)

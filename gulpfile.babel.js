@@ -3,10 +3,10 @@
 import gulp from 'gulp';
 const $ = require('gulp-load-plugins')();
 const browserSync = require('browser-sync').create();
-
+const reload = browserSync.reload();
 
 import stringly from './.gulp/stringly';
-import config, {init} from './config.gulp.js';
+import config from './config.gulp.js';
 import basscss from './.gulp/basscss.babel';
 import bootstrap from './.gulp/bootstrap.babel';
 import modcalc from './.gulp/modcalc.babel';
@@ -26,10 +26,7 @@ export const initialize = () => {
 }
 
 
-const doNothing = (taskName, done) => {
-  $.util.log(`${taskName}`);
-  done();
-};
+const doNothing = done => { done(); };
 
 gulp.task('basscss:build', basscss.build);
 
@@ -38,7 +35,7 @@ gulp.task('bootstrap:clean', bootstrap.clean);
 gulp.task('bootstrap:css', bootstrap.css);
 gulp.task('bootstrap:build', bootstrap.build);
 gulp.task('bootstrap:zip', bootstrap.zip);
-gulp.task('bootstrap:js', doNothing('bootstrap:js', () => $.util.log('Finished successfully')));
+gulp.task('bootstrap:js', doNothing);
 
 
 gulp.task('modcalc:build', modcalc.build);
@@ -57,7 +54,7 @@ gulp.task('modservices:css', modservices.css);
 gulp.task('modservices:build', modservices.build);
 gulp.task('modservices:other', modservices.other);
 gulp.task('modservices:zip', modservices.zip);
-gulp.task('modservices:js', (done) => { $.util.log('modservices:js finished'); done(); });
+gulp.task('modservices:js', doNothing);
 
 
 gulp.task('modstarlink:clean', modstarlink.clean);
@@ -77,11 +74,6 @@ gulp.task('templates:other', templates.other);
 gulp.task('templates:zip', templates.zip);
 
 
-gulp.task('list', (done) => {
-  init();
-  gulp.start('bootstrap:zip');
-  done();
-});
 
 gulp.task('serve', (done) => {
   $.util.log(`Starting environment: ${config.env}`);
@@ -91,7 +83,7 @@ gulp.task('serve', (done) => {
   // if no component specified -> serve all modules & templates
   const comp = $.util.env.mod ? $.util.env.mod : 'all';
 
-  if (comp !== 'all') {
+/*  if (comp !== 'all') {
     if (!Object.keys(components).includes(comp)) {
       console.log(`Error: unknown module ${comp}`);
       console.log('Usage:\ngulp serve --mod={modcalc|modservices|modstarlink|templates}');
@@ -100,7 +92,7 @@ gulp.task('serve', (done) => {
     $.util.log(`watch for ${comp} events`);
     $.util.log(`skip this part for now.`);
     return (0);
-  }
+  }*/
 
 /*  const js = components.reduce( (acc, cur) => [...acc, ...cur['src']['js']], [] );
   const styles = components.reduce( (acc, cur) => [...acc, ...cur.src.css], [] );
@@ -124,13 +116,14 @@ other:${stringly(other)}`);*/
   //done();
 });
 
+/*gulp.task('modcalc:other:serve', gulp.series(modcalc.other, reload));*/
 
-
-export const all_serve = () => {
+/*export */const all_serve = () => {
 
   $.util.log(stringly(config['plugin']));
-  browserSync.init(config.plugin.development.browserSync);
-  gulp.watch(config.modcalc.src.js).on('change', (path, stats) => gulp.series(modcalc.js, browserSync.reload()));
-  gulp.watch(config.modcalc.src.other).on('change', (path, stats) => gulp.series(modcalc.other, browserSync.reload()));
-  gulp.watch(config.modcalc.src.css).on('change', (path, stats) => browserSync.reload());
+  browserSync.init(config.plugin.browserSync);
+
+  gulp.watch(config.modules.modcalc.src.js).on('change', (path, stats) => gulp.series(modcalc.js, reload));
+  gulp.watch(config.modules.modcalc.src.other).on('change', modcalc.other);
+  gulp.watch(config.modules.modcalc.src.css).on('change', (path, stats) => reload);
 };
