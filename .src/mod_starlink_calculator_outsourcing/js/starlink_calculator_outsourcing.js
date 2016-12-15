@@ -285,11 +285,9 @@ jQuery(document).ready(function() {
   });
 
 
-
   jQuery(".sign").click(function() {
     calculateResult();
   });
-
 
   jQuery("input[name='level']").change(function() {
     jQuery('.SLAtable .SLAtable__row').removeClass('SLAtable__row--active');

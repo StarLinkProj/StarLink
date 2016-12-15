@@ -74,6 +74,12 @@
 .footer__row {
   text-align: center;
   margin: 1.5rem 0;
+
+  @media (min-width: 992px) {
+    text-align: left;
+    margin: 0;
+  }
+
 }
 .footer__socialBlock {
   position: relative;
@@ -85,10 +91,6 @@
 @media (min-width: 992px) {
   .footer {
     padding: 3rem 0 9rem;
-  }
-  .footer__row {
-    text-align: left;
-    margin: 0;
   }
   .footer__socialBlock {
     top: -1.5rem;
