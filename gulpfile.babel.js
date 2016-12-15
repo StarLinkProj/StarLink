@@ -1,14 +1,12 @@
 'use strict';
 
-import gulp     from 'gulp';
-import plugins  from 'gulp-load-plugins';
-const $ = plugins();
+import gulp from 'gulp';
+const $ = require('gulp-load-plugins')();
+const browserSync = require('browser-sync').create();
 
-
-import browserSync from 'browser-sync';
 
 import stringly from './.gulp/stringly';
-import config from './config.gulp';
+import config, {init} from './config.gulp.js';
 import basscss from './.gulp/basscss.babel';
 import bootstrap from './.gulp/bootstrap.babel';
 import modcalc from './.gulp/modcalc.babel';
@@ -19,7 +17,7 @@ import templates from './.gulp/templates.babel';
 
 const components = [ modstarlink, modcalc, modservices, templates ];
 
-export const init = () => {
+export const initialize = () => {
   for (const c of components)
     for (const task of ['clean', 'css', 'build', 'zip']) {
       gulp.task(c.COMPONENT + ':' + task, c[task]);
@@ -125,3 +123,14 @@ other:${stringly(other)}`);*/
 
   //done();
 });
+
+
+
+export const all_serve = () => {
+
+  $.util.log(stringly(config['plugin']));
+  browserSync.init(config.plugin.development.browserSync);
+  gulp.watch(config.modcalc.src.js).on('change', (path, stats) => gulp.series(modcalc.js, browserSync.reload()));
+  gulp.watch(config.modcalc.src.other).on('change', (path, stats) => gulp.series(modcalc.other, browserSync.reload()));
+  gulp.watch(config.modcalc.src.css).on('change', (path, stats) => browserSync.reload());
+};

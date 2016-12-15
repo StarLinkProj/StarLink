@@ -423,19 +423,22 @@ let plugin = {
 
 
 
+let env = gutil.env.env || 'development';;
 
+export function init() {
+  env = gutil.env.env || 'development';
+  gutil.log(`env=${env}`);
 
-
-const env = gutil.env.env || 'development';
-
-run = merge( {}, run.default, run[ env ] );
-constants = merge( {}, constants.default, constants[ env ] );
-plugin = merge( {}, plugin.default, plugin[ env ] );
+  run = merge({}, run.default, run[env]);
+  constants = merge({}, constants.default, constants[env]);
+  plugin = merge({}, plugin.default, plugin[env]);
 
   if (plugin.browserSync.server === null)
     delete plugin.browserSync.server;
   if (plugin.browserSync.proxy === null)
     delete plugin.browserSync.proxy;
+
+};
 //</editor-fold>
 
 

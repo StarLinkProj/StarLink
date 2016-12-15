@@ -5,8 +5,8 @@ import plugins  from 'gulp-load-plugins';
 const $ = plugins();
 
 
-import browserSync from 'browser-sync';
-import config from './config.gulp';
+let browserSync = require('browser-sync').create();
+import config from './config.gulp.js';
 import modcalc from './.gulp/modcalc.babel';
 
 
@@ -15,7 +15,7 @@ const transpile = () =>
 
 gulp.task('default', function () {
   $.util.log(`Starting environment: ${config.env}`);
-  browserSync(config.plugin,browserSync);
+  browserSync.init(config.plugin.browserSync);
   gulp.watch([config.modules.modcalc.src.other])
       .on('change', gulp.series(modcalc.other, browserSync.reload));
   gulp.watch(config.modules.modcalc.src.js)
