@@ -21,11 +21,18 @@ function initServer (done) {
       /* SUCCESS */
       /*  $.util.log(c.plugins.imagemin);  */
       /*  $.util.log(__dirname, upath.resolve(__dirname+'/.././'));  */
+      /* SUCCESS
+          c.mainConfig.forEach( (v, k) => {
+            log(`${k}: ${stringly(v)}`);
+          });   */
 
 
   //globby(['*', '!index.php']).then(paths => { console.log(paths); });
 
-
+  c.mainConfig.delete('modcalc');
+  c.mainConfig.forEach( (v, k) => {
+    globby(v.src.css).then( path => { log(`${k}.src.css:`); console.log(path); } );
+  });
 
   done();
 }

@@ -29,7 +29,8 @@ const stringly = require('./.gulp/stringly');
  */
 
 /* run with --abs -> convert all paths to absolute */
-const SRC_ROOT = (gutil.env.abs ? APP_ROOT : '.' ) + '/.src';
+const path_prefix = (gutil.env.abs ? APP_ROOT : '.' );
+const SRC_ROOT = path_prefix + '/.src';
 const ROOTS = {
   $include:    SRC_ROOT + '/_includes',
   bootstrap:   SRC_ROOT + '/bootstrap',
@@ -38,12 +39,13 @@ const ROOTS = {
   modmaps:     SRC_ROOT + '/mod_starlink_map',
   modservices: SRC_ROOT + '/mod_starlink_services',
   modstarlink: SRC_ROOT + '/mod_starlink',
-  template:    SRC_ROOT + '/templates/starlink'
+  templates:   SRC_ROOT + '/templates/starlink',
+  modules:     SRC_ROOT
 };
-const JOOMLA_MEDIA = './media';
-const JOOMLA_MODULES = './modules';
-const PACKAGES = './.dist';
-const JOOMLA_TEMPLATES = './templates';
+const JOOMLA_MEDIA = path_prefix + '/media';
+const JOOMLA_MODULES = path_prefix + '/modules';
+const PACKAGES = path_prefix + '/.dist';
+const JOOMLA_TEMPLATES = path_prefix + '/templates';
 
 
 //</editor-fold>
@@ -358,25 +360,24 @@ const component_initials = [
         ],
         [ "templates", {
             src: {
-              all:          ROOTS.template + '/**/*.*',
-              css:          ROOTS.template + '/css/!(_)*.css',
-              js:           ROOTS.template + '/js/*.js',
-              jsBootstrap:  ROOTS.bootstrap + '/js/*.js',
-              images:       ROOTS.template + '/images/**/*.*',
-              other:  [
-                            ROOTS.template + '/**/*.*',
-                      '!' + ROOTS.template + '/**/css/*.*',
-                      '!' + ROOTS.template + '/**/js/*.*',
-                      '!' + ROOTS.template + '/**/images/**/*.*'
+              _base:        ROOTS.templates,
+              css: [
+                            ROOTS.templates + '/**/!(_)*.css',
+                      '!' + ROOTS.templates + '/**/bootstrap.css',
               ],
-              zip:          JOOMLA_TEMPLATES + '/starlink/**/*.*'
+              js:           ROOTS.templates + '/**/*.js',
+              markup:       ROOTS.templates + '/**/*.{html,php}',
+              images:       ROOTS.templates + '/**/*.{jpg,jpeg,png,svg,gif}',
+              other:        ROOTS.templates + '/**/*.{xml,ini,txt,MD}',
+              zip:          ROOTS.templates + '/../starlink/**/*.*'
             },
             dest: {
-              css:          JOOMLA_TEMPLATES + '/starlink/css',
+              _base:        JOOMLA_TEMPLATES + '/starlink',
+/*            css:          JOOMLA_TEMPLATES + '/starlink/css',
               js:           JOOMLA_TEMPLATES + '/starlink/js',
               jsBootstrap:  JOOMLA_TEMPLATES + '/starlink/js/jui',
               images:       JOOMLA_TEMPLATES + '/starlink/images',
-              other:        JOOMLA_TEMPLATES + '/starlink/',
+              other:        JOOMLA_TEMPLATES + '/starlink/',      */
               zip:          PACKAGES
             },
             postcss: [
@@ -400,6 +401,21 @@ const component_initials = [
               require('autoprefixer')({'browsers': '> 1%'}),
               require('css-mqpacker')({sort: true})
             ]
+          }
+        ],
+        [ "modules", {
+            src: {
+              _base:        ROOTS.modules,
+              css:          ROOTS.modules + '/mod_starlink*/**/!(_)*.css',
+              js:           ROOTS.modules + '/mod_starlink*/**/*.js',
+              markup:       ROOTS.modules + '/mod_starlink*/**/*.{html,php}',
+              images:       ROOTS.modules + '/mod_starlink*/**/*.{jpg,jpeg,png,svg,gif}',
+              other:        ROOTS.modules + '/mod_starlink*/**/*.{xml,ini,txt,MD}',
+              zip:          ROOTS.modules + '/mod_starlink*/../starlink/**/*.*'
+            },
+            dest: {
+              _base:        JOOMLA_MODULES
+            }
           }
         ]
 ];
