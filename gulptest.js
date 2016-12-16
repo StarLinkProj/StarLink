@@ -74,7 +74,7 @@ function buildVendorsCss() {
 
 
 function buildModulesCss() {
-  return gulp.src([components.get('modules').src.css, '!/**/*starlink_{map,services,calculator_outsourcing}/**/*.*'])
+  return gulp.src([components.get('modules').src.css, '!**/mod_starlink_{map,services,calculator_outsourcing}/**/*.*'])
   .pipe($.filenames('css'))
   .pipe(c.run.sourcemaps ? $.sourcemaps.init() : noop())
   .pipe($.postcss(components.get('modules').postcss))
