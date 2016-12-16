@@ -1,0 +1,5 @@
+@import "_01variables";
+
+.TEST {
+  color: var(--accentColor);
+}
