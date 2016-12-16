@@ -21,7 +21,7 @@
         <field
             name="mapHeight"
             type="integer"
-            default="400"
+            default="408"
             label="Map height in pixels" description="Map height in pixels"
             first="100" last="1000" step="1"
         />

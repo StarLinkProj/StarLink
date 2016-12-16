@@ -3,7 +3,7 @@
 defined('_JEXEC') or die;
 
 $containerSuffix = (bool) $params->get('containerType') ? "-fluid" : "";
-$mapHeight = $params->get('mapHeight', '400');
+$mapHeight = $params->get('mapHeight', '408');
 ?>
 
 <aside class="container<?=$containerSuffix?>" style="padding:0;">
