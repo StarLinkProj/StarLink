@@ -1,6 +1,6 @@
-import gutil from 'gulp-util';
-import merge from 'lodash.merge';
-
+const gutil = require('gulp-util');
+const _merge = require('lodash.merge');
+const stringly = require('./.gulp/stringly');
 
 
 //<editor-fold desc="Constants">
@@ -43,6 +43,8 @@ const JOOMLA_MEDIA = './media';
 const JOOMLA_MODULES = './modules';
 const PACKAGES = './.dist';
 const JOOMLA_TEMPLATES = './templates';
+
+
 //</editor-fold>
 
 
@@ -304,14 +306,109 @@ const modules = {
 
 };
 
-
+const component_initials = [
+        [ "modcalc",  {
+            src: {
+              all:      ROOTS.modcalc + '/**/*.*',
+              css:      ROOTS.modcalc + '/css/starlink_calculator_outsourcing.css',
+              js:       ROOTS.modcalc + '/js/starlink_calculator_outsourcing.js',
+              images:   ROOTS.modcalc + '/images/**/*.*',
+              other:  [
+                        ROOTS.modcalc + '/**/*.*',
+                  '!' + ROOTS.modcalc + '**/css/*.*',
+                  '!' + ROOTS.modcalc + '**/js/*.*',
+                  '!' + ROOTS.modcalc + '**/images/**/*.*'
+              ],
+              zip:    [
+                JOOMLA_MEDIA + '/mod_starlink_calculator_outsourcing/**/*.*',
+                JOOMLA_MODULES + '/mod_starlink_calculator_outsourcing/**/*.*'
+              ]
+            },
+            dest: {
+              css:    JOOMLA_MEDIA + '/mod_starlink_calculator_outsourcing/css',
+              js:     JOOMLA_MEDIA + '/mod_starlink_calculator_outsourcing/js',
+              images: JOOMLA_MEDIA + '/mod_starlink_calculator_outsourcing/images',
+              other:  JOOMLA_MODULES + '/mod_starlink_calculator_outsourcing',
+              zip:    PACKAGES
+            },
+            postcss: [
+              require('postcss-import')({path: [SRC_ROOT + '/_includes']}),
+              require('postcss-mixins'),
+              require('postcss-custom-properties'),
+              require('postcss-apply'),
+              require('postcss-calc'),
+              require('postcss-nesting'),
+              require('postcss-custom-media'),
+              require('postcss-extend'),
+              require('postcss-media-minmax'),
+              require('postcss-custom-selectors'),
+              require('postcss-color-hwb'),
+              require('postcss-color-gray'),
+              require('postcss-color-hex-alpha'),
+              require('postcss-color-function'),
+              //require('pixrem'),
+              require('postcss-url'),
+              require('postcss-for'),
+              require('postcss-discard-comments'),
+              require('autoprefixer')({'browsers': '> 1%'}),
+              require('css-mqpacker')({sort: true})
+            ]
+            }
+        ],
+        [ "templates", {
+            src: {
+              all:          ROOTS.template + '/**/*.*',
+              css:          ROOTS.template + '/css/!(_)*.css',
+              js:           ROOTS.template + '/js/*.js',
+              jsBootstrap:  ROOTS.bootstrap + '/js/*.js',
+              images:       ROOTS.template + '/images/**/*.*',
+              other:  [
+                            ROOTS.template + '/**/*.*',
+                      '!' + ROOTS.template + '/**/css/*.*',
+                      '!' + ROOTS.template + '/**/js/*.*',
+                      '!' + ROOTS.template + '/**/images/**/*.*'
+              ],
+              zip:          JOOMLA_TEMPLATES + '/starlink/**/*.*'
+            },
+            dest: {
+              css:          JOOMLA_TEMPLATES + '/starlink/css',
+              js:           JOOMLA_TEMPLATES + '/starlink/js',
+              jsBootstrap:  JOOMLA_TEMPLATES + '/starlink/js/jui',
+              images:       JOOMLA_TEMPLATES + '/starlink/images',
+              other:        JOOMLA_TEMPLATES + '/starlink/',
+              zip:          PACKAGES
+            },
+            postcss: [
+              require('postcss-import')({path: [SRC_ROOT + '/_includes']}),
+              require('postcss-mixins'),
+              require('postcss-custom-properties'),
+              require('postcss-apply'),
+              require('postcss-calc'),
+              require('postcss-nesting'),
+              require('postcss-custom-media'),
+              require('postcss-extend'),
+              require('postcss-media-minmax'),
+              require('postcss-custom-selectors'),
+              require('postcss-color-hwb'),
+              require('postcss-color-gray'),
+              require('postcss-color-hex-alpha'),
+              require('postcss-color-function'), /*require('pixrem'),*/
+              require('postcss-url'),
+              require('postcss-for'),
+              require('postcss-discard-comments'),
+              require('autoprefixer')({'browsers': '> 1%'}),
+              require('css-mqpacker')({sort: true})
+            ]
+          }
+        ]
+];
 
 
 //<editor-fold desc="Settings & Initialization routine">
 
 
 /* Application constants: database names, server addresses etc. */
-let constants = {
+const constants = {
   default:     {
     apiHost: ''
   },
@@ -328,7 +425,7 @@ let constants = {
 
 
 /* Object for toggling plugins on/off depending on environment */
-let run = {
+const run = {
   default:     {
     debug: true,
     sourcemaps: true,
@@ -377,7 +474,7 @@ let run = {
 
 
 /* Plugin options depending on environment */
-let plugin = {
+const plugins = {
   default:     {
     js: {
       uglify: {
@@ -389,9 +486,9 @@ let plugin = {
       browser: ['chrome']
     },
     imagemin: [
-      require('gulp-imagemin').gifsicle(),
-      require('gulp-imagemin').jpegtran(),
-      require('gulp-imagemin').optipng()
+      require('gulp-imagemin').gifsicle,
+      require('gulp-imagemin').jpegtran,
+      require('gulp-imagemin').optipng
     ]
   },
   development: {
@@ -403,7 +500,8 @@ let plugin = {
     browserSync: {
       server: null,
       proxy: 'localhost:8000'
-    }
+    },
+    imagemin: null
   },
   staging:     {
     js: {
@@ -422,26 +520,29 @@ let plugin = {
 };
 
 
-
-let env = gutil.env.env || 'development';;
-
-export function init() {
-  env = gutil.env.env || 'development';
-  gutil.log(`env=${env}`);
-
-  run = merge({}, run.default, run[env]);
-  constants = merge({}, constants.default, constants[env]);
-  plugin = merge({}, plugin.default, plugin[env]);
-
-  if (plugin.browserSync.server === null)
-    delete plugin.browserSync.server;
-  if (plugin.browserSync.proxy === null)
-    delete plugin.browserSync.proxy;
-
-};
 //</editor-fold>
 
+//export default { mainConfig, modules, constants, run, plugin, env }
+
+exports.mainConfig = new Map(component_initials);
+
+exports.env = gutil.env.env || 'development';
+gutil.log(`env=${exports.env}`);
+/*gutil.log(`${stringly(plugins[exports.env])}`);
+gutil.log(`${stringly(plugins.default)}`);
+gutil.log(`${stringly(plugins[exports.env] || plugins.default)}`);*/
 
 
-export default { modules, constants, run, plugin, env }
+exports.constants = _merge({}, constants.default, constants[exports.env] || constants.default);
+exports.plugins = _merge({}, plugins.default, plugins[exports.env] || plugins.default);
+exports.run = _merge({}, run.default, run[exports.env] || run.default);
+
+if (exports.plugins.browserSync.server === null)
+  delete exports.plugins.browserSync.server;
+if (exports.plugins.browserSync.proxy === null)
+  delete exports.plugins.browserSync.proxy;
+
+/*module.exports = {
+
+}*/
 
