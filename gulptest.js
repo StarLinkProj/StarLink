@@ -1,22 +1,31 @@
 'use strict';
+const upath = require('upath');
+global.APP_ROOT = global.APP_ROOT || upath.resolve(__dirname);
 
 const gulp = require('gulp');
 const stringly = require('./.gulp/stringly');
 const $ = require('gulp-load-plugins')();
+const log = $.util.log;
 const c = require('./config.gulp.js');
-let browserSync = require('browser-sync').create();
+const browserSync = require('browser-sync').create();
+const globby = require('globby');
+
 //import modcalc from './.gulp/modcalc.babel';
 
 function initServer (done) {
-/* SUCCESS */
-/*  $.util.log(initServer.name + ' ' + stringly(c));
-    $.util.log('initServer');  */
+      /* SUCCESS */
+      /*  $.util.log(initServer.name + ' ' + stringly(c));
+          $.util.log('initServer');  */
+      /* SUCCESS */
+      /*  $.util.log(stringly(c) + '\n' + stringly(c.plugins.browserSync)); */
+      /* SUCCESS */
+      /*  $.util.log(c.plugins.imagemin);  */
+      /*  $.util.log(__dirname, upath.resolve(__dirname+'/.././'));  */
 
-/* SUCCESS */
-/*  $.util.log(stringly(c) + '\n' + stringly(c.plugins.browserSync)); */
 
-/* SUCCESS */
-/*  $.util.log(c.plugins.imagemin);  */
+  //globby(['*', '!index.php']).then(paths => { console.log(paths); });
+
+
 
   done();
 }

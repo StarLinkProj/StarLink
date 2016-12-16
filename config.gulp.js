@@ -1,3 +1,5 @@
+'use strict';
+
 const gutil = require('gulp-util');
 const _merge = require('lodash.merge');
 const stringly = require('./.gulp/stringly');
@@ -26,9 +28,8 @@ const stringly = require('./.gulp/stringly');
  *
  */
 
-
-
-const SRC_ROOT = './.src';
+/* run with --abs -> convert all paths to absolute */
+const SRC_ROOT = (gutil.env.abs ? APP_ROOT : '.' ) + '/.src';
 const ROOTS = {
   $include:    SRC_ROOT + '/_includes',
   bootstrap:   SRC_ROOT + '/bootstrap',
@@ -522,16 +523,21 @@ const plugins = {
 
 //</editor-fold>
 
-//export default { mainConfig, modules, constants, run, plugin, env }
+
+
+      /*gutil.log(APP_ROOT);*/
+
+exports.SRC_ROOT = SRC_ROOT;
 
 exports.mainConfig = new Map(component_initials);
+      /*gutil.log(exports.mainConfig);
+      gutil.log(exports.mainConfig.get('modcalc'));*/
 
 exports.env = gutil.env.env || 'development';
-gutil.log(`env=${exports.env}`);
-/*gutil.log(`${stringly(plugins[exports.env])}`);
-gutil.log(`${stringly(plugins.default)}`);
-gutil.log(`${stringly(plugins[exports.env] || plugins.default)}`);*/
-
+      /*gutil.log(`env=${exports.env}`);*/
+      /*gutil.log(`${stringly(plugins[exports.env])}`);
+      gutil.log(`${stringly(plugins.default)}`);
+      gutil.log(`${stringly(plugins[exports.env] || plugins.default)}`);*/
 
 exports.constants = _merge({}, constants.default, constants[exports.env] || constants.default);
 exports.plugins = _merge({}, plugins.default, plugins[exports.env] || plugins.default);
@@ -542,7 +548,5 @@ if (exports.plugins.browserSync.server === null)
 if (exports.plugins.browserSync.proxy === null)
   delete exports.plugins.browserSync.proxy;
 
-/*module.exports = {
 
-}*/
-
+//export default { mainConfig, modules, constants, run, plugin, env }
