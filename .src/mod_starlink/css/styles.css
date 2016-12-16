@@ -1,8 +1,7 @@
 /* postCSS */
 /*@import "bootstrap.css";*/
 /*@import "font-default.css";*/
-/*@import "_01variables";*/
-@import "_get_sass_variables.pcss";
+@import "_01variables";
 @import "_02mixins";
 
 @import "_common";
