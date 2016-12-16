@@ -25,14 +25,27 @@ function initServer (done) {
           c.mainConfig.forEach( (v, k) => {
             log(`${k}: ${stringly(v)}`);
           });   */
+      /* SUCCESS
+          c.mainConfig.forEach( (v, k) => {
+          globby(v.src.css).then( path => { log(`${k}.src.css:`); console.log(path); } );
+          });  */
+
+    /*  SUCCESS
+      c.mainConfig.forEach( (v, k) => {
+        return gulp.src(v.src.css).pipe($.debug({title: `${k}: read: `}));
+      });  */
 
 
-  //globby(['*', '!index.php']).then(paths => { console.log(paths); });
 
   c.mainConfig.delete('modcalc');
   c.mainConfig.forEach( (v, k) => {
-    globby(v.src.css).then( path => { log(`${k}.src.css:`); console.log(path); } );
+      gulp.task(k + ':build', function () {
+        return gulp.src(v.src.css)
+        .pipe($.debug({title: `${k}: read: `}));
+      });
+      console.log(k + ':build' + v.src.css);
   });
+  gulp.series('modules:build', 'templates:build', (done) => { console.log('Finish'); done(); });
 
   done();
 }
@@ -48,4 +61,4 @@ $.util.log(stringly(c.plugin));
     .on('change', (path, stats) => modcalc.css().pipe(browserSync.reload({stream: true})));
 } );*/
 
-gulp.task('default', gulp.series(initServer));
+gulp.task('default', gulp.series(initServer, 'modules:build'));
