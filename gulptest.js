@@ -19,85 +19,66 @@ const stringly = require('./.gulp/stringly');
 
 
 //<editor-fold desc="InitServer consequent successful bits">
-/* SUCCESS */
-/*  $.util.log(initServer.name + ' ' + stringly(c));
- $.util.log('initServer');  */
-/* SUCCESS */
-/*  $.util.log(stringly(c) + '\n' + stringly(c.plugins.browserSync)); */
-/* SUCCESS */
-/*  $.util.log(c.plugins.imagemin);  */
-/*  $.util.log(__dirname, upath.resolve(__dirname+'/.././'));  */
-/* SUCCESS
- c.sources.forEach( (v, k) => {
- log(`${k}: ${stringly(v)}`);
- });   */
-/* SUCCESS
- c.sources.forEach( (v, k) => {
- globby(v.src.css).then( path => { log(`${k}.src.css:`); console.log(path); } );
- });  */
 
-/*  SUCCESS
- c.sources.forEach( (v, k) => {
- return gulp.src(v.src.css).pipe($.debug({title: `${k}: read: `}));
- });  */
 //</editor-fold>
 
-function initServer (done) {
-  c.sources.delete('modcalc');
-  c.sources.forEach( (v, k) => {
-    return gulp.src(v.src.css)
-      .on('end', () => {
-        log('task ' + k + ':css');
-        console.log( $.filenames.get(k + ':css').map(upath.normalize) );
-        $.filenames.forget(k + ':css');
-      })
-    .pipe($.filenames(k + ':css'));
-  });
+function initServer (done, ...args) {
+ let t = 0, target = 'css';
 
-  done();
+
+ /* if( args.length == 1 )
+    target = args(0).toString();*/
+
+  c.sources.forEach( (v, k) =>
+    gulp.src(v.src[target])
+      .pipe($.filenames(k+'testcss'))
+      .pipe($.wait(++t*1000))
+      .on('end', () => {
+        console.log('task ' + k + ':css');
+        console.log(
+          $.filenames.get(k+'testcss')
+          .reduce( (s1, s2) => `${s1}    ${upath.normalize(s2)}\n`, '')
+        );
+      })
+  );
+  done()
 }
 
 
 function buildVendorsCss() {
   return gulp.src(components.get('vendors').src.css)
-    .pipe($.filenames('buildVendorsCss'))
+    .pipe($.filenames('css-v'))
     .pipe(c.run.sourcemaps ? $.sourcemaps.init() : noop())
     .pipe($.postcss(components.get('vendors').postcss))
     .pipe(c.run.sourcemaps ? $.sourcemaps.write('.') : noop())
     .pipe(gulp.dest(components.get('vendors').dest.css))
-      .on('end', () => {
-        log('buildVendorsCss: ');
-        console.log( $.filenames.get('buildVendorsCss').map(upath.normalize) );
-        $.filenames.forget('buildVendorsCss');
-      });
+    .on('end', () => {
+      console.log('buildVendorsCss: ');
+      console.log( $.filenames.get('css-v').map( upath.normalize) );
+      $.filenames.forget('all');
+    })
 }
 
 
 function buildModulesCss() {
   return gulp.src([components.get('modules').src.css, '!**/mod_starlink_{map,services,calculator_outsourcing}/**/*.*'])
-  .pipe($.filenames('css'))
-  .pipe(c.run.sourcemaps ? $.sourcemaps.init() : noop())
-  .pipe($.postcss(components.get('modules').postcss))
-          .pipe($.postcss([require('cssnano')(), require('postcss-prettify')]))
-  .pipe(c.run.sourcemaps ? $.sourcemaps.write('.') : noop())
-  .pipe(gulp.dest(components.get('modules').dest.css))
-  .on('end', () => {
-    log('buildModulesCss: ');
-    console.log( $.filenames.get('css').map(upath.normalize) );
-    $.filenames.forget('css');
-  });
+    .pipe($.filenames('css'))
+    .pipe($.if(c.run.sourcemaps, $.sourcemaps.init()))
+    .pipe($.postcss(components.get('modules').postcss))
+            .pipe($.postcss([require('cssnano')(), require('postcss-prettify')]))
+    .pipe($.if(c.run.sourcemaps, $.sourcemaps.write('.')))
+    .pipe(gulp.dest(components.get('modules').dest.css))
+    .on('end', () => {
+      console.log('buildModulesCss: ');
+      console.log( $.filenames.get('css').map( s => 'modules:css'+upath.normalize(s)) );
+      $.filenames.forget('all')
+    })
 }
 
 
-function buildVendorsJs(done) {
-  log('vendors: fake buildVendorsJs');
-  done();
-}
+const buildVendorsJs = (done)=> { log('vendors: fake buildVendorsJs'); done(); done() };
+const buildModulesJs = (done)=> { log('vendors: fake buildModulesJs'); done(); done() };
 
-function buildModulesJs(done) {
-  log('modules: fake buildModulesJs');
-  done();
-}
 
 
 gulp.task('default', initServer);

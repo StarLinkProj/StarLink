@@ -4,8 +4,8 @@ const gutil = require('gulp-util');
 const _merge = require('lodash.merge');
 const stringly = require('./.gulp/stringly');
 
+//<editor-fold desc="Module description">
 
-//<editor-fold desc="Constants">
 /* use particular environment:
  *
  *      gulp build --env=production
@@ -28,26 +28,32 @@ const stringly = require('./.gulp/stringly');
  *
  */
 
+//</editor-fold>
+
+
+//<editor-fold desc="Constants">
+
+
+
 /* run with --abs -> convert all paths to absolute */
 const path_prefix = (gutil.env.abs ? APP_ROOT : '.' );
 const SRC_ROOT = path_prefix + '/.src';
 const ROOTS = {
   $include:     SRC_ROOT + '/_includes',
-  bootstrap:    SRC_ROOT + '/bootstrap',
-  basscss:      SRC_ROOT + '/bassplate2',
+  vendors:      SRC_ROOT + '/vendor',
+  bootstrap:    SRC_ROOT + '/vendor/bootstrap',
+  basscss:      SRC_ROOT + '/vendor/basscss',
   modcalc:      SRC_ROOT + '/mod_starlink_calculator_outsourcing',
   modmaps:      SRC_ROOT + '/mod_starlink_map',
   modservices:  SRC_ROOT + '/mod_starlink_services',
   modstarlink:  SRC_ROOT + '/mod_starlink',
-  templates:    SRC_ROOT + '/templates/starlink',
-  modules:      SRC_ROOT,
-  vendors:      SRC_ROOT
-};
+  templates:    SRC_ROOT + '/templates',
+  modules:      SRC_ROOT
+}
 const JOOMLA_MEDIA = path_prefix + '/media';
 const JOOMLA_MODULES = path_prefix + '/modules';
 const PACKAGES = path_prefix + '/.dist';
 const JOOMLA_TEMPLATES = path_prefix + '/templates';
-
 
 //</editor-fold>
 
@@ -308,21 +314,21 @@ const modules = {
 };
 
 const component_initials = [
-        [ "modcalc",  {
+/*        [ "modcalc",  {
             src: {
-              all:      ROOTS.modcalc + '/**/*.*',
+              all:      ROOTS.modcalc + '/!**!/!*.*',
               css:      ROOTS.modcalc + '/css/starlink_calculator_outsourcing.css',
               js:       ROOTS.modcalc + '/js/starlink_calculator_outsourcing.js',
-              images:   ROOTS.modcalc + '/images/**/*.*',
+              images:   ROOTS.modcalc + '/images/!**!/!*.*',
               other:  [
-                        ROOTS.modcalc + '/**/*.*',
-                  '!' + ROOTS.modcalc + '**/css/*.*',
-                  '!' + ROOTS.modcalc + '**/js/*.*',
-                  '!' + ROOTS.modcalc + '**/images/**/*.*'
+                        ROOTS.modcalc + '/!**!/!*.*',
+                  '!' + ROOTS.modcalc + '**!/css/!*.*',
+                  '!' + ROOTS.modcalc + '**!/js/!*.*',
+                  '!' + ROOTS.modcalc + '**!/images/!**!/!*.*'
               ],
               zip:    [
-                JOOMLA_MEDIA + '/mod_starlink_calculator_outsourcing/**/*.*',
-                JOOMLA_MODULES + '/mod_starlink_calculator_outsourcing/**/*.*'
+                JOOMLA_MEDIA + '/mod_starlink_calculator_outsourcing/!**!/!*.*',
+                JOOMLA_MODULES + '/mod_starlink_calculator_outsourcing/!**!/!*.*'
               ]
             },
             dest: {
@@ -355,11 +361,11 @@ const component_initials = [
               require('css-mqpacker')({sort: true})
             ]
             }
-        ],
+        ],*/
         [ "templates", {
             src: {
               _base:        ROOTS.templates,
-              css: [
+    /**/         css: [
                             ROOTS.templates + '/**/!(_)*.css',
                       '!' + ROOTS.templates + '/**/bootstrap.css',
               ],
@@ -367,10 +373,10 @@ const component_initials = [
               markup:       ROOTS.templates + '/**/*.{html,php}',
               images:       ROOTS.templates + '/**/*.{jpg,jpeg,png,svg,gif}',
               other:        ROOTS.templates + '/**/*.{xml,ini,txt,MD}',
-              zip:          ROOTS.templates + '/../starlink/**/*.*'
+              zip:          ROOTS.templates + '/**/*.*'
             },
             dest: {
-              _base:        JOOMLA_TEMPLATES + '/starlink',
+              _base:        JOOMLA_TEMPLATES,
 /*            css:          JOOMLA_TEMPLATES + '/starlink/css',
               js:           JOOMLA_TEMPLATES + '/starlink/js',
               jsBootstrap:  JOOMLA_TEMPLATES + '/starlink/js/jui',
@@ -413,7 +419,7 @@ const component_initials = [
             },
             dest: {
               _base:        JOOMLA_MODULES,
-              css:          JOOMLA_MODULES + '/0media'
+              css:          JOOMLA_MEDIA
             },
             postcss: [
               require('postcss-import')({path: [
@@ -446,10 +452,9 @@ const component_initials = [
         ],
         [ "vendors", {
             src:  {
-              /* basscss */
-              /*_base:        ROOTS.vendors,*/
-              css: [        ROOTS.vendors + '/bassplate2/src/base.css',
-                            ROOTS.vendors + '/bootstrap/bootstrap.scss'
+              _base:        ROOTS.vendors,
+              css: [        ROOTS.basscss + '/src/base.css',
+                            ROOTS.bootstrap + '/bootstrap.scss'
               ],
               zip: [        JOOMLA_MEDIA + '/mod_starlink/css/vendors'
               ]
@@ -482,7 +487,7 @@ const constants = {
     apiHost: ''
   },
   development: {
-/*    apiHost: 'http://localhost:9050'*/
+    apiHost: 'http://localhost:8000'
   },
   staging:     {
 /*    apiHost: 'http://staging.example.com/api/'*/
@@ -516,7 +521,7 @@ const run = {
     },
     css: {
       cssnano: false,
-      autoprefixer: true
+      autoprefixer: false
     }
   },
   staging:     {

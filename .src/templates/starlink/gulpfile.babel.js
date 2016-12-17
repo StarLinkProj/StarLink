@@ -51,7 +51,7 @@ const PROJ_ROOT = '../../..';
 const ROOTS = {
   $include:    SRC_ROOT + '/_includes',
   bootstrap:   SRC_ROOT + '/bootstrap',
-  basscss:     SRC_ROOT + '/bassplate2',
+  basscss:     SRC_ROOT + '/basscss',
   modcalc:     SRC_ROOT + '/mod_starlink_calculator_outsourcing',
   modmaps:     SRC_ROOT + '/mod_starlink_map',
   modservices: SRC_ROOT + '/mod_starlink_services',
