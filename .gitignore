@@ -719,10 +719,10 @@ jspm_packages
 .dist
 .build
 
-/.src/bassplate2/css/base.css
-/.src/bassplate2/css/base.css.map
-/.src/bootstrap/css/
-/.src/bootstrap/js/
+/vendor/bassplate2/css/base.css
+/vendor/bassplate2/css/base.css.map
+/vendor/bootstrap/css/
+/vendor/bootstrap/js/
 /templates/starlink*/
 /media/mod_starlink*/
 /modules/mod_starlink*/
