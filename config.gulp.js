@@ -365,7 +365,7 @@ const component_initials = [
         [ "templates", {
             src: {
               _base:        ROOTS.templates,
-    /**/         css: [
+    /**/      css: [
                             ROOTS.templates + '/**/!(_)*.css',
                       '!' + ROOTS.templates + '/**/bootstrap.css',
               ],
@@ -455,6 +455,9 @@ const component_initials = [
               _base:        ROOTS.vendors,
               css: [        ROOTS.basscss + '/src/base.css',
                             ROOTS.bootstrap + '/bootstrap.scss'
+              ],
+              js: [         ROOTS.vendors + '/**/*.js',
+                      '!' + ROOTS.vendors + '/**/node_modules/**/*.*'
               ],
               zip: [        JOOMLA_MEDIA + '/mod_starlink/css/vendors'
               ]

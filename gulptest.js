@@ -14,6 +14,7 @@ const c = require('./config.gulp.js');
 const components = c.sources;
 const browserSync = require('browser-sync').create();
 const globby = require('globby');
+const merge2 = require('merge2');
 const stringly = require('./.gulp/stringly');
 
 
@@ -22,26 +23,24 @@ const stringly = require('./.gulp/stringly');
 
 //</editor-fold>
 
-function initServer (done, ...args) {
- let t = 0, target = 'css';
-
-
- /* if( args.length == 1 )
-    target = args(0).toString();*/
-
-  c.sources.forEach( (v, k) =>
-    gulp.src(v.src[target])
-      .pipe($.filenames(k+'testcss'))
-      .pipe($.wait(++t*1000))
-      .on('end', () => {
-        console.log('task ' + k + ':css');
-        console.log(
-          $.filenames.get(k+'testcss')
-          .reduce( (s1, s2) => `${s1}    ${upath.normalize(s2)}\n`, '')
-        );
-      })
-  );
-  done()
+function initServer (target = 'css') {
+  return function() {
+    let s = merge2();
+    c.sources.forEach((v, k) => {
+      log(k+': '+target);
+      s.add(gulp.src(v.src[target], {read: false})
+        .pipe($.filenames('initserver' + k))
+        .on('end', () => {
+          console.log(`task ${k}:${target}`);
+          console.log(
+            $.filenames.get('initserver' + k)
+            .reduce((s1, s2) => `${s1}    ${upath.normalize(s2)}\n`, '')
+          );
+        })
+      );
+    });
+    return s;
+  }
 }
 
 
@@ -81,7 +80,7 @@ const buildModulesJs = (done)=> { log('vendors: fake buildModulesJs'); done(); d
 
 
 
-gulp.task('default', initServer);
+gulp.task('default', initServer('js'));
 gulp.task('build:vendors', gulp.parallel(buildVendorsCss, buildVendorsJs));
 gulp.task('build:modules', gulp.parallel(buildModulesCss, buildModulesJs));
 
