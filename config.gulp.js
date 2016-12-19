@@ -40,20 +40,20 @@ const path_prefix = (gutil.env.abs ? APP_ROOT : '.' );
 const SRC_ROOT = path_prefix + '/.src';
 const ROOTS = {
   $include:     SRC_ROOT + '/_includes',
+  modules:      SRC_ROOT,
+  templates:    SRC_ROOT + '/templates',
   vendors:      SRC_ROOT + '/vendor',
   bootstrap:    SRC_ROOT + '/vendor/bootstrap',
   basscss:      SRC_ROOT + '/vendor/basscss',
   modcalc:      SRC_ROOT + '/mod_starlink_calculator_outsourcing',
   modmaps:      SRC_ROOT + '/mod_starlink_map',
   modservices:  SRC_ROOT + '/mod_starlink_services',
-  modstarlink:  SRC_ROOT + '/mod_starlink',
-  templates:    SRC_ROOT + '/templates',
-  modules:      SRC_ROOT
-}
-const JOOMLA_MEDIA = path_prefix + '/media';
-const JOOMLA_MODULES = path_prefix + '/modules';
-const PACKAGES = path_prefix + '/.dist';
-const JOOMLA_TEMPLATES = path_prefix + '/templates';
+  modstarlink:  SRC_ROOT + '/mod_starlink'
+};
+const JOOMLA_MEDIA = path_prefix + '/tmp' + '/media';
+const JOOMLA_MODULES = path_prefix + '/tmp' + '/modules';
+const PACKAGES = path_prefix + '/tmp' + '/.dist';
+const JOOMLA_TEMPLATES = path_prefix + '/tmp' + '/templates';
 
 //</editor-fold>
 
@@ -313,7 +313,7 @@ const modules = {
 
 };
 
-const component_initials = [
+const sources = [
 /*        [ "modcalc",  {
             src: {
               all:      ROOTS.modcalc + '/!**!/!*.*',
@@ -369,7 +369,9 @@ const component_initials = [
                             ROOTS.templates + '/**/!(_)*.css',
                       '!' + ROOTS.templates + '/**/bootstrap.css',
               ],
-              js:           ROOTS.templates + '/**/*.js',
+              js: [         ROOTS.templates + '/**/*.js',
+                      '!' + ROOTS.templates + '/**/gulp*.js'
+              ],
               markup:       ROOTS.templates + '/**/*.{html,php}',
               images:       ROOTS.templates + '/**/*.{jpg,jpeg,png,svg,gif}',
               other:        ROOTS.templates + '/**/*.{xml,ini,txt,MD}',
@@ -377,11 +379,11 @@ const component_initials = [
             },
             dest: {
               _base:        JOOMLA_TEMPLATES,
-/*            css:          JOOMLA_TEMPLATES + '/starlink/css',
-              js:           JOOMLA_TEMPLATES + '/starlink/js',
+              css:          JOOMLA_TEMPLATES,
+              js:           JOOMLA_TEMPLATES,
               jsBootstrap:  JOOMLA_TEMPLATES + '/starlink/js/jui',
-              images:       JOOMLA_TEMPLATES + '/starlink/images',
-              other:        JOOMLA_TEMPLATES + '/starlink/',      */
+              images:       JOOMLA_TEMPLATES,
+              other:        JOOMLA_TEMPLATES,
               zip:          PACKAGES
             },
             postcss: [
@@ -411,15 +413,20 @@ const component_initials = [
             src: {
               _base:        ROOTS.modules,
               css:          ROOTS.modules + '/mod_starlink*/**/!(_)*.css',
+              images:       ROOTS.modules + '/mod_starlink*/**/*.{jpg,jpeg,png,svg,gif}',
               js:           ROOTS.modules + '/mod_starlink*/**/*.js',
               markup:       ROOTS.modules + '/mod_starlink*/**/*.{html,php}',
-              images:       ROOTS.modules + '/mod_starlink*/**/*.{jpg,jpeg,png,svg,gif}',
               other:        ROOTS.modules + '/mod_starlink*/**/*.{xml,ini,txt,MD}',
               zip:          ROOTS.modules + '/mod_starlink*/../starlink/**/*.*'
             },
             dest: {
-              _base:        JOOMLA_MODULES,
-              css:          JOOMLA_MEDIA
+              /*_base:        JOOMLA_MODULES,*/
+              css:          JOOMLA_MEDIA,
+              images:       JOOMLA_MEDIA,
+              js:           JOOMLA_MEDIA,
+              markup:       JOOMLA_MODULES,
+              other:        JOOMLA_MODULES,
+              zip:          PACKAGES
             },
             postcss: [
               require('postcss-import')({path: [
@@ -450,21 +457,27 @@ const component_initials = [
             ]
           }
         ],
-        [ "vendors", {
+        [
+          "vendors", {
             src:  {
-              _base:        ROOTS.vendors,
+              /*_base:        ROOTS.vendors,*/
               css: [        ROOTS.basscss + '/src/base.css',
-                            ROOTS.bootstrap + '/bootstrap.scss'
+                ROOTS.bootstrap + '/bootstrap.scss'
               ],
-              js: [         ROOTS.vendors + '/**/*.js',
-                      '!' + ROOTS.vendors + '/**/node_modules/**/*.*'
-              ],
-              zip: [        JOOMLA_MEDIA + '/mod_starlink/css/vendors'
+              js:  [        ROOTS.bootstrap + '/js/*.js' ],
+              markup:       null,
+              images:       null,
+              other:        null,
+              zip: [        JOOMLA_MEDIA + '/mod_starlink/{css,js}/vendors'
               ]
             },
             dest: {
               /*_base:        ROOTS.vendors,*/
               css:          JOOMLA_MEDIA + '/mod_starlink/css/vendors',
+              js:           JOOMLA_TEMPLATES + '/starlink/js/jui',  //JOOMLA_MEDIA + '/mod_starlink/js/vendors',
+              markup:       null,
+              images:       null,
+              other:        null,
               zip:          PACKAGES + '/vendors'
             },
             postcss: [
@@ -474,10 +487,50 @@ const component_initials = [
               require('postcss-color-function'),
               require('postcss-calc'),
               /*require('postcss-color-function'),*/
-              require('postcss-discard-comments') //,require('autoprefixer')
+              require('postcss-discard-comments'),//require('autoprefixer')
             ]
           }
-        ]
+        ],
+        ["basscss",
+          {
+            src:     {
+              css: ROOTS.basscss + '/src/base.css'
+            },
+            dest:    {
+              css: ROOTS.basscss + '/css'
+            },
+            postcss: [
+              require('postcss-import'),
+              require('postcss-custom-media'),
+              require('postcss-custom-properties'),
+              require('postcss-color-function'),
+              require('postcss-calc'),
+              /*require('postcss-color-function'),*/
+              require('postcss-discard-comments'),
+              require('cssnano'),
+              require('postcss-prettify')//,require('autoprefixer')
+            ]
+          }
+        ],
+        ["bootstrap",
+          {
+            src:  {
+              sass: ROOTS.bootstrap + '/bootstrap.scss',
+            },
+            dest: {
+              css: ROOTS.bootstrap + '/css'
+            },
+            options: {
+              includePaths: [
+                ROOTS.$include,
+                './node_modules/bootstrap-sass/assets/stylesheets'
+              ]
+            },
+            postcss: [
+              require('postcss-prettify')
+            ]
+          }
+        ],
 ];
 
 
@@ -605,7 +658,7 @@ const plugins = {
 
 exports.SRC_ROOT = SRC_ROOT;
 
-exports.sources = new Map(component_initials);
+exports.sources = new Map(sources);
       /*gutil.log(exports.sources);
       gutil.log(exports.sources.get('modcalc'));*/
 

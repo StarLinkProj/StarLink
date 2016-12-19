@@ -28,16 +28,21 @@ function initServer (target = 'css') {
     let s = merge2();
     c.sources.forEach((v, k) => {
       log(k+': '+target);
-      s.add(gulp.src(v.src[target], {read: false})
+      if (v.src[target]) {
+        s.add(gulp.src(v.src[target], {read: false})
         .pipe($.filenames('initserver' + k))
+        .pipe(gulp.dest(v.dest[target]))
+        .pipe($.filenames('initserver-dest' + k))
         .on('end', () => {
           console.log(`task ${k}:${target}`);
+          let z = $.filenames.get('initserver' + k).map( (e,i)=> upath.resolve(e) + ' | ' + upath.resolve($.filenames.get('initserver-dest' + k)[i]));
           console.log(
-            $.filenames.get('initserver' + k)
-            .reduce((s1, s2) => `${s1}    ${upath.normalize(s2)}\n`, '')
+                  z.sort()
+                  .reduce((s1, s2) => `${s1}    ${s2}\n`, '')
           );
         })
-      );
+        );
+      }
     });
     return s;
   }
@@ -45,7 +50,7 @@ function initServer (target = 'css') {
 
 
 function buildVendorsCss() {
-  return gulp.src(components.get('vendors').src.css)
+  return gulp.src(components.get('vendors').src.css, {read: true})
     .pipe($.filenames('css-v'))
     .pipe(c.run.sourcemaps ? $.sourcemaps.init() : noop())
     .pipe($.postcss(components.get('vendors').postcss))
@@ -60,7 +65,7 @@ function buildVendorsCss() {
 
 
 function buildModulesCss() {
-  return gulp.src([components.get('modules').src.css, '!**/mod_starlink_{map,services,calculator_outsourcing}/**/*.*'])
+  return gulp.src([components.get('modules').src.css, '!**/mod_starlink_{map,services,calculator_outsourcing}/**/*.*'], {read: true})
     .pipe($.filenames('css'))
     .pipe($.if(c.run.sourcemaps, $.sourcemaps.init()))
     .pipe($.postcss(components.get('modules').postcss))
@@ -80,9 +85,72 @@ const buildModulesJs = (done)=> { log('vendors: fake buildModulesJs'); done(); d
 
 
 
-gulp.task('default', initServer('js'));
+gulp.task('default', initServer($.util.env.target || 'css'));
 gulp.task('build:vendors', gulp.parallel(buildVendorsCss, buildVendorsJs));
 gulp.task('build:modules', gulp.parallel(buildModulesCss, buildModulesJs));
+
+
+const testDir = () => {
+  const Dirs = new Map([
+          ['./.src/templates', './templates'],
+          ['./.src/vendor/basscss/css', './media/mod_starlink/css/vendor'],
+          ['./.src/vendor/bootstrap/css', './media/mod_starlink/css/vendor'],
+          ['./.src/vendor/mod_starlink', './media/mod_starlink/css/vendor']
+  ]);
+  const fs = require('fs');
+  fs.readdir(Dirs.get('./.src/templates'), (err, files) => {
+    files.forEach(file => {
+      console.log(file);
+    });
+  })
+};
+
+
+
+const buildVendorsBasscss = (done) =>
+  gulp.src(c.sources.get('basscss').src.css)
+  .pipe($.if(c.run.sourcemaps, $.sourcemaps.init()))
+  .pipe($.postcss(c.sources.get('basscss').postcss))
+  .pipe($.if(c.run.sourcemaps, $.sourcemaps.write('.')))
+  .pipe(gulp.dest(c.sources.get('basscss').dest.css));
+  //console.log('buildBasscss: fake done');
+  //done()
+//;
+
+
+const buildVendorsBootstrapCss = () =>
+  gulp.src(c.sources.get('bootstrap').src.sass)
+  .pipe($.if(c.run.sourcemaps, $.sourcemaps.init()))
+  .pipe($.sass(c.sources.get('bootstrap').options).on('error', $.sass.logError))
+  .pipe($.postcss(c.sources.get('bootstrap').postcss))
+  .pipe($.if(c.run.sourcemaps, $.sourcemaps.write('.')))
+  .pipe(gulp.dest(c.sources.get('bootstrap').dest.css));
+
+const buildVendorsBootstrapJs = (done) => {
+  console.log('        buildVendorsBootstrapJs: fake done');
+  done()
+}
+
+const buildVendorsBootstrap = gulp.series(
+        gulp.parallel(buildVendorsBootstrapCss, buildVendorsBootstrapJs),
+        (done) => {
+          log('    buildVendorsBootstrap: fake done');
+          done()
+        }
+);
+
+
+const buildVendors = gulp.series(
+        gulp.parallel(buildVendorsBasscss, buildVendorsBootstrap),
+        (done) => {
+          log('buildVendors: fake done');
+          done()
+        }
+);
+
+
+
+
 
 
 /*exports.initServer = initServer;*/
@@ -97,3 +165,4 @@ $.util.log(stringly(c.plugin));
     .on('change', (path, stats) => modcalc.css().pipe(browserSync.reload({stream: true})));
 } );*/
 
+exports.buildVendors = buildVendors;

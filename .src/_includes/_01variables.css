@@ -2,6 +2,7 @@
     --softBlack: #33383f;
     --brandColor: #ed1c24;
     --linkColor: #3fa2f7;
+    --linkHoverColor: color(var(--linkColor) shade(15%));
     --accentColor: color(var(--linkColor) tint(10%)); /*rgb(82, 171, 248);*/
     --textColor: #1b1b1b;
     --textColorSoft: #373a3c;
@@ -9,3 +10,11 @@
     --loudFont: var(--textFont);
     --fontSize: 16px;
 };
+
+$brandColor:  var(--brandColor);
+$brand-primary: darken(var(--brandColor), 10%);
+$textColor:   var(--textColor);
+$linkColor:   var(--linkColor);
+$linkHoverColor: var(--linkHoverColor);
+$textFont:    var(--textFont);
+$softBlack:   var(--softBlack);
