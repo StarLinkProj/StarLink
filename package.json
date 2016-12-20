@@ -28,6 +28,7 @@
     "babel-core": "^6.18.2",
     "babel-preset-es2015": "^6.18.0",
     "browser-sync": "^2.18.2",
+    "css-color-function": "^1.3.0",
     "css-mqpacker": "^5.0.1",
     "cssnano": "^3.9.1",
     "del": "^2.2.2",
