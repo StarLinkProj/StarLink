@@ -190,49 +190,6 @@ if (exports.plugins.browserSync.proxy === null)
   delete exports.plugins.browserSync.proxy;
 
 exports.sources = new Map([
-  [ 'templates', {
-    src: {
-      /*_base:        ROOTS.templates,*/
-      css:          ROOTS.templates + '/**/!(_)*.css',
-      js:           ROOTS.templates + '/**/*.js',
-      jsBootstrap:  ROOTS.bootstrap + '/js/bootstrap.js',
-      images:       ROOTS.templates + '/**/*.{jpg,jpeg,png,svg,gif}',
-      markup:       ROOTS.templates + '/**/*.{html,php}',
-      other:        ROOTS.templates + '/**/*.{xml,ini,txt,MD}'
-    },
-    dest: {
-      /* _base:        JOOMLA_TEMPLATES,*/
-      css:          JOOMLA_TEMPLATES,
-      js:           JOOMLA_TEMPLATES,
-      jsBootstrap:  JOOMLA_TEMPLATES + '/starlink/js/jui',
-      images:       JOOMLA_TEMPLATES,
-      markup:       JOOMLA_TEMPLATES,
-      other:        JOOMLA_TEMPLATES
-    },
-    postcss: [
-      require('postcss-import')({path: [SRC_ROOT + '/_includes']}),
-      require('postcss-mixins'),
-      require('postcss-custom-properties'),
-      require('postcss-simple-vars'),
-      require('postcss-apply'),
-      require('postcss-calc'),
-      require('postcss-nesting'),
-      require('postcss-custom-media'),
-      require('postcss-extend'),
-      require('postcss-media-minmax'),
-      require('postcss-custom-selectors'),
-      require('postcss-color-function'),
-      require('postcss-color-hwb'),
-      require('postcss-color-gray'),
-      require('postcss-color-hex-alpha'),
-      /*require('pixrem'),*/
-      require('postcss-url'),
-      require('postcss-for'),
-      require('postcss-discard-comments'),
-      require('autoprefixer')({'browsers': '> 1%'}),
-      require('css-mqpacker')({sort: true})
-    ]
-  } ],
   [ 'template', {
     src: {
       css:          ROOTS.template + '/**/!(_)*.css',
@@ -242,7 +199,7 @@ exports.sources = new Map([
       markup:       ROOTS.template + '/**/*.{html,php}',
       other:        ROOTS.template + '/**/*.{xml,ini,txt,MD}',
       zip:          JOOMLA_TEMPLATES + '/starlink/**/*.*',
-      clean:        JOOMLA_TEMPLATES + '/starlink'
+      clean:        JOOMLA_TEMPLATES + '/starlink/**'
     },
     dest: {
       css:          JOOMLA_TEMPLATES + '/starlink',
@@ -251,7 +208,7 @@ exports.sources = new Map([
       images:       JOOMLA_TEMPLATES + '/starlink',
       markup:       JOOMLA_TEMPLATES + '/starlink',
       other:        JOOMLA_TEMPLATES + '/starlink',
-      zipName:      'starlink',
+      zipName:      'template_starlink',
       zip:          PACKAGES
     },
     postcss: [
@@ -297,8 +254,8 @@ exports.sources = new Map([
         JOOMLA_MODULES + '/mod_starlink/**/*.*'
       ],
       clean: [
-        JOOMLA_MODULES + '/mod_starlink',
-        JOOMLA_MEDIA + '/mod_starlink'
+        JOOMLA_MODULES + '/mod_starlink/**',
+        JOOMLA_MEDIA + '/mod_starlink/**'
       ]
     },
     dest: {
@@ -353,8 +310,8 @@ exports.sources = new Map([
         JOOMLA_MODULES + '/mod_starlink_calculator_outsourcing/**/*.*'
       ],
       clean: [
-        JOOMLA_MODULES + '/mod_starlink_calculator_outsourcing/**/*.*',
-        JOOMLA_MEDIA + '/mod_starlink_calculator_outsourcing/**/*.*'
+        JOOMLA_MODULES + '/mod_starlink_calculator_outsourcing/**',
+        JOOMLA_MEDIA + '/mod_starlink_calculator_outsourcing/**'
       ]
     },
     dest: {
@@ -395,8 +352,8 @@ exports.sources = new Map([
       all:    ROOTS.modmaps + '/**/*.*',
       zip:    JOOMLA_MODULES + '/mod_starlink_map/**/*.*',
       clean: [
-        JOOMLA_MODULES + '/mod_starlink_map/**/*.*',
-        JOOMLA_MEDIA + '/mod_starlink_map/**/*.*'
+        JOOMLA_MODULES + '/mod_starlink_map/**',
+        JOOMLA_MEDIA + '/mod_starlink_map/**'
       ]
     },
     dest: {
@@ -415,8 +372,8 @@ exports.sources = new Map([
         JOOMLA_MODULES + '/mod_starlink_services/**/*.*'
       ],
       clean: [
-        JOOMLA_MODULES + '/mod_starlink_services/**/*.*',
-        JOOMLA_MEDIA + '/mod_starlink_services/**/*.*'
+        JOOMLA_MODULES + '/mod_starlink_services/**',
+        JOOMLA_MEDIA + '/mod_starlink_services/**'
       ]
     },
     dest: {
@@ -453,7 +410,7 @@ exports.sources = new Map([
   [ 'basscss', {
     src:     {
       css: ROOTS.basscss + '/src/base.css',
-      clean: ROOTS.basscss + '/css/base.css'
+      clean: ROOTS.basscss + '/css/base.*'
     },
     dest:    {
       css: ROOTS.basscss + '/css'
