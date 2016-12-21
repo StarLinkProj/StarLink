@@ -1,55 +1,24 @@
 'use strict';
+
 const upath = require('upath');
+/*  APP_ROOT keeps absolute path to the directory of gulptest.js
+ *  i.e. root dir of the package
+ */
 global.APP_ROOT = global.APP_ROOT || upath.resolve(__dirname);
 
 //<editor-fold desc="Gulp & helpers">
+
 const gulp = require('gulp');
 const $ = require('gulp-load-plugins')();
-const noop = $.util.noop;
 const log = $.util.log;
-const debug = operation => $.debug({title: operation});
+
 //</editor-fold>
 
 const c = require('./config.gulp.js');
-const components = c.sources;
 const browserSync = require('browser-sync').create();
 const globby = require('globby');
-const merge2 = require('merge2');
+const del = require('del');
 const stringly = require('./.gulp/stringly');
-
-
-
-//<editor-fold desc="InitServer consequent successful bits">
-
-//</editor-fold>
-
-function initServer (target = 'css') {
-  return function() {
-    let s = merge2();
-    c.sources.forEach((v, k) => {
-      log(k+': '+target);
-      if (v.src[target]) {
-        s.add(gulp.src(v.src[target], {read: false})
-        .pipe($.filenames('initserver' + k))
-        .pipe(gulp.dest(v.dest[target]))
-        .pipe($.filenames('initserver-dest' + k))
-        .on('end', () => {
-          console.log(`task ${k}:${target}`);
-          let z = $.filenames.get('initserver' + k).map( (e,i)=> upath.resolve(e) + ' | ' + upath.resolve($.filenames.get('initserver-dest' + k)[i]));
-          console.log(
-                  z.sort()
-                  .reduce((s1, s2) => `${s1}    ${s2}\n`, '')
-          );
-        })
-        );
-      }
-    });
-    return s;
-  }
-}
-
-
-gulp.task('default', initServer($.util.env.target || 'css'));
 
 
 const prettyFilenames = argArray =>
@@ -59,7 +28,30 @@ const prettyFilenames = argArray =>
   );
 
 
+const zipHelper = key => {
+  const s = c.sources.get(key);
+  return function() {
+    return gulp.src(s.src.zip)
+    .pipe($.filenames(key + ':zip'))
+    .pipe($.zip(s.dest.zipName + '.zip'))
+    .pipe(gulp.dest(s.dest.zip))
+    .pipe($.filenames(key + ':zip:dest'))
+    .on('end', () => {
+      console.log(key + ':zip: ');
+      console.log(key + ':zip:source:',
+              prettyFilenames($.filenames.get(key + ':zip', 'full'))
+      );
+      console.log(key + ':zip:dest:',
+              prettyFilenames($.filenames.get(key + ':zip:dest', 'full'))
+      );
+    });
+  }
+};
+
+
+
 //<editor-fold desc="Vendors">
+
 
 //<editor-fold desc="BassCss">
 
@@ -103,137 +95,184 @@ const buildVendorsBootstrap = () =>
     console.log('Bootstrap:dest:',
             prettyFilenames($.filenames.get('bootstrap-dest', 'full'))
     );
-  });;
+  });
 
 //</editor-fold>
 
 
-const buildVendors = gulp.parallel(buildVendorsBasscss, buildVendorsBootstrap);
+const cleanBasscss = () =>
+        del(c.sources.get('basscss').src.clean)
+        .then(paths=>{console.log(paths.join('\n'))});
+
+const cleanBootstrap = () =>
+        del(c.sources.get('bootstrap').src.clean)
+        .then(paths=>{console.log(paths.join('\n'))});
+
+//</editor-fold>
+
+const buildVendors = gulp.parallel(
+        buildVendorsBasscss,
+        buildVendorsBootstrap
+);
 exports.buildVendors = buildVendors;
 
-//</editor-fold>
+const cleanVendors = gulp.parallel(
+        cleanBasscss,
+        cleanBootstrap
+);
+exports.cleanVendors = cleanVendors;
 
 
 //<editor-fold desc="Templates">
 
-const buildTemplatesCss = () =>
-  gulp.src(c.sources.get('templates').src.css)
-  .pipe($.filenames('templates:css'))
-  .pipe($.if(c.run.sourcemaps, $.sourcemaps.init()))
-  .pipe($.postcss(c.sources.get('templates').postcss))
-  .pipe($.if(c.run.sourcemaps, $.sourcemaps.write('.')))
-  .pipe(gulp.dest(c.sources.get('templates').dest.css))
-  .pipe($.filenames('templates:css:dest'))
-  .on('end', () => {
-    console.log('Templates:css: ');
-    console.log('Templates:css:source:',
-            prettyFilenames($.filenames.get('templates:css', 'full'))
+const buildTemplateCss = () =>
+  gulp.src (c.sources.get('template').src.css )
+  .pipe( $.filenames('template:css') )
+  .pipe(
+    $.if( c.run.sourcemaps,
+      $.sourcemaps.init()
+    )
+  )
+  .pipe( $.postcss( c.sources.get('template').postcss ) )
+  .pipe(
+    $.if( c.run.sourcemaps,
+      $.sourcemaps.write('.')
+    )
+  )
+  .pipe( gulp.dest( c.sources.get('template').dest.css ) )
+  .pipe( $.filenames('template:css:dest') )
+  .on( 'end', () => {
+    console.log( 'Template:css: ' );
+    console.log( 'Template:css:source:',
+            prettyFilenames( $.filenames.get( 'template:css', 'full' ) )
     );
-    console.log('Templates:css:dest:',
-            prettyFilenames($.filenames.get('templates:css:dest', 'full'))
-    );
-  });
-
-
-const buildTemplatesJs = () =>
-  gulp.src(c.sources.get('templates').src.js)
-  .pipe($.filenames('templates:js'))
-  .pipe($.if(c.run.js.sourcemaps, $.sourcemaps.init()))
-  .pipe($.if(c.run.uglify, $.uglify(c.plugins.uglify)))
-  .pipe($.if(c.run.js.sourcemaps, $.sourcemaps.write('.')))
-  .pipe(gulp.dest(c.sources.get('templates').dest.js))
-  .pipe($.filenames('templates:js:dest'))
-  .on('end', () => {
-    console.log('Templates:js: ');
-    console.log('Templates:js:source:',
-            prettyFilenames($.filenames.get('templates:js', 'full'))
-    );
-    console.log('Templates:js:dest:',
-            prettyFilenames($.filenames.get('templates:js:dest', 'full'))
+    console.log('Template:css:dest:',
+            prettyFilenames( $.filenames.get( 'template:css:dest', 'full' ) )
     );
   });
 
 
-const buildTemplatesJsBootstrap = () =>
-  gulp.src(c.sources.get('templates').src.jsBootstrap)
-  .pipe($.filenames('templates:js:bootstrap'))
-  .pipe($.if(c.run.js.sourcemaps, $.sourcemaps.init()))
-  .pipe($.if(c.run.uglify, $.uglify(c.plugins.uglify)))
-  .pipe($.if(c.run.js.sourcemaps, $.sourcemaps.write('.')))
-  .pipe(gulp.dest(c.sources.get('templates').dest.jsBootstrap))
-  .pipe($.filenames('templates:js:bootstrap:dest'))
-  .on('end', () => {
-    console.log('Templates:js:bootstrap: ');
-    console.log('Templates:js:bootstrap:source:',
-            prettyFilenames($.filenames.get('templates:js:bootstrap', 'full'))
+const buildTemplateJs = () =>
+  gulp.src( c.sources.get('template').src.js )
+  .pipe( $.filenames('template:js') )
+  .pipe( $.if( c.run.js.sourcemaps, $.sourcemaps.init() ) )
+  .pipe( $.if( c.run.uglify, $.uglify(c.plugins.uglify) ) )
+  .pipe( $.if( c.run.js.sourcemaps, $.sourcemaps.write('.') ) )
+  .pipe( gulp.dest( c.sources.get('template').dest.js ) )
+  .pipe( $.filenames('template:js:dest') )
+  .on( 'end', () => {
+    console.log( 'Template:js: ' );
+    console.log( 'Template:js:source:',
+            prettyFilenames( $.filenames.get('template:js', 'full') )
     );
-    console.log('Templates:js:bootstrap:dest:',
-            prettyFilenames($.filenames.get('templates:js:bootstrap:dest', 'full'))
+    console.log( 'Template:js:dest:',
+            prettyFilenames( $.filenames.get('template:js:dest', 'full') )
     );
   });
 
 
-const buildTemplatesImages = () =>
-  gulp.src(c.sources.get('templates').src.images)
-  .pipe($.filenames('templates:images'))
+const buildTemplateJsBootstrap = () =>
+  gulp.src( c.sources.get('template').src.jsBootstrap )
+  .pipe( $.filenames('template:js:bootstrap') )
+  .pipe( $.if( c.run.js.sourcemaps, $.sourcemaps.init() ) )
+  .pipe( $.if( c.run.uglify, $.uglify(c.plugins.uglify) ) )
+  .pipe( $.if( c.run.js.sourcemaps, $.sourcemaps.write('.') ) )
+  .pipe( gulp.dest( c.sources.get('template').dest.jsBootstrap ) )
+  .pipe( $.filenames('template:js:bootstrap:dest') )
+  .on( 'end', () => {
+    console.log( 'Template:js:bootstrap: ');
+    console.log( 'Template:js:bootstrap:source:',
+            prettyFilenames( $.filenames.get('template:js:bootstrap', 'full') )
+    );
+    console.log( 'Template:js:bootstrap:dest:',
+            prettyFilenames( $.filenames.get('template:js:bootstrap:dest', 'full') )
+    );
+  });
+
+
+const buildTemplateImages = () =>
+  gulp.src(c.sources.get('template').src.images)
+  .pipe($.filenames('template:images'))
   .pipe($.if(c.run.imagemin, $.imagemin(c.plugins.imagemin)))
-  .pipe(gulp.dest(c.sources.get('templates').dest.images))
-  .pipe($.filenames('templates:images:dest'))
+  .pipe(gulp.dest(c.sources.get('template').dest.images))
+  .pipe($.filenames('template:images:dest'))
   .on('end', () => {
-    console.log('Templates:images: ');
-    console.log('Templates:images:source:',
-            prettyFilenames($.filenames.get('templates:images', 'full'))
+    console.log('Template:images: ');
+    console.log('Template:images:source:',
+            prettyFilenames($.filenames.get('template:images', 'full'))
     );
-    console.log('Templates:images:dest:',
-            prettyFilenames($.filenames.get('templates:images:dest', 'full'))
+    console.log('Template:images:dest:',
+            prettyFilenames($.filenames.get('template:images:dest', 'full'))
     );
   });
 
 
-const buildTemplatesMarkup = () =>
-  gulp.src(c.sources.get('templates').src.markup)
-  .pipe($.filenames('templates:markup'))
-  .pipe(gulp.dest(c.sources.get('templates').dest.markup))
-  .pipe($.filenames('templates:markup:dest'))
+const buildTemplateMarkup = () =>
+  gulp.src(c.sources.get('template').src.markup)
+  .pipe($.filenames('template:markup'))
+  .pipe(gulp.dest(c.sources.get('template').dest.markup))
+  .pipe($.filenames('template:markup:dest'))
   .on('end', () => {
-    console.log('Templates:markup: ');
-    console.log('Templates:markup:source:',
-            prettyFilenames($.filenames.get('templates:markup', 'full'))
+    console.log('Template:markup: ');
+    console.log('Template:markup:source:',
+            prettyFilenames($.filenames.get('template:markup', 'full'))
     );
-    console.log('Templates:markup:dest:',
-            prettyFilenames($.filenames.get('templates:markup:dest', 'full'))
+    console.log('Template:markup:dest:',
+            prettyFilenames($.filenames.get('template:markup:dest', 'full'))
     );
   });
 
 
-const buildTemplatesOther = () =>
-  gulp.src(c.sources.get('templates').src.other)
-  .pipe($.filenames('templates:other'))
-  .pipe(gulp.dest(c.sources.get('templates').dest.other))
-  .pipe($.filenames('templates:other:dest'))
+const buildTemplateOther = () =>
+  gulp.src(c.sources.get('template').src.other)
+  .pipe($.filenames('template:other'))
+  .pipe(gulp.dest(c.sources.get('template').dest.other))
+  .pipe($.filenames('template:other:dest'))
   .on('end', () => {
-    console.log('Templates:other: ');
-    console.log('Templates:other:source:',
-            prettyFilenames($.filenames.get('templates:other', 'full'))
+    console.log('Template:other: ');
+    console.log('Template:other:source:',
+            prettyFilenames($.filenames.get('template:other', 'full'))
     );
-    console.log('Templates:other:dest:',
-            prettyFilenames($.filenames.get('templates:other:dest', 'full'))
+    console.log('Template:other:dest:',
+            prettyFilenames($.filenames.get('template:other:dest', 'full'))
     );
   });
 
 
-const buildTemplates = gulp.parallel(
-        buildTemplatesCss,
-        buildTemplatesJs,
-        buildTemplatesJsBootstrap,
-        buildTemplatesImages,
-        buildTemplatesMarkup,
-        buildTemplatesOther
-);
+const buildTemplateZip = () =>
+  gulp.src( c.sources.get('template').src.zip )
+  .pipe( $.filenames('starlink:zip') )
+  .pipe( $.zip('template_starlink.zip') )
+  .pipe( gulp.dest(c.sources.get('template').dest.zip) )
+  .pipe( $.filenames('starlink:zip:dest') )
+  .on( 'end', () => {
+    console.log('Template starlink:zip: ');
+    console.log('Template starlink:zip:source:',
+            prettyFilenames($.filenames.get('starlink:zip', 'full'))
+    );
+    console.log('Template starlink:zip:dest:',
+            prettyFilenames($.filenames.get('starlink:zip:dest', 'full'))
+    );
+  });
 
-exports.buildTemplates = buildTemplates;
+const cleanTemplate = () =>
+        del(c.sources.get('template').src.clean)
+        .then( paths=>{ console.log(paths.join('\n')) } );
+
 
 //</editor-fold>
+
+const buildTemplate = gulp.parallel(
+        buildTemplateCss,
+        buildTemplateJs,
+        buildTemplateJsBootstrap,
+        buildTemplateImages,
+        buildTemplateMarkup,
+        buildTemplateOther
+);
+exports.buildTemplate = buildTemplate;
+exports.buildTemplateZip = buildTemplateZip;
+exports.cleanTemplate = cleanTemplate;
 
 
 //<editor-fold desc="Modules">
@@ -330,6 +369,11 @@ const buildModulesStarlinkOther = () =>
     );
   });
 
+const cleanModstarlink = () =>
+        del(c.sources.get('modstarlink').src.clean)
+        .then(paths=>{console.log(paths.join('\n'))});
+
+//</editor-fold>
 
 const buildModulesStarlink = gulp.parallel(
         buildModulesStarlinkCss,
@@ -338,8 +382,10 @@ const buildModulesStarlink = gulp.parallel(
         buildModulesStarlinkImages,
         buildModulesStarlinkOther
 );
-
-//</editor-fold>
+exports.buildModulesStarlink = buildModulesStarlink;
+const buildModulesStarlinkZip = zipHelper('modstarlink');
+exports.buildModulesStarlinkZip = buildModulesStarlinkZip;
+exports.cleanModstarlink = cleanModstarlink;
 
 
 //<editor-fold desc="mod_starlink_calculator_outsourcing">
@@ -414,6 +460,11 @@ const buildModulesCalcOther = () =>
     );
   });
 
+const cleanModcalc = () =>
+        del(c.sources.get('modcalc').src.clean)
+        .then(paths=>{console.log(paths.join('\n'))});
+
+//</editor-fold>
 
 const buildModulesCalc = gulp.parallel(
         buildModulesCalcCss,
@@ -421,12 +472,13 @@ const buildModulesCalc = gulp.parallel(
         buildModulesCalcImages,
         buildModulesCalcOther
 );
-
-//</editor-fold>
+exports.buildModulesCalc = buildModulesCalc;
+const buildModulesCalcZip = zipHelper('modcalc');
+exports.buildModulesCalcZip = buildModulesCalcZip;
+exports.cleanModcalc = cleanModcalc;
 
 
 //<editor-fold desc="mod_starlink_services">
-
 
 const buildModulesServicesCss = () =>
   gulp.src(c.sources.get('modservices').src.css)
@@ -480,13 +532,21 @@ const buildModulesServicesOther = () =>
   });
 
 
-const buildModulesServices = gulp.parallel(
-  buildModulesServicesCss,
-  buildModulesServicesImages,
-  buildModulesServicesOther
-);
+const cleanModservices = () =>
+        del(c.sources.get('modservices').src.clean)
+        .then(paths=>{console.log(paths.join('\n'))});
 
 //</editor-fold>
+
+const buildModulesServices = gulp.parallel(
+        buildModulesServicesCss,
+        buildModulesServicesImages,
+        buildModulesServicesOther
+);
+exports.buildModulesServices = buildModulesServices;
+const buildModulesServicesZip = zipHelper('modservices');
+exports.buildModulesServicesZip = buildModulesServicesZip;
+exports.cleanmodServices = cleanModservices;
 
 
 //<editor-fold desc="mod_starlink_map">
@@ -506,8 +566,16 @@ const buildModulesMap = () =>
     );
   });
 
+const cleanModmap = () =>
+        del(c.sources.get('modmap').src.clean)
+        .then(paths=>{console.log(paths.join('\n'))});
+
 //</editor-fold>
 
+exports.buildModulesMap = buildModulesMap;
+const buildModulesMapZip = zipHelper('modmap');
+exports.buildModulesMapZip = buildModulesMapZip;
+exports.cleanModmap = cleanModmap;
 
 const buildModules = gulp.parallel(
         buildModulesStarlink,
@@ -515,13 +583,51 @@ const buildModules = gulp.parallel(
         buildModulesServices,
         buildModulesMap
 );
-
 exports.buildModules = buildModules;
+
+const cleanModules = gulp.parallel(
+        cleanModstarlink,
+        cleanModcalc,
+        cleanModservices,
+        cleanModmap
+);
+exports.cleanModules = cleanModules;
+
+
+
+const buildZip = gulp.parallel(
+        buildModulesStarlinkZip,
+        buildModulesCalcZip,
+        buildModulesServicesZip,
+        buildModulesMapZip,
+        buildTemplateZip
+);
+exports.buildZip = buildZip;
+
+
+const build = gulp.series(
+        buildVendors,
+        buildModules,
+        buildTemplate,
+        buildZip
+);
+exports.build = build;
+
+
+const clean = gulp.series(
+        cleanVendors,
+        cleanTemplate,
+        cleanModules
+);
+exports.clean = clean;
+
+exports.buildClean = gulp.series(clean, build);
+
+
 
 //</editor-fold>
 
 
-/*exports.initServer = initServer;*/
 
 /*gulp.task('watch', function () {
   browserSync.init(c.plugin);
