@@ -16,45 +16,17 @@ const log = $.util.log;
 
 const c = require('./config.gulp.js');
 const browserSync = require('browser-sync').create();
+const reload = browserSync.reload;
 const globby = require('globby');
 const del = require('del');
-const stringly = require('./.gulp/stringly');
+
+const zipHelper = require('./helpers').zipHelper;
+const logPipeline = require('./helpers').logPipeline;
+const stringly = require('./.gulp/helpers').stringly;
 
 
-/*const prettyFilenames = argArray =>
-  argArray.reduce(
-    (acc, curr) => `${acc}${curr}\n}`,
-    ''
-  );*/
-
-
-const logPipeline = (module, task) => {
-  return function () {
-    console.log(
-            $.filenames.get(`${module}:${task}:source`, 'full')
-            .map(v => `${module}:${task}:source: ${upath.normalize(v)}`)
-            .reduce( (acc, curr) => `${acc}${curr}\n`, '' )
-    );
-    console.log(
-            $.filenames.get(`${module}:${task}:dest`, 'full')
-            .map(v => `${module}:${task}:dest:   ${upath.normalize(v)}`)
-            .reduce( (acc, curr) => `${acc}${curr}\n`, '' )
-    );
-  }
-};
-
-
-const zipHelper = key => {
-  const s = c.sources.get(key);
-  return function() {
-    return gulp.src(s.src.zip)
-    .pipe($.filenames(key + ':zip:source'))
-    .pipe($.zip(s.dest.zipName + '.zip'))
-    .pipe(gulp.dest(s.dest.zip))
-    .pipe($.filenames(key + ':zip:dest'))
-    .on('end', logPipeline(key, 'zip'));
-  }
-};
+const modstarlink = c.sources.get('modstarlink');
+const template = c.sources.get('template');
 
 
 
@@ -72,16 +44,6 @@ const buildVendorsBasscss = () =>
   .pipe(gulp.dest(c.sources.get('basscss').dest.css))
   .pipe($.filenames('basscss:build:dest'))
   .on('end', logPipeline('basscss', 'build'));
-/*    () => {
-    console.log('Basscss: ');
-    console.log('Basscss:source:',
-            prettyFilenames($.filenames.get('basscss', 'full'))
-    );
-    console.log('Basscss:dest:',
-            prettyFilenames($.filenames.get('basscss-dest', 'full'))
-    );
-  }
-  );*/
 
 
 const cleanBasscss = () =>
@@ -103,17 +65,6 @@ const buildVendorsBootstrap = () =>
   .pipe(gulp.dest(c.sources.get('bootstrap').dest.css))
   .pipe($.filenames('bootstrap:build:dest'))
   .on('end', logPipeline('bootstrap', 'build'));
-
-
-/*          () => {
-    console.log('Bootstrap: ');
-    console.log('Bootstrap:source:',
-            prettyFilenames($.filenames.get('bootstrap', 'full'))
-    );
-    console.log('Bootstrap:dest:',
-            prettyFilenames($.filenames.get('bootstrap-dest', 'full'))
-    );
-  });*/
 
 
 const cleanBootstrap = () =>
@@ -322,46 +273,65 @@ exports.zipModstarlink = zipModstarlink;
 exports.cleanModstarlink = cleanModstarlink;
 
 
+
 //<editor-fold desc="mod_starlink_calculator_outsourcing">
 
-const buildModulesCalcCss = () =>
-  gulp.src(c.sources.get('modcalc').src.css)
-  .pipe($.filenames('modcalc:css:source'))
-  .pipe($.if(c.run.sourcemaps, $.sourcemaps.init()))
-  .pipe($.postcss(c.sources.get('modcalc').postcss))
-  .pipe($.if(c.run.sourcemaps, $.sourcemaps.write('.')))
-  .pipe(gulp.dest(c.sources.get('modcalc').dest.css))
-  .pipe($.filenames('modcalc:css:dest'))
-  .on('end', logPipeline('modcalc', 'css'));
+const buildModulesCalcCss = () => {
+  const modcalc = c.sources.get('modcalc');
+  const src = modcalc.src.css;
+  const dest = modcalc.dest.css;
+  return gulp.src(src)
+    .pipe($.newer(dest))
+    .pipe($.filenames('modcalc:css:source'))
+    .pipe($.if(c.run.sourcemaps, $.sourcemaps.init()))
+    .pipe($.postcss(modcalc.postcss))
+    .pipe($.if(c.run.sourcemaps, $.sourcemaps.write('.')))
+    .pipe(gulp.dest(dest))
+    .pipe($.filenames('modcalc:css:dest'))
+    .on('end', logPipeline('modcalc', 'css'));
+};
 
 
-const buildModulesCalcJs = () =>
-  gulp.src(c.sources.get('modcalc').src.js)
-  .pipe($.filenames('modcalc:js:source'))
-  .pipe($.if(c.run.js.sourcemaps, $.sourcemaps.init()))
-  .pipe($.if(c.run.uglify, $.uglify(c.plugins.uglify)))
-  .pipe($.if(c.run.js.sourcemaps, $.sourcemaps.write('.')))
-  .pipe(gulp.dest(c.sources.get('modcalc').dest.js))
-  .pipe($.filenames('modcalc:js:dest'))
-  .on('end', logPipeline('modcalc', 'js'));
+const buildModulesCalcJs = () => {
+  const modcalc = c.sources.get('modcalc');
+  const src = modcalc.src.js;
+  const dest = modcalc.dest.js;
+  return gulp.src(src)
+    .pipe($.newer(dest))
+    .pipe($.filenames('modcalc:js:source'))
+    .pipe($.if(c.run.js.sourcemaps, $.sourcemaps.init()))
+    .pipe($.if(c.run.uglify, $.uglify(c.plugins.uglify)))
+    .pipe($.if(c.run.js.sourcemaps, $.sourcemaps.write('.')))
+    .pipe(gulp.dest(dest))
+    .pipe($.filenames('modcalc:js:dest'))
+    .on('end', logPipeline('modcalc', 'js'));
+}
 
 
-const buildModulesCalcImages = () =>
-  gulp.src(c.sources.get('modcalc').src.images)
-  .pipe($.filenames('modcalc:images:source'))
-  .pipe($.if(c.run.imagemin, $.imagemin(c.plugins.imagemin)))
-  .pipe(gulp.dest(c.sources.get('modcalc').dest.images))
-  .pipe($.filenames('modcalc:images:dest'))
-  .on('end', logPipeline('modcalc', 'images'));
+const buildModulesCalcImages = () => {
+  const modcalc = c.sources.get('modcalc');
+  const src = modcalc.src.images;
+  const dest = modcalc.dest.images;
+  return gulp.src(src)
+    .pipe($.newer(dest))
+    .pipe($.filenames('modcalc:images:source'))
+    .pipe($.if(c.run.imagemin, $.imagemin(c.plugins.imagemin)))
+    .pipe(gulp.dest(dest))
+    .pipe($.filenames('modcalc:images:dest'))
+    .on('end', logPipeline('modcalc', 'images'));
+};
 
-
-const buildModulesCalcOther = () =>
-  gulp.src(c.sources.get('modcalc').src.other)
-  .pipe($.filenames('modcalc:other:source'))
-  .pipe(gulp.dest(c.sources.get('modcalc').dest.other))
-  .pipe($.filenames('modcalc:other:dest'))
-  .on('end', logPipeline('modcalc', 'other'));
-
+const buildModulesCalcOther = () => {
+  const modcalc = c.sources.get('modcalc');
+  const src = modcalc.src.other;
+  const dest = modcalc.dest.other;
+  return gulp.src(src)
+    .pipe($.newer(dest))
+    .pipe($.filenames('modcalc:other:source'))
+    .pipe(gulp.dest(dest))
+    .pipe($.filenames('modcalc:other:dest'))
+    .on('end', logPipeline('modcalc', 'other'));
+};
 
 const cleanModcalc = () =>
         del(c.sources.get('modcalc').src.clean)
@@ -381,10 +351,11 @@ const zipModcalc = zipHelper('modcalc');
 
 //</editor-fold>
 
-
+gulp.task('modcalc:static', buildModulesCalcJs);
 exports.buildModulesCalc = buildModulesCalc;
 exports.zipModcalc = zipModcalc;
 exports.cleanModcalc = cleanModcalc;
+
 
 
 //<editor-fold desc="mod_starlink_services">
@@ -467,7 +438,6 @@ exports.cleanModmap = cleanModmap;
 
 
 
-
 const buildModules = gulp.parallel(
         buildModulesStarlink,
         buildModulesCalc,
@@ -480,6 +450,7 @@ const cleanModules = gulp.parallel(
         cleanModservices,
         cleanModmap
 );
+
 const zip = gulp.parallel(
         zipModstarlink,
         zipModcalc,
@@ -527,3 +498,14 @@ $.util.log(stringly(c.plugin));
     .on('change', (path, stats) => modcalc.css().pipe(browserSync.reload({stream: true})));
 } );*/
 
+
+
+
+/*
+gulp.task('watch', function () {
+  browserSync.init(c.plugins.browserSync);
+
+  gulp.watch([ c.sources.get('modcalc').src.images, c.sources.get('modcalc').src.other, c.sources.get('modcalc').src.js ])
+          .on('change', gulp.series('modcalc:static'));
+  //gulp.watch(modcalc.src.css, gulp.series(buildModulesCalcCss().pipe(reload({stream: true}))))
+});*/

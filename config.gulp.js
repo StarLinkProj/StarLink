@@ -2,7 +2,7 @@
 
 const gutil = require('gulp-util');
 const _merge = require('lodash.merge');
-const stringly = require('./.gulp/stringly');
+const stringly = require('./.gulp/helpers').stringly;
 
 //<editor-fold desc="Module description">
 
@@ -34,10 +34,15 @@ const stringly = require('./.gulp/stringly');
 //<editor-fold desc="Constants">
 
 
-
 /* run with --abs -> convert all paths to absolute */
-const path_prefix = (gutil.env.abs ? APP_ROOT : '.' );
+let path_prefix = (gutil.env.abs ? APP_ROOT : '.' );
+
+/* Change to safe folder if you fear to overwrite something */
+const DEBUG_PREFIX = '';
+path_prefix += DEBUG_PREFIX;
+
 const SRC_ROOT = path_prefix + '/.src';
+
 const ROOTS = {
   $include:     SRC_ROOT + '/_includes',
   modules:      SRC_ROOT,
@@ -51,10 +56,10 @@ const ROOTS = {
   modservices:  SRC_ROOT + '/mod_starlink_services',
   modstarlink:  SRC_ROOT + '/mod_starlink'
 };
-const JOOMLA_MEDIA = path_prefix + '/tmp' + '/media';
-const JOOMLA_MODULES = path_prefix + '/tmp' + '/modules';
-const PACKAGES = path_prefix + '/tmp' + '/.dist';
-const JOOMLA_TEMPLATES = path_prefix + '/tmp' + '/templates';
+const JOOMLA_MEDIA = path_prefix + '/media';
+const JOOMLA_MODULES = path_prefix + '/modules';
+const PACKAGES = path_prefix + '/.dist';
+const JOOMLA_TEMPLATES = path_prefix + '/templates';
 
 //</editor-fold>
 
@@ -409,14 +414,14 @@ exports.sources = new Map([
   } ],
   [ 'basscss', {
     src:     {
-      css: ROOTS.basscss + '/src/base.css',
+      css: ROOTS.basscss + '/src/**/*.css',
       clean: ROOTS.basscss + '/css/base.*'
     },
     dest:    {
       css: ROOTS.basscss + '/css'
     },
     postcss: [
-      require('postcss-import'),
+      require('postcss-import')({path: ['./**/*.css', ROOTS.basscss + '/src/', APP_ROOT + '/node_modules/basscss*/**/*.css']}),
       require('postcss-custom-media'),
       require('postcss-custom-properties'),
       require('postcss-simple-vars'),

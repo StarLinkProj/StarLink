@@ -39,6 +39,7 @@
     "gulp-debug": "^3.0.0",
     "gulp-filenames": "^4.0.1",
     "gulp-filter": "^4.0.0",
+    "gulp-hub": "^0.8.0",
     "gulp-if": "^2.0.2",
     "gulp-ignore": "^2.0.2",
     "gulp-imagemin": "^3.1.1",
@@ -82,8 +83,7 @@
     "postcss-use": "^2.3.0",
     "require-dir": "^0.3.1",
     "rimraf": "^2.5.4",
-    "upath": "^0.2.0",
-    "yargs": "^6.3.0"
+    "upath": "^0.2.0"
   },
   "babel": {
     "presets": [
