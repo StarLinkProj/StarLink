@@ -17,6 +17,8 @@ var hub = new HubRegistry([
         './.gulp/modcalc.js',
         './.gulp/modservices.js',
         './.gulp/modmap.js',
+        './.gulp/modstarlink.js',
+        './.gulp/template.js',
         './.gulp/vendors.js'
 ]);
 
@@ -33,6 +35,7 @@ const modcalc = require('./.gulp/modcalc').modcalc;
 const modservices = require('./.gulp/modservices').modservices;
 const modmap = require('./.gulp/modmap').modmap;
 const modstarlink = require('./.gulp/modstarlink').modstarlink;
+const template = require('./.gulp/template').template;
 const basscss = require('./.gulp/vendors').basscss;
 const bootstrap = require('./.gulp/vendors').bootstrap;
 
@@ -41,7 +44,8 @@ const zipHelper = require('./.gulp/helpers').zipHelper;
 const logPipeline = require('./.gulp/helpers').logPipeline;
 const stringly = require('./.gulp/helpers').stringly;
 
-
+// @TODO: watch for changes & recompile tasks in each .gulp/* module
+// @TODO: serve function here
 
 
 gulp.task('default', (done) => {
