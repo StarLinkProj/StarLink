@@ -414,14 +414,14 @@ exports.sources = new Map([
   } ],
   [ 'basscss', {
     src:     {
-      css: ROOTS.basscss + '/src/**/*.css',
+      css: ROOTS.basscss + '/src/base.css',
       clean: ROOTS.basscss + '/css/base.*'
     },
     dest:    {
       css: ROOTS.basscss + '/css'
     },
     postcss: [
-      require('postcss-import')({path: ['./**/*.css', ROOTS.basscss + '/src/', APP_ROOT + '/node_modules/basscss*/**/*.css']}),
+      require('postcss-import'),
       require('postcss-custom-media'),
       require('postcss-custom-properties'),
       require('postcss-simple-vars'),

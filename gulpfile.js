@@ -32,6 +32,7 @@ const c = require('./config.gulp.js');
 const modcalc = require('./.gulp/modcalc').modcalc;
 const modservices = require('./.gulp/modservices').modservices;
 const modmap = require('./.gulp/modmap').modmap;
+const modstarlink = require('./.gulp/modstarlink').modstarlink;
 const basscss = require('./.gulp/vendors').basscss;
 const bootstrap = require('./.gulp/vendors').bootstrap;
 
@@ -47,6 +48,7 @@ gulp.task('default', (done) => {
   //log(stringly(modcalc));
   //log(stringly(modservices));
   log(stringly(modmap));
+  log(stringly(modstarlink));
   done();
 });
 
