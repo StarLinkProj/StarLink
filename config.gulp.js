@@ -43,19 +43,67 @@ path_prefix += DEBUG_PREFIX;
 
 const SRC_ROOT = path_prefix + '/.src';
 
+const ENTITIES = new Map( [
+  [ 'modCalc', {
+      name: 'modCalc',
+      path: 'mod_starlink_calculator_outsourcing',
+      type: 'module'
+  }],
+  [ 'modServices', {
+      name: 'modServices',
+      path: 'mod_starlink_services',
+      type: 'module'
+  }],
+  [ 'modStarlink', {
+      name: 'modStarlink',
+      path: 'mod_starlink',
+      type: 'module'
+  }],
+  [ 'modMap', {
+      name: 'modMap',
+      path: 'mod_starlink_map',
+      type: 'module'
+  }],
+  [ 'templateStarlink', {
+      name: 'templateStarlink',
+      path: 'starlink',
+      type: 'template'
+  }],
+  [ 'basscss', {
+      name: 'basscss',
+      path: 'basscss',
+      type: 'vendor'
+  }],
+  [ 'bootstrap', {
+      name: 'bootstrap',
+      path: 'bootstrap',
+      type: 'vendor'
+  }]
+] );
+//ENTITIES.forEach( e => {console.log(stringly(e))});
+
+const entities = {
+  modcalc:          'mod_starlink_calculator_outsourcing',
+  modmaps:          'mod_starlink_map',
+  modservices:      'mod_starlink_service',
+  modstarlink:      'mod_starlink',
+  templateStarlink: 'starlink'
+};
+
 const ROOTS = {
   $include:     SRC_ROOT + '/_includes',
   modules:      SRC_ROOT,
+  modcalc:      SRC_ROOT + '/' + entities.modcalc,
+  modmaps:      SRC_ROOT + '/' + entities.modmaps,
+  modservices:  SRC_ROOT + '/' + entities.modservices,
+  modstarlink:  SRC_ROOT + '/' + entities.modstarlink,
   templates:    SRC_ROOT + '/templates',
-  template:     SRC_ROOT + '/templates/starlink/',
+  template:     SRC_ROOT + '/templates' + '/' + entities.templateStarlink,
   vendors:      SRC_ROOT + '/vendor',
   bootstrap:    SRC_ROOT + '/vendor/bootstrap',
-  basscss:      SRC_ROOT + '/vendor/basscss',
-  modcalc:      SRC_ROOT + '/mod_starlink_calculator_outsourcing',
-  modmaps:      SRC_ROOT + '/mod_starlink_map',
-  modservices:  SRC_ROOT + '/mod_starlink_services',
-  modstarlink:  SRC_ROOT + '/mod_starlink'
+  basscss:      SRC_ROOT + '/vendor/basscss'
 };
+
 const JOOMLA_MEDIA = path_prefix + '/media';
 const JOOMLA_MODULES = path_prefix + '/modules';
 const PACKAGES = path_prefix + '/.dist';
