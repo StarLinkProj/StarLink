@@ -202,7 +202,7 @@ exports.sources = new Map([
       jsBootstrap:  ROOTS.bootstrap + '/js/bootstrap.js',
       images:       ROOTS.template + '/**/*.{jpg,jpeg,png,svg,gif}',
       markup:       ROOTS.template + '/**/*.{html,php}',
-      other:        ROOTS.template + '/**/*.{xml,ini,txt,MD}',
+      other:        ROOTS.template + '/**/*.{xml,ini,txt,MD,ico}',
       zip:          JOOMLA_TEMPLATES + '/starlink/**/*.*',
       clean:        JOOMLA_TEMPLATES + '/starlink/**'
     },
@@ -249,7 +249,7 @@ exports.sources = new Map([
         '!' + ROOTS.modstarlink + '/fonts/**/*.*'
       ],
       fonts:  ROOTS.modstarlink + '/**/fonts/*.{eot,svg,ttf,woff,woff2}',
-      other:  ROOTS.modstarlink + '/**/*.{html,php,xml,ini,txt,MD}',
+      other:  ROOTS.modstarlink + '/**/*.{html,php,xml,ini,txt,MD,ico}',
       vendorCss: [
         ROOTS.bootstrap + '/css/*.*',
         ROOTS.basscss + '/css/*.*'
@@ -309,7 +309,7 @@ exports.sources = new Map([
       css:    ROOTS.modcalc + '/**/!(_)*.css',
       js:     ROOTS.modcalc + '/**/*.js',
       images: ROOTS.modcalc + '/**/*.{jpg,jpeg,png,svg,gif}',
-      other:  ROOTS.modcalc + '/**/*.{html,php,xml,ini,txt,MD}',
+      other:  ROOTS.modcalc + '/**/*.{html,php,xml,ini,txt,MD,ico}',
       zip:    [
         JOOMLA_MEDIA + '/mod_starlink_calculator_outsourcing/**/*.*',
         JOOMLA_MODULES + '/mod_starlink_calculator_outsourcing/**/*.*'
@@ -371,7 +371,7 @@ exports.sources = new Map([
     src: {
       css:    ROOTS.modservices + '/**/!(_)*.css',
       images: ROOTS.modservices + '/**/*.{jpg,jpeg,png,svg,gif}',
-      other:  ROOTS.modservices + '/**/*.{html,php,xml,ini,txt,MD}',
+      other:  ROOTS.modservices + '/**/*.{html,php,xml,ini,txt,MD,ico}',
       zip: [
         JOOMLA_MEDIA + '/mod_starlink_services/**/*.*',
         JOOMLA_MODULES + '/mod_starlink_services/**/*.*'
