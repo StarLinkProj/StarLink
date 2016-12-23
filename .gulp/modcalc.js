@@ -79,7 +79,6 @@ const build =
         );
 
 gulp.task( 'modcalc.clean', clean );
-gulp.task( 'modcalc.zip', zip );
 gulp.task( 'modcalc.compile', compile );
 gulp.task( 'modcalc.compile.css', css );
 gulp.task( 'modcalc.compile.js', js );
@@ -87,7 +86,9 @@ gulp.task( 'modcalc.compile.images', images );
 gulp.task( 'modcalc.compile.other', other );
 gulp.task( 'modcalc.build', build );
 gulp.task( 'modcalc.clean.build',
-    gulp.series( clean, build)
+        gulp.series( clean, build)
 );
+gulp.task( 'modcalc.zip', zip );
+
 
 exports.modcalc = _mod;

@@ -86,6 +86,7 @@ const bootstrapClean = () =>
 
 
 gulp.task( 'basscss.clean', basscssClean );
+gulp.task( 'basscss.compile', basscssCompile );
 gulp.task( 'basscss.build', basscssCompile );
 gulp.task( 'basscss.clean.build',
     gulp.series( basscssClean, basscssCompile)
@@ -93,11 +94,13 @@ gulp.task( 'basscss.clean.build',
 
 
 gulp.task( 'bootstrap.clean', bootstrapClean );
+gulp.task( 'bootstrap.compile', bootstrapCompile );
 gulp.task( 'bootstrap.build', bootstrapCompile );
 gulp.task( 'bootstrap.clean.build',
         gulp.series( bootstrapClean, bootstrapCompile)
 );
 
+gulp.task( 'vendors.compile', gulp.parallel('basscss.compile', 'bootstrap.compile'));
 gulp.task( 'vendors.build', gulp.parallel('basscss.build', 'bootstrap.build'));
 gulp.task( 'vendors.clean', gulp.parallel('basscss.clean', 'bootstrap.clean'));
 

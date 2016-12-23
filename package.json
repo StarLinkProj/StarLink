@@ -7,7 +7,8 @@
     "--test": "echo \"Error: no test specified\" && exit 1",
     "gulptest": "gulp --gulpfile gulptest.js",
     "s--tart": "gulp",
-    "b--uild": "gulp --production",
+    "build": "gulp build",
+    "tasks": "gulp --tasks",
     "serve": "browser-sync start --proxy \"localhost:8000\" --browser \"chrome\" --files \"templates/starlink/**/*.*\" "
   },
   "repository": {

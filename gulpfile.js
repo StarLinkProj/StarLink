@@ -56,3 +56,38 @@ gulp.task('default', (done) => {
   done();
 });
 
+const clean = gulp.parallel(
+        'vendors.clean',
+        'modcalc.clean',
+        'modmap.clean',
+        'modservices.clean',
+        'modstarlink.clean',
+        'template.clean'
+);
+
+const compile = gulp.series(
+        'vendors.compile',
+        gulp.parallel(
+                'modcalc.compile',
+                'modmap.compile',
+                'modservices.compile',
+                'modstarlink.compile',
+                'template.compile'
+        )
+);
+
+const zip = gulp.parallel(
+        'modcalc.zip',
+        'modmap.zip',
+        'modservices.zip',
+        'modstarlink.zip',
+        'template.zip'
+);
+
+const build = gulp.series ( compile, zip );
+
+gulp.task( 'clean', clean );
+gulp.task( 'compile', compile );
+gulp.task( 'build', build );
+gulp.task( 'clean.build', gulp.series( clean, build) );
+gulp.task( 'zip', zip );
