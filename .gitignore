@@ -719,11 +719,16 @@ jspm_packages
 .dist
 .build
 
-/vendor/bassplate2/css/base.css
-/vendor/bassplate2/css/base.css.map
-/vendor/bootstrap/css/
-/vendor/bootstrap/js/
+.src/vendor/bassplate2/css/
+.src/vendor/basscss/css/
+.src/vendor/bootstrap/css/
+.src/vendor/bootstrap/js/
 /templates/starlink*/
 /media/mod_starlink*/
 /modules/mod_starlink*/
+
+/db2file.sh
+/db2file.cmd
+/file2db.sh
+.[0-9][0-9]*_[0-9][0-9]*.sql.gz
 

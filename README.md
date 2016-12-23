@@ -17,22 +17,41 @@
 4. Compile & put in `.zip` package ready for installation in Joomla: `gulp modstarlink:build`
 5. Delete and rebuild all production files from .src:
    `Gulp cleanBuild`
+   
+### Database operations
 
-###svg icons
+#### Backup Joomla db to file 
 
-#### include icon library in the php template:
+Database will be copied to file `.YYYYMMDD_HHMM.sql.gz`
+
+- ##### Linux
+   `.src/0_database/db2file.sh`
+ 
+- ##### Windows 
+   `.src\0_database\db2file.cmd`
+
+#### Restore Joomla db from file 
+
+- ##### Linux
+   `.src/0_database/file2db.sh .20161201_1901.sql.gz`
+
+### Other
+
+####svg icons
+
+##### include icon library in the php template:
  
 ```php
 require_once '../media/mod_starlink/images/icons.svg';
 ```
   
-#### insert particular icon in HTML: 
+##### insert particular icon in HTML: 
 
 ```html
 <svg class="icon"><use xlink:href="#iconCancel" /></svg>
 ```
   
-#### currently available icons:
+##### currently available icons:
 
 - common icons:
   - `#iconCancel`
