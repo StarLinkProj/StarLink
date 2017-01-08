@@ -665,6 +665,7 @@ jspm_packages
 /administrator/components/com_akeeba/
 /administrator/components/com_arkeditor/
 /administrator/components/com_jce/
+/administrator/components/com_j2xml
 /administrator/language/en-GB/en-GB.*admintools*.*
 /administrator/language/en-GB/en-GB.*akeeba*.*
 /administrator/language/en-GB/en-GB.*arkeditor*.*
@@ -674,15 +675,21 @@ jspm_packages
 /components/com_akeeba/
 /components/com_arkeditor/
 /components/com_jce/
+/components/com_j2xml/
 /language/en-GB/en-GB.com_admintools.ini
 /language/en-GB/en-GB.com_akeeba.ini
 /language/en-GB/en-GB.com_jce.ini
 /language/en-GB/en-GB.pkg_arkeditor.sys.ini
 /language/en-GB/en-GB.pkg_jce.sys.ini
+/language/*/*_j2xml.*
+/language/*/*_eshiol.*
 /libraries/fof30/
+/libraries/eshiol/
 /media/com_akeeba/
 /media/editors/arkeditor/
 /media/jce/
+/media/com_j2xml/
+/media/lib_eshiol_core/
 /media/whatnothing/
 /modules/mod_inlinecustom/
 /plugins/ajax/
@@ -711,7 +718,7 @@ jspm_packages
 /plugins/system/k2extrafields/
 /plugins/system/modulehistory/
 /plugins/system/sefbase/
-
+/plugins/system/j2xml/
 
 ### mao
 .idea

@@ -2,7 +2,7 @@ SET _host=localhost
 SET _port=
 SET _database=
 SET _user=
-SET _tablenames="_admintools_|_ak_|_akeeba_|_ark_|_wf_"
+SET _tablenames="_admintools_|_ak_|_akeeba_|_ark_|_wf_|_j2xml_"
 
 @ECHO OFF
 FOR /F "delims=" %%i IN ('date /t') DO set _date=%%i

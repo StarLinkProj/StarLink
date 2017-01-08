@@ -31,7 +31,7 @@ const vendorCss = () => {
     .pipe($.newer(_mod.dest.vendorCss))
     .pipe($.filenames('modstarlink:vendorCSS:source'))
     .pipe(gulp.dest(_mod.dest.vendorCss))
-    .pipe($.filenames('mmodstarlink:vendorCSS:dest'))
+    .pipe($.filenames('modstarlink:vendorCSS:dest'))
     .on('end', logPipeline('modstarlink', 'vendorCSS'));
 };
 

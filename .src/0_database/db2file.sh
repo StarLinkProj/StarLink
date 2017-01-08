@@ -3,7 +3,7 @@ _host=localhost
 _port=3306
 _database=
 _user=
-_tablenames="_admintools_|_ak_|_akeeba_|_ark_|_wf_"
+_tablenames="_admintools_|_ak_|_akeeba_|_ark_|_wf_|_j2xml_"
 
 read -s -p "Password: " _password
 
