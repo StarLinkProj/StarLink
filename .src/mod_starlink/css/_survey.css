@@ -20,11 +20,11 @@
 #fox-container-m95 .orderSurvey__input input[type="text"],
 #fox-container-m100 .sendLetterInput input[type="text"],
 #fox-container-m100 .sendLetterArea textarea {
-  padding: 12px 10px;
-  font-size: 14px;
+  padding: 2px;
+  font-size: 1rem;
   height: auto;
-  line-height: 14px;
-  margin-bottom: 20px;
+  line-height: 1rem;
+  margin-bottom: 1.5rem;
   width: 100%;
 }
 #fox-container-m100 .sendLetterArea textarea {
@@ -51,24 +51,24 @@
 @media screen and (-webkit-min-device-pixel-ratio : 1.5) , screen and (min--moz-device-pixel-ratio : 1.5), (max-width : 767px) {
   #fox-container-m95 button span,
   #fox-container-m100 button span {
-    font-size : 18px !important;
+    font-size : 1rem !important;
   }
 }
 
 
 /*** Modal contact form ***/
 #modalContactFormBlock form {
-  padding: 10px 30px;
+/*  padding: 10px 30px;*/
 }
 #modalContactFormBlock form .controls {
   width: 100%;
 }
 #modalContactFormBlock form .controls input[type="text"], #modalContactFormBlock form .controls input[type="email"] {
-  padding: 12px 15px;
-  font-size: 14px;
+  padding: 2px;
+  font-size: 1rem;
   height: auto;
-  line-height: 14px;
-  margin-bottom: 20px;
+  line-height: 1rem;
+  margin-bottom: 1.5rem;
   width: 100%;
   border-radius: 4px;
   color: #555555;
@@ -81,10 +81,10 @@ button.modalFormCloseBtn {
   background: url('../images/main/close-icon.png') no-repeat;
   position: absolute;
   width: 31px;
-  height: 30px;
+  height: 2rem;
   display: block;
   right: 20px;
-  top: 20px;
+  top: 1.5rem;
   opacity: 1;
   outline: none;
   z-index: 10000;
@@ -96,7 +96,7 @@ button.modalFormCloseBtn {
   background: #fff;
   width: 600px;
   max-width : 90%;
-  height: 270px;
+  height: 16.5rem;
   left: 30px;
-  top: 30px;
+  top: 2rem;
 }

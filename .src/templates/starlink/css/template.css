@@ -54,6 +54,10 @@
 	background-size: cover;
 }
 
+.profitable-it-outsourcing > .profitable-it-outsourcing {
+  background-image: none;
+}
+
 .itOutsourcingTopBlWithBg {
   background: url('../images/main/itOutsourcingTopBlBg.jpg') no-repeat center center;
   background-size: cover;

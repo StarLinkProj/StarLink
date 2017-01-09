@@ -10,10 +10,10 @@
   display             : flex;
   align-items         : center;
   justify-content     : space-around;
-  min-height          : 100px;
+  min-height          : 7.5rem;
   border              : 1px solid #fff;
-  margin-bottom       : 30px;
-  padding             : 15px 10px;
+  margin-bottom       : 1.5rem;
+  padding             : calc(1.5rem - 2px) 10px;
   border-radius       : 8px;
   color               : #fff;
   cursor              : pointer;
@@ -29,12 +29,12 @@
 }
 .s-ServiceType__linkHeader {
   font-weight    : 700;
-  margin-bottom  : 6px;
+  margin-bottom  : 0;
   text-transform : uppercase;
 }
 .s-ServiceType__linkText {
-  font-size   : 14px;
-  line-height : 15px;
+/*  font-size   : 14px;
+  line-height : 15px;*/
   margin      : 0;
 }
 .s-ServiceType__details {
@@ -54,8 +54,9 @@
 
 /* Change image on hover */
 .s-ServiceType__icon {
-  max-height : 60px;
-  max-width  : 65px;
+  max-height : 3.5rem;
+/*  max-width  : 65px;*/
+  width      : auto;
   filter     : grayscale(100%) brightness(500%) contrast(120%);
 }
 .s-ServiceType:hover .s-ServiceType__icon,
