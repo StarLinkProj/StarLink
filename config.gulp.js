@@ -85,7 +85,7 @@ const ENTITIES = new Map( [
 const entities = {
   modcalc:          'mod_starlink_calculator_outsourcing',
   modmaps:          'mod_starlink_map',
-  modservices:      'mod_starlink_service',
+  modservices:      'mod_starlink_services',
   modstarlink:      'mod_starlink',
   templateStarlink: 'starlink'
 };

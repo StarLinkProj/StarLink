@@ -64,10 +64,10 @@ const images = () => {
 
 
 const markup = () => {
-  return gulp.src(_mod.src.other)
-  .pipe($.newer(_mod.dest.other))
+  return gulp.src(_mod.src.markup)
+  .pipe($.newer(_mod.dest.markup))
   .pipe($.filenames('template:markup:source'))
-  .pipe(gulp.dest(_mod.dest.other))
+  .pipe(gulp.dest(_mod.dest.markup))
   .pipe($.filenames('template:markup:dest'))
   .on('end', logPipeline('template', 'markup'));
 };
