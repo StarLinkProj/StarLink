@@ -247,7 +247,7 @@ exports.sources = new Map([
     src: {
       css:          ROOTS.template + '/**/!(_)*.css',
       js:           ROOTS.template + '/**/*.js',
-      jsBootstrap:  ROOTS.bootstrap + '/js/bootstrap.js',
+      jsBootstrap:  ROOTS.bootstrap + '/js/*.js',
       images:       ROOTS.template + '/**/*.{jpg,jpeg,png,svg,gif}',
       markup:       ROOTS.template + '/**/*.{html,php}',
       other:        ROOTS.template + '/**/*.{xml,ini,txt,MD,ico}',
@@ -292,11 +292,9 @@ exports.sources = new Map([
     src: {
       css:    ROOTS.modstarlink + '/**/!(_)*.css',
       js:     ROOTS.modstarlink + '/**/*.js',
-      images: [
-        ROOTS.modstarlink + '/**/*.{jpg,jpeg,png,svg,gif}',
-        '!' + ROOTS.modstarlink + '/fonts/**/*.*'
-      ],
-      fonts:  ROOTS.modstarlink + '/**/fonts/*.{eot,svg,ttf,woff,woff2}',
+      images: ROOTS.modstarlink + '/**/*.{jpg,jpeg,png,gif}',
+      fonts:  ROOTS.modstarlink + '/**/*.{eot,ttf,woff,woff2}',
+      svgs:   ROOTS.modstarlink + '/**/*.svg',
       other:  ROOTS.modstarlink + '/**/*.{html,php,xml,ini,txt,MD,ico}',
       vendorCss: [
         ROOTS.bootstrap + '/css/*.*',
@@ -475,10 +473,11 @@ exports.sources = new Map([
       require('postcss-simple-vars'),
       require('postcss-color-function'),
       require('postcss-calc'),
-      /*require('postcss-color-function'),*/
+      /* require('postcss-color-function'), */
       require('postcss-discard-comments'),
       require('cssnano'),
-      require('postcss-prettify')//,require('autoprefixer')
+      require('postcss-prettify')
+/*      ,require('autoprefixer')*/
     ]
   } ],
   [ 'bootstrap', {
@@ -496,7 +495,8 @@ exports.sources = new Map([
       ]
     },
     postcss: [
+      require('postcss-custom-properties'),
       require('postcss-prettify')
     ]
-  } ],
+  } ]
 ]);

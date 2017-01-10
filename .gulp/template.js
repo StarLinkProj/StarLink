@@ -40,15 +40,15 @@ const js = () => {
 
 
 const jsBootstrap = () => {
-  return gulp.src(_mod.src.js)
-  .pipe($.newer(_mod.dest.js))
-  .pipe($.filenames('template:jsBootstrap:source'))
-  .pipe($.if(c.run.js.sourcemaps, $.sourcemaps.init()))
-  .pipe($.if(c.run.uglify, $.uglify(c.plugins.uglify)))
-  .pipe($.if(c.run.js.sourcemaps, $.sourcemaps.write('.')))
-  .pipe(gulp.dest(_mod.dest.js))
-  .pipe($.filenames('template:jsBootstrap:dest'))
-  .on('end', logPipeline('template', 'jsBootstrap'));
+  return gulp.src(_mod.src.jsBootstrap)
+    .pipe($.newer(_mod.dest.jsBootstrap))
+    .pipe($.filenames('template:jsBootstrap:source'))
+    .pipe($.if(c.run.js.sourcemaps, $.sourcemaps.init()))
+    .pipe($.if(c.run.uglify, $.uglify(c.plugins.uglify)))
+    .pipe($.if(c.run.js.sourcemaps, $.sourcemaps.write('.')))
+    .pipe(gulp.dest(_mod.dest.jsBootstrap))
+    .pipe($.filenames('template:jsBootstrap:dest'))
+    .on('end', logPipeline('template', 'jsBootstrap'));
 };
 
 

@@ -50,15 +50,27 @@ const js = () => {
 
 
 const images = () => {
-  return gulp.src(_mod.src.images)
-    .pipe($.newer(_mod.dest.images))
-    .pipe($.filenames('modstarlink:images:source'))
-    .pipe($.if(c.run.imagemin, $.imagemin(c.plugins.imagemin)))
-    .pipe(gulp.src(_mod.src.fonts, {passthrough: true}))
-    .pipe($.filenames('modstarlink:images:source'))
-    .pipe(gulp.dest(_mod.dest.images))
-    .pipe($.filenames('modstarlink:images:dest'))
-    .on('end', logPipeline('modstarlink', 'images'));
+  const merge = require('merge-stream');
+  let i = gulp.src(_mod.src.images)
+          .pipe($.newer(_mod.dest.images))
+          .pipe($.filenames('modstarlink:images:source'))
+          .pipe($.if(c.run.imagemin, $.imagemin(c.plugins.imagemin)))
+          .pipe(gulp.dest(_mod.dest.images))
+          .pipe($.filenames('modstarlink:images:dest'));
+  let f = gulp.src(_mod.src.fonts)
+          .pipe($.newer(_mod.dest.images))
+          .pipe($.filenames('modstarlink:fonts:source'))
+          .pipe(gulp.dest(_mod.dest.images))
+          .pipe($.filenames('modstarlink:fonts:dest'));
+  let s = gulp.src(_mod.src.svgs)
+          .pipe($.newer(_mod.dest.images))
+          .pipe($.filenames('modstarlink:svgs:source'))
+          .pipe(gulp.dest(_mod.dest.images))
+          .pipe($.filenames('modstarlink:svgs:dest'));
+  i.on('end', logPipeline('modstarlink', 'images'));
+  f.on('end', logPipeline('modstarlink', 'fonts'));
+  s.on('end', logPipeline('modstarlink', 'svgs'));
+  return merge(i, f, s);
 };
 
 const other = () => {

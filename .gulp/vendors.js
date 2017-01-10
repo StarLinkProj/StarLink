@@ -1,6 +1,8 @@
 'use strict';
 const gulp = require('gulp');
 const $ = require('gulp-load-plugins')();
+/*const cssnano=require('cssnano');
+const prettify=require('postcss-prettify');*/
 const log = $.util.log;
 const del = require('del');
 
@@ -18,10 +20,11 @@ const basscssCompile = () => {
   return gulp.src(_basscss.src.css)
     .pipe($.newer(_basscss.dest.css))
     .pipe($.if(c.run.sourcemaps, $.sourcemaps.init()))
-    .pipe($.concat(_basscss.dest.css + 'all.css'))
+    /*.pipe($.concat(_basscss.dest.css + '/all.css'))*/
     .pipe($.filenames('basscss:compile:source'))
     .pipe($.postcss(_basscss.postcss))
-    .pipe($.rename('base.css'))
+/*    .pipe($.postcss([cssnano(), prettify]))*/
+    /*.pipe($.rename('base.css'))*/
     .pipe($.if(c.run.sourcemaps, $.sourcemaps.write('.')))
     .pipe(gulp.dest(_basscss.dest.css))
     .pipe($.filenames('basscss:compile:dest'))
@@ -41,20 +44,20 @@ const bootstrapCompile = () => {
     .on('end', logPipeline('bootstrap', 'compile'));
 };
 
-
-/*const js = () => {
-  return gulp.src(_mod.src.js)
-  .pipe($.newer(_mod.dest.js))
-  .pipe($.filenames('modcalc:js:source'))
+/*
+const js = () => {
+  return gulp.src(_bootstrap.src.js)
+  .pipe($.newer(_bootstrap.dest.js))
+  .pipe($.filenames('bootstrap:js:source'))
   .pipe($.if(c.run.js.sourcemaps, $.sourcemaps.init()))
   .pipe($.if(c.run.uglify, $.uglify(c.plugins.uglify)))
   .pipe($.if(c.run.js.sourcemaps, $.sourcemaps.write('.')))
-  .pipe(gulp.dest(_mod.dest.js))
-  .pipe($.filenames('modcalc:js:dest'))
-  .on('end', logPipeline('modcalc', 'js'));
-};
+  .pipe(gulp.dest(_bootstrap.dest.js))
+  .pipe($.filenames('bootstrap:js:dest'))
+  .on('end', logPipeline('bootstrap', 'js'));
+};*/
 
-
+/*
 const images = () => {
   return gulp.src(_mod.src.images)
   .pipe($.newer(_mod.dest.images))
