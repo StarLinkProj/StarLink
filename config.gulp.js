@@ -310,13 +310,13 @@ exports.sources = new Map([
       ]
     },
     dest: {
-      css:    JOOMLA_MEDIA + '/mod_starlink',
-      vendorCss: JOOMLA_MEDIA + '/mod_starlink/css',
-      js:     JOOMLA_MEDIA + '/mod_starlink',
-      images: JOOMLA_MEDIA + '/mod_starlink',
-      other:  JOOMLA_MODULES + '/mod_starlink',
-      zipName:'mod_starlink',
-      zip:    PACKAGES
+      css:        JOOMLA_MEDIA + '/mod_starlink',
+      vendorCss:  JOOMLA_MEDIA + '/mod_starlink/css',
+      js:         JOOMLA_MEDIA + '/mod_starlink',
+      images:     JOOMLA_MEDIA + '/mod_starlink',
+      other:      JOOMLA_MODULES + '/mod_starlink',
+      zipName:    'mod_starlink',
+      zip:        PACKAGES
     },
     postcss: [
       require('postcss-import')({
@@ -473,11 +473,11 @@ exports.sources = new Map([
       require('postcss-simple-vars'),
       require('postcss-color-function'),
       require('postcss-calc'),
-      /* require('postcss-color-function'), */
+/*    require('postcss-color-function'), */
       require('postcss-discard-comments'),
       require('cssnano'),
       require('postcss-prettify')
-/*      ,require('autoprefixer')*/
+/*   ,require('autoprefixer') */
     ]
   } ],
   [ 'bootstrap', {
