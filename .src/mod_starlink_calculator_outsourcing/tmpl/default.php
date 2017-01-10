@@ -14,18 +14,18 @@ $imgBase = JUri::base(true) . '/media/mod_starlink_calculator_outsourcing/images
     <p class="mx4 px4 mb4 text-center">Решение, которое мы предлагаем &ndash; передать обслуживание всей IT-инфраструктуры команде узкопрофильных специалистов.<br>
       Рассчитайте стоимость абонентского обслуживания ПК и серверов:</p>
 
-    <div id="connect_form">
+    <div id="connect_form" class="row">
 
       <section class="mb4">
         <div class="flex">
           <div class="SLAtable__th SLAtable__th--left SlidersTable__col1 pt2" style="flex: 0 0 auto;">количество компьютеров</div>
-          <div class="flex-auto-- py2" style="flex: 1 1 auto;">
+          <div class="py2 pr2" style="flex: 1 1 auto;">
             <div class="sliderContainer">
               <div id="slider-pc-count" class="Slider Slider--pc"></div>
             </div>
             <div class="digitContainer" id="slider-pc-count-digits">
               <?php for ($pcCountDigit = 0; $pcCountDigit <= 29; $pcCountDigit++) : ?>
-                <span class="digit" data-pcDigit="<?=$pcCountDigit?>"><?=$pcCountDigit?></span>
+                <span class="digit digit--pc" data-pcDigit="<?=$pcCountDigit?>"><?=$pcCountDigit?></span>
               <?php endfor; ?>
             </div>
           </div>
@@ -38,18 +38,18 @@ $imgBase = JUri::base(true) . '/media/mod_starlink_calculator_outsourcing/images
             </div>
             <div class="digitContainer" id="slider-server-count-digits">
               <?php for ($serverCountDigit = 0; $serverCountDigit <= 15; $serverCountDigit++) : ?>
-                <span class="digit" data-serverDigit="<?=$serverCountDigit?>"><?=$serverCountDigit?></span>
+                <span class="digit digit--server" data-serverDigit="<?=$serverCountDigit?>"><?=$serverCountDigit?></span>
               <?php endfor; ?>
             </div>
           </div>
           <div class="SLAtable__th SLAtable__th--left SlidersTable__col3 pt2 ml3" style="flex: 0 0 auto;">количество виртуальных <br> серверов</div>
-          <div class="py2" style="flex: 1 0.67 16rem;">
+          <div class="py2 pr2" style="flex: 1 0.67 16rem;">
             <div class="sliderContainer">
               <div id="slider-virtual-count" class="Slider Slider--virtual"></div>
             </div>
             <div class="digitContainer" id="slider-virtual-count-digits">
               <?php for ($serverCountDigit = 0; $serverCountDigit <= 7; $serverCountDigit++) : ?>
-                <span class="digit" data-virtualDigit="<?=$serverCountDigit?>"><?=$serverCountDigit?></span>
+                <span class="digit digit--virtualServer" data-virtualDigit="<?=$serverCountDigit?>"><?=$serverCountDigit?></span>
               <?php endfor; ?>
             </div>
           </div>
@@ -71,7 +71,7 @@ $imgBase = JUri::base(true) . '/media/mod_starlink_calculator_outsourcing/images
               <img src="<?= $imgBase ?>/icons/calcVechicleIcon.png" class=""></th>
           </tr>
           <tr class="">
-            <th class="SLAtable__th SLAtable__th--left py1">уровень обслуживания</th>
+            <th class="SLAtable__th SLAtable__th--left py1">уровень<br>обслу&shy;жи&shy;ва&shy;ния</th>
             <th class="SLAtable__th py1">время реакции</th>
             <th class="SLAtable__th py1">выделенный персонал</th>
             <th class="SLAtable__th py1">аварийных выездов</th>
@@ -123,12 +123,11 @@ $imgBase = JUri::base(true) . '/media/mod_starlink_calculator_outsourcing/images
         </tbody>
       </table>
 
-      <div class="row SLAtable__summary">
+      <div class="SLAtable__summary">
         <div class="col-xs-3 SLAtable__th SLAtable__th--left pt2">стоимость обслуживания </div>
-        <div class="col-xs-3 SLAtable__th pl4">
+        <div class="col-xs-3 SLAtable__th px0">
           <input class="calcResult" type="text" name="calcResult" id="calcResult" value="0" readonly="">
-          <div></div>
-          <span class="">ГРН/МЕС</span>
+          <span class=""><br>ГРН/МЕС</span>
         </div>
         <div class="col-sm-6 SLAtable__th pt1 pr3">
           <button type="submit" class="btnStarlink btn submit-button" data-toggle="modal" data-target="#modalContactFormBlock">

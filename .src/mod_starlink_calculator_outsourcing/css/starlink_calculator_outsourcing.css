@@ -10,6 +10,8 @@
   --slider-color: rgba(202,207,211,1);
   --current-SLA: #F2F8FC;
 
+  --slider-unit: 1.25;
+  --handle-size: 1.5rem;
 }
 
 
@@ -19,7 +21,7 @@
 /************  CALCULATOR ***************/
 
 .calcItOutsource {
-  display: none;
+/*  display: none;*/
   background: linear-gradient(to top, color(rgba(129, 221, 36, 0.1) s -50%) 0%, rgba(150, 200, 100, 0.1) 7rem, rgba(255, 255, 255, 0.4) 15rem, rgba(255, 255, 255,0) 100%);
 
   @media (min-width: 992px) {
@@ -28,39 +30,30 @@
 }
 
 
-/*.calcItOutsource h3 {
-  margin: 3rem auto 1.5rem;
-  text-align: center;
-  font-size: 42px;
-  line-height: 50px;
-  color: #1b1b1b;
-  font-weight: 300;
-}*/
-
-/*
-.calcItOutsource .calcItOutsourceTopParagraph {
-  margin: 0 120px 50px;
-  font-size: 16px;
-  line-height: 25px;
-  color: #373A3C;
-  text-align: center;
-}
-*/
-
-
-
 /** $Digit */
 
 /*<editor-fold desc="digit: numbers below sliders for # of PCs, Servers and Virtual servers">*/
 
 .digitContainer {
-  position:relative;
-  margin-top: 10px;
-  margin-left: -0.5rem;
-  right:-0.25rem;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin: 0 -1em;
   text-align: justify;
   color: #818A91;
-  height: 2rem;
+  font-size: 0.75rem;
+
+  @media (min-width: 768px) {
+    font-size: 0.85rem;
+  }
+
+  @media (min-width: 992px) {
+    font-size: 0.9rem;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 1rem;
+  }
 }
 
 .digitContainer::after {
@@ -70,20 +63,56 @@
 }
 
 .digit {
-  width: 1.5rem;
+  flex: 1 0 1%;
   margin: 0;
   padding: 0;
-  display: inline-block;
+  display: block;
+  vertical-align: top;
   text-align: center;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: var(--slider-unit);
 }
 
-/*.slider-count-digit-active,*/
-.digit--active {
-  color: #3FA2F7;
-  font-weight: 900;
-}
+  /*.slider-count-digit-active,*/
+  .digit--active {
+    color: #3FA2F7;
+    font-weight: 900;
+  }
+
+  .digit--pc {
+    flex-basis: calc(100% / 30);
+  }
+    /*
+
+    @media (max-width: 768px) {
+      .digit--pc {
+        flex-basis : calc(99% / 10);
+      }
+
+      .digit--pc:nth-of-type(2n) {
+        display:none;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .digit--pc {
+        flex-basis : calc(99% / 15);
+      }
+
+      .digit--pc:nth-of-type(3n) {
+        display:none;
+      }
+    }
+    */
+
+  .digit--server {
+    flex-basis: calc(100% / 16);
+  }
+
+  .digit--virtualServer {
+    flex-basis: calc(100% / 8);
+  }
 
 
 /*</editor-fold>*/
@@ -100,23 +129,22 @@
 /*<editor-fold desc="Slider for number of PCs and other items">*/
 
 .sliderContainer {
-  padding: 0;
+  height: var(--slider-unit)rem;
 }
 
 
 
 /*
-
 #slider-pc-count, 
 #slider-server-count, 
 #slider-virtual-count,    */
 .Slider {
-  padding: 0 0.5em;
+/*  padding: 0 0.5em;*/
   height: 10px;
   border-radius: 28px;
   position: relative;
-  border-left: 0.5em solid var(--slider-color);
-  border-right: 0.5em solid var(--slider-color);
+/*  border-left: 0.5em solid var(--slider-color);
+  border-right: 0.5em solid var(--slider-color);*/
   box-sizing: content-box;
 }
   .Slider--pc {
@@ -148,14 +176,14 @@
 }
 
 .ui-slider-handle {
-  border: 7px solid var(--slider-color);
+  border: 0.5rem solid var(--slider-color);
   background: #fff;
-  width: 25px;
-  height: 25px;
-  border-radius: 15px;
+  width: var(--handle-size);
+  height: var(--handle-size);
+  border-radius: 1rem;
   position: absolute;
-  margin-top: -8px;
-  margin-left: -13px;
+  margin-top: calc(-1 * var(--slider-unit) / 3)rem;
+  margin-left: calc(-1 * var(--handle-size) / 2);
 
   @nest &:focus {
     outline: none;
@@ -189,11 +217,11 @@
 }
 
 .SlidersTable__col1 {
-  width: 10rem;
+  width: 9em;
 }
 
 .SlidersTable__col3 {
-  width: 12rem;
+  width: 9em;
 }
 /*</editor-fold>*/
 
@@ -228,7 +256,7 @@
 
 .SLAtable__th {
   color: #818A91;
-  line-height: 1.1;
+  line-height: 1.25;
   font-weight: 600;
   text-align: center;
   text-transform: uppercase;
@@ -301,22 +329,45 @@ input:checked + .SLAtable__label {
 
 .calcResult {
   background-color: transparent;
-  width: 10rem;
+  width: 11rem;
   height: 3.5rem;
-  font-size: 3.5rem;
+  font-size: 3rem;
+  margin-left: 0rem;
   line-height: 1;
-  text-align: center;
   color: #333;
   border: none;
   box-shadow: none;
   font-weight: 500;
+  text-align: right;
 
   @nest &:hover {
     cursor: default;
   }
 
-  @media (min-width: 992px) and (max-width: 1200px) {
-    font-size: 3rem;
+  @nest & + span {
+    margin-left: 0;
+  }
+
+  @media (min-width: 768px) {
+
+  }
+
+  @media (min-width: 920px) {
+    text-align: center;
+    margin-left: 2rem;
+
+    @nest & + span {
+      margin-left: 2rem;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 3.5rem;
+    margin-left: 4rem;
+
+    @nest & + span {
+      margin-left: 4rem;
+    }
   }
 
 }
