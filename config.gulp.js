@@ -291,6 +291,7 @@ exports.sources = new Map([
   [ 'modstarlink', {
     src: {
       css:    ROOTS.modstarlink + '/**/!(_)*.css',
+      cssAll: ROOTS.modstarlink + '/**/*.css',
       js:     ROOTS.modstarlink + '/**/*.js',
       images: ROOTS.modstarlink + '/**/*.{jpg,jpeg,png,gif}',
       fonts:  ROOTS.modstarlink + '/**/*.{eot,ttf,woff,woff2}',
@@ -331,7 +332,7 @@ exports.sources = new Map([
       require('postcss-simple-vars'),
       require('postcss-custom-properties'),
       require('postcss-apply'),
-      require('postcss-calc'),
+      require('postcss-calc')({precision: 10}),
       require('postcss-nesting'),
       require('postcss-custom-media'),
       require('postcss-extend'),
@@ -378,7 +379,7 @@ exports.sources = new Map([
       require('postcss-mixins'),
       require('postcss-custom-properties'),
       require('postcss-apply'),
-      require('postcss-calc'),
+      require('postcss-calc')({precision: 10}),
       require('postcss-nesting'),
       require('postcss-custom-media'),
       require('postcss-extend'),
@@ -440,7 +441,7 @@ exports.sources = new Map([
       require('postcss-custom-properties'),
       require('postcss-simple-vars'),
       //require('postcss-apply'),
-      require('postcss-calc'),
+      require('postcss-calc')({precision: 10}),
       //require('postcss-nesting'),
       //require('postcss-custom-media'),
       //require('postcss-extend'),
@@ -472,7 +473,7 @@ exports.sources = new Map([
       require('postcss-custom-properties'),
       require('postcss-simple-vars'),
       require('postcss-color-function'),
-      require('postcss-calc'),
+      require('postcss-calc')({precision: 10}),
 /*    require('postcss-color-function'), */
       require('postcss-discard-comments'),
       require('cssnano'),
