@@ -4,7 +4,6 @@
 @import "_01variables";
 @import "_02mixins";
 
-@import "font-default";
 @import "base";
 @import "_common";
 @import "_menu";
