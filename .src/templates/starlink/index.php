@@ -113,11 +113,10 @@
  */
   ?>
 
+
   <main>
-  <?php if (!in_array($itemId, [122, 123, 124])) : ?>
-  <!-- BEGIN jdoc:include type="component" -->
+    <!-- BEGIN jdoc:include type="component" -->
     <jdoc:include type="component"/>
-  <?php endif; ?>
   </main>
 
 
