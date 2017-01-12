@@ -131,7 +131,7 @@ const build =
 
 gulp.task( 'modstarlink.clean', clean );
 gulp.task( 'modstarlink.zip', zip );
-gulp.task( 'modstarlink.compile', compile );
+gulp.task( 'modstarlink.compile.noVendors', compile );
 gulp.task( 'modstarlink.compile.css', css );
 gulp.task( 'modstarlink.compile.js', js );
 gulp.task( 'modstarlink.compile.images', images );

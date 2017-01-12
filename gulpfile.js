@@ -65,6 +65,12 @@ const clean = gulp.parallel(
         'template.clean'
 );
 
+
+gulp.task( 'modstarlink.compile',
+        gulp.series( 'vendors.compile', 'modstarlink.compile.noVendors' )
+);
+
+
 const compile = gulp.series(
         'vendors.compile',
         gulp.parallel(
@@ -86,8 +92,13 @@ const zip = gulp.parallel(
 
 const build = gulp.series ( compile, zip );
 
+
+
+
 gulp.task( 'clean', clean );
 gulp.task( 'compile', compile );
 gulp.task( 'build', build );
-gulp.task( 'clean.build', gulp.series( clean, build) );
+gulp.task( 'clean.build',
+        gulp.series( clean, build)
+);
 gulp.task( 'zip', zip );

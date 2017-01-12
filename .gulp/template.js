@@ -14,8 +14,13 @@ const stringly = require('./helpers').stringly;
 
 
 const css = () => {
-  return gulp.src(_mod.src.css)
-    .pipe($.newer(_mod.dest.css))
+  return gulp.src( [ _mod.src.css, '!**/_*.css' ], { dot: true } )
+    .pipe($.debug())
+    .pipe($.newer({
+      dest:  _mod.dest.css,
+      ext:   '.css',
+      extra: _mod.src.css
+    }))
     .pipe($.filenames('template:css:source'))
 
     .pipe($.if(c.run.sourcemaps, $.sourcemaps.init()))

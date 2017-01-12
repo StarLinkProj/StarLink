@@ -245,7 +245,7 @@ if (exports.plugins.browserSync.proxy === null)
 exports.sources = new Map([
   [ 'template', {
     src: {
-      css:          ROOTS.template + '/**/!(_)*.css',
+      css:          ROOTS.template + '/**/*.css',
       js:           ROOTS.template + '/**/*.js',
       jsBootstrap:  ROOTS.bootstrap + '/js/*.js',
       images:       ROOTS.template + '/**/*.{jpg,jpeg,png,svg,gif}',
@@ -265,7 +265,11 @@ exports.sources = new Map([
       zip:          PACKAGES
     },
     postcss: [
-      require('postcss-import')({path: [SRC_ROOT + '/_includes']}),
+      require('postcss-import')({
+        path: [ ROOTS.$include,
+                ROOTS.basscss + '/css'
+        ]
+      }),
       require('postcss-mixins'),
       require('postcss-custom-properties'),
       require('postcss-simple-vars'),
@@ -284,6 +288,8 @@ exports.sources = new Map([
       require('postcss-url'),
       require('postcss-for'),
       require('postcss-discard-comments'),
+      require('cssnano'),
+      require('postcss-prettify'),
       require('autoprefixer')({'browsers': '> 1%'}),
       require('css-mqpacker')({sort: true})
     ]
@@ -468,7 +474,9 @@ exports.sources = new Map([
       css: ROOTS.basscss + '/css'
     },
     postcss: [
-      require('postcss-import'),
+      require('postcss-import')({
+        path: [ ROOTS.$include ]
+      }),
       require('postcss-custom-media'),
       require('postcss-custom-properties'),
       require('postcss-simple-vars'),
