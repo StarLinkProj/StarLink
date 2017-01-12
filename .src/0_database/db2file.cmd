@@ -11,7 +11,7 @@ SET "_timestamp=%_date:~6,4%%_date:~3,2%%_date:~0,2%_%_time::=%"
 @ECHO ON
 
 mysql -h%_host% -P%_port% -u%_user% -p -e "show tables;" %_database%  | ^
-grep -Ev "Tables_in|"%_tablenames%                                    | ^
+grep -Ev "Tables_in|%_tablenames:~1,-1%"                              | ^
 xargs mysqldump -P%_port% -u%_user% -p --no-create-db %_database%     | ^
 gzip > ".%_timestamp%.sql.gz"
 
