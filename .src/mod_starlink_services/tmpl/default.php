@@ -12,7 +12,7 @@ $containerWide = $params->get('containerType');
 
 
 if ( ! (bool) $containerWide ) { echo '<div class="container">'; } ?>
-<div class="row">
+<div class="row mb25">
   <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-4">
     <a class="s-ServiceType" href="/index.php?Itemid=105">
       <div class="s-ServiceType__imageWrap">
@@ -75,7 +75,7 @@ if ( ! (bool) $containerWide ) { echo '<div class="container">'; } ?>
       </div>
       <div class="s-ServiceType__details">
         <p class="s-ServiceType__linkHeader">WEB-ПРОЕКТЫ</p>
-        <p class="s-ServiceType__linkText">Сайты и интернет-приложения</p>
+        <p class="s-ServiceType__linkText">Сайты и интернет-приложения &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
       </div>
     </a>
   </div>
