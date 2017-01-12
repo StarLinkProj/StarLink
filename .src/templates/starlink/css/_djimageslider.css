@@ -1,11 +1,12 @@
 /* General slider styles */
+
 .djslider-loader {
   margin     : 0 auto;
   position   : relative;
   background : url(../images/loader.gif) center center no-repeat;
   max-width  : 100%;
   overflow   : hidden;
-  box-shadow : 0px -3px 3px rgba(119, 119, 119, 0.25);
+  box-shadow : 0 -3px 3px rgba(119, 119, 119, 0.25);
 }
 
 .djslider {
@@ -79,14 +80,14 @@
 }
 
 .djslider__title {
+  margin-bottom: 1.5rem;
+  line-height: 1;
   color: #fff;
-  margin-bottom : 10px;
-  font-weight   : 300;
-  line-height   : 1.05;
   width: 100%;
 
   @media (max-width: 767px) {
-    font-size : 30px;
+    @extend .h3;
+    line-height: 1;
     position  : absolute;
     top       : 50%;
     left      : 50%;
@@ -94,15 +95,25 @@
   }
 
   @media (min-width : 768px) {
-    font-size: 45px;
+    @extend .h4;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (min-width : 920px) {
+    @extend .h2;
+    line-height: 1;
+    margin-bottom: 1.5rem;
   }
 
   @media (min-width : 1200px) {
-    font-size: 55px;
+    margin-bottom: 3rem;
   }
 
   @media (min-width : 1600px) {
-    font-size: 72px;
+    @extend .h1;
+    line-height: 1;
+    margin-bottom: 3rem;
   }
 
 }
@@ -116,11 +127,9 @@
   display       : block;
   border        : 1px solid #fff;
   color         : #fff;
-  font-weight   : 300;
-  font-size     : 16px;
-  padding       : 5px 40px;
+  padding       : 4px 40px;
   border-radius : 100px;
-  margin        : 20px auto 10px;
+  margin        : 0.75rem auto;
   width         : 33%;
   transition    : background 500ms ease-in-out;
   transition    : color 200ms ease-in-out;
@@ -137,34 +146,38 @@
   }
 
   @media (min-width : 1200px) {
+    @extend h4;
+    margin-bottom:3rem;
+    line-height:1;
     font-weight    : 500;
-    font-size      : 18px;
-    padding-top    : 12px;
-    padding-bottom : 12px;
+/*    font-size      : 18px;*/
+    padding-top    : 1rem;
+    padding-bottom : 1rem;
   }
 
   @media (min-width : 1600px) {
-    padding-top    : 20px;
-    padding-bottom : 20px;
+    margin-top     : 3rem;
+    padding-top    : 1.5rem;
+    padding-bottom : 1.5rem;
   }
 
 }
 
 .djslider__text {
   margin: 0 30px;
-  font-size: 15px;
 
   @media (max-width: 767px) {
     display: none;
   }
 
   @media (min-width : 1200px) {
-     font-size: 18px;
+    @extend .h4;
+/*    margin-bottom: 1.5rem;*/
   }
 
-  @media (min-width : 1600px) {
+/*  @media (min-width : 1600px) {
     font-size: 21px;
-  }
+  }*/
 
 }
 
