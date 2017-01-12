@@ -15,7 +15,6 @@ const stringly = require('./helpers').stringly;
 
 const css = () => {
   return gulp.src( [ _mod.src.css, '!**/_*.css' ], { dot: true } )
-    .pipe($.debug())
     .pipe($.newer({
       dest:  _mod.dest.css,
       ext:   '.css',
