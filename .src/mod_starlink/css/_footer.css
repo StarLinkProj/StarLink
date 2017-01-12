@@ -1,39 +1,57 @@
 /********** Footer *********/
-/** PostCSS plugins: postcss-custom-properties */
+/** PostCSS plugins:
+    postcss-custom-properties
+    postcss-nested
+*/
+
 .pre-footer {
   background: var(--softBlack);
   flex: 1;
 }
+
 .footer {
   background: var(--softBlack);
   color: #fff;
   font-weight: bold;
   padding: 3rem 0;
   width: 100%;
+
+  @media (min-width: 992px) {
+    padding: 3rem 0 9rem;
+  }
+
 }
+
 .footer__link, #footerMenu>li>a {
   color: #fff;
   cursor: pointer;
 }
+
 .footer__link:hover, #footerMenu>li>a:hover {
   color: #fff;
   background: transparent;
   text-decoration : underline;
 }
+
 #footerMenu li.item-101 {
   display: none;
 }
+
 #footerMenu>li {
   display: inline-block;
 }
+
 #footerMenu>li>a {
   display: inline-block;
   padding: 0 10px;
 }
 
-.footer__icon {
+.footer__icon, .footer__svg {
   margin-top     : 0.75rem;
   margin-bottom  : 0.75rem;
+}
+
+.footer__icon {
   border         : 0 solid transparent;
   border-radius  : 50%;
   cursor         : pointer;
@@ -52,25 +70,31 @@
   transition-property: fill, background-color;
   vertical-align: bottom;
 }
+
 .footer__svg_facebook {
   fill: #5a7abf;
 }
+
 .icon.iconFacebook {
   width:10px; height:10px; fill:rgba(3,3,3,0.09);
 }
+
 .footer__svg_googlePlus {
 }
+
 .footer__icon:hover, .footer__icon:focus {
   background: rgba(255, 255, 255, 1);
   transition : all 300ms ease-in-out;
   transition-property: fill, background-color;
 }
+
 .footer__icon:hover .footer__svg,
 .footer__icon:focus .footer__svg {
   fill: #111;
   transition : all 300ms ease-in-out;
   transition-property: fill, background-color;
 }
+
 .footer__row {
   text-align: center;
   margin: 1.5rem 0;
@@ -83,17 +107,8 @@
 }
 .footer__socialBlock {
   position: relative;
-}
 
-/* MEDIA QUERIES
-*********************************************/
-@media (min-width: 768px) {  }
-@media (min-width: 992px) {
-  .footer {
-    padding: 3rem 0 9rem;
-  }
-  .footer__socialBlock {
+  @media (min-width: 992px) {
     top: -1.5rem;
   }
 }
-
