@@ -11,15 +11,15 @@ $imgBase = JUri::base(true) . '/media/mod_starlink_calculator_outsourcing/images
 <section class="calcItOutsource">
   <div class="container">
     <h2 class="text-center">Как внедрять новейшие IT-технологии без большого и дорогостоящего IT-отдела?</h2>
-    <p class="mx4 px4 mb4 text-center">Решение, которое мы предлагаем &ndash; передать обслуживание всей IT-инфраструктуры команде узкопрофильных специалистов.<br>
+    <p class="mx4 px4 mb35 text-center">Решение, которое мы предлагаем &ndash; передать обслуживание всей IT-инфраструктуры команде узкопрофильных специалистов.<br>
       Рассчитайте стоимость абонентского обслуживания ПК и серверов:</p>
 
     <div id="connect_form" class="row">
 
-      <section class="mb4">
+      <section class="mb35">
         <div class="flex">
-          <div class="SLAtable__th SLAtable__th--left SlidersTable__col1 pt2" style="flex: 0 0 auto;">количество компьютеров</div>
-          <div class="py2 pr2" style="flex: 1 1 auto;">
+          <div class="SLAtable__th SLAtable__th--left SlidersTable__col1 mt25" style="flex: 0 0 auto;">количество компьютеров</div>
+          <div class="mt25 pr2" style="flex: 1 1 auto;">
             <div class="sliderContainer">
               <div id="slider-pc-count" class="Slider Slider--pc"></div>
             </div>
@@ -31,8 +31,8 @@ $imgBase = JUri::base(true) . '/media/mod_starlink_calculator_outsourcing/images
           </div>
         </div>
         <div class="flex" style="flex-flow: row nowrap;">
-          <div class="SLAtable__th SLAtable__th--left SlidersTable__col1 pt2" style="flex: 0 0 auto;">количество физических <br> серверов</div>
-          <div class="py2" style="flex: 1 1 36rem;">
+          <div class="SLAtable__th SLAtable__th--left SlidersTable__col1 mt25" style="flex: 0 0 auto;">количество физических <br> серверов</div>
+          <div class="mt25" style="flex: 1 1 36rem;">
             <div class="sliderContainer">
               <div id="slider-server-count" class="Slider Slider--server"></div>
             </div>
@@ -42,8 +42,8 @@ $imgBase = JUri::base(true) . '/media/mod_starlink_calculator_outsourcing/images
               <?php endfor; ?>
             </div>
           </div>
-          <div class="SLAtable__th SLAtable__th--left SlidersTable__col3 pt2 ml3" style="flex: 0 0 auto;">количество виртуальных <br> серверов</div>
-          <div class="py2 pr2" style="flex: 1 0.67 16rem;">
+          <div class="SLAtable__th SLAtable__th--left SlidersTable__col3 mt25 ml3" style="flex: 0 0 auto;">количество виртуальных <br> серверов</div>
+          <div class="mt25 pr2" style="flex: 1 0.67 16rem;">
             <div class="sliderContainer">
               <div id="slider-virtual-count" class="Slider Slider--virtual"></div>
             </div>

@@ -10,7 +10,7 @@
   --slider-color: rgba(202,207,211,1);
   --current-SLA: #F2F8FC;
 
-  --slider-unit: 1.25;
+  --slider-unit: 1.5;
   --handle-size: 1.5rem;
 }
 
@@ -22,7 +22,7 @@
 
 .calcItOutsource {
 /*  display: none;*/
-  background: linear-gradient(to top, color(rgba(129, 221, 36, 0.1) s -50%) 0%, rgba(150, 200, 100, 0.1) 7rem, rgba(255, 255, 255, 0.4) 15rem, rgba(255, 255, 255,0) 100%);
+  background: linear-gradient(to top, #f8f9fa 0, #ffffff 7rem);
 
   @media (min-width: 992px) {
     display: block;
@@ -130,6 +130,7 @@
 
 .sliderContainer {
   height: var(--slider-unit)rem;
+  padding-top: 0.5rem;
 }
 
 
@@ -256,7 +257,7 @@
 
 .SLAtable__th {
   color: #818A91;
-  line-height: 1.25;
+/*  line-height: 1.5;*/
   font-weight: 600;
   text-align: center;
   text-transform: uppercase;
