@@ -37,21 +37,23 @@ function getCatId() {
 <div class="container-fluid block--grey pt2 blog<?php echo $this->pageclass_sfx; ?>" itemscope itemtype="https://schema.org/Blog">
   <div class="container">
   <?php if ($this->params->get('show_page_heading')) : ?>
-    <h1 class="block__header"> <?php echo $this->escape($this->params->get('page_heading')); ?> </h1>
+    <h1 class="mt25 text-center"> <?php echo $this->escape($this->params->get('page_heading')); ?> </h1>
   <?php endif; ?>
 
   <?php if ($this->params->get('show_category_title', 1) or $this->params->get('page_subheading')) : ?>
-    <h1 class="block__header"> <?php echo $this->escape($this->params->get('page_subheading')); ?>
+    <h1 class="mt25 text-center"> <?php echo $this->escape($this->params->get('page_subheading')); ?>
       <?php if ($this->params->get('show_category_title')) : ?>
         <span class="subheading-category"><?php echo $this->category->title; ?></span>
       <?php endif; ?>
     </h1>
   <?php endif; ?>
 
-  <?php if ($this->params->get('show_cat_tags', 1) && !empty($this->category->tags->itemTags)) : ?>
-    <?php $this->category->tagLayout = new JLayoutFile('joomla.content.tags'); ?>
-    <?php echo $this->category->tagLayout->render($this->category->tags->itemTags); ?>
-  <?php endif; ?>
+  <?php
+    if ($this->params->get('show_cat_tags', 1) && !empty($this->category->tags->itemTags)) :
+      $this->category->tagLayout = new JLayoutFile('joomla.content.tags');
+      echo $this->category->tagLayout->render($this->category->tags->itemTags);
+    endif;
+  ?>
 
   <?php if ($this->params->get('show_description', 1) || $this->params->def('show_description_image', 1)) : ?>
     <div class="category-desc clearfix">

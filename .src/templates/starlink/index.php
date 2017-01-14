@@ -25,6 +25,8 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8KDD4"
                     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <?php include_once($assetsPathFile . '/images/icons.svg'); ?>
+
+
   <header class="TopHeader relative">
     <div class="TopRow relative">
       <div class="Logo absolute left-0 bottom-0" title="StarLink" href="<?php echo JURI::base(); ?>">

@@ -5,18 +5,18 @@
 }
     .article--box {
       box-shadow    : 0 5px 10px rgba(0, 0, 0, 0.05);
-      margin        : 20px 10px 10px;
+      margin        : 1.5rem 0.5rem 0;
       border        : none;
       border-radius : 8px;
       overflow      : hidden;
       padding       : 0;
     }
         .article__title {
-          width       : auto;
+          @apply --h4--;
           overflow    : hidden;
-          margin      : 20px 15px 10px;
-          font-size   : 20px;
-          font-weight : 500;
+          margin-left: 0.5rem;
+          margin-right: 0.5rem;
+          font-weight : 400;
         }
             .article__title--block {
               margin      : 45px auto 20px;
@@ -51,15 +51,11 @@
           margin: 0 auto;
         }
         .article__text {
-          font-size: 16px;
-          margin: 16px 15px 8px;
+          padding: 0 0.5rem calc(1.5rem - 1px);
+          border-bottom: 1px solid #eaeaea;
         }
             .article__text--big {
               font-size: 24px;
-            }
-            .article__text--m0 {
-              margin: 8px 0 0;
-              padding: 0;
             }
         .article--newsflash {
           box-shadow    : 0 5px 10px rgba(0, 0, 0, 0.05);
@@ -68,9 +64,7 @@
           padding       : 0;
         }
         .article__footer {
-          border-top : 1px solid #EAEAEA;
-          padding    : 20px 5px 20px 30px;
-          margin     : 0;
+          margin-bottom: 1.5rem;
         }
             .article__footer--newsflash {
               padding: 15px 5px 15px 30px;
@@ -86,13 +80,13 @@
           margin: 0;
         }
         .article__metadata {
-          margin: 0 15px 10px;
+          margin-left: 0.5rem;
+          margin-right: 0.5rem;
           color: #9B9B9B;
-          line-height: 20px;
         }
         .article__hits {
-          padding-left: 30px;
-          background: url('../images/main/eye.png') no-repeat left center;
+          padding-left: 32px;
+          background: url('../images/main/eye.png') no-repeat 8px center;
           color: #9B9B9B;
         }
         .article__btn {
@@ -105,9 +99,6 @@
               padding: 10px 11px;
               background: url('../images/main/readmoreIcon.png') no-repeat left center;
             }
-        .article__link {
-          color: #3FA2F7;
-        }
 
 
 /* this is for menu title if it is shown on an article  */
@@ -115,14 +106,15 @@
 /* BLOCK: imageFill */
 
 .imageFill {
-  display         : flex;
+/*  display         : flex;
   justify-content : center;
-  align-items     : center;
+  align-items     : center;*/
+  margin-bottom   : 1.5rem;
   overflow        : hidden;
-  height          : 90px;
+  height          : 6rem;
 }
     .imageFill__image {
-      flex-shrink : 0;
+/*      flex-shrink : 0;*/
       min-width   : 100%;
       min-height  : 100%
     }
