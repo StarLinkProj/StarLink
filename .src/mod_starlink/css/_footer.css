@@ -82,15 +82,15 @@
 .footer__svg_googlePlus {
 }
 
-.footer__icon:hover, .footer__icon:focus {
+/*.footer__icon:hover, .footer__icon:focus {
   background: rgba(255, 255, 255, 1);
   transition : all 300ms ease-in-out;
   transition-property: fill, background-color;
-}
+}*/
 
 .footer__icon:hover .footer__svg,
 .footer__icon:focus .footer__svg {
-  fill: #111;
+  fill: #fff;
   transition : all 300ms ease-in-out;
   transition-property: fill, background-color;
 }
