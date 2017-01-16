@@ -224,6 +224,12 @@
   @nest &--last {
     border-bottom: 1px solid #E1E7EB;
   }
+
+  @nest &--last::after {
+    content: '';
+    display: block;
+    height: 1.5rem;
+  }
 }
 
 .contactItem__type {

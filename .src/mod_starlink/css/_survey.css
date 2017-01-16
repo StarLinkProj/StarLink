@@ -33,7 +33,7 @@
 #fox-container-m95 .orderSurvey__input input[type="text"],
 #fox-container-m100 .sendLetterInput input[type="text"],
 #fox-container-m100 .sendLetterArea textarea {
-  padding: 0;
+  /*padding: 0;*/
   font-size: 1rem;
   height: 1.5rem;
   line-height: 1.5rem;
