@@ -104,6 +104,8 @@
 /* this is for menu title if it is shown on an article  */
 
 /* BLOCK: imageFill */
+/* @TODO: image fill with object-fit or background-clip: cover  */
+
 
 .imageFill {
 /*  display         : flex;
