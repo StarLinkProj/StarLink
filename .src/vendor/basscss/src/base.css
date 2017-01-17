@@ -27,11 +27,10 @@
 
 
 /* Optional Modules (not included in Basscss by default) */
-/*
 
 @import 'basscss-addons/modules/responsive-margin';
 @import 'basscss-addons/modules/responsive-padding';
-*/
+
 @import 'basscss-addons/modules/media-object'; /*
 @import 'basscss-addons/modules/all';
 @import 'basscss-addons/modules/forms';
@@ -135,6 +134,15 @@ h6, .h6 {
 .mxn25 { margin-left: calc(-1 * var(--space-25)); margin-right: calc(-1 * var(--space-25)); }
 .mxn35 { margin-left: calc(-1 * var(--space-35)); margin-right: calc(-1 * var(--space-35)); }
 .mxn45 { margin-left: calc(-1 * var(--space-45)); margin-right: calc(-1 * var(--space-45)); }
+.myn25 { margin-top: calc(-1 * var(--space-25)); margin-bottom: calc(-1 * var(--space-25)); }
+.myn35 { margin-top: calc(-1 * var(--space-35)); margin-bottom: calc(-1 * var(--space-35)); }
+.myn45 { margin-top: calc(-1 * var(--space-45)); margin-bottom: calc(-1 * var(--space-45)); }
+.mtn25 { margin-top: calc(-1 * var(--space-25)); }
+.mtn35 { margin-top: calc(-1 * var(--space-35)); }
+.mtn45 { margin-top: calc(-1 * var(--space-45)); }
+.mbn25 { margin-bottom: calc(-1 * var(--space-25)); }
+.mbn35 { margin-bottom: calc(-1 * var(--space-35)); }
+.mbn45 { margin-bottom: calc(-1 * var(--space-45)); }
 
 .p25  { padding:        var(--space-25) }
 .pt25 { padding-top:    var(--space-25) }

@@ -27,7 +27,7 @@
 }
 
 .djslider__in {
-  height   : 100%;
+  height: 100%;
 }
 
 .djslider__listItem {
@@ -44,13 +44,15 @@
 }
 
 .djslider__image {
-  border            : 0;
   margin            : 0;
   min-width         : 100%;
   position          : relative;
   top               : 50%;
   transform         : translate(-50%, -50%);
   left              : 50%;
+
+  border            : 0;
+  filter            : brightness(85%);
 }
 
 /* Slide description area */
@@ -62,8 +64,6 @@
   transform         : translateY(-50%);
 
   @media (min-width : 992px) {
-    padding-left  : 45px;
-    padding-right : 45px;
   }
 
 }
@@ -84,41 +84,32 @@
 }
 
 .djslider__title {
-/*  margin-bottom: 1.5rem;
-  line-height: 1;*/
-  @extend .h3;
+  @apply --h3--;
   line-height: 1;
   margin-bottom: 1.5rem;
   color: #fff;
   width: 100%;
 
-/*  @media (max-width: 767px) {
-    @extend .h3;
-        line-height: 1;
-     position  : absolute;
-        top       : 50%;
-        left      : 50%;
-        transform : translate(-50%, -50%);
-  } */
-
   @media (min-width : 768px) {
-    /*    @extend .h4;
-  /*    line-height: 1;
-        margin-bottom: 1.5rem;*/
-  }
-
-  @media (min-width : 920px) {
-    @extend .h2;
+    @apply --h3--;
     line-height: 1;
     margin-bottom: 1.5rem;
   }
 
+  @media (min-width : 920px) {
+    @apply --h2--;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1.5px;
+  }
+
   @media (min-width : 1200px) {
     margin-bottom: 3rem;
+    letter-spacing: normal;
   }
 
   @media (min-width : 1600px) {
-    @extend .h1;
+    @apply --h1--;
     line-height: 1;
     margin-bottom: 3rem;
   }
@@ -131,60 +122,52 @@
 }
 
 .djslider__readmore {
-  display       : block;
-  border        : 1px solid #fff;
-  color         : #fff;
-  padding       : 4px 40px;
-  border-radius : 100px;
-  margin        : 0.75rem auto;
+  @apply --h5--;
+  display       : none;
   width         : 33%;
-  transition    : background 500ms ease-in-out;
-  transition    : color 200ms ease-in-out;
+  padding       : calc(0.25rem - 1px) 0;
 
-  &:hover {
+  text-align    : center;
+  text-shadow   : none;
+  font-weight   : 400;
+  color         : #fff;
+  background    : linear-gradient(to top, rgba(255,255,255,0.35), rgba(255,255,255,0.20) 20% );
+  border        : 1px solid transparent;
+  border-radius : 100px;
+  transition    : background 300ms ease-in-out, color 300ms ease-in-out;
+
+  &:hover, &:focus {
     background      : #fff;
     color           : #3c506b;
     text-decoration : none;
-    text-shadow     : 0 0 0 #303030;
   }
 
-  @media (max-width: 767px) {
-    display: none;
+  @media (min-width: 768px) {
+    display: block;
   }
 
-  @media (min-width : 1200px) {
-    @extend h4;
-    margin-bottom:3rem;
-    line-height:1;
-    font-weight    : 500;
-/*    font-size      : 18px;*/
-    padding-top    : 1rem;
-    padding-bottom : 1rem;
+  @media (min-width: 920px) {
+    padding: calc(0.75rem - 1px) 0;
   }
 
-  @media (min-width : 1600px) {
-    margin-top     : 3rem;
-    padding-top    : 1.5rem;
-    padding-bottom : 1.5rem;
+  @media (min-width: 1200px) {
+    @apply --h4--;
+  }
+
+  @media (min-width: 1600px) {
+    margin-top: 3rem;
   }
 
 }
 
 .djslider__text {
-  margin: 0 30px;
+  display: none;
+  width: calc(100% - 64px);
+  @apply --h5--;
 
-  @media (max-width: 767px) {
-    display: none;
-  }
+  @media (min-width: 768px)  {  display: block;  }
 
-  @media (min-width : 1200px) {
-    @extend .h4;
-/*    margin-bottom: 1.5rem;*/
-  }
-
-/*  @media (min-width : 1600px) {
-    font-size: 21px;
-  }*/
+  @media (min-width: 1200px) {  @apply --h4--;   }
 
 }
 
@@ -202,25 +185,20 @@
 
 .djslider__nav-numbers {
   position   : absolute;
-  bottom     : 10px;
-  left       : 0;
-  right      : 0;
-  margin     : auto;
+  bottom     : 0.5rem;
+  width      : 100%;
   text-align : center;
 
-  @media (min-width: 768px) {
-    bottom: 10px;
-    text-align: left;
+  @media (min-width : 768px) {
   }
 
-  @media (min-width: 992px) {
-    bottom: 25px;
+  @media (min-width : 992px) {
+    bottom : 1.5rem;
   }
 
-  @media (min-width: 1200px) {
-    bottom: 45px;
-  }
+  @media (min-width : 1200px) {
 
+  }
 }
 
 
@@ -238,6 +216,7 @@
 
 .prev-button  { left : 0; }
 .next-button  { right: 0; }
+
 @media (min-width: 1200px) {
   .prev-button,
   .next-button {
@@ -254,7 +233,9 @@
 }
 
 .play-button,
-.pause-button { left : 50%; }
+.pause-button {
+  left : 50%;
+}
 
 .load-button {
   width              : 8px;
@@ -266,26 +247,26 @@
   border-radius      : 50%;
   cursor             : pointer;
   opacity            : 1;
-  -webkit-transition : opacity 400ms ease;
   transition         : opacity 400ms ease;
   outline            : none;
 }
-.load-button-active {
-  background : #fff;
-}
+    .load-button-active {
+      background : #fff;
+    }
 
 .djslider__nav-numbers .load-button {
   width       : 11px;
   height      : 11px;
   text-align  : center;
   color       : #fff;
-}
-@media (min-width: 768px) {
-  .djslider__nav-numbers .load-button {
+
+  @media (min-width: 768px) {
     width  : 16px;
     height : 16px;
   }
 }
+
+
 
 /* Fading elements */
 .djslider-loader .showOnHover {
