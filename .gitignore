@@ -669,6 +669,7 @@ jspm_packages
 /administrator/language/en-GB/en-GB.*admintools*.*
 /administrator/language/en-GB/en-GB.*akeeba*.*
 /administrator/language/en-GB/en-GB.*arkeditor*.*
+/administrator/language/en-GB/en-GB.*backuponupdate*.*
 /administrator/language/en-GB/en-GB.*jce*.*
 /administrator/modules/mod_ark*/
 /components/com_admintools/
@@ -678,6 +679,7 @@ jspm_packages
 /components/com_j2xml/
 /language/en-GB/en-GB.com_admintools.ini
 /language/en-GB/en-GB.com_akeeba.ini
+/language/en-GB/en-GB.*fof30.ini
 /language/en-GB/en-GB.com_jce.ini
 /language/en-GB/en-GB.pkg_arkeditor.sys.ini
 /language/en-GB/en-GB.pkg_jce.sys.ini
@@ -691,6 +693,7 @@ jspm_packages
 /media/com_j2xml/
 /media/lib_eshiol_core/
 /media/whatnothing/
+/modules/mod_djimageslider/
 /modules/mod_inlinecustom/
 /plugins/ajax/
 /plugins/ark*/
@@ -708,7 +711,7 @@ jspm_packages
 /plugins/quickicon/arkquickicon/
 /plugins/quickicon/jce/
 /plugins/system/admintools/
-/plugins/system/akeebabackupcheck/
+/plugins/system/akeeba*check/
 /plugins/system/ark*/
 /plugins/system/backuponupdate/
 /plugins/system/inlinecontent/
