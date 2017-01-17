@@ -12,9 +12,18 @@
 .djslider {
   margin             : 0 auto;
   position           : relative;
-  transition         : opacity 400ms ease;
+  transition         : opacity 400ms ease, height 300ms ease-in-out;
   opacity            : 0;
   max-height         : 600px;
+  height             : 24rem !important;
+
+  @media (min-width: 920px) {
+    height           : 30rem !important;
+  }
+
+  @media (min-width: 1200px) {
+    height           : 36rem !important;
+  }
 }
 
 .djslider__container {
@@ -46,6 +55,7 @@
 .djslider__image {
   margin            : 0;
   min-width         : 100%;
+  max-width         : none;
   position          : relative;
   top               : 50%;
   transform         : translate(-50%, -50%);
