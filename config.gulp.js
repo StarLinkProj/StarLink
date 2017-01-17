@@ -54,11 +54,6 @@ const ENTITIES = new Map( [
       path: 'mod_starlink_services',
       type: 'module'
   }],
-  [ 'modDjimageslider', {
-    name: 'modDjimageslider',
-    path: 'mod_djimageslider',
-    type: 'module'
-  }],
   [ 'modStarlink', {
       name: 'modStarlink',
       path: 'mod_starlink',
@@ -91,7 +86,6 @@ const entities = {
   modcalc:          'mod_starlink_calculator_outsourcing',
   modmaps:          'mod_starlink_map',
   modservices:      'mod_starlink_services',
-  moddjimageslider: 'mod_djimageslider',
   modstarlink:      'mod_starlink',
   templateStarlink: 'starlink'
 };
@@ -102,7 +96,6 @@ const ROOTS = {
   modcalc:      SRC_ROOT + '/' + entities.modcalc,
   modmaps:      SRC_ROOT + '/' + entities.modmaps,
   modservices:  SRC_ROOT + '/' + entities.modservices,
-  moddjimageslider: SRC_ROOT + '/' + entities.moddjimageslider,
   modstarlink:  SRC_ROOT + '/' + entities.modstarlink,
   templates:    SRC_ROOT + '/templates',
   template:     SRC_ROOT + '/templates' + '/' + entities.templateStarlink,
@@ -471,18 +464,6 @@ exports.sources = new Map([
       //require('autoprefixer')({'browsers': '> 1%'}),
       require('css-mqpacker')({sort: true})
     ]
-  } ],
-  [ 'moddjimageslider', {
-    src: {
-      clean:  [ JOOMLA_MODULES + '/mod_djimageslider/tmpl/starlink.php' ],
-      markup: ROOTS.moddjimageslider + '/**/*.{html,php}',
-      zip:    [ JOOMLA_MODULES + '/mod_djimageslider/**/*.*' ]
-    },
-    dest: {
-      markup: JOOMLA_MODULES + '/mod_djimageslider',
-      zipName:'mod_djimageslider',
-      zip:    PACKAGES
-    }
   } ],
   [ 'basscss', {
     src:     {
