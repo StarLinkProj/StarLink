@@ -67,7 +67,7 @@
           margin-bottom: 1.5rem;
         }
             .article__footer--newsflash {
-              padding: 15px 5px 15px 30px;
+              padding: 0 8px 0 16px;
             }
         .article__readMore {
           margin: 0;
@@ -100,6 +100,10 @@
               background: url('../images/main/readmoreIcon.png') no-repeat left center;
             }
 
+    .article__transition {
+      transition: color 300ms ease-in-out, background 300ms ease-in-out;
+    }
+
 
 /* this is for menu title if it is shown on an article  */
 
@@ -130,16 +134,14 @@
 /*   Article cards implemented by mod_article_news   */
 
 /* BLOCK: newsflash */
-/*.newsflash {
-  padding: 24px 0;
-}*/
-@media (min-width: 992px) {
+
+/*@media (min-width: 992px) {
   .moduletable.newsflash {
     box-shadow    : 0 2rem 2rem rgba(0, 0, 0, 0.05);
     border        : none;
     border-radius : 8px;
   }
-}
+}*/
 
 /*    .newsflash__header {
 !*      margin      : 0 auto 16px;*!

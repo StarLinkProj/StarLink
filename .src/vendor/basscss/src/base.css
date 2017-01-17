@@ -160,6 +160,8 @@ h6, .h6 {
 .px35 { padding-left:   var(--space-35); padding-right:  var(--space-35) }
 .py35 { padding-top:    var(--space-35); padding-bottom: var(--space-35) }
 
+.py25--noborder { padding-top: calc(var(--space-25) - 1px); padding-bottom: calc(var(--space-25) - 1px); }
+
 /* Custom properties */
 
 

@@ -31,7 +31,7 @@ $item_heading = $params->get('item_heading', 'h4');
   </div>
 
   <div class="article__title text-center">
-    <a class="btn btn-warning btn-lg" href="<?=JUri::base()?>/index.php?Itemid=114"">Все новости</a>
+    <a class="h4 btn btn-warning btn-lg mt35 py25 py25--noborder article__transition" href="<?=JUri::base()?>/index.php?Itemid=114"">Все новости</a>
   </div>
 
 </div>
