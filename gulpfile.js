@@ -16,6 +16,7 @@ var HubRegistry = require('gulp-hub');
 var hub = new HubRegistry([
         './.gulp/modcalc.js',
         './.gulp/modservices.js',
+        './.gulp/moddjimageslider.js',
         './.gulp/modmap.js',
         './.gulp/modstarlink.js',
         './.gulp/template.js',
@@ -33,6 +34,7 @@ const del = require('del');
 const c = require('./config.gulp.js');
 const modcalc = require('./.gulp/modcalc').modcalc;
 const modservices = require('./.gulp/modservices').modservices;
+const moddjimageslider = require('./.gulp/moddjimageslider').moddjimageslider;
 const modmap = require('./.gulp/modmap').modmap;
 const modstarlink = require('./.gulp/modstarlink').modstarlink;
 const template = require('./.gulp/template').template;
