@@ -70,6 +70,34 @@ and then recompile with
 npm run css
 ```
 
+##Menu Ids
+    114 about/news - template Starlink-news
+	118 blog       - template Starlink-blog
+	121 collaboration-kerio-connect,
+    122 dataprotection-kerio-control,
+    123 distributedorganization-starlink,
+    124 conferencing-kerio-operator
+
+    то есть
+		105 consulting
+    106 IT-outsourcing
+    107 integration
+		108 datacenter
+    109 security
+    110 webprojects
+    111 О компании
+    112 Услуги,
+    113 Решения,
+    115 Контакты,
+    117 Кто мы?,
+    119 Портфолио,
+    120 Вакансии
+    134 Виртуализация,
+    135 Хостинг / Колокейшн,
+    136 Аренда серверов и ПО (SaaS),
+    137 SSL-сертификаты,
+    138 аналы связи
+
 ---
 
 MIT License

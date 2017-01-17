@@ -128,13 +128,6 @@ a:hover, a:focus {
   font-size : 5rem;
 }
 
-.mainText {
-  font-size     : 1rem;
-  font-weight   : 300;
-  line-height   : 1.5;
-  margin-bottom : 1.5rem;
-}
-
 .text--looseLines {
     line-height   : 1.5;
   }
