@@ -129,6 +129,7 @@ gulp.task( 'template.compile', compile );
 gulp.task( 'template.compile.css', css );
 gulp.task( 'template.compile.js', js );
 gulp.task( 'template.compile.images', images );
+gulp.task( 'template.compile.markup', markup );
 gulp.task( 'template.compile.other', other );
 gulp.task( 'template.build', build );
 gulp.task( 'template.clean.build',
