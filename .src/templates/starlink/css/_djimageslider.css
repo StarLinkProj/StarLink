@@ -37,6 +37,7 @@
 
 .djslider__in {
   height: 100%;
+  margin: 0;
 }
 
 .djslider__listItem {
