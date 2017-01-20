@@ -559,6 +559,8 @@
 /templates/index.html
 /tmp/*
 /configuration.php
+/configuration-docker.php
+/configuration-laragon.php
 /index.php
 /joomla.xml
 /*.txt
@@ -703,6 +705,7 @@ jspm_packages
 /plugins/editors/jce/
 /plugins/editors-xtd/arkeditor/
 /plugins/editors-xtd/jce/
+/plugins/editors-xtd/sourcerer/language/it-IT/
 /plugins/extension/arkeditor/
 /plugins/extension/inline/
 /plugins/extension/jce/
@@ -716,12 +719,14 @@ jspm_packages
 /plugins/system/backuponupdate/
 /plugins/system/inlinecontent/
 /plugins/system/inlinehistory/
+/plugins/system/j2xml/
 /plugins/system/jce/
 /plugins/system/jscsscontrol/
 /plugins/system/k2extrafields/
 /plugins/system/modulehistory/
 /plugins/system/sefbase/
-/plugins/system/j2xml/
+/plugins/system/sourcerer/language/it-IT/
+
 
 ### mao
 .idea
