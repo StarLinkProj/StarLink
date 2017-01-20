@@ -162,8 +162,12 @@ h6, .h6 {
 
 .py25--noborder { padding-top: calc(var(--space-25) - 1px); padding-bottom: calc(var(--space-25) - 1px); }
 
-/* Custom properties */
 
+.btn:focus {
+  box-shadow: none;
+}
+
+/* Custom properties */
 
 :root {
 

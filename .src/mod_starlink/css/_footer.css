@@ -33,6 +33,13 @@
   text-decoration : underline;
 }
 
+.footer__link--icon {
+  display        : inline-block;
+  width          : 3rem;
+  height         : 1.5rem;
+  cursor         : pointer;
+}
+
 #footerMenu li.item-101 {
   display: none;
 }
@@ -46,53 +53,41 @@
   padding: 0 10px;
 }
 
-.footer__icon, .footer__svg {
-  margin-top     : 0.75rem;
-  margin-bottom  : 0.75rem;
+.footer__socialBlock {
+  height: var(--space-25);
 }
 
-.footer__icon {
-  border         : 0 solid transparent;
-  border-radius  : 50%;
-  cursor         : pointer;
-  display        : inline-block;
-  vertical-align : bottom;
-  min-width      : 3rem;
-  height         : 3rem;
-  text-align     : center;
-}
-
-.footer__svg {
-  position: relative;
-  height: 1.5rem;
+.svgBlock {
   width: auto;
+
+  @nest &:hover, &:focus {
+    fill: #fff;
+  }
+}
+
+.svgBlock__icon {
   transition : all 300ms ease-in-out;
   transition-property: fill, background-color;
-  vertical-align: bottom;
+
+  @nest &:hover, &:focus, .svgBlock:hover > &, .svgBlock:focus > & {
+    fill: inherit;
+  }
 }
 
-.footer__svg_facebook {
+.svgBlock__icon--facebook {
   fill: #5a7abf;
 }
 
-.icon.iconFacebook {
-  width:10px; height:10px; fill:rgba(3,3,3,0.09);
+.svgBlock__icon--twitter {
+  fill: #00aced;
 }
 
-.footer__svg_googlePlus {
+.svgBlock__icon--google {
+  fill: #dd4b39;
 }
 
-/*.footer__icon:hover, .footer__icon:focus {
-  background: rgba(255, 255, 255, 1);
-  transition : all 300ms ease-in-out;
-  transition-property: fill, background-color;
-}*/
-
-.footer__icon:hover .footer__svg,
-.footer__icon:focus .footer__svg {
-  fill: #fff;
-  transition : all 300ms ease-in-out;
-  transition-property: fill, background-color;
+svg path, svg g {
+  fill: inherit;
 }
 
 .footer__row {
@@ -104,11 +99,4 @@
     margin: 0;
   }
 
-}
-.footer__socialBlock {
-  position: relative;
-
-  @media (min-width: 992px) {
-    top: -1.5rem;
-  }
 }
