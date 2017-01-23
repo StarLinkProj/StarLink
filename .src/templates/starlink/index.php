@@ -112,17 +112,17 @@
 
         <div class="col-md-3 col-xs-12 text-center footer__socialBlock">
           <a class="footer__link footer__link--icon mr2" href="https://www.facebook.com/StarlinkUA/" target="_blank">
-            <svg class="svgBlock" height="100" width="100">
+            <svg class="svgBlock">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#iconFacebook" class="svgBlock__icon svgBlock__icon--facebook" />
             </svg>
           </a>
           <a class="footer__link footer__link--icon mr2" href="https://twitter.com/StarlinkUa/" target="_blank">
-            <svg class="svgBlock" height="95" width="115">
+            <svg class="svgBlock">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#iconTwitter" class="svgBlock__icon svgBlock__icon--twitter" />
             </svg>
           </a>
           <a class="footer__link footer__link--icon" href="https://plus.google.com/u/1/b/107580631455821459922/107580631455821459922?hl=uk" target="_blank">
-            <svg class="svgBlock" height="63.5" width="100">
+            <svg class="svgBlock">
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#iconGooglePlus" class="svgBlock__icon svgBlock__icon--google" />
             </svg>
           </a>

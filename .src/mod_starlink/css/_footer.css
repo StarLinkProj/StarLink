@@ -23,6 +23,7 @@
 }
 
 .footer__link, #footerMenu>li>a {
+  display: inline-block;
   color: #fff;
   cursor: pointer;
 }
@@ -58,7 +59,7 @@
 }
 
 .svgBlock {
-  width: auto;
+  width: 100%;
 
   @nest &:hover, &:focus {
     fill: #fff;
