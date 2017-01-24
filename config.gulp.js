@@ -492,10 +492,12 @@ exports.sources = new Map([
   [ 'bootstrap', {
     src:  {
       sass: ROOTS.bootstrap + '/bootstrap.scss',
-      clean: ROOTS.bootstrap + '/css/bootstrap.*'
+      js: ROOTS.bootstrap + '/js/bootstrap.js',
+      clean: [ ROOTS.bootstrap + '/css/bootstrap.*', ROOTS.bootstrap + '/js/bootstrap.min.js' ]
     },
     dest: {
-      css: ROOTS.bootstrap + '/css'
+      css: ROOTS.bootstrap + '/css',
+      js: ROOTS.bootstrap + '/js'
     },
     options: {
       includePaths: [

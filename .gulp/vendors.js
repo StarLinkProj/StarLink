@@ -30,11 +30,11 @@ const basscssCompile = () => {
     .on('end', logPipeline('basscss', 'compile'));
 };
 
-const bootstrapCompile = () => {
+const bootstrapCss = () => {
   return gulp.src(_bootstrap.src.sass)
     .pipe($.newer(_bootstrap.dest.css))
 
-    .pipe($.filenames('bootstrap:compile:source'))
+    .pipe($.filenames('bootstrap:css:source'))
     .pipe($.if(c.run.sourcemaps, $.sourcemaps.init()))
 
     .pipe($.sass(_bootstrap.options).on('error', $.sass.logError))
@@ -42,11 +42,28 @@ const bootstrapCompile = () => {
 
     .pipe($.if(c.run.sourcemaps, $.sourcemaps.write('.')))
     .pipe(gulp.dest(_bootstrap.dest.css))
-    .pipe($.filenames('bootstrap:compile:dest'))
+    .pipe($.filenames('bootstrap:css:dest'))
 
-    .on('end', logPipeline('bootstrap', 'compile'));
+    .on('end', logPipeline('bootstrap', 'css'));
 };
 
+const bootstrapJs = () => {
+  return gulp.src(_bootstrap.src.js)
+/*  .pipe($.newer(_bootstrap.dest.js))*/
+
+  .pipe($.filenames('bootstrap:js:source'))
+
+  .pipe($.if(c.run.js.sourcemaps, $.sourcemaps.init()))
+  .pipe(gulp.dest(_bootstrap.dest.js))
+  .pipe($.rename('bootstrap.min.js'))
+  .pipe($.if(c.run.uglify, $.uglify(c.plugins.uglify)))
+  .pipe($.if(c.run.js.sourcemaps, $.sourcemaps.write('.')))
+
+  .pipe(gulp.dest(_bootstrap.dest.js))
+  .pipe($.filenames('bootstrap:js:dest'))
+
+  .on('end', logPipeline('bootstrap', 'js'));
+};
 
 const basscssClean = () =>
         del(_basscss.src.clean)
@@ -61,16 +78,21 @@ gulp.task( 'basscss.clean', basscssClean );
 gulp.task( 'basscss.compile', basscssCompile );
 gulp.task( 'basscss.build', basscssCompile );
 gulp.task( 'basscss.clean.build',
-        gulp.series( basscssClean, basscssCompile)
+        gulp.series( basscssClean, basscssCompile )
 );
 
 
 gulp.task( 'bootstrap.clean', bootstrapClean );
-gulp.task( 'bootstrap.compile', bootstrapCompile );
-gulp.task( 'bootstrap.build', bootstrapCompile );
-gulp.task( 'bootstrap.clean.build',
-        gulp.series( bootstrapClean, bootstrapCompile)
+gulp.task( 'bootstrap.compile',
+        gulp.series( bootstrapCss, bootstrapJs )
 );
+gulp.task( 'bootstrap.build',
+        gulp.series( bootstrapCss, bootstrapJs )
+);
+gulp.task( 'bootstrap.clean.build',
+        gulp.series( bootstrapClean, 'bootstrap.build' )
+);
+
 
 gulp.task( 'vendors.compile',
         gulp.parallel('basscss.compile', 'bootstrap.compile'));
