@@ -267,7 +267,7 @@ exports.sources = new Map([
     postcss: [
       require('postcss-import')({
         path: [ ROOTS.$include,
-                ROOTS.basscss + '/css'
+                ROOTS.basscss + '/css',
         ]
       }),
       require('postcss-mixins'),

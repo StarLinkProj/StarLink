@@ -40,7 +40,7 @@
     "gulp-debug": "^3.0.0",
     "gulp-filenames": "^4.0.1",
     "gulp-filter": "^4.0.0",
-    "gulp-hub": "^0.8.0",
+    "gulp-hub": "github:frankwallis/gulp-hub#4.0",
     "gulp-if": "^2.0.2",
     "gulp-ignore": "^2.0.2",
     "gulp-imagemin": "^3.1.1",

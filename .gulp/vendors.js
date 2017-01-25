@@ -74,33 +74,40 @@ const bootstrapClean = () =>
         .then( paths => { console.log(paths.join('\n')) } );
 
 
-gulp.task( 'basscss.clean', basscssClean );
+// gulp.task( 'basscss.clean', basscssClean );
 gulp.task( 'basscss.compile', basscssCompile );
-gulp.task( 'basscss.build', basscssCompile );
+// gulp.task( 'basscss.build', basscssCompile );
 gulp.task( 'basscss.clean.build',
         gulp.series( basscssClean, basscssCompile )
 );
 
 
-gulp.task( 'bootstrap.clean', bootstrapClean );
+// gulp.task( 'bootstrap.clean', bootstrapClean );
 gulp.task( 'bootstrap.compile',
-        gulp.series( bootstrapCss, bootstrapJs )
+        // gulp.series( bootstrapCss, bootstrapJs )
+        gulp.parallel( bootstrapCss, bootstrapJs )
 );
-gulp.task( 'bootstrap.build',
-        gulp.series( bootstrapCss, bootstrapJs )
-);
+// gulp.task( 'bootstrap.build',
+//         gulp.series( bootstrapCss, bootstrapJs )
+// );
 gulp.task( 'bootstrap.clean.build',
-        gulp.series( bootstrapClean, 'bootstrap.build' )
+        gulp.series(
+                bootstrapClean,
+                // 'bootstrap.build'
+                'bootstrap.compile'
+        )
 );
 
-
+gulp.task( 'vendors.compile.css',
+        gulp.parallel( basscssCompile, bootstrapCss ));
 gulp.task( 'vendors.compile',
-        gulp.parallel('basscss.compile', 'bootstrap.compile'));
-gulp.task( 'vendors.build',
-        gulp.parallel('basscss.build', 'bootstrap.build'));
+        gulp.parallel( 'basscss.compile', 'bootstrap.compile' ));
+// gulp.task( 'vendors.build',
+//         gulp.parallel( 'basscss.build', 'bootstrap.build' ));
 gulp.task( 'vendors.clean',
-        gulp.parallel('basscss.clean', 'bootstrap.clean'));
-
+         gulp.parallel( basscssClean, bootstrapClean ));
+gulp.task( 'clean',
+        gulp.parallel( basscssClean, bootstrapClean ));
 
 exports.basscss = _basscss;
 exports.bootstrap = _bootstrap;

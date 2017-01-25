@@ -124,6 +124,7 @@ const build =
         );
 
 gulp.task( 'template.clean', clean );
+gulp.task( 'clean', clean );
 gulp.task( 'template.zip', zip );
 gulp.task( 'template.compile', compile );
 gulp.task( 'template.compile.css', css );

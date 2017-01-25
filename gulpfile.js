@@ -12,15 +12,13 @@ const gulp = require('gulp');
 const $ = require('gulp-load-plugins')();
 
 const log = $.util.log;
-var HubRegistry = require('gulp-hub');
-var hub = new HubRegistry([
-        './.gulp/modcalc.js',
-        './.gulp/modservices.js',
-        './.gulp/modmap.js',
-        './.gulp/modstarlink.js',
-        './.gulp/template.js',
-        './.gulp/vendors.js'
-]);
+let HubRegistry = require('gulp-hub');
+// let hub = new HubRegistry([
+//         './.gulp/*.js',
+//         './.gulp/!helpers.js'
+// ]);
+
+//gulp.registry(hub);
 
 //</editor-fold>
 
@@ -49,10 +47,6 @@ const stringly = require('./.gulp/helpers').stringly;
 
 
 gulp.task('default', (done) => {
-  //log(stringly(modcalc));
-  //log(stringly(modservices));
-  log(stringly(modmap));
-  log(stringly(modstarlink));
   done();
 });
 
@@ -90,15 +84,33 @@ const zip = gulp.parallel(
         'template.zip'
 );
 
-const build = gulp.series ( compile, zip );
+// const build = gulp.series ( compile, zip );
 
 
 
 
-gulp.task( 'clean', clean );
+//gulp.task( 'clean', clean );
 gulp.task( 'compile', compile );
-gulp.task( 'build', build );
-gulp.task( 'clean.build',
-        gulp.series( clean, build)
-);
+// gulp.task( 'build', build );
+// gulp.task( 'clean.build',
+//         gulp.series( clean, build)
+// );
 gulp.task( 'zip', zip );
+
+
+gulp.task( 'compile.css',
+        gulp.series(
+
+        )
+);
+
+// HubRegistry([
+//   './.gulp/*.js',
+//   './.gulp/!helpers.js'
+// ]);
+
+gulp.registry(new HubRegistry([
+    './.gulp/*.js',
+    './.gulp/!helpers.js'
+  ])
+);
