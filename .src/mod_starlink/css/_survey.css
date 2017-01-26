@@ -111,7 +111,7 @@
   width: 100%;
 }
 button.modalFormCloseBtn {
-  background: url('../images/main/close-icon.png') no-repeat;
+  background: url('/media/mod_starlink/images/main/close-icon.png') no-repeat;
   position: absolute;
   width: 31px;
   height: 2rem;

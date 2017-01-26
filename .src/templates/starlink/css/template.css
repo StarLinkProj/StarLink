@@ -4,19 +4,21 @@
 /* vendors */
 @import "bootstrap";
 @import "base";
+@import "_foxcontacts_static";
 
 /* mod_starlink */
-@import "_common";
+@import "styles";
+/*@import "_common";
 @import "_menu";
 @import "_footer";
 @import "_article";
-@import "_survey";
+@import "_survey";*/
 
 /* mod_calc, mod_services */
 @import "starlink_calculator_outsourcing";
 @import "starlink_services";
 
-/* template */
+/*! template */
 @import "_blog";
 @import "_djimageslider";
 @import "_otherstarlink";

@@ -11,7 +11,7 @@
     <filename>mod_starlink.xml</filename>
   </files>
   <media folder="media" destination="mod_starlink">
-    <folder>css</folder>
+<!--    <folder>css</folder>-->
     <folder>fonts</folder>
     <folder>images</folder>
     <folder>js</folder>

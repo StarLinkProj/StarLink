@@ -100,7 +100,7 @@ a:hover, a:focus {
   margin-bottom: auto;
 }
 .notReadyToCall {
-  background-image: url('../images/main/paper.png');
+  background-image: url('/media/mod_starlink/images/main/paper.png');
   background-repeat: no-repeat;
   background-position: bottom left;
   background-size  : 750px;

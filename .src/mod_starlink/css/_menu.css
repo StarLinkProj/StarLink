@@ -275,7 +275,7 @@
   font-size   : 26px;
   font-weight : bold;
   padding     : 5px 5px 5px 40px;
-  background  : url('../images/main/search_icon.png') no-repeat center left;
+  background  : url('/media/mod_starlink/images/main/search_icon.png') no-repeat center left;
   border      : none;
   outline     : none;
   width       : 100%;

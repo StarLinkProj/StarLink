@@ -1,3 +1,9 @@
+/*!
+ *  mod_starlink_calculator_outsourcing
+ *
+ *
+ */
+
 :root {
 
   --pc-color: #EDC054;
@@ -278,11 +284,11 @@
 }
 
 input + .SLAtable__label {
-  background-image: url(../images/calcUncheckedIcon.png);
+  background-image: url(/media/mod_starlink_calculator_outsourcing/images/calcUncheckedIcon.png);
 }
 
 input:checked + .SLAtable__label {
-  background-image: url(../images/calcCheckedIcon.png);
+  background-image: url(/media/mod_starlink_calculator_outsourcing/images/calcCheckedIcon.png);
 }
 
 .SLAtable__summary {
@@ -320,11 +326,11 @@ input:checked + .SLAtable__label {
 }
 
 .sign--minus {
-  background: url('../images/calcMinus.png') no-repeat center;
+  background: url('/media/mod_starlink_calculator_outsourcing/images/calcMinus.png') no-repeat center;
 }
 
 .sign--plus {
-  background: url('../images/calcPlus.png') no-repeat center;
+  background: url('/media/mod_starlink_calculator_outsourcing/images/calcPlus.png') no-repeat center;
 }
 
 

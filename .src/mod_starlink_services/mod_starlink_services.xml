@@ -13,7 +13,6 @@
     <filename>helper.php</filename>
   </files>
   <media folder="media" destination="mod_starlink_services">
-    <folder>css</folder>
     <folder>images</folder>
   </media>
   <config>

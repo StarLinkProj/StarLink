@@ -18,7 +18,6 @@
 		<folder>language</folder>
 	</files>
 	<media folder="media" destination="mod_starlink_calculator_outsourcing">
-		<folder>css</folder>
 		<folder>images</folder>
     <folder>js</folder>
     </media>
