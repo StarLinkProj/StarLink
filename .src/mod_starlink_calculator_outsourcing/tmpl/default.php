@@ -4,7 +4,7 @@ defined('_JEXEC') or die;
 
 $doc = JFactory::getDocument();
 $assetsPath = JURI::base( true ).$params->get('assetsBasePath', '/media/mod_starlink_calculator_outsourcing');
-$doc->addStyleSheet(JUri::base(true) . $assetsPath . '/css/starlink_calculator_outsourcing.css');
+//$doc->addStyleSheet(JUri::base(true) . $assetsPath . '/css/starlink_calculator_outsourcing.css');
 $imgBase = JUri::base(true) . '/media/mod_starlink_calculator_outsourcing/images';
 ?>
 

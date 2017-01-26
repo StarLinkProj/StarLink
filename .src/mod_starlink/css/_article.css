@@ -142,14 +142,6 @@
     border-radius : 8px;
   }
 }*/
-
-/*    .newsflash__header {
-!*      margin      : 0 auto 16px;*!
-      text-align  : center;
-!*      font-size   : 38px;
-      font-weight : 300;*!
-    }*/
-
 /* Auto-clear Category Blog & Article-NewsFlash articles           */
 /*@media (max-width: 767px){*/
   section.col-xs-1:nth-of-type(12n+1){clear:left;}

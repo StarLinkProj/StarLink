@@ -3,7 +3,7 @@
 defined('_JEXEC') or die;
 
 $doc = JFactory::getDocument();
-$doc->addStyleSheet(JUri::base(true) . '/media/mod_starlink_services/css/starlink_services.css');
+//$doc->addStyleSheet(JUri::base(true) . '/media/mod_starlink_services/css/starlink_services.css');
 $containerWide = $params->get('containerType');
 
 /*
