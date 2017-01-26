@@ -292,7 +292,9 @@ exports.sources = new Map([
       require('postcss-url'),
       require('postcss-for'),
       require('postcss-discard-comments'),
-      require('cssnano'),
+      //require('cssnano')({
+      //    postcssDiscardComments: { removeAll: true }
+      //}),
       require('postcss-prettify'),
       require('autoprefixer')({'browsers': '> 1%'}),
       require('css-mqpacker')({sort: true})

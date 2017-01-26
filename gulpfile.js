@@ -13,12 +13,6 @@ const $ = require('gulp-load-plugins')();
 
 const log = $.util.log;
 let HubRegistry = require('gulp-hub');
-// let hub = new HubRegistry([
-//         './.gulp/*.js',
-//         './.gulp/!helpers.js'
-// ]);
-
-//gulp.registry(hub);
 
 //</editor-fold>
 
@@ -84,30 +78,12 @@ const zip = gulp.parallel(
         'template.zip'
 );
 
-// const build = gulp.series ( compile, zip );
+const build = gulp.series ( compile, zip );
 
-
-
-
-//gulp.task( 'clean', clean );
+gulp.task( 'clean', clean );
 gulp.task( 'compile', compile );
-// gulp.task( 'build', build );
-// gulp.task( 'clean.build',
-//         gulp.series( clean, build)
-// );
+gulp.task( 'build', build );
 gulp.task( 'zip', zip );
-
-
-gulp.task( 'compile.css',
-        gulp.series(
-
-        )
-);
-
-// HubRegistry([
-//   './.gulp/*.js',
-//   './.gulp/!helpers.js'
-// ]);
 
 gulp.registry(new HubRegistry([
     './.gulp/*.js',
