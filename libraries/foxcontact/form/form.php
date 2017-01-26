@@ -157,12 +157,12 @@ class FoxFormForm
 	private function addFormResources()
 	{
 		$fox_document_loader = FoxDocumentLoader::getInstance($this->getUid());
-		$fox_document_loader->addResource(array('root' => 'media', 'name' => 'foxcontact', 'type' => 'css'));
+		// $fox_document_loader->addResource(array('root' => 'media', 'name' => 'foxcontact', 'type' => 'css'));
 		$stylesheet = $this->getDesign()->get('option.form.style', 'bootstrap.css');
 		$stylesheet = preg_replace('/\\.[^.\\s]{3,4}$/', '', $stylesheet);
 		if (!empty($stylesheet))
 		{
-			$fox_document_loader->addResource(array('root' => 'components', 'name' => $stylesheet, 'type' => 'css'));
+			// $fox_document_loader->addResource(array('root' => 'components', 'name' => $stylesheet, 'type' => 'css'));
 		}
 	
 	}
