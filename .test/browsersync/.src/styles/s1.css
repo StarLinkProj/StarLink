@@ -1,0 +1,12 @@
+body {
+  color: rgba(100,150,200,0.6);
+}
+h1,h2 {
+  color: red;
+}
+
+p{
+  margin-left: 4rem;
+}
+
+/* test */
