@@ -18,7 +18,11 @@ const css = () => {
     .pipe($.newer({
       dest:  _mod.dest.css,
       ext:   '.css',
-      extra: _mod.src.css
+      extra: [ _mod.src.css,
+               c.sources.get('modstarlink').src.cssAll,
+               c.sources.get('modcalc').src.css,
+               c.sources.get('modservices').src.css
+             ]
     }))
     .pipe($.filenames('template:css:source'))
 

@@ -1,7 +1,7 @@
 'use strict';
 
 const upath = require('upath');
-/*  APP_ROOT keeps absolute path to the directory of gulptest.js
+/*  APP_ROOT keeps absolute path to the directory of gulpfile.js
  *  i.e. root dir of the package
  */
 global.APP_ROOT = global.APP_ROOT || upath.resolve(__dirname);

@@ -268,6 +268,10 @@ exports.sources = new Map([
       require('postcss-import')({
         path: [ ROOTS.$include,
                 ROOTS.basscss + '/css',
+                ROOTS.bootstrap + '/css',
+                ROOTS.modstarlink + '/css',
+                ROOTS.modcalc + '/css',
+                ROOTS.modservices + '/css'
         ]
       }),
       require('postcss-mixins'),
@@ -347,8 +351,12 @@ exports.sources = new Map([
       require('postcss-color-hwb'),
       require('postcss-color-gray'),
       require('postcss-color-hex-alpha'),
-      require('postcss-color-function'), /*require('pixrem'),*/
-      require('postcss-url'),
+      require('postcss-color-function'), /* require('pixrem') */
+      //require('postcss-url'),
+      // require('postcss-assets')({
+      //   loadPaths: [ 'media/mod_starlink/' ],
+      //   relative: 'assets/css'
+      // }),
       require('postcss-for'),
       require('postcss-discard-comments'),
       require('cssnano'),
@@ -373,7 +381,8 @@ exports.sources = new Map([
       ]
     },
     dest: {
-      css:    JOOMLA_MEDIA + '/mod_starlink_calculator_outsourcing',
+      //css:    JOOMLA_MEDIA + '/mod_starlink_calculator_outsourcing',
+      css:    PACKAGES + '/mod_starlink_calculator_outsourcing',
       js:     JOOMLA_MEDIA + '/mod_starlink_calculator_outsourcing',
       images: JOOMLA_MEDIA + '/mod_starlink_calculator_outsourcing',
       other:  JOOMLA_MODULES + '/mod_starlink_calculator_outsourcing',
@@ -435,7 +444,8 @@ exports.sources = new Map([
       ]
     },
     dest: {
-      css:    JOOMLA_MEDIA + '/mod_starlink_services',
+      // css:    JOOMLA_MEDIA + '/mod_starlink_services',
+      css:    PACKAGES + '/mod_starlink_services',
       images: JOOMLA_MEDIA + '/mod_starlink_services',
       other:  JOOMLA_MODULES + '/mod_starlink_services',
       zipName:'mod_starlink_services',
@@ -484,6 +494,7 @@ exports.sources = new Map([
       require('postcss-calc')({precision: 10}),
 /*    require('postcss-color-function'), */
       require('postcss-discard-comments'),
+      require('css-mqpacker')({sort: true}),
       require('cssnano'),
       require('postcss-prettify')
 /*   ,require('autoprefixer') */
