@@ -1,6 +1,6 @@
 <?php
 /**
- * @version $Id: mod_djimageslider.php 29 2015-09-23 16:40:14Z szymon $
+ * @version $Id: mod_djimageslider.php 36 2016-09-01 14:16:59Z szymon $
  * @package DJ-ImageSlider
  * @subpackage DJ-ImageSlider Component
  * @copyright Copyright (C) 2012 DJ-Extensions.com, All rights reserved.
@@ -93,8 +93,9 @@ $jquery = version_compare(JVERSION, '3.0.0', '>=');
 $canDefer = preg_match('/(?i)msie [6-9]/',$_SERVER['HTTP_USER_AGENT']) ? false : true;
 
 $db = JFactory::getDBO();
-$db->setQuery("SELECT manifest_cache FROM #__extensions WHERE element='mod_dimageslider' LIMIT 1");
+$db->setQuery("SELECT manifest_cache FROM #__extensions WHERE element='mod_djimageslider' LIMIT 1");
 $ver = json_decode($db->loadResult());
+$ver = $ver->version;
 
 if ($jquery) {
 	JHTML::_('jquery.framework');

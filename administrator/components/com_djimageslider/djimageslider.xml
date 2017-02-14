@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="component" version="2.5.5" method="upgrade" client="admin">
     <name>com_djimageslider</name>
-    <creationDate>May 2016</creationDate>
+    <creationDate>September 2016</creationDate>
     <author>DJ-Extensions.com</author>
 	<copyright>Copyright (C) 2012 DJ-Extensions.com, All rights reserved.</copyright>
 	<license>http://www.gnu.org/licenses GNU/GPL</license>
 	<authorEmail>contact@dj-extensions.com</authorEmail>
 	<authorUrl>http://dj-extensions.com</authorUrl>
-    <version>3.1.1</version>
+    <version>3.2.1</version>
 	<description>DJ-ImageSlider component</description>
 	
 	<install>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="2.5.5" client="site" method="upgrade">
 	<name>DJ-ImageSlider</name>
-	<creationDate>May 2016</creationDate>	
+	<creationDate>September 2016</creationDate>	
 	<author>DJ-Extensions.com</author>
 	<copyright>Copyright (C) 2013 DJ-Extensions.com, All rights reserved.</copyright>
 	<license> http://www.gnu.org/licenses GNU/GPL</license>
 	<authorEmail>contact@dj-extensions.com</authorEmail>
 	<authorUrl>http://dj-extensions.com</authorUrl>
-	<version>3.1.2</version>
+	<version>3.2.1</version>
 	<description>DJ-ImageSlider Module</description>
 	<files>
 		<filename module="mod_djimageslider">mod_djimageslider.php</filename>
@@ -25,7 +25,7 @@
 	</media>
 	
 	<config>
-		<fields name="params">
+		<fields name="params" addfieldpath="/administrator/components/com_djimageslider/models/fields">
 			<fieldset name="basic">
 				<field name="slider_source" type="list" default="0" label="MOD_DJIMAGESLIDER_SLIDER_SOURCE" description="MOD_DJIMAGESLIDER_SLIDER_SOURCE_DESC">
 					<option value="0">MOD_DJIMAGESLIDER_FOLDER</option>
@@ -36,7 +36,7 @@
 					<option value="1">MOD_DJIMAGESLIDER_VERTICAL</option>
 					<option value="2">MOD_DJIMAGESLIDER_FADE</option>
 				</field>
-				<field name="theme" type="folderlist" default="default" label="MOD_DJIMAGESLIDER_THEME" description="MOD_DJIMAGESLIDER_THEME_DESC" directory="modules/mod_djimageslider/themes" hide_none="true" hide_default="true">
+				<field name="theme" type="djfolderlist" default="default" label="MOD_DJIMAGESLIDER_THEME" description="MOD_DJIMAGESLIDER_THEME_DESC" directory="modules/mod_djimageslider/themes" hide_none="true" hide_default="true">
 					<option value="_override">MOD_DJIMAGESLIDER_THEME_OVERRIDE</option>
 				</field>
 				<field name="link_image" type="list" default="1" label="MOD_DJIMAGESLIDER_LINK_IMAGE" description="MOD_DJIMAGESLIDER_LINK_IMAGE_DESC">
@@ -97,7 +97,10 @@
 				<field name="space_between_images" type="text" default="10" size="10" label="MOD_DJIMAGESLIDER_SPACE_BETWEEN_IMAGES" description="MOD_DJIMAGESLIDER_SPACE_BETWEEN_IMAGES_DESC" />
 				<field name="max_images" type="text" default="20" size="10" label="MOD_DJIMAGESLIDER_MAX_IMAGES" description="MOD_DJIMAGESLIDER_MAX_IMAGES_DESC" />
 				<field name="sort_by" type="list" default="1" label="MOD_DJIMAGESLIDER_SORT_BY" description="MOD_DJIMAGESLIDER_SORT_BY_DESC">
-					<option value="1">MOD_DJIMAGESLIDER_FILE_NAME_ORDERING</option>
+					<option value="1">MOD_DJIMAGESLIDER_FILE_NAME_ORDERING_ASC</option>
+					<option value="2">MOD_DJIMAGESLIDER_FILE_NAME_ORDERING_DESC</option>
+					<option value="3">MOD_DJIMAGESLIDER_DATE_ASC</option>
+					<option value="4">MOD_DJIMAGESLIDER_DATE_DESC</option>
 					<option value="0">MOD_DJIMAGESLIDER_RANDOMISE</option>
 				</field>
 				<field name="css3" type="radio" class="btn-group" default="1" label="MOD_DJIMAGESLIDER_USE_CSS3_TRANSITION" description="MOD_DJIMAGESLIDER_USE_CSS3_TRANSITION_DESC">
@@ -105,6 +108,10 @@
 					<option value="1">JYES</option>
 				</field>
 				<field name="autoplay" type="radio" class="btn-group" default="1" label="MOD_DJIMAGESLIDER_AUTOPLAY" description="MOD_DJIMAGESLIDER_AUTOPLAY_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="looponce" type="radio" class="btn-group" default="0" label="MOD_DJIMAGESLIDER_LOOP_ONCE" description="MOD_DJIMAGESLIDER_LOOP_ONCE_DESC">
 					<option value="0">JNO</option>
 					<option value="1">JYES</option>
 				</field>

@@ -164,6 +164,23 @@
 				<option value="tag">tag</option>
 			</field>
 			
-		</fieldset>	
+		</fieldset>
+		
+		<fieldset name="attrs"	label="COM_DJIMAGESLIDER_IMAGE_ATTR_OPTIONS">
+			<field name="alt_attr"
+				type="text"
+				label="COM_DJIMAGESLIDER_ALT_ATTR"
+				description="COM_DJIMAGESLIDER_ALT_ATTR_DESC"
+				class="inputbox"
+				size="30"
+			/>
+			<field name="title_attr"
+				type="text"
+				label="COM_DJIMAGESLIDER_TITLE_ATTR"
+				description="COM_DJIMAGESLIDER_TITLE_ATTR_DESC"
+				class="inputbox"
+				size="30"
+			/>
+		</fieldset>
 	</fields>
 </form>

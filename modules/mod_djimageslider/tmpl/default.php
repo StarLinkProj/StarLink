@@ -1,6 +1,6 @@
 <?php
 /**
- * @version $Id: default.php 33 2016-06-28 15:10:53Z szymon $
+ * @version $Id: default.php 37 2016-10-28 08:35:10Z szymon $
  * @package DJ-ImageSlider
  * @subpackage DJ-ImageSlider Component
  * @copyright Copyright (C) 2012 DJ-Extensions.com, All rights reserved.
@@ -55,14 +55,14 @@ $wcag = $params->get('wcag', 1) ? ' tabindex="0"' : ''; ?>
 	            			<?php if (($slide->link && $action==1) || $action>1) { ?>
 								<a <?php echo $attr; ?> href="<?php echo ($action>1 ? $slide->image : $slide->link); ?>" target="<?php echo $slide->target; ?>">
 							<?php } ?>
-								<img class="dj-image" src="<?php echo $slide->image; ?>" alt="<?php echo $slide->alt; ?>" style="<?php echo $style['image'] ?>"/>
+								<img class="dj-image" src="<?php echo $slide->image; ?>" alt="<?php echo $slide->alt; ?>" <?php echo (!empty($slide->img_title) ? ' title="'.$slide->img_title.'"':''); ?> style="<?php echo $style['image'] ?>"/>
 							<?php if (($slide->link && $action==1) || $action>1) { ?>
 								</a>
 							<?php } ?>
 						<?php } ?>
 						<?php if($params->get('slider_source') && ($params->get('show_title') || ($params->get('show_desc') && !empty($slide->description) || ($params->get('show_readmore') && $slide->link)))) { ?>
 						<!-- Slide description area: START -->
-						<div class="slide-desc container" style="padding: 0 90px; margin: auto; top: 20%; left: 0; right: 0;">
+						<div class="slide-desc" style="<?php echo $style['desc'] ?>">
 						  <div class="slide-desc-in">	
 							<div class="slide-desc-bg slide-desc-bg-<?php echo $theme ?>"></div>
 							<div class="slide-desc-text slide-desc-text-<?php echo $theme ?>">
@@ -101,7 +101,7 @@ $wcag = $params->get('wcag', 1) ? ' tabindex="0"' : ''; ?>
         	</ul>
         </div>
         <?php if($show->arr || $show->btn) { ?>
-        <div id="navigation<?php echo $mid; ?>" class="navigation-container container" style="top:48%; margin: 0 auto;">
+        <div id="navigation<?php echo $mid; ?>" class="navigation-container" style="<?php echo $style['navi'] ?>">
         	<?php if($show->arr) { ?>
         	<img id="prev<?php echo $mid; ?>" class="prev-button <?php echo $show->arr==1 ? 'showOnHover':'' ?>" src="<?php echo $navigation->prev; ?>" alt="<?php echo $direction == 'rtl' ? JText::_('MOD_DJIMAGESLIDER_NEXT') : JText::_('MOD_DJIMAGESLIDER_PREVIOUS'); ?>"<?php echo $wcag; ?> />
 			<img id="next<?php echo $mid; ?>" class="next-button <?php echo $show->arr==1 ? 'showOnHover':'' ?>" src="<?php echo $navigation->next; ?>" alt="<?php echo $direction == 'rtl' ? JText::_('MOD_DJIMAGESLIDER_PREVIOUS') : JText::_('MOD_DJIMAGESLIDER_NEXT'); ?>"<?php echo $wcag; ?> />

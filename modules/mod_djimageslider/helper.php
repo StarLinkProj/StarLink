@@ -1,6 +1,6 @@
 <?php
 /**
- * @version $Id: helper.php 31 2016-05-12 13:33:54Z szymon $
+ * @version $Id: helper.php 38 2016-11-07 13:12:48Z szymon $
  * @package DJ-ImageSlider
  * @subpackage DJ-ImageSlider Component
  * @copyright Copyright (C) 2012 DJ-Extensions.com, All rights reserved.
@@ -39,13 +39,31 @@ class modDJImageSliderHelper
         {
             if (preg_match('/.+\.(jpg|jpeg|gif|png)$/i', $file)) {
             	// check with getimagesize() which attempts to return the image mime-type 
-            	if(getimagesize(JPATH_ROOT.DS.$folder.DS.$file)!==FALSE) $files[] = $file;
+            	$path = JPath::clean(JPATH_ROOT.DS.$folder.DS.$file);
+            	if(getimagesize($path)!==FALSE) $files[filemtime($path).$file] = $file;
 			}
         }
         closedir($dir);
-        if($params->get('sort_by')) natcasesort($files);
-		else shuffle($files);
-
+        
+        $sort = $params->get('sort_by');
+        
+        switch($sort) {
+        	case 0:
+        		shuffle($files);
+        		break;
+        	case 3:
+        	case 4:
+        		ksort($files);
+        		break;
+        	default:
+        		natcasesort($files);
+        		break;
+        }
+        	
+        if($sort == 2 || $sort == 4) {
+        	$files = array_reverse($files);
+        } 
+        
 		$images = array_slice($files, 0, $max);
 		
 		$target = modDJImageSliderHelper::getSlideTarget($params->get('link'));
@@ -80,10 +98,22 @@ class modDJImageSliderHelper
 		$query->where('(a.publish_up = '.$nullDate.' OR a.publish_up <= '.$nowDate.')');
 		$query->where('(a.publish_down = '.$nullDate.' OR a.publish_down >= '.$nowDate.')');
 		
-		if($params->get('sort_by',1)) {
-			$query->order('a.ordering ASC');
-		} else {
-			$query->order('RAND()');
+		switch($params->get('sort_by',1)) {
+			case 1:
+				$query->order('a.ordering ASC');
+				break;
+			case 2:
+				$query->order('a.ordering DESC');
+				break;
+			case 3:
+				$query->order('a.publish_up ASC');
+				break;
+			case 4:
+				$query->order('a.publish_up DESC');
+				break;
+			default:
+				$query->order('RAND()');
+				break;
 		}
 
 		$db->setQuery($query, 0 , $max);
@@ -93,7 +123,8 @@ class modDJImageSliderHelper
 			$slide->params = new JRegistry($slide->params);
 			$slide->link = modDJImageSliderHelper::getSlideLink($slide);
 			$slide->description = modDJImageSliderHelper::getSlideDescription($slide, $params->get('limit_desc'));
-			$slide->alt = $slide->title;
+			$slide->alt = $slide->params->get('alt_attr', $slide->title);
+			$slide->img_title = $slide->params->get('title_attr');
 			$slide->target = $slide->params->get('link_target','');
 			$slide->rel = $slide->params->get('link_rel','');
 			if(empty($slide->target)) $slide->target = modDJImageSliderHelper::getSlideTarget($slide->link);
@@ -163,7 +194,11 @@ class modDJImageSliderHelper
 			// don't cut in the middle of the word unless it's longer than 20 chars
 			if($pos = strpos($desc, ' ', $limit)) $limit = ($pos - $limit > 20) ? $limit : $pos;
 			// cut text and add dots
-			$desc = mb_substr($desc, 0, $limit);
+			if(function_exists('mb_substr')) {
+				$desc = mb_substr($desc, 0, $limit);
+			} else {
+				$desc = substr($desc, 0, $limit);
+			}
 			if(preg_match('/[a-zA-Z0-9]$/', $desc)) $desc.='&hellip;';
 			$desc = '<p>'.nl2br($desc).'</p>';
 		} else { // no limit or limit greater than description
@@ -174,22 +209,25 @@ class modDJImageSliderHelper
 	}
 
 	private function truncateDescription($text, $limit) {
-	
+		
 		$text = preg_replace('/{djmedia\s*(\d*)}/i', '', $text);
-	
+		
 		$desc = strip_tags($text);
-	
-		if($limit - strlen($desc) < 0) {
+		
+		if($limit && $limit - strlen($desc) < 0) {
+			$desc = substr($desc, 0, $limit);
 			// don't cut in the middle of the word unless it's longer than 20 chars
-			if($pos = strpos($desc, ' ', $limit)) $limit = ($pos - $limit > 20) ? $limit : $pos;
+			if($pos = strrpos($desc, ' ')) {
+				$limit = ($limit - $pos > 20) ? $limit : $pos;
+				$desc = substr($desc, 0, $limit);
+			}
 			// cut text and add dots
-			$desc = mb_substr($desc, 0, $limit);
 			if(preg_match('/[a-zA-Z0-9]$/', $desc)) $desc.='&hellip;';
 			$desc = '<p>'.nl2br($desc).'</p>';
 		} else { // no limit or limit greater than description
 			$desc = $text;
 		}
-	
+
 		return $desc;
 	}
 	
@@ -199,6 +237,7 @@ class modDJImageSliderHelper
 		if(!is_numeric($duration = $params->get('duration'))) $duration = 0;
 		if(!is_numeric($delay = $params->get('delay'))) $delay = 3000;
 		$autoplay = $params->get('autoplay');
+		$looponce = $params->get('looponce', 0);
 		if($params->get('slider_type')==2 && !$duration) {
 			$transition = 'Sine';
 			$easing = 'easeInOut';
@@ -241,7 +280,7 @@ class modDJImageSliderHelper
 			$transition = $easing.$transition;
 		}
 		
-		$options = json_encode(array('auto' => $autoplay, 'transition' => $transition, 'css3transition' => $css3transition, 'duration' => $duration, 'delay' => $delay));
+		$options = json_encode(array('auto' => $autoplay, 'looponce' => $looponce, 'transition' => $transition, 'css3transition' => $css3transition, 'duration' => $duration, 'delay' => $delay));
 		
 		return $options;
 	}

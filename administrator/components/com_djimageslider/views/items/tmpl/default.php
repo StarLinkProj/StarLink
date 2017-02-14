@@ -1,6 +1,6 @@
 <?php 
 /**
- * @version $Id: default.php 30 2015-11-04 11:15:22Z szymon $
+ * @version $Id: default.php 36 2016-09-01 14:16:59Z szymon $
  * @package DJ-ImageSlider
  * @subpackage DJ-ImageSlider Component
  * @copyright Copyright (C) 2012 DJ-Extensions.com, All rights reserved.
@@ -182,7 +182,12 @@ if ($isJoomla3 && $saveOrder)
 					<div class="smallsub small">
 						<?php 
 						$desc = strip_tags($item->description);
-						echo mb_substr($desc,0,120); if(strlen($desc) > 120) echo '...'; ?></div>
+						if(function_exists('mb_substr')) {
+							echo mb_substr($desc,0,120); if(strlen($desc) > 120) echo '...';
+						} else {
+							echo substr($desc,0,120); if(strlen($desc) > 120) echo '...';
+						} ?>
+					</div>
 				</td>
 				<td class="center">
 					<?php echo JHtml::_('jgrid.published', $item->published, $i, 'items.', true, 'cb'	); ?>
