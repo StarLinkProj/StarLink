@@ -1,18 +1,19 @@
 <?php
 /**
  * @package         Advanced Module Manager
- * @version         6.2.10
+ * @version         7.1.0
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
- * @copyright       Copyright © 2016 Regular Labs All Rights Reserved
+ * @copyright       Copyright © 2017 Regular Labs All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
 defined('_JEXEC') or die;
 
+use RegularLabs\Library\Document as RL_Document;
+
 JHtml::addIncludePath(JPATH_COMPONENT . '/helpers/html');
-require_once JPATH_LIBRARIES . '/regularlabs/helpers/functions.php';
 
 JHtml::_('bootstrap.framework');
 JHtml::_('behavior.formvalidator');
@@ -65,8 +66,8 @@ if (JFactory::getUser()->authorise('core.admin'))
 }
 
 JFactory::getDocument()->addScriptDeclaration($script);
-RLFunctions::script('regularlabs/script.min.js');
-RLFunctions::script('regularlabs/toggler.min.js');
+RL_Document::script('regularlabs/script.min.js');
+RL_Document::script('regularlabs/toggler.min.js');
 
 JFactory::getDocument()->addStyleSheetVersion(JUri::root(true) . '/media/regularlabs/css/frontend.min.css');
 ?>
@@ -143,12 +144,12 @@ JFactory::getDocument()->addStyleSheetVersion(JUri::root(true) . '/media/regular
 					</fieldset>
 					<?php
 					// Set main fields.
-					$this->fields = array(
+					$this->fields = [
 						'published',
 						'access',
 						'ordering',
 						'note',
-					);
+					];
 					?>
 					<?php echo str_replace('form-vertical', 'form-horizontal', JLayoutHelper::render('joomla.edit.global', $this)); ?>
 					<fieldset class="form-horizontal">
@@ -170,8 +171,8 @@ JFactory::getDocument()->addStyleSheetVersion(JUri::root(true) . '/media/regular
 
 					<div class="form-horizontal">
 						<?php
-						$this->fieldsets        = array();
-						$this->ignore_fieldsets = array('basic', 'description');
+						$this->fieldsets        = [];
+						$this->ignore_fieldsets = ['basic', 'description'];
 						echo JLayoutHelper::render('joomla.edit.params', $this);
 						?>
 					</div>

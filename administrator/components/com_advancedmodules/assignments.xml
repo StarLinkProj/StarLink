@@ -25,7 +25,7 @@
 
 	<fieldset name="match_method">
 		<field name="match_method" type="radio" class="btn-group" default="and"
-			label="RL_MATCHING_METHOD" description="RL_MATCHING_METHOD_DESC,RL_ALL,RL_ALL_DESC,RL_ANY,RL_ANY_DESC">
+			   label="RL_MATCHING_METHOD" description="RL_MATCHING_METHOD_DESC,RL_ALL,RL_ALL_DESC,RL_ANY,RL_ANY_DESC">
 			<option value="and">RL_ALL</option>
 			<option value="or">RL_ANY</option>
 		</field>
@@ -39,7 +39,7 @@
 
 	<fieldset name="show_assignments">
 		<field name="show_assignments" type="radio" class="btn-group" default="1" label="RL_SHOW_ASSIGNMENTS" description="RL_SHOW_ASSIGNMENTS_DESC">
-			<option value="1">RL_ALL</option>
+			<option value="1">JALL</option>
 			<option value="2">RL_SELECTED</option>
 		</field>
 		<field name="@toggler_show_assignments_1a" type="rl_toggler" param="show_assignments" value="2" />
@@ -56,6 +56,9 @@
 			<option value="1">JYES</option>
 			<option value="2">RL_ONLY</option>
 		</field>
+		<field name="@toggler_menuitems_inc_children_a" type="rl_toggler" param="assignto_menuitems_inc_children" value="1,2" />
+		<field name="@note__menuitems_inc_children" type="note" class="well well-small" description="RL_ALSO_ON_CHILD_ITEMS_MENUITEMS_DESC" />
+		<field name="@toggler_menuitems_inc_children_b" type="rl_toggler" />
 		<field name="assignto_menuitems_inc_noitemid" type="radio" class="btn-group btn-group-yesno" default="0"
 			   label="RL_INCLUDE_NO_ITEMID" description="RL_INCLUDE_NO_ITEMID_DESC">
 			<option value="0">JNO</option>
@@ -102,12 +105,19 @@
 		<field name="assignto_usergrouplevels" type="rl_assignmentselection" label="RL_USER_GROUP_LEVELS" />
 		<field name="assignto_usergrouplevels_selection" type="rl_grouplevel" multiple="true" notregistered="1" default=""
 			   label="RL_SELECTION" description="RL_USER_GROUPS_DESC" />
+		<field name="assignto_usergrouplevels_match_all" type="radio" class="btn-group btn-group-yesno" default="0"
+			   label="RL_MATCH_ALL" description="RL_MATCH_ALL_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="@toggler_usergrouplevels_match_all_a" type="rl_toggler" param="assignto_usergrouplevels_match_all" value="0" />
 		<field name="assignto_usergrouplevels_inc_children" type="radio" class="btn-group btn-group-yesno" default="0"
 			   label="RL_ALSO_ON_CHILD_ITEMS" description="RL_ALSO_ON_CHILD_ITEMS_DESC">
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
 			<option value="2">RL_ONLY</option>
 		</field>
+		<field name="@toggler_usergrouplevels_match_all_b" type="rl_toggler" />
 		<field name="@assignto_usergrouplevels" type="rl_assignmentselection" />
 		<field name="@toggler_usergrouplevels_b" type="rl_toggler" />
 
@@ -184,12 +194,19 @@
 	<fieldset name="assignto_tags">
 		<field name="assignto_tags" type="rl_assignmentselection" showclose="1" label="RL_TAGS" />
 		<field name="assignto_tags_selection" type="rl_tags" multiple="true" default="" label="RL_SELECTION" description="RL_TAGS_DESC" />
+		<field name="assignto_tags_match_all" type="radio" class="btn-group btn-group-yesno" default="0"
+			   label="RL_MATCH_ALL" description="RL_MATCH_ALL_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="@toggler_tags_match_all_a" type="rl_toggler" param="assignto_tags_match_all" value="0" />
 		<field name="assignto_tags_inc_children" type="radio" class="btn-group btn-group-yesno" default="0"
 			   label="RL_ALSO_ON_CHILD_ITEMS" description="RL_ALSO_ON_CHILD_ITEMS_DESC">
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
 			<option value="2">RL_ONLY</option>
 		</field>
+		<field name="@toggler_tags_match_all_b" type="rl_toggler" />
 		<field name="@assignto_tags" type="rl_assignmentselection" />
 	</fieldset>
 

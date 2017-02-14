@@ -1,11 +1,11 @@
 <?php
 /**
  * @package         Advanced Module Manager
- * @version         6.2.10
+ * @version         7.1.0
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
- * @copyright       Copyright © 2016 Regular Labs All Rights Reserved
+ * @copyright       Copyright © 2017 Regular Labs All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -15,6 +15,10 @@
  */
 
 defined('_JEXEC') or die;
+
+use RegularLabs\Library\Parameters as RL_Parameters;
+use RegularLabs\Library\RegEx as RL_RegEx;
+use RegularLabs\Library\StringHelper as RL_String;
 
 /**
  * View to edit a module.
@@ -56,12 +60,11 @@ class AdvancedModulesViewModule extends JViewLegacy
 			return false;
 		}
 
-		if (preg_match('#_gk[1-9]#', $this->item->module))
+		if (RL_RegEx::match('_gk[1-9]', $this->item->module))
 		{
-			require_once JPATH_LIBRARIES . '/regularlabs/helpers/text.php';
 
 			// Set message for Gavick modules
-			JFactory::getApplication()->enqueueMessage(JText::sprintf(RLText::html_entity_decoder(JText::_('AMM_MODULE_INCOMPATIBLE')), '<a href="index.php?option=com_modules&force=1&task=module.edit&id=' . (int) $this->item->id . '">', '</a>'), 'warning');
+			JFactory::getApplication()->enqueueMessage(JText::sprintf(RL_String::html_entity_decoder(JText::_('AMM_MODULE_INCOMPATIBLE')), '<a href="index.php?option=com_modules&force=1&task=module.edit&id=' . (int) $this->item->id . '">', '</a>'), 'warning');
 		}
 
 		$this->addToolbar();
@@ -80,9 +83,7 @@ class AdvancedModulesViewModule extends JViewLegacy
 			return $this->config;
 		}
 
-		require_once JPATH_LIBRARIES . '/regularlabs/helpers/parameters.php';
-		$parameters   = RLParameters::getInstance();
-		$this->config = $parameters->getComponentParams('advancedmodules');
+		$this->config = RL_Parameters::getInstance()->getComponentParams('advancedmodules');
 
 		return $this->config;
 	}
@@ -97,7 +98,7 @@ class AdvancedModulesViewModule extends JViewLegacy
 		if (!isset($this->assignments))
 		{
 			$xmlfile     = JPATH_ADMINISTRATOR . '/components/com_advancedmodules/assignments.xml';
-			$assignments = new JForm('assignments', array('control' => 'advancedparams'));
+			$assignments = new JForm('assignments', ['control' => 'advancedparams']);
 			$assignments->loadFile($xmlfile, 1, '//config');
 			$assignments->bind($this->item->advancedparams);
 			$this->assignments = $assignments;
@@ -189,7 +190,7 @@ class AdvancedModulesViewModule extends JViewLegacy
 
 	protected function render(&$form, $name = '')
 	{
-		$items = array();
+		$items = [];
 
 		foreach ($form->getFieldset($name) as $field)
 		{

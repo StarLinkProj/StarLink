@@ -1,11 +1,11 @@
 <?php
 /**
  * @package         Advanced Module Manager
- * @version         6.2.10
+ * @version         7.1.0
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
- * @copyright       Copyright © 2016 Regular Labs All Rights Reserved
+ * @copyright       Copyright © 2017 Regular Labs All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -16,14 +16,16 @@
 
 defined('JPATH_BASE') or die;
 
+use RegularLabs\Library\Document as RL_Document;
+
 $data = $displayData;
 
 // Receive overridable options
-$data['options'] = !empty($data['options']) ? $data['options'] : array();
+$data['options'] = !empty($data['options']) ? $data['options'] : [];
 
 if ($data['view'] instanceof AdvancedModulesViewModules && JFactory::getApplication()->input->get('layout', '', 'cmd') !== 'modal')
 {
-	JFactory::getDocument()->addStyleDeclaration("
+	RL_Document::styleDeclaration("
 		/* Fixed filter field in search bar */
 		.js-stools .js-stools-client_id {
 			float: left;
@@ -45,4 +47,4 @@ if ($data['view'] instanceof AdvancedModulesViewModules && JFactory::getApplicat
 }
 
 // Display the main joomla layout.
-echo JLayoutHelper::render('joomla.searchtools.default', $data, null, array('component' => 'none'));
+echo JLayoutHelper::render('joomla.searchtools.default', $data, null, ['component' => 'none']);

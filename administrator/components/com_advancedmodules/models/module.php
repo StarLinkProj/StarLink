@@ -1,11 +1,11 @@
 <?php
 /**
  * @package         Advanced Module Manager
- * @version         6.2.10
+ * @version         7.1.0
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
- * @copyright       Copyright © 2016 Regular Labs All Rights Reserved
+ * @copyright       Copyright © 2017 Regular Labs All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -16,9 +16,10 @@
 
 defined('_JEXEC') or die;
 
-use Joomla\Registry\Registry;
-
-require_once JPATH_LIBRARIES . '/regularlabs/helpers/string.php';
+use RegularLabs\Library\Date as RL_Date;
+use RegularLabs\Library\Parameters as RL_Parameters;
+use RegularLabs\Library\RegEx as RL_RegEx;
+use RegularLabs\Library\StringHelper as RL_String;
 
 /**
  * Module model.
@@ -64,17 +65,17 @@ class AdvancedModulesModelModule extends JModelAdmin
 	 *
 	 * @var array
 	 */
-	protected $batch_commands = array(
+	protected $batch_commands = [
 		'assetgroup_id' => 'batchAccess',
 		'language_id'   => 'batchLanguage',
-	);
+	];
 
 	/**
 	 * Constructor.
 	 *
 	 * @param   array $config An optional associative array of configuration settings.
 	 */
-	public function __construct($config = array())
+	public function __construct($config = [])
 	{
 		$config = array_merge(
 			array(
@@ -259,15 +260,15 @@ class AdvancedModulesModelModule extends JModelAdmin
 				$params = json_decode($table_adv->params);
 				if (is_null($params))
 				{
-					$params = new stdClass;
+					$params = (object) [];
 				}
 
 				$params->assignto_languages           = 0;
-				$params->assignto_languages_selection = array();
+				$params->assignto_languages_selection = [];
 				if ($value != '*')
 				{
 					$params->assignto_languages           = 1;
-					$params->assignto_languages_selection = array($value);
+					$params->assignto_languages_selection = [$value];
 				}
 
 				$table_adv->params = json_encode($params);
@@ -304,7 +305,7 @@ class AdvancedModulesModelModule extends JModelAdmin
 		$query     = $db->getQuery(true);
 		$table     = $this->getTable();
 		$table_adv = JTable::getInstance('AdvancedModules', 'AdvancedModulesTable');
-		$newIds    = array();
+		$newIds    = [];
 
 		foreach ($pks as $pk)
 		{
@@ -514,7 +515,7 @@ class AdvancedModulesModelModule extends JModelAdmin
 		$context    = $this->option . '.' . $this->name;
 
 		// Include the plugins for the on delete events.
-		JPluginHelper::importPlugin('extension');
+		JPluginHelper::importPlugin($this->events_map['delete']);
 
 		// Iterate the items to delete each one.
 		foreach ($pks as $pk)
@@ -533,7 +534,7 @@ class AdvancedModulesModelModule extends JModelAdmin
 			}
 
 			// Trigger the before delete event.
-			$result = $dispatcher->trigger($this->event_before_delete, array($context, $table));
+			$result = $dispatcher->trigger($this->event_before_delete, [$context, $table]);
 
 			if (in_array(false, $result, true) || !$table->delete($pk))
 			{
@@ -567,7 +568,7 @@ class AdvancedModulesModelModule extends JModelAdmin
 			$db->execute();
 
 			// Trigger the after delete event.
-			$dispatcher->trigger($this->event_after_delete, array($context, $table));
+			$dispatcher->trigger($this->event_after_delete, [$context, $table]);
 
 			// Clear module cache
 			parent::cleanCache($table->module, $table->client_id);
@@ -584,7 +585,8 @@ class AdvancedModulesModelModule extends JModelAdmin
 	 *
 	 * @param   array &$pks An array of primary key IDs.
 	 *
-	 * @return  boolean  True if successful.
+	 * @return  boolean|JException  Boolean true on success, JException instance on error
+	 *
 	 * @throws  Exception
 	 */
 	public function duplicate(&$pks)
@@ -599,7 +601,7 @@ class AdvancedModulesModelModule extends JModelAdmin
 
 		$db        = $this->getDbo();
 		$query     = $db->getQuery(true);
-		$inserts   = array();
+		$inserts   = [];
 		$table     = $this->getTable();
 		$table_adv = JTable::getInstance('AdvancedModules', 'AdvancedModulesTable');
 
@@ -613,9 +615,9 @@ class AdvancedModulesModelModule extends JModelAdmin
 				// Alter the title.
 				$m = null;
 
-				if (preg_match('#\((\d+)\)$#', $table->title, $m))
+				if (RL_RegEx::match('\((\d+)\)$', $table->title, $m))
 				{
-					$table->title = preg_replace('#\(\d+\)$#', '(' . ($m[1] + 1) . ')', $table->title);
+					$table->title = RL_RegEx::replace('\(\d+\)$', '(' . ($m[1] + 1) . ')', $table->title);
 				}
 
 				$data         = $this->generateNewTitle(0, $table->title, $table->position);
@@ -733,7 +735,7 @@ class AdvancedModulesModelModule extends JModelAdmin
 			$params = json_decode($table_adv->params);
 			if (is_null($params))
 			{
-				$params = new stdClass;
+				$params = (object) [];
 			}
 
 			$params->color = strtolower($color);
@@ -768,12 +770,12 @@ class AdvancedModulesModelModule extends JModelAdmin
 		// Alter the title & alias
 		$table = $this->getTable();
 
-		while ($table->load(array('position' => $position, 'title' => $title)))
+		while ($table->load(['position' => $position, 'title' => $title]))
 		{
-			$title = RLString::increment($title);
+			$title = RL_String::increment($title);
 		}
 
-		return array($title);
+		return [$title];
 	}
 
 	/**
@@ -794,7 +796,7 @@ class AdvancedModulesModelModule extends JModelAdmin
 	 *
 	 * @return  JForm  A JForm object on success, false on failure
 	 */
-	public function getForm($data = array(), $loadData = true)
+	public function getForm($data = [], $loadData = true)
 	{
 		// The folder and element vars are passed when saving the form.
 		if (empty($data))
@@ -820,7 +822,7 @@ class AdvancedModulesModelModule extends JModelAdmin
 		$this->setState('item.module', $module);
 
 		// Get the form.
-		$form = $this->loadForm('com_advancedmodules.module', 'module', array('control' => 'jform', 'load_data' => $loadData));
+		$form = $this->loadForm('com_advancedmodules.module', 'module', ['control' => 'jform', 'load_data' => $loadData]);
 
 		if (empty($form))
 		{
@@ -866,7 +868,7 @@ class AdvancedModulesModelModule extends JModelAdmin
 		$app = JFactory::getApplication();
 
 		// Check the session for previously entered form data.
-		$data = JFactory::getApplication()->getUserState('com_advancedmodules.edit.module.data', array());
+		$data = JFactory::getApplication()->getUserState('com_advancedmodules.edit.module.data', []);
 
 		if (empty($data))
 		{
@@ -988,7 +990,7 @@ class AdvancedModulesModelModule extends JModelAdmin
 		$this->_cache[$pk]->params = json_decode($table->params, true);
 		if (is_null($this->_cache[$pk]->params))
 		{
-			$this->_cache[$pk]->params = array();
+			$this->_cache[$pk]->params = [];
 		}
 
 		// Advanced parameters
@@ -1005,12 +1007,12 @@ class AdvancedModulesModelModule extends JModelAdmin
 		$this->_cache[$pk]->advancedparams = json_decode($table_adv->params, true);
 		if (is_null($this->_cache[$pk]->params))
 		{
-			$this->_cache[$pk]->advancedparams = array();
+			$this->_cache[$pk]->advancedparams = [];
 		}
 
 		$this->_cache[$pk]->advancedparams = $this->initAssignments($pk, $this->_cache[$pk]);
 
-		$assigned   = array();
+		$assigned   = [];
 		$assignment = 0;
 		if (isset($this->_cache[$pk]->advancedparams['assignto_menuitems']) && isset($this->_cache[$pk]->advancedparams['assignto_menuitems_selection']))
 		{
@@ -1052,7 +1054,7 @@ class AdvancedModulesModelModule extends JModelAdmin
 	 */
 	public function getHelp()
 	{
-		return (object) array('key' => $this->helpKey, 'url' => $this->helpURL);
+		return (object) ['key' => $this->helpKey, 'url' => $this->helpURL];
 	}
 
 	/**
@@ -1064,7 +1066,7 @@ class AdvancedModulesModelModule extends JModelAdmin
 	 *
 	 * @return  JTable  A database object
 	 */
-	public function getTable($type = 'Module', $prefix = 'JTable', $config = array())
+	public function getTable($type = 'Module', $prefix = 'JTable', $config = [])
 	{
 		return JTable::getInstance($type, $prefix, $config);
 	}
@@ -1179,7 +1181,7 @@ class AdvancedModulesModelModule extends JModelAdmin
 	 */
 	public function save($data)
 	{
-		$advancedparams = JFactory::getApplication()->input->get('advancedparams', array(), 'array');
+		$advancedparams = JFactory::getApplication()->input->get('advancedparams', [], 'array');
 
 		$dispatcher = JEventDispatcher::getInstance();
 		$input      = JFactory::getApplication()->input;
@@ -1189,7 +1191,7 @@ class AdvancedModulesModelModule extends JModelAdmin
 		$context    = $this->option . '.' . $this->name;
 
 		// Include the plugins for the save event.
-		JPluginHelper::importPlugin('extension');
+		JPluginHelper::importPlugin($this->events_map['save']);
 
 		// Load the row if saving an existing record.
 		if ($pk > 0)
@@ -1211,17 +1213,15 @@ class AdvancedModulesModelModule extends JModelAdmin
 			}
 		}
 
-		require_once JPATH_LIBRARIES . '/regularlabs/helpers/text.php';
-
 		// correct the publish date details
 		if (isset($advancedparams['assignto_date_publish_up']))
 		{
-			RLText::fixDateOffset($advancedparams['assignto_date_publish_up']);
+			RL_Date::applyTimezone($advancedparams['assignto_date_publish_up']);
 		}
 
 		if (isset($advancedparams['assignto_date_publish_down']))
 		{
-			RLText::fixDateOffset($advancedparams['assignto_date_publish_down']);
+			RL_Date::applyTimezone($advancedparams['assignto_date_publish_down']);
 		}
 
 		if (isset($advancedparams['assignto_date']))
@@ -1272,7 +1272,7 @@ class AdvancedModulesModelModule extends JModelAdmin
 		}
 
 		// Trigger the before save event.
-		$result = $dispatcher->trigger($this->event_before_save, array($context, &$table, $isNew));
+		$result = $dispatcher->trigger($this->event_before_save, [$context, &$table, $isNew]);
 
 		if (in_array(false, $result, true))
 		{
@@ -1342,7 +1342,7 @@ class AdvancedModulesModelModule extends JModelAdmin
 		$db->execute();
 
 		// Trigger the after save event.
-		$dispatcher->trigger($this->event_after_save, array($context, &$table, $isNew));
+		$dispatcher->trigger($this->event_after_save, [$context, &$table, $isNew]);
 
 		// Compute the extension id of this module in case the controller wants it.
 		$query = $db->getQuery(true)
@@ -1378,7 +1378,7 @@ class AdvancedModulesModelModule extends JModelAdmin
 	public function saveMenuAssignments($id, $advancedparams)
 	{
 		$assignment = isset($advancedparams['assignto_menuitems']) ? $advancedparams['assignto_menuitems'] : 0;
-		$items      = isset($advancedparams['assignto_menuitems_selection']) ? $advancedparams['assignto_menuitems_selection'] : array();
+		$items      = isset($advancedparams['assignto_menuitems_selection']) ? $advancedparams['assignto_menuitems_selection'] : [];
 
 		$empty = empty($items);
 
@@ -1445,7 +1445,7 @@ class AdvancedModulesModelModule extends JModelAdmin
 		}
 		$items = array_unique($items);
 
-		$inserts = array();
+		$inserts = [];
 		foreach ($items as &$item)
 		{
 			if (!is_numeric($item))
@@ -1561,10 +1561,10 @@ class AdvancedModulesModelModule extends JModelAdmin
 
 		if (empty($id))
 		{
-			$module->advancedparams = array(
+			$module->advancedparams = [
 				'assignto_menuitems'           => $this->config->default_menu_assignment,
-				'assignto_menuitems_selection' => array(),
-			);
+				'assignto_menuitems_selection' => [],
+			];
 
 			AdvancedModulesModelModule::saveAdvancedParams($module->advancedparams, $id);
 
@@ -1610,7 +1610,7 @@ class AdvancedModulesModelModule extends JModelAdmin
 			if (isset($module->language) && $module->language && $module->language != '*')
 			{
 				$module->advancedparams['assignto_languages']           = 1;
-				$module->advancedparams['assignto_languages_selection'] = array($module->language);
+				$module->advancedparams['assignto_languages_selection'] = [$module->language];
 
 				$changed = true;
 			}
@@ -1638,14 +1638,14 @@ class AdvancedModulesModelModule extends JModelAdmin
 
 		if (empty($params['assignto_menuitems_selection']))
 		{
-			$params['assignto_menuitems_selection'] = array();
+			$params['assignto_menuitems_selection'] = [];
 
 			return;
 		}
 
 		if ($params['assignto_menuitems_selection']['0'] == 0)
 		{
-			$params['assignto_menuitems_selection'] = array();
+			$params['assignto_menuitems_selection'] = [];
 
 			return;
 		}
@@ -1677,7 +1677,7 @@ class AdvancedModulesModelModule extends JModelAdmin
 	 */
 	protected function getReorderConditions($table)
 	{
-		$condition   = array();
+		$condition   = [];
 		$condition[] = 'client_id = ' . (int) $table->client_id;
 		$condition[] = 'position = ' . $this->_db->quote($table->position);
 
@@ -1726,7 +1726,7 @@ class AdvancedModulesModelModule extends JModelAdmin
 	 *
 	 * @return  boolean
 	 */
-	protected function allowEdit($data = array(), $key = 'id')
+	protected function allowEdit($data = [], $key = 'id')
 	{
 		// Initialise variables.
 		$recordId = (int) isset($data[$key]) ? $data[$key] : 0;
@@ -1755,9 +1755,7 @@ class AdvancedModulesModelModule extends JModelAdmin
 			return $this->config;
 		}
 
-		require_once JPATH_LIBRARIES . '/regularlabs/helpers/parameters.php';
-		$parameters   = RLParameters::getInstance();
-		$this->config = $parameters->getComponentParams('advancedmodules');
+		$this->config = RL_Parameters::getInstance()->getComponentParams('advancedmodules');
 
 		return $this->config;
 	}

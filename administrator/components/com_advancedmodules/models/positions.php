@@ -1,11 +1,11 @@
 <?php
 /**
  * @package         Advanced Module Manager
- * @version         6.2.10
+ * @version         7.1.0
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
- * @copyright       Copyright © 2016 Regular Labs All Rights Reserved
+ * @copyright       Copyright © 2017 Regular Labs All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -29,14 +29,14 @@ class AdvancedModulesModelPositions extends JModelList
 	 * @see     JController
 	 * @since   1.6
 	 */
-	public function __construct($config = array())
+	public function __construct($config = [])
 	{
 		if (empty($config['filter_fields']))
 		{
-			$config['filter_fields'] = array(
+			$config['filter_fields'] = [
 				'value',
 				'templates',
-			);
+			];
 		}
 
 		parent::__construct($config);
@@ -129,12 +129,12 @@ class AdvancedModulesModelPositions extends JModelList
 
 				foreach ($positions as $value => $position)
 				{
-					$positions[$value] = array();
+					$positions[$value] = [];
 				}
 			}
 			else
 			{
-				$positions = array();
+				$positions = [];
 			}
 
 			// Load the positions from the installed templates.
@@ -176,7 +176,7 @@ class AdvancedModulesModelPositions extends JModelList
 							{
 								if (!isset($positions[$value]))
 								{
-									$positions[$value] = array();
+									$positions[$value] = [];
 								}
 
 								$positions[$value][$template->name] = $label;

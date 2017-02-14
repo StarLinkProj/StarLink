@@ -1,11 +1,11 @@
 <?php
 /**
  * @package         Advanced Module Manager
- * @version         6.2.10
+ * @version         7.1.0
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
- * @copyright       Copyright © 2016 Regular Labs All Rights Reserved
+ * @copyright       Copyright © 2017 Regular Labs All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -25,18 +25,18 @@ class Com_AdvancedModulesInstallerScript extends Com_AdvancedModulesInstallerScr
 		$this->uninstallPlugin($this->extname, $folder = 'system');
 	}
 
-	public function onBeforeInstall()
+	public function onBeforeInstall($route)
 	{
 		// Fix incorrectly formed versions because of issues in old packager
 		$this->fixFileVersions(
-			array(
+			[
 				JPATH_ADMINISTRATOR . '/components/com_advancedmodules/advancedmodules.xml',
 				JPATH_PLUGINS . '/system/advancedmodules/advancedmodules.xml',
-			)
+			]
 		);
 	}
 
-	public function onAfterInstall()
+	public function onAfterInstall($route)
 	{
 		$this->createTable();
 		$this->fixAssignments();
@@ -213,7 +213,7 @@ class Com_AdvancedModulesInstallerScript extends Com_AdvancedModulesInstallerScr
 				$params = json_decode($row->params);
 				if (is_null($params))
 				{
-					$params = new stdClass;
+					$params = (object) [];
 				}
 			}
 
@@ -250,7 +250,7 @@ class Com_AdvancedModulesInstallerScript extends Com_AdvancedModulesInstallerScr
 					case 'assignto_php_selection':
 					case 'assignto_urls_selection':
 					case 'assignto_ips_selection':
-						$v = str_replace(array('\n', '\|'), array("\n", '|'), $v);
+						$v = str_replace(['\n', '\|'], ["\n", '|'], $v);
 						break;
 					case 'color':
 						$v = str_replace('#', '', $v);
@@ -309,12 +309,12 @@ class Com_AdvancedModulesInstallerScript extends Com_AdvancedModulesInstallerScr
 	private function deleteOldFiles()
 	{
 		JFile::delete(
-			array(
+			[
 				JPATH_ADMINISTRATOR . '/components/com_advancedmodules/script.advancedmodules.php',
 				JPATH_SITE . '/components/com_advancedmodules/advancedmodules.xml',
 				JPATH_SITE . '/components/com_advancedmodules/script.advancedmodules.php',
 				JPATH_SITE . '/plugins/system/advancedmodules/modulehelper.php',
-			)
+			]
 		);
 	}
 

@@ -1,11 +1,11 @@
 <?php
 /**
  * @package         Advanced Module Manager
- * @version         6.2.10
+ * @version         7.1.0
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
- * @copyright       Copyright © 2016 Regular Labs All Rights Reserved
+ * @copyright       Copyright © 2017 Regular Labs All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -36,7 +36,7 @@ class AdvancedModulesControllerModules extends JControllerAdmin
 		// Check for request forgeries
 		JSession::checkToken() or jexit(JText::_('JINVALID_TOKEN'));
 
-		$pks = $this->input->post->get('cid', array(), 'array');
+		$pks = $this->input->post->get('cid', [], 'array');
 		JArrayHelper::toInteger($pks);
 
 		try
@@ -68,7 +68,7 @@ class AdvancedModulesControllerModules extends JControllerAdmin
 		// Check for request forgeries
 		JSession::checkToken() or jexit(JText::_('JINVALID_TOKEN'));
 
-		$pks = $this->input->post->get('cid', array(), 'array');
+		$pks = $this->input->post->get('cid', [], 'array');
 		JArrayHelper::toInteger($pks);
 
 		try
@@ -98,7 +98,7 @@ class AdvancedModulesControllerModules extends JControllerAdmin
 	 *
 	 * @return  object  The model.
 	 */
-	public function getModel($name = 'Module', $prefix = 'AdvancedModulesModel', $config = array('ignore_request' => true))
+	public function getModel($name = 'Module', $prefix = 'AdvancedModulesModel', $config = ['ignore_request' => true])
 	{
 		$model = parent::getModel($name, $prefix, $config);
 

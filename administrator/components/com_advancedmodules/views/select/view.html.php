@@ -1,11 +1,11 @@
 <?php
 /**
  * @package         Advanced Module Manager
- * @version         6.2.10
+ * @version         7.1.0
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
- * @copyright       Copyright © 2016 Regular Labs All Rights Reserved
+ * @copyright       Copyright © 2017 Regular Labs All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -62,6 +62,6 @@ class AdvancedModulesViewSelect extends JViewLegacy
 		// Instantiate a new JLayoutFile instance and render the layout
 		$layout = new JLayoutFile('toolbar.cancelselect');
 
-		$bar->appendButton('Custom', $layout->render(array()), 'new');
+		$bar->appendButton('Custom', $layout->render([]), 'new');
 	}
 }

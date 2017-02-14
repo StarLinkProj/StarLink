@@ -25,25 +25,30 @@ if (preg_match('/<(?:div|span|nav|ul|ol|h\d) [^>]*class="[^"]* jmoddiv"/', $modu
 // Add css class jmoddiv and data attributes for module-editing URL and for the tooltip:
 $editUrl = JUri::base() . 'administrator/index.php?option=com_advancedmodules&view=module&layout=edit&id=' . (int) $mod->id;
 
+$title    = preg_replace('#\{.*?\}#', '', $mod->title);
+$position = sprintf(JText::_('JLIB_HTML_EDIT_MODULE_IN_POSITION'), $position);
+
+$tooltip = JHtml::tooltipText(
+	JText::_('JLIB_HTML_EDIT_MODULE'),
+	htmlspecialchars($title) . '<br>' . htmlspecialchars($position),
+	0
+);
+
+// By itself, adding class jmoddiv and data attributes for the url and tooltip:
+$replace = '\\1 jmoddiv" data-jmodediturl="' . $editUrl . '" data-jmodtip="' . $tooltip . '"';
+
+// And if menu editing is enabled and allowed and it's a menu module, add data attributes for menu editing:
+if ($menusEditing && $mod->module == 'mod_menu')
+{
+	$replace .= ' data-jmenuedittip="' . JHtml::tooltipText('JLIB_HTML_EDIT_MENU_ITEM', 'JLIB_HTML_EDIT_MENU_ITEM_ID') . '"';
+}
+
 // Add class, editing URL and tooltip, and if module of type menu, also the tooltip for editing the menu item:
 $count      = 0;
 $moduleHtml = preg_replace(
 // Replace first tag of module with a class
 	'/^(\s*<(?:div|span|nav|ul|ol|h\d) [^>]*class="[^"]*)"/',
-	// By itself, adding class jmoddiv and data attributes for the url and tooltip:
-	'\\1 jmoddiv" data-jmodediturl="' . $editUrl . '" data-jmodtip="'
-	. JHtml::tooltipText(
-		JText::_('JLIB_HTML_EDIT_MODULE'),
-		htmlspecialchars($mod->title) . '<br>' . sprintf(JText::_('JLIB_HTML_EDIT_MODULE_IN_POSITION'), htmlspecialchars($position)),
-		0
-	)
-	. '"'
-	// And if menu editing is enabled and allowed and it's a menu module, add data attributes for menu editing:
-	. ($menusEditing && $mod->module == 'mod_menu' ?
-		'" data-jmenuedittip="' . JHtml::tooltipText('JLIB_HTML_EDIT_MENU_ITEM', 'JLIB_HTML_EDIT_MENU_ITEM_ID') . '"'
-		:
-		''
-	),
+	$replace,
 	$moduleHtml,
 	1,
 	$count
@@ -55,6 +60,6 @@ if ($count)
 	JHtml::_('bootstrap.tooltip');
 	JHtml::_('bootstrap.popover');
 
-	JHtml::_('stylesheet', 'system/frontediting.css', array(), true);
+	JHtml::_('stylesheet', 'system/frontediting.css', [], true);
 	JHtml::_('script', 'system/frontediting.js', false, true);
 }

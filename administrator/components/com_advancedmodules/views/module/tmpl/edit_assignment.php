@@ -1,11 +1,11 @@
 <?php
 /**
  * @package         Advanced Module Manager
- * @version         6.2.10
+ * @version         7.1.0
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
- * @copyright       Copyright © 2016 Regular Labs All Rights Reserved
+ * @copyright       Copyright © 2017 Regular Labs All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -16,6 +16,8 @@
 
 defined('_JEXEC') or die;
 
+use RegularLabs\Library\Extension as RL_Extension;
+
 jimport('joomla.filesystem.file');
 
 $this->config->show_assignto_groupusers = (int) (
@@ -23,7 +25,7 @@ $this->config->show_assignto_groupusers = (int) (
 );
 
 
-$assignments = array(
+$assignments = [
 	'menuitems',
 	'homepage',
 	'date',
@@ -37,7 +39,7 @@ $assignments = array(
 	'components',
 	'tags',
 	'content',
-);
+];
 foreach ($assignments as $i => $ass)
 {
 	if ($ass != 'menuitems' && (!isset($this->config->{'show_assignto_' . $ass}) || !$this->config->{'show_assignto_' . $ass}))
@@ -46,7 +48,7 @@ foreach ($assignments as $i => $ass)
 	}
 }
 
-$html = array();
+$html = [];
 
 $html[] = $this->render($this->assignments, 'assignments');
 

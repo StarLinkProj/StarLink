@@ -1,11 +1,11 @@
 <?php
 /**
  * @package         Advanced Module Manager
- * @version         6.2.10
+ * @version         7.1.0
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
- * @copyright       Copyright © 2016 Regular Labs All Rights Reserved
+ * @copyright       Copyright © 2017 Regular Labs All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -17,7 +17,7 @@ require_once JPATH_ADMINISTRATOR . '/components/com_advancedmodules/models/modul
 
 class AdvancedModulesModelEdit extends AdvancedModulesModelModule
 {
-	public function __construct($config = array())
+	public function __construct($config = [])
 	{
 		parent::__construct($config);
 	}

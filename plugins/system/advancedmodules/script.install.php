@@ -1,11 +1,11 @@
 <?php
 /**
  * @package         Advanced Module Manager
- * @version         6.2.10
+ * @version         7.1.0
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
- * @copyright       Copyright © 2016 Regular Labs All Rights Reserved
+ * @copyright       Copyright © 2017 Regular Labs All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -25,9 +25,14 @@ class PlgSystemAdvancedModulesInstallerScript extends PlgSystemAdvancedModulesIn
 		$this->uninstallComponent($this->extname);
 	}
 
-	public function onAfterInstall()
+	public function onAfterInstall($route)
 	{
 		$this->setPluginOrdering();
+
+		if ($this->install_type == 'update')
+		{
+			$this->deleteOldFiles();
+		}
 	}
 
 	private function setPluginOrdering()
@@ -42,5 +47,17 @@ class PlgSystemAdvancedModulesInstallerScript extends PlgSystemAdvancedModulesIn
 		$this->db->execute();
 
 		JFactory::getCache()->clean('_system');
+	}
+
+	private function deleteOldFiles()
+	{
+		JFile::delete(
+			[
+				JPATH_PLUGINS . '/system/advancedmodules/advancedmodulehelper_legacy.php',
+				JPATH_PLUGINS . '/system/advancedmodules/advancedmodulehelper.php',
+				JPATH_PLUGINS . '/system/advancedmodules/helper.php',
+				JPATH_PLUGINS . '/system/advancedmodules/modulehelper_legacy.php',
+			]
+		);
 	}
 }

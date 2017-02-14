@@ -1,11 +1,11 @@
 <?php
 /**
  * @package         Advanced Module Manager
- * @version         6.2.10
+ * @version         7.1.0
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
- * @copyright       Copyright © 2016 Regular Labs All Rights Reserved
+ * @copyright       Copyright © 2017 Regular Labs All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -20,44 +20,44 @@ if (!JFactory::getUser()->authorise('module.edit.frontend', 'com_modules.module.
 	return JError::raiseWarning(404, JText::_('JERROR_ALERTNOAUTHOR'));
 }
 
-require_once JPATH_LIBRARIES . '/regularlabs/helpers/functions.php';
-
-RLFunctions::loadLanguage('com_modules', JPATH_ADMINISTRATOR);
-RLFunctions::loadLanguage('com_advancedmodules');
+JFactory::getLanguage()->load('com_modules', JPATH_ADMINISTRATOR);
+JFactory::getLanguage()->load('com_advancedmodules', JPATH_ADMINISTRATOR . '/components/com_advancedmodules');
 
 jimport('joomla.filesystem.file');
 
 // return if Regular Labs Library plugin is not installed
 if (
-	!JFile::exists(JPATH_PLUGINS . '/system/regularlabs/regularlabs.xml')
-	|| !JFile::exists(JPATH_LIBRARIES . '/regularlabs/regularlabs.xml')
+	!is_file(JPATH_PLUGINS . '/system/regularlabs/regularlabs.xml')
+	|| !is_file(JPATH_LIBRARIES . '/regularlabs/autoload.php')
 )
 {
 	$msg = JText::_('AMM_REGULAR_LABS_LIBRARY_NOT_INSTALLED')
 		. ' ' . JText::sprintf('AMM_EXTENSION_CAN_NOT_FUNCTION', JText::_('COM_ADVANCEDMODULES'));
-	$app->enqueueMessage($msg, 'error');
+	JFactory::getApplication()->enqueueMessage($msg, 'error');
 
 	return;
 }
 
 // give notice if Regular Labs Library plugin is not enabled
-$regularlabs = JPluginHelper::getPlugin('system', 'regularlabs');
-if (!isset($regularlabs->name))
+if (!JPluginHelper::isEnabled('system', 'regularlabs'))
 {
 	$msg = JText::_('AMM_REGULAR_LABS_LIBRARY_NOT_ENABLED')
 		. ' ' . JText::sprintf('AMM_EXTENSION_CAN_NOT_FUNCTION', JText::_('COM_ADVANCEDMODULES'));
-	$app->enqueueMessage($msg, 'notice');
+	JFactory::getApplication()->enqueueMessage($msg, 'notice');
 }
 
-// load the Regular Labs Library language file
-RLFunctions::loadLanguage('plg_system_regularlabs');
+require_once JPATH_LIBRARIES . '/regularlabs/autoload.php';
+
+use RegularLabs\Library\Language as RL_Language;
+
+RL_Language::load('plg_system_regularlabs');
 // Load admin main core language strings
-RLFunctions::loadLanguage('', JPATH_ADMINISTRATOR);
+RL_Language::load('', JPATH_ADMINISTRATOR);
 
 // Tell the browser not to cache this page.
 $app->setHeader('Expires', 'Mon, 26 Jul 1997 05:00:00 GMT', true);
 
-$config = array();
+$config = [];
 if ($app->input->get('task') === 'module.orderPosition')
 {
 	$config['base_path'] = JPATH_COMPONENT_ADMINISTRATOR;

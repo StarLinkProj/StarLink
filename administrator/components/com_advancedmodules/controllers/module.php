@@ -1,11 +1,11 @@
 <?php
 /**
  * @package         Advanced Module Manager
- * @version         6.2.10
+ * @version         7.1.0
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
- * @copyright       Copyright © 2016 Regular Labs All Rights Reserved
+ * @copyright       Copyright © 2017 Regular Labs All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -54,7 +54,7 @@ class AdvancedModulesControllerModule extends JControllerForm
 		$app->setUserState('com_advancedmodules.add.module.params', null);
 
 		// Parameters could be coming in for a new item, so let's set them.
-		$params = $app->input->get('params', array(), 'array');
+		$params = $app->input->get('params', [], 'array');
 		$app->setUserState('com_advancedmodules.add.module.params', $params);
 	}
 
@@ -116,7 +116,7 @@ class AdvancedModulesControllerModule extends JControllerForm
 	 *
 	 * @return  boolean
 	 */
-	protected function allowAdd($data = array())
+	protected function allowAdd($data = [])
 	{
 		$user = JFactory::getUser();
 
@@ -131,7 +131,7 @@ class AdvancedModulesControllerModule extends JControllerForm
 	 *
 	 * @return  boolean
 	 */
-	protected function allowEdit($data = array(), $key = 'id')
+	protected function allowEdit($data = [], $key = 'id')
 	{
 		// Initialise variables.
 		$recordId = (int) isset($data[$key]) ? $data[$key] : 0;
@@ -159,7 +159,7 @@ class AdvancedModulesControllerModule extends JControllerForm
 		JSession::checkToken() or jexit(JText::_('JINVALID_TOKEN'));
 
 		// Set the model
-		$model = $this->getModel('Module', '', array());
+		$model = $this->getModel('Module', '', []);
 
 		// Preset the redirect
 		$redirectUrl = 'index.php?option=com_advancedmodules&view=modules' . $this->getRedirectToListAppend();
@@ -177,7 +177,7 @@ class AdvancedModulesControllerModule extends JControllerForm
 	 *
 	 * @return  void
 	 */
-	protected function postSaveHook(JModelLegacy $model, $validData = array())
+	protected function postSaveHook(JModelLegacy $model, $validData = [])
 	{
 		$app  = JFactory::getApplication();
 		$task = $this->getTask();
@@ -214,7 +214,7 @@ class AdvancedModulesControllerModule extends JControllerForm
 		if (JFactory::getDocument()->getType() == 'json')
 		{
 			$model      = $this->getModel();
-			$data       = $this->input->post->get('jform', array(), 'array');
+			$data       = $this->input->post->get('jform', [], 'array');
 			$item       = $model->getItem($this->input->get('id'));
 			$properties = $item->getProperties();
 
@@ -250,7 +250,7 @@ class AdvancedModulesControllerModule extends JControllerForm
 		$lang    = JFactory::getLanguage();
 		$model   = $this->getModel();
 		$table   = $model->getTable();
-		$data    = $this->input->post->get('jform', array(), 'array');
+		$data    = $this->input->post->get('jform', [], 'array');
 		$checkin = property_exists($table, 'checked_out');
 		$context = "$this->option.edit.$this->context";
 		$task    = $this->getTask();
@@ -444,7 +444,7 @@ class AdvancedModulesControllerModule extends JControllerForm
 			return '';
 		}
 
-		$orders2 = array();
+		$orders2 = [];
 		$n       = count($orders);
 
 		if ($n > 0)

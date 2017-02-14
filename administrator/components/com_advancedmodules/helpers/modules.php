@@ -1,11 +1,11 @@
 <?php
 /**
  * @package         Advanced Module Manager
- * @version         6.2.10
+ * @version         7.1.0
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
- * @copyright       Copyright © 2016 Regular Labs All Rights Reserved
+ * @copyright       Copyright © 2017 Regular Labs All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -41,7 +41,7 @@ abstract class ModulesHelper
 	public static function getStateOptions()
 	{
 		// Build the filter options.
-		$options   = array();
+		$options   = [];
 		$options[] = JHtml::_('select.option', '1', JText::_('JPUBLISHED'));
 		$options[] = JHtml::_('select.option', '0', JText::_('JUNPUBLISHED'));
 		$options[] = JHtml::_('select.option', '-2', JText::_('JTRASHED'));
@@ -58,7 +58,7 @@ abstract class ModulesHelper
 	public static function getClientOptions()
 	{
 		// Build the filter options.
-		$options   = array();
+		$options   = [];
 		$options[] = JHtml::_('select.option', '0', JText::_('JSITE'));
 		$options[] = JHtml::_('select.option', '1', JText::_('JADMINISTRATOR'));
 
@@ -87,7 +87,7 @@ abstract class ModulesHelper
 		try
 		{
 			$positions = $db->loadColumn();
-			$positions = is_array($positions) ? $positions : array();
+			$positions = is_array($positions) ? $positions : [];
 		}
 		catch (RuntimeException $e)
 		{
@@ -97,7 +97,7 @@ abstract class ModulesHelper
 		}
 
 		// Build the list
-		$options = array();
+		$options = [];
 
 		foreach ($positions as $position)
 		{
@@ -147,9 +147,8 @@ abstract class ModulesHelper
 
 		// Set the query and load the templates.
 		$db->setQuery($query);
-		$templates = $db->loadObjectList('element');
 
-		return $templates;
+		return $db->loadObjectList('element');
 	}
 
 	/**
@@ -199,7 +198,7 @@ abstract class ModulesHelper
 	 */
 	public static function getMenuItemAssignmentOptions($clientId)
 	{
-		$options   = array();
+		$options   = [];
 		$options[] = JHtml::_('select.option', '0', JText::_('JALL'));
 		$options[] = JHtml::_('select.option', '-', JText::_('JNONE'));
 
@@ -270,7 +269,7 @@ abstract class ModulesHelper
 			{
 				// Try to humanize the position name
 				$text = ucfirst(preg_replace('/^' . $template . '\-/', '', $position));
-				$text = ucwords(str_replace(array('-', '_'), ' ', $text));
+				$text = ucwords(str_replace(['-', '_'], ' ', $text));
 			}
 		}
 
@@ -305,7 +304,7 @@ abstract class ModulesHelper
 			$text = $value;
 		}
 
-		$option        = new stdClass;
+		$option        = (object) [];
 		$option->value = $value;
 		$option->text  = $text;
 
@@ -320,9 +319,9 @@ abstract class ModulesHelper
 	 *
 	 * @return  array  Return the new group as an array
 	 */
-	public static function createOptionGroup($label = '', $options = array())
+	public static function createOptionGroup($label = '', $options = [])
 	{
-		$group          = array();
+		$group          = [];
 		$group['value'] = $label;
 		$group['text']  = $label;
 		$group['items'] = $options;

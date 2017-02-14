@@ -1,13 +1,15 @@
 <?php
 /**
  * @package         Regular Labs Library
- * @version         16.12.3209
+ * @version         17.2.10818
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
- * @copyright       Copyright © 2016 Regular Labs All Rights Reserved
+ * @copyright       Copyright © 2017 Regular Labs All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
+
+/* @DEPRECATED */
 
 defined('_JEXEC') or die;
 
@@ -156,12 +158,12 @@ class RLAssignmentsEasyBlog extends RLAssignment
 		return $this->pass($pass);
 	}
 
-	public function passContentKeywords($fields = array('title', 'intro', 'content'), $text = '')
+	public function passContentKeywords($fields = ['title', 'intro', 'content'], $text = '')
 	{
 		parent::passContentKeywords($fields);
 	}
 
-	public function getItem($fields = array())
+	public function getItem($fields = [])
 	{
 		$query = $this->db->getQuery(true)
 			->select($fields)

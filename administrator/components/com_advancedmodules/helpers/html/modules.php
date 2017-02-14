@@ -1,11 +1,11 @@
 <?php
 /**
  * @package         Advanced Module Manager
- * @version         6.2.10
+ * @version         7.1.0
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
- * @copyright       Copyright © 2016 Regular Labs All Rights Reserved
+ * @copyright       Copyright © 2017 Regular Labs All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -31,7 +31,7 @@ abstract class JHtmlModules
 	 */
 	public static function templates($clientId = 0, $state = '')
 	{
-		$options   = array();
+		$options   = [];
 		$templates = ModulesHelper::getTemplates($clientId, $state);
 
 		foreach ($templates as $template)
@@ -49,7 +49,7 @@ abstract class JHtmlModules
 	 */
 	public static function types()
 	{
-		$options   = array();
+		$options   = [];
 		$options[] = JHtml::_('select.option', 'user', 'COM_MODULES_OPTION_POSITION_USER_DEFINED');
 		$options[] = JHtml::_('select.option', 'template', 'COM_MODULES_OPTION_POSITION_TEMPLATE_DEFINED');
 
@@ -63,7 +63,7 @@ abstract class JHtmlModules
 	 */
 	public static function templateStates()
 	{
-		$options   = array();
+		$options   = [];
 		$options[] = JHtml::_('select.option', '1', 'JENABLED');
 		$options[] = JHtml::_('select.option', '0', 'JDISABLED');
 
@@ -85,44 +85,15 @@ abstract class JHtmlModules
 	 */
 	public static function state($value, $i, $enabled = true, $checkbox = 'cb')
 	{
-		$states = array(
-			1  => array(
-				'unpublish',
-				'COM_MODULES_EXTENSION_PUBLISHED_ENABLED',
-				'COM_MODULES_HTML_UNPUBLISH_ENABLED',
-				'COM_MODULES_EXTENSION_PUBLISHED_ENABLED',
-				true,
-				'publish',
-				'publish',
-			),
-			0  => array(
-				'publish',
-				'COM_MODULES_EXTENSION_UNPUBLISHED_ENABLED',
-				'COM_MODULES_HTML_PUBLISH_ENABLED',
-				'COM_MODULES_EXTENSION_UNPUBLISHED_ENABLED',
-				true,
-				'unpublish',
-				'unpublish',
-			),
-			-1 => array(
-				'unpublish',
-				'COM_MODULES_EXTENSION_PUBLISHED_DISABLED',
-				'COM_MODULES_HTML_UNPUBLISH_DISABLED',
-				'COM_MODULES_EXTENSION_PUBLISHED_DISABLED',
-				true,
-				'warning',
-				'warning',
-			),
-			-2 => array(
-				'publish',
-				'COM_MODULES_EXTENSION_UNPUBLISHED_DISABLED',
-				'COM_MODULES_HTML_PUBLISH_DISABLED',
-				'COM_MODULES_EXTENSION_UNPUBLISHED_DISABLED',
-				true,
-				'unpublish',
-				'unpublish',
-			),
-		);
+		$states = [
+			'publish',
+			'COM_MODULES_EXTENSION_UNPUBLISHED_DISABLED',
+			'COM_MODULES_HTML_PUBLISH_DISABLED',
+			'COM_MODULES_EXTENSION_UNPUBLISHED_DISABLED',
+			true,
+			'unpublish',
+			'unpublish',
+		];
 
 		return JHtml::_('jgrid.state', $states, $value, $i, 'modules.', $enabled, true, $checkbox);
 	}
@@ -141,18 +112,18 @@ abstract class JHtmlModules
 	{
 		require_once JPATH_ADMINISTRATOR . '/components/com_templates/helpers/templates.php';
 		$templates      = array_keys(ModulesHelper::getTemplates($clientId, $state));
-		$templateGroups = array();
+		$templateGroups = [];
 
 		// Add an empty value to be able to deselect a module position
 		$option             = ModulesHelper::createOption();
-		$templateGroups[''] = ModulesHelper::createOptionGroup('', array($option));
+		$templateGroups[''] = ModulesHelper::createOptionGroup('', [$option]);
 
 		// Add positions from templates
 		$isTemplatePosition = false;
 
 		foreach ($templates as $template)
 		{
-			$options = array();
+			$options = [];
 
 			$positions = TemplatesHelper::getPositions($clientId, $template);
 

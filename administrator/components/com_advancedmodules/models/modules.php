@@ -1,11 +1,11 @@
 <?php
 /**
  * @package         Advanced Module Manager
- * @version         6.2.10
+ * @version         7.1.0
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
- * @copyright       Copyright © 2016 Regular Labs All Rights Reserved
+ * @copyright       Copyright © 2017 Regular Labs All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -16,7 +16,7 @@
 
 defined('_JEXEC') or die;
 
-use Joomla\Utilities\ArrayHelper;
+use RegularLabs\Library\Parameters as RL_Parameters;
 
 /**
  * Modules Component Module Model
@@ -31,11 +31,11 @@ class AdvancedModulesModelModules extends JModelList
 	 * @see     JController
 	 * @since   1.6
 	 */
-	public function __construct($config = array())
+	public function __construct($config = [])
 	{
 		if (empty($config['filter_fields']))
 		{
-			$config['filter_fields'] = array(
+			$config['filter_fields'] = [
 				'id', 'a.id',
 				'color', 'a.color',
 				'title', 'a.title',
@@ -55,7 +55,7 @@ class AdvancedModulesModelModules extends JModelList
 				'menuitem',
 				'menuid',
 				'name', 'e.name',
-			);
+			];
 		}
 
 		parent::__construct($config);
@@ -97,7 +97,7 @@ class AdvancedModulesModelModules extends JModelList
 		$clientId = $app->input->getString('client_id', null);
 
 		// Client Site(0) or Administrator(1) selected?
-		if (in_array($clientId, array('0', '1')))
+		if (in_array($clientId, ['0', '1']))
 		{
 			// Not the same client like saved previous one?
 			if ($clientId != $app->getUserState($this->context . '.client_id'))
@@ -117,7 +117,7 @@ class AdvancedModulesModelModules extends JModelList
 			$clientId = (string) $app->getUserState($this->context . '.client_id');
 
 			// Client not Site(0) and not Administrator(1)? So, set to Site(0).
-			if (!in_array($clientId, array('0', '1')))
+			if (!in_array($clientId, ['0', '1']))
 			{
 				$clientId = '0';
 			}
@@ -162,13 +162,13 @@ class AdvancedModulesModelModules extends JModelList
 			$this->getConfig();
 			list($default_ordering, $default_direction) = explode(' ', $this->config->default_ordering, 2);
 
-			$data->list = array(
+			$data->list = [
 				'direction'    => $default_direction,
 				'limit'        => $this->state->{'list.limit'},
 				'ordering'     => $default_ordering,
 				'fullordering' => $this->config->default_ordering,
 				'start'        => $this->state->{'list.start'},
-			);
+			];
 		}
 
 		return $data;
@@ -214,7 +214,7 @@ class AdvancedModulesModelModules extends JModelList
 		$ordering  = strtolower($this->getState('list.ordering', 'ordering'));
 		$orderDirn = strtoupper($this->getState('list.direction', 'ASC'));
 
-		if (in_array($ordering, array('menuid', 'name')))
+		if (in_array($ordering, ['menuid', 'name']))
 		{
 			$this->_db->setQuery($query);
 			$result = $this->_db->loadObjectList();
@@ -261,14 +261,14 @@ class AdvancedModulesModelModules extends JModelList
 		$this->_db->setQuery($query);
 		$result = $this->_db->loadObjectList();
 		$this->translate($result);
-		$newresult = array();
+		$newresult = [];
 
 		foreach ($result as $i => $row)
 		{
 			$params = json_decode($row->advancedparams);
 			if (is_null($params))
 			{
-				$params = new stdClass;
+				$params = (object) [];
 			}
 
 			$color                                              = isset($params->color) ? str_replace('#', '', $params->color) : 'none';
@@ -385,7 +385,7 @@ class AdvancedModulesModelModules extends JModelList
 			$query->where($db->quoteName('a.module') . ' = ' . $db->quote($module));
 		}
 
-		$wheres = array();
+		$wheres = [];
 
 		// Filter by menuid
 		$menuid = $this->getState('filter.menuid');
@@ -617,9 +617,7 @@ class AdvancedModulesModelModules extends JModelList
 			return $this->config;
 		}
 
-		require_once JPATH_LIBRARIES . '/regularlabs/helpers/parameters.php';
-		$parameters   = RLParameters::getInstance();
-		$this->config = $parameters->getComponentParams('advancedmodules');
+		$this->config = RL_Parameters::getInstance()->getComponentParams('advancedmodules');
 
 		return $this->config;
 	}

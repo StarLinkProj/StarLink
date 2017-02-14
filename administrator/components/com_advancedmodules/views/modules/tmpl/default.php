@@ -1,11 +1,11 @@
 <?php
 /**
  * @package         Advanced Module Manager
- * @version         6.2.10
+ * @version         7.1.0
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
- * @copyright       Copyright © 2016 Regular Labs All Rights Reserved
+ * @copyright       Copyright © 2017 Regular Labs All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -16,12 +16,13 @@
 
 defined('_JEXEC') or die;
 
+use RegularLabs\Library\Document as RL_Document;
+use RegularLabs\Library\License as RL_License;
+use RegularLabs\Library\Version as RL_Version;
+
 JHtml::_('bootstrap.tooltip');
 JHtml::_('behavior.multiselect');
 JHtml::_('formbehavior.chosen', 'select');
-
-require_once JPATH_LIBRARIES . '/regularlabs/helpers/functions.php';
-require_once JPATH_LIBRARIES . '/regularlabs/helpers/versions.php';
 
 $client    = $this->state->get('filter.client_id') ? 'administrator' : 'site';
 $user      = JFactory::getUser();
@@ -50,10 +51,10 @@ if ($showcolors)
 			listItemTask(id, 'modules.setcolor');
 		}
 	";
-	JFactory::getDocument()->addScriptDeclaration($script);
+	RL_Document::scriptDeclaration($script);
 }
 
-RLFunctions::stylesheet('regularlabs/style.min.css');
+RL_Document::style('regularlabs/style.min.css');
 ?>
 <form action="<?php echo JRoute::_('index.php?option=com_advancedmodules'); ?>" method="post" name="adminForm" id="adminForm">
 	<?php if (!empty($this->sidebar)) : ?>
@@ -66,13 +67,13 @@ RLFunctions::stylesheet('regularlabs/style.min.css');
 		// Version check
 		if ($this->config->show_update_notification)
 		{
-			echo RLVersions::render('ADVANCED_MODULE_MANAGER');
+			echo RL_Version::getMessage('ADVANCED_MODULE_MANAGER');
 		}
 		?>
 		<div class="clear"></div>
 		<?php
 		// Search tools bar and filters
-		echo JLayoutHelper::render('joomla.searchtools.default', array('view' => $this));
+		echo JLayoutHelper::render('joomla.searchtools.default', ['view' => $this]);
 		?>
 		<?php if (empty($this->items)) : ?>
 			<div class="alert alert-no-items">
@@ -304,7 +305,7 @@ RLFunctions::stylesheet('regularlabs/style.min.css');
 								else
 								{
 									echo $item->language_title
-										? JHtml::_('image', 'mod_languages/' . $item->language_image . '.gif', $item->language_title, array('title' => $item->language_title), true) . '&nbsp;' . $this->escape($item->language_title)
+										? JHtml::_('image', 'mod_languages/' . $item->language_image . '.gif', $item->language_title, ['title' => $item->language_title], true) . '&nbsp;' . $this->escape($item->language_title)
 										: ((isset($langs[$item->language]) && !empty($langs[$item->language]['name']))
 											? $this->escape($langs[$item->language]['name'])
 											: JText::_('JUNDEFINED')
@@ -349,11 +350,11 @@ RLFunctions::stylesheet('regularlabs/style.min.css');
 		<?php endif; ?>
 		<?php
 		// PRO Check
-		require_once JPATH_LIBRARIES . '/regularlabs/helpers/licenses.php';
-		echo RLLicenses::render('ADVANCED_MODULE_MANAGER');
+
+		echo RL_License::getMessage('ADVANCED_MODULE_MANAGER');
 
 		// Copyright
-		echo RLVersions::getFooter('ADVANCED_MODULE_MANAGER');
+		echo RL_Version::getFooter('ADVANCED_MODULE_MANAGER');
 		?>
 	</div>
 </form>

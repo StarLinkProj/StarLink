@@ -1,11 +1,11 @@
 <?php
 /**
  * @package         Advanced Module Manager
- * @version         6.2.10
+ * @version         7.1.0
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
- * @copyright       Copyright © 2016 Regular Labs All Rights Reserved
+ * @copyright       Copyright © 2017 Regular Labs All Rights Reserved
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
@@ -21,19 +21,21 @@ if (JFactory::getApplication()->isSite())
 	JSession::checkToken('get') or die(JText::_('JINVALID_TOKEN'));
 }
 
+use RegularLabs\Library\Document as RL_Document;
+
 JHtml::_('behavior.core');
-JHtml::_('bootstrap.tooltip', '.hasTooltip', array('placement' => 'bottom'));
+JHtml::_('bootstrap.tooltip', '.hasTooltip', ['placement' => 'bottom']);
 JHtml::_('formbehavior.chosen', 'select');
 
 // Special case for the search field tooltip.
 $searchFilterDesc = $this->filterForm->getFieldAttribute('search', 'description', null, 'filter');
-JHtml::_('bootstrap.tooltip', '#filter_search', array('title' => JText::_($searchFilterDesc), 'placement' => 'bottom'));
+JHtml::_('bootstrap.tooltip', '#filter_search', ['title' => JText::_($searchFilterDesc), 'placement' => 'bottom']);
 
 $listOrder = $this->escape($this->state->get('list.ordering'));
 $listDirn  = $this->escape($this->state->get('list.direction'));
 $editor    = JFactory::getApplication()->input->get('editor', '', 'cmd');
 
-JFactory::getDocument()->addScriptDeclaration('
+RL_Document::scriptDeclaration('
 moduleIns = function(type, name) {
 	window.parent.jInsertEditorText("{loadmodule " + type + "," + name + "}", "' . $editor . '");
 	window.parent.jModalClose();
@@ -47,7 +49,7 @@ modulePosIns = function(position) {
 
 	<form action="<?php echo JRoute::_('index.php?option=com_advancedmodules&view=modules&layout=modal&tmpl=component&' . JSession::getFormToken() . '=1'); ?>" method="post" name="adminForm" id="adminForm">
 
-		<?php echo JLayoutHelper::render('joomla.searchtools.default', array('view' => $this)); ?>
+		<?php echo JLayoutHelper::render('joomla.searchtools.default', ['view' => $this]); ?>
 
 		<div class="clearfix"></div>
 
@@ -94,12 +96,12 @@ modulePosIns = function(position) {
 				</tfoot>
 				<tbody>
 					<?php
-					$iconStates = array(
+					$iconStates = [
 						-2 => 'icon-trash',
 						0  => 'icon-unpublish',
 						1  => 'icon-publish',
 						2  => 'icon-archive',
-					);
+					];
 					foreach ($this->items as $i => $item) :
 						?>
 						<tr class="row<?php echo $i % 2; ?>">
@@ -131,7 +133,7 @@ modulePosIns = function(position) {
 								<?php elseif ($item->language == '*') : ?>
 									<?php echo JText::alt('JALL', 'language'); ?>
 								<?php else : ?>
-									<?php echo $item->language_title ? JHtml::_('image', 'mod_languages/' . $item->language_image . '.gif', $item->language_title, array('title' => $item->language_title), true) . '&nbsp;' . $this->escape($item->language_title) : JText::_('JUNDEFINED'); ?>
+									<?php echo $item->language_title ? JHtml::_('image', 'mod_languages/' . $item->language_image . '.gif', $item->language_title, ['title' => $item->language_title], true) . '&nbsp;' . $this->escape($item->language_title) : JText::_('JUNDEFINED'); ?>
 								<?php endif; ?>
 							</td>
 							<td class="hidden-phone">
