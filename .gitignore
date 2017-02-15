@@ -735,6 +735,7 @@ jspm_packages
 
 .src/vendor/basscss/css/
 .src/vendor/bootstrap/css/
+.src/vendor/bootstrap/js/bootstrap.min.js
 /templates/starlink*/
 /media/mod_starlink*/
 /modules/mod_starlink*/
