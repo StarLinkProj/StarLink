@@ -27,10 +27,10 @@
   <?php include_once($assetsPathFile . '/images/icons.svg'); ?>
 
 
-  <header class="TopHeader relative">
+  <!--  <header class="TopHeader relative">
     <div class="TopRow relative">
-      <div class="Logo absolute left-0 bottom-0" title="StarLink" href="<?php echo JURI::base(); ?>">
-        <a href="<?php echo JURI::base(); ?>"><img class="Logo__image" src="<?=$assetsPath?>/images/logo-vector.svg"></a>
+      <div class="Logo absolute left-0 bottom-0" title="StarLink" href="<?php /*echo JURI::base(); */?>">
+        <a href="<?php /*echo JURI::base(); */?>"><img class="Logo__image" src="<?/*=$assetsPath*/?>/images/logo-vector.svg"></a>
       </div>
       <div class="BackgroundHolder">
         <div class="Phone">
@@ -54,24 +54,74 @@
       </div>
     </div>
     <nav id="TopMenu" id="mainMenuDiv" class="navbar navbar--Starlink" role="navigation">
-<!--      <div class="navbar-header MenuToggleHolder__content">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-TopMenu__collapse" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>-->
-      <div class="collapse navbar-collapse" id="js-TopMenu__collapse" id="mainCollapse">
-        <jdoc:include type="modules" name="s01-MainMenu" />
-        <a href="javascript:void(0)" class="searchButton">
-          <img src="/images/main/search_icon.png">
-        </a>
-      </div>
+     <div class="navbar-header MenuToggleHolder__content">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-TopMenu__collapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="js-TopMenu__collapse" id="mainCollapse">
+            <jdoc:include type="modules" name="s01-MainMenu" />
+            <a href="javascript:void(0)" class="searchButton">
+              <img src="/images/main/search_icon.png">
+            </a>
+          </div>
     </nav>
 
-    <div class="hidden-xs hidden-sm col-md-6 col-lg-5 searchLineDiv">
-      <jdoc:include type="modules" name="s02-Search" />
+   <div class="hidden-xs hidden-sm col-md-6 col-lg-5 searchLineDiv">
+      jdoc:include type="modules" name="s02-Search"
+    </div>
+
+  </header>-->
+
+  <header class="container-fluid">
+    <div class="b-topRow row">
+      <div class="col-xs-12 col-sm-8 col-md-3 col-lg-4">
+        <a title="StarLink" href="<?php echo JURI::base(); ?>">
+          <div class="b-logo">
+            <img class="b-logo__image" src="<?=$assetsPath?>/images/logo-vector.svg">
+          </div>
+        </a>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+        <div class="b-phone">
+          <!-- TODO  change phone number and logo for parameters of template  -->
+          <div class="custom">
+            <div class="-no-topPhone -no-b-phone">
+              <a class="b-phone__link" href="tel:+380443777090">
+                <svg class="icon iconPhone"><use xlink:href="#iconPhone" /></svg>
+                &nbsp;<span class="b-phone__small">(</span>044<span class="b-phone__small">)</span> 3777-090</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-0 col-lg-5 mainMenuDiv">
+        <nav class="navbar navbar-default">
+          <div class="navbar-header MenuToggleHolder__content">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target="#mainCollapse" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="mainCollapse">
+            <jdoc:include type="modules" name="s01-MainMenu" />
+            <!--<ul class="nav menu navbar-nav" id="mainmenu">
+              <li class="item-101 default current active"><a href="/">Starlink</a></li><li class="item-111 deeper parent"><a href="/about">О компании</a><ul class="nav-child unstyled small"><li class="item-114"><a href="/about/news">Новости</a></li><li class="item-119"><a href="#">Портфолио</a></li><li class="item-120"><a href="/about/job-positions">Вакансии</a></li><li class="item-126"><a href="/contacts">Cвязаться с нами</a></li></ul></li><li class="item-112 deeper parent"><a href="/services">Услуги</a><ul class="nav-child unstyled small"><li class="item-105"><a href="/services/consulting" title="IT-консалтинг">IT-консалтинг</a></li><li class="item-106"><a href="/services/outsourcing">IT-аутсорсинг</a></li><li class="item-107"><a href="/services/integration">IT-интеграция</a></li><li class="item-108 parent"><a href="/services/datacenter">Дата-центр</a></li><li class="item-109"><a href="/services/security">Безопасность</a></li><li class="item-110"><a href="/services/webprojects">Web-проекты</a></li></ul></li><li class="item-113 deeper parent"><a href="#">Решения</a><ul class="nav-child unstyled small"><li class="item-121"><a href="/solutions/collaboration-kerio-connect">Совместная работа сотрудников на базе продуктов Kerio</a></li><li class="item-122"><a href="/solutions/dataprotection-kerio-control">Безопасность и защита информации</a></li><li class="item-123"><a href="/solutions/distributedorganization-starlink">Объединение распределенных офисов в единую сеть</a></li><li class="item-124"><a href="/solutions/conferencing-kerio-operator">IP-телефония и видеоконференции</a></li></ul></li><li class="item-118"><a href="/blog">Блог</a></li><li class="item-115"><a href="/contacts">Контакты</a></li></ul>-->
+
+            <a href="javascript:void(0)" class="searchButton">
+              <img src="/images/main/search_icon.png">
+            </a>
+          </div>
+        </nav>
+      </div>
+      <div class="hidden-xs hidden-sm col-md-6 col-lg-5 searchLineDiv">
+        <jdoc:include type="modules" name="s02-search" />
+      </div>
     </div>
   </header>
 

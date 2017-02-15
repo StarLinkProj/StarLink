@@ -17,8 +17,8 @@ $queryString=$uri->getQuery();
 $this->setGenerator(null);
 
 // base path for all assets (css, js, images, fonts)
-$assetsPathFile = JPATH_ROOT.$this->params->get('assetsBasePath', '/media/mod_starlink');
-$assetsPath = $this->baseurl .$this->params->get('assetsBasePath', '/media/mod_starlink');
+$assetsPathFile = JPATH_ROOT.$this->params->get('assetsBasePath', 'media/mod_starlink');
+$assetsPath = $this->baseurl .$this->params->get('assetsBasePath', 'media/mod_starlink');
 
 // bootstrap and common styles css
 //$doc->addStyleSheet($assetsPath . '/css/bootstrap.css');
