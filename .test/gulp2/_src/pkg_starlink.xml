@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <extension type="package" version="1.2" method="upgrade">
+ <name>Starlink Package</name>
+ <author>Andriy Melnyk</author>
+ <creationDate>February 2017</creationDate>
+ <packagename>starlink</packagename>
+ <version>1.0.0</version>
+ <url>https://starlink.ua/</url>
+ <packager>Starlink Team</packager>
+ <packagerurl>https://starlink.ua/</packagerurl>
+ <description>Package to combine all custom Joomla code and assets</description>
+ <update>https://support.starlink.ua/joomla_update/</update>
+ <files folder="packages">
+   <file type="module" id="starlink" client="site">mod_starlink.zip</file>
+   <file type="module" id="starlink_calculator_outsourcing" client="site">mod_starlink_calculator_outsourcing.zip</file>
+   <file type="module" id="starlink_map" client="site">mod_starlink_map.zip</file>
+   <file type="module" id="starlink_services" client="site">mod_starlink_services.zip</file>
+   <file type="template" id="starlink" client="site">tpl_starlink.zip</file>
+ </files>
+ </extension>

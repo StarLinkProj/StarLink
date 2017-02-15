@@ -1,0 +1,160 @@
+/** Styles common to all Starlink modules and templates
+    Post-CSS plugins:  mixins, for, nesting, custom-properties */
+
+/*
+
+- Resets
+- Base
+- Layout
+- Module
+- Typography
+- State
+- Theme
+
+Include after Bootstrap and Fonts definitions
+
+*/
+
+/* RESETS */
+html {
+    /* scrollbar fix (prevent ugly left pull for lower content sites) */
+    overflow-y : scroll;
+    min-height : 100%;
+    height     : 100%;
+}
+body {
+    min-height     : 100%;
+    height         : 100%;
+    position       : relative;
+    display        : flex;
+    flex-direction : column;
+}
+
+/* repeat definition of Bootstrap's container because of body display=flex */
+.container-fluid {
+    width : 100%;
+}
+
+/***** BASE                      */
+html {
+  font-size: var(--fontSize);
+}
+
+html, p, ul, ol, li, h1, h2, h3, h4, h5, h6, .tooltip, .popover {
+  font-family: var(--textFont);
+}
+html, body, p, ul, ol, li, .tooltip, .popover {
+  font-weight: 300;
+}
+
+a:hover, a:focus {
+  text-decoration : none;
+  cursor          : pointer;
+}
+.clear {
+  clear : both;
+}
+
+.btnStarlink {
+  @mixin hoverButton;
+  padding : 1.5rem;
+  width   : 80%;
+}
+    .btnStarlink--narrow {
+      max-width:  300px;
+      @media (max-width: 991px) {
+        margin-top: 0.5rem;
+        padding:    0.5rem;
+      }
+    }
+
+/* BLOCK: block */
+/* TODO redo completely */
+    .block--grey {
+      background: #F5F6F7;
+      border-top: 1px solid #E1E7EB;
+    }
+    .block--lightGrey {
+      background: #F8F9FA;
+    }
+    .block__header {
+      margin      : 3rem auto 1.5rem;
+      text-align  : center;
+      font-size   : 3.375rem;
+      font-weight : 300;
+      color       : var(--textColor);
+
+      @media (min-width: calc(48rem)) {
+        font-size: 5rem;
+      }
+    }
+
+.contrast--soft {
+  color: var(--textColorSoft);
+}
+
+/***** LAYOUTS      */
+
+.myauto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.notReadyToCall {
+  background-image: url('/media/mod_starlink/images/main/paper.png');
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size  : 750px;
+}
+
+.mbn4 {
+  margin-bottom: -4.5rem;
+}
+
+/** TYPOGRAPHY */
+.thin, .w300 {
+  font-weight: 300;
+}
+.w200 {
+  font-weight: 200;
+}
+.w100 {
+  font-weight: 100;
+}
+
+.h0 {
+  font-size: 3.375rem;
+}
+.h00 {
+  font-size : 5rem;
+}
+
+.text--looseLines {
+    line-height   : 1.5;
+  }
+
+.header {
+  margin      : 4.5rem auto 1.5rem;
+  color       : var(--textColor);
+  font-size   : 3.375rem;
+  line-height : 1.3333333;
+  font-weight : 300;
+  text-align  : center;
+}
+  .header--left {
+    text-align: start;
+  }
+  .header--subheader {
+    font-size: 1.5rem;
+    line-height: 1;
+    font-weight: 500;
+  }
+  .header--small {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  .header--white {
+    color:  color(white a(-20%));
+  }
+
+
+/** THEMES     */

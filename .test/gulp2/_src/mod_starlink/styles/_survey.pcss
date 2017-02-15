@@ -1,0 +1,135 @@
+/* Fox email sending plugin */
+
+/*
+  #fox-container-m95  -  заказ бесплатного опросника
+  #fox-container-m100 -  отправить сообщение со страницы Контакты
+  #fox-container-m115 -  заявка на услугу аутсорсинга
+*/
+
+#fox-container-m95 {
+  min-height: 16.5rem;
+}
+
+#fox-container-m95  .btn.submit-button.btn.submit-button,
+#fox-container-m100 .btn.submit-button.btn.submit-button,
+#fox-container-m115 .btn.submit-button.btn.submit-button {
+/*  @mixin hoverButton;*/
+  @apply --h4--;
+  margin-bottom: 0;
+  padding: calc(1.5rem - 1px) 3rem;
+
+  background: var(--linkColor);
+  color         : #fff;
+  border        : 1px solid transparent;
+  border-radius : 30px;
+  font-weight   : 300;
+  transition    : background 300ms ease-in-out;
+
+  @nest &:hover,
+  &:focus {
+    border-color : var(--linkColor);
+    color        : var(--linkColor);
+    background   : #fff;
+  }
+
+  @nest &:hover span,
+  &:focus span {
+    color : var(--linkColor);
+  }
+}
+
+
+#fox-container-m95 select,
+#fox-container-m95 input[type="text"],
+#fox-container-m95 input[type="email"]
+#fox-container-m100 select,
+#fox-container-m100 input[type="text"],
+#fox-container-m100 input[type="email"]
+{
+  height: 1.5rem;
+  line-height: 1.5rem;
+}
+
+#fox-container-m95 .orderSurvey__input input[type="text"],
+#fox-container-m100 .sendLetterInput input[type="text"],
+#fox-container-m100 .sendLetterArea textarea {
+  padding: calc((1.5rem - 4px) / 2) 5px;
+  font-size: 1rem;
+  height: 3rem;
+  line-height: 1.5rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+#fox-container-m100 .sendLetterArea textarea {
+  margin-bottom: 0;
+}
+#fox-container-m95 .fox-form-stacked .controls,
+#fox-container-m100 .fox-form-stacked .controls {
+  float: none !important;
+}
+#fox-container-m95 .control-label,
+#fox-container-m95 .control-label label,
+#fox-container-m100 .control-label,
+#fox-container-m100 .control-label label,
+#fox-container-m115 .control-label,
+#fox-container-m115 .control-label label {
+  display: none !important;
+}
+
+#fox-container-m100 .fox-form-stacked #fox-m100-submit-box .controls {
+  text-align: center;
+  width: 100%;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio : 1.5) , screen and (min--moz-device-pixel-ratio : 1.5), (max-width : 767px) {
+  #fox-container-m95 button span,
+  #fox-container-m100 button span {
+    font-size : 1rem !important;
+  }
+}
+
+
+/*** Modal contact form ***/
+#modalContactFormBlock form {
+/*  padding: 10px 30px;*/
+}
+#modalContactFormBlock form .controls {
+  width: 100%;
+}
+#modalContactFormBlock form .controls input[type="text"], #modalContactFormBlock form .controls input[type="email"] {
+  padding: 2px;
+  font-size: 1rem;
+  height: auto;
+  line-height: 1rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  border-radius: 4px;
+  color: #555555;
+  background-color: #ffffff;
+}
+#modalContactFormBlock #fox-container-m115 .fox-form-stacked .fox-item-submit .controls {
+  width: 100%;
+}
+button.modalFormCloseBtn {
+  background: url('/media/mod_starlink/images/main/close-icon.png') no-repeat;
+  position: absolute;
+  width: 31px;
+  height: 2rem;
+  display: block;
+  right: 20px;
+  top: 1.5rem;
+  opacity: 1;
+  outline: none;
+  z-index: 10000;
+}
+
+.js-thankYouOutsourcing {
+  display: none;
+  position: absolute;
+  background: #fff;
+  width: 600px;
+  max-width : 90%;
+  height: 16.5rem;
+  left: 30px;
+  top: 2rem;
+}

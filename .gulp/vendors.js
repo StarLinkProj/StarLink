@@ -1,16 +1,31 @@
-'use strict';
+/**
+ * Created by mao on 26.01.2017.
+ */
+
+
+/*  The Gulp Almighty */
 const gulp = require('gulp');
 const $ = require('gulp-load-plugins')();
-const log = $.util.log;
-const del = require('del');
 
+
+/*  Debugging things */
+const log = $.util.log;
+const stringly = require('./helpers').stringly;
+const logPipeline = require('./helpers').logPipeline;
+
+
+/* Workflow things */
+const del = require('del');
+const zipHelper = require('./helpers').zipHelper;
+
+
+/* Fetch and prepare configuration */
 const c = require('../config.gulp.js');
 const _basscss = c.sources.get('basscss');
 const _bootstrap = c.sources.get('bootstrap');
 
-const zipHelper = require('./helpers').zipHelper;
-const logPipeline = require('./helpers').logPipeline;
-const stringly = require('./helpers').stringly;
+
+
 
 
 

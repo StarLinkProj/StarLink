@@ -1,0 +1,59 @@
+{
+  "name": "gulp2",
+  "version": "1.0.0",
+  "description": "gulp task templates",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build",
+    "tasks": "gulp --tasks",
+    "serve": "browser-sync start --proxy \"localhost:8000\" --browser \"chrome\" --files \"templates/starlink/**/*.*\" "
+  },
+  "repository": {},
+  "keywords": [
+    "gulp"
+  ],
+  "author": "Mao",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.18.2",
+    "css-mqpacker": "^5.0.1",
+    "cssnano": "^3.10.0",
+    "del": "^2.2.2",
+    "globby": "^6.1.0",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-debug": "^3.0.0",
+    "gulp-filter": "^5.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-load-plugins": "^1.4.0",
+    "gulp-newy": "^2.0.4",
+    "gulp-postcss": "^6.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.2.0",
+    "gulp-using": "^0.1.1",
+    "lazypipe": "^1.0.1",
+    "minimist": "^1.2.0",
+    "postcss-calc": "^5.3.1",
+    "postcss-color-function": "^3.0.0",
+    "postcss-custom-media": "^5.0.1",
+    "postcss-custom-properties": "^5.0.2",
+    "postcss-discard-comments": "^2.0.4",
+    "postcss-import": "^9.1.0",
+    "postcss-prettify": "^0.3.4",
+    "postcss-simple-vars": "^3.0.0",
+    "require-dir": "^0.3.1"
+  },
+  "dependencies": {
+    "basscss": "^8.0.3",
+    "basscss-addons": "^1.0.0",
+    "basscss-basic": "^1.0.0",
+    "bootstrap-sass": "^3.3.7"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}

@@ -4,10 +4,8 @@
 
 
 /*  The Gulp Almighty */
-const
-  gulp = require('gulp'),
-  $ = require('gulp-load-plugins')();
-
+const gulp = require('gulp');
+const $ = require('gulp-load-plugins')();
 
 
 /*  Debugging things
@@ -20,7 +18,6 @@ const helpers = require('../../.gulp/helpers');
 const loggy = helpers.loggy;
 const stringly = helpers.stringly;
 const logPipeline = helpers.logPipeline;
-
 
 /* Workflow things */
 const _merge = require('lodash.merge');
@@ -87,6 +84,7 @@ const
   rootMod = cfg.rootMod;
 
 
+/* Main Workflow tasks */
 
 gulp.task('styles',
   gulp.parallel(
@@ -126,37 +124,17 @@ gulp.task('build',
     'compile'
 ));
 
-gulp.task('debug', debug);
-
 
 gulp.task('default',
   gulp.series(
-    'debug',
     'build',
     serve
 ));
 
 
-function debug(done) {
-  //loggy(cfg);
-  //loggy(rootMod);
-  //loggy(styleMod);
-  //loggy(Object.assign({}, styleMod.styles, { options: { options: { reload: bsReload } } }));
-  //loggy(stringly(rootMod));
-  //loggy(stringly(styleMod));
-  done();
-}
-
-
-gulp.task('serve', serve);
-
 function serve() {
-  serverInit();
-//  watch();
-}
-
-function serverInit() {
   browserSync.init(cfg.browserSync);
+//  watch();
 }
 
 

@@ -4,11 +4,12 @@
 
 /*@ Debugging things */
 const
-  helpers = require('../../.gulp/helpers'),
-  loggy = helpers.loggy;
+  loggy = require('../../.gulp/helpers').loggy;
 
+
+/* Prepare configuration */
 const
-  ContentModule = require('./contentmodule');
+  ContentModule = require('./../../.gulp/contentmodule');
 
 let config = {};
 

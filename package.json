@@ -4,8 +4,8 @@
   "description": "web site based on Joomla 3.6.4+",
   "main": "index.js",
   "scripts": {
-    "--test": "echo \"Error: no test specified\" && exit 1",
     "gulptest": "gulp --gulpfile gulptest.js",
+    "gulp2":    "gulp --gulpfile gulp2.js",
     "s--tart": "gulp",
     "build": "gulp build",
     "tasks": "gulp --tasks",

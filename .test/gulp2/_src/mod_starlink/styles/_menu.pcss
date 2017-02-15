@@ -1,0 +1,280 @@
+/** $Module: Menu, Logo, Phone */
+/** PostCSS plugins: postcss-custom-properties, postcss-nesting */
+
+:root {
+  --mobileHeight:   50px;
+  --standardHeight: 75px;
+}
+
+/** $TopHeader */
+.TopHeader {
+  position: relative;
+}
+
+
+/** $TopRow */
+.TopRow {
+  display                    : flex;
+  align-items                : center;
+  position                   : relative;
+  color                      : #fff;
+  height                     : var(--mobileHeight);
+  transition                 : height 300ms, margin 300ms, background-position 300ms;
+  transition-timing-function : cubic-bezier(0.95, 0.05, 0.795, 0.035), cubic-bezier(0.95, 0.05, 0.795, 0.035), ease-in-out;
+
+  @media (min-width: 768px) {
+    height: 6rem;
+    margin-bottom: -1.5rem;
+    background-position: left 2600px top 0;
+    color: var(--softBlack);
+  }
+}
+
+/** $Logo */
+.Logo {
+  position   : relative;
+  left       : 0;
+  box-sizing : border-box;
+
+  z-index    : 2;
+  transition : width, left, top, height, filter;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+
+  @media (min-width: 992px)  {
+    left: 10px;
+  }
+  @media (min-width: 1200px) {
+    left: 20px;
+  }
+  @media (min-width: 1600px) {
+    left: 200px;
+  }
+}
+
+    .Logo__image {
+      height: 4.5rem;
+      width: auto;
+      @nest &:hover {
+        filter: drop-shadow(1px 0px 1px rgba(1, 1, 1, .8));
+      }
+    }
+
+
+/** AnimatedSVG */
+
+
+/** $iconPhone */
+
+@keyframes colorwink {
+  0% {
+    fill: orange;
+    fill-opacity: 1;
+    padding: 0px;
+  }
+  25% {
+    fill-opacity: 0.5;
+    padding: 2px;
+  }
+  50% {
+    fill: limegreen;
+    fill-opacity: 1;
+    padding: 0px;
+  }
+  75% {
+    fill-opacity: 0.5;
+    padding: 2px;
+  }
+  100% {
+    fill: orange;
+    fill-opacity: 1;
+    padding: 0px;
+  }
+}
+
+.iconPhone {
+  display: inline-block;
+  stroke: white;
+  fill: orange;
+  fill-opacity: 1;
+  width: 30px;
+  height: 30px;
+  padding: 0px;
+  vertical-align: middle;
+  overflow: visible;
+  transition: padding 300ms ease-in-out;
+  animation: 4s linear 0s infinite alternate colorwink;
+}
+
+
+/** $Phone */
+
+.Phone {
+  @apply --h5--;
+  position       : relative;
+  margin-bottom : 0;
+
+  color          : #fff;
+  background     : var(--softBlack);
+  font-weight    : 300;
+  letter-spacing : -1px;
+  transition     : right, left, height, line-height, font-size, color, background-position;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+
+  @nest & a, & a:hover, & a:focus {
+    color: inherit;
+  }
+
+  @nest & a, & span {
+    vertical-align: middle;
+  }
+
+  @media (min-width: 412px) {
+    @apply --h4--;
+    margin-bottom : 0;
+    font-weight   : 400;
+  }
+
+  @media (min-width: 768px) {
+    font-weight        : 600;
+    letter-spacing     : normal;
+    color              : #000;
+  }
+
+  @nest &__areaCode {
+    letter-spacing: -1px;
+
+    &::before { content: "(";  }
+    &::after  { content: ") "; }
+    &::before,
+    &::after {
+       position   : relative;
+       top        : -0.09em;
+       font-size  : 85%;
+       font-weight: lighter;
+       color      : #708090;
+     }
+  }
+}
+
+
+/** Bootstrap menu: main Joomla menu */
+
+.navbar-default {
+  background-color: #f8f8f8;
+  border-color: #e7e7e7;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #777;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #333;
+  background-color: transparent;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #555;
+  background-color: #e7e7e7;
+}
+.navbar-default .navbar-toggle {
+  border-color: #ddd;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #ddd;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #888;
+}
+.navbar-default .navbar-collapse {
+  color: #555;
+  background-color: #e7e7e7;
+}
+
+.navbar--Starlink {
+  background-color: var(--softBlack);
+  margin-bottom: 0px;
+  border: 0px solid transparent;
+  right: 0;
+  top: 0;
+}
+
+.navbar--Starlink .navbar-nav {
+  position: relative;
+  top: 50px;
+ }
+.navbar--Starlink .navbar-nav > li > a {
+  color: #9d9d9d;
+}
+.navbar--Starlink .navbar-nav > li > a:hover,
+.navbar--Starlink .navbar-nav > li > a:focus {
+  color: #fff;
+  background-color: transparent;
+}
+.navbar--Starlink .navbar-nav > .active > a,
+.navbar--Starlink .navbar-nav > .active > a:hover,
+.navbar--Starlink .navbar-nav > .active > a:focus {
+  color: #fff;
+  background-color: #080808;
+}
+.navbar--Starlink .navbar-toggle {
+  border: 0 transparent;
+  padding: 15px 25px 15px 1px;
+  margin: 0;
+  height: var(--mobileHeight);
+  z-index: 10;
+}
+.navbar--Starlink .navbar-toggle .icon-bar {
+  background-color: #fff;
+  width: 24px;
+  height: 4px;
+}
+.navbar--Starlink .navbar-collapse {
+  color: #fff;
+/*  background-color: #080808;*/
+}
+.navbar--Starlink li.item-101 {
+  display: none;
+}
+
+
+/*   SEARCH element */
+.searchButton {
+  display: none;
+}
+#searchForm{
+  display: none;
+}
+#mod-search-searchword{
+  color       : #333;
+  font-size   : 26px;
+  font-weight : bold;
+  padding     : 5px 5px 5px 40px;
+  background  : url('/media/mod_starlink/images/main/search_icon.png') no-repeat center left;
+  border      : none;
+  outline     : none;
+  width       : 100%;
+}
+/*#mod-search-searchword::-webkit-input-placeholder {color:#333;}
+#mod-search-searchword::-moz-placeholder          {color:#333;}!* Firefox 19+ *!
+#mod-search-searchword:-moz-placeholder           {color:#333;}!* Firefox 18- *!
+#mod-search-searchword:-ms-input-placeholder      {color:#333;}*/
+
+.search{
+  margin     : 15px 0;
+  max-height : 45px;
+}
+.searchLineDiv{
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .searchButton{
+    margin-left: 15px;
+    display: inline-block;
+    line-height: normal;
+  }
+}
