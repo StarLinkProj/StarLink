@@ -171,6 +171,7 @@ function getTask(name) {
 
 
 /* Main Workflow tasks */
+{
 
 gulp.task('bootstrap:clean', () => getTask('bootstrap-clean'));
 gulp.task('bootstrap:styles', () => getTask('bootstrap-styles'));
@@ -204,22 +205,23 @@ gulp.task('build',
     'clean',
     'styles',
      serve
-  ));
+));
 
+}
 
 function serve(done) {
   if (production)
     done();
   else {
     browserSync.init(cfg.browserSync);
-    gulp.watch(['_build/*.html']).on('change', bsReload);
+    gulp.watch(['_build/*.html']).on('change', browserSync.reload);
   }
 }
 
 
 // function watchMarkup() {
 //   gulp.watch(['_build/*.html'])
-//     .on('change', bsReload);
+//     .on('change', browserSync.reload);
 // }
 
 gulp.task('debug', (done) => { console.log(production); done(); } );

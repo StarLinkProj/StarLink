@@ -7,7 +7,7 @@ $textColor:  #1b1b1b;
 $textColorSoft: #373a3c;
 $textFont:  'Roboto', Calibri, Arial, sans-serif;
 $loudFont:  $textFont;
-$fontSize:  16px;
+$fontSize:  18px;
 
 :root {
     --softBlack: $softBlack;
