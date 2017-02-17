@@ -7,7 +7,7 @@ $textColor:  #1b1b1b;
 $textColorSoft: #373a3c;
 $textFont:  'Roboto', Calibri, Arial, sans-serif;
 $loudFont:  $textFont;
-$fontSize:  18px;
+$fontSize:  16px;
 
 :root {
     --softBlack: $softBlack;
@@ -84,7 +84,7 @@ $fontSize:  18px;
 
 
   --font-family: 'Roboto', sans-serif;
-  --body-font-size: 1em;
+  --body-font-size: var(--fontSize);
   --heading-font-weight: 100;
 
   --space-25: 1.5rem;
